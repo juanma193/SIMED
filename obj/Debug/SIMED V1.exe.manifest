@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="SIMED V1.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="SIMED V1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="SIMED V1.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de Control de cuentas de usuario
+          Si quiere cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el
+          nodo requestedExecutionLevel por alguno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar la virtualización de archivos y del Registro para la
+         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="7054832">
+      <assemblyIdentity name="SIMED V1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>bGcsmQT5hNhwiFHnI3GWbxUjikkjiReqFOWIH0+01vM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="archivos\abrir cerrar minimizar.png" size="113627">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Jbt0jQ3eHzy4EES1bFmIcOaEMmA2FlmWtO2a9pbmMf4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\abstract-phone-wallpaper-aesthetic-160820-1.png" size="62501">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MJ8EVC6Ic26SdKFiBjrNlk6KBgIajTrI9ZucvzD5mi4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\ambulance.png" size="20182">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Kzfnlwj3Lf2do6aftw8jAt/ie7hyhG4gn+kXAE7rOeo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\ambulancia.png" size="68356">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>hyxpo6KHKZyRDBq4tCoKKw8KjpeOx8ar4sN7n5fdiXI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\arrow.png" size="360">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wQWiax+ML7+kbb7WiMHXWLFOX2o22ZTUuv71J4BjrUo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\close.png" size="59209">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GMr5/XL03/zox2056+k58O/taHGaJiNqYbvRVxKFurc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\dashboard.png" size="326">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>O4mS3ljGcMnNwSbFwnYIKM2x851sqcs9dLvCSdJwytQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\doctor 2.png" size="243336">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aXpHly3YMZumwuu/W7qlQPpaA9uOfljONRUrCDIt1lQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\doctor sin fondo.png" size="246338">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>k+CBsW9x8W6MyjrkqPWVN/RrLbFdF02M3yfu4mTa3eI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\doctor.png" size="3115">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FubVHwGGXZdZXHq5DgSx5DABuJEOYW9hsdy41TPVVSo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\doctora sin fondo.png" size="52622">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>JKv++/L4D1enMMa9sWVfs4h4lToM3MORLUaiJCK83W4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\doctora.png" size="60870">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GBe6v917rzjbzdEJsAH/9Psu+qqTdWrvcR2WHG1SQM4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\enfemeros.png" size="19097">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>NrzgOvL26WM+9cJGAT+uXmdMrXxw3Grter0gTda3WmI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\icono mail.png" size="1072">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FUp/WehbeZuGHAhpA3HvEm9auhDyHP2W7GDLA7QhCm0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\icons8-warning-48.png" size="1978">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>LRVr6RF8KGUeJ7hVzhJ3jBd7Iu3tpp6UW33bbMu+ZIU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\logo simed 3.png" size="61677">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>TggXgmI+e5DyzKtGs0xZ2oH+PAodCI3WZVub4zyXzQ0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\medicos.jpg" size="396846">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>hWWD5I9kzTauC1JLB3GZuNa68cvger3/DGLb4eibK8s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\medics.png" size="1233">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fZPM3zrDsaZAEX8T0+B+Af+o8tz+pDxQQPwPNYWyVd0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\minimizar.png" size="7293">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>KojhLZ1BAt3hzhI0EkuwCbhzlWpQGCkUBS7Q2bSG0+E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\minimzar.jpg" size="6611">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>qA9lKbBqMKPXD5m4g5wPryBcLsj4pBuRpdc5KoijbH4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\numeros.png" size="359">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xhnHaZZe7AFfLFg3tjqMXi/kY+STFf282rcn4vkr9Vo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\padlock.png" size="474">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Opev28CULzfOnlwwt4eOeIRNND+oAIZfSON1zx25AQI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\ps3Sonido.wav" size="1721688">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4LPm4UQyQAZrKAPRd6XPeSoJSMXkzJuly1/NcLjMtYk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\salud.png" size="4251">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6ZRjhYJmDKKR/XgHDjsXVDtjUzMBcKymvYlORifQL4I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\simed logo 2.png" size="64695">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6yCFKFUvIPW8An71cgkSXP3dDjj7+xH2N2J3z98ZoUI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\simed logo.jpeg" size="33500">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IHxdqSDXo6AXxBZbcoYPVlFFOFopKt6emPbvnz1oAxU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\simed png.png" size="64695">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ghW/QErr5CelPEyhSU0aqFfaPUxTyLNn6352DudvDdI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\sonidoPayaso.mp3" size="37335">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mzeL//O5yN0lT/3YVKFiC+08DUegwikZt/sedbo+EBM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\sonidoPayaso.wav" size="418024">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>oDgymHFZ/reYwHyz9UJEZY+zTTSnKW4mIhYwFH0BgMo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\sonidoPS2.wav" size="277964">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>upq5FuN9V4hT/Gy8+xJ5bfppoFXYcraXsyvLwDNtDhs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\user.png" size="348">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2besyPmbTnP86b7kQxN8IbBz6E5tnE5IRDB6EaVGnnQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\usuarios.png" size="213774">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Qj83q3tSsjw/MLz+AW/UuVJb3utLJIS4U4y5Wyat9wk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\usuarioss.png" size="28790">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>E+wKiiytURsGlbwWOl7DKmRvEgrZELLda3jOTokl+70=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\y2mate.com - Playstation 2 Startup Noise.mp3" size="326981">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8zN7decE21h/biTE/5AXS/ySGTEAL0NO7c9mf6Ti4Gc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\y2mate.com - Playstation 3 PS3 StartUp  Sound Effect for editing.mp3" size="155199">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>bTPEwVEokeIU6Fjj9kqRueUT9stNUH1EorLWtLxBdlg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="SIMED V1.exe.config" size="1963">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Jo6BqJ0daG2b8w3a15h4MrWNVYjHdTF+2IpOumY5KFg=</dsig:DigestValue>
+    </hash>
+  </file>
+</asmv1:assembly>
