@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using SIMED_V1.Entidades;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -997,11 +998,11 @@ namespace SIMED.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Contraseña)
+                entity.Property(e => e.Password)
                     .IsRequired()
                     .IsUnicode(false);
 
-                entity.Property(e => e.Email)
+                entity.Property(e => e.Correo)
                     .IsRequired()
                     .IsUnicode(false);
             });
