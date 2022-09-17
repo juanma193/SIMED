@@ -344,6 +344,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bases de datos\UsuarioBD.cs" />
     <Compile Include="BD3K3G05_2022DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -541,7 +542,6 @@
     <Compile Include="Forms Para El Menu\UMedicos.Designer.cs">
       <DependentUpon>UMedicos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repositorio\AccesoBD.cs" />
     <Compile Include="Utilidades\Util.cs" />
     <Compile Include="Forms Para El Menu\UUsuarios.cs">
       <SubType>UserControl</SubType>

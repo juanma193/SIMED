@@ -1,5 +1,5 @@
 ﻿using SIMED_V1.Entidades;
-using SIMED_V1.Repositorio;
+using SIMED_V1.Bases_de_datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

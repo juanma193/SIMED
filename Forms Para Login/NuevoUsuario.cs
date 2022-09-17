@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
-using SIMED_V1.Repositorio;
+using SIMED_V1.Bases_de_datos;
 
 namespace SIMED_V1
 {

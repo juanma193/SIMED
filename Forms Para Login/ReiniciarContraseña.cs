@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using System.Data.SqlClient;
-using SIMED_V1.Repositorio;
+using SIMED_V1.Bases_de_datos;
 
 namespace SIMED_V1
 {

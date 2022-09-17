@@ -368,3 +368,108 @@ C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\obj\Debug\S
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\obj\Debug\SIMED V1.application
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\obj\Debug\SIMED V1.csproj.CopyComplete
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\obj\Debug\SIMED V1.csproj.SuggestedBindingRedirects.cache
+D:\SIMED\obj\Debug\SIMED V1.csproj.AssemblyReference.cache
+D:\SIMED\obj\Debug\SIMED V1.csproj.SuggestedBindingRedirects.cache
+D:\SIMED\obj\Debug\SIMED_V1.CorrectoForm.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaAfiliado.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaAmbulancias.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaEnfermeros.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaMedico.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaPlanes.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaViaje.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaEnfermero.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaMédico.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaPlanes.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultarAfiliado.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultarAmbulancias.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultarViaje.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.UAfiliados.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.UPlanes.resources
+D:\SIMED\obj\Debug\SIMED_V1.EnviarCodigoFormcs.resources
+D:\SIMED\obj\Debug\SIMED_V1.ErroresForm.resources
+D:\SIMED\obj\Debug\SIMED_V1.InicioForm.resources
+D:\SIMED\obj\Debug\SIMED_V1.LoginUsuarios.resources
+D:\SIMED\obj\Debug\SIMED_V1.NuevoUsuario.resources
+D:\SIMED\obj\Debug\SIMED_V1.PrincipalForm.resources
+D:\SIMED\obj\Debug\SIMED_V1.ProgressBar.resources
+D:\SIMED\obj\Debug\SIMED_V1.Properties.Resources.resources
+D:\SIMED\obj\Debug\SIMED_V1.ReiniciarContraseña.resources
+D:\SIMED\obj\Debug\SIMED_V1.UAmbulancias.resources
+D:\SIMED\obj\Debug\SIMED_V1.UEnfermeros.resources
+D:\SIMED\obj\Debug\SIMED_V1.UMedicos.resources
+D:\SIMED\obj\Debug\SIMED_V1.UUsuarios.resources
+D:\SIMED\obj\Debug\SIMED_V1.VerificarMailForm.resources
+D:\SIMED\obj\Debug\SIMED V1.csproj.GenerateResource.cache
+D:\SIMED\obj\Debug\SIMED V1.csproj.CoreCompileInputs.cache
+D:\SIMED\obj\Debug\SIMED V1.exe
+D:\SIMED\obj\Debug\SIMED V1.pdb
+D:\SIMED\bin\Debug\SIMED V1.exe.config
+D:\SIMED\bin\Debug\SIMED V1.exe.manifest
+D:\SIMED\bin\Debug\SIMED V1.application
+D:\SIMED\bin\Debug\SIMED V1.exe
+D:\SIMED\bin\Debug\SIMED V1.pdb
+D:\SIMED\bin\Debug\Bunifu.UI.WinForms.xml
+D:\SIMED\bin\Debug\Bunifu.UI.WinForms.1.5.3.xml
+D:\SIMED\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\SIMED\bin\Debug\Microsoft.Bcl.HashCode.xml
+D:\SIMED\bin\Debug\Microsoft.Data.SqlClient.xml
+D:\SIMED\bin\Debug\Microsoft.EntityFrameworkCore.xml
+D:\SIMED\bin\Debug\Microsoft.EntityFrameworkCore.Abstractions.xml
+D:\SIMED\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
+D:\SIMED\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.Caching.Abstractions.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.Caching.Memory.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.Configuration.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.Configuration.Binder.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.DependencyInjection.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.Options.xml
+D:\SIMED\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\SIMED\bin\Debug\Microsoft.Identity.Client.xml
+D:\SIMED\bin\Debug\Microsoft.IdentityModel.JsonWebTokens.xml
+D:\SIMED\bin\Debug\Microsoft.IdentityModel.Logging.xml
+D:\SIMED\bin\Debug\Microsoft.IdentityModel.Protocols.xml
+D:\SIMED\bin\Debug\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+D:\SIMED\bin\Debug\Microsoft.IdentityModel.Tokens.xml
+D:\SIMED\bin\Debug\Microsoft.Win32.Registry.xml
+D:\SIMED\bin\Debug\Microsoft.Win32.Registry.AccessControl.xml
+D:\SIMED\bin\Debug\Microsoft.Win32.SystemEvents.xml
+D:\SIMED\bin\Debug\Newtonsoft.Json.xml
+D:\SIMED\bin\Debug\RestSharp.xml
+D:\SIMED\bin\Debug\System.Buffers.xml
+D:\SIMED\bin\Debug\System.CodeDom.xml
+D:\SIMED\bin\Debug\System.Collections.Immutable.xml
+D:\SIMED\bin\Debug\System.Configuration.ConfigurationManager.xml
+D:\SIMED\bin\Debug\System.Data.Odbc.xml
+D:\SIMED\bin\Debug\System.Data.OleDb.xml
+D:\SIMED\bin\Debug\System.Data.SqlClient.xml
+D:\SIMED\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+D:\SIMED\bin\Debug\System.Diagnostics.EventLog.xml
+D:\SIMED\bin\Debug\System.Diagnostics.PerformanceCounter.xml
+D:\SIMED\bin\Debug\System.Drawing.Common.xml
+D:\SIMED\bin\Debug\System.IdentityModel.Tokens.Jwt.xml
+D:\SIMED\bin\Debug\System.IO.FileSystem.AccessControl.xml
+D:\SIMED\bin\Debug\System.IO.Packaging.xml
+D:\SIMED\bin\Debug\System.IO.Ports.xml
+D:\SIMED\bin\Debug\System.Memory.xml
+D:\SIMED\bin\Debug\System.Numerics.Vectors.xml
+D:\SIMED\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\SIMED\bin\Debug\System.Security.AccessControl.xml
+D:\SIMED\bin\Debug\System.Security.Cryptography.Cng.xml
+D:\SIMED\bin\Debug\System.Security.Cryptography.Pkcs.xml
+D:\SIMED\bin\Debug\System.Security.Cryptography.ProtectedData.xml
+D:\SIMED\bin\Debug\System.Security.Cryptography.Xml.xml
+D:\SIMED\bin\Debug\System.Security.Permissions.xml
+D:\SIMED\bin\Debug\System.Security.Principal.Windows.xml
+D:\SIMED\bin\Debug\System.ServiceModel.Syndication.xml
+D:\SIMED\bin\Debug\System.ServiceProcess.ServiceController.xml
+D:\SIMED\bin\Debug\System.Text.Encoding.CodePages.xml
+D:\SIMED\bin\Debug\System.Threading.AccessControl.xml
+D:\SIMED\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\SIMED\obj\Debug\SIMED V1.csproj.Fody.CopyLocal.cache
+D:\SIMED\obj\Debug\SIMED V1.exe.manifest
+D:\SIMED\obj\Debug\SIMED V1.application
+D:\SIMED\obj\Debug\SIMED V1.csproj.CopyComplete
