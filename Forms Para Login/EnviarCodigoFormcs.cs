@@ -44,7 +44,7 @@ namespace SIMED_V1
             if (match.Success) 
             {
 
-                resultado = AccesoBD.ValidarEmail(usermail);
+                resultado = UsuarioBD.ValidarEmail(usermail);
                 if (resultado == true)
                 {
 

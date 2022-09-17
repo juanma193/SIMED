@@ -44,7 +44,7 @@ namespace SIMED_V1
                 if (txtContraseña.Text == txtRepetirContraseña.Text)
                 {
 
-                    if (AccesoBD.ActualizarContraseña(usermail,txtRepetirContraseña.Text))
+                    if (UsuarioBD.ActualizarContraseña(usermail,txtRepetirContraseña.Text))
                     {
                         CorrectoForm co = new CorrectoForm();
                         co.show("Contraseña modificada con éxito");

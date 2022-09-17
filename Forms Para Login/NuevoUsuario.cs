@@ -65,7 +65,7 @@ namespace SIMED_V1
                
                         string mail = txtMail.Text;
                         bool resultado = false;
-                        resultado = AccesoBD.ValidarUsername(nombreDeUsuario);
+                        resultado = UsuarioBD.ValidarUsername(nombreDeUsuario);
                         bool resultado2 = false;
                         resultado2 = ValidarCorreo(mail);
 

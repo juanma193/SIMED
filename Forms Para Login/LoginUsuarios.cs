@@ -92,10 +92,10 @@ namespace SIMED_V1
 
                 try
                 {
-                    resultado = AccesoBD.ValidarUsuario(nombreDeUsuario, password);
+                    resultado = UsuarioBD.ValidarUsuario(nombreDeUsuario, password);
                     if (resultado == true)
                     {
-                        string correo = AccesoBD.ObtenerEmail(nombreDeUsuario);
+                        string correo = UsuarioBD.ObtenerEmail(nombreDeUsuario);
                         Usuarios user = new Usuarios(nombreDeUsuario, password,correo);
                         ProgressBar ventana = new ProgressBar();
                         ventana.Show();

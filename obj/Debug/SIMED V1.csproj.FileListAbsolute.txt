@@ -337,7 +337,6 @@ C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\bin\Debug\R
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\bin\Debug\System.Buffers.xml
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\bin\Debug\System.CodeDom.xml
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\bin\Debug\System.Collections.Immutable.xml
-C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\bin\Debug\System.Configuration.ConfigurationManager.xml
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\bin\Debug\System.Data.Odbc.xml
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\bin\Debug\System.Data.OleDb.xml
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\bin\Debug\System.Data.SqlClient.xml
@@ -368,3 +367,4 @@ C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\obj\Debug\S
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\obj\Debug\SIMED V1.exe.manifest
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\obj\Debug\SIMED V1.application
 C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\obj\Debug\SIMED V1.csproj.CopyComplete
+C:\Users\LENOVO\OneDrive - frc.utn.edu.ar\Facu\Tercer Año\PAV\SIMED\obj\Debug\SIMED V1.csproj.SuggestedBindingRedirects.cache
