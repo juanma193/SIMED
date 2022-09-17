@@ -14,7 +14,7 @@ namespace SIMED_V1
 {
     public partial class VerificarMailForm : Form
     {
-        string code1;
+        string code;
         string user;
         string contraseña;
         string email;
