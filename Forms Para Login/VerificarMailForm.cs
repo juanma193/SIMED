@@ -58,7 +58,7 @@ namespace SIMED_V1
                     string username = user;
                     string userpass = Util.Encrypt.GetSHA256(contraseña);
                     string usermail = email;
-                    bool resultado1 = AccesoBD.InsertarUsuario(username, userpass, usermail);
+                    bool resultado1 = UsuarioBD.InsertarUsuario(username, userpass, usermail);
                     if (resultado1)
                     {
                         CorrectoForm co = new CorrectoForm();

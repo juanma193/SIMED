@@ -33,17 +33,17 @@ namespace SIMED_V1
         {
             var p = Path.GetFullPath(path);
             player.SoundLocation = p;
-            player.Play();
+            //player.Play();
         }
         public static void PlayInicio()
         {
             var player = new System.Media.SoundPlayer();
             player.SoundLocation = @"archivos\\ps3Sonido.wav";
-            player.Play();
+            //player.Play();
         }
         public void Stop()
         {
-            player.Stop();
+            //player.Stop();
         }
     }
 }
