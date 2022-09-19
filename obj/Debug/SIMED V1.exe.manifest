@@ -162,14 +162,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="11202032">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="11205616">
       <assemblyIdentity name="SIMED V1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GboYKb0NGbDxnLvrsfyZ6WwnMUDT7/egBshtpg8RFgI=</dsig:DigestValue>
+        <dsig:DigestValue>8/XpH0Ox6UF73a6zrcvZspMb7F3UEvYV67Lvcq4lNyA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

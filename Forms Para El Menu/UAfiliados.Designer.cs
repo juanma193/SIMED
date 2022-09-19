@@ -139,6 +139,7 @@
             this.guna2Button1.Size = new System.Drawing.Size(182, 58);
             this.guna2Button1.TabIndex = 17;
             this.guna2Button1.Text = "Dar de alta a un afiliado";
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // UAfiliados
             // 

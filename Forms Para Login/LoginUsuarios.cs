@@ -96,7 +96,10 @@ namespace SIMED_V1
                     if (resultado == true)
                     {
                         string correo = UsuarioBD.ObtenerEmail(nombreDeUsuario);
-                        Usuarios user = new Usuarios(nombreDeUsuario, password,correo);
+                        Usuarios user = new Usuarios();
+                        user.NombreDeUsuario = nombreDeUsuario;
+                        user.Email = correo;
+                        user.Password = password;
                         ProgressBar ventana = new ProgressBar();
                         ventana.Show();
                         this.Hide();

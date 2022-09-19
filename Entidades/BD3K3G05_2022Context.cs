@@ -57,7 +57,6 @@ namespace SIMED.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Data Source=200.69.137.167,11333; Initial Catalog=BD3K3G05_2022;User ID=BD3K3G05_2022;Password=CLV05_25089;Encrypt=False");
             }
         }
@@ -73,7 +72,7 @@ namespace SIMED.Models
 
                 entity.Property(e => e.NumeroAfiliado)
                     .HasColumnName("numeroAfiliado")
-                    .ValueGeneratedNever();
+                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Apellido)
                     .IsRequired()
@@ -995,14 +994,17 @@ namespace SIMED.Models
                 entity.ToTable("USUARIOS");
 
                 entity.Property(e => e.NombreDeUsuario)
+                    .HasColumnName("NombreDeUsuario")
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Password)
+                    .HasColumnName("Contraseña")
                     .IsRequired()
                     .IsUnicode(false);
 
-                entity.Property(e => e.Correo)
+                entity.Property(e => e.Email)
+                    .HasColumnName("Email")
                     .IsRequired()
                     .IsUnicode(false);
             });
