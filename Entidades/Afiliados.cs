@@ -17,18 +17,18 @@ namespace SIMED.Models
             TurnosPuntoAPunto = new HashSet<TurnosPuntoAPunto>();
         }
 
-        public int NumeroAfiliado { get; set; }
+        public int? NumeroAfiliado { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public int IdSexo { get; set; }
-        public int NumeroDocumento { get; set; }
+        public string NumeroDocumento { get; set; }
         public int IdTipoDocumento { get; set; }
         public int IdBarrio { get; set; }
-        public int NumeroTelefono { get; set; }
+        public string NumeroTelefono { get; set; }
         public int IdPlan { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public string Calle { get; set; }
-        public int NroCalle { get; set; }
+        public string NroCalle { get; set; }
         public DateTime FechaInscripcion { get; set; }
 
         public virtual Barrios IdBarrioNavigation { get; set; }

@@ -344,6 +344,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bases de datos\AfiliadosBD.cs" />
+    <Compile Include="Bases de datos\BarriosBD.cs" />
+    <Compile Include="Bases de datos\PlanesBD.cs" />
+    <Compile Include="Bases de datos\TiposDocBD.cs" />
     <Compile Include="Bases de datos\UsuarioBD.cs" />
     <Compile Include="BD3K3G05_2022DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
