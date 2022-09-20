@@ -14,6 +14,7 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class ConsultarAfiliado : Form
     {
+        int indice = -1;
         public ConsultarAfiliado()
         {
             InitializeComponent();
@@ -26,7 +27,21 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnModAfiliado_Click(object sender, EventArgs e)
         {
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = gbAfiliados.Rows[indice];
+                int documento = int.Parse(filaSeleccionada.Cells["Documento"].Value.ToString());
+                Afiliados afil = AfiliadosBD.obtenerAfiliado(documento);
 
+                ModificarAfiliado ventana = new ModificarAfiliado(afil);
+                ventana.Show();
+                this.Hide();
+            }
+            else
+            {
+                ErroresForm mensaje = new ErroresForm();
+                mensaje.show("Seleccione un usuario");
+            }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -60,6 +75,34 @@ namespace SIMED_V1.Forms_Para_ABM
             fila.Cells.Add(celdaNombre);
 
             gbAfiliados.Rows.Add(fila);
+        }
+
+        private void gbAfiliados_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            indice = e.RowIndex;
+        }
+
+        private void btnElimAfiliado_Click(object sender, EventArgs e)
+        {
+            if (indice >= 0)
+            {
+                DataGridViewRow filaSeleccionada = gbAfiliados.Rows[indice];
+                int documento = int.Parse(filaSeleccionada.Cells["Documento"].Value.ToString());
+                bool resultado = AfiliadosBD.eliminarAfiliado(documento);
+
+                if (!resultado)
+                {
+                    ErroresForm mensaje = new ErroresForm();
+                    mensaje.show("Error al eliminar el afiliado");
+                }
+                CorrectoForm msj = new CorrectoForm();
+                msj.show("Afiliado eliminado exitosamente");
+            }
+            else
+            {
+                ErroresForm mensaje = new ErroresForm();
+                mensaje.show("Seleccione un afiliado");
+            }
         }
     }
 }

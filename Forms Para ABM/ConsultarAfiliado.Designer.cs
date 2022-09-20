@@ -38,10 +38,6 @@
             this.btnBuscar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnElimAfiliado = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnModAfiliado = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnVolver = new Guna.UI2.WinForms.Guna2Button();
-            this.txtApellido = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtNroAfiliado = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnCerrarApp = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
@@ -49,6 +45,10 @@
             this.Documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new Guna.UI2.WinForms.Guna2Button();
+            this.txtApellido = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtNombre = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtNroAfiliado = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gbAfiliados)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,6 +102,7 @@
             this.gbAfiliados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gbAfiliados.Location = new System.Drawing.Point(58, 78);
             this.gbAfiliados.Name = "gbAfiliados";
+            this.gbAfiliados.ReadOnly = true;
             this.gbAfiliados.RowHeadersVisible = false;
             this.gbAfiliados.Size = new System.Drawing.Size(527, 149);
             this.gbAfiliados.TabIndex = 21;
@@ -118,7 +119,7 @@
             this.gbAfiliados.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.gbAfiliados.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gbAfiliados.ThemeStyle.HeaderStyle.Height = 20;
-            this.gbAfiliados.ThemeStyle.ReadOnly = false;
+            this.gbAfiliados.ThemeStyle.ReadOnly = true;
             this.gbAfiliados.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
             this.gbAfiliados.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.gbAfiliados.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -126,6 +127,7 @@
             this.gbAfiliados.ThemeStyle.RowsStyle.Height = 22;
             this.gbAfiliados.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gbAfiliados.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.gbAfiliados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gbAfiliados_CellClick);
             // 
             // btnBuscar
             // 
@@ -169,6 +171,7 @@
             this.btnElimAfiliado.Size = new System.Drawing.Size(234, 36);
             this.btnElimAfiliado.TabIndex = 41;
             this.btnElimAfiliado.Text = "Eliminar afiliado";
+            this.btnElimAfiliado.Click += new System.EventHandler(this.btnElimAfiliado_Click);
             // 
             // btnModAfiliado
             // 
@@ -191,6 +194,57 @@
             this.btnModAfiliado.TabIndex = 40;
             this.btnModAfiliado.Text = "Modificar datos ";
             this.btnModAfiliado.Click += new System.EventHandler(this.btnModAfiliado_Click);
+            // 
+            // btnCerrarApp
+            // 
+            this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
+            this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
+            this.btnCerrarApp.Location = new System.Drawing.Point(621, 11);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrarApp.Name = "btnCerrarApp";
+            this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
+            this.btnCerrarApp.TabIndex = 44;
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
+            this.btnMinimizar.Location = new System.Drawing.Point(582, 11);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
+            this.btnMinimizar.TabIndex = 45;
+            // 
+            // guna2AnimateWindow1
+            // 
+            this.guna2AnimateWindow1.TargetForm = this;
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
+            // Documento
+            // 
+            this.Documento.HeaderText = "Documento";
+            this.Documento.Name = "Documento";
+            this.Documento.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // btnVolver
             // 
@@ -289,54 +343,6 @@
             this.txtNroAfiliado.SelectedText = "";
             this.txtNroAfiliado.Size = new System.Drawing.Size(527, 36);
             this.txtNroAfiliado.TabIndex = 23;
-            // 
-            // btnCerrarApp
-            // 
-            this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
-            this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(621, 11);
-            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrarApp.Name = "btnCerrarApp";
-            this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
-            this.btnCerrarApp.TabIndex = 44;
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(582, 11);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
-            this.btnMinimizar.TabIndex = 45;
-            // 
-            // guna2AnimateWindow1
-            // 
-            this.guna2AnimateWindow1.TargetForm = this;
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this;
-            this.guna2DragControl1.UseTransparentDrag = true;
-            // 
-            // Documento
-            // 
-            this.Documento.HeaderText = "Documento";
-            this.Documento.Name = "Documento";
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
             // 
             // ConsultarAfiliado
             // 
