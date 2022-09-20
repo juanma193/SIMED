@@ -49,9 +49,9 @@ namespace SIMED_V1.Forms_Para_ABM
             afiliado.Apellido = txtApellido.Text;
             afiliado.Nombre = txtNombre.Text;
             afiliado.Calle = txtCalle.Text;
-            afiliado.NroCalle = txtNroCalle.Text;
-            afiliado.NumeroDocumento = txtNroDoc.Text;
-            afiliado.NumeroTelefono = txtNroTel.Text;
+            afiliado.NroCalle = int.Parse(txtNroCalle.Text);
+            afiliado.NumeroDocumento = int.Parse(txtNroDoc.Text);
+            afiliado.NumeroTelefono = int.Parse(txtNroTel.Text);
             afiliado.IdBarrio = cmbBarrios.SelectedIndex;
             afiliado.IdPlan = cmbPlanes.SelectedIndex;
             if (btnFemenino.Checked == true)
@@ -115,5 +115,6 @@ namespace SIMED_V1.Forms_Para_ABM
                 cmbPlanes.Items.Add(plan.NombrePlan);
             }
         }
+
     }
 }
