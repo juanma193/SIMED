@@ -473,3 +473,4 @@ D:\SIMED\obj\Debug\SIMED V1.csproj.Fody.CopyLocal.cache
 D:\SIMED\obj\Debug\SIMED V1.exe.manifest
 D:\SIMED\obj\Debug\SIMED V1.application
 D:\SIMED\obj\Debug\SIMED V1.csproj.CopyComplete
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ModificarAfiliado.resources

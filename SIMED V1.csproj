@@ -393,6 +393,12 @@
       <DependentUpon>CorrectoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Usuarios.cs" />
+    <Compile Include="Forms Para ABM\ModificarAfiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarAfiliado.Designer.cs">
+      <DependentUpon>ModificarAfiliado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\AltaAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -561,6 +567,9 @@
     </Compile>
     <EmbeddedResource Include="Forms Mensajes Personalizados\CorrectoForm.resx">
       <DependentUpon>CorrectoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ModificarAfiliado.resx">
+      <DependentUpon>ModificarAfiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\AltaAfiliado.resx">
       <DependentUpon>AltaAfiliado.cs</DependentUpon>

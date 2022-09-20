@@ -33,12 +33,12 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void cmbBarrios_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cmbPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnCrearAmbulancia_Click(object sender, EventArgs e)
@@ -49,9 +49,9 @@ namespace SIMED_V1.Forms_Para_ABM
             afiliado.Apellido = txtApellido.Text;
             afiliado.Nombre = txtNombre.Text;
             afiliado.Calle = txtCalle.Text;
-            afiliado.NroCalle = txtNroCalle.Text;
-            afiliado.NumeroDocumento = txtNroDoc.Text;
-            afiliado.NumeroTelefono = txtNroTel.Text;
+            afiliado.NroCalle = int.Parse(txtNroCalle.Text);
+            afiliado.NumeroDocumento = int.Parse(txtNroDoc.Text);
+            afiliado.NumeroTelefono = int.Parse(txtNroTel.Text);
             afiliado.IdBarrio = cmbBarrios.SelectedIndex;
             afiliado.IdPlan = cmbPlanes.SelectedIndex;
             if (btnFemenino.Checked == true)
@@ -67,7 +67,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 afiliado.IdSexo = 3;
             }
             afiliado.IdTipoDocumento = cmbTipoDocumento.SelectedIndex;
-            afiliado.FechaNacimiento = fechaNac.Value; 
+            afiliado.FechaNacimiento = fechaNac.Value;
             afiliado.FechaInscripcion = fechaInscripcion.Value;
 
             resultado = AfiliadosBD.insertarAfiliado(afiliado);
@@ -75,10 +75,10 @@ namespace SIMED_V1.Forms_Para_ABM
             if (!resultado)
             {
                 ErroresForm mensaje = new ErroresForm();
-                mensaje.show("Error al dar de alta el usuario");
+                mensaje.show("Error al dar de alta el afiliado");
             }
             CorrectoForm msj = new CorrectoForm();
-            msj.show("Usuario dado de alta exitosamente");
+            msj.show("Afiliado dado de alta exitosamente");
 
 
         }
@@ -115,5 +115,8 @@ namespace SIMED_V1.Forms_Para_ABM
                 cmbPlanes.Items.Add(plan.NombrePlan);
             }
         }
+
+        
+
     }
 }
