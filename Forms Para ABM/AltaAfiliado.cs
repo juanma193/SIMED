@@ -22,64 +22,97 @@ namespace SIMED_V1.Forms_Para_ABM
             ComboPlan();
         }
 
-        private void cmbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void cmbBarrios_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbPlanes_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCrearAmbulancia_Click(object sender, EventArgs e)
+        private void btnCrearAfiliado_Click(object sender, EventArgs e)
         {
             var afiliado = new Afiliados();
-            var resultado = new bool();
+            var valNombre = true;
+            var valCalle = true;
+            var valTel = true;
+            var valPlan = true;
+            var valDoc = true;
+            var valSexo = true;
 
-            afiliado.Apellido = txtApellido.Text;
-            afiliado.Nombre = txtNombre.Text;
-            afiliado.Calle = txtCalle.Text;
-            afiliado.NroCalle = int.Parse(txtNroCalle.Text);
-            afiliado.NumeroDocumento = int.Parse(txtNroDoc.Text);
-            afiliado.NumeroTelefono = int.Parse(txtNroTel.Text);
-            afiliado.IdBarrio = cmbBarrios.SelectedIndex;
-            afiliado.IdPlan = cmbPlanes.SelectedIndex;
-            if (btnFemenino.Checked == true)
+            if(txtApellido.Text == "" || txtNombre.Text == "")
             {
-                afiliado.IdSexo = 1;
-            }
-            if (btnMasculino.Checked == true)
-            {
-                afiliado.IdSexo = 2;
-            }
-            if (btnOtro.Checked == true)
-            {
-                afiliado.IdSexo = 3;
-            }
-            afiliado.IdTipoDocumento = cmbTipoDocumento.SelectedIndex;
-            afiliado.FechaNacimiento = fechaNac.Value;
-            afiliado.FechaInscripcion = fechaInscripcion.Value;
-
-            resultado = AfiliadosBD.insertarAfiliado(afiliado);
-
-            if (!resultado)
-            {
+                valNombre = false;
                 ErroresForm mensaje = new ErroresForm();
-                mensaje.show("Error al dar de alta el afiliado");
+                mensaje.show("Ingrese nombre y apellido del afiliado");
             }
-            CorrectoForm msj = new CorrectoForm();
-            msj.show("Afiliado dado de alta exitosamente");
 
+            else if(txtCalle.Text == "" || txtNroCalle.Text == "" || cmbBarrios.SelectedIndex == 0)
+            {
+                valCalle = false;
+                ErroresForm mensaje = new ErroresForm();
+                mensaje.show("Ingrese la dirección del afiliado");
+            }
+
+            else if(txtNroTel.Text == "")
+            {
+                valTel = false;
+                ErroresForm mensaje = new ErroresForm();
+                mensaje.show("Ingrese el número de teléfono del afiliado");
+            }
+
+            else if(cmbPlanes.SelectedIndex == 0)
+            {
+                valPlan = false;
+                ErroresForm mensaje = new ErroresForm();
+                mensaje.show("Seleccione el plan");
+            }
+
+            else if(cmbTipoDocumento.SelectedIndex == 0 || txtNroDoc.Text == "")
+            {
+                valDoc = false;
+                ErroresForm mensaje = new ErroresForm();
+                mensaje.show("Ingrese el tipo y el número de documento");
+            }
+
+            else if(btnFemenino.Checked == false && btnMasculino.Checked == false && btnOtro.Checked == false)
+            {
+                valSexo = false;
+                ErroresForm mensaje = new ErroresForm();
+                mensaje.show("Ingrese el sexo del afiliado");
+            }
+
+            if (valSexo == true && valPlan == true && valNombre == true && valDoc == true && valCalle == true && valTel == true)
+            {
+                afiliado.Apellido = txtApellido.Text;
+                afiliado.Nombre = txtNombre.Text;
+                afiliado.Calle = txtCalle.Text;
+                afiliado.NroCalle = Convert.ToInt32(txtNroCalle.Text);
+                afiliado.NumeroDocumento = int.Parse(txtNroDoc.Text);
+                afiliado.NumeroTelefono = txtNroTel.Text;
+                afiliado.IdBarrio = cmbBarrios.SelectedIndex;
+                afiliado.IdPlan = cmbPlanes.SelectedIndex;
+                if (btnFemenino.Checked == true)
+                {
+                    afiliado.IdSexo = 1;
+                }
+                if (btnMasculino.Checked == true)
+                {
+                    afiliado.IdSexo = 2;
+                }
+                if (btnOtro.Checked == true)
+                {
+                    afiliado.IdSexo = 3;
+                }
+                afiliado.IdTipoDocumento = cmbTipoDocumento.SelectedIndex;
+                afiliado.FechaNacimiento = fechaNac.Value;
+                afiliado.FechaInscripcion = fechaInscripcion.Value;
+
+                var resultado = AfiliadosBD.insertarAfiliado(afiliado);
+
+                if (!resultado)
+                {
+                    ErroresForm mensaje = new ErroresForm();
+                    mensaje.show("Error al dar de alta el afiliado");
+                }
+                else
+                {
+                    CorrectoForm msj = new CorrectoForm();
+                    msj.show("Afiliado dado de alta exitosamente");
+                }
+            }
 
         }
         private void ComboTipoDoc()
@@ -116,7 +149,31 @@ namespace SIMED_V1.Forms_Para_ABM
             }
         }
 
-        
+        private void txtNroTel_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar que la tecla presionada no sea CTRL u otra tecla no numerica
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
 
+        private void txtNroCalle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar que la tecla presionada no sea CTRL u otra tecla no numerica
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNroDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar que la tecla presionada no sea CTRL u otra tecla no numerica
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
