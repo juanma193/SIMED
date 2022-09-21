@@ -106,7 +106,7 @@
             this.btnCrearAmbulancia.Size = new System.Drawing.Size(192, 37);
             this.btnCrearAmbulancia.TabIndex = 16;
             this.btnCrearAmbulancia.Text = "Crear Afiliado";
-            this.btnCrearAmbulancia.Click += new System.EventHandler(this.btnCrearAmbulancia_Click);
+            this.btnCrearAmbulancia.Click += new System.EventHandler(this.btnCrearAfiliado_Click);
             // 
             // guna2ShadowPanel1
             // 
@@ -135,7 +135,6 @@
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1013, 343);
             this.guna2ShadowPanel1.TabIndex = 15;
-            this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
             // cmbPlanes
             // 
@@ -154,7 +153,6 @@
             this.cmbPlanes.Name = "cmbPlanes";
             this.cmbPlanes.Size = new System.Drawing.Size(276, 36);
             this.cmbPlanes.TabIndex = 32;
-            this.cmbPlanes.SelectedIndexChanged += new System.EventHandler(this.cmbPlanes_SelectedIndexChanged);
             // 
             // cmbBarrios
             // 
@@ -173,7 +171,6 @@
             this.cmbBarrios.Name = "cmbBarrios";
             this.cmbBarrios.Size = new System.Drawing.Size(192, 36);
             this.cmbBarrios.TabIndex = 31;
-            this.cmbBarrios.SelectedIndexChanged += new System.EventHandler(this.cmbBarrios_SelectedIndexChanged);
             // 
             // btnVolver
             // 
@@ -246,6 +243,7 @@
             this.txtNroCalle.SelectedText = "";
             this.txtNroCalle.Size = new System.Drawing.Size(187, 29);
             this.txtNroCalle.TabIndex = 27;
+            this.txtNroCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroCalle_KeyPress);
             // 
             // txtCalle
             // 
@@ -325,6 +323,7 @@
             this.txtNroTel.SelectedText = "";
             this.txtNroTel.Size = new System.Drawing.Size(276, 29);
             this.txtNroTel.TabIndex = 23;
+            this.txtNroTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroTel_KeyPress);
             // 
             // txtNroDoc
             // 
@@ -351,6 +350,7 @@
             this.txtNroDoc.SelectedText = "";
             this.txtNroDoc.Size = new System.Drawing.Size(276, 29);
             this.txtNroDoc.TabIndex = 22;
+            this.txtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDoc_KeyPress);
             // 
             // txtApellido
             // 
@@ -492,7 +492,6 @@
             this.cmbTipoDocumento.Name = "cmbTipoDocumento";
             this.cmbTipoDocumento.Size = new System.Drawing.Size(276, 36);
             this.cmbTipoDocumento.TabIndex = 3;
-            this.cmbTipoDocumento.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDocumento_SelectedIndexChanged);
             // 
             // lblCrearCuenta
             // 
