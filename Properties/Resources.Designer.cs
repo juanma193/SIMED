@@ -63,6 +63,76 @@ namespace SIMED_V1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1054957_tools_screwdriver_wrench_icon {
+            get {
+                object obj = ResourceManager.GetObject("1054957_tools_screwdriver_wrench_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1061162_care_health_journey_medicine_pill_icon {
+            get {
+                object obj = ResourceManager.GetObject("1061162_care_health_journey_medicine_pill_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _169845_numbers_appicns_icon {
+            get {
+                object obj = ResourceManager.GetObject("169845_numbers_appicns_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _299068_add_sign_icon {
+            get {
+                object obj = ResourceManager.GetObject("299068_add_sign_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _5964800_drugs_healthcare_medical_medicine_prescription_icon {
+            get {
+                object obj = ResourceManager.GetObject("5964800_drugs_healthcare_medical_medicine_prescription_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _897245_clock_manage_schedule_time_icon {
+            get {
+                object obj = ResourceManager.GetObject("897245_clock_manage_schedule_time_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _9299395_positive_deal_status_icon {
+            get {
+                object obj = ResourceManager.GetObject("9299395_positive_deal_status_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap abstract_phone_wallpaper_aesthetic_160820_1 {
             get {
                 object obj = ResourceManager.GetObject("abstract-phone-wallpaper-aesthetic-160820-1", resourceCulture);

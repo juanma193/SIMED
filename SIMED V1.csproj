@@ -41,6 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -431,11 +432,11 @@
     <Compile Include="Forms Para ABM\ConsultaEnfermero.Designer.cs">
       <DependentUpon>ConsultaEnfermero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Para ABM\ConsultaMédico}.cs">
+    <Compile Include="Forms Para ABM\ConsultaMedico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Para ABM\ConsultaMédico}.Designer.cs">
-      <DependentUpon>ConsultaMédico}.cs</DependentUpon>
+    <Compile Include="Forms Para ABM\ConsultaMedico.Designer.cs">
+      <DependentUpon>ConsultaMedico.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\ConsultaPlanes.cs">
       <SubType>Form</SubType>
@@ -466,6 +467,12 @@
     </Compile>
     <Compile Include="Forms Para El Menu\UAfiliados.Designer.cs">
       <DependentUpon>UAfiliados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para El Menu\UFuncionalidades.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms Para El Menu\UFuncionalidades.Designer.cs">
+      <DependentUpon>UFuncionalidades.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para El Menu\UPlanes.cs">
       <SubType>UserControl</SubType>
@@ -579,8 +586,8 @@
     <EmbeddedResource Include="Forms Para ABM\ConsultaEnfermero.resx">
       <DependentUpon>ConsultaEnfermero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Para ABM\ConsultaMédico}.resx">
-      <DependentUpon>ConsultaMédico}.cs</DependentUpon>
+    <EmbeddedResource Include="Forms Para ABM\ConsultaMedico.resx">
+      <DependentUpon>ConsultaMedico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultaPlanes.resx">
       <DependentUpon>ConsultaPlanes.cs</DependentUpon>
@@ -596,6 +603,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UAfiliados.resx">
       <DependentUpon>UAfiliados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para El Menu\UFuncionalidades.resx">
+      <DependentUpon>UFuncionalidades.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UPlanes.resx">
       <DependentUpon>UPlanes.cs</DependentUpon>
@@ -766,6 +776,13 @@
     <Content Include="archivos\usuarioss.png" />
     <Content Include="archivos\y2mate.com - Playstation 2 Startup Noise.mp3" />
     <Content Include="archivos\y2mate.com - Playstation 3 PS3 StartUp  Sound Effect for editing.mp3" />
+    <None Include="Resources\1054957_tools_screwdriver_wrench_icon.png" />
+    <None Include="Resources\1061162_care_health_journey_medicine_pill_icon.png" />
+    <None Include="Resources\9299395_positive_deal_status_icon.png" />
+    <None Include="Resources\897245_clock_manage_schedule_time_icon.png" />
+    <None Include="Resources\5964800_drugs_healthcare_medical_medicine_prescription_icon.png" />
+    <None Include="Resources\169845_numbers_appicns_icon.png" />
+    <None Include="Resources\299068_add_sign_icon.png" />
     <None Include="Resources\cerrar sesion.png" />
     <None Include="Resources\doctor1.png" />
     <None Include="Resources\money icon.png" />
