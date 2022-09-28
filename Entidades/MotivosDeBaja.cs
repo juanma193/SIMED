@@ -15,7 +15,7 @@ namespace SIMED.Models
         }
 
         public int IdMotivoBaja { get; set; }
-        public string Desrcipcion { get; set; }
+        public string DesrcipcionMotivoBaja { get; set; }
 
         public virtual ICollection<Bajas> Bajas { get; set; }
     }

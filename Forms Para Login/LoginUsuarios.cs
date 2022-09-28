@@ -1,4 +1,4 @@
-﻿using SIMED_V1.Entidades;
+﻿using SIMED.Models;
 using SIMED_V1.Bases_de_datos;
 using System;
 using System.Collections.Generic;
@@ -99,7 +99,7 @@ namespace SIMED_V1
                         Usuarios user = new Usuarios();
                         user.NombreDeUsuario = nombreDeUsuario;
                         user.Email = correo;
-                        user.Password = password;
+                        user.Contraseña = password;
                         ProgressBar ventana = new ProgressBar();
                         ventana.Show();
                         this.Hide();

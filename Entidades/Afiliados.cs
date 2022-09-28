@@ -17,7 +17,7 @@ namespace SIMED.Models
             TurnosPuntoAPunto = new HashSet<TurnosPuntoAPunto>();
         }
 
-        public int? NumeroAfiliado { get; set; }
+        public int NumeroAfiliado { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public int IdSexo { get; set; }
