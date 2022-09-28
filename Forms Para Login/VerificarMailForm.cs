@@ -18,13 +18,22 @@ namespace SIMED_V1
         string user;
         string contraseña;
         string email;
-        public VerificarMailForm(string randomCode, string nombreUsu, string password, string correo)
+        string nameusu;
+        string apellidousu;
+        int age;
+        int sex;
+        public VerificarMailForm(string randomCode, string nombreUsu, string password, string correo, string nombre, string apellido, int edad, int sexo)
         {
             InitializeComponent();
             code = randomCode;
             user = nombreUsu;
             contraseña = password;
             email = correo;
+            nameusu = nombre;
+            apellidousu = apellido;
+            age = edad;
+            sex = sexo;
+
         }
 
         private void VerificarMailForm_Load(object sender, EventArgs e)
@@ -58,8 +67,11 @@ namespace SIMED_V1
                     string username = user;
                     string userpass = Util.Encrypt.GetSHA256(contraseña);
                     string usermail = email;
-                    bool resultado1 = UsuarioBD.InsertarUsuario(username, userpass, usermail);
-                    if (resultado1)
+                    bool resultado1 = UsuarioBD.InsertarEmpleado(nameusu,apellidousu,age,sex);
+                    int legajo = UsuarioBD.BuscarLegajo();
+
+                    bool resultado2 = UsuarioBD.InsertarUsuario(username, userpass, usermail,legajo);
+                    if (resultado2 && resultado1)
                     {
                         CorrectoForm co = new CorrectoForm();
                         co.show("Usuario dado de alta con éxito");

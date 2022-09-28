@@ -10,24 +10,26 @@ namespace SIMED_V1.Bases_de_datos
 {
     public class UsuarioBD
     {
-        public static bool InsertarUsuario(string nombreDeUsuario, string password, string usermail)
+        public static bool InsertarUsuario(string nombreDeUsuario, string password, string usermail, int legajo)
         {
 
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
             SqlConnection cn = new SqlConnection(cadenaConexion);
 
             bool resultado = false;
-
+            int perfil = 2;
 
             try
             {
 
                 SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO USUARIOS (NombreDeUsuario,Contraseña,Email) VALUES(@nombreUsu,@pass, @email)";
+                string consulta = "INSERT INTO USUARIOS (NombreDeUsuario,Contraseña,Email,legajo_empleado,id_perfil) VALUES(@nombreUsu,@pass, @email,@legajo, @perfil)";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@nombreUsu", nombreDeUsuario);
                 cmd.Parameters.AddWithValue("@pass", password);
                 cmd.Parameters.AddWithValue("@email", usermail);
+                cmd.Parameters.AddWithValue("@perfil", perfil);
+                cmd.Parameters.AddWithValue("@legajo", legajo);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -348,6 +350,102 @@ namespace SIMED_V1.Bases_de_datos
 
         }
 
+
+
+        public static bool InsertarEmpleado(string nombre, string apellido, int edad, int sexo)
+        {
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            bool resultado = false;
+            int perfil = 2;
+
+
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "INSERT INTO EMPLEADOS (Nombre,Apellido,Edad,id_sexo) VALUES(@nombre,@apellido, @edad,@sexo)";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nombre", nombre);
+                cmd.Parameters.AddWithValue("@apellido", apellido);
+                cmd.Parameters.AddWithValue("@edad",edad);
+                cmd.Parameters.AddWithValue("@sexo", sexo);
+                
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+                resultado = true;
+            }
+            catch (Exception ex)
+            {
+
+                ErroresForm window = new ErroresForm();
+                window.show("Error" + " " + ex);
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+
+
+
+            return resultado;
+        }
+
+        public static int BuscarLegajo()
+        {
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            int legajo;
+
+
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT * FROM EMPLEADOS ORDER BY legajo desc";
+                cmd.Parameters.Clear();
+
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+
+
+                cn.Open();
+                cmd.Connection = cn;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr != null && dr.Read())
+                {
+                    legajo = int.Parse(dr["legajo"].ToString());
+                    return legajo;
+                }
+               
+            }
+            catch (Exception ex)
+            {
+
+                ErroresForm window = new ErroresForm();
+                window.show("Error" + " " + ex);
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+
+
+            return -1;
+            
+        }
 
 
     }

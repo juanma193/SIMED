@@ -22,6 +22,7 @@ namespace SIMED_V1
         bool vacio = false;
         bool bandera = false;
         string randomCode;
+        int variablesexo;
         public static string to;
         public NuevoUsuario()
         {
@@ -44,6 +45,10 @@ namespace SIMED_V1
             lblEmail.Visible = false;
             lblContraseña.Visible = false;
             lblRepetirContraseña.Visible = false;
+            lblNombre.Visible = false;
+            lblEdad.Visible = false;
+            lblApellido.Visible = false;
+            lblSexo.Visible = false;
         }
 
         private void btnCrearCuenta_Click(object sender, EventArgs e)
@@ -52,6 +57,10 @@ namespace SIMED_V1
             lblEmail.Visible = false;
             lblContraseña.Visible = false;
             lblRepetirContraseña.Visible = false;
+            lblNombre.Visible = false;
+            lblApellido.Visible = false;
+            lblEdad.Visible = false;
+            lblSexo.Visible = false;
 
             string email = txtMail.Text;
             Regex regex = new Regex(@"^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-za-za-z]{2,3})+$");
@@ -60,14 +69,14 @@ namespace SIMED_V1
 
             ErorresEnRojo(bandera);
 
-            if ((txtMail.Text == "") || (txtContraseña.Text == "") || (txtRepetirContraseña.Text == "") || (txtNombreUsuario.Text == ""))
-            {
-                vacio = true;
-            }
-            else
-            { vacio = false; }
+            //if ((txtMail.Text == "") || (txtContraseña.Text == "") || (txtRepetirContraseña.Text == "") || (txtNombreUsuario.Text == ""))
+            //{
+            //    vacio = true;
+            //}
+            //else
+            //{ vacio = false; }
 
-            if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true && match.Success && vacio == true)
+            if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true && match.Success)
                 {
                     try
                     {
@@ -110,10 +119,36 @@ namespace SIMED_V1
 
                                 if (bandera ==true)
                                 {
+                                    
+
+                                    if (btnFemenino.Checked)
+                                    {
+                                        variablesexo = 1;
+                                    }
+
+                                    if (btnMasculino.Checked)
+                                    {
+                                        variablesexo = 2;
+                                    }
+
+                                    if (btnOtro.Checked)
+                                    {
+                                        variablesexo= 3;
+                                    }
+
+
                                     string enviarusu = txtNombreUsuario.Text;
                                     string enviarcontraseña = txtContraseña.Text;
                                     string correo = txtMail.Text;
-                                    VerificarMailForm ventana = new VerificarMailForm(randomCode, enviarusu, enviarcontraseña, correo);
+                                    string enviarnombre = txtNombre.Text;
+                                    string enviarapellido = txtApellido.Text;
+                                    int enviaredad = int.Parse(txtEdad.Text);
+
+                                    int enviarsexo = variablesexo;
+
+
+
+                                    VerificarMailForm ventana = new VerificarMailForm(randomCode, enviarusu, enviarcontraseña, correo, enviarnombre,enviarapellido,enviaredad,enviarsexo);
                                     ventana.Show();
                                     this.Hide();
                                 }
@@ -203,8 +238,28 @@ namespace SIMED_V1
                 lblRepetirContraseña.Visible = true;
                 lblRepetirContraseña.Text = "Contraseña obligatoria";
             }
+            if (txtNombre.Text.Equals("") && bandera == true)
+            {
+                lblNombre.Visible = true;
+                lblNombre.Text = "Nombre obligatorio";
+            }
+            if (txtApellido.Text.Equals("") && bandera == true)
+            {
+                lblApellido.Visible = true;
+                lblApellido.Text = "Nombre obligatorio";
+            }
+            if (txtEdad.Text.Equals("") && bandera == true)
+            {
+                lblEdad.Visible = true;
+                lblEdad.Text = "Edad obligatoria";
+            }
 
-
+            if (!(btnFemenino.Checked || btnMasculino.Checked || btnOtro.Checked) && bandera == true)
+            {
+                lblSexo.Visible = true;
+                lblSexo.Text = "Debe seleccionar un sexo";
+            }
+            
         }
 
        
@@ -316,5 +371,51 @@ namespace SIMED_V1
             }
             else { lblRepetirContraseña.Visible = false; }
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text.Equals(""))
+            {
+                lblNombre.Visible = true;
+                lblNombre.Text = "Nombre obligatorio";
+            }
+            else { lblNombre.Visible = false; }
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            if (txtApellido.Text.Equals(""))
+            {
+                lblApellido.Visible = true;
+                lblApellido.Text = "Apellido obligatorio";
+            }
+            else { lblApellido.Visible = false; }
+        }
+
+        private void txtEdad_TextChanged(object sender, EventArgs e)
+        {
+            if (txtEdad.Text.Equals(""))
+            {
+                lblEdad.Visible = true;
+                lblEdad.Text = "Edad obligatoria";
+            }
+            else { lblEdad.Visible = false; }
+        }
+
+        private void btnFemenino_CheckedChanged(object sender, EventArgs e)
+        {
+            lblSexo.Visible = false;
+        }
+
+        private void btnMasculino_CheckedChanged(object sender, EventArgs e)
+        {
+            lblSexo.Visible = false;
+        }
+
+        private void btnOtro_CheckedChanged(object sender, EventArgs e)
+        {
+            lblSexo.Visible = false;
+        }
     }
-}
+    }
+
