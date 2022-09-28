@@ -29,7 +29,7 @@ namespace SIMED_V1
 
         private void VerificarMailForm_Load(object sender, EventArgs e)
         {
-
+            txtCodigo.Focus();
         }
 
         private void btnCrearCuenta_Click(object sender, EventArgs e)

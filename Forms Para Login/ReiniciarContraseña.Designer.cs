@@ -36,12 +36,12 @@
             this.lblReiniciarContraseña = new System.Windows.Forms.Label();
             this.lblNuevaContraseña = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.txtContraseña = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtRepetirContraseña = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.txtContraseña = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtRepetirContraseña = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnVolver = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -58,7 +58,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(504, 36);
-            this.guna2Panel1.TabIndex = 8;
+            this.guna2Panel1.TabIndex = 4;
             // 
             // btnMinimizar
             // 
@@ -88,7 +88,7 @@
             this.btnReestablecerContraseña.Location = new System.Drawing.Point(29, 247);
             this.btnReestablecerContraseña.Name = "btnReestablecerContraseña";
             this.btnReestablecerContraseña.Size = new System.Drawing.Size(339, 45);
-            this.btnReestablecerContraseña.TabIndex = 11;
+            this.btnReestablecerContraseña.TabIndex = 3;
             this.btnReestablecerContraseña.Text = "Reestablecer Contraseña";
             this.btnReestablecerContraseña.Click += new System.EventHandler(this.btnReestablecerContraseña_Click);
             // 
@@ -99,7 +99,7 @@
             this.lblReiniciarContraseña.Location = new System.Drawing.Point(27, 50);
             this.lblReiniciarContraseña.Name = "lblReiniciarContraseña";
             this.lblReiniciarContraseña.Size = new System.Drawing.Size(362, 41);
-            this.lblReiniciarContraseña.TabIndex = 12;
+            this.lblReiniciarContraseña.TabIndex = 0;
             this.lblReiniciarContraseña.Text = "Reestablecer Contraseña";
             // 
             // lblNuevaContraseña
@@ -108,7 +108,7 @@
             this.lblNuevaContraseña.Location = new System.Drawing.Point(23, 21);
             this.lblNuevaContraseña.Name = "lblNuevaContraseña";
             this.lblNuevaContraseña.Size = new System.Drawing.Size(338, 76);
-            this.lblNuevaContraseña.TabIndex = 13;
+            this.lblNuevaContraseña.TabIndex = 0;
             this.lblNuevaContraseña.Text = "Ingrese su nueva contraseña";
             this.lblNuevaContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNuevaContraseña.Click += new System.EventHandler(this.lblNuevaContraseña_Click);
@@ -125,7 +125,59 @@
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(403, 322);
-            this.guna2ShadowPanel1.TabIndex = 14;
+            this.guna2ShadowPanel1.TabIndex = 1;
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.Animated = true;
+            this.txtContraseña.AutoRoundedCorners = true;
+            this.txtContraseña.BorderRadius = 23;
+            this.txtContraseña.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtContraseña.DefaultText = "";
+            this.txtContraseña.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtContraseña.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtContraseña.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtContraseña.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtContraseña.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtContraseña.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.txtContraseña.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtContraseña.IconLeft = global::SIMED_V1.Properties.Resources.padlock1;
+            this.txtContraseña.Location = new System.Drawing.Point(44, 100);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '●';
+            this.txtContraseña.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtContraseña.PlaceholderText = "Nueva contraseña";
+            this.txtContraseña.SelectedText = "";
+            this.txtContraseña.Size = new System.Drawing.Size(303, 48);
+            this.txtContraseña.TabIndex = 1;
+            this.txtContraseña.UseSystemPasswordChar = true;
+            // 
+            // txtRepetirContraseña
+            // 
+            this.txtRepetirContraseña.Animated = true;
+            this.txtRepetirContraseña.AutoRoundedCorners = true;
+            this.txtRepetirContraseña.BorderRadius = 23;
+            this.txtRepetirContraseña.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtRepetirContraseña.DefaultText = "";
+            this.txtRepetirContraseña.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtRepetirContraseña.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtRepetirContraseña.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRepetirContraseña.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtRepetirContraseña.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtRepetirContraseña.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRepetirContraseña.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.txtRepetirContraseña.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtRepetirContraseña.IconLeft = global::SIMED_V1.Properties.Resources.padlock1;
+            this.txtRepetirContraseña.Location = new System.Drawing.Point(44, 177);
+            this.txtRepetirContraseña.Name = "txtRepetirContraseña";
+            this.txtRepetirContraseña.PasswordChar = '●';
+            this.txtRepetirContraseña.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtRepetirContraseña.PlaceholderText = "Repetir Contraseña";
+            this.txtRepetirContraseña.SelectedText = "";
+            this.txtRepetirContraseña.Size = new System.Drawing.Size(303, 48);
+            this.txtRepetirContraseña.TabIndex = 2;
+            this.txtRepetirContraseña.UseSystemPasswordChar = true;
             // 
             // guna2ShadowForm1
             // 
@@ -157,61 +209,9 @@
             this.guna2Button1.Location = new System.Drawing.Point(139, 453);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 17;
+            this.guna2Button1.TabIndex = 2;
             this.guna2Button1.Text = "Home";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Animated = true;
-            this.txtContraseña.AutoRoundedCorners = true;
-            this.txtContraseña.BorderRadius = 23;
-            this.txtContraseña.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtContraseña.DefaultText = "";
-            this.txtContraseña.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtContraseña.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtContraseña.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtContraseña.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtContraseña.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtContraseña.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
-            this.txtContraseña.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtContraseña.IconLeft = global::SIMED_V1.Properties.Resources.padlock1;
-            this.txtContraseña.Location = new System.Drawing.Point(44, 100);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.PasswordChar = '●';
-            this.txtContraseña.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtContraseña.PlaceholderText = "Nueva contraseña";
-            this.txtContraseña.SelectedText = "";
-            this.txtContraseña.Size = new System.Drawing.Size(303, 48);
-            this.txtContraseña.TabIndex = 9;
-            this.txtContraseña.UseSystemPasswordChar = true;
-            // 
-            // txtRepetirContraseña
-            // 
-            this.txtRepetirContraseña.Animated = true;
-            this.txtRepetirContraseña.AutoRoundedCorners = true;
-            this.txtRepetirContraseña.BorderRadius = 23;
-            this.txtRepetirContraseña.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtRepetirContraseña.DefaultText = "";
-            this.txtRepetirContraseña.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtRepetirContraseña.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtRepetirContraseña.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRepetirContraseña.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtRepetirContraseña.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtRepetirContraseña.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRepetirContraseña.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
-            this.txtRepetirContraseña.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtRepetirContraseña.IconLeft = global::SIMED_V1.Properties.Resources.padlock1;
-            this.txtRepetirContraseña.Location = new System.Drawing.Point(44, 177);
-            this.txtRepetirContraseña.Name = "txtRepetirContraseña";
-            this.txtRepetirContraseña.PasswordChar = '●';
-            this.txtRepetirContraseña.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtRepetirContraseña.PlaceholderText = "Repetir Contraseña";
-            this.txtRepetirContraseña.SelectedText = "";
-            this.txtRepetirContraseña.Size = new System.Drawing.Size(303, 48);
-            this.txtRepetirContraseña.TabIndex = 10;
-            this.txtRepetirContraseña.UseSystemPasswordChar = true;
             // 
             // btnVolver
             // 
@@ -229,7 +229,7 @@
             this.btnVolver.Location = new System.Drawing.Point(34, 453);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 45);
-            this.btnVolver.TabIndex = 18;
+            this.btnVolver.TabIndex = 3;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ReiniciarContraseña

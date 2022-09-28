@@ -38,10 +38,10 @@
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnCrearCuenta = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.txtCodigo = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2ShadowForm1 = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            this.txtCodigo = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnVolver = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1.SuspendLayout();
             this.guna2ShadowPanel1.SuspendLayout();
@@ -63,7 +63,7 @@
             this.lblCodigo1.Location = new System.Drawing.Point(6, 24);
             this.lblCodigo1.Name = "lblCodigo1";
             this.lblCodigo1.Size = new System.Drawing.Size(624, 109);
-            this.lblCodigo1.TabIndex = 7;
+            this.lblCodigo1.TabIndex = 0;
             this.lblCodigo1.Text = "Te hemos enviado un correo con el código de verificación. Ingresalo a continuació" +
     "n para poder crear el usuario";
             this.lblCodigo1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -75,7 +75,7 @@
             this.lblCrearCuenta.Location = new System.Drawing.Point(36, 59);
             this.lblCrearCuenta.Name = "lblCrearCuenta";
             this.lblCrearCuenta.Size = new System.Drawing.Size(200, 41);
-            this.lblCrearCuenta.TabIndex = 8;
+            this.lblCrearCuenta.TabIndex = 0;
             this.lblCrearCuenta.Text = "Crear Cuenta";
             // 
             // btnMinimizar
@@ -87,7 +87,7 @@
             this.btnMinimizar.Location = new System.Drawing.Point(616, 11);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
-            this.btnMinimizar.TabIndex = 11;
+            this.btnMinimizar.TabIndex = 0;
             // 
             // guna2Panel1
             // 
@@ -97,7 +97,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(734, 36);
-            this.guna2Panel1.TabIndex = 9;
+            this.guna2Panel1.TabIndex = 4;
             // 
             // guna2ControlBox1
             // 
@@ -107,7 +107,7 @@
             this.guna2ControlBox1.Location = new System.Drawing.Point(677, 11);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 22);
-            this.guna2ControlBox1.TabIndex = 12;
+            this.guna2ControlBox1.TabIndex = 1;
             this.guna2ControlBox1.Click += new System.EventHandler(this.guna2ControlBox1_Click);
             // 
             // btnCrearCuenta
@@ -127,7 +127,7 @@
             this.btnCrearCuenta.Location = new System.Drawing.Point(91, 227);
             this.btnCrearCuenta.Name = "btnCrearCuenta";
             this.btnCrearCuenta.Size = new System.Drawing.Size(428, 45);
-            this.btnCrearCuenta.TabIndex = 11;
+            this.btnCrearCuenta.TabIndex = 2;
             this.btnCrearCuenta.Text = "Confirmar creación de cuenta";
             this.btnCrearCuenta.Click += new System.EventHandler(this.btnCrearCuenta_Click);
             // 
@@ -144,7 +144,32 @@
             this.guna2ShadowPanel1.ShadowDepth = 80;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(650, 305);
-            this.guna2ShadowPanel1.TabIndex = 12;
+            this.guna2ShadowPanel1.TabIndex = 1;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Animated = true;
+            this.txtCodigo.AutoRoundedCorners = true;
+            this.txtCodigo.BorderRadius = 23;
+            this.txtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCodigo.DefaultText = "";
+            this.txtCodigo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCodigo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCodigo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCodigo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCodigo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtCodigo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.txtCodigo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCodigo.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
+            this.txtCodigo.Location = new System.Drawing.Point(170, 147);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.PasswordChar = '\0';
+            this.txtCodigo.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtCodigo.PlaceholderText = "Ingresa el codigo";
+            this.txtCodigo.SelectedText = "";
+            this.txtCodigo.Size = new System.Drawing.Size(272, 48);
+            this.txtCodigo.TabIndex = 1;
             // 
             // guna2AnimateWindow1
             // 
@@ -170,34 +195,9 @@
             this.guna2Button1.Location = new System.Drawing.Point(260, 442);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(180, 45);
-            this.guna2Button1.TabIndex = 18;
+            this.guna2Button1.TabIndex = 2;
             this.guna2Button1.Text = "Home";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Animated = true;
-            this.txtCodigo.AutoRoundedCorners = true;
-            this.txtCodigo.BorderRadius = 23;
-            this.txtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCodigo.DefaultText = "";
-            this.txtCodigo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCodigo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCodigo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCodigo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCodigo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtCodigo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
-            this.txtCodigo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCodigo.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
-            this.txtCodigo.Location = new System.Drawing.Point(170, 147);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.PasswordChar = '\0';
-            this.txtCodigo.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtCodigo.PlaceholderText = "Ingresa el codigo";
-            this.txtCodigo.SelectedText = "";
-            this.txtCodigo.Size = new System.Drawing.Size(272, 48);
-            this.txtCodigo.TabIndex = 10;
             // 
             // btnVolver
             // 
@@ -215,7 +215,7 @@
             this.btnVolver.Location = new System.Drawing.Point(31, 442);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 45);
-            this.btnVolver.TabIndex = 19;
+            this.btnVolver.TabIndex = 3;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // VerificarMailForm

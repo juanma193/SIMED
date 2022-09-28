@@ -12,12 +12,14 @@ using System.Net;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 using SIMED_V1.Bases_de_datos;
+using SIMED_V1.Forms_Mensajes_Personalizados;
 
 namespace SIMED_V1
 {
     public partial class NuevoUsuario : Form
 
     {
+        bool vacio = false;
         bool bandera = false;
         string randomCode;
         public static string to;
@@ -37,6 +39,7 @@ namespace SIMED_V1
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
+            txtNombreUsuario.Focus();
             lblNombreUsuario.Visible = false;
             lblEmail.Visible = false;
             lblContraseña.Visible = false;
@@ -57,7 +60,14 @@ namespace SIMED_V1
 
             ErorresEnRojo(bandera);
 
-            if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true && match.Success)
+            if ((txtMail.Text == "") || (txtContraseña.Text == "") || (txtRepetirContraseña.Text == "") || (txtNombreUsuario.Text == ""))
+            {
+                vacio = true;
+            }
+            else
+            { vacio = false; }
+
+            if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true && match.Success && vacio == true)
                 {
                     try
                     {
@@ -135,16 +145,37 @@ namespace SIMED_V1
                 }
                 else
                 {
-                    if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false)
+                    if (vacio == true)
                     {
                         ErroresForm window = new ErroresForm();
-                        window.show("Error: las contraseñas deben ser iguales");
+                        window.show("Error: debe rellenar todos los campos antes de continuar");
                     }
-                    if(!match.Success)
+
+                    if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false && !match.Success && (txtMail.Text != "") && vacio == false)
                     {
-                        ErroresForm window = new ErroresForm();
-                        window.show("Error: el formato del mail no es correcto. Ingrese uno válido");
+                        string error = "Uno o más campos no son correctos";
+                        string errorAdicional1 = "El formato del mail no es correcto. \n" +  "Las contraseñas deben ser iguales";
+
+                        MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                        ventana.Show();
+
                     }
+                    else
+                    {
+                        if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false && vacio == false)
+                        {
+                            ErroresForm window = new ErroresForm();
+                            window.show("Error: las contraseñas deben ser iguales");
+                        }
+                        if (!match.Success && (txtMail.Text != "") && vacio == false)
+                        {
+                            ErroresForm window = new ErroresForm();
+                            window.show("Error: el formato del mail no es correcto. Ingrese uno válido");
+                        }
+                }
+
+                    
+                    
                 }
             
         }
