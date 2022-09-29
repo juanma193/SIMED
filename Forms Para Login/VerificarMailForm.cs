@@ -34,6 +34,7 @@ namespace SIMED_V1
             apellidousu = apellido;
             age = edad;
             sex = sexo;
+
         }
 
         private void VerificarMailForm_Load(object sender, EventArgs e)
@@ -44,74 +45,57 @@ namespace SIMED_V1
         private void btnCrearCuenta_Click(object sender, EventArgs e)
         {
             string codigo = code;
-            
+
             string input = txtCodigo.Text;
             Usuarios usuario = new Usuarios();
             Empleados empleado = new Empleados();
-            try
-            {
-                int result = Int32.Parse(input);
-                Console.WriteLine(result);
-            }
-            catch (FormatException)
-            {
-                nonumero = true;
-                ErroresForm window = new ErroresForm();
-                window.show("Error: debe ingresar un código de tipo numérico. No se admiten caracteres diferentes");
-                txtCodigo.Focus();
 
-            
-            
-                if (codigo == (txtCodigo.Text).ToString())
+            if (codigo == (txtCodigo.Text).ToString())
+            {
+                //Primero creamos el empleado y lo insertamos
+                empleado.Nombre = nameusu;
+                empleado.Apellido = apellidousu;
+                empleado.Edad = age;
+                empleado.IdSexo = sex;
+                bool resultado1 = UsuarioBD.InsertarEmpleado(empleado);
+
+                //Creamos el usuario y le asignamos el numero de legajo del ultimo empleado creado
+                usuario.NombreDeUsuario = user;
+                usuario.Contraseña = Util.Encrypt.GetSHA256(contraseña);
+                usuario.Email = email;
+                usuario.IdPerfil = 2;
+                usuario.LegajoEmpleado = UsuarioBD.BuscarLegajo();
+                bool resultado2 = UsuarioBD.InsertarUsuario(usuario);
+                if (resultado2 && resultado1)
                 {
-
-               
-
-                    //Primero creamos el empleado y lo insertamos
-                    empleado.Nombre = nameusu;
-                    empleado.Apellido = apellidousu;
-                    empleado.Edad = age;
-                    empleado.IdSexo = sex;
-                    bool resultado1 = UsuarioBD.InsertarEmpleado(empleado);
-
-                    //Creamos el usuario y le asignamos el numero de legajo del ultimo empleado creado
-                    usuario.NombreDeUsuario = user;
-                    usuario.Contraseña = Util.Encrypt.GetSHA256(contraseña);
-                    usuario.Email = email;
-                    usuario.IdPerfil = 2;
-                    usuario.LegajoEmpleado = UsuarioBD.BuscarLegajo();
-                    bool resultado2 = UsuarioBD.InsertarUsuario(usuario);
-                    if (resultado2 && resultado1)
-
-                    {
-                        CorrectoForm co = new CorrectoForm();
-                        co.show("Usuario dado de alta con éxito");
-                        LoginUsuarios ventana = new LoginUsuarios();
-                        ventana.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        ErroresForm window = new ErroresForm();
-                        window.show("Error: ocurrio un error al momento de dar de alta al nuevo usuario");
-
-                    }
-
-
+                    CorrectoForm co = new CorrectoForm();
+                    co.show("Usuario dado de alta con éxito");
+                    LoginUsuarios ventana = new LoginUsuarios();
+                    ventana.Show();
+                    this.Hide();
                 }
                 else
                 {
                     ErroresForm window = new ErroresForm();
-                    window.show("Error: codigo invalido");
-                }
-            
+                    window.show("Error: ocurrio un error al momento de dar de alta al nuevo usuario");
 
-            
+                }
+
+
+            }
+            else
+            {
+                ErroresForm window = new ErroresForm();
+                window.show("Error: codigo invalido");
+            }
+
+
+
 
 
         }
 
-        
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             LoginUsuarios ventana = new LoginUsuarios();
