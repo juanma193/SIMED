@@ -207,6 +207,65 @@ namespace SIMED_V1.Bases_de_datos
 
         }
 
+        public static bool ValidarPassword(string pass)
+        {
+            bool resultado = false;
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+
+                string consulta = "SELECT * FROM USUARIOS WHERE Contraseña like @password";
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@password", pass);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+
+                if (tabla.Rows.Count == 1)
+                {
+                    resultado = true;
+                    return resultado;
+                }
+                else
+                {
+                    resultado = false;
+                    return resultado;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+
+                cn.Close();
+
+            }
+
+            return resultado;
+
+
+
+        }
+
+
+
         public static bool ValidarEmail(string email)
         {
             bool resultado = false;
@@ -342,7 +401,6 @@ namespace SIMED_V1.Bases_de_datos
             return -1;
             
         }
-
 
 
     }

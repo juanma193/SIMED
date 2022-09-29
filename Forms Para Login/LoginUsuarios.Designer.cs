@@ -113,7 +113,7 @@
             this.lblInicioSesion.Location = new System.Drawing.Point(83, 47);
             this.lblInicioSesion.Name = "lblInicioSesion";
             this.lblInicioSesion.Size = new System.Drawing.Size(207, 47);
-            this.lblInicioSesion.TabIndex = 9;
+            this.lblInicioSesion.TabIndex = 0;
             this.lblInicioSesion.Text = "Iniciar Sesion";
             this.lblInicioSesion.Click += new System.EventHandler(this.lblInicioSesion_Click);
             // 
@@ -151,7 +151,7 @@
             this.guna2ShadowPanel1.ShadowDepth = 80;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(358, 507);
-            this.guna2ShadowPanel1.TabIndex = 10;
+            this.guna2ShadowPanel1.TabIndex = 0;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
             // btnOlvideDatos
@@ -172,7 +172,7 @@
             this.btnOlvideDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOlvideDatos.Name = "btnOlvideDatos";
             this.btnOlvideDatos.Size = new System.Drawing.Size(200, 46);
-            this.btnOlvideDatos.TabIndex = 10;
+            this.btnOlvideDatos.TabIndex = 6;
             this.btnOlvideDatos.Text = "Olvide mis datos";
             this.btnOlvideDatos.Click += new System.EventHandler(this.btnOlvideDatos_Click);
             // 
@@ -280,7 +280,7 @@
             this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
-            this.btnCerrarApp.TabIndex = 9;
+            this.btnCerrarApp.TabIndex = 2;
             this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
             // btnMinimizar
@@ -293,7 +293,7 @@
             this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
-            this.btnMinimizar.TabIndex = 10;
+            this.btnMinimizar.TabIndex = 1;
             // 
             // LoginUsuarios
             // 
@@ -310,7 +310,6 @@
             this.Name = "LoginUsuarios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.TopMost = true;
             this.Load += new System.EventHandler(this.LoginUsuarios_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

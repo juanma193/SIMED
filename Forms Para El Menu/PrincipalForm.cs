@@ -1,4 +1,5 @@
-﻿using SIMED_V1.Forms_Para_El_Menu;
+﻿using SIMED_V1.Forms_Mensajes_Personalizados;
+using SIMED_V1.Forms_Para_El_Menu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -145,9 +146,8 @@ namespace SIMED_V1
         {
             LoginUsuarios ventana = new LoginUsuarios();
             //Programar ventana desea salir??
-            ventana.Show();
-            this.Dispose();
-            
+            Cerrar_Sesion window = new Cerrar_Sesion(this);
+            window.Show();
           
 
             

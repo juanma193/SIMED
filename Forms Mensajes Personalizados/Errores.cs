@@ -82,5 +82,20 @@ namespace SIMED_V1
         {
 
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void picWarning_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

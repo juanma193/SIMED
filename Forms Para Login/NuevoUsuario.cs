@@ -12,14 +12,19 @@ using System.Net;
 using System.Net.Mail;
 using System.Text.RegularExpressions;
 using SIMED_V1.Bases_de_datos;
+using SIMED_V1.Forms_Mensajes_Personalizados;
 
 namespace SIMED_V1
 {
     public partial class NuevoUsuario : Form
 
     {
+        bool resultado = false;
+        bool resultado2 = false;
+        bool vacio = false;
         bool bandera = false;
         string randomCode;
+        int variablesexo;
         public static string to;
         public NuevoUsuario()
         {
@@ -37,10 +42,15 @@ namespace SIMED_V1
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
+            txtNombreUsuario.Focus();
             lblNombreUsuario.Visible = false;
             lblEmail.Visible = false;
             lblContraseña.Visible = false;
             lblRepetirContraseña.Visible = false;
+            lblNombre.Visible = false;
+            lblEdad.Visible = false;
+            lblApellido.Visible = false;
+            lblSexo.Visible = false;
         }
 
         private void btnCrearCuenta_Click(object sender, EventArgs e)
@@ -49,6 +59,10 @@ namespace SIMED_V1
             lblEmail.Visible = false;
             lblContraseña.Visible = false;
             lblRepetirContraseña.Visible = false;
+            lblNombre.Visible = false;
+            lblApellido.Visible = false;
+            lblEdad.Visible = false;
+            lblSexo.Visible = false;
 
             string email = txtMail.Text;
             Regex regex = new Regex(@"^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-za-za-z]{2,3})+$");
@@ -56,102 +70,293 @@ namespace SIMED_V1
             bandera = true;
 
             ErorresEnRojo(bandera);
+            
 
-            if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true && match.Success)
+            //if ((txtMail.Text == "") || (txtContraseña.Text == "") || (txtRepetirContraseña.Text == "") || (txtNombreUsuario.Text == ""))
+            //{
+            //    vacio = true;
+            //}
+            //else
+            //{ vacio = false; }
+
+            
+                try
                 {
-                    try
+                    string nombreDeUsuario = txtNombreUsuario.Text;
+
+                    string mail = txtMail.Text;
+
+                    resultado = UsuarioBD.ValidarUsername(nombreDeUsuario);
+
+                    resultado2 = ValidarCorreo(mail);
+
+                    bool erroresif = Resultados(match);
+
+
+                    if (erroresif)
                     {
-                        string nombreDeUsuario = txtNombreUsuario.Text;
-               
-                        string mail = txtMail.Text;
-                        bool resultado = false;
-                        resultado = UsuarioBD.ValidarUsername(nombreDeUsuario);
-                        bool resultado2 = false;
-                        resultado2 = ValidarCorreo(mail);
+                        string from, pass, messageBody;
+                        Random rand = new Random();
+                        randomCode = (rand.Next(99999)).ToString();
+                        messageBody = "Tu codigo de verificacion es: " + "" + randomCode;
+                        to = (txtMail.Text.Trim()).ToString();
+                        Util.EmailSender(messageBody, to);
 
-                        if (resultado == true)
+
+
+
+                        try
                         {
-                            ErroresForm window = new ErroresForm();
-                            window.show("Error: el usuario ya existe, ingrese otro");
-                        }
+                            bool bandera = Util.EmailSender(messageBody, to);
 
-                        else 
-                        {
-                        if (resultado2 == true)
-                        {
-                            ErroresForm window = new ErroresForm();
-                            window.show("Error: ese correo se encuentra en uso, ingrese otro");
-                        }
-                        else
-                        {
-                            string from, pass, messageBody;
-                            Random rand = new Random();
-                            randomCode = (rand.Next(99999)).ToString();
-                            messageBody = "Tu codigo de verificacion es: " + "" + randomCode;
-                            to = (txtMail.Text.Trim()).ToString();
-                            Util.EmailSender(messageBody, to);
-                            
-                               
-                               
-                                
-                                try
-                                {
-                                bool bandera = Util.EmailSender(messageBody, to);
+                            if (bandera == true)
+                            {
 
-                                if (bandera ==true)
-                                {
-                                    string enviarusu = txtNombreUsuario.Text;
-                                    string enviarcontraseña = txtContraseña.Text;
-                                    string correo = txtMail.Text;
-                                    string enviarnombre = txtNombre.Text;
-                                    string enviarapellido = txtApellido.Text;
-                                    int enviaredad = int.Parse(txtEdad.Text);
 
-                                    int enviarsexo = variablesexo;
-                                    VerificarMailForm ventana = new VerificarMailForm(randomCode, enviarusu, enviarcontraseña, correo, enviarnombre, enviarapellido, enviaredad, enviarsexo);
-                                    ventana.Show();
-                                    this.Hide();
-                                }
-                                else
+                                if (btnFemenino.Checked)
                                 {
-                                    ErroresForm window = new ErroresForm();
-                                    window.show("Error al mandar mail: ");
+                                    variablesexo = 1;
                                 }
-                                
-                                }
-                                catch (Exception ex)
-                                {
 
-                                    throw;
+                                if (btnMasculino.Checked)
+                                {
+                                    variablesexo = 2;
                                 }
+
+                                if (btnOtro.Checked)
+                                {
+                                    variablesexo = 3;
+                                }
+
+
+                                string enviarusu = txtNombreUsuario.Text;
+                                string enviarcontraseña = txtContraseña.Text;
+                                string correo = txtMail.Text;
+                                string enviarnombre = txtNombre.Text;
+                                string enviarapellido = txtApellido.Text;
+                                int enviaredad = int.Parse(txtEdad.Text);
+
+                                int enviarsexo = variablesexo;
+
+
+
+                                VerificarMailForm ventana = new VerificarMailForm(randomCode, enviarusu, enviarcontraseña, correo, enviarnombre, enviarapellido, enviaredad, enviarsexo);
+                                ventana.Show();
+                                this.Hide();
+
+                            }
+                            else
+                            {
+                                ErroresForm window = new ErroresForm();
+                                window.show("Error al mandar mail: ");
                             }
 
                         }
-                    }
-                                                           
+                        catch (Exception ex)
+                        {
 
-                    catch (Exception ex)
-                    {
-
-                        ErroresForm window = new ErroresForm();
-                        window.show("Error: " + ex);
-                        txtNombreUsuario.Focus();
+                            throw;
+                        }
                     }
                 }
-                else
+
+                catch (Exception ex)
                 {
-                    if (txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false)
-                    {
-                        ErroresForm window = new ErroresForm();
-                        window.show("Error: las contraseñas deben ser iguales");
-                    }
-                    if(!match.Success)
-                    {
-                        ErroresForm window = new ErroresForm();
-                        window.show("Error: el formato del mail no es correcto. Ingrese uno válido");
-                    }
+
+                    ErroresForm window = new ErroresForm();
+                    window.show("Error: " + ex);
+                    txtNombreUsuario.Focus();
                 }
+                }
+
+        private bool Resultados(Match match)
+        {
+            bool results = false;
+
+            //0000
+            if (!resultado && !resultado2 && match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true)
+            {
+                results = true;
+            }
+
+            //0001
+            if (!resultado && !resultado2 && match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false)
+            {
+                results = false;
+                ErroresForm window = new ErroresForm();
+                window.show("Error: las contraseñas deben ser iguales");
+            }
+
+            //0010
+            if (!resultado && !resultado2 && !match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true)
+            {
+                results = false;
+                ErroresForm window = new ErroresForm();
+                window.show("Error: el formato del mail no es correcto");
+            }
+
+
+            //0011
+            if (!resultado && !resultado2 && !match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El formato del mail no es correcto. \n" + "Las contraseñas deben ser iguales";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
+            //0100
+            if (!resultado && resultado2 && match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true)
+            {
+                results = false;
+                ErroresForm window = new ErroresForm();
+                window.show("Error: el email se encuentra en uso");
+            }
+
+            //0101
+            if (!resultado && resultado2 && match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El email se encuentra en uso. \n" + "Las contraseñas deben ser iguales";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
+            //0110
+            if (!resultado && resultado2 && !match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El email se encuentra en uso. \n" + "El formato de mail no es correcto";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
+            //0111
+            if (!resultado && resultado2 && !match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El email se encuentra en uso. \n" + "El formato de mail no es correcto \n" + "Las contraseñas deben ser iguales";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
+            //1000
+            if (resultado && !resultado2 && match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true)
+            {
+                results = false;
+                ErroresForm window = new ErroresForm();
+                window.show("Error:  el nombre de usuario se encuentra en uso");
+
+            }
+
+            //1001
+            if (resultado && !resultado2 && match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El nombre de ususario se encuentra en uso. \n" + "Las contraseñas deben ser iguales";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
+            //1010
+
+            if (resultado && !resultado2 && !match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El nombre de usuario se encuentra en uso. \n" + "El formato de mail no es correcto";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
+            // 1011
+
+            if (resultado && !resultado2 && !match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El nombre de ususario se encuentra en uso. \n" + "El formato de mail no es correcto \n" + "Las contraseñas deben ser iguales";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
+            // 1100
+
+            if (resultado && resultado2 && match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El nombre de usuario se encuentra en uso. \n" + "El email se encuentra en uso";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
+            // 1101
+
+            if (resultado && resultado2 && match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El nombre de ususario se encuentra en uso. \n" + "El email se encuentra en uso \n" + "Las contraseñas deben ser iguales";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
+            // 1110
+
+            if (resultado && resultado2 && !match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == true)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El nombre de ususario se encuentra en uso. \n" + "El email se encuentra en uso \n" + "El formato del mail no es correcto";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
+            // 1111
+            if (resultado && resultado2 && !match.Success && txtContraseña.Text.Equals(txtRepetirContraseña.Text) == false)
+            {
+                results = false;
+                string error = "Uno o más campos no son correctos";
+                string errorAdicional1 = "El nombre de usuario se encuentra en uso. \n" + "El email se encuentra en uso \n" + "El formato del mail no es correcto \n" + "Las contraseñas deben ser iguales";
+
+                MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional1);
+                ventana.Show();
+
+            }
+
             
+
+
+
+
+            return results;
+
         }
 
         private void ErorresEnRojo(bool bandera) 
@@ -177,8 +382,28 @@ namespace SIMED_V1
                 lblRepetirContraseña.Visible = true;
                 lblRepetirContraseña.Text = "Contraseña obligatoria";
             }
+            if (txtNombre.Text.Equals("") && bandera == true)
+            {
+                lblNombre.Visible = true;
+                lblNombre.Text = "Nombre obligatorio";
+            }
+            if (txtApellido.Text.Equals("") && bandera == true)
+            {
+                lblApellido.Visible = true;
+                lblApellido.Text = "Nombre obligatorio";
+            }
+            if (txtEdad.Text.Equals("") && bandera == true)
+            {
+                lblEdad.Visible = true;
+                lblEdad.Text = "Edad obligatoria";
+            }
 
-
+            if (!(btnFemenino.Checked || btnMasculino.Checked || btnOtro.Checked) && bandera == true)
+            {
+                lblSexo.Visible = true;
+                lblSexo.Text = "Debe seleccionar un sexo";
+            }
+            
         }
 
        
@@ -290,5 +515,83 @@ namespace SIMED_V1
             }
             else { lblRepetirContraseña.Visible = false; }
         }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text.Equals(""))
+            {
+                lblNombre.Visible = true;
+                lblNombre.Text = "Nombre obligatorio";
+            }
+            else { lblNombre.Visible = false; }
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            if (txtApellido.Text.Equals(""))
+            {
+                lblApellido.Visible = true;
+                lblApellido.Text = "Apellido obligatorio";
+            }
+            else { lblApellido.Visible = false; }
+        }
+
+        private void txtEdad_TextChanged(object sender, EventArgs e)
+        {
+            if (txtEdad.Text.Equals(""))
+            {
+                lblEdad.Visible = true;
+                lblEdad.Text = "Edad obligatoria";
+            }
+            else { lblEdad.Visible = false; }
+        }
+
+        private void btnFemenino_CheckedChanged(object sender, EventArgs e)
+        {
+            lblSexo.Visible = false;
+        }
+
+        private void btnMasculino_CheckedChanged(object sender, EventArgs e)
+        {
+            lblSexo.Visible = false;
+        }
+
+        private void btnOtro_CheckedChanged(object sender, EventArgs e)
+        {
+            lblSexo.Visible = false;
+        }
+
+        private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
-}
+    }
+

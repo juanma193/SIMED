@@ -392,6 +392,12 @@
     <Compile Include="Entidades\TurnosRotativos.cs" />
     <Compile Include="Entidades\TurnosRotativosxEnfermeros.cs" />
     <Compile Include="Entidades\Viajes.cs" />
+    <Compile Include="Forms Mensajes Personalizados\Cerrar Sesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\Cerrar Sesion.Designer.cs">
+      <DependentUpon>Cerrar Sesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Mensajes Personalizados\CorrectoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -482,6 +488,12 @@
     </Compile>
     <Compile Include="Forms Para ABM\ConsultarViaje.Designer.cs">
       <DependentUpon>ConsultarViaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaUsuarios.Designer.cs">
+      <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para El Menu\UAfiliados.cs">
       <SubType>UserControl</SubType>
@@ -577,6 +589,9 @@
     <Compile Include="Forms Para Login\VerificarMailForm.Designer.cs">
       <DependentUpon>VerificarMailForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms Mensajes Personalizados\Cerrar Sesion.resx">
+      <DependentUpon>Cerrar Sesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Mensajes Personalizados\CorrectoForm.resx">
       <DependentUpon>CorrectoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -587,20 +602,13 @@
       <DependentUpon>AbmTipoPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ModificarAfiliado.resx">
-      <DependentUpon>ModificarAfiliado.cs</DependentUpon>
+    <EmbeddedResource Include="Forms Mensajes Personalizados\MultiplesErrores.resx">
+      <DependentUpon>MultiplesErrores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\AltaAfiliado.resx">
       <DependentUpon>AltaAfiliado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Para ABM\AltaAmbulancias.resx">
-      <DependentUpon>AltaAmbulancias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms Para ABM\AltaEnfermeros.resx">
       <DependentUpon>AltaEnfermeros.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms Para ABM\AltaMedico.resx">
-      <DependentUpon>AltaMedico.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\AltaPlanes.resx">
       <DependentUpon>AltaPlanes.cs</DependentUpon>
     </EmbeddedResource>
@@ -621,6 +629,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultarViaje.resx">
       <DependentUpon>ConsultarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ConsultaUsuarios.resx">
+      <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UAfiliados.resx">
       <DependentUpon>UAfiliados.cs</DependentUpon>
@@ -789,6 +800,8 @@
     <Content Include="archivos\sonidoPayaso.mp3" />
     <Content Include="archivos\sonidoPayaso.wav" />
     <Content Include="archivos\sonidoPS2.wav" />
+    <None Include="archivos\triangle up.png" />
+    <None Include="archivos\trianglebajo.png" />
     <Content Include="archivos\user.png" />
     <Content Include="archivos\usuarios.png" />
     <Content Include="archivos\usuarioss.png" />
