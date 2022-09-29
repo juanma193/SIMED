@@ -18,5 +18,7 @@ namespace SIMED.Models
 
         public virtual Perfiles IdPerfilNavigation { get; set; }
         public virtual Empleados LegajoEmpleadoNavigation { get; set; }
+
+        
     }
 }

@@ -475,3 +475,9 @@ D:\SIMED\obj\Debug\SIMED V1.application
 D:\SIMED\obj\Debug\SIMED V1.csproj.CopyComplete
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ModificarAfiliado.resources
 D:\SIMED\bin\Debug\Microsoft.EntityFrameworkCore.Design.xml
+<<<<<<< Updated upstream
+=======
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.UFuncionalidades.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaMédico.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AbmTipoPlan.resources
+>>>>>>> Stashed changes

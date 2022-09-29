@@ -1,4 +1,5 @@
-﻿using SIMED_V1.Bases_de_datos;
+﻿using SIMED.Models;
+using SIMED_V1.Bases_de_datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,8 @@ namespace SIMED_V1
             string codigo = code;
             bool nonumero = false;
             string input = txtCodigo.Text;
+            Usuarios usuario = new Usuarios();
+            Empleados empleado = new Empleados();
             try
             {
                 int result = Int32.Parse(input);
@@ -55,11 +58,29 @@ namespace SIMED_V1
             {
                 if (codigo == (txtCodigo.Text).ToString())
                 {
+<<<<<<< Updated upstream
                     string username = user;
                     string userpass = Util.Encrypt.GetSHA256(contraseña);
                     string usermail = email;
                     bool resultado1 = UsuarioBD.InsertarUsuario(username, userpass, usermail);
                     if (resultado1)
+=======
+                    //Primero creamos el empleado y lo insertamos
+                    empleado.Nombre = nameusu;
+                    empleado.Apellido = apellidousu;
+                    empleado.Edad = age;
+                    empleado.IdSexo = sex;
+                    bool resultado1 = UsuarioBD.InsertarEmpleado(empleado);
+
+                    //Creamos el usuario y le asignamos el numero de legajo del ultimo empleado creado
+                    usuario.NombreDeUsuario = user;
+                    usuario.Contraseña = Util.Encrypt.GetSHA256(contraseña);
+                    usuario.Email = email;
+                    usuario.IdPerfil = 2;
+                    usuario.LegajoEmpleado = UsuarioBD.BuscarLegajo();
+                    bool resultado2 = UsuarioBD.InsertarUsuario(usuario);
+                    if (resultado2 && resultado1)
+>>>>>>> Stashed changes
                     {
                         CorrectoForm co = new CorrectoForm();
                         co.show("Usuario dado de alta con éxito");

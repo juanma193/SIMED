@@ -399,6 +399,18 @@
       <DependentUpon>CorrectoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Usuarios.cs" />
+    <Compile Include="Forms Para ABM\ConsultaMédico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaMédico.Designer.cs">
+      <DependentUpon>ConsultaMédico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\AbmTipoPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\AbmTipoPlan.Designer.cs">
+      <DependentUpon>AbmTipoPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\ModificarAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -573,6 +585,12 @@
     </Compile>
     <EmbeddedResource Include="Forms Mensajes Personalizados\CorrectoForm.resx">
       <DependentUpon>CorrectoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ConsultaMédico.resx">
+      <DependentUpon>ConsultaMédico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\AbmTipoPlan.resx">
+      <DependentUpon>AbmTipoPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ModificarAfiliado.resx">
       <DependentUpon>ModificarAfiliado.cs</DependentUpon>
