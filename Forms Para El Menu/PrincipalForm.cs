@@ -24,11 +24,6 @@ namespace SIMED_V1
             this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
-        private void guna2PictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void PrincipalForm_Load(object sender, EventArgs e)
         {
             
@@ -43,18 +38,20 @@ namespace SIMED_V1
 
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btnMedicos_Click(object sender, EventArgs e)
         {
             //uMedicos1.Show();
             //uMedicos1.BringToFront();
             this.pnContenido.Controls.Remove(ContActivo);
-            ContActivo = new UMedicos();
+
+            PrincipalForm menu = this;
+            ContActivo = new UMedicos(menu);
             ContActivo.Dock = DockStyle.Fill;
             this.pnContenido.Controls.Add(ContActivo);
             
         }
 
-        private void txtAmbulancias_Click(object sender, EventArgs e)
+        private void btnAmbulancias_Click(object sender, EventArgs e)
         {
             //uAmbulancias1.Show();
             //uAmbulancias1.BringToFront();
@@ -64,7 +61,7 @@ namespace SIMED_V1
             this.pnContenido.Controls.Add(ContActivo);
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void btnEnfermeros_Click(object sender, EventArgs e)
         {
             //uEnfermeros1.Show();
             //uEnfermeros1.BringToFront();
@@ -74,7 +71,7 @@ namespace SIMED_V1
             this.pnContenido.Controls.Add(ContActivo);
         }
 
-        private void guna2Button4_Click(object sender, EventArgs e)
+        private void btnUsuarios_Click(object sender, EventArgs e)
         {
             //uUsuarios1.Show();
             //uUsuarios1.BringToFront();
@@ -151,6 +148,14 @@ namespace SIMED_V1
           
 
             
+        }
+
+        private void btnOtrasFuncionalidades_Click(object sender, EventArgs e)
+        {
+            this.pnContenido.Controls.Remove(ContActivo);
+            ContActivo = new UFuncionalidades();
+            ContActivo.Dock = DockStyle.Fill;
+            this.pnContenido.Controls.Add(ContActivo);
         }
     }
 }

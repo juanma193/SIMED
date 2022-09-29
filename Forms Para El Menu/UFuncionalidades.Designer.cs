@@ -51,6 +51,7 @@
             this.btnModelos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnModelos.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnModelos.ForeColor = System.Drawing.Color.White;
+            this.btnModelos.Image = global::SIMED_V1.Properties.Resources._1054957_tools_screwdriver_wrench_icon;
             this.btnModelos.ImageOffset = new System.Drawing.Point(20, 0);
             this.btnModelos.Location = new System.Drawing.Point(301, 388);
             this.btnModelos.Margin = new System.Windows.Forms.Padding(2);
@@ -72,13 +73,13 @@
             this.btnTiposViajes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnTiposViajes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnTiposViajes.ForeColor = System.Drawing.Color.White;
+            this.btnTiposViajes.Image = global::SIMED_V1.Properties.Resources._1061162_care_health_journey_medicine_pill_icon;
             this.btnTiposViajes.Location = new System.Drawing.Point(101, 388);
             this.btnTiposViajes.Margin = new System.Windows.Forms.Padding(2);
             this.btnTiposViajes.Name = "btnTiposViajes";
             this.btnTiposViajes.Size = new System.Drawing.Size(196, 74);
             this.btnTiposViajes.TabIndex = 14;
             this.btnTiposViajes.Text = "Tipos de Viajes";
-            this.btnTiposViajes.Click += new System.EventHandler(this.btnTiposViajes_Click);
             // 
             // btnRelacionLaboral
             // 
@@ -93,6 +94,7 @@
             this.btnRelacionLaboral.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnRelacionLaboral.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnRelacionLaboral.ForeColor = System.Drawing.Color.White;
+            this.btnRelacionLaboral.Image = global::SIMED_V1.Properties.Resources._9299395_positive_deal_status_icon;
             this.btnRelacionLaboral.Location = new System.Drawing.Point(301, 266);
             this.btnRelacionLaboral.Margin = new System.Windows.Forms.Padding(2);
             this.btnRelacionLaboral.Name = "btnRelacionLaboral";
@@ -113,6 +115,7 @@
             this.btnTurnosRotativos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnTurnosRotativos.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnTurnosRotativos.ForeColor = System.Drawing.Color.White;
+            this.btnTurnosRotativos.Image = global::SIMED_V1.Properties.Resources._897245_clock_manage_schedule_time_icon;
             this.btnTurnosRotativos.Location = new System.Drawing.Point(101, 266);
             this.btnTurnosRotativos.Margin = new System.Windows.Forms.Padding(2);
             this.btnTurnosRotativos.Name = "btnTurnosRotativos";
@@ -133,6 +136,7 @@
             this.btnEspecialidades.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnEspecialidades.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnEspecialidades.ForeColor = System.Drawing.Color.White;
+            this.btnEspecialidades.Image = global::SIMED_V1.Properties.Resources._5964800_drugs_healthcare_medical_medicine_prescription_icon;
             this.btnEspecialidades.Location = new System.Drawing.Point(100, 145);
             this.btnEspecialidades.Margin = new System.Windows.Forms.Padding(2);
             this.btnEspecialidades.Name = "btnEspecialidades";
@@ -153,6 +157,7 @@
             this.btnRangosEtarios.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnRangosEtarios.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnRangosEtarios.ForeColor = System.Drawing.Color.White;
+            this.btnRangosEtarios.Image = global::SIMED_V1.Properties.Resources._169845_numbers_appicns_icon;
             this.btnRangosEtarios.Location = new System.Drawing.Point(301, 145);
             this.btnRangosEtarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnRangosEtarios.Name = "btnRangosEtarios";

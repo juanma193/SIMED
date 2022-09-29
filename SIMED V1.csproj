@@ -41,6 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -654,6 +655,9 @@
     <EmbeddedResource Include="Forms Para El Menu\UAfiliados.resx">
       <DependentUpon>UAfiliados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para El Menu\UFuncionalidades.resx">
+      <DependentUpon>UFuncionalidades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UPlanes.resx">
       <DependentUpon>UPlanes.cs</DependentUpon>
     </EmbeddedResource>
@@ -836,6 +840,13 @@
     <Content Include="archivos\usuarioss.png" />
     <Content Include="archivos\y2mate.com - Playstation 2 Startup Noise.mp3" />
     <Content Include="archivos\y2mate.com - Playstation 3 PS3 StartUp  Sound Effect for editing.mp3" />
+    <None Include="Resources\1054957_tools_screwdriver_wrench_icon.png" />
+    <None Include="Resources\1061162_care_health_journey_medicine_pill_icon.png" />
+    <None Include="Resources\9299395_positive_deal_status_icon.png" />
+    <None Include="Resources\897245_clock_manage_schedule_time_icon.png" />
+    <None Include="Resources\5964800_drugs_healthcare_medical_medicine_prescription_icon.png" />
+    <None Include="Resources\169845_numbers_appicns_icon.png" />
+    <None Include="Resources\299068_add_sign_icon.png" />
     <None Include="Resources\cerrar sesion.png" />
     <None Include="Resources\money icon.png" />
     <None Include="Resources\calle.png" />
