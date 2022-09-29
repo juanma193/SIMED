@@ -11,32 +11,7 @@ namespace SIMED_V1.Bases_de_datos
 {
     public class UsuarioBD
     {
-<<<<<<< Updated upstream
-        public static bool InsertarUsuario(string nombreDeUsuario, string password, string usermail)
-        {
 
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            bool resultado = false;
-
-
-            try
-            {
-
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO USUARIOS (NombreDeUsuario,Contraseña,Email) VALUES(@nombreUsu,@pass, @email)";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreUsu", nombreDeUsuario);
-                cmd.Parameters.AddWithValue("@pass", password);
-                cmd.Parameters.AddWithValue("@email", usermail);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-=======
         public static bool InsertarUsuario(Usuarios usuario)
         {
 
@@ -46,7 +21,7 @@ namespace SIMED_V1.Bases_de_datos
             {
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
->>>>>>> Stashed changes
+
                 resultado = true;
             }
             catch (Exception ex)
@@ -294,8 +269,8 @@ namespace SIMED_V1.Bases_de_datos
 
 
 
-<<<<<<< Updated upstream
-=======
+
+
         public static bool InsertarEmpleado(Empleados empleado)
         {
 
@@ -369,7 +344,7 @@ namespace SIMED_V1.Bases_de_datos
         }
 
 
->>>>>>> Stashed changes
+
     }
 
 
