@@ -170,6 +170,8 @@
             this.txtCodigo.SelectedText = "";
             this.txtCodigo.Size = new System.Drawing.Size(272, 48);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // guna2AnimateWindow1
             // 

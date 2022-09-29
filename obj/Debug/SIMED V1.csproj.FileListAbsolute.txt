@@ -580,3 +580,4 @@ C:\Users\Nicolas\Desktop\SIMEDv2\obj\Debug\SIMED V1.exe
 C:\Users\Nicolas\Desktop\SIMEDv2\obj\Debug\SIMED V1.pdb
 C:\Users\Nicolas\Desktop\SIMEDv2\obj\Debug\SIMED_V1.Forms_Mensajes_Personalizados.MultiplesErrores.resources
 C:\Users\Nicolas\Desktop\SIMEDv2\obj\Debug\SIMED_V1.Forms_Mensajes_Personalizados.Cerrar_Sesion.resources
+C:\Users\Nicolas\Desktop\SIMEDv2\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaUsuarios.resources

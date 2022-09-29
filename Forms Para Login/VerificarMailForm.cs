@@ -44,24 +44,12 @@ namespace SIMED_V1
         private void btnCrearCuenta_Click(object sender, EventArgs e)
         {
             string codigo = code;
-            bool nonumero = false;
+            
             string input = txtCodigo.Text;
-            try
-            {
-                int result = Int32.Parse(input);
-                Console.WriteLine(result);
-            }
-            catch (FormatException)
-            {
-                nonumero = true;
-                ErroresForm window = new ErroresForm();
-                window.show("Error: debe ingresar un código de tipo numérico. No se admiten caracteres diferentes");
-                txtCodigo.Focus();
+            
 
-            }
-
-            if (nonumero == false)
-            {
+            
+            
                 if (codigo == (txtCodigo.Text).ToString())
                 {
                     string username = user;
@@ -93,7 +81,7 @@ namespace SIMED_V1
                     ErroresForm window = new ErroresForm();
                     window.show("Error: codigo invalido");
                 }
-            }
+            
 
             
 
@@ -120,6 +108,19 @@ namespace SIMED_V1
             NuevoUsuario nue = new NuevoUsuario();
             nue.Show();
             this.Dispose();
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

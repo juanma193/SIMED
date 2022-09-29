@@ -473,6 +473,12 @@
     <Compile Include="Forms Para ABM\ConsultarViaje.Designer.cs">
       <DependentUpon>ConsultarViaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para ABM\ConsultaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaUsuarios.Designer.cs">
+      <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para El Menu\UAfiliados.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -611,6 +617,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultarViaje.resx">
       <DependentUpon>ConsultarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ConsultaUsuarios.resx">
+      <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UAfiliados.resx">
       <DependentUpon>UAfiliados.cs</DependentUpon>

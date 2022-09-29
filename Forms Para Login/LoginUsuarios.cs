@@ -111,10 +111,8 @@ namespace SIMED_V1
 
                         if (!resultado2 && !resultado3)
                         {
-                            string error = "No se puede encontrar el usuario";
-                            string errorAdicional = "El nombre de usuario no existe \n" + "La contraseña que ha ingresado no es correcta";
-                            MultiplesErrores ventana = new MultiplesErrores(error,errorAdicional);
-                            ventana.Show();
+                            ErroresForm window = new ErroresForm();
+                            window.show("Error: el usuario no existe");
                         }
                         else
                         {
