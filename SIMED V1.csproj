@@ -829,6 +829,7 @@
     <None Include="Resources\dashboard.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="archivos\abrir cerrar minimizar.png" />
     <Content Include="archivos\abstract-phone-wallpaper-aesthetic-160820-1.png" />
     <Content Include="archivos\ambulance.png" />
