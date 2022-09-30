@@ -162,14 +162,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="11311088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="11436528">
       <assemblyIdentity name="SIMED V1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>s7p2kS250w7dXg+1ut+BF1aBPPOOIdI8qmRg3ax28wE=</dsig:DigestValue>
+        <dsig:DigestValue>oon06LkpfLmy/0IV2O4l5u02R6aYsbXlFdX3Cunx6d8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -351,6 +351,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>qA9lKbBqMKPXD5m4g5wPryBcLsj4pBuRpdc5KoijbH4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="archivos\musica simed.wav" size="803436">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>opiAKu3KtEmJ+UfAynyZbrlb7efgEZo3poEUb4F/5c8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="archivos\numeros.png" size="359">

@@ -347,6 +347,7 @@
   <ItemGroup>
     <Compile Include="Bases de datos\AfiliadosBD.cs" />
     <Compile Include="Bases de datos\BarriosBD.cs" />
+    <Compile Include="Bases de datos\EmpleadosBD.cs" />
     <Compile Include="Bases de datos\PlanesBD.cs" />
     <Compile Include="Bases de datos\TiposDocBD.cs" />
     <Compile Include="Bases de datos\UsuarioBD.cs" />
@@ -407,6 +408,18 @@
     </Compile>
     <Compile Include="Forms Mensajes Personalizados\MultiplesErrores.Designer.cs">
       <DependentUpon>MultiplesErrores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\SeguroEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\SeguroEliminar.Designer.cs">
+      <DependentUpon>SeguroEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\SeguroModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\SeguroModificar.Designer.cs">
+      <DependentUpon>SeguroModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\AbmTipoPlan.cs">
       <SubType>Form</SubType>
@@ -480,6 +493,12 @@
     <Compile Include="Forms Para ABM\ConsultarAmbulancias.Designer.cs">
       <DependentUpon>ConsultarAmbulancias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para ABM\ConsultarUsuarioNoAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultarUsuarioNoAdmin.Designer.cs">
+      <DependentUpon>ConsultarUsuarioNoAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\ConsultarViaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -497,6 +516,12 @@
     </Compile>
     <Compile Include="Forms Para ABM\ModificarAfiliado.Designer.cs">
       <DependentUpon>ModificarAfiliado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarEmpleado.Designer.cs">
+      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para El Menu\UAfiliados.cs">
       <SubType>UserControl</SubType>
@@ -607,6 +632,12 @@
     <EmbeddedResource Include="Forms Mensajes Personalizados\MultiplesErrores.resx">
       <DependentUpon>MultiplesErrores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Mensajes Personalizados\SeguroEliminar.resx">
+      <DependentUpon>SeguroEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Mensajes Personalizados\SeguroModificar.resx">
+      <DependentUpon>SeguroModificar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\AbmTipoPlan.resx">
       <DependentUpon>AbmTipoPlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -643,6 +674,9 @@
     <EmbeddedResource Include="Forms Para ABM\ConsultarAmbulancias.resx">
       <DependentUpon>ConsultarAmbulancias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ConsultarUsuarioNoAdmin.resx">
+      <DependentUpon>ConsultarUsuarioNoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultarViaje.resx">
       <DependentUpon>ConsultarViaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -651,6 +685,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ModificarAfiliado.resx">
       <DependentUpon>ModificarAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ModificarEmpleado.resx">
+      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UAfiliados.resx">
       <DependentUpon>UAfiliados.cs</DependentUpon>
@@ -812,6 +849,7 @@
     <Content Include="archivos\medics.png" />
     <Content Include="archivos\minimizar.png" />
     <Content Include="archivos\minimzar.jpg" />
+    <Content Include="archivos\musica simed.wav" />
     <Content Include="archivos\numeros.png" />
     <Content Include="archivos\padlock.png" />
     <Content Include="archivos\ps3Sonido.wav" />
