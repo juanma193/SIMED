@@ -132,8 +132,8 @@ namespace SIMED_V1
                                 string enviarusu = txtNombreUsuario.Text;
                                 string enviarcontraseña = txtContraseña.Text;
                                 string correo = txtMail.Text;
-                                string enviarnombre = txtNombre.Text;
-                                string enviarapellido = txtApellido.Text;
+                                string enviarnombre = EmpleadosBD.UpperCaseFirstChar(txtNombre.Text);
+                                string enviarapellido = EmpleadosBD.UpperCaseFirstChar(txtApellido.Text);
                                 int enviaredad = int.Parse(txtEdad.Text);
 
                                 int enviarsexo = variablesexo;
