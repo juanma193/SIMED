@@ -21,7 +21,7 @@ namespace SIMED_V1
             //System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             //player.SoundLocation = "C:\\Facultad\\Tercer Año\\PAV 1\\practicas\\archivos para proyecto\\ps3Sonido.wav";
             //player.Play();
-            player.Play("archivos\\ps3Sonido.wav");
+            //player.Play("archivos\\ps3Sonido.wav");
 
         }
 

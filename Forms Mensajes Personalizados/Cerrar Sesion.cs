@@ -28,6 +28,8 @@ namespace SIMED_V1.Forms_Mensajes_Personalizados
         {
             inicioprincipal.Dispose();
             this.Dispose();
+            LoginUsuarios ventana = new LoginUsuarios();
+            ventana.Show();
             //Definir si me voy al login o se finaliza el programa.
         }
     }

@@ -175,5 +175,21 @@ namespace SIMED_V1.Forms_Para_ABM
                 e.Handled = true;
             }
         }
+
+        private void fechaInscripcion_ValueChanged(object sender, EventArgs e)
+        {
+            this.Text = fechaInscripcion.Value.ToString();
+        }
+
+        private void fechaInscripcioDropDown(object sender, EventArgs e)
+        {
+            fechaInscripcion.ValueChanged -= fechaInscripcion_ValueChanged;
+        }
+
+        private void dateTimePicker1_CloseUp(object sender, EventArgs e)
+        {
+            fechaInscripcion.ValueChanged += fechaInscripcion_ValueChanged;
+            fechaInscripcion_ValueChanged(sender, e);
+        }
     }
 }

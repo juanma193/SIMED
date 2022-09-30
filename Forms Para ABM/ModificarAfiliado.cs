@@ -14,6 +14,7 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class ModificarAfiliado : Form
     {
+       
         public ModificarAfiliado(Afiliados afiliado)
         {
             InitializeComponent();
@@ -198,6 +199,11 @@ namespace SIMED_V1.Forms_Para_ABM
             {
                 e.Handled = true;
             }
+        }
+
+        private void ModificarAfiliado_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

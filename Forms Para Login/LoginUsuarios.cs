@@ -103,7 +103,8 @@ namespace SIMED_V1
                         user.NombreDeUsuario = nombreDeUsuario;
                         user.Email = correo;
                         user.Contraseña = password;
-                        ProgressBar ventana = new ProgressBar();
+
+                        ProgressBar ventana = new ProgressBar(user);
                         ventana.Show();
                         this.Dispose();
                     }

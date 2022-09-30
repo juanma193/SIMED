@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SIMED.Models;
+using SIMED_V1.Bases_de_datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,14 @@ namespace SIMED_V1
 {
     public partial class ProgressBar : Form
     {
-        public ProgressBar()
+        new Usuarios usu = new Usuarios();
+        public ProgressBar(Usuarios user)
         {
             InitializeComponent();
+
+            usu.NombreDeUsuario = user.NombreDeUsuario;
+
+            usu = EmpleadosBD.obtenerUsuarioconusername(user.NombreDeUsuario);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,7 +39,7 @@ namespace SIMED_V1
             pbrInicioSistema.Value+=5;
             if (pbrInicioSistema.Value == 100)
             {
-                PrincipalForm ventana = new PrincipalForm();
+                PrincipalForm ventana = new PrincipalForm(usu);
                 ventana.Show();
                 this.Close();
                 
