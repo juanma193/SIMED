@@ -478,14 +478,13 @@
       <DependentUpon>ConsultaEnfermero.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\ConsultaMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms Para ABM\ConsultaModelos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms Para ABM\ConsultaModelos.Designer.cs">
       <DependentUpon>ConsultaModelos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms Para ABM\ConsultaMédico.cs">
-      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms Para ABM\ConsultaMedico.Designer.cs">
       <DependentUpon>ConsultaMedico.cs</DependentUpon>
@@ -706,11 +705,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultaMedico.resx">
       <DependentUpon>ConsultaMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultaModelos.resx">
       <DependentUpon>ConsultaModelos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms Para ABM\ConsultaMédico.resx">
-      <DependentUpon>ConsultaMédico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultaPlanes.resx">
       <DependentUpon>ConsultaPlanes.cs</DependentUpon>
