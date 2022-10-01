@@ -143,6 +143,16 @@ namespace SIMED_V1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _9004786_chart_graph_statistics_bar_icon {
+            get {
+                object obj = ResourceManager.GetObject("9004786_chart_graph_statistics_bar_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _9299395_positive_deal_status_icon {
             get {
                 object obj = ResourceManager.GetObject("9299395_positive_deal_status_icon", resourceCulture);

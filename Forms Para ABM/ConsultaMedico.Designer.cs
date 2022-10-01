@@ -158,7 +158,6 @@
             this.grdConsultaMedico.MultiSelect = false;
             this.grdConsultaMedico.Name = "grdConsultaMedico";
             this.grdConsultaMedico.ReadOnly = true;
-            this.grdConsultaMedico.RowHeadersVisible = false;
             this.grdConsultaMedico.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.grdConsultaMedico.Size = new System.Drawing.Size(527, 149);
             this.grdConsultaMedico.TabIndex = 8;
@@ -388,9 +387,10 @@
             this.chkMedicos.CheckedState.BorderThickness = 0;
             this.chkMedicos.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.chkMedicos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkMedicos.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkMedicos.Location = new System.Drawing.Point(68, 223);
             this.chkMedicos.Name = "chkMedicos";
-            this.chkMedicos.Size = new System.Drawing.Size(90, 17);
+            this.chkMedicos.Size = new System.Drawing.Size(99, 17);
             this.chkMedicos.TabIndex = 42;
             this.chkMedicos.Text = "Mostrar todos";
             this.chkMedicos.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));

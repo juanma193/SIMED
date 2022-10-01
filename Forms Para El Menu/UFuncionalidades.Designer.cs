@@ -164,6 +164,7 @@
             this.btnRangosEtarios.Size = new System.Drawing.Size(196, 74);
             this.btnRangosEtarios.TabIndex = 14;
             this.btnRangosEtarios.Text = "Rangos Etarios";
+            this.btnRangosEtarios.Click += new System.EventHandler(this.btnRangosEtarios_Click);
             // 
             // lblFuncionalidades
             // 
@@ -193,6 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.Controls.Add(this.lblSeleccionFuncionalidades);
             this.Controls.Add(this.lblFuncionalidades);
             this.Controls.Add(this.btnModelos);
@@ -201,6 +203,7 @@
             this.Controls.Add(this.btnTurnosRotativos);
             this.Controls.Add(this.btnEspecialidades);
             this.Controls.Add(this.btnRangosEtarios);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UFuncionalidades";
             this.Size = new System.Drawing.Size(597, 499);
             this.ResumeLayout(false);

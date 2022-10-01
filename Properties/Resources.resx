@@ -139,11 +139,11 @@
   <data name="numbers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\numbers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="phone 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="afiliados 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\afiliados 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ambulance" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ambulance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -153,9 +153,6 @@
   </data>
   <data name="897245_clock_manage_schedule_time_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\897245_clock_manage_schedule_time_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="left arrow" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\left arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,6 +187,9 @@
   <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="299068_add_sign_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\299068_add_sign_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8-warning-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-warning-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,8 +217,8 @@
   <data name="doctora sin fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\doctora sin fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="299068_add_sign_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\299068_add_sign_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="afiliados" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\afiliados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +229,8 @@
   <data name="planes png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\planes png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="phone 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\phone 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ambulance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ambulance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1061162_care_health_journey_medicine_pill_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1061162_care_health_journey_medicine_pill_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,10 +253,13 @@
   <data name="doctor sin fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\doctor sin fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="296207_newspaper_news_paper_periodical_certificate_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\296207_newspaper_news_paper_periodical_certificate_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="simed png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\simed png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="296207_newspaper_news_paper_periodical_certificate_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\296207_newspaper_news_paper_periodical_certificate_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="9004786_chart_graph_statistics_bar_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\9004786_chart_graph_statistics_bar_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
