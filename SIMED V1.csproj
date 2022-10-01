@@ -348,6 +348,7 @@
     <Compile Include="Bases de datos\AfiliadosBD.cs" />
     <Compile Include="Bases de datos\BarriosBD.cs" />
     <Compile Include="Bases de datos\EmpleadosBD.cs" />
+    <Compile Include="Bases de datos\MedicoBD.cs" />
     <Compile Include="Bases de datos\PlanesBD.cs" />
     <Compile Include="Bases de datos\TiposDocBD.cs" />
     <Compile Include="Bases de datos\UsuarioBD.cs" />
@@ -469,11 +470,11 @@
     <Compile Include="Forms Para ABM\ConsultaEnfermero.Designer.cs">
       <DependentUpon>ConsultaEnfermero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Para ABM\ConsultaMédico.cs">
+    <Compile Include="Forms Para ABM\ConsultaMedico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Para ABM\ConsultaMédico.Designer.cs">
-      <DependentUpon>ConsultaMédico.cs</DependentUpon>
+    <Compile Include="Forms Para ABM\ConsultaMedico.Designer.cs">
+      <DependentUpon>ConsultaMedico.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\ConsultaPlanes.cs">
       <SubType>Form</SubType>
@@ -511,6 +512,12 @@
     <Compile Include="Forms Para ABM\ConsultaUsuarios.Designer.cs">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para ABM\DatosMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\DatosMedico.Designer.cs">
+      <DependentUpon>DatosMedico.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\ModificarAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -522,6 +529,12 @@
     </Compile>
     <Compile Include="Forms Para ABM\ModificarEmpleado.Designer.cs">
       <DependentUpon>ModificarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarMedico.Designer.cs">
+      <DependentUpon>ModificarMedico.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para El Menu\UAfiliados.cs">
       <SubType>UserControl</SubType>
@@ -610,6 +623,11 @@
     <Compile Include="Forms Para El Menu\UMedicos.Designer.cs">
       <DependentUpon>UMedicos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utilidades\Util.cs" />
     <Compile Include="Forms Para El Menu\UUsuarios.cs">
       <SubType>UserControl</SubType>
@@ -662,8 +680,8 @@
     <EmbeddedResource Include="Forms Para ABM\ConsultaEnfermero.resx">
       <DependentUpon>ConsultaEnfermero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Para ABM\ConsultaMédico.resx">
-      <DependentUpon>ConsultaMédico.cs</DependentUpon>
+    <EmbeddedResource Include="Forms Para ABM\ConsultaMedico.resx">
+      <DependentUpon>ConsultaMedico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultaPlanes.resx">
       <DependentUpon>ConsultaPlanes.cs</DependentUpon>
@@ -683,11 +701,17 @@
     <EmbeddedResource Include="Forms Para ABM\ConsultaUsuarios.resx">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\DatosMedico.resx">
+      <DependentUpon>DatosMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ModificarAfiliado.resx">
       <DependentUpon>ModificarAfiliado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ModificarEmpleado.resx">
       <DependentUpon>ModificarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ModificarMedico.resx">
+      <DependentUpon>ModificarMedico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UAfiliados.resx">
       <DependentUpon>UAfiliados.cs</DependentUpon>
@@ -721,14 +745,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Forms Para Login\ReiniciarContraseña.resx">
       <DependentUpon>ReiniciarContraseña.cs</DependentUpon>
     </EmbeddedResource>

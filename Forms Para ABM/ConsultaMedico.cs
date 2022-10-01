@@ -21,7 +21,9 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnVolverConsulta_Click(object sender, EventArgs e)
         {
-            PrincipalForm ventana = new PrincipalForm();
+
+            Usuarios usu = new Usuarios();
+            PrincipalForm ventana = new PrincipalForm(usu);
             ventana.Show();
             this.Dispose();
         }

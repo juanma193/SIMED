@@ -63,49 +63,9 @@ namespace SIMED_V1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _1054957_tools_screwdriver_wrench_icon {
-            get {
-                object obj = ResourceManager.GetObject("1054957_tools_screwdriver_wrench_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap _1061162_care_health_journey_medicine_pill_icon {
             get {
                 object obj = ResourceManager.GetObject("1061162_care_health_journey_medicine_pill_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _1608615_certificate_icon {
-            get {
-                object obj = ResourceManager.GetObject("1608615_certificate_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _169845_numbers_appicns_icon {
-            get {
-                object obj = ResourceManager.GetObject("169845_numbers_appicns_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _296207_newspaper_news_paper_periodical_certificate_icon {
-            get {
-                object obj = ResourceManager.GetObject("296207_newspaper_news_paper_periodical_certificate_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,16 +96,6 @@ namespace SIMED_V1.Properties {
         internal static System.Drawing.Bitmap _897245_clock_manage_schedule_time_icon {
             get {
                 object obj = ResourceManager.GetObject("897245_clock_manage_schedule_time_icon", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _9299395_positive_deal_status_icon {
-            get {
-                object obj = ResourceManager.GetObject("9299395_positive_deal_status_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

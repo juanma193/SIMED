@@ -874,7 +874,6 @@
             this.txtEspecialidadMedicoDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEspecialidadMedicoDato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtEspecialidadMedicoDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEspecialidadMedicoDato.IconLeft = global::SIMED_V1.Properties.Resources._296207_newspaper_news_paper_periodical_certificate_icon;
             this.txtEspecialidadMedicoDato.IconLeftSize = new System.Drawing.Size(30, 40);
             this.txtEspecialidadMedicoDato.Location = new System.Drawing.Point(280, 356);
             this.txtEspecialidadMedicoDato.Margin = new System.Windows.Forms.Padding(2);

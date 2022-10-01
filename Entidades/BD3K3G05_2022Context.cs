@@ -497,8 +497,6 @@ namespace SIMED.Models
 
                 entity.Property(e => e.IdBarrio).HasColumnName("id_barrio");
 
-                entity.Property(e => e.IdDiaLaboral).HasColumnName("id_diaLaboral");
-
                 entity.Property(e => e.IdEspecialidad).HasColumnName("id_especialidad");
 
                 entity.Property(e => e.IdRelacionLaboral).HasColumnName("id_relacionLaboral");
@@ -522,12 +520,6 @@ namespace SIMED.Models
                     .HasForeignKey(d => d.IdBarrio)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_medicos_barrios");
-
-                entity.HasOne(d => d.IdDiaLaboralNavigation)
-                    .WithMany(p => p.Medicos)
-                    .HasForeignKey(d => d.IdDiaLaboral)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_medicos_diaLaboral");
 
                 entity.HasOne(d => d.IdEspecialidadNavigation)
                     .WithMany(p => p.Medicos)
