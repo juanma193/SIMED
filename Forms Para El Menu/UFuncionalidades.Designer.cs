@@ -58,6 +58,7 @@
             this.btnModelos.Size = new System.Drawing.Size(196, 74);
             this.btnModelos.TabIndex = 14;
             this.btnModelos.Text = "Modelos de ambulancia";
+            this.btnModelos.Click += new System.EventHandler(this.btnModelos_Click);
             // 
             // btnTiposViajes
             // 
