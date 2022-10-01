@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIMED_V1.Forms_Para_ABM;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace SIMED_V1.Forms_Para_El_Menu
         public UFuncionalidades()
         {
             InitializeComponent();
+        }
+
+        private void btnModelos_Click(object sender, EventArgs e)
+        {
+            UModelosMarcas ventana = new UModelosMarcas();
+            ventana.Show();
         }
     }
 }

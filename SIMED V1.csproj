@@ -347,6 +347,7 @@
   <ItemGroup>
     <Compile Include="Bases de datos\AfiliadosBD.cs" />
     <Compile Include="Bases de datos\BarriosBD.cs" />
+    <Compile Include="Bases de datos\ModelosMarcasBD.cs" />
     <Compile Include="Bases de datos\PlanesBD.cs" />
     <Compile Include="Bases de datos\TiposDocBD.cs" />
     <Compile Include="Bases de datos\UsuarioBD.cs" />
@@ -438,6 +439,12 @@
     <Compile Include="Forms Para ABM\AltaMedico.Designer.cs">
       <DependentUpon>AltaMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para ABM\AltaModelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\AltaModelos.Designer.cs">
+      <DependentUpon>AltaModelos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\AltaPlanes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -455,6 +462,12 @@
     </Compile>
     <Compile Include="Forms Para ABM\ConsultaEnfermero.Designer.cs">
       <DependentUpon>ConsultaEnfermero.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaModelos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaModelos.Designer.cs">
+      <DependentUpon>ConsultaModelos.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\ConsultaMédico.cs">
       <SubType>Form</SubType>
@@ -492,6 +505,7 @@
     <Compile Include="Forms Para ABM\ConsultaUsuarios.Designer.cs">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para ABM\Errores.cs" />
     <Compile Include="Forms Para ABM\ModificarAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -509,6 +523,12 @@
     </Compile>
     <Compile Include="Forms Para El Menu\UFuncionalidades.Designer.cs">
       <DependentUpon>UFuncionalidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para El Menu\UModelosMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para El Menu\UModelosMarcas.Designer.cs">
+      <DependentUpon>UModelosMarcas.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para El Menu\UPlanes.cs">
       <SubType>UserControl</SubType>
@@ -622,6 +642,9 @@
     <EmbeddedResource Include="Forms Para ABM\AltaMedico.resx">
       <DependentUpon>AltaMedico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\AltaModelos.resx">
+      <DependentUpon>AltaModelos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\AltaPlanes.resx">
       <DependentUpon>AltaPlanes.cs</DependentUpon>
     </EmbeddedResource>
@@ -630,6 +653,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultaEnfermero.resx">
       <DependentUpon>ConsultaEnfermero.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ConsultaModelos.resx">
+      <DependentUpon>ConsultaModelos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultaMédico.resx">
       <DependentUpon>ConsultaMédico.cs</DependentUpon>
@@ -657,6 +683,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UFuncionalidades.resx">
       <DependentUpon>UFuncionalidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para El Menu\UModelosMarcas.resx">
+      <DependentUpon>UModelosMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UPlanes.resx">
       <DependentUpon>UPlanes.cs</DependentUpon>
@@ -822,6 +851,8 @@
     <Content Include="archivos\sonidoPayaso.mp3" />
     <Content Include="archivos\sonidoPayaso.wav" />
     <Content Include="archivos\sonidoPS2.wav" />
+    <None Include="Resources\4918887_document_edit_file_format_name_icon.png" />
+    <None Include="Resources\4918887_document_edit_file_format_name_icon%281%29.png" />
     <Content Include="Resources\afiliados 2.png" />
     <Content Include="Resources\afiliados.png" />
     <Content Include="Resources\ambulance.png" />
