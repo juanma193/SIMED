@@ -17,8 +17,7 @@ namespace SIMED.Models
         }
 
         public int NumeroMatricula { get; set; }
-        public int IdDiaLaboral { get; set; }
-        public int NumDocumento { get; set; }
+        public long NumDocumento { get; set; }
         public int IdTipoDocumento { get; set; }
         public string Apellido { get; set; }
         public int IdSexo { get; set; }
@@ -33,7 +32,6 @@ namespace SIMED.Models
         public int NroCalle { get; set; }
 
         public virtual Barrios IdBarrioNavigation { get; set; }
-        public virtual DiasLaborales IdDiaLaboralNavigation { get; set; }
         public virtual Especialidades IdEspecialidadNavigation { get; set; }
         public virtual RelacionesLaborales IdRelacionLaboralNavigation { get; set; }
         public virtual Sexos IdSexoNavigation { get; set; }

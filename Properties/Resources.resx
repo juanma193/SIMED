@@ -127,6 +127,9 @@
   <data name="doctor1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\doctor1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1608615_certificate_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1608615_certificate_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="padlock1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\padlock1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,8 +199,8 @@
   <data name="simed logo 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\simed logo 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="medics" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\medics.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1054957_tools_screwdriver_wrench_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1054957_tools_screwdriver_wrench_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="medicos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\medicos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,13 +247,16 @@
   <data name="doctor 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\doctor 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="medics" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medics.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="doctor sin fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\doctor sin fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="simed png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\simed png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1054957_tools_screwdriver_wrench_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1054957_tools_screwdriver_wrench_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="296207_newspaper_news_paper_periodical_certificate_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\296207_newspaper_news_paper_periodical_certificate_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

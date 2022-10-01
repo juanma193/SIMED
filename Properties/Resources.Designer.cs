@@ -83,9 +83,29 @@ namespace SIMED_V1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1608615_certificate_icon {
+            get {
+                object obj = ResourceManager.GetObject("1608615_certificate_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _169845_numbers_appicns_icon {
             get {
                 object obj = ResourceManager.GetObject("169845_numbers_appicns_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _296207_newspaper_news_paper_periodical_certificate_icon {
+            get {
+                object obj = ResourceManager.GetObject("296207_newspaper_news_paper_periodical_certificate_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
