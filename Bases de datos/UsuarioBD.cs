@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIMED.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -10,71 +11,48 @@ namespace SIMED_V1.Bases_de_datos
 {
     public class UsuarioBD
     {
-        public static bool InsertarUsuario(string nombreDeUsuario, string password, string usermail)
+
+        public static bool InsertarUsuario(Usuarios usuario)
         {
 
-            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
-            SqlConnection cn = new SqlConnection(cadenaConexion);
-
-            bool resultado = false;
-
-
+            var resultado = true;
+            var db = new BD3K3G05_2022Context();
             try
             {
+                db.Usuarios.Add(usuario);
+                db.SaveChanges();
 
-                SqlCommand cmd = new SqlCommand();
-                string consulta = "INSERT INTO USUARIOS (NombreDeUsuario,Contraseña,Email) VALUES(@nombreUsu,@pass, @email)";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@nombreUsu", nombreDeUsuario);
-                cmd.Parameters.AddWithValue("@pass", password);
-                cmd.Parameters.AddWithValue("@email", usermail);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
-
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
                 resultado = true;
             }
             catch (Exception ex)
             {
-
+                resultado = false;
                 ErroresForm window = new ErroresForm();
                 window.show("Error" + " " + ex);
             }
-
-            finally
-            {
-                cn.Close();
-            }
-
-
-
             return resultado;
         }
 
 
         public static bool ActualizarContraseña(string email, string password)
         {
-            bool bandera = false;
-
+            var resultado = true;
+            var db = new BD3K3G05_2022Context();
             try
             {
-
-                SqlConnection con = new SqlConnection("Data Source=200.69.137.167,11333;Initial Catalog=BD3K3G05_2022;User ID=BD3K3G05_2022;Password=CLV05_25089");
-                SqlCommand cmd = new SqlCommand("UPDATE [dbo].[USUARIOS] SET [Contraseña] = '" + password + "'WHERE Email='" + email + "' ", con);
-                con.Open();
-                cmd.ExecuteNonQuery();
-                con.Close();
-                bandera = true;
+                var usuario = db.Usuarios.First(a => a.Email == email);
+                usuario.Contraseña = password;
+                db.Usuarios.Update(usuario);
+                db.SaveChanges();
+                resultado = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                bandera = false;
+                resultado = false;
+                ErroresForm window = new ErroresForm();
+                window.show("Error" + " " + ex);
             }
-
-            return bandera;
+            return resultado;
 
         }
 
@@ -229,6 +207,65 @@ namespace SIMED_V1.Bases_de_datos
 
         }
 
+        public static bool ValidarPassword(string pass)
+        {
+            bool resultado = false;
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+
+
+                string consulta = "SELECT * FROM USUARIOS WHERE Contraseña like @password";
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@password", pass);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+
+                if (tabla.Rows.Count == 1)
+                {
+                    resultado = true;
+                    return resultado;
+                }
+                else
+                {
+                    resultado = false;
+                    return resultado;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+            finally
+            {
+
+                cn.Close();
+
+            }
+
+            return resultado;
+
+
+
+        }
+
+
+
         public static bool ValidarEmail(string email)
         {
             bool resultado = false;
@@ -289,6 +326,81 @@ namespace SIMED_V1.Bases_de_datos
 
         }
 
+
+
+
+
+        public static bool InsertarEmpleado(Empleados empleado)
+        {
+
+
+            var resultado = true;
+            var db = new BD3K3G05_2022Context();
+            try
+            {
+                db.Empleados.Add(empleado);
+                db.SaveChanges();
+                resultado = true;
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                ErroresForm window = new ErroresForm();
+                window.show("Error" + " " + ex);
+            }
+            return resultado;
+           
+            return resultado;
+        }
+
+        public static int BuscarLegajo()
+        {
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            int legajo;
+
+
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "SELECT * FROM EMPLEADOS ORDER BY legajo desc";
+                cmd.Parameters.Clear();
+
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+
+
+                cn.Open();
+                cmd.Connection = cn;
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr != null && dr.Read())
+                {
+                    legajo = int.Parse(dr["legajo"].ToString());
+                    return legajo;
+                }
+               
+            }
+            catch (Exception ex)
+            {
+
+                ErroresForm window = new ErroresForm();
+                window.show("Error" + " " + ex);
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+
+
+            return -1;
+            
+        }
 
 
     }

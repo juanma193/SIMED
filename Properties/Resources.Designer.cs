@@ -283,16 +283,6 @@ namespace SIMED_V1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap doctor1 {
-            get {
-                object obj = ResourceManager.GetObject("doctor1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap doctora {
             get {
                 object obj = ResourceManager.GetObject("doctora", resourceCulture);
@@ -506,6 +496,26 @@ namespace SIMED_V1.Properties {
         internal static System.Drawing.Bitmap simed_png {
             get {
                 object obj = ResourceManager.GetObject("simed png", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap triangle_up {
+            get {
+                object obj = ResourceManager.GetObject("triangle up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trianglebajo {
+            get {
+                object obj = ResourceManager.GetObject("trianglebajo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

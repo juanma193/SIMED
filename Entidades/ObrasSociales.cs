@@ -15,7 +15,7 @@ namespace SIMED.Models
         }
 
         public int IdObraSocial { get; set; }
-        public string Descripcion { get; set; }
+        public string DescripcionObraSocial { get; set; }
         public int DescuentoPorServicio { get; set; }
 
         public virtual ICollection<TurnosEnConsultorio> TurnosEnConsultorio { get; set; }

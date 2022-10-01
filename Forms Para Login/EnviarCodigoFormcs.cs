@@ -52,7 +52,7 @@ namespace SIMED_V1
                     Random rand = new Random();
                     randomCode = (rand.Next(99999)).ToString();
                     to = (txtMail.Text.Trim()).ToString();
-                    messageBody = "Tu codigo de verificacion es:" + "" + randomCode;
+                    messageBody = "Tu codigo de verificacion es:" + " " + randomCode;
 
                    
 
@@ -80,7 +80,7 @@ namespace SIMED_V1
                     {
 
                         ErroresForm window = new ErroresForm();
-                        window.show(ex.Message);
+                        window.show("Error al mandar el email. Pruebe nuevamente");
                     }
                 }
                 else
@@ -158,7 +158,7 @@ namespace SIMED_V1
 
         private void EnviarCodigoFormcs_Load(object sender, EventArgs e)
         {
-
+            txtMail.Focus();
         }
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)

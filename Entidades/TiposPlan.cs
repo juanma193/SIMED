@@ -15,7 +15,7 @@ namespace SIMED.Models
         }
 
         public int IdTipoPlan { get; set; }
-        public string Descripcion { get; set; }
+        public string DescripcionTipoPlan { get; set; }
         public int CantAtenConsultorios { get; set; }
         public int CantAsistAmbulanciaDomicilio { get; set; }
         public int CantVistasDomiciliarias { get; set; }

@@ -345,6 +345,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bases de datos\AfiliadosBD.cs" />
+    <Compile Include="Bases de datos\BarriosBD.cs" />
+    <Compile Include="Bases de datos\EmpleadosBD.cs" />
+    <Compile Include="Bases de datos\PlanesBD.cs" />
+    <Compile Include="Bases de datos\TiposDocBD.cs" />
     <Compile Include="Bases de datos\UsuarioBD.cs" />
     <Compile Include="BD3K3G05_2022DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -359,6 +364,7 @@
     <Compile Include="Entidades\Categorias.cs" />
     <Compile Include="Entidades\Ciudades.cs" />
     <Compile Include="Entidades\DiasLaborales.cs" />
+    <Compile Include="Entidades\Empleados.cs" />
     <Compile Include="Entidades\Enfermeros.cs" />
     <Compile Include="Entidades\Enfermerosxviajes.cs" />
     <Compile Include="Entidades\Especialidades.cs" />
@@ -370,6 +376,7 @@
     <Compile Include="Entidades\Modelos.cs" />
     <Compile Include="Entidades\MotivosDeBaja.cs" />
     <Compile Include="Entidades\ObrasSociales.cs" />
+    <Compile Include="Entidades\Perfiles.cs" />
     <Compile Include="Entidades\Planes.cs" />
     <Compile Include="Entidades\RangosEtarios.cs" />
     <Compile Include="Entidades\RelacionesLaborales.cs" />
@@ -383,6 +390,12 @@
     <Compile Include="Entidades\TurnosRotativos.cs" />
     <Compile Include="Entidades\TurnosRotativosxEnfermeros.cs" />
     <Compile Include="Entidades\Viajes.cs" />
+    <Compile Include="Forms Mensajes Personalizados\Cerrar Sesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\Cerrar Sesion.Designer.cs">
+      <DependentUpon>Cerrar Sesion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Mensajes Personalizados\CorrectoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -390,6 +403,30 @@
       <DependentUpon>CorrectoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Entidades\Usuarios.cs" />
+    <Compile Include="Forms Mensajes Personalizados\MultiplesErrores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\MultiplesErrores.Designer.cs">
+      <DependentUpon>MultiplesErrores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\SeguroEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\SeguroEliminar.Designer.cs">
+      <DependentUpon>SeguroEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\SeguroModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Mensajes Personalizados\SeguroModificar.Designer.cs">
+      <DependentUpon>SeguroModificar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\AbmTipoPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\AbmTipoPlan.Designer.cs">
+      <DependentUpon>AbmTipoPlan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\AltaAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -432,11 +469,11 @@
     <Compile Include="Forms Para ABM\ConsultaEnfermero.Designer.cs">
       <DependentUpon>ConsultaEnfermero.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Para ABM\ConsultaMedico.cs">
+    <Compile Include="Forms Para ABM\ConsultaMédico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Para ABM\ConsultaMedico.Designer.cs">
-      <DependentUpon>ConsultaMedico.cs</DependentUpon>
+    <Compile Include="Forms Para ABM\ConsultaMédico.Designer.cs">
+      <DependentUpon>ConsultaMédico.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\ConsultaPlanes.cs">
       <SubType>Form</SubType>
@@ -456,11 +493,35 @@
     <Compile Include="Forms Para ABM\ConsultarAmbulancias.Designer.cs">
       <DependentUpon>ConsultarAmbulancias.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para ABM\ConsultarUsuarioNoAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultarUsuarioNoAdmin.Designer.cs">
+      <DependentUpon>ConsultarUsuarioNoAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\ConsultarViaje.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms Para ABM\ConsultarViaje.Designer.cs">
       <DependentUpon>ConsultarViaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaUsuarios.Designer.cs">
+      <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarAfiliado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarAfiliado.Designer.cs">
+      <DependentUpon>ModificarAfiliado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarEmpleado.Designer.cs">
+      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para El Menu\UAfiliados.cs">
       <SubType>UserControl</SubType>
@@ -562,8 +623,23 @@
     <Compile Include="Forms Para Login\VerificarMailForm.Designer.cs">
       <DependentUpon>VerificarMailForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms Mensajes Personalizados\Cerrar Sesion.resx">
+      <DependentUpon>Cerrar Sesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Mensajes Personalizados\CorrectoForm.resx">
       <DependentUpon>CorrectoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Mensajes Personalizados\MultiplesErrores.resx">
+      <DependentUpon>MultiplesErrores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Mensajes Personalizados\SeguroEliminar.resx">
+      <DependentUpon>SeguroEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Mensajes Personalizados\SeguroModificar.resx">
+      <DependentUpon>SeguroModificar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\AbmTipoPlan.resx">
+      <DependentUpon>AbmTipoPlan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\AltaAfiliado.resx">
       <DependentUpon>AltaAfiliado.cs</DependentUpon>
@@ -586,8 +662,8 @@
     <EmbeddedResource Include="Forms Para ABM\ConsultaEnfermero.resx">
       <DependentUpon>ConsultaEnfermero.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Para ABM\ConsultaMedico.resx">
-      <DependentUpon>ConsultaMedico.cs</DependentUpon>
+    <EmbeddedResource Include="Forms Para ABM\ConsultaMédico.resx">
+      <DependentUpon>ConsultaMédico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultaPlanes.resx">
       <DependentUpon>ConsultaPlanes.cs</DependentUpon>
@@ -598,8 +674,20 @@
     <EmbeddedResource Include="Forms Para ABM\ConsultarAmbulancias.resx">
       <DependentUpon>ConsultarAmbulancias.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ConsultarUsuarioNoAdmin.resx">
+      <DependentUpon>ConsultarUsuarioNoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultarViaje.resx">
       <DependentUpon>ConsultarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ConsultaUsuarios.resx">
+      <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ModificarAfiliado.resx">
+      <DependentUpon>ModificarAfiliado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ModificarEmpleado.resx">
+      <DependentUpon>ModificarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UAfiliados.resx">
       <DependentUpon>UAfiliados.cs</DependentUpon>
@@ -741,6 +829,7 @@
     <None Include="Resources\dashboard.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
     <Content Include="archivos\abrir cerrar minimizar.png" />
     <Content Include="archivos\abstract-phone-wallpaper-aesthetic-160820-1.png" />
     <Content Include="archivos\ambulance.png" />
@@ -761,6 +850,7 @@
     <Content Include="archivos\medics.png" />
     <Content Include="archivos\minimizar.png" />
     <Content Include="archivos\minimzar.jpg" />
+    <Content Include="archivos\musica simed.wav" />
     <Content Include="archivos\numeros.png" />
     <Content Include="archivos\padlock.png" />
     <Content Include="archivos\ps3Sonido.wav" />
@@ -771,6 +861,19 @@
     <Content Include="archivos\sonidoPayaso.mp3" />
     <Content Include="archivos\sonidoPayaso.wav" />
     <Content Include="archivos\sonidoPS2.wav" />
+    <Content Include="Resources\afiliados 2.png" />
+    <Content Include="Resources\afiliados.png" />
+    <Content Include="Resources\ambulance.png" />
+    <Content Include="Resources\doctor 2.png" />
+    <Content Include="Resources\doctor sin fondo.png" />
+    <Content Include="Resources\doctor.png" />
+    <Content Include="Resources\doctora sin fondo.png" />
+    <Content Include="Resources\doctora.png" />
+    <Content Include="Resources\enfemeros.png" />
+    <Content Include="Resources\planes png.png" />
+    <Content Include="Resources\usuarioss.png" />
+    <None Include="archivos\triangle up.png" />
+    <None Include="archivos\trianglebajo.png" />
     <Content Include="archivos\user.png" />
     <Content Include="archivos\usuarios.png" />
     <Content Include="archivos\usuarioss.png" />
@@ -784,7 +887,6 @@
     <None Include="Resources\169845_numbers_appicns_icon.png" />
     <None Include="Resources\299068_add_sign_icon.png" />
     <None Include="Resources\cerrar sesion.png" />
-    <None Include="Resources\doctor1.png" />
     <None Include="Resources\money icon.png" />
     <None Include="Resources\calle.png" />
     <None Include="Resources\phone 3.png" />

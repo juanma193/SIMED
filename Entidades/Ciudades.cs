@@ -15,7 +15,7 @@ namespace SIMED.Models
         }
 
         public int IdCiudad { get; set; }
-        public string Descripcion { get; set; }
+        public string DescripcionCiudad { get; set; }
 
         public virtual ICollection<Barrios> Barrios { get; set; }
     }

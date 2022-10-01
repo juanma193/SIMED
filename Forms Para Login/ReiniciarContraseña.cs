@@ -43,8 +43,9 @@ namespace SIMED_V1
 
                 if (txtContraseña.Text == txtRepetirContraseña.Text)
                 {
+                    string userpass = Util.Encrypt.GetSHA256(txtContraseña.Text);
 
-                    if (UsuarioBD.ActualizarContraseña(usermail,txtRepetirContraseña.Text))
+                    if (UsuarioBD.ActualizarContraseña(usermail,userpass))
                     {
                         CorrectoForm co = new CorrectoForm();
                         co.show("Contraseña modificada con éxito");
@@ -72,7 +73,7 @@ namespace SIMED_V1
 
         private void ReiniciarContraseña_Load(object sender, EventArgs e)
         {
-
+            txtContraseña.Focus();
         }
 
         private void lblNuevaContraseña_Click(object sender, EventArgs e)

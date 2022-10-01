@@ -36,8 +36,8 @@
             this.btnCerrarApp = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lblMensaje = new System.Windows.Forms.Label();
-            this.picWarning = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.picWarning = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picWarning)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(261, 231);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(264, 63);
-            this.btnAceptar.TabIndex = 0;
+            this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -80,6 +80,7 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(739, 30);
             this.guna2Panel1.TabIndex = 2;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // btnCerrarApp
             // 
@@ -89,7 +90,7 @@
             this.btnCerrarApp.Location = new System.Drawing.Point(682, 5);
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
-            this.btnCerrarApp.TabIndex = 12;
+            this.btnCerrarApp.TabIndex = 1;
             this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
             // btnMinimizar
@@ -101,7 +102,8 @@
             this.btnMinimizar.Location = new System.Drawing.Point(631, 5);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
-            this.btnMinimizar.TabIndex = 13;
+            this.btnMinimizar.TabIndex = 0;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // lblMensaje
             // 
@@ -109,9 +111,16 @@
             this.lblMensaje.Location = new System.Drawing.Point(115, 98);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(612, 121);
-            this.lblMensaje.TabIndex = 4;
+            this.lblMensaje.TabIndex = 0;
             this.lblMensaje.Text = "label1";
             this.lblMensaje.Click += new System.EventHandler(this.lblMensaje_Click);
+            // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockForm = true;
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.TargetControl = this.guna2Panel1;
+            this.guna2DragControl1.UseTransparentDrag = true;
             // 
             // picWarning
             // 
@@ -123,13 +132,7 @@
             this.picWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picWarning.TabIndex = 3;
             this.picWarning.TabStop = false;
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockForm = true;
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this.guna2Panel1;
-            this.guna2DragControl1.UseTransparentDrag = true;
+            this.picWarning.Click += new System.EventHandler(this.picWarning_Click);
             // 
             // ErroresForm
             // 

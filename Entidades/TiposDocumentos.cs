@@ -17,7 +17,7 @@ namespace SIMED.Models
         }
 
         public int IdTipoDocumento { get; set; }
-        public string Descripcion { get; set; }
+        public string DescripcionTipoDocumento { get; set; }
 
         public virtual ICollection<Afiliados> Afiliados { get; set; }
         public virtual ICollection<Enfermeros> Enfermeros { get; set; }

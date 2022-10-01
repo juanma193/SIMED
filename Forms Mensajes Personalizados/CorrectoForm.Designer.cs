@@ -53,7 +53,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(800, 30);
-            this.guna2Panel1.TabIndex = 3;
+            this.guna2Panel1.TabIndex = 2;
             // 
             // btnCerrarApp
             // 
@@ -63,7 +63,7 @@
             this.btnCerrarApp.Location = new System.Drawing.Point(743, 5);
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
-            this.btnCerrarApp.TabIndex = 12;
+            this.btnCerrarApp.TabIndex = 1;
             // 
             // btnMinimizar
             // 
@@ -74,7 +74,7 @@
             this.btnMinimizar.Location = new System.Drawing.Point(692, 5);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
-            this.btnMinimizar.TabIndex = 13;
+            this.btnMinimizar.TabIndex = 0;
             // 
             // lblMensaje
             // 
@@ -82,7 +82,7 @@
             this.lblMensaje.Location = new System.Drawing.Point(156, 103);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(612, 121);
-            this.lblMensaje.TabIndex = 6;
+            this.lblMensaje.TabIndex = 0;
             this.lblMensaje.Text = "label1";
             this.lblMensaje.Click += new System.EventHandler(this.lblMensaje_Click);
             // 
@@ -103,7 +103,7 @@
             this.btnAceptar.Location = new System.Drawing.Point(279, 227);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(264, 63);
-            this.btnAceptar.TabIndex = 5;
+            this.btnAceptar.TabIndex = 1;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -135,7 +135,9 @@
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CorrectoForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CorrectoForm";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.CorrectoForm_Load);
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();

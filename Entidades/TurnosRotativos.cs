@@ -16,7 +16,7 @@ namespace SIMED.Models
         }
 
         public int IdTurnoRotativo { get; set; }
-        public string Descripcion { get; set; }
+        public string DescripcionTurnoRotativo { get; set; }
 
         public virtual ICollection<TurnosRotativosxEnfermeros> TurnosRotativosxEnfermeros { get; set; }
         public virtual ICollection<Viajes> Viajes { get; set; }

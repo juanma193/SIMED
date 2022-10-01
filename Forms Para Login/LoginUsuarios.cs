@@ -1,4 +1,4 @@
-﻿using SIMED_V1.Entidades;
+﻿using SIMED.Models;
 using SIMED_V1.Bases_de_datos;
 using System;
 using System.Collections.Generic;
@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SIMED_V1.Forms_Mensajes_Personalizados;
 
 namespace SIMED_V1
 {
@@ -19,9 +20,11 @@ namespace SIMED_V1
         public LoginUsuarios()
         {
             InitializeComponent();
+            
 
             if (Properties.Settings.Default.Recuerdame)
             {
+                
                 txtNombreUsuario.Text = Properties.Settings.Default.UserName;
                 txtPassword.Text = Properties.Settings.Default.Password;
                 swtRecordame.Checked = true;
@@ -61,7 +64,7 @@ namespace SIMED_V1
 
         private void LoginUsuarios_Load(object sender, EventArgs e)
         {
-          
+            txtNombreUsuario.Focus();
         }
 
         private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
@@ -96,15 +99,42 @@ namespace SIMED_V1
                     if (resultado == true)
                     {
                         string correo = UsuarioBD.ObtenerEmail(nombreDeUsuario);
-                        Usuarios user = new Usuarios(nombreDeUsuario, password,correo);
-                        ProgressBar ventana = new ProgressBar();
+                        Usuarios user = new Usuarios();
+                        user.NombreDeUsuario = nombreDeUsuario;
+                        user.Email = correo;
+                        user.Contraseña = password;
+
+                        ProgressBar ventana = new ProgressBar(user);
                         ventana.Show();
-                        this.Hide();
+                        this.Dispose();
                     }
                     else
                     {
-                        ErroresForm window = new ErroresForm();
-                        window.show("Error: Usuario inexistente. Ingrese los datos nuevamente");
+                        bool resultado2 = UsuarioBD.ValidarUsername(nombreDeUsuario);
+                        bool resultado3 = UsuarioBD.ValidarPassword(password);
+
+                        if (!resultado2 && !resultado3)
+                        {
+                            ErroresForm window = new ErroresForm();
+                            window.show("Error: el usuario no existe");
+                        }
+                        else
+                        {
+                            if (resultado2 == false)
+                            {
+                                ErroresForm window = new ErroresForm();
+                                window.show("Error: no existe un usuario con dicho nombre de usuario");
+                            }
+
+                            if (resultado3 == false)
+                            {
+                                ErroresForm window = new ErroresForm();
+                                window.show("Error: la contraseña ingresada no es correcta");
+                            }
+                        }
+
+                        
+                        
                     }
 
                 }
@@ -112,7 +142,8 @@ namespace SIMED_V1
                 {
 
                     ErroresForm window = new ErroresForm();
-                    window.show("Error al consultar usuarios" + ex);
+                    
+                    window.show("Error al consultar usuarios" );
                 }
 
 

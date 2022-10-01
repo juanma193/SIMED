@@ -15,7 +15,7 @@ namespace SIMED.Models
         }
 
         public int IdTipoViaje { get; set; }
-        public string Descripcion { get; set; }
+        public string DescripcionTipoViaje { get; set; }
 
         public virtual ICollection<Viajes> Viajes { get; set; }
     }
