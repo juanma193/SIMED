@@ -103,7 +103,8 @@ namespace SIMED_V1
                                     string enviarusu = txtNombreUsuario.Text;
                                     string enviarcontraseña = txtContraseña.Text;
                                     string correo = txtMail.Text;
-                                    VerificarMailForm ventana = new VerificarMailForm(randomCode, enviarusu, enviarcontraseña, correo);
+                                    int idPerfil = 2;
+                                    VerificarMailForm ventana = new VerificarMailForm(randomCode, enviarusu, enviarcontraseña, correo, idPerfil);
                                     ventana.Show();
                                     this.Hide();
                                 }

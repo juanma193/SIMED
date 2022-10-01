@@ -9,14 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SIMED_V1.Forms_Para_ABM
 {
-    public partial class AltaEnfermeros : Form
+    
+    public partial class ModificarEnfermero : Form
+
     {
-        public AltaEnfermeros()
+        ConsultaEnfermero windowConsulta;
+        public ModificarEnfermero(ConsultaEnfermero ventanaConsulta)
         {
             InitializeComponent();
+            windowConsulta = ventanaConsulta;
             CargarComboTiposDoc();
             CargarComboEspecialidades();
             CargarComboCiudades();
@@ -24,9 +29,9 @@ namespace SIMED_V1.Forms_Para_ABM
             cmbBarrioEnfermero.Enabled = false;
         }
 
-
-        private void btnRegistrarEnfermero_Click(object sender, EventArgs e)
-        {   
+        private void btnModificarEnfermero_Click(object sender, EventArgs e)
+        {
+            txtMatriculaEnfermero.Enabled = false;
             try
             {
                 Enfermeros enfermero = new Enfermeros();
@@ -36,17 +41,11 @@ namespace SIMED_V1.Forms_Para_ABM
                 bool valTelE = true;
                 bool valDocE = true;
                 bool valCalleE = true;
-                bool valSexoE = true;
                 bool valEspE = true;
+                bool valSexoE = true;
 
-                if (txtMatriculaEnfermero.Text == "")
-                {
-                    valNroMatE = false;
-                    ErroresForm mensaje = new ErroresForm();
-                    mensaje.show("Ingrese el número de matrícula del enfermero.");
-                }
 
-                else if (txtApellidoEnfermero.Text == "" || txtNombreEnfermero.Text == "")
+                if (txtApellidoEnfermero.Text == "" || txtNombreEnfermero.Text == "")
                 {
                     valNomE = false;
                     ErroresForm mensaje = new ErroresForm();
@@ -81,8 +80,6 @@ namespace SIMED_V1.Forms_Para_ABM
                     mensaje.show("Ingrese la dirección del enfermero.");
                 }
 
-
-
                 else if (cmbEspecialidadEnfermero.SelectedIndex == -1)
                 {
                     valEspE = false;
@@ -91,7 +88,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 }
 
 
-                if (valNroMatE && valNomE && valFechaE && valTelE && valDocE && valCalleE && valSexoE && valEspE)
+                if (valNroMatE && valNomE && valFechaE && valTelE && valDocE && valCalleE && valEspE && valSexoE)
                 {
                     enfermero.NumeroMatricula = int.Parse(txtMatriculaEnfermero.Text);
                     enfermero.Nombre = txtNombreEnfermero.Text;
@@ -121,19 +118,17 @@ namespace SIMED_V1.Forms_Para_ABM
                         enfermero.IdSexo = 3;
                     }
 
-                    //bool resultado = EnfermeroBD.InsertarEnfermero(nroMatEnfermero, nomEnfermero, apeEnfermo, fechaNacEnfermero, telEnfermero, numDocEnfermero, tipoDocEnfermero, especialidadEnfermero, calle, numCalleEnfermero, barrioEnfermero, sexoEnfermero);
-
-                    bool resultado = EnfermeroBD.InsertarEnfermero(enfermero);
+                    bool resultado = EnfermeroBD.ModificarEnfermero(enfermero);
 
                     if (resultado)
                     {
-                        CorrectoForm ventana = new CorrectoForm();
-                        ventana.show("Se ha registrado el enfermero con éxito.");
+                        CorrectoForm window = new CorrectoForm();
+                        window.show("Se ha modificado el enfermero con éxito.");
                     }
                     else
                     {
-                        ErroresForm ventana = new ErroresForm();
-                        ventana.show("No se ha podido registrar el enfermero.");
+                        ErroresForm window = new ErroresForm();
+                        window.show("No se ha podido modificar el enfermero.");
                     }
                 }
 
@@ -144,25 +139,23 @@ namespace SIMED_V1.Forms_Para_ABM
                 window.show("Error" + " " + ex);
             }
         }
-
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            PrincipalForm ventana = new PrincipalForm();
-            ventana.Show();
             this.Dispose();
+            windowConsulta.Show();
 
         }
 
         private void CargarComboTiposDoc()
         {
-            try 
-            {                
+            try
+            {
                 cmbTipoDocEnfermero.DisplayMember = "descripcionTipoDocumento";
                 cmbTipoDocEnfermero.ValueMember = "id_tipoDocumento";
                 cmbTipoDocEnfermero.DataSource = EnfermeroBD.ObtenerTiposDocumento();
                 cmbTipoDocEnfermero.SelectedIndex = -1;
-                
-                
+
+
             }
             catch (Exception ex)
             {
@@ -179,7 +172,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 cmbCiudadesEnfermero.ValueMember = "id_ciudad";
                 cmbCiudadesEnfermero.DataSource = EnfermeroBD.ObtenerCiudades();
                 cmbCiudadesEnfermero.SelectedIndex = -1;
-                
+
             }
             catch (Exception ex)
             {
@@ -312,7 +305,6 @@ namespace SIMED_V1.Forms_Para_ABM
             }
         }
 
-        
         private void txtNumeroDocEnfermero_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (cmbTipoDocEnfermero.SelectedIndex == -1)
@@ -361,6 +353,7 @@ namespace SIMED_V1.Forms_Para_ABM
             CargarComboBarrios();
             cmbBarrioEnfermero.Enabled = true;
         }
+
         private void cmbTipoDocEnfermero_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtNumeroDocEnfermero.Text = "";
@@ -378,26 +371,11 @@ namespace SIMED_V1.Forms_Para_ABM
 
             }
         }
-
         private void btnCerrarApp_Click(object sender, EventArgs e)
         {
+            this.Dispose();
+            windowConsulta.Show();
 
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCrearCuenta_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEspecialidad_Click(object sender, EventArgs e)
-        {
-            ABMCEspecialidades ventanaEsp = new ABMCEspecialidades();
-            ventanaEsp.Show();
         }
     }
 }

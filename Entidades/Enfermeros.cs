@@ -20,12 +20,13 @@ namespace SIMED.Models
         public string Apellido { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public int Telefono { get; set; }
-        public int NumeroDocumento { get; set; }
+        public long NumeroDocumento { get; set; }
         public int IdTipoDocumento { get; set; }
         public int? IdEspecialidad { get; set; }
         public string Calle { get; set; }
         public int NroCalle { get; set; }
         public int IdBarrio { get; set; }
+        public int IdSexo { get; set; }
 
         public virtual Barrios IdBarrioNavigation { get; set; }
         public virtual TiposDocumentos IdTipoDocumentoNavigation { get; set; }
