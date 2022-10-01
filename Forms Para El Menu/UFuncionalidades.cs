@@ -13,9 +13,18 @@ namespace SIMED_V1.Forms_Para_El_Menu
 {
     public partial class UFuncionalidades : UserControl
     {
-        public UFuncionalidades()
+        PrincipalForm window;
+        public UFuncionalidades(PrincipalForm menu)
         {
             InitializeComponent();
+            window = menu;
+        }
+
+        private void btnRangosEtarios_Click(object sender, EventArgs e)
+        {
+            ABMCRangosEtarios ventana = new ABMCRangosEtarios(window);
+            ventana.Show();
+            window.Hide();
         }
 
         private void btnModelos_Click(object sender, EventArgs e)
