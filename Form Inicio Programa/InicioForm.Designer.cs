@@ -129,7 +129,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(503, 31);
             this.label1.TabIndex = 6;
-            this.label1.Text = "Liderando el camino hacia la excelencia medica";
+            this.label1.Text = "Liderando el camino hacia la excelencia médica";
             // 
             // InicioForm
             // 

@@ -172,9 +172,6 @@
   <data name="cerrar sesion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar sesion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="9299395_positive_deal_status_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\9299395_positive_deal_status_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icono mail" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono mail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -193,8 +190,8 @@
   <data name="icons8-warning-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-warning-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="169845_numbers_appicns_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\169845_numbers_appicns_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="triangle up" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\archivos\triangle up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="simed logo 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\simed logo 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -255,6 +252,8 @@
   </data>
   <data name="296207_newspaper_news_paper_periodical_certificate_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\296207_newspaper_news_paper_periodical_certificate_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="trianglebajo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\archivos\trianglebajo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="simed png" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\simed png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

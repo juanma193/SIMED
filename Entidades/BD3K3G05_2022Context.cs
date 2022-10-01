@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using SIMED_V1.Entidades;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -27,6 +26,7 @@ namespace SIMED.Models
         public virtual DbSet<Categorias> Categorias { get; set; }
         public virtual DbSet<Ciudades> Ciudades { get; set; }
         public virtual DbSet<DiasLaborales> DiasLaborales { get; set; }
+        public virtual DbSet<Empleados> Empleados { get; set; }
         public virtual DbSet<Enfermeros> Enfermeros { get; set; }
         public virtual DbSet<Enfermerosxviajes> Enfermerosxviajes { get; set; }
         public virtual DbSet<Especialidades> Especialidades { get; set; }
@@ -38,6 +38,7 @@ namespace SIMED.Models
         public virtual DbSet<Modelos> Modelos { get; set; }
         public virtual DbSet<MotivosDeBaja> MotivosDeBaja { get; set; }
         public virtual DbSet<ObrasSociales> ObrasSociales { get; set; }
+        public virtual DbSet<Perfiles> Perfiles { get; set; }
         public virtual DbSet<Planes> Planes { get; set; }
         public virtual DbSet<RangosEtarios> RangosEtarios { get; set; }
         public virtual DbSet<RelacionesLaborales> RelacionesLaborales { get; set; }
@@ -58,7 +59,7 @@ namespace SIMED.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=200.69.137.167,11333; Initial Catalog=BD3K3G05_2022;User ID=BD3K3G05_2022;Password=CLV05_25089;Encrypt=False");
+                optionsBuilder.UseSqlServer("Data Source=200.69.137.167,11333;Initial Catalog=BD3K3G05_2022;User ID=BD3K3G05_2022;Password=CLV05_25089");
             }
         }
 
@@ -71,9 +72,7 @@ namespace SIMED.Models
 
                 entity.ToTable("AFILIADOS");
 
-                entity.Property(e => e.NumeroAfiliado)
-                    .HasColumnName("numeroAfiliado")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.NumeroAfiliado).HasColumnName("numeroAfiliado").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Apellido)
                     .IsRequired()
@@ -113,7 +112,11 @@ namespace SIMED.Models
 
                 entity.Property(e => e.NumeroDocumento).HasColumnName("numero_documento");
 
-                entity.Property(e => e.NumeroTelefono).HasColumnName("numeroTelefono");
+                entity.Property(e => e.NumeroTelefono)
+                    .IsRequired()
+                    .HasColumnName("numeroTelefono")
+                    .HasMaxLength(16)
+                    .IsUnicode(false);
 
                 entity.HasOne(d => d.IdBarrioNavigation)
                     .WithMany(p => p.Afiliados)
@@ -147,9 +150,7 @@ namespace SIMED.Models
 
                 entity.ToTable("AMBULANCIAS");
 
-                entity.Property(e => e.IdMovil)
-                    .HasColumnName("id_movil")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdMovil).HasColumnName("id_movil").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.IdCategoria).HasColumnName("id_categoria");
 
@@ -181,9 +182,7 @@ namespace SIMED.Models
 
                 entity.ToTable("BAJAS");
 
-                entity.Property(e => e.NroBaja)
-                    .HasColumnName("nro_baja")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.NroBaja).HasColumnName("nro_baja").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.DeudaPendiente).HasColumnName("deudaPendiente");
 
@@ -215,9 +214,7 @@ namespace SIMED.Models
 
                 entity.ToTable("BARRIOS");
 
-                entity.Property(e => e.IdBarrio)
-                    .HasColumnName("id_barrio")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdBarrio).HasColumnName("id_barrio").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.IdCiudad).HasColumnName("id_ciudad");
 
@@ -241,9 +238,7 @@ namespace SIMED.Models
 
                 entity.ToTable("CATEGORIAS");
 
-                entity.Property(e => e.IdCategoria)
-                    .HasColumnName("id_categoria")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdCategoria).HasColumnName("id_categoria").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Descripcion)
                     .IsRequired()
@@ -259,13 +254,11 @@ namespace SIMED.Models
 
                 entity.ToTable("CIUDADES");
 
-                entity.Property(e => e.IdCiudad)
-                    .HasColumnName("id_ciudad")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdCiudad).HasColumnName("id_ciudad").ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.DescripcionCiudad)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionCiudad")
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
@@ -277,15 +270,40 @@ namespace SIMED.Models
 
                 entity.ToTable("DIAS_LABORALES");
 
-                entity.Property(e => e.IdDiaLaboral)
-                    .HasColumnName("id_diaLaboral")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdDiaLaboral).HasColumnName("id_diaLaboral").ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.DescripcionDiaLaboral)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionDiaLaboral")
                     .HasMaxLength(30)
                     .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Empleados>(entity =>
+            {
+                entity.HasKey(e => e.Legajo);
+
+                entity.ToTable("EMPLEADOS");
+
+                entity.Property(e => e.Legajo).HasColumnName("legajo").ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Apellido)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.Property(e => e.IdSexo).HasColumnName("id_sexo");
+
+                entity.Property(e => e.Nombre)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+
+                entity.HasOne(d => d.IdSexoNavigation)
+                    .WithMany(p => p.Empleados)
+                    .HasForeignKey(d => d.IdSexo)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Empleados_Sexos");
             });
 
             modelBuilder.Entity<Enfermeros>(entity =>
@@ -295,9 +313,7 @@ namespace SIMED.Models
 
                 entity.ToTable("ENFERMEROS");
 
-                entity.Property(e => e.NumeroMatricula)
-                    .HasColumnName("numeroMatricula")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.NumeroMatricula).HasColumnName("numeroMatricula").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Apellido)
                     .IsRequired()
@@ -319,6 +335,8 @@ namespace SIMED.Models
 
                 entity.Property(e => e.IdEspecialidad).HasColumnName("id_especialidad");
 
+                entity.Property(e => e.IdSexo).HasColumnName("id_sexo");
+
                 entity.Property(e => e.IdTipoDocumento).HasColumnName("id_tipoDocumento");
 
                 entity.Property(e => e.Nombre)
@@ -338,6 +356,12 @@ namespace SIMED.Models
                     .HasForeignKey(d => d.IdBarrio)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_enfermeros_barrios");
+
+                entity.HasOne(d => d.IdSexoNavigation)
+                    .WithMany(p => p.Enfermeros)
+                    .HasForeignKey(d => d.IdSexo)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("fk_sexo");
 
                 entity.HasOne(d => d.IdTipoDocumentoNavigation)
                     .WithMany(p => p.Enfermeros)
@@ -383,13 +407,11 @@ namespace SIMED.Models
 
                 entity.ToTable("ESPECIALIDADES");
 
-                entity.Property(e => e.IdEspecialidad)
-                    .HasColumnName("id_especialidad")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdEspecialidad).HasColumnName("id_especialidad").ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.DescripcionEspecialidad)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionEspecialidad")
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
@@ -401,9 +423,7 @@ namespace SIMED.Models
 
                 entity.ToTable("FACTURAS");
 
-                entity.Property(e => e.IdFactura)
-                    .HasColumnName("id_factura")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdFactura).HasColumnName("id_factura").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.FechaFactura)
                     .HasColumnName("fechaFactura")
@@ -437,9 +457,7 @@ namespace SIMED.Models
 
                 entity.ToTable("MARCAS");
 
-                entity.Property(e => e.IdMarca)
-                    .HasColumnName("id_marca")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdMarca).HasColumnName("id_marca").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.NombreMarca)
                     .IsRequired()
@@ -455,9 +473,7 @@ namespace SIMED.Models
 
                 entity.ToTable("MEDICOS");
 
-                entity.Property(e => e.NumeroMatricula)
-                    .HasColumnName("numeroMatricula")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.NumeroMatricula).HasColumnName("numeroMatricula").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Apellido)
                     .IsRequired()
@@ -599,9 +615,7 @@ namespace SIMED.Models
 
                 entity.ToTable("MODELOS");
 
-                entity.Property(e => e.IdModelo)
-                    .HasColumnName("id_modelo")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdModelo).HasColumnName("id_modelo").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.IdMarca).HasColumnName("id_marca");
 
@@ -625,13 +639,11 @@ namespace SIMED.Models
 
                 entity.ToTable("MOTIVOS_DE_BAJA");
 
-                entity.Property(e => e.IdMotivoBaja)
-                    .HasColumnName("id_motivoBaja")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdMotivoBaja).HasColumnName("id_motivoBaja").ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Desrcipcion)
+                entity.Property(e => e.DesrcipcionMotivoBaja)
                     .IsRequired()
-                    .HasColumnName("desrcipcion")
+                    .HasColumnName("desrcipcionMotivoBaja")
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
@@ -643,17 +655,30 @@ namespace SIMED.Models
 
                 entity.ToTable("OBRAS_SOCIALES");
 
-                entity.Property(e => e.IdObraSocial)
-                    .HasColumnName("id_ObraSocial")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdObraSocial).HasColumnName("id_ObraSocial").ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.DescripcionObraSocial)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionObraSocial")
                     .HasMaxLength(30)
                     .IsUnicode(false);
 
                 entity.Property(e => e.DescuentoPorServicio).HasColumnName("descuentoPorServicio");
+            });
+
+            modelBuilder.Entity<Perfiles>(entity =>
+            {
+                entity.HasKey(e => e.IdPerfil);
+
+                entity.ToTable("PERFILES");
+
+                entity.Property(e => e.IdPerfil).HasColumnName("id_perfil");
+
+                entity.Property(e => e.DescripcionPerfil)
+                    .IsRequired()
+                    .HasColumnName("descripcionPerfil")
+                    .HasMaxLength(20)
+                    .IsUnicode(false);
             });
 
             modelBuilder.Entity<Planes>(entity =>
@@ -663,9 +688,7 @@ namespace SIMED.Models
 
                 entity.ToTable("PLANES");
 
-                entity.Property(e => e.IdPlan)
-                    .HasColumnName("id_plan")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdPlan).HasColumnName("id_plan").ValueGeneratedOnAdd();
 
                 entity.Property(e => e.IdRangoEtario).HasColumnName("id_rangoEtario");
 
@@ -699,13 +722,11 @@ namespace SIMED.Models
 
                 entity.ToTable("RANGOS_ETARIOS");
 
-                entity.Property(e => e.IdRangoEtario)
-                    .HasColumnName("id_rangoEtario")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdRangoEtario).HasColumnName("id_rangoEtario").ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.DescripcionRangoEtario)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionRangoEtario")
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
@@ -717,13 +738,11 @@ namespace SIMED.Models
 
                 entity.ToTable("RELACIONES_LABORALES");
 
-                entity.Property(e => e.IdRelacionLaboral)
-                    .HasColumnName("id_relacionLaboral")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdRelacionLaboral).HasColumnName("id_relacionLaboral").ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.DescripcionRelacionLaboral)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionRelacionLaboral")
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
@@ -735,13 +754,11 @@ namespace SIMED.Models
 
                 entity.ToTable("SEXOS");
 
-                entity.Property(e => e.IdSexo)
-                    .HasColumnName("id_sexo")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdSexo).HasColumnName("id_sexo");
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.DescripcionSexo)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionSexo")
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
@@ -771,13 +788,11 @@ namespace SIMED.Models
 
                 entity.ToTable("TIPOS_DOCUMENTOS");
 
-                entity.Property(e => e.IdTipoDocumento)
-                    .HasColumnName("id_tipoDocumento")
-                    .ValueGeneratedNever();
+                entity.Property(e => e.IdTipoDocumento).HasColumnName("id_tipoDocumento").ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.DescripcionTipoDocumento)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionTipoDocumento")
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
@@ -790,8 +805,8 @@ namespace SIMED.Models
                 entity.ToTable("TIPOS_PLAN");
 
                 entity.Property(e => e.IdTipoPlan)
-                    .HasColumnName("id_tipoPlan")
-                    .ValueGeneratedNever();
+                .HasColumnName("id_tipoPlan")
+                .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.CantAsistAmbulanciaDomicilio).HasColumnName("cantAsistAmbulanciaDomicilio");
 
@@ -801,9 +816,9 @@ namespace SIMED.Models
 
                 entity.Property(e => e.CantVistasDomiciliarias).HasColumnName("cantVistasDomiciliarias");
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.DescripcionTipoPlan)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionTipoPlan")
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
@@ -817,11 +832,13 @@ namespace SIMED.Models
 
                 entity.Property(e => e.IdTipoViaje)
                     .HasColumnName("id_tipoViaje")
-                    .ValueGeneratedNever();
+                    .ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.IdTipoViaje).HasColumnName("id_tipoViaje");
+
+                entity.Property(e => e.DescripcionTipoViaje)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionTipoViaje")
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
@@ -951,11 +968,11 @@ namespace SIMED.Models
 
                 entity.Property(e => e.IdTurnoRotativo)
                     .HasColumnName("id_turnoRotativo")
-                    .ValueGeneratedNever();
+                    .ValueGeneratedOnAdd();
 
-                entity.Property(e => e.Descripcion)
+                entity.Property(e => e.DescripcionTurnoRotativo)
                     .IsRequired()
-                    .HasColumnName("descripcion")
+                    .HasColumnName("descripcionTurnoRotativo")
                     .HasMaxLength(30)
                     .IsUnicode(false);
             });
@@ -990,21 +1007,42 @@ namespace SIMED.Models
 
             modelBuilder.Entity<Usuarios>(entity =>
             {
-                entity.HasKey(e => e.NombreDeUsuario);
+                entity.HasKey(e => e.IdUsuario);
 
                 entity.ToTable("USUARIOS");
 
+                entity.Property(e => e.IdUsuario)
+                    .HasColumnName("IdUsuario")
+                    .ValueGeneratedOnAdd();
+
+                entity.Property(e => e.Contraseña)
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .IsUnicode(false);
+
+                entity.Property(e => e.IdPerfil).HasColumnName("id_perfil");
+
+                entity.Property(e => e.LegajoEmpleado).HasColumnName("legajo_empleado");
+
                 entity.Property(e => e.NombreDeUsuario)
+                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.Property(e => e.Password)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.HasOne(d => d.IdPerfilNavigation)
+                    .WithMany(p => p.Usuarios)
+                    .HasForeignKey(d => d.IdPerfil)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_USUARIOS_PERFILES");
 
-                entity.Property(e => e.Correo)
-                    .IsRequired()
-                    .IsUnicode(false);
+                entity.HasOne(d => d.LegajoEmpleadoNavigation)
+                    .WithMany(p => p.Usuarios)
+                    .HasForeignKey(d => d.LegajoEmpleado)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_USUARIOS_EMPLEADOS");
             });
 
             modelBuilder.Entity<Viajes>(entity =>

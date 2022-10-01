@@ -1,4 +1,6 @@
-﻿using SIMED_V1.Forms_Para_El_Menu;
+﻿using SIMED.Models;
+using SIMED_V1.Forms_Mensajes_Personalizados;
+using SIMED_V1.Forms_Para_El_Menu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,10 +19,17 @@ namespace SIMED_V1
         private const int cGrip = 16;
         private const int cCaption = 32;
 
-        public PrincipalForm()
+        Usuarios usuario = new Usuarios();
+        public PrincipalForm(Usuarios usu)
         {
             InitializeComponent();
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+            usuario.NombreDeUsuario = usu.NombreDeUsuario;
+            usuario.IdUsuario = usu.IdUsuario;
+            usuario.Contraseña = usu.Contraseña;
+            usuario.Email = usu.Email;
+            usuario.IdPerfil = usu.IdPerfil;
+            usuario.LegajoEmpleado = usu.LegajoEmpleado;
         }
 
         private void PrincipalForm_Load(object sender, EventArgs e)
@@ -44,7 +53,7 @@ namespace SIMED_V1
             this.pnContenido.Controls.Remove(ContActivo);
 
             PrincipalForm menu = this;
-            ContActivo = new UMedicos(menu);
+            ContActivo = new UMedicos();
             ContActivo.Dock = DockStyle.Fill;
             this.pnContenido.Controls.Add(ContActivo);
             
@@ -75,7 +84,8 @@ namespace SIMED_V1
             //uUsuarios1.Show();
             //uUsuarios1.BringToFront();
             this.pnContenido.Controls.Remove(ContActivo);
-            ContActivo = new UUsuarios();
+            PrincipalForm menuprincipal = this;
+            ContActivo = new UUsuarios(usuario,menuprincipal);
             ContActivo.Dock = DockStyle.Fill;
             this.pnContenido.Controls.Add(ContActivo);
 
@@ -142,9 +152,8 @@ namespace SIMED_V1
         {
             LoginUsuarios ventana = new LoginUsuarios();
             //Programar ventana desea salir??
-            ventana.Show();
-            this.Dispose();
-            
+            Cerrar_Sesion window = new Cerrar_Sesion(this);
+            window.Show();
           
 
             

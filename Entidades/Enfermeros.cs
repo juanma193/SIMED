@@ -26,8 +26,10 @@ namespace SIMED.Models
         public string Calle { get; set; }
         public int NroCalle { get; set; }
         public int IdBarrio { get; set; }
+        public int IdSexo { get; set; }
 
         public virtual Barrios IdBarrioNavigation { get; set; }
+        public virtual Sexos IdSexoNavigation { get; set; }
         public virtual TiposDocumentos IdTipoDocumentoNavigation { get; set; }
         public virtual ICollection<Enfermerosxviajes> Enfermerosxviajes { get; set; }
         public virtual ICollection<TurnosRotativosxEnfermeros> TurnosRotativosxEnfermeros { get; set; }

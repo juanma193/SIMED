@@ -163,7 +163,7 @@
             this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.IconLeft = global::SIMED_V1.Properties.Resources.doctor1;
+            this.guna2TextBox3.IconLeft = global::SIMED_V1.Properties.Resources.doctor;
             this.guna2TextBox3.Location = new System.Drawing.Point(23, 217);
             this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2TextBox3.Name = "guna2TextBox3";

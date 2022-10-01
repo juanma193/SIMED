@@ -16,7 +16,7 @@ namespace SIMED.Models
         }
 
         public int IdEspecialidad { get; set; }
-        public string Descripcion { get; set; }
+        public string DescripcionEspecialidad { get; set; }
 
         public virtual ICollection<Medicos> Medicos { get; set; }
         public virtual ICollection<TarifasxServicios> TarifasxServicios { get; set; }

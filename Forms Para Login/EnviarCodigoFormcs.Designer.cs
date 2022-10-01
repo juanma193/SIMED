@@ -56,7 +56,7 @@
             // 
             this.btnIngresarMail.Animated = true;
             this.btnIngresarMail.AutoRoundedCorners = true;
-            this.btnIngresarMail.BorderRadius = 16;
+            this.btnIngresarMail.BorderRadius = 20;
             this.btnIngresarMail.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnIngresarMail.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnIngresarMail.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -66,11 +66,11 @@
             this.btnIngresarMail.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnIngresarMail.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnIngresarMail.ForeColor = System.Drawing.Color.White;
-            this.btnIngresarMail.Location = new System.Drawing.Point(64, 157);
-            this.btnIngresarMail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnIngresarMail.Location = new System.Drawing.Point(85, 193);
+            this.btnIngresarMail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIngresarMail.Name = "btnIngresarMail";
-            this.btnIngresarMail.Size = new System.Drawing.Size(295, 34);
-            this.btnIngresarMail.TabIndex = 5;
+            this.btnIngresarMail.Size = new System.Drawing.Size(393, 42);
+            this.btnIngresarMail.TabIndex = 2;
             this.btnIngresarMail.Text = "Enviar código de verificación";
             this.btnIngresarMail.Click += new System.EventHandler(this.btnIngresarMail_Click);
             // 
@@ -78,7 +78,7 @@
             // 
             this.btnCodigo.Animated = true;
             this.btnCodigo.AutoRoundedCorners = true;
-            this.btnCodigo.BorderRadius = 17;
+            this.btnCodigo.BorderRadius = 22;
             this.btnCodigo.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCodigo.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCodigo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -89,11 +89,11 @@
             this.btnCodigo.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnCodigo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnCodigo.ForeColor = System.Drawing.Color.White;
-            this.btnCodigo.Location = new System.Drawing.Point(172, 254);
-            this.btnCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCodigo.Location = new System.Drawing.Point(229, 313);
+            this.btnCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCodigo.Name = "btnCodigo";
-            this.btnCodigo.Size = new System.Drawing.Size(187, 37);
-            this.btnCodigo.TabIndex = 6;
+            this.btnCodigo.Size = new System.Drawing.Size(249, 46);
+            this.btnCodigo.TabIndex = 4;
             this.btnCodigo.Text = "Ingresar el codigo";
             this.btnCodigo.Click += new System.EventHandler(this.btnCodigo_Click);
             // 
@@ -102,11 +102,11 @@
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(448, 9);
-            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarApp.Location = new System.Drawing.Point(597, 11);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrarApp.Name = "btnCerrarApp";
-            this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
-            this.btnCerrarApp.TabIndex = 10;
+            this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
+            this.btnCerrarApp.TabIndex = 1;
             this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
             // btnMinimizar
@@ -115,11 +115,11 @@
             this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(410, 9);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(547, 11);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
-            this.btnMinimizar.TabIndex = 11;
+            this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
+            this.btnMinimizar.TabIndex = 0;
             // 
             // guna2Panel1
             // 
@@ -127,30 +127,28 @@
             this.guna2Panel1.Controls.Add(this.btnMinimizar);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(482, 29);
-            this.guna2Panel1.TabIndex = 7;
+            this.guna2Panel1.Size = new System.Drawing.Size(643, 36);
+            this.guna2Panel1.TabIndex = 1;
             // 
             // lblReiniciarContraseña
             // 
             this.lblReiniciarContraseña.AutoSize = true;
             this.lblReiniciarContraseña.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReiniciarContraseña.Location = new System.Drawing.Point(9, 40);
-            this.lblReiniciarContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblReiniciarContraseña.Location = new System.Drawing.Point(12, 49);
             this.lblReiniciarContraseña.Name = "lblReiniciarContraseña";
-            this.lblReiniciarContraseña.Size = new System.Drawing.Size(266, 32);
-            this.lblReiniciarContraseña.TabIndex = 13;
+            this.lblReiniciarContraseña.Size = new System.Drawing.Size(326, 41);
+            this.lblReiniciarContraseña.TabIndex = 0;
             this.lblReiniciarContraseña.Text = "Recuperar Contraseña";
             // 
             // lblNuevaContraseña
             // 
             this.lblNuevaContraseña.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevaContraseña.Location = new System.Drawing.Point(14, 27);
-            this.lblNuevaContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNuevaContraseña.Location = new System.Drawing.Point(19, 33);
             this.lblNuevaContraseña.Name = "lblNuevaContraseña";
-            this.lblNuevaContraseña.Size = new System.Drawing.Size(390, 62);
-            this.lblNuevaContraseña.TabIndex = 14;
+            this.lblNuevaContraseña.Size = new System.Drawing.Size(520, 76);
+            this.lblNuevaContraseña.TabIndex = 0;
             this.lblNuevaContraseña.Text = "Se enviará un código de verificación al email con el cual usted creó el usuario ";
             this.lblNuevaContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblNuevaContraseña.Click += new System.EventHandler(this.lblNuevaContraseña_Click);
@@ -168,20 +166,20 @@
             this.guna2ShadowPanel1.Controls.Add(this.btnIngresarMail);
             this.guna2ShadowPanel1.Controls.Add(this.btnCodigo);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(14, 92);
-            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(19, 113);
+            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.guna2ShadowPanel1.ShadowDepth = 80;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(416, 306);
-            this.guna2ShadowPanel1.TabIndex = 15;
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(555, 377);
+            this.guna2ShadowPanel1.TabIndex = 2;
             // 
             // txtMail
             // 
             this.txtMail.Animated = true;
             this.txtMail.AutoRoundedCorners = true;
-            this.txtMail.BorderRadius = 18;
+            this.txtMail.BorderRadius = 23;
             this.txtMail.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMail.DefaultText = "";
             this.txtMail.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -193,22 +191,22 @@
             this.txtMail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtMail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMail.IconLeft = global::SIMED_V1.Properties.Resources.icono_mail;
-            this.txtMail.Location = new System.Drawing.Point(26, 101);
-            this.txtMail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMail.Location = new System.Drawing.Point(35, 124);
+            this.txtMail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMail.Name = "txtMail";
             this.txtMail.PasswordChar = '\0';
             this.txtMail.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtMail.PlaceholderText = "Ingresa tu email";
             this.txtMail.SelectedText = "";
-            this.txtMail.Size = new System.Drawing.Size(333, 39);
-            this.txtMail.TabIndex = 2;
+            this.txtMail.Size = new System.Drawing.Size(444, 48);
+            this.txtMail.TabIndex = 1;
             this.txtMail.TextChanged += new System.EventHandler(this.txtMail_TextChanged);
             // 
             // txtCodigo
             // 
             this.txtCodigo.Animated = true;
             this.txtCodigo.AutoRoundedCorners = true;
-            this.txtCodigo.BorderRadius = 18;
+            this.txtCodigo.BorderRadius = 23;
             this.txtCodigo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCodigo.DefaultText = "";
             this.txtCodigo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -221,14 +219,14 @@
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtCodigo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCodigo.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
-            this.txtCodigo.Location = new System.Drawing.Point(26, 210);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigo.Location = new System.Drawing.Point(35, 258);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.PasswordChar = '\0';
             this.txtCodigo.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtCodigo.PlaceholderText = "Ingresa el codigo";
             this.txtCodigo.SelectedText = "";
-            this.txtCodigo.Size = new System.Drawing.Size(145, 39);
+            this.txtCodigo.Size = new System.Drawing.Size(193, 48);
             this.txtCodigo.TabIndex = 3;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
@@ -246,7 +244,7 @@
             // 
             this.btnHome.Animated = true;
             this.btnHome.AutoRoundedCorners = true;
-            this.btnHome.BorderRadius = 17;
+            this.btnHome.BorderRadius = 22;
             this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -255,25 +253,25 @@
             this.btnHome.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold);
             this.btnHome.ForeColor = System.Drawing.Color.DimGray;
             this.btnHome.Image = global::SIMED_V1.Properties.Resources.home;
-            this.btnHome.Location = new System.Drawing.Point(146, 417);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnHome.Location = new System.Drawing.Point(195, 513);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(135, 37);
-            this.btnHome.TabIndex = 16;
+            this.btnHome.Size = new System.Drawing.Size(180, 46);
+            this.btnHome.TabIndex = 3;
             this.btnHome.Text = "Home";
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // EnviarCodigoFormcs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 482);
+            this.ClientSize = new System.Drawing.Size(643, 593);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.lblReiniciarContraseña);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "EnviarCodigoFormcs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EnviarCodigoFormcs";

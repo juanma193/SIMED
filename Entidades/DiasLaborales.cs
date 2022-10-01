@@ -16,7 +16,7 @@ namespace SIMED.Models
         }
 
         public int IdDiaLaboral { get; set; }
-        public string Descripcion { get; set; }
+        public string DescripcionDiaLaboral { get; set; }
 
         public virtual ICollection<Medicos> Medicos { get; set; }
         public virtual ICollection<MedicosxDiasLaborales> MedicosxDiasLaborales { get; set; }

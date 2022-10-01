@@ -162,14 +162,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="11202032">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="11436528">
       <assemblyIdentity name="SIMED V1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GboYKb0NGbDxnLvrsfyZ6WwnMUDT7/egBshtpg8RFgI=</dsig:DigestValue>
+        <dsig:DigestValue>oon06LkpfLmy/0IV2O4l5u02R6aYsbXlFdX3Cunx6d8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -353,6 +353,15 @@
       <dsig:DigestValue>qA9lKbBqMKPXD5m4g5wPryBcLsj4pBuRpdc5KoijbH4=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="archivos\musica simed.wav" size="803436">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>opiAKu3KtEmJ+UfAynyZbrlb7efgEZo3poEUb4F/5c8=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="archivos\numeros.png" size="359">
     <hash>
       <dsig:Transforms>
@@ -486,6 +495,105 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>bTPEwVEokeIU6Fjj9kqRueUT9stNUH1EorLWtLxBdlg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\afiliados 2.png" size="15908">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>S+46LawlnGEcwNsFPu+nnG2nIi5MBKjGpaxV7p0QWeI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\afiliados.png" size="18458">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YweICDujhwSsEX4qPyNM3mVchQo4dqTKzqT1RH7J9Bg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\ambulance.png" size="20182">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Kzfnlwj3Lf2do6aftw8jAt/ie7hyhG4gn+kXAE7rOeo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\doctor 2.png" size="243336">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aXpHly3YMZumwuu/W7qlQPpaA9uOfljONRUrCDIt1lQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\doctor sin fondo.png" size="246338">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>k+CBsW9x8W6MyjrkqPWVN/RrLbFdF02M3yfu4mTa3eI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\doctor.png" size="3115">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FubVHwGGXZdZXHq5DgSx5DABuJEOYW9hsdy41TPVVSo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\doctora sin fondo.png" size="52622">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>JKv++/L4D1enMMa9sWVfs4h4lToM3MORLUaiJCK83W4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\doctora.png" size="60870">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GBe6v917rzjbzdEJsAH/9Psu+qqTdWrvcR2WHG1SQM4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\enfemeros.png" size="19097">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>NrzgOvL26WM+9cJGAT+uXmdMrXxw3Grter0gTda3WmI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\planes png.png" size="15436">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wvw6SpHMjvFmZRJW7B5AYVSV7XAxU64TaLQKtjQlovo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\usuarioss.png" size="28790">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>E+wKiiytURsGlbwWOl7DKmRvEgrZELLda3jOTokl+70=</dsig:DigestValue>
     </hash>
   </file>
   <file name="SIMED V1.exe.config" size="4810">
