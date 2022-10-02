@@ -131,7 +131,7 @@
             this.lblEdad.ForeColor = System.Drawing.Color.Red;
             this.lblEdad.Location = new System.Drawing.Point(414, 330);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(285, 23);
+            this.lblEdad.Size = new System.Drawing.Size(370, 23);
             this.lblEdad.TabIndex = 24;
             this.lblEdad.Text = "label1";
             // 
@@ -169,6 +169,7 @@
             this.grpSexo.Size = new System.Drawing.Size(249, 145);
             this.grpSexo.TabIndex = 21;
             this.grpSexo.Text = "Sexo";
+            this.grpSexo.Click += new System.EventHandler(this.grpSexo_Click);
             // 
             // btnOtro
             // 
@@ -504,6 +505,7 @@
             // btnCerrarApp
             // 
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarApp.CustomClick = true;
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
             this.btnCerrarApp.Location = new System.Drawing.Point(930, 11);

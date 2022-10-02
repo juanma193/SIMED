@@ -255,6 +255,7 @@
             this.txtNombreUsuario.Size = new System.Drawing.Size(285, 36);
             this.txtNombreUsuario.TabIndex = 1;
             this.txtNombreUsuario.TextChanged += new System.EventHandler(this.txtNombreUsuario_TextChanged);
+            this.txtNombreUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreUsuario_KeyPress);
             // 
             // guna2PictureBox1
             // 

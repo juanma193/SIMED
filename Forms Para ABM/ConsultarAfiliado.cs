@@ -1,5 +1,6 @@
 ﻿using SIMED.Models;
 using SIMED_V1.Bases_de_datos;
+using SIMED_V1.Forms_Mensajes_Personalizados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,26 +23,57 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void ConsultarAfiliado_Load(object sender, EventArgs e)
         {
+            cargarTodo();
+        }
+
+        private void todoVacio()
+        {
+            if (txtNombre.Text == "" && txtApellido.Text == "" && txtNroAfiliado.Text== "")
+            {
+                cargarTodo();
+            }
+
+
+        }
+
+        private void cargarTodo()
+        {
+            gbAfiliados.Rows.Clear();
+            
+            var afiliados = AfiliadosBD.getAfiliadosInicio();
+
+
+            foreach (var afiliado in afiliados)
+            {
+                AgregarAfiliado(afiliado);
+            }
 
         }
 
         private void btnModAfiliado_Click(object sender, EventArgs e)
         {
-            if (indice >= 0)
+            SeguroModificar window = new SeguroModificar();
+            if (window.ShowDialog() == DialogResult.OK)
             {
-                DataGridViewRow filaSeleccionada = gbAfiliados.Rows[indice];
-                int documento = int.Parse(filaSeleccionada.Cells["Documento"].Value.ToString());
-                Afiliados afil = AfiliadosBD.obtenerAfiliado(documento);
-
-                ModificarAfiliado ventana = new ModificarAfiliado(afil);
-                ventana.Show();
-                this.Hide();
+                if (indice >= 0)
+                {
+                    DataGridViewRow filaSeleccionada = gbAfiliados.Rows[indice];
+                    int documento = int.Parse(filaSeleccionada.Cells["Documento"].Value.ToString());
+                    Afiliados afil = AfiliadosBD.obtenerAfiliado(documento);
+                    ConsultarAfiliado consu = this;
+                    ModificarAfiliado ventana = new ModificarAfiliado(afil,consu);
+                    ventana.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    ErroresForm mensaje = new ErroresForm();
+                    mensaje.show("Seleccione un usuario");
+                }
             }
-            else
-            {
-                ErroresForm mensaje = new ErroresForm();
-                mensaje.show("Seleccione un usuario");
-            }
+            
+            
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -102,6 +134,84 @@ namespace SIMED_V1.Forms_Para_ABM
             {
                 ErroresForm mensaje = new ErroresForm();
                 mensaje.show("Seleccione un afiliado");
+            }
+        }
+
+        private void gbAfiliados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtNroAfiliado_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNroAfiliado.Text == "")
+            {
+                todoVacio();
+            }
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "")
+            {
+                todoVacio();
+            }
+
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            if (txtApellido.Text == "")
+            {
+                todoVacio();
+            }
+
+        }
+
+      
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNroAfiliado.Text = "";
+            txtNombre.Text = "";
+            txtApellido.Text = "";
+            todoVacio();
+        }
+
+        private void txtNroAfiliado_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
+            {
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (!char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
+            }
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
+            {
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (!char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
     }

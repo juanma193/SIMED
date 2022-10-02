@@ -23,5 +23,36 @@ namespace SIMED_V1.Bases_de_datos
             }
             return resultado;
         }
+
+        public static List<Ciudades> getCiudades()
+        {
+            var resultado = new List<Ciudades>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                resultado = db.Ciudades.Where(i => i.IdCiudad > 0).ToList();
+            }
+            catch (Exception ex)
+            {
+            }
+            return resultado;
+        }
+
+        public static List<Barrios> getBarriosDesdeCiudad(int ciudad)
+        {
+            var resultado = new List<Barrios>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                resultado = db.Barrios.Where(i => i.IdCiudad == ciudad).ToList();
+            }
+            catch (Exception ex)
+            {
+            }
+            return resultado;
+        }
     }
+
 }

@@ -14,11 +14,13 @@ using System.Windows.Forms;
 
 namespace SIMED_V1.Forms_Para_ABM
 {
+    
     public partial class ConsultarUsuarioNoAdmin : Form
     {
         Usuarios usuario = new Usuarios();
         Empleados empl = new Empleados();
         PrincipalForm principalmenu;
+        bool cambios = false;
         public ConsultarUsuarioNoAdmin(Usuarios usu, PrincipalForm menuprincipal)
         {
             InitializeComponent();
@@ -81,6 +83,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 txtSexo.Text = "Otro";
             }
             btnModificarEmpleado.Enabled = false;
+            cambios = false;
 
         }
 
@@ -192,6 +195,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtNombreUsu_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtNombreUsu.Text.Equals(""))
             {
                 lblNombreUsuario.Visible = true;
@@ -202,6 +206,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtCorreo.Text.Equals(""))
             {
                 lblMail.Visible = true;
@@ -212,6 +217,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtNombre.Text.Equals(""))
             {
                 lblErrorNombre.Visible = true;
@@ -223,6 +229,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtApellido_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtApellido.Text.Equals(""))
             {
                 lblErrorApellido.Visible = true;
@@ -233,6 +240,7 @@ namespace SIMED_V1.Forms_Para_ABM
         }
         private void txtSexo_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtSexo.Text.Equals(""))
             {
                 lblErrorSexo.Visible = true;
@@ -243,12 +251,27 @@ namespace SIMED_V1.Forms_Para_ABM
         }
         private void txtEdad_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtEdad.Text.Equals(""))
             {
                 lblErrorEdad.Visible = true;
                 lblErrorEdad.Text = "Edad obligatoria";
             }
-            else { lblErrorEdad.Visible = false; }
+            else 
+            { 
+                lblErrorEdad.Visible = false;
+
+                int edad = int.Parse(txtEdad.Text);
+                txtEdad.MaxLength = 3;
+
+                if (edad < 18 || edad > 80)
+                {
+                    lblErrorEdad.Visible = true;
+                    lblErrorEdad.Text = "Edad no permitida. Mínima 18, máxima 80";
+
+                }
+
+            }
 
         }
 
@@ -304,86 +327,25 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnModificarEmpleado_Click(object sender, EventArgs e)
         {
-            
-            SeguroModificar window = new SeguroModificar();
-            if (window.ShowDialog() == DialogResult.OK)
+            bool bandera = true;
+
+            bool flag = true;
+            flag = ErorresEnRojo(bandera);
+            if (flag)
             {
-                window.Dispose();
-                var resultado = new bool();
-                bool bandera;
-
-                bool modusuario = false;
-                bool modempleado = false;
-
-                lblNombreUsuario.Visible = false;
-                lblMail.Visible = false;
-
-                lblErrorNombre.Visible = false;
-                lblErrorEdad.Visible = false;
-                lblErrorApellido.Visible = false;
-                lblErrorSexo.Visible = false;
-
-
-
-                bandera = true;
-
-                bool flag = ErorresEnRojo(bandera);
-
-
-
-                if (flag == true && chkEmpleado.Checked)
+                SeguroModificar window = new SeguroModificar();
+                if (window.ShowDialog() == DialogResult.OK)
                 {
-                    string nombre = EmpleadosBD.UpperCaseFirstChar(txtNombre.Text);
-                    string apellido = EmpleadosBD.UpperCaseFirstChar(txtApellido.Text);
-                    string sexo = EmpleadosBD.UpperCaseFirstChar(txtSexo.Text);
-
-                    empl.Nombre = nombre;
-                    empl.Apellido = apellido;
-
-                    empl.Edad = int.Parse(txtEdad.Text);
+                    window.Dispose();
+                    var resultado = new bool();
 
 
-                    if (sexo == "Femenino")
-                    {
-                        empl.IdSexo = 1;
-                    }
-                    else if (sexo == "Masculino")
-                    {
-                        empl.IdSexo = 2;
-                    }
-                    else
-                    {
-                        empl.IdSexo = 3;
-                    }
-                    resultado = EmpleadosBD.modificarEmpleado(empl);
-
-
-                    if (!resultado)
-                    {
-                        modempleado = false;
-
-                    }
-                    else
-                    {
-
-                        modempleado = true;
-                    }
-
-                }
-
-                if (chkUsuarios.Checked)
-                {
-                    resultado = EmpleadosBD.modificarEmpleado(empl);
-
-                    var resultado2 = new bool();
-
-
-                    string email = txtCorreo.Text;
-                    Regex regex = new Regex(@"^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-za-za-z]{2,3})+$");
-                    Match match = regex.Match(email);
+                    bool modusuario = false;
+                    bool modempleado = false;
 
                     lblNombreUsuario.Visible = false;
                     lblMail.Visible = false;
+
                     lblErrorNombre.Visible = false;
                     lblErrorEdad.Visible = false;
                     lblErrorApellido.Visible = false;
@@ -391,144 +353,248 @@ namespace SIMED_V1.Forms_Para_ABM
 
 
 
-                    bandera = true;
 
-                    bool flag2 = ErorresEnRojo(bandera);
-                    bool flag3 = true;
 
-                    bool existeusuario = UsuarioBD.ValidarUsername(txtNombreUsu.Text);
-                    bool existemail = UsuarioBD.ValidarEmail(txtCorreo.Text);
-                    bool mismousuario = false;
-                    bool mismomail = false;
 
-                    if (existeusuario && (txtNombreUsu.Text == usuario.NombreDeUsuario))
+
+                    if (flag == true && chkEmpleado.Checked)
                     {
-                        mismousuario = true;
-                    }
-                    if (existemail && (txtCorreo.Text == usuario.Email))
-                    {
-                        mismomail = true;
-                    }
+                        string nombre = EmpleadosBD.UpperCaseFirstChar(txtNombre.Text);
+                        string apellido = EmpleadosBD.UpperCaseFirstChar(txtApellido.Text);
+                        string sexo = EmpleadosBD.UpperCaseFirstChar(txtSexo.Text);
 
-                    if (existeusuario && existemail && !mismomail && !mismousuario)
-                    {
-                        string error = "Campos incorrectos";
-                        string errorAdicional = "El nombre de usuario ya se encuentra en uso \n " + "El mail ya se encuentra en uso";
-                        MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional);
-                        ventana.Show();
-                        flag2 = false;
+                        empl.Nombre = nombre;
+                        empl.Apellido = apellido;
 
-                    }
+                        empl.Edad = int.Parse(txtEdad.Text);
 
-                    else
-                    {
-                        if (existeusuario == true && !mismousuario)
+
+                        if (sexo == "Femenino")
                         {
-                            ErroresForm ventana = new ErroresForm();
-                            ventana.show("El nombre de usuario ya se encuentra en uso");
-                            flag2 = false;
+                            empl.IdSexo = 1;
                         }
-                        if (existemail == true && !mismomail)
+                        else if (sexo == "Masculino")
                         {
-                            ErroresForm ventana = new ErroresForm();
-                            ventana.show("El mail ya se encuentra en uso");
-                            flag3 = false;
-                        }
-                    }
-
-
-
-
-
-                    if (flag2 && flag3)
-                    {
-
-                        if (match.Success)
-                        {
-                            usuario.NombreDeUsuario = txtNombreUsu.Text;
-                            usuario.Email = txtCorreo.Text;
-
-
-
-
-
-
-                            resultado2 = EmpleadosBD.modificarUsuario(usuario);
-
-
-                            if (!resultado2 || !resultado)
-                            {
-
-                                modusuario = false;
-                            }
-                            else
-                            {
-
-                                modusuario = true;
-                            }
+                            empl.IdSexo = 2;
                         }
                         else
                         {
-                            ErroresForm ventana = new ErroresForm();
-                            ventana.show("El formato del mail no es correcto");
+                            empl.IdSexo = 3;
                         }
+                        resultado = EmpleadosBD.modificarEmpleado(empl);
+
+
+                        if (!resultado)
+                        {
+                            modempleado = false;
+
+                        }
+                        else
+                        {
+
+                            modempleado = true;
+                        }
+
                     }
 
+                    if (chkUsuarios.Checked)
+                    {
+                        resultado = EmpleadosBD.modificarEmpleado(empl);
 
-                }
+                        var resultado2 = new bool();
 
-                if (modempleado && modusuario)
-                {
-                    CorrectoForm msj = new CorrectoForm();
-                    msj.show("Su usuario y sus datos fueron modificados correctamente");
-                }
-                else
-                {
 
-                    if (modempleado)
+                        string email = txtCorreo.Text;
+                        Regex regex = new Regex(@"^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-za-za-z]{2,3})+$");
+                        Match match = regex.Match(email);
+
+                        lblNombreUsuario.Visible = false;
+                        lblMail.Visible = false;
+                        lblErrorNombre.Visible = false;
+                        lblErrorEdad.Visible = false;
+                        lblErrorApellido.Visible = false;
+                        lblErrorSexo.Visible = false;
+
+
+
+                        bandera = true;
+
+                        bool flag2 = ErorresEnRojo(bandera);
+                        bool flag3 = true;
+
+                        bool existeusuario = UsuarioBD.ValidarUsername(txtNombreUsu.Text);
+                        bool existemail = UsuarioBD.ValidarEmail(txtCorreo.Text);
+                        bool mismousuario = false;
+                        bool mismomail = false;
+
+                        if (existeusuario && (txtNombreUsu.Text == usuario.NombreDeUsuario))
+                        {
+                            mismousuario = true;
+                        }
+                        if (existemail && (txtCorreo.Text == usuario.Email))
+                        {
+                            mismomail = true;
+                        }
+
+                        if (existeusuario && existemail && !mismomail && !mismousuario)
+                        {
+                            string error = "Campos incorrectos";
+                            string errorAdicional = "El nombre de usuario ya se encuentra en uso \n " + "El mail ya se encuentra en uso";
+                            MultiplesErrores ventana = new MultiplesErrores(error, errorAdicional);
+                            ventana.Show();
+                            flag2 = false;
+
+                        }
+
+                        else
+                        {
+                            if (existeusuario == true && !mismousuario)
+                            {
+                                ErroresForm ventana = new ErroresForm();
+                                ventana.show("El nombre de usuario ya se encuentra en uso");
+                                flag2 = false;
+                            }
+                            if (existemail == true && !mismomail)
+                            {
+                                ErroresForm ventana = new ErroresForm();
+                                ventana.show("El mail ya se encuentra en uso");
+                                flag3 = false;
+                            }
+                        }
+
+
+
+
+
+                        if (flag2 && flag3)
+                        {
+
+                            if (match.Success)
+                            {
+                                usuario.NombreDeUsuario = txtNombreUsu.Text;
+                                usuario.Email = txtCorreo.Text;
+
+
+
+
+
+
+                                resultado2 = EmpleadosBD.modificarUsuario(usuario);
+
+
+                                if (!resultado2 || !resultado)
+                                {
+
+                                    modusuario = false;
+                                }
+                                else
+                                {
+
+                                    modusuario = true;
+                                }
+                            }
+                            else
+                            {
+                                ErroresForm ventana = new ErroresForm();
+                                ventana.show("El formato del mail no es correcto");
+                            }
+                        }
+
+
+                    }
+
+                    if (modempleado && modusuario)
                     {
                         CorrectoForm msj = new CorrectoForm();
-                        msj.show("Sus datos fueron modificados correctamente");
+                        msj.show("Su usuario y sus datos fueron modificados correctamente");
                     }
-                    if (modusuario)
+                    else
                     {
-                        CorrectoForm msj = new CorrectoForm();
-                        msj.show("Su usuario fue modificado correctamente");
+
+                        if (modempleado)
+                        {
+                            CorrectoForm msj = new CorrectoForm();
+                            msj.show("Sus datos fueron modificados correctamente");
+                        }
+                        if (modusuario)
+                        {
+                            CorrectoForm msj = new CorrectoForm();
+                            msj.show("Su usuario fue modificado correctamente");
+                        }
+
+
                     }
 
 
-                }
-
-
-                if (!modusuario && !modempleado)
-                {
-                    ErroresForm mensaje = new ErroresForm();
-                    mensaje.show("Error al modificar el empleado");
-                }
-                else
-                {
-                    if (!modusuario && chkUsuarios.Checked)
-                    {
-                        ErroresForm mensaje = new ErroresForm();
-                        mensaje.show("Error al modificar el usuario");
-                    }
-                    if (!modempleado && chkEmpleado.Checked)
+                    if (!modusuario && !modempleado)
                     {
                         ErroresForm mensaje = new ErroresForm();
                         mensaje.show("Error al modificar el empleado");
                     }
+                    else
+                    {
+                        if (!modusuario && chkUsuarios.Checked)
+                        {
+                            ErroresForm mensaje = new ErroresForm();
+                            mensaje.show("Error al modificar el usuario");
+                        }
+                        if (!modempleado && chkEmpleado.Checked)
+                        {
+                            ErroresForm mensaje = new ErroresForm();
+                            mensaje.show("Error al modificar el empleado");
+                        }
+                    }
                 }
+
             }
 
 
-           
+
 
 
 
 
 
         }
+        private bool ErorrEnRojo(bool bandera)
+        {
+            bool flag = true;
 
+            if (txtNombreUsu.Text.Equals("") && bandera == true)
+            {
+                lblNombreUsuario.Visible = true;
+                lblNombreUsuario.Text = "Nombre de usuario obligatorio";
+                flag = false;
+            }
+            if (txtCorreo.Text.Equals("") && bandera == true)
+            {
+                lblMail.Visible = true;
+                lblMail.Text = "Correo obligatorio";
+                flag = false;
+            }
+
+            if (txtNombre.Text.Equals("") && bandera == true)
+            {
+                lblErrorNombre.Visible = true;
+                lblErrorNombre.Text = "Nombre obligatorio";
+                flag = false;
+            }
+            if (txtApellido.Text.Equals("") && bandera == true)
+            {
+                lblErrorApellido.Visible = true;
+                lblErrorApellido.Text = "Nombre obligatorio";
+                flag = false;
+            }
+            if (txtEdad.Text.Equals("") && bandera == true)
+            {
+                lblErrorEdad.Visible = true;
+                lblErrorEdad.Text = "Edad obligatoria";
+                flag = false;
+            }
+
+            return flag;
+
+        }
         private void guna2Separator1_Click(object sender, EventArgs e)
         {
 
@@ -625,36 +691,99 @@ namespace SIMED_V1.Forms_Para_ABM
             
         }
 
+        
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (!char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (!char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtSexo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
+        }
+
+        private void txtNombreUsu_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar)) e.Handled = false;
+            else
+            {
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if (e.KeyChar == '-' || e.KeyChar == '.') e.Handled = false;
+                    else if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
+            }
+        }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+        }
+
+        private void btnCerrarApp_Click(object sender, EventArgs e)
+        {
+            if (cambios)
+            {
+
+                SeguroModificar ventana = new SeguroModificar();
+                ventana.lblMensaje.Text = "¿Está seguro de que desea perder todos los cambios?";
+                ventana.btnModificar.Text = "Salir";
+                if (ventana.ShowDialog() == DialogResult.OK)
+                {
+                    this.Dispose();
+                }
+            }
+            else 
+            {
+                this.Dispose();
+            }
+            
+            
+
+            
+           
+            
         }
     }
 }

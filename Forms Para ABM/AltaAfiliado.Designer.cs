@@ -34,15 +34,28 @@
             this.btnMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnCrearAmbulancia = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.fechaInscripcion = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.fechaNac = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            this.lblFechaInscripcion = new System.Windows.Forms.Label();
+            this.lblFechaNac = new System.Windows.Forms.Label();
+            this.lblBarrio = new System.Windows.Forms.Label();
+            this.lblCiudad = new System.Windows.Forms.Label();
+            this.lblNumeroCalle = new System.Windows.Forms.Label();
+            this.lblCalle = new System.Windows.Forms.Label();
+            this.lblPlan = new System.Windows.Forms.Label();
+            this.lblNumeroDoc = new System.Windows.Forms.Label();
+            this.lblTipoDoc = new System.Windows.Forms.Label();
+            this.lblNumTelefono = new System.Windows.Forms.Label();
+            this.lblSexo = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.cmbCiudad = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbPlanes = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbBarrios = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnVolver = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.fechaInscripcion = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtNroCalle = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCalle = new Guna.UI2.WinForms.Guna2TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.fechaNac = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtNroTel = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNroDoc = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtApellido = new Guna.UI2.WinForms.Guna2TextBox();
@@ -66,13 +79,15 @@
             // btnCerrarApp
             // 
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarApp.CustomClick = true;
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(1424, 14);
+            this.btnCerrarApp.Location = new System.Drawing.Point(1519, 14);
             this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
             this.btnCerrarApp.TabIndex = 12;
+            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
             // btnMinimizar
             // 
@@ -80,7 +95,7 @@
             this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(1372, 14);
+            this.btnMinimizar.Location = new System.Drawing.Point(1467, 14);
             this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
@@ -100,7 +115,7 @@
             this.btnCrearAmbulancia.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnCrearAmbulancia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnCrearAmbulancia.ForeColor = System.Drawing.Color.White;
-            this.btnCrearAmbulancia.Location = new System.Drawing.Point(989, 215);
+            this.btnCrearAmbulancia.Location = new System.Drawing.Point(996, 413);
             this.btnCrearAmbulancia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCrearAmbulancia.Name = "btnCrearAmbulancia";
             this.btnCrearAmbulancia.Size = new System.Drawing.Size(256, 46);
@@ -111,16 +126,29 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ShadowPanel1.Controls.Add(this.fechaInscripcion);
+            this.guna2ShadowPanel1.Controls.Add(this.fechaNac);
+            this.guna2ShadowPanel1.Controls.Add(this.lblFechaInscripcion);
+            this.guna2ShadowPanel1.Controls.Add(this.lblFechaNac);
+            this.guna2ShadowPanel1.Controls.Add(this.lblBarrio);
+            this.guna2ShadowPanel1.Controls.Add(this.lblCiudad);
+            this.guna2ShadowPanel1.Controls.Add(this.lblNumeroCalle);
+            this.guna2ShadowPanel1.Controls.Add(this.lblCalle);
+            this.guna2ShadowPanel1.Controls.Add(this.lblPlan);
+            this.guna2ShadowPanel1.Controls.Add(this.lblNumeroDoc);
+            this.guna2ShadowPanel1.Controls.Add(this.lblTipoDoc);
+            this.guna2ShadowPanel1.Controls.Add(this.lblNumTelefono);
+            this.guna2ShadowPanel1.Controls.Add(this.lblSexo);
+            this.guna2ShadowPanel1.Controls.Add(this.lblApellido);
+            this.guna2ShadowPanel1.Controls.Add(this.lblNombre);
+            this.guna2ShadowPanel1.Controls.Add(this.cmbCiudad);
             this.guna2ShadowPanel1.Controls.Add(this.cmbPlanes);
             this.guna2ShadowPanel1.Controls.Add(this.cmbBarrios);
-            this.guna2ShadowPanel1.Controls.Add(this.btnVolver);
             this.guna2ShadowPanel1.Controls.Add(this.label2);
-            this.guna2ShadowPanel1.Controls.Add(this.fechaInscripcion);
             this.guna2ShadowPanel1.Controls.Add(this.txtNroCalle);
             this.guna2ShadowPanel1.Controls.Add(this.txtCalle);
             this.guna2ShadowPanel1.Controls.Add(this.label1);
             this.guna2ShadowPanel1.Controls.Add(this.btnCrearAmbulancia);
-            this.guna2ShadowPanel1.Controls.Add(this.fechaNac);
             this.guna2ShadowPanel1.Controls.Add(this.txtNroTel);
             this.guna2ShadowPanel1.Controls.Add(this.txtNroDoc);
             this.guna2ShadowPanel1.Controls.Add(this.txtApellido);
@@ -134,8 +162,196 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.guna2ShadowPanel1.ShadowDepth = 80;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1351, 422);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1466, 534);
             this.guna2ShadowPanel1.TabIndex = 15;
+            // 
+            // fechaInscripcion
+            // 
+            this.fechaInscripcion.Animated = true;
+            this.fechaInscripcion.AutoRoundedCorners = true;
+            this.fechaInscripcion.BorderRadius = 17;
+            this.fechaInscripcion.Checked = true;
+            this.fechaInscripcion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.fechaInscripcion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.fechaInscripcion.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.fechaInscripcion.Location = new System.Drawing.Point(546, 423);
+            this.fechaInscripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.fechaInscripcion.MaxDate = new System.DateTime(2022, 10, 1, 22, 19, 12, 0);
+            this.fechaInscripcion.MinDate = new System.DateTime(1905, 1, 1, 0, 0, 0, 0);
+            this.fechaInscripcion.Name = "fechaInscripcion";
+            this.fechaInscripcion.Size = new System.Drawing.Size(368, 36);
+            this.fechaInscripcion.TabIndex = 48;
+            this.fechaInscripcion.Value = new System.DateTime(2022, 9, 14, 14, 58, 49, 546);
+            // 
+            // fechaNac
+            // 
+            this.fechaNac.Animated = true;
+            this.fechaNac.AutoRoundedCorners = true;
+            this.fechaNac.BorderRadius = 17;
+            this.fechaNac.Checked = true;
+            this.fechaNac.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.fechaNac.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.fechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.fechaNac.Location = new System.Drawing.Point(31, 423);
+            this.fechaNac.Margin = new System.Windows.Forms.Padding(4);
+            this.fechaNac.MaxDate = new System.DateTime(2022, 10, 1, 22, 19, 12, 0);
+            this.fechaNac.MinDate = new System.DateTime(1905, 1, 1, 0, 0, 0, 0);
+            this.fechaNac.Name = "fechaNac";
+            this.fechaNac.Size = new System.Drawing.Size(368, 36);
+            this.fechaNac.TabIndex = 47;
+            this.fechaNac.Value = new System.DateTime(2022, 9, 14, 14, 58, 49, 546);
+            // 
+            // lblFechaInscripcion
+            // 
+            this.lblFechaInscripcion.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaInscripcion.ForeColor = System.Drawing.Color.Red;
+            this.lblFechaInscripcion.Location = new System.Drawing.Point(552, 479);
+            this.lblFechaInscripcion.Name = "lblFechaInscripcion";
+            this.lblFechaInscripcion.Size = new System.Drawing.Size(285, 23);
+            this.lblFechaInscripcion.TabIndex = 46;
+            this.lblFechaInscripcion.Text = "label1";
+            // 
+            // lblFechaNac
+            // 
+            this.lblFechaNac.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaNac.ForeColor = System.Drawing.Color.Red;
+            this.lblFechaNac.Location = new System.Drawing.Point(39, 479);
+            this.lblFechaNac.Name = "lblFechaNac";
+            this.lblFechaNac.Size = new System.Drawing.Size(285, 23);
+            this.lblFechaNac.TabIndex = 45;
+            this.lblFechaNac.Text = "label1";
+            // 
+            // lblBarrio
+            // 
+            this.lblBarrio.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBarrio.ForeColor = System.Drawing.Color.Red;
+            this.lblBarrio.Location = new System.Drawing.Point(993, 336);
+            this.lblBarrio.Name = "lblBarrio";
+            this.lblBarrio.Size = new System.Drawing.Size(285, 23);
+            this.lblBarrio.TabIndex = 44;
+            this.lblBarrio.Text = "label1";
+            // 
+            // lblCiudad
+            // 
+            this.lblCiudad.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCiudad.ForeColor = System.Drawing.Color.Red;
+            this.lblCiudad.Location = new System.Drawing.Point(993, 243);
+            this.lblCiudad.Name = "lblCiudad";
+            this.lblCiudad.Size = new System.Drawing.Size(285, 23);
+            this.lblCiudad.TabIndex = 43;
+            this.lblCiudad.Text = "label1";
+            // 
+            // lblNumeroCalle
+            // 
+            this.lblNumeroCalle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroCalle.ForeColor = System.Drawing.Color.Red;
+            this.lblNumeroCalle.Location = new System.Drawing.Point(993, 164);
+            this.lblNumeroCalle.Name = "lblNumeroCalle";
+            this.lblNumeroCalle.Size = new System.Drawing.Size(285, 23);
+            this.lblNumeroCalle.TabIndex = 42;
+            this.lblNumeroCalle.Text = "label1";
+            // 
+            // lblCalle
+            // 
+            this.lblCalle.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalle.ForeColor = System.Drawing.Color.Red;
+            this.lblCalle.Location = new System.Drawing.Point(993, 74);
+            this.lblCalle.Name = "lblCalle";
+            this.lblCalle.Size = new System.Drawing.Size(285, 23);
+            this.lblCalle.TabIndex = 41;
+            this.lblCalle.Text = "label1";
+            // 
+            // lblPlan
+            // 
+            this.lblPlan.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPlan.ForeColor = System.Drawing.Color.Red;
+            this.lblPlan.Location = new System.Drawing.Point(552, 336);
+            this.lblPlan.Name = "lblPlan";
+            this.lblPlan.Size = new System.Drawing.Size(285, 23);
+            this.lblPlan.TabIndex = 40;
+            this.lblPlan.Text = "label1";
+            // 
+            // lblNumeroDoc
+            // 
+            this.lblNumeroDoc.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroDoc.ForeColor = System.Drawing.Color.Red;
+            this.lblNumeroDoc.Location = new System.Drawing.Point(552, 243);
+            this.lblNumeroDoc.Name = "lblNumeroDoc";
+            this.lblNumeroDoc.Size = new System.Drawing.Size(285, 23);
+            this.lblNumeroDoc.TabIndex = 39;
+            this.lblNumeroDoc.Text = "label1";
+            // 
+            // lblTipoDoc
+            // 
+            this.lblTipoDoc.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoDoc.ForeColor = System.Drawing.Color.Red;
+            this.lblTipoDoc.Location = new System.Drawing.Point(552, 158);
+            this.lblTipoDoc.Name = "lblTipoDoc";
+            this.lblTipoDoc.Size = new System.Drawing.Size(285, 23);
+            this.lblTipoDoc.TabIndex = 38;
+            this.lblTipoDoc.Text = "label1";
+            // 
+            // lblNumTelefono
+            // 
+            this.lblNumTelefono.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumTelefono.ForeColor = System.Drawing.Color.Red;
+            this.lblNumTelefono.Location = new System.Drawing.Point(552, 74);
+            this.lblNumTelefono.Name = "lblNumTelefono";
+            this.lblNumTelefono.Size = new System.Drawing.Size(285, 23);
+            this.lblNumTelefono.TabIndex = 37;
+            this.lblNumTelefono.Text = "label1";
+            // 
+            // lblSexo
+            // 
+            this.lblSexo.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSexo.ForeColor = System.Drawing.Color.Red;
+            this.lblSexo.Location = new System.Drawing.Point(39, 361);
+            this.lblSexo.Name = "lblSexo";
+            this.lblSexo.Size = new System.Drawing.Size(285, 23);
+            this.lblSexo.TabIndex = 36;
+            this.lblSexo.Text = "label1";
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.ForeColor = System.Drawing.Color.Red;
+            this.lblApellido.Location = new System.Drawing.Point(39, 158);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(285, 23);
+            this.lblApellido.TabIndex = 35;
+            this.lblApellido.Text = "label1";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.Red;
+            this.lblNombre.Location = new System.Drawing.Point(39, 74);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(285, 23);
+            this.lblNombre.TabIndex = 34;
+            this.lblNombre.Text = "label1";
+            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
+            // 
+            // cmbCiudad
+            // 
+            this.cmbCiudad.AutoRoundedCorners = true;
+            this.cmbCiudad.BackColor = System.Drawing.Color.Transparent;
+            this.cmbCiudad.BorderRadius = 17;
+            this.cmbCiudad.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiudad.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.cmbCiudad.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbCiudad.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cmbCiudad.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbCiudad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cmbCiudad.ItemHeight = 30;
+            this.cmbCiudad.Location = new System.Drawing.Point(990, 191);
+            this.cmbCiudad.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbCiudad.Name = "cmbCiudad";
+            this.cmbCiudad.Size = new System.Drawing.Size(255, 36);
+            this.cmbCiudad.TabIndex = 33;
+            this.cmbCiudad.SelectedIndexChanged += new System.EventHandler(this.cmbCiudad_SelectedIndexChanged);
+            this.cmbCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCiudad_KeyPress);
             // 
             // cmbPlanes
             // 
@@ -150,11 +366,12 @@
             this.cmbPlanes.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbPlanes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbPlanes.ItemHeight = 30;
-            this.cmbPlanes.Location = new System.Drawing.Point(545, 215);
+            this.cmbPlanes.Location = new System.Drawing.Point(546, 281);
             this.cmbPlanes.Margin = new System.Windows.Forms.Padding(4);
             this.cmbPlanes.Name = "cmbPlanes";
             this.cmbPlanes.Size = new System.Drawing.Size(367, 36);
             this.cmbPlanes.TabIndex = 32;
+            this.cmbPlanes.SelectedIndexChanged += new System.EventHandler(this.cmbPlanes_SelectedIndexChanged);
             // 
             // cmbBarrios
             // 
@@ -169,62 +386,23 @@
             this.cmbBarrios.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbBarrios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbBarrios.ItemHeight = 30;
-            this.cmbBarrios.Location = new System.Drawing.Point(989, 145);
+            this.cmbBarrios.Location = new System.Drawing.Point(990, 281);
             this.cmbBarrios.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBarrios.Name = "cmbBarrios";
             this.cmbBarrios.Size = new System.Drawing.Size(255, 36);
             this.cmbBarrios.TabIndex = 31;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.Animated = true;
-            this.btnVolver.AutoRoundedCorners = true;
-            this.btnVolver.BorderRadius = 22;
-            this.btnVolver.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVolver.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnVolver.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnVolver.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnVolver.FillColor = System.Drawing.Color.Transparent;
-            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Image = global::SIMED_V1.Properties.Resources.left_arrow;
-            this.btnVolver.Location = new System.Drawing.Point(31, 431);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(84, 46);
-            this.btnVolver.TabIndex = 30;
+            this.cmbBarrios.SelectedIndexChanged += new System.EventHandler(this.cmbBarrios_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(541, 281);
+            this.label2.Location = new System.Drawing.Point(551, 393);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(265, 23);
             this.label2.TabIndex = 29;
             this.label2.Text = "Seleccione la fecha de inscripción";
-            // 
-            // fechaInscripcion
-            // 
-            this.fechaInscripcion.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.fechaInscripcion.Animated = true;
-            this.fechaInscripcion.AutoRoundedCorners = true;
-            this.fechaInscripcion.BorderRadius = 17;
-            this.fechaInscripcion.Checked = true;
-            this.fechaInscripcion.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.fechaInscripcion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.fechaInscripcion.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.fechaInscripcion.ImeMode = System.Windows.Forms.ImeMode.Hiragana;
-            this.fechaInscripcion.Location = new System.Drawing.Point(539, 311);
-            this.fechaInscripcion.Margin = new System.Windows.Forms.Padding(4);
-            this.fechaInscripcion.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.fechaInscripcion.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.fechaInscripcion.Name = "fechaInscripcion";
-            this.fechaInscripcion.Size = new System.Drawing.Size(339, 36);
-            this.fechaInscripcion.TabIndex = 28;
-            this.fechaInscripcion.Value = new System.DateTime(2022, 9, 14, 14, 58, 49, 546);
-            this.fechaInscripcion.ValueChanged += new System.EventHandler(this.fechaInscripcion_ValueChanged);
             // 
             // txtNroCalle
             // 
@@ -242,7 +420,7 @@
             this.txtNroCalle.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtNroCalle.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNroCalle.IconLeft = global::SIMED_V1.Properties.Resources.calle;
-            this.txtNroCalle.Location = new System.Drawing.Point(996, 87);
+            this.txtNroCalle.Location = new System.Drawing.Point(996, 110);
             this.txtNroCalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNroCalle.Name = "txtNroCalle";
             this.txtNroCalle.PasswordChar = '\0';
@@ -251,6 +429,7 @@
             this.txtNroCalle.SelectedText = "";
             this.txtNroCalle.Size = new System.Drawing.Size(249, 36);
             this.txtNroCalle.TabIndex = 27;
+            this.txtNroCalle.TextChanged += new System.EventHandler(this.txtNroCalle_TextChanged_1);
             this.txtNroCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroCalle_KeyPress);
             // 
             // txtCalle
@@ -278,35 +457,19 @@
             this.txtCalle.SelectedText = "";
             this.txtCalle.Size = new System.Drawing.Size(249, 36);
             this.txtCalle.TabIndex = 26;
+            this.txtCalle.TextChanged += new System.EventHandler(this.txtCalle_TextChanged);
+            this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 314);
+            this.label1.Location = new System.Drawing.Point(38, 393);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(273, 23);
             this.label1.TabIndex = 25;
             this.label1.Text = "Seleccione su fecha de nacimiento";
-            // 
-            // fechaNac
-            // 
-            this.fechaNac.Animated = true;
-            this.fechaNac.AutoRoundedCorners = true;
-            this.fechaNac.BorderRadius = 17;
-            this.fechaNac.Checked = true;
-            this.fechaNac.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.fechaNac.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.fechaNac.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.fechaNac.Location = new System.Drawing.Point(31, 345);
-            this.fechaNac.Margin = new System.Windows.Forms.Padding(4);
-            this.fechaNac.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.fechaNac.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
-            this.fechaNac.Name = "fechaNac";
-            this.fechaNac.Size = new System.Drawing.Size(368, 36);
-            this.fechaNac.TabIndex = 24;
-            this.fechaNac.Value = new System.DateTime(2022, 9, 14, 14, 58, 49, 546);
             // 
             // txtNroTel
             // 
@@ -333,6 +496,7 @@
             this.txtNroTel.SelectedText = "";
             this.txtNroTel.Size = new System.Drawing.Size(368, 36);
             this.txtNroTel.TabIndex = 23;
+            this.txtNroTel.TextChanged += new System.EventHandler(this.txtNroTel_TextChanged);
             this.txtNroTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroTel_KeyPress);
             // 
             // txtNroDoc
@@ -351,7 +515,7 @@
             this.txtNroDoc.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtNroDoc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNroDoc.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
-            this.txtNroDoc.Location = new System.Drawing.Point(545, 154);
+            this.txtNroDoc.Location = new System.Drawing.Point(546, 191);
             this.txtNroDoc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.PasswordChar = '\0';
@@ -360,6 +524,7 @@
             this.txtNroDoc.SelectedText = "";
             this.txtNroDoc.Size = new System.Drawing.Size(368, 36);
             this.txtNroDoc.TabIndex = 22;
+            this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             this.txtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDoc_KeyPress);
             // 
             // txtApellido
@@ -378,7 +543,7 @@
             this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtApellido.Location = new System.Drawing.Point(31, 87);
+            this.txtApellido.Location = new System.Drawing.Point(31, 110);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.PasswordChar = '\0';
@@ -387,6 +552,8 @@
             this.txtApellido.SelectedText = "";
             this.txtApellido.Size = new System.Drawing.Size(368, 36);
             this.txtApellido.TabIndex = 21;
+            this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // BoxSexo
             // 
@@ -396,7 +563,7 @@
             this.BoxSexo.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.BoxSexo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.BoxSexo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.BoxSexo.Location = new System.Drawing.Point(31, 145);
+            this.BoxSexo.Location = new System.Drawing.Point(31, 191);
             this.BoxSexo.Margin = new System.Windows.Forms.Padding(4);
             this.BoxSexo.Name = "BoxSexo";
             this.BoxSexo.Size = new System.Drawing.Size(368, 156);
@@ -422,6 +589,7 @@
             this.btnOtro.UncheckedState.BorderThickness = 2;
             this.btnOtro.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.btnOtro.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.btnOtro.CheckedChanged += new System.EventHandler(this.btnOtro_CheckedChanged);
             // 
             // btnFemenino
             // 
@@ -442,6 +610,7 @@
             this.btnFemenino.UncheckedState.BorderThickness = 2;
             this.btnFemenino.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.btnFemenino.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.btnFemenino.CheckedChanged += new System.EventHandler(this.btnFemenino_CheckedChanged);
             // 
             // btnMasculino
             // 
@@ -462,6 +631,7 @@
             this.btnMasculino.UncheckedState.BorderThickness = 2;
             this.btnMasculino.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.btnMasculino.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.btnMasculino.CheckedChanged += new System.EventHandler(this.btnMasculino_CheckedChanged);
             // 
             // txtNombre
             // 
@@ -488,6 +658,8 @@
             this.txtNombre.SelectedText = "";
             this.txtNombre.Size = new System.Drawing.Size(368, 36);
             this.txtNombre.TabIndex = 2;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // cmbTipoDocumento
             // 
@@ -502,11 +674,12 @@
             this.cmbTipoDocumento.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbTipoDocumento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbTipoDocumento.ItemHeight = 30;
-            this.cmbTipoDocumento.Location = new System.Drawing.Point(545, 87);
+            this.cmbTipoDocumento.Location = new System.Drawing.Point(545, 110);
             this.cmbTipoDocumento.Margin = new System.Windows.Forms.Padding(4);
             this.cmbTipoDocumento.Name = "cmbTipoDocumento";
             this.cmbTipoDocumento.Size = new System.Drawing.Size(367, 36);
             this.cmbTipoDocumento.TabIndex = 3;
+            this.cmbTipoDocumento.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDocumento_SelectedIndexChanged);
             // 
             // lblCrearCuenta
             // 
@@ -531,7 +704,7 @@
             this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = global::SIMED_V1.Properties.Resources.left_arrow;
-            this.guna2Button1.Location = new System.Drawing.Point(67, 523);
+            this.guna2Button1.Location = new System.Drawing.Point(66, 635);
             this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(84, 46);
@@ -547,7 +720,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1484, 575);
+            this.ClientSize = new System.Drawing.Size(1579, 692);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.lblCrearCuenta);
@@ -557,6 +730,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AltaAfiliado";
             this.Text = "AltaAfiliado";
+            this.Load += new System.EventHandler(this.AltaAfiliado_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.BoxSexo.ResumeLayout(false);
@@ -583,16 +757,29 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbTipoDocumento;
         private System.Windows.Forms.Label lblCrearCuenta;
         private Guna.UI2.WinForms.Guna2TextBox txtNroTel;
-        private Guna.UI2.WinForms.Guna2DateTimePicker fechaNac;
         private Guna.UI2.WinForms.Guna2TextBox txtNroCalle;
         private Guna.UI2.WinForms.Guna2TextBox txtCalle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private Guna.UI2.WinForms.Guna2DateTimePicker fechaInscripcion;
-        private Guna.UI2.WinForms.Guna2Button btnVolver;
         private Guna.UI2.WinForms.Guna2ComboBox cmbBarrios;
         private Guna.UI2.WinForms.Guna2ComboBox cmbPlanes;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
+        private Guna.UI2.WinForms.Guna2ComboBox cmbCiudad;
+        private System.Windows.Forms.Label lblBarrio;
+        private System.Windows.Forms.Label lblCiudad;
+        private System.Windows.Forms.Label lblNumeroCalle;
+        private System.Windows.Forms.Label lblCalle;
+        private System.Windows.Forms.Label lblPlan;
+        private System.Windows.Forms.Label lblNumeroDoc;
+        private System.Windows.Forms.Label lblTipoDoc;
+        private System.Windows.Forms.Label lblNumTelefono;
+        private System.Windows.Forms.Label lblSexo;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblFechaInscripcion;
+        private System.Windows.Forms.Label lblFechaNac;
+        private Guna.UI2.WinForms.Guna2DateTimePicker fechaInscripcion;
+        private Guna.UI2.WinForms.Guna2DateTimePicker fechaNac;
     }
 }

@@ -69,12 +69,12 @@ namespace SIMED_V1
 
         private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
-
+            txtNombreUsuario.MaxLength = 50;
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
-
+            txtPassword.MaxLength = 15;
         }
 
         private void btnInciarSesion_Click(object sender, EventArgs e)
@@ -227,6 +227,21 @@ namespace SIMED_V1
         private void guna2ShadowPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (Char.IsLetterOrDigit(e.KeyChar)) e.Handled = false;
+            else
+            {
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if (e.KeyChar == '-' || e.KeyChar == '.') e.Handled = false;
+                    else if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
+            }
         }
     }
 }
