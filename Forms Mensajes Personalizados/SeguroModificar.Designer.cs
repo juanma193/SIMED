@@ -54,7 +54,7 @@
             // 
             this.lblMensaje.AutoSize = true;
             this.lblMensaje.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.Location = new System.Drawing.Point(175, 105);
+            this.lblMensaje.Location = new System.Drawing.Point(173, 87);
             this.lblMensaje.Name = "lblMensaje";
             this.lblMensaje.Size = new System.Drawing.Size(465, 28);
             this.lblMensaje.TabIndex = 4;
@@ -97,7 +97,7 @@
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(664, 12);
+            this.btnCerrarApp.Location = new System.Drawing.Point(776, 12);
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
             this.btnCerrarApp.TabIndex = 7;
@@ -108,7 +108,7 @@
             this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(613, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(725, 12);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
             this.btnMinimizar.TabIndex = 5;
@@ -127,7 +127,7 @@
             this.btnCancelar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(352, 220);
+            this.btnCancelar.Location = new System.Drawing.Point(482, 220);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(264, 63);
             this.btnCancelar.TabIndex = 9;
@@ -138,7 +138,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 345);
+            this.ClientSize = new System.Drawing.Size(833, 345);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.picWarning);
@@ -161,10 +161,10 @@
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2GradientButton btnCancelar;
-        private System.Windows.Forms.Label lblMensaje;
         private Guna.UI2.WinForms.Guna2PictureBox picWarning;
-        private Guna.UI2.WinForms.Guna2GradientButton btnModificar;
         private Guna.UI2.WinForms.Guna2ControlBox btnCerrarApp;
         private Guna.UI2.WinForms.Guna2ControlBox btnMinimizar;
+        public System.Windows.Forms.Label lblMensaje;
+        public Guna.UI2.WinForms.Guna2GradientButton btnModificar;
     }
 }

@@ -215,7 +215,7 @@
             this.lblErrorEdad.ForeColor = System.Drawing.Color.Red;
             this.lblErrorEdad.Location = new System.Drawing.Point(699, 506);
             this.lblErrorEdad.Name = "lblErrorEdad";
-            this.lblErrorEdad.Size = new System.Drawing.Size(362, 23);
+            this.lblErrorEdad.Size = new System.Drawing.Size(381, 23);
             this.lblErrorEdad.TabIndex = 71;
             this.lblErrorEdad.Text = "label1";
             this.lblErrorEdad.Click += new System.EventHandler(this.lblErrorEdad_Click);
@@ -412,6 +412,7 @@
             this.txtNombreUsu.Size = new System.Drawing.Size(382, 44);
             this.txtNombreUsu.TabIndex = 59;
             this.txtNombreUsu.TextChanged += new System.EventHandler(this.txtNombreUsu_TextChanged);
+            this.txtNombreUsu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreUsu_KeyPress);
             // 
             // txtCorreo
             // 
@@ -440,6 +441,7 @@
             this.txtCorreo.Size = new System.Drawing.Size(382, 44);
             this.txtCorreo.TabIndex = 58;
             this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // lblEdad
             // 
@@ -532,6 +534,7 @@
             // btnCerrarApp
             // 
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarApp.CustomClick = true;
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
             this.btnCerrarApp.Location = new System.Drawing.Point(1126, 11);
@@ -539,6 +542,7 @@
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
             this.btnCerrarApp.TabIndex = 64;
+            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
             // btnMinimizar
             // 

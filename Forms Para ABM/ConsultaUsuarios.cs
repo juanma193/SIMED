@@ -25,22 +25,67 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (!char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (!char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void ConsultaUsuarios_Load(object sender, EventArgs e)
         {
+
+            MostrarTodo();
+        }
+
+        private void MostrarTodo()
+        {
+            var resultadoUsuarios = new List<Usuarios>();
+
+            DataGridViewRow fila = new DataGridViewRow();
+            var empleados = EmpleadosBD.getTodo();
+
+            foreach (var empleado in empleados)
+            {
+                var users = EmpleadosBD.getUsuariosDesdeEmpleado(empleado.Legajo);
+
+                resultadoUsuarios.AddRange(users);
+
+            }
+            int cont = 0;
+
+            foreach (var empleado in empleados)
+            {
+                fila = AgregarEmpleado(empleado);
+
+                foreach (var usuario in resultadoUsuarios)
+                {
+
+                    AgregarUsuariosDesdeEmpleados(resultadoUsuarios[cont], fila);
+                    cont++;
+                    break;
+
+                }
+            }
 
         }
 
@@ -241,6 +286,7 @@ namespace SIMED_V1.Forms_Para_ABM
         private void btnModificarEmpleado_Click_1(object sender, EventArgs e)
         {
             SeguroModificar window = new SeguroModificar();
+            
            
             if (window.ShowDialog() == DialogResult.OK)
             {
@@ -315,24 +361,75 @@ namespace SIMED_V1.Forms_Para_ABM
             
         }
 
+        private void todoVacio()
+        { 
+            
+
+            if (txtNombreUsu.Text == "" && txtCorreo.Text == "" && txtNombre.Text == "" && txtApellido.Text == "" && txtNombre.Text == "" && txtApellido.Text == "" )
+            {
+                MostrarTodo();
+            }
+
+
+         
+        
+        }
+
         private void txtNombreUsu_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+            if (Char.IsLetterOrDigit(e.KeyChar)) e.Handled = false;
+            else
+            {
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if (e.KeyChar == '-' || e.KeyChar == '.') e.Handled = false;
+                    else if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
+            }
         }
 
         private void txtNombreUsu_TextChanged(object sender, EventArgs e)
         {
+            
 
         }
 
         private void txtCorreo_TextChanged(object sender, EventArgs e)
         {
+            if (txtCorreo.Text == "")
+            {
+                todoVacio();
+            }
 
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            if (txtNombre.Text == "")
+            {
+                todoVacio();
+            }
+
+        }
+
+        private void txtApellido_TextChanged(object sender, EventArgs e)
+        {
+            if (txtApellido.Text == "")
+            {
+                todoVacio();
+            }
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+        
+    }
     }
 }

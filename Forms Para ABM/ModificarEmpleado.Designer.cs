@@ -250,7 +250,7 @@
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.PasswordChar = '\0';
             this.txtNombreUsuario.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtNombreUsuario.PlaceholderText = "Nombre De Usuario";
+            this.txtNombreUsuario.PlaceholderText = "Nombre de usuario";
             this.txtNombreUsuario.SelectedText = "";
             this.txtNombreUsuario.Size = new System.Drawing.Size(305, 36);
             this.txtNombreUsuario.TabIndex = 30;
@@ -437,6 +437,7 @@
             // btnCerrarApp
             // 
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarApp.CustomClick = true;
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
             this.btnCerrarApp.Location = new System.Drawing.Point(912, 11);

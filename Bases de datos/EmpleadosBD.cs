@@ -28,6 +28,24 @@ namespace SIMED_V1.Bases_de_datos
             return resultado;
         }
 
+        public static List<Empleados> getTodo()
+        {
+            var resultado = new List<Empleados>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var empleados = db.Empleados;
+                resultado = empleados.ToList();
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
+        }
+
         public static List<Usuarios> getUsuarios(string nombreusu, string email)
         {
             var resultado = new List<Usuarios>();

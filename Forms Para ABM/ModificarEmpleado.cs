@@ -20,12 +20,14 @@ namespace SIMED_V1.Forms_Para_ABM
         new Empleados empl = new Empleados();
         new Usuarios usu = new Usuarios();
         new ConsultaUsuarios consu;
+        bool cambios = false;
         public ModificarEmpleado(Empleados empleado, Usuarios usuario, ConsultaUsuarios cons)
         {
             InitializeComponent();
 
             ModEmpleados(empleado);
             ModUsuario(usuario);
+            cambios = false;
             consu = cons;
 
             lblNombreUsuario.Visible = false;
@@ -232,6 +234,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtNombre.Text.Equals(""))
             {
                 lblNombre.Visible = true;
@@ -242,16 +245,31 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtEdad_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtEdad.Text.Equals(""))
             {
                 lblEdad.Visible = true;
                 lblEdad.Text = "Edad obligatoria";
             }
-            else { lblEdad.Visible = false; }
+            else 
+            { 
+                lblEdad.Visible = false;
+
+                int edad = int.Parse(txtEdad.Text);
+                txtEdad.MaxLength = 3;
+
+                if (edad < 18 || edad > 80)
+                {
+                    lblEdad.Visible = true;
+                    lblEdad.Text = "Edad no permitida. Mínima 18, máxima 80";
+
+                }
+            }
         }
 
         private void txtApellido_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtApellido.Text.Equals(""))
             {
                 lblApellido.Visible = true;
@@ -262,6 +280,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtSexo_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtSexo.Text.Equals(""))
             {
                 lblSexo.Visible = true;
@@ -273,6 +292,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtNombreUsuario.Text.Equals(""))
             {
                 lblNombreUsuario.Visible = true;
@@ -284,6 +304,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtMail_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
             if (txtMail.Text.Equals(""))
             {
                 lblEmail.Visible = true;
@@ -505,23 +526,35 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (!char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (!char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }
@@ -529,31 +562,57 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtSexo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetterOrDigit(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if (e.KeyChar == '-' || e.KeyChar == '.') e.Handled = false;
+                    else if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtMail_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+            if (char.IsSeparator(e.KeyChar)) e.Handled = true;
         }
 
         private void btnCerrarApp_Click(object sender, EventArgs e)
         {
-            ConsultaUsuarios ventana = new ConsultaUsuarios();
+            if (cambios)
+            {
+
+                SeguroModificar ventana = new SeguroModificar();
+                ventana.lblMensaje.Text = "¿Está seguro de que desea perder todos los cambios?";
+                ventana.btnModificar.Text = "Salir";
+                if (ventana.ShowDialog() == DialogResult.OK)
+                {
+                    this.Dispose();
+                    consu.Show();
+                    
+                }
+            }
+            else
+            {
+                this.Dispose();
+                consu.Show();
+            }
 
         }
 

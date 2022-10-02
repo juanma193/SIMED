@@ -21,11 +21,11 @@ namespace SIMED_V1
     {
         bool resultado = false;
         bool resultado2 = false;
-        bool vacio = false;
         bool bandera = false;
         string randomCode;
         int variablesexo;
         public static string to;
+        bool cambios = false;
         public NuevoUsuario()
         {
             InitializeComponent();
@@ -36,8 +36,26 @@ namespace SIMED_V1
             //System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             //player.SoundLocation = "C:\\Facultad\\Tercer Año\\PAV 1\\practicas\\archivos para proyecto\\sonidoPS2.wav";
             //player.Play();
-            LoginUsuarios ventana = new LoginUsuarios();
-            ventana.Show();
+            if (cambios)
+            {
+
+                SeguroModificar ventana = new SeguroModificar();
+                ventana.lblMensaje.Text = "¿Está seguro de que desea perder todos los cambios?";
+                ventana.btnModificar.Text = "Salir";
+                if (ventana.ShowDialog() == DialogResult.OK)
+                {
+                    this.Dispose();
+                    LoginUsuarios window = new LoginUsuarios();
+                    window.Show();
+                }
+            }
+            else
+            {
+                this.Dispose();
+                LoginUsuarios window = new LoginUsuarios();
+                window.Show();
+            }
+            
         }
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
@@ -69,8 +87,8 @@ namespace SIMED_V1
             Match match = regex.Match(email);
             bandera = true;
 
-            ErorresEnRojo(bandera);
-            
+            bool flag =ErorresEnRojo(bandera);
+
 
             //if ((txtMail.Text == "") || (txtContraseña.Text == "") || (txtRepetirContraseña.Text == "") || (txtNombreUsuario.Text == ""))
             //{
@@ -79,7 +97,8 @@ namespace SIMED_V1
             //else
             //{ vacio = false; }
 
-            
+            if (flag)
+            {
                 try
                 {
                     string nombreDeUsuario = txtNombreUsuario.Text;
@@ -102,61 +121,72 @@ namespace SIMED_V1
                         to = (txtMail.Text.Trim()).ToString();
                         Util.EmailSender(messageBody, to);
 
+                        int edad = int.Parse(txtEdad.Text);
+                        bool edadcorrecta = true;
 
-
-
-                        try
+                        if (edad < 18 || edad > 80)
                         {
-                            bool bandera = Util.EmailSender(messageBody, to);
+                            lblEdad.Visible = true;
+                            lblEdad.Text = "Edad no permitida. Mínima 18, máxima 80";
+                            edadcorrecta = false;
+                        }
 
-                            if (bandera == true)
+                        if (edadcorrecta)
+                        {
+                            try
                             {
+                                bool bandera = Util.EmailSender(messageBody, to);
 
-
-                                if (btnFemenino.Checked)
+                                if (bandera == true)
                                 {
-                                    variablesexo = 1;
-                                }
 
-                                if (btnMasculino.Checked)
+
+                                    if (btnFemenino.Checked)
+                                    {
+                                        variablesexo = 1;
+                                    }
+
+                                    if (btnMasculino.Checked)
+                                    {
+                                        variablesexo = 2;
+                                    }
+
+                                    if (btnOtro.Checked)
+                                    {
+                                        variablesexo = 3;
+                                    }
+
+
+                                    string enviarusu = txtNombreUsuario.Text;
+                                    string enviarcontraseña = txtContraseña.Text;
+                                    string correo = txtMail.Text;
+                                    string enviarnombre = EmpleadosBD.UpperCaseFirstChar(txtNombre.Text);
+                                    string enviarapellido = EmpleadosBD.UpperCaseFirstChar(txtApellido.Text);
+                                    int enviaredad = int.Parse(txtEdad.Text);
+
+                                    int enviarsexo = variablesexo;
+
+
+
+                                    VerificarMailForm ventana = new VerificarMailForm(randomCode, enviarusu, enviarcontraseña, correo, enviarnombre, enviarapellido, enviaredad, enviarsexo);
+                                    ventana.Show();
+                                    this.Hide();
+
+                                }
+                                else
                                 {
-                                    variablesexo = 2;
+                                    ErroresForm window = new ErroresForm();
+                                    window.show("Error al mandar mail: ");
                                 }
-
-                                if (btnOtro.Checked)
-                                {
-                                    variablesexo = 3;
-                                }
-
-
-                                string enviarusu = txtNombreUsuario.Text;
-                                string enviarcontraseña = txtContraseña.Text;
-                                string correo = txtMail.Text;
-                                string enviarnombre = EmpleadosBD.UpperCaseFirstChar(txtNombre.Text);
-                                string enviarapellido = EmpleadosBD.UpperCaseFirstChar(txtApellido.Text);
-                                int enviaredad = int.Parse(txtEdad.Text);
-
-                                int enviarsexo = variablesexo;
-
-
-
-                                VerificarMailForm ventana = new VerificarMailForm(randomCode, enviarusu, enviarcontraseña, correo, enviarnombre, enviarapellido, enviaredad, enviarsexo);
-                                ventana.Show();
-                                this.Hide();
 
                             }
-                            else
+                            catch (Exception ex)
                             {
-                                ErroresForm window = new ErroresForm();
-                                window.show("Error al mandar mail: ");
+
+                                throw;
                             }
-
                         }
-                        catch (Exception ex)
-                        {
-
-                            throw;
-                        }
+                        
                     }
                 }
 
@@ -167,7 +197,9 @@ namespace SIMED_V1
                     window.show("Error: " + ex);
                     txtNombreUsuario.Focus();
                 }
-                }
+            }
+                
+        }
 
         private bool Resultados(Match match)
         {
@@ -359,51 +391,60 @@ namespace SIMED_V1
 
         }
 
-        private void ErorresEnRojo(bool bandera) 
+        private bool ErorresEnRojo(bool bandera) 
         {
+            bool flag = true;
 
             if (txtNombreUsuario.Text.Equals("") && bandera == true)
             {
                 lblNombreUsuario.Visible = true;
                 lblNombreUsuario.Text = "Nombre de usuario obligatorio";
+                flag = false;
             }
             if (txtMail.Text.Equals("") && bandera == true)
             {
                 lblEmail.Visible = true;
                 lblEmail.Text = "Correo obligatorio";
+                flag = false;
             }
             if (txtContraseña.Text.Equals("") && bandera == true)
             {
                 lblContraseña.Visible = true;
                 lblContraseña.Text = "Contraseña obligatoria";
+                flag = false;
             }
             if (txtRepetirContraseña.Text.Equals("") && bandera == true)
             {
                 lblRepetirContraseña.Visible = true;
                 lblRepetirContraseña.Text = "Contraseña obligatoria";
+                flag = false;
             }
             if (txtNombre.Text.Equals("") && bandera == true)
             {
                 lblNombre.Visible = true;
                 lblNombre.Text = "Nombre obligatorio";
+                flag = false;
             }
             if (txtApellido.Text.Equals("") && bandera == true)
             {
                 lblApellido.Visible = true;
                 lblApellido.Text = "Nombre obligatorio";
+                flag = false;
             }
             if (txtEdad.Text.Equals("") && bandera == true)
             {
                 lblEdad.Visible = true;
                 lblEdad.Text = "Edad obligatoria";
+                flag = false;
             }
 
             if (!(btnFemenino.Checked || btnMasculino.Checked || btnOtro.Checked) && bandera == true)
             {
                 lblSexo.Visible = true;
                 lblSexo.Text = "Debe seleccionar un sexo";
+                flag = false;
             }
-            
+            return flag;
         }
 
        
@@ -464,6 +505,8 @@ namespace SIMED_V1
         }
         private void txtMail_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
+            txtMail.MaxLength = 76;
             if (txtMail.Text.Equals(""))
             {
                 lblEmail.Visible = true;
@@ -474,6 +517,8 @@ namespace SIMED_V1
 
         private void txtNombreUsuario_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
+            txtNombreUsuario.MaxLength = 50;
             if (txtNombreUsuario.Text.Equals(""))
             {
                 lblNombreUsuario.Visible = true;
@@ -496,6 +541,8 @@ namespace SIMED_V1
 
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
+            txtContraseña.MaxLength = 15;
             if (txtContraseña.Text.Equals(""))
             {
                 lblContraseña.Visible = true;
@@ -508,6 +555,8 @@ namespace SIMED_V1
 
         private void txtRepetirContraseña_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
+            txtRepetirContraseña.MaxLength = 15;
             if (txtRepetirContraseña.Text.Equals(""))
             {
                 lblRepetirContraseña.Visible = true;
@@ -518,6 +567,8 @@ namespace SIMED_V1
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
+            txtNombre.MaxLength = 50;
             if (txtNombre.Text.Equals(""))
             {
                 lblNombre.Visible = true;
@@ -528,6 +579,8 @@ namespace SIMED_V1
 
         private void txtApellido_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
+            txtApellido.MaxLength = 50;
             if (txtApellido.Text.Equals(""))
             {
                 lblApellido.Visible = true;
@@ -538,59 +591,108 @@ namespace SIMED_V1
 
         private void txtEdad_TextChanged(object sender, EventArgs e)
         {
+            cambios = true;
+            
+            
+
+
             if (txtEdad.Text.Equals(""))
             {
                 lblEdad.Visible = true;
                 lblEdad.Text = "Edad obligatoria";
             }
-            else { lblEdad.Visible = false; }
+            else 
+            { lblEdad.Visible = false;
+
+                int edad = int.Parse(txtEdad.Text);
+                txtEdad.MaxLength = 3;
+
+                if (edad < 18 || edad > 80)
+                {
+                    lblEdad.Visible = true;
+                    lblEdad.Text = "Edad no permitida. Mínima 18, máxima 80";
+                    
+                }
+
+
+            }
+
         }
 
         private void btnFemenino_CheckedChanged(object sender, EventArgs e)
         {
             lblSexo.Visible = false;
+            cambios = true;
         }
 
         private void btnMasculino_CheckedChanged(object sender, EventArgs e)
         {
             lblSexo.Visible = false;
+            cambios=true;
         }
 
         private void btnOtro_CheckedChanged(object sender, EventArgs e)
         {
             lblSexo.Visible = false;
+            cambios = true;
         }
 
         private void txtNombreUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+
+            if (Char.IsLetterOrDigit(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if (e.KeyChar == '-' || e.KeyChar == '.') e.Handled = false;
+                    else if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (!char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (Char.IsLetter(e.KeyChar)) e.Handled = false;
+            else
             {
-                e.Handled = true;
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if ((e.KeyChar == '-' || e.KeyChar == '.' || e.KeyChar == '_' || e.KeyChar == ',' || e.KeyChar == ';') || Char.IsDigit(e.KeyChar)) e.Handled = true;
+                    else if (!char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
             }
         }
 
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
-            {
-                e.Handled = true;
-            }
+            
+                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            
+        }
+
+        private void grpSexo_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

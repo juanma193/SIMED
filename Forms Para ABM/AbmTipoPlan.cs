@@ -32,8 +32,8 @@ namespace SIMED_V1.Forms_Para_ABM
                 DataGridViewRow filaSeleccionada = gbAfiliados.Rows[indice];
                 int documento = int.Parse(filaSeleccionada.Cells["Documento"].Value.ToString());
                 Afiliados afil = AfiliadosBD.obtenerAfiliado(documento);
-
-                ModificarAfiliado ventana = new ModificarAfiliado(afil);
+                ConsultarAfiliado consu = new ConsultarAfiliado();
+                ModificarAfiliado ventana = new ModificarAfiliado(afil,consu);
                 ventana.Show();
                 this.Hide();
             }

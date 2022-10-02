@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SIMED_V1.Bases_de_datos
 {
@@ -23,6 +24,7 @@ namespace SIMED_V1.Bases_de_datos
             catch (Exception ex)
             {
                 resultado = false;
+                MessageBox.Show(ex.ToString());
             }
             return resultado;
         }
@@ -51,6 +53,63 @@ namespace SIMED_V1.Bases_de_datos
             }
             return resultado;
         }
+
+       
+
+        public static List<Afiliados>getAfiliadosInicio()
+        {
+            var resultado = new List<Afiliados>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var afiliados = db.Afiliados;
+               
+                resultado = afiliados.ToList(); 
+                
+               
+                
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
+        }
+
+        internal static int ObtenerBarrioXDescripcion(string descripcion)
+        {
+            var resultado = new List<Barrios>();
+            var db = new BD3K3G05_2022Context();
+            int cont = 0;
+
+
+
+            try
+            {
+                var barrioss = db.Barrios.Where(a => a.NombreBarrio == descripcion).ToList();
+
+                foreach (var barrio in barrioss)
+                {
+                    cont = barrio.IdBarrio;
+                    return cont;
+                }
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return cont;
+
+        }
+
         public static List<Afiliados> getAfiliados(int idAfiliado, string nombre, string apellido)
         {
             var resultado = new List<Afiliados>();
@@ -103,6 +162,94 @@ namespace SIMED_V1.Bases_de_datos
             }
 
             return resultado;
+        }
+
+        public static int getCiudades( int barrio)
+        {
+            
+                
+                var db = new BD3K3G05_2022Context();
+                int devolver =0;
+
+                try
+                {
+                var result = db.Barrios.First(i => i.IdBarrio == barrio);
+                int ciudad = result.IdCiudad;
+
+                var resultado = db.Ciudades.First(i => i.IdCiudad == ciudad);
+                devolver = resultado.IdCiudad;
+
+                return devolver;
+
+                }
+                catch (Exception ex)
+                {
+                }
+            return devolver;
+            
+        }
+
+        internal static int ObtenerBarrio(int idBarrio)
+        {
+            var resultado = new List<Barrios>();
+            var db = new BD3K3G05_2022Context();
+            int cont = 0;
+
+            
+
+            try
+            {
+                var barrioss = db.Barrios.Where(a => a.IdBarrio >0 && a.IdBarrio <= idBarrio).ToList();
+                foreach (var barrio in barrioss)
+                {
+                    cont++;
+                }
+
+               
+
+
+
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return cont;
+        }
+
+        internal static string ObtenerBarrioXId(int idBarrio)
+        {
+
+            var resultado = new List<Barrios>();
+            var db = new BD3K3G05_2022Context();
+            string cont = "";
+
+
+
+            try
+            {
+
+                var barrioss = db.Barrios.Where(a => a.IdBarrio == idBarrio).ToList();
+
+                foreach (var barrio in barrioss)
+                {
+                    cont = barrio.NombreBarrio;
+                    return cont;
+                }
+
+
+
+
+
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return cont;
+
         }
     }
 }
