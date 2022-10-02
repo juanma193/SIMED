@@ -151,6 +151,7 @@
             this.txtDescripcionRangoEtario.IconLeftSize = new System.Drawing.Size(20, 17);
             this.txtDescripcionRangoEtario.Location = new System.Drawing.Point(23, 109);
             this.txtDescripcionRangoEtario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcionRangoEtario.MaxLength = 30;
             this.txtDescripcionRangoEtario.Name = "txtDescripcionRangoEtario";
             this.txtDescripcionRangoEtario.PasswordChar = '\0';
             this.txtDescripcionRangoEtario.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -179,13 +180,14 @@
             this.txtIdRangoEtario.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
             this.txtIdRangoEtario.Location = new System.Drawing.Point(23, 38);
             this.txtIdRangoEtario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdRangoEtario.MaxLength = 10;
             this.txtIdRangoEtario.Name = "txtIdRangoEtario";
             this.txtIdRangoEtario.PasswordChar = '\0';
             this.txtIdRangoEtario.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtIdRangoEtario.PlaceholderText = "Id Rango Etario";
             this.txtIdRangoEtario.SelectedText = "";
             this.txtIdRangoEtario.Size = new System.Drawing.Size(229, 36);
-            this.txtIdRangoEtario.TabIndex = 2;
+            this.txtIdRangoEtario.TabIndex = 1;
             this.txtIdRangoEtario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdRangoEtario_KeyPress);
             // 
             // lblABMCRangos

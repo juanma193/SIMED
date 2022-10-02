@@ -546,6 +546,7 @@
             this.txtCalleMedico.IconLeft = global::SIMED_V1.Properties.Resources.calle;
             this.txtCalleMedico.Location = new System.Drawing.Point(280, 171);
             this.txtCalleMedico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCalleMedico.MaxLength = 50;
             this.txtCalleMedico.Name = "txtCalleMedico";
             this.txtCalleMedico.PasswordChar = '\0';
             this.txtCalleMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -645,6 +646,7 @@
             this.txtApellidoMedico.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtApellidoMedico.Location = new System.Drawing.Point(23, 149);
             this.txtApellidoMedico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApellidoMedico.MaxLength = 30;
             this.txtApellidoMedico.Name = "txtApellidoMedico";
             this.txtApellidoMedico.PasswordChar = '\0';
             this.txtApellidoMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -673,6 +675,7 @@
             this.txtNombreMedico.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtNombreMedico.Location = new System.Drawing.Point(23, 85);
             this.txtNombreMedico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreMedico.MaxLength = 30;
             this.txtNombreMedico.Name = "txtNombreMedico";
             this.txtNombreMedico.PasswordChar = '\0';
             this.txtNombreMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
