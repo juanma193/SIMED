@@ -32,7 +32,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnConsultaEnfermero = new Guna.UI2.WinForms.Guna2Button();
             this.btnAltaEnfermero = new Guna.UI2.WinForms.Guna2Button();
-            this.btnEspecialidades = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label2
@@ -40,9 +39,10 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(109, 164);
+            this.label2.Location = new System.Drawing.Point(82, 133);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(394, 28);
+            this.label2.Size = new System.Drawing.Size(314, 21);
             this.label2.TabIndex = 22;
             this.label2.Text = "Seleccione una de las siguientes opciones";
             // 
@@ -51,9 +51,10 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(166, 77);
+            this.label1.Location = new System.Drawing.Point(124, 63);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(281, 54);
+            this.label1.Size = new System.Drawing.Size(228, 45);
             this.label1.TabIndex = 21;
             this.label1.Text = "ENFERMEROS";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -63,7 +64,7 @@
             this.btnConsultaEnfermero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnConsultaEnfermero.Animated = true;
             this.btnConsultaEnfermero.AutoRoundedCorners = true;
-            this.btnConsultaEnfermero.BorderRadius = 34;
+            this.btnConsultaEnfermero.BorderRadius = 28;
             this.btnConsultaEnfermero.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnConsultaEnfermero.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnConsultaEnfermero.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -71,9 +72,10 @@
             this.btnConsultaEnfermero.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnConsultaEnfermero.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnConsultaEnfermero.ForeColor = System.Drawing.Color.White;
-            this.btnConsultaEnfermero.Location = new System.Drawing.Point(185, 354);
+            this.btnConsultaEnfermero.Location = new System.Drawing.Point(139, 288);
+            this.btnConsultaEnfermero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConsultaEnfermero.Name = "btnConsultaEnfermero";
-            this.btnConsultaEnfermero.Size = new System.Drawing.Size(242, 71);
+            this.btnConsultaEnfermero.Size = new System.Drawing.Size(182, 58);
             this.btnConsultaEnfermero.TabIndex = 18;
             this.btnConsultaEnfermero.Text = "Consultar datos ";
             this.btnConsultaEnfermero.Click += new System.EventHandler(this.btnConsultaEnfermero_Click);
@@ -83,7 +85,7 @@
             this.btnAltaEnfermero.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAltaEnfermero.Animated = true;
             this.btnAltaEnfermero.AutoRoundedCorners = true;
-            this.btnAltaEnfermero.BorderRadius = 34;
+            this.btnAltaEnfermero.BorderRadius = 28;
             this.btnAltaEnfermero.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnAltaEnfermero.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnAltaEnfermero.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -91,44 +93,25 @@
             this.btnAltaEnfermero.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnAltaEnfermero.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnAltaEnfermero.ForeColor = System.Drawing.Color.White;
-            this.btnAltaEnfermero.Location = new System.Drawing.Point(185, 248);
+            this.btnAltaEnfermero.Location = new System.Drawing.Point(139, 202);
+            this.btnAltaEnfermero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAltaEnfermero.Name = "btnAltaEnfermero";
-            this.btnAltaEnfermero.Size = new System.Drawing.Size(242, 71);
+            this.btnAltaEnfermero.Size = new System.Drawing.Size(182, 58);
             this.btnAltaEnfermero.TabIndex = 17;
             this.btnAltaEnfermero.Text = "Dar de alta a un enfermero";
             this.btnAltaEnfermero.Click += new System.EventHandler(this.btnAltaEnfermero_Click);
             // 
-            // btnEspecialidades
-            // 
-            this.btnEspecialidades.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEspecialidades.Animated = true;
-            this.btnEspecialidades.AutoRoundedCorners = true;
-            this.btnEspecialidades.BorderRadius = 34;
-            this.btnEspecialidades.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEspecialidades.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEspecialidades.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEspecialidades.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEspecialidades.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnEspecialidades.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEspecialidades.ForeColor = System.Drawing.Color.White;
-            this.btnEspecialidades.Location = new System.Drawing.Point(329, 12);
-            this.btnEspecialidades.Name = "btnEspecialidades";
-            this.btnEspecialidades.Size = new System.Drawing.Size(242, 71);
-            this.btnEspecialidades.TabIndex = 23;
-            this.btnEspecialidades.Text = "ESPECIALIDADES";
-            this.btnEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
-            // 
             // UEnfermeros
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnEspecialidades);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConsultaEnfermero);
             this.Controls.Add(this.btnAltaEnfermero);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UEnfermeros";
-            this.Size = new System.Drawing.Size(612, 512);
+            this.Size = new System.Drawing.Size(459, 416);
             this.Load += new System.EventHandler(this.UEnfermeros_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -141,6 +124,5 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnConsultaEnfermero;
         private Guna.UI2.WinForms.Guna2Button btnAltaEnfermero;
-        private Guna.UI2.WinForms.Guna2Button btnEspecialidades;
     }
 }

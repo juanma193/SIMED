@@ -54,8 +54,7 @@ namespace SIMED_V1
 
         private void btnEspecialidades_Click(object sender, EventArgs e)
         {
-            ABMCEspecialidades ventana = new ABMCEspecialidades();
-            ventana.Show();
+            
         }
     }
 }

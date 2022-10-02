@@ -35,5 +35,11 @@ namespace SIMED_V1.Forms_Para_El_Menu
             AbmTipoViaje ventana = new AbmTipoViaje();
             ventana.Show();
         }
+
+        private void btnEspecialidades_Click(object sender, EventArgs e)
+        {
+            ABMCEspecialidades ventana = new ABMCEspecialidades();
+            ventana.Show();
+        }
     }
 }

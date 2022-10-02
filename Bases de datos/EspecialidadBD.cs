@@ -25,12 +25,12 @@ namespace SIMED_V1.Bases_de_datos
             {
 
                 SqlCommand cmd = new SqlCommand();
-                if (ObtenerEspecialidades(especialidad.Descripcion).Rows.Count == 0) 
+                if (ObtenerEspecialidades(especialidad.DescripcionEspecialidad).Rows.Count == 0) 
                 {
                     string consulta = @"INSERT INTO ESPECIALIDADES (descripcionEspecialidad) VALUES (@desEsp)";
 
                     cmd.Parameters.Clear();
-                    cmd.Parameters.AddWithValue("@desEsp", especialidad.Descripcion);
+                    cmd.Parameters.AddWithValue("@desEsp", especialidad.DescripcionEspecialidad);
 
                     cmd.CommandText = consulta;
 
@@ -198,7 +198,7 @@ namespace SIMED_V1.Bases_de_datos
 
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@idEspecialidad", esp.IdEspecialidad);
-                cmd.Parameters.AddWithValue("@descEspecialidad", esp.Descripcion);
+                cmd.Parameters.AddWithValue("@descEspecialidad", esp.DescripcionEspecialidad);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 
@@ -323,7 +323,7 @@ namespace SIMED_V1.Bases_de_datos
                     string consulta = "DELETE FROM ESPECIALIDADES WHERE id_especialidad = @idEsp AND descripcionEspecialidad=@descEsp";
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@idEsp", esp.IdEspecialidad);
-                    cmd.Parameters.AddWithValue("@descEsp", esp.Descripcion);
+                    cmd.Parameters.AddWithValue("@descEsp", esp.DescripcionEspecialidad);
                     cmd.CommandType = CommandType.Text;
                     cmd.CommandText = consulta;
 
@@ -363,7 +363,7 @@ namespace SIMED_V1.Bases_de_datos
                 string consulta = "UPDATE ESPECIALIDADES SET descripcionEspecialidad=@descEsp WHERE id_especialidad=@idEsp";
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@idEsp", especialidad.IdEspecialidad);
-                cmd.Parameters.AddWithValue("@descEsp", especialidad.Descripcion);
+                cmd.Parameters.AddWithValue("@descEsp", especialidad.DescripcionEspecialidad);
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = consulta;
 

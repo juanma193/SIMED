@@ -45,7 +45,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 }
                 if (valDes)
                 {
-                    especialidad.Descripcion = txtDescripcionEspecialidad.Text;
+                    especialidad.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
 
                     bool resultado = EspecialidadBD.InsertarEspecialidad(especialidad);
 
@@ -114,7 +114,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 {
                     Especialidades esp = new Especialidades();
                     esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
-                    esp.Descripcion = txtDescripcionEspecialidad.Text;
+                    esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
                     grdEspecialidades.DataSource = EspecialidadBD.ObtenerEspecialidades(esp);
                 }
                 chkEspecialidades.Visible = true;
@@ -157,7 +157,8 @@ namespace SIMED_V1.Forms_Para_ABM
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            PrincipalForm ventana = new PrincipalForm();
+            var usu = new Usuarios();
+            PrincipalForm ventana = new PrincipalForm(usu);
             ventana.Show();
             this.Dispose();
             
@@ -180,7 +181,7 @@ namespace SIMED_V1.Forms_Para_ABM
             else
             {
                 esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
-                esp.Descripcion = txtDescripcionEspecialidad.Text;
+                esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
                 bool res = EspecialidadBD.ModificarEspecialidad(esp);
                 if (res)
                 {
@@ -226,7 +227,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 {
                     Especialidades esp = new Especialidades();
                     esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
-                    esp.Descripcion = txtDescripcionEspecialidad.Text;
+                    esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
                     res = EspecialidadBD.EliminarEspecialidad(esp);
                 }
                 chkEspecialidades.Visible = true;
@@ -264,9 +265,10 @@ namespace SIMED_V1.Forms_Para_ABM
         }
 
         private void btnCerrarApp_Click(object sender, EventArgs e)
-        { 
+        {
             // Hace lo mismo que volver
-            PrincipalForm ventana = new PrincipalForm();
+            var usu = new Usuarios();
+            PrincipalForm ventana = new PrincipalForm(usu);
             ventana.Show();
             this.Dispose();
         }

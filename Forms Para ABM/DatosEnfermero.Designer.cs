@@ -436,7 +436,6 @@
             this.txtEspecialidadEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEspecialidadEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEspecialidadEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEspecialidadEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources._296207_newspaper_news_paper_periodical_certificate_icon;
             this.txtEspecialidadEnfermeroDato.IconLeftSize = new System.Drawing.Size(30, 40);
             this.txtEspecialidadEnfermeroDato.Location = new System.Drawing.Point(725, 329);
             this.txtEspecialidadEnfermeroDato.Name = "txtEspecialidadEnfermeroDato";

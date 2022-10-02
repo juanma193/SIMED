@@ -170,7 +170,6 @@
             this.txtDescripcionEspecialidad.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescripcionEspecialidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtDescripcionEspecialidad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescripcionEspecialidad.IconLeft = global::SIMED_V1.Properties.Resources._296207_newspaper_news_paper_periodical_certificate_icon;
             this.txtDescripcionEspecialidad.IconLeftSize = new System.Drawing.Size(40, 30);
             this.txtDescripcionEspecialidad.Location = new System.Drawing.Point(49, 55);
             this.txtDescripcionEspecialidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

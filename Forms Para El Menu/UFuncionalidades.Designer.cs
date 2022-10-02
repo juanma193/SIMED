@@ -143,6 +143,7 @@
             this.btnEspecialidades.Size = new System.Drawing.Size(196, 74);
             this.btnEspecialidades.TabIndex = 14;
             this.btnEspecialidades.Text = "Especialidades";
+            this.btnEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
             // 
             // btnRangosEtarios
             // 
