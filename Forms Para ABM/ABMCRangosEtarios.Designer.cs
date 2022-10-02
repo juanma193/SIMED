@@ -188,6 +188,7 @@
             this.txtIdRangoEtario.SelectedText = "";
             this.txtIdRangoEtario.Size = new System.Drawing.Size(229, 36);
             this.txtIdRangoEtario.TabIndex = 1;
+            this.txtIdRangoEtario.TextChanged += new System.EventHandler(this.txtIdRangoEtario_TextChanged);
             this.txtIdRangoEtario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdRangoEtario_KeyPress);
             // 
             // lblABMCRangos

@@ -32,16 +32,12 @@ namespace SIMED_V1.Forms_Para_ABM
             lblCalleMed.Visible = false;
             lblNroCalleMed.Visible = false;
             lblDocMed.Visible = false;
-
             window = windowCons;
         }
 
         private void btnModificarMedico_Click(object sender, EventArgs e)
         {
-            SeguroModificar seguro = new SeguroModificar();
-            seguro.lblMensaje.Text = "¿Está seguro que desea guardar los cambios?";
-            if (seguro.ShowDialog() == DialogResult.OK)
-            {
+
                 txtModificarMatriculaMedico.Enabled = false;
                 try
                 {
@@ -120,161 +116,168 @@ namespace SIMED_V1.Forms_Para_ABM
 
                     if (valMatricula && valNombre && valFechaNac && valDoc && valDireccion && valEspec && valSexo && valDiasLab && valHorarios && valRelLab)
                     {
-                        medico.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                        medico.Nombre = txtModificarNombreMedico.Text;
-                        medico.Apellido = txtModificarApellidoMedico.Text;
-                        medico.FechaNacimiento = dtModificarFechaNacMedico.Value;
-                        medico.Calle = txtModificarCalleMedico.Text;
-                        medico.NroCalle = int.Parse(txtModificarNroCalleMedico.Text);
-                        medico.IdBarrio = (int)cmbModificarBarriosMedico.SelectedValue;
-                        medico.IdEspecialidad = (int)cmbModificarEspecialidadMedico.SelectedValue;
-                        medico.IdTipoDocumento = (int)cmbModificarTipoDocumentoMedico.SelectedValue;
-                        medico.NumDocumento = long.Parse(txtModificarNroDocMedico.Text);
-                        medico.HorarioIngreso = dtModificarHoraIngresoMedico.Value.TimeOfDay;
-                        medico.HorarioEgreso = dtModificarHoraEgresoMedico.Value.TimeOfDay;
-
-
-                        if (rdModificarFemeninoMedico.Checked)
+                        SeguroModificar seguro = new SeguroModificar();
+                        seguro.lblMensaje.Text = "¿Está seguro que desea guardar los cambios?";
+                        if (seguro.ShowDialog() == DialogResult.OK)
                         {
-                            medico.IdSexo = 1;
+                            medico.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                            medico.Nombre = txtModificarNombreMedico.Text;
+                            medico.Apellido = txtModificarApellidoMedico.Text;
+                            medico.FechaNacimiento = dtModificarFechaNacMedico.Value;
+                            medico.Calle = txtModificarCalleMedico.Text;
+                            medico.NroCalle = int.Parse(txtModificarNroCalleMedico.Text);
+                            medico.IdBarrio = (int)cmbModificarBarriosMedico.SelectedValue;
+                            medico.IdEspecialidad = (int)cmbModificarEspecialidadMedico.SelectedValue;
+                            medico.IdTipoDocumento = (int)cmbModificarTipoDocumentoMedico.SelectedValue;
+                            medico.NumDocumento = long.Parse(txtModificarNroDocMedico.Text);
+                            medico.HorarioIngreso = dtModificarHoraIngresoMedico.Value.TimeOfDay;
+                            medico.HorarioEgreso = dtModificarHoraEgresoMedico.Value.TimeOfDay;
+
+
+                            if (rdModificarFemeninoMedico.Checked)
+                            {
+                                medico.IdSexo = 1;
+                            }
+                            if (rdModificarMasculinoMedico.Checked)
+                            {
+                                medico.IdSexo = 2;
+                            }
+                            if (rdModificarOtroMedico.Checked)
+                            {
+                                medico.IdSexo = 3;
+                            }
+
+
+
+                            if (rdModificarPlantaPermanente.Checked)
+                            {
+                                medico.IdRelacionLaboral = 1;
+                            }
+                            if (rdModificarContratoCircuns.Checked)
+                            {
+                                medico.IdRelacionLaboral = 2;
+                            }
+                            if (rdModificarContratoRenov.Checked)
+                            {
+                                medico.IdRelacionLaboral = 3;
+                            }
+
+
+                            bool resultado = MedicoBD.ModificarMedico(medico);
+
+                            if (resultado)
+                            {
+
+                                if (chkModificarLunesMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 1;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
+                                }
+                                else if (chkModificarLunesMedico.Checked == false)
+                                {
+                                    diasLaborales.IdDiaLaboral = 1;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
+                                }
+
+
+                                if (chkModificarMartesMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 2;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
+                                }
+                                else if (chkModificarMartesMedico.Checked == false)
+                                {
+                                    diasLaborales.IdDiaLaboral = 2;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
+                                }
+
+
+                                if (chkModificarMiercolesMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 3;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
+                                }
+                                else if (chkModificarMiercolesMedico.Checked == false)
+                                {
+                                    diasLaborales.IdDiaLaboral = 3;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
+                                }
+
+
+                                if (chkModificarJuevesMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 4;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
+                                }
+                                else if (chkModificarJuevesMedico.Checked == false)
+                                {
+                                    diasLaborales.IdDiaLaboral = 4;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
+                                }
+
+
+                                if (chkModificarViernesMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 5;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
+                                }
+                                else if (chkModificarViernesMedico.Checked == false)
+                                {
+                                    diasLaborales.IdDiaLaboral = 5;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
+                                }
+
+
+                                if (chkModificarSabadoMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 6;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
+                                }
+                                else if (chkModificarSabadoMedico.Checked == false)
+                                {
+                                    diasLaborales.IdDiaLaboral = 6;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
+                                }
+
+
+                                if (chkModificarDomingoMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 7;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
+                                }
+                                else if (chkModificarDomingoMedico.Checked == false)
+                                {
+                                    diasLaborales.IdDiaLaboral = 7;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
+                                    MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
+                                }
+
+                                window.CargarGrillaConsultaMedico();
+                                CorrectoForm ventana = new CorrectoForm();
+                                ventana.show("Se ha registrado el médico con éxito");
+                                this.Dispose();
+                            }
+                            else
+                            {
+                                ErroresForm ventana = new ErroresForm();
+                                ventana.show("No se ha podido registrar el médico");
+                            }
+                        
                         }
-                        if (rdModificarMasculinoMedico.Checked)
-                        {
-                            medico.IdSexo = 2;
-                        }
-                        if (rdModificarOtroMedico.Checked)
-                        {
-                            medico.IdSexo = 3;
-                        }
 
-
-
-                        if (rdModificarPlantaPermanente.Checked)
-                        {
-                            medico.IdRelacionLaboral = 1;
-                        }
-                        if (rdModificarContratoCircuns.Checked)
-                        {
-                            medico.IdRelacionLaboral = 2;
-                        }
-                        if (rdModificarContratoRenov.Checked)
-                        {
-                            medico.IdRelacionLaboral = 3;
-                        }
-
-
-                        bool resultado = MedicoBD.ModificarMedico(medico);
-
-                        if (resultado)
-                        {
-
-                            if (chkModificarLunesMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 1;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
-                            }
-                            else if (chkModificarLunesMedico.Checked == false)
-                            {
-                                diasLaborales.IdDiaLaboral = 1;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
-                            }
-
-
-                            if (chkModificarMartesMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 2;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
-                            }
-                            else if (chkModificarMartesMedico.Checked == false)
-                            {
-                                diasLaborales.IdDiaLaboral = 2;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
-                            }
-
-
-                            if (chkModificarMiercolesMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 3;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
-                            }
-                            else if (chkModificarMiercolesMedico.Checked == false)
-                            {
-                                diasLaborales.IdDiaLaboral = 3;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
-                            }
-
-
-                            if (chkModificarJuevesMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 4;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
-                            }
-                            else if (chkModificarJuevesMedico.Checked == false)
-                            {
-                                diasLaborales.IdDiaLaboral = 4;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
-                            }
-
-
-                            if (chkModificarViernesMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 5;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
-                            }
-                            else if (chkModificarViernesMedico.Checked == false)
-                            {
-                                diasLaborales.IdDiaLaboral = 5;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
-                            }
-
-
-                            if (chkModificarSabadoMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 6;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
-                            }
-                            else if (chkModificarSabadoMedico.Checked == false)
-                            {
-                                diasLaborales.IdDiaLaboral = 6;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
-                            }
-
-
-                            if (chkModificarDomingoMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 7;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaborales(diasLaborales);
-                            }
-                            else if (chkModificarDomingoMedico.Checked == false)
-                            {
-                                diasLaborales.IdDiaLaboral = 7;
-                                diasLaborales.NumeroMatricula = int.Parse(txtModificarMatriculaMedico.Text);
-                                MedicoBD.ModificarMedicosDiasLaboralesUnchecked(diasLaborales);
-                            }
-
-                            window.CargarGrillaConsultaMedico();
-                            CorrectoForm ventana = new CorrectoForm();
-                            ventana.show("Se ha registrado el médico con éxito");
-                            this.Dispose();
-                        }
-                        else
-                        {
-                            ErroresForm ventana = new ErroresForm();
-                            ventana.show("No se ha podido registrar el médico");
-                        }
                     }
 
                 }
@@ -283,22 +286,22 @@ namespace SIMED_V1.Forms_Para_ABM
                     ErroresForm window = new ErroresForm();
                     window.show("Error" + " " + ex);
                 }
-            }
+            
             
         }
 
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-                SeguroModificar seguro = new SeguroModificar();
-                seguro.btnModificar.Text = "Aceptar";
-                seguro.lblMensaje.Text = "¿Está seguro que desea descartar los cambios?";
-                if (seguro.ShowDialog() == DialogResult.OK)
-                {
-                    window.Show();
-                    this.Dispose();
-                }
-
+             SeguroModificar seguro = new SeguroModificar();
+             seguro.btnModificar.Text = "Aceptar";
+             seguro.lblMensaje.Text = "¿Está seguro que desea descartar los cambios?";
+             if (seguro.ShowDialog() == DialogResult.OK)
+             {
+                 window.Show();
+                 this.Dispose();
+             }
+            
         }
 
         private void CargarComboTiposDoc()

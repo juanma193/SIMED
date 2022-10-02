@@ -15,7 +15,7 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class AltaMedico : Form
     {
-
+        bool cambios = false;
         public AltaMedico()
         {
             InitializeComponent();
@@ -30,20 +30,15 @@ namespace SIMED_V1.Forms_Para_ABM
             lblCalleMed.Visible = false;
             lblNroCalleMed.Visible = false;
             lblDocMed.Visible = false;
-
+            cambios = false;
 
         }
 
 
         private void btnRegistrarMedico_Click(object sender, EventArgs e)
         {
-            SeguroModificar seguro = new SeguroModificar();
-            seguro.btnModificar.Text = "Registrar";
-            seguro.lblMensaje.Text = "¿Está seguro que desea registrar el médico?";
-            if(seguro.ShowDialog() == DialogResult.OK)
+            try
             {
-                try
-                {
                     Medicos medico = new Medicos();
                     MedicosxDiasLaborales diasLaborales = new MedicosxDiasLaborales();
                     bool valMatricula = true;
@@ -123,7 +118,12 @@ namespace SIMED_V1.Forms_Para_ABM
 
 
 
-                    if (valMatricula && valNombre && valSexo && valDireccion && valEspec && valRelLab && valFechaNac && valDoc && valDiasLab && valHorarios)
+                if (valMatricula && valNombre && valSexo && valDireccion && valEspec && valRelLab && valFechaNac && valDoc && valDiasLab && valHorarios)
+                {
+                    SeguroModificar seguro = new SeguroModificar();
+                    seguro.btnModificar.Text = "Registrar";
+                    seguro.lblMensaje.Text = "¿Está seguro que desea registrar el médico?";
+                    if (seguro.ShowDialog() == DialogResult.OK)
                     {
                         medico.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
                         medico.Nombre = txtNombreMedico.Text;
@@ -220,6 +220,7 @@ namespace SIMED_V1.Forms_Para_ABM
                             CorrectoForm ventana = new CorrectoForm();
                             ventana.show("Se ha registrado el médico con éxito");
                             this.Dispose();
+
                         }
                         else
                         {
@@ -228,23 +229,29 @@ namespace SIMED_V1.Forms_Para_ABM
                         }
 
 
-
                     }
+                    else
+                    {
+                        cambios = true;
+                    }
+                }
 
 
-                }
-                catch (Exception ex)
-                {
-                    ErroresForm ventana = new ErroresForm();
-                    ventana.show("Error" + " " + ex);
-                }
             }
+            catch (Exception ex)
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Error " + ex);
+            }
+
+
             
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-
+            if (cambios)
+            {
                 SeguroModificar seguro = new SeguroModificar();
                 seguro.btnModificar.Text = "Aceptar";
                 seguro.lblMensaje.Text = "¿Está seguro que desea descartar los cambios?";
@@ -252,8 +259,12 @@ namespace SIMED_V1.Forms_Para_ABM
                 {
                     this.Dispose();
                 }
-
-            
+            }
+            else
+            {
+                this.Dispose();
+            }
+                  
         }
 
         private void CargarComboTiposDoc()
@@ -268,7 +279,7 @@ namespace SIMED_V1.Forms_Para_ABM
             catch (Exception ex)
             {            
                 ErroresForm ventana = new ErroresForm();
-                ventana.show("Error" + " " + ex);
+                ventana.show("Error " + ex);
             }
         }
 
@@ -284,7 +295,7 @@ namespace SIMED_V1.Forms_Para_ABM
             catch (Exception ex)
             {
                 ErroresForm ventana = new ErroresForm();
-                ventana.show("Error" + " " + ex);
+                ventana.show("Error " + ex);
             }
         }
 
@@ -300,7 +311,7 @@ namespace SIMED_V1.Forms_Para_ABM
             catch (Exception ex)
             {
                 ErroresForm ventana = new ErroresForm();
-                ventana.show("Error" + " " + ex);
+                ventana.show("Error " + ex);
             }
         }
 
@@ -312,11 +323,12 @@ namespace SIMED_V1.Forms_Para_ABM
                 cmbBarriosMedico.ValueMember = "id_barrio";
                 cmbBarriosMedico.DataSource = MedicoBD.ObtenerBarrios(cmbCiudadMedico + 1);
                 cmbBarriosMedico.SelectedIndex = -1;
+                cambios = true;
             }
             catch (Exception ex)
             {
                 ErroresForm ventana = new ErroresForm();
-                ventana.show("Error" + " " + ex);
+                ventana.show("Error " + ex);
             }
         }
 
@@ -331,6 +343,7 @@ namespace SIMED_V1.Forms_Para_ABM
             else
             {
                 lblMatriculaMed.Visible = false;
+                cambios = true;
             }
         }
 
@@ -345,6 +358,7 @@ namespace SIMED_V1.Forms_Para_ABM
             else
             {
                 lblNombreMed.Visible = false;
+                cambios = true;
             }
         }
 
@@ -359,6 +373,7 @@ namespace SIMED_V1.Forms_Para_ABM
             else
             {
                 lblApellidoMed.Visible = false;
+                cambios = true;
             }
         }
 
@@ -373,6 +388,7 @@ namespace SIMED_V1.Forms_Para_ABM
             else
             {
                 lblCalleMed.Visible = false;
+                cambios = true;
             }
         }
 
@@ -387,6 +403,7 @@ namespace SIMED_V1.Forms_Para_ABM
             else
             {
                 lblNroCalleMed.Visible = false;
+                cambios = true;
             }
         }
 
@@ -416,6 +433,7 @@ namespace SIMED_V1.Forms_Para_ABM
             else 
             {
                 lblDocMed.Visible = false;
+                cambios = true;
             }
         }
 
@@ -495,6 +513,11 @@ namespace SIMED_V1.Forms_Para_ABM
                 txtNroDocMedico.MaxLength = 9;
 
             }
+            cambios = true;
+            if(cmbTipoDocumentoMedico.SelectedIndex == -1)
+            {
+                cambios = false;
+            }
         }
 
         private void cmbCiudadMedico_SelectedIndexChanged(object sender, EventArgs e)
@@ -502,12 +525,18 @@ namespace SIMED_V1.Forms_Para_ABM
 
             CargarComboBarrios(cmbCiudadMedico.SelectedIndex);
             cmbBarriosMedico.Enabled = true;
+            cambios = true;
+            if (cmbCiudadMedico.SelectedIndex == -1)
+            {
+                cambios = false;
+            }
 
         }
 
         private void btnCerrarApp_Click(object sender, EventArgs e)
         {
-
+            if (cambios)
+            {
                 SeguroModificar seguro = new SeguroModificar();
                 seguro.btnModificar.Text = "Aceptar";
                 seguro.lblMensaje.Text = "¿Está seguro que desea descartar los cambios?";
@@ -515,7 +544,140 @@ namespace SIMED_V1.Forms_Para_ABM
                 {
                     this.Dispose();
                 }
+            }
+            else
+            {
+                this.Dispose();
+            }
+                
 
+        }
+
+        private void lblMatriculaMed_VisibleChanged(object sender, EventArgs e)
+        {
+            if(txtMatriculaMedico.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblNombreMed_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtNombreMedico.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblApellidoMed_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtApellidoMedico.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblCalleMed_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtCalleMedico.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblNroCalleMed_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtNroCalleMedico.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblDocMed_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtNroDocMedico.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void cmbEspecialidadMedico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+            if (cmbEspecialidadMedico.SelectedIndex == -1)
+            {
+                cambios = false;
+            }
+        }
+
+        private void dtFechaNacMedico_Click(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void rdFemeninoMedico_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void rdMasculinoMedico_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void rdOtroMedico_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void rdPlantaPermanente_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void rdContratoCircuns_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void rdContratoRenov_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void chkLunesMedico_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void chkMartesMedico_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void chkMiercolesMedico_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void chkJuevesMedico_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void chkViernesMedico_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void chkSabadoMedico_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void chkDomingoMedico_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
         }
     }
 }

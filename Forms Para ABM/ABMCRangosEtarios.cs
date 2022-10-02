@@ -87,14 +87,32 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-
-                SeguroModificar seguro = new SeguroModificar();
-                seguro.btnModificar.Text = "Aceptar";
-                seguro.lblMensaje.Text = "¿Está seguro que no desea guardar los cambios?";
-                if(seguro.ShowDialog() == DialogResult.OK)
+            if (btnModificarRango.Enabled)
+            {
+                RangosEtarios rango = new RangosEtarios();
+                rango.IdRangoEtario = int.Parse(txtIdRangoEtario.Text);
+                rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
+                bool resultado = RangoEtarioBD.ObtenerRangoEtario(rango).Rows.Count != 0;
+                if (resultado)
                 {
                     this.Dispose();
                 }
+                else
+                {
+                    SeguroModificar seguro = new SeguroModificar();
+                    seguro.btnModificar.Text = "Aceptar";
+                    seguro.lblMensaje.Text = "¿Está seguro que no desea guardar los cambios?";
+                    if (seguro.ShowDialog() == DialogResult.OK)
+                    {
+                        this.Dispose();
+                    }
+                }
+                
+            }
+            else
+            {
+                this.Dispose();
+            }
 
         }
 
@@ -264,6 +282,7 @@ namespace SIMED_V1.Forms_Para_ABM
             DataGridViewRow fila = grdRangosEtarios.CurrentRow;
             txtIdRangoEtario.Text = fila.Cells[0].Value.ToString();
             txtDescripcionRangoEtario.Text = fila.Cells[1].Value.ToString();
+
         }
 
 
@@ -321,6 +340,16 @@ namespace SIMED_V1.Forms_Para_ABM
                 btnModificarRango.Enabled = false;
                 btnEliminarRangoEtario.Enabled = false;
             }
+            else if (txtIdRangoEtario.Text == "" || txtDescripcionRangoEtario.Text == "")
+            {
+                btnEliminarRangoEtario.Enabled = false;
+                btnModificarRango.Enabled = false;
+            }
+            else if(txtDescripcionRangoEtario.Text != "" && txtIdRangoEtario.Text != "")
+            {
+                btnEliminarRangoEtario.Enabled = true;
+                btnModificarRango.Enabled = true;
+            }
 
         }
 
@@ -334,8 +363,17 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnCerrarApp_Click(object sender, EventArgs e)
         {
-
-                if (btnModificarRango.Enabled)
+            if (btnModificarRango.Enabled)
+            {
+                RangosEtarios rango = new RangosEtarios();
+                rango.IdRangoEtario = int.Parse(txtIdRangoEtario.Text);
+                rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
+                bool resultado = RangoEtarioBD.ObtenerRangoEtario(rango).Rows.Count != 0;
+                if (resultado)
+                {
+                    this.Dispose();
+                }
+                else
                 {
                     SeguroModificar seguro = new SeguroModificar();
                     seguro.btnModificar.Text = "Aceptar";
@@ -345,11 +383,27 @@ namespace SIMED_V1.Forms_Para_ABM
                         this.Dispose();
                     }
                 }
-                else
-                {
-                    this.Dispose();
-                }
 
+            }
+            else
+            {
+                this.Dispose();
+            }
+
+        }
+
+        private void txtIdRangoEtario_TextChanged(object sender, EventArgs e)
+        {
+            if (txtIdRangoEtario.Text == "" || txtDescripcionRangoEtario.Text == "")
+            {
+                btnEliminarRangoEtario.Enabled = false;
+                btnModificarRango.Enabled = false;
+            }
+            else if(txtDescripcionRangoEtario.Text != "" && txtIdRangoEtario.Text != "")
+            {
+                btnEliminarRangoEtario.Enabled = true;
+                btnModificarRango.Enabled = true;
+            }
         }
     }
 }
