@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnConsultaEnfermero = new Guna.UI2.WinForms.Guna2Button();
             this.btnAltaEnfermero = new Guna.UI2.WinForms.Guna2Button();
+            this.btnEspecialidades = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
             // 
             // label2
@@ -97,10 +98,31 @@
             this.btnAltaEnfermero.Text = "Dar de alta a un enfermero";
             this.btnAltaEnfermero.Click += new System.EventHandler(this.btnAltaEnfermero_Click);
             // 
+            // btnEspecialidades
+            // 
+            this.btnEspecialidades.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEspecialidades.Animated = true;
+            this.btnEspecialidades.AutoRoundedCorners = true;
+            this.btnEspecialidades.BorderRadius = 34;
+            this.btnEspecialidades.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEspecialidades.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEspecialidades.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEspecialidades.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEspecialidades.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnEspecialidades.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEspecialidades.ForeColor = System.Drawing.Color.White;
+            this.btnEspecialidades.Location = new System.Drawing.Point(329, 12);
+            this.btnEspecialidades.Name = "btnEspecialidades";
+            this.btnEspecialidades.Size = new System.Drawing.Size(242, 71);
+            this.btnEspecialidades.TabIndex = 23;
+            this.btnEspecialidades.Text = "ESPECIALIDADES";
+            this.btnEspecialidades.Click += new System.EventHandler(this.btnEspecialidades_Click);
+            // 
             // UEnfermeros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btnEspecialidades);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConsultaEnfermero);
@@ -119,5 +141,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2Button btnConsultaEnfermero;
         private Guna.UI2.WinForms.Guna2Button btnAltaEnfermero;
+        private Guna.UI2.WinForms.Guna2Button btnEspecialidades;
     }
 }

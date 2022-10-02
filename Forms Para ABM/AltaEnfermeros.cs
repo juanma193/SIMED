@@ -14,7 +14,8 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class AltaEnfermeros : Form
     {
-        public AltaEnfermeros()
+        PrincipalForm principalForm;
+        public AltaEnfermeros(PrincipalForm ventanaPrincipal)
         {
             InitializeComponent();
             CargarComboTiposDoc();
@@ -22,6 +23,7 @@ namespace SIMED_V1.Forms_Para_ABM
             CargarComboCiudades();
             CargarComboBarrios();
             cmbBarrioEnfermero.Enabled = false;
+            principalForm = ventanaPrincipal;
         }
 
 
@@ -129,6 +131,7 @@ namespace SIMED_V1.Forms_Para_ABM
                     {
                         CorrectoForm ventana = new CorrectoForm();
                         ventana.show("Se ha registrado el enfermero con éxito.");
+                        this.Dispose();
                     }
                     else
                     {
@@ -147,8 +150,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            PrincipalForm ventana = new PrincipalForm();
-            ventana.Show();
+            principalForm.Show();
             this.Dispose();
 
         }
@@ -381,7 +383,10 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnCerrarApp_Click(object sender, EventArgs e)
         {
+            // Hace lo mismo que el volver
 
+            principalForm.Show();
+            this.Dispose();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
@@ -389,15 +394,5 @@ namespace SIMED_V1.Forms_Para_ABM
 
         }
 
-        private void lblCrearCuenta_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEspecialidad_Click(object sender, EventArgs e)
-        {
-            ABMCEspecialidades ventanaEsp = new ABMCEspecialidades();
-            ventanaEsp.Show();
-        }
     }
 }

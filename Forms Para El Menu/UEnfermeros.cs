@@ -33,23 +33,29 @@ namespace SIMED_V1
 
         private void btnConsultaEnfermero_Click(object sender, EventArgs e)
         {
-            ConsultaEnfermero consulta = new ConsultaEnfermero();
+            ConsultaEnfermero consulta = new ConsultaEnfermero(ventana);
             consulta.Show();
-            ventana.Hide();
+            //ventana.Hide();
         }
 
 
         private void btnAltaEnfermero_Click(object sender, EventArgs e)
         {
-            AltaEnfermeros alta = new AltaEnfermeros();
+            AltaEnfermeros alta = new AltaEnfermeros(ventana);
             alta.Show();
-            ventana.Hide();  
+            //ventana.Hide();  
 
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEspecialidades_Click(object sender, EventArgs e)
+        {
+            ABMCEspecialidades ventana = new ABMCEspecialidades();
+            ventana.Show();
         }
     }
 }
