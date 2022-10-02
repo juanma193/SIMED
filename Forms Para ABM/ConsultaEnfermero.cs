@@ -14,9 +14,11 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class ConsultaEnfermero : Form
     {
-        public ConsultaEnfermero()
+        PrincipalForm principalForm;
+        public ConsultaEnfermero(PrincipalForm ventanaPrincipal)
         {
             InitializeComponent();
+            principalForm = ventanaPrincipal;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -132,8 +134,8 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnEliminarEnfermero_Click(object sender, EventArgs e)
         {
-            ConsultaEnfermero ventanaCons = new ConsultaEnfermero();    
-            DatosEnfermero ventana = new DatosEnfermero(ventanaCons);
+            // NO VA ConsultaEnfermero ventanaCons = new ConsultaEnfermero();    
+            DatosEnfermero ventana = new DatosEnfermero(this);
             ventana.lblDatosEnfermero.Text = "Eliminar enfermero";
             ventana.btnEliminarEnfermeroDato.Visible = true;
             ventana.btnEliminarEnfermeroDato.Enabled = true;
@@ -164,8 +166,8 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnModificarEnfermero_Click(object sender, EventArgs e)
         {
-            ConsultaEnfermero ventanaCons = new ConsultaEnfermero();
-            ModificarEnfermero ventana = new ModificarEnfermero(ventanaCons);
+            //NO VA ConsultaEnfermero ventanaCons = new ConsultaEnfermero();
+            ModificarEnfermero ventana = new ModificarEnfermero(this);
             
             ventana.txtMatriculaEnfermero.Enabled = false;
             //Es necesario poner la prop. Modifiers de los txt del form en Public!
@@ -203,6 +205,11 @@ namespace SIMED_V1.Forms_Para_ABM
             
         }
 
-
+        private void btnCerrarApp_Click(object sender, EventArgs e)
+        {
+            // Hace lo mismo que volver
+            principalForm.Show();
+            this.Dispose();
+        }
     }
 }

@@ -159,6 +159,7 @@
             // btnCerrarApp
             // 
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarApp.CustomClick = true;
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
             this.btnCerrarApp.Location = new System.Drawing.Point(817, 11);
@@ -166,6 +167,7 @@
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
             this.btnCerrarApp.TabIndex = 51;
+            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
             // btnMinimizar
             // 
@@ -243,6 +245,7 @@
             this.grdConsultaEnfermero.MultiSelect = false;
             this.grdConsultaEnfermero.Name = "grdConsultaEnfermero";
             this.grdConsultaEnfermero.ReadOnly = true;
+            this.grdConsultaEnfermero.RowHeadersVisible = false;
             this.grdConsultaEnfermero.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.grdConsultaEnfermero.RowTemplate.Height = 24;
             this.grdConsultaEnfermero.Size = new System.Drawing.Size(702, 150);
