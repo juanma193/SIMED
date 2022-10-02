@@ -1,6 +1,6 @@
 ﻿namespace SIMED_V1.Forms_Para_ABM
 {
-    partial class AltaEnfermeros
+    partial class ModificarEnfermero
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblCrearCuenta = new System.Windows.Forms.Label();
+            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.guna2BorderlessForm2 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
+            this.btnCerrarApp = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             this.cmbCiudadesEnfermero = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblCiudadEnfermero = new System.Windows.Forms.Label();
@@ -45,7 +48,7 @@
             this.lblBarrioEnfermero = new System.Windows.Forms.Label();
             this.cmbEspecialidadEnfermero = new Guna.UI2.WinForms.Guna2ComboBox();
             this.cmbTipoDocEnfermero = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.btnRegistrarEnfermero = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnModificarEnfermero = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label1 = new System.Windows.Forms.Label();
             this.dtFechaNacimientoEnfermero = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.cmbBarrioEnfermero = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -53,10 +56,7 @@
             this.rdOtroEnfermero = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rdFemeninoEnfermero = new Guna.UI2.WinForms.Guna2RadioButton();
             this.rdMasculinoEnfermero = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.btnCerrarApp = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.btnMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
+            this.lblModificarCuenta = new System.Windows.Forms.Label();
             this.btnVolver = new Guna.UI2.WinForms.Guna2Button();
             this.txtNumeroDocEnfermero = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTelefonoEnfermero = new Guna.UI2.WinForms.Guna2TextBox();
@@ -65,21 +65,45 @@
             this.txtApellidoEnfermero = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNombreEnfermero = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMatriculaEnfermero = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnEspecialidad = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.gbSexoEnfermero.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblCrearCuenta
+            // guna2BorderlessForm1
             // 
-            this.lblCrearCuenta.AutoSize = true;
-            this.lblCrearCuenta.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCrearCuenta.Location = new System.Drawing.Point(33, 30);
-            this.lblCrearCuenta.Name = "lblCrearCuenta";
-            this.lblCrearCuenta.Size = new System.Drawing.Size(248, 41);
-            this.lblCrearCuenta.TabIndex = 22;
-            this.lblCrearCuenta.Text = "Crear enfermero";
-            this.lblCrearCuenta.Click += new System.EventHandler(this.lblCrearCuenta_Click);
+            this.guna2BorderlessForm1.ContainerControl = this;
+            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
+            // guna2BorderlessForm2
+            // 
+            this.guna2BorderlessForm2.ContainerControl = this;
+            this.guna2BorderlessForm2.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2BorderlessForm2.TransparentWhileDrag = true;
+            // 
+            // btnCerrarApp
+            // 
+            this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
+            this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
+            this.btnCerrarApp.Location = new System.Drawing.Point(1091, 11);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCerrarApp.Name = "btnCerrarApp";
+            this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
+            this.btnCerrarApp.TabIndex = 30;
+            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
+            this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
+            this.btnMinimizar.Location = new System.Drawing.Point(1039, 11);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
+            this.btnMinimizar.TabIndex = 31;
             // 
             // guna2ShadowPanel1
             // 
@@ -100,7 +124,7 @@
             this.guna2ShadowPanel1.Controls.Add(this.txtTelefonoEnfermero);
             this.guna2ShadowPanel1.Controls.Add(this.cmbEspecialidadEnfermero);
             this.guna2ShadowPanel1.Controls.Add(this.cmbTipoDocEnfermero);
-            this.guna2ShadowPanel1.Controls.Add(this.btnRegistrarEnfermero);
+            this.guna2ShadowPanel1.Controls.Add(this.btnModificarEnfermero);
             this.guna2ShadowPanel1.Controls.Add(this.label1);
             this.guna2ShadowPanel1.Controls.Add(this.dtFechaNacimientoEnfermero);
             this.guna2ShadowPanel1.Controls.Add(this.cmbBarrioEnfermero);
@@ -111,14 +135,14 @@
             this.guna2ShadowPanel1.Controls.Add(this.txtNombreEnfermero);
             this.guna2ShadowPanel1.Controls.Add(this.txtMatriculaEnfermero);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(40, 75);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(36, 75);
             this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.guna2ShadowPanel1.ShadowDepth = 80;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1080, 424);
-            this.guna2ShadowPanel1.TabIndex = 24;
+            this.guna2ShadowPanel1.TabIndex = 29;
             // 
             // cmbCiudadesEnfermero
             // 
@@ -138,7 +162,7 @@
             this.cmbCiudadesEnfermero.Name = "cmbCiudadesEnfermero";
             this.cmbCiudadesEnfermero.Size = new System.Drawing.Size(305, 36);
             this.cmbCiudadesEnfermero.TabIndex = 54;
-            this.cmbCiudadesEnfermero.SelectedIndexChanged += new System.EventHandler(this.cmbCiudadesEnfermero_SelectedIndexChanged);
+            this.cmbCiudadesEnfermero.TextChanged += new System.EventHandler(this.cmbCiudadesEnfermero_SelectedIndexChanged);
             // 
             // lblCiudadEnfermero
             // 
@@ -194,7 +218,6 @@
             this.lblTelefonoEnfermero.TabIndex = 46;
             this.lblTelefonoEnfermero.Text = "label1";
             this.lblTelefonoEnfermero.Visible = false;
-            this.lblTelefonoEnfermero.TextChanged += new System.EventHandler(this.txtTelefonoEnfermero_TextChanged);
             // 
             // lblApellidoEnfermero
             // 
@@ -301,27 +324,27 @@
             this.cmbTipoDocEnfermero.TabIndex = 9;
             this.cmbTipoDocEnfermero.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDocEnfermero_SelectedIndexChanged);
             // 
-            // btnRegistrarEnfermero
+            // btnModificarEnfermero
             // 
-            this.btnRegistrarEnfermero.Animated = true;
-            this.btnRegistrarEnfermero.AutoRoundedCorners = true;
-            this.btnRegistrarEnfermero.BorderRadius = 21;
-            this.btnRegistrarEnfermero.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegistrarEnfermero.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRegistrarEnfermero.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRegistrarEnfermero.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRegistrarEnfermero.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRegistrarEnfermero.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(103)))), ((int)(((byte)(198)))));
-            this.btnRegistrarEnfermero.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
-            this.btnRegistrarEnfermero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnRegistrarEnfermero.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarEnfermero.Location = new System.Drawing.Point(719, 365);
-            this.btnRegistrarEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRegistrarEnfermero.Name = "btnRegistrarEnfermero";
-            this.btnRegistrarEnfermero.Size = new System.Drawing.Size(305, 44);
-            this.btnRegistrarEnfermero.TabIndex = 15;
-            this.btnRegistrarEnfermero.Text = "Registrar enfermero";
-            this.btnRegistrarEnfermero.Click += new System.EventHandler(this.btnRegistrarEnfermero_Click);
+            this.btnModificarEnfermero.Animated = true;
+            this.btnModificarEnfermero.AutoRoundedCorners = true;
+            this.btnModificarEnfermero.BorderRadius = 21;
+            this.btnModificarEnfermero.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnModificarEnfermero.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnModificarEnfermero.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnModificarEnfermero.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnModificarEnfermero.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnModificarEnfermero.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(103)))), ((int)(((byte)(198)))));
+            this.btnModificarEnfermero.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
+            this.btnModificarEnfermero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnModificarEnfermero.ForeColor = System.Drawing.Color.White;
+            this.btnModificarEnfermero.Location = new System.Drawing.Point(719, 365);
+            this.btnModificarEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarEnfermero.Name = "btnModificarEnfermero";
+            this.btnModificarEnfermero.Size = new System.Drawing.Size(305, 44);
+            this.btnModificarEnfermero.TabIndex = 15;
+            this.btnModificarEnfermero.Text = "Modificar enfermero";
+            this.btnModificarEnfermero.Click += new System.EventHandler(this.btnModificarEnfermero_Click);
             // 
             // label1
             // 
@@ -446,40 +469,15 @@
             this.rdMasculinoEnfermero.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdMasculinoEnfermero.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
-            // btnCerrarApp
+            // lblModificarCuenta
             // 
-            this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
-            this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(1095, 11);
-            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCerrarApp.Name = "btnCerrarApp";
-            this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
-            this.btnCerrarApp.TabIndex = 25;
-            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
-            this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
-            this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(1043, 11);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
-            this.btnMinimizar.TabIndex = 26;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
-            // 
-            // guna2AnimateWindow1
-            // 
-            this.guna2AnimateWindow1.TargetForm = this;
-            // 
-            // guna2DragControl1
-            // 
-            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2DragControl1.TargetControl = this;
-            this.guna2DragControl1.UseTransparentDrag = true;
+            this.lblModificarCuenta.AutoSize = true;
+            this.lblModificarCuenta.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblModificarCuenta.Location = new System.Drawing.Point(29, 30);
+            this.lblModificarCuenta.Name = "lblModificarCuenta";
+            this.lblModificarCuenta.Size = new System.Drawing.Size(311, 41);
+            this.lblModificarCuenta.TabIndex = 28;
+            this.lblModificarCuenta.Text = "Modificar enfermero";
             // 
             // btnVolver
             // 
@@ -494,11 +492,11 @@
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
             this.btnVolver.Image = global::SIMED_V1.Properties.Resources.left_arrow;
-            this.btnVolver.Location = new System.Drawing.Point(40, 506);
+            this.btnVolver.Location = new System.Drawing.Point(36, 506);
             this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 46);
-            this.btnVolver.TabIndex = 27;
+            this.btnVolver.TabIndex = 32;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // txtNumeroDocEnfermero
@@ -698,37 +696,19 @@
             this.txtMatriculaEnfermero.TextChanged += new System.EventHandler(this.txtMatriculaEnfermero_TextChanged);
             this.txtMatriculaEnfermero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatriculaEnfermero_KeyPress);
             // 
-            // btnEspecialidad
-            // 
-            this.btnEspecialidad.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEspecialidad.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEspecialidad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEspecialidad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEspecialidad.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEspecialidad.ForeColor = System.Drawing.Color.White;
-            this.btnEspecialidad.Location = new System.Drawing.Point(398, 25);
-            this.btnEspecialidad.Name = "btnEspecialidad";
-            this.btnEspecialidad.Size = new System.Drawing.Size(210, 43);
-            this.btnEspecialidad.TabIndex = 28;
-            this.btnEspecialidad.Text = "Especialidad";
-            this.btnEspecialidad.Click += new System.EventHandler(this.btnEspecialidad_Click);
-            // 
-            // AltaEnfermeros
+            // ModificarEnfermero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 563);
-            this.Controls.Add(this.btnEspecialidad);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnCerrarApp);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.guna2ShadowPanel1);
-            this.Controls.Add(this.lblCrearCuenta);
+            this.Controls.Add(this.lblModificarCuenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "AltaEnfermeros";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AltaEnfermeros";
+            this.Name = "ModificarEnfermero";
+            this.Text = "ModificarEnfermero";
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
             this.gbSexoEnfermero.ResumeLayout(false);
@@ -739,42 +719,42 @@
         }
 
         #endregion
-        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
-        private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2GroupBox gbSexoEnfermero;
+
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm2;
+        private Guna.UI2.WinForms.Guna2Button btnVolver;
         private Guna.UI2.WinForms.Guna2ControlBox btnCerrarApp;
         private Guna.UI2.WinForms.Guna2ControlBox btnMinimizar;
-        private Guna.UI2.WinForms.Guna2Button btnVolver;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
-        private System.Windows.Forms.Label lblEspecialidadEnfermero;
-        private System.Windows.Forms.Label lblBarrioEnfermero;
-        private System.Windows.Forms.Label lblTipoDocumentoEnfermero;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        public Guna.UI2.WinForms.Guna2ComboBox cmbCiudadesEnfermero;
+        private System.Windows.Forms.Label lblCiudadEnfermero;
+        private System.Windows.Forms.Label lblCalleEnfermero;
+        private System.Windows.Forms.Label lblNumeroCalleEnfermero;
         private System.Windows.Forms.Label lblNumeroDocEnfermero;
         private System.Windows.Forms.Label lblTelefonoEnfermero;
         private System.Windows.Forms.Label lblApellidoEnfermero;
         private System.Windows.Forms.Label lblNombreEnfermero;
         private System.Windows.Forms.Label lblMatriculaEnfermero;
-        private System.Windows.Forms.Label lblNumeroCalleEnfermero;
-        private System.Windows.Forms.Label lblCalleEnfermero;
-        private System.Windows.Forms.Label lblCiudadEnfermero;
-        public System.Windows.Forms.Label lblCrearCuenta;
+        private System.Windows.Forms.Label lblTipoDocumentoEnfermero;
+        private System.Windows.Forms.Label lblEspecialidadEnfermero;
+        private System.Windows.Forms.Label lblBarrioEnfermero;
+        public Guna.UI2.WinForms.Guna2TextBox txtNumeroDocEnfermero;
+        public Guna.UI2.WinForms.Guna2TextBox txtTelefonoEnfermero;
         public Guna.UI2.WinForms.Guna2ComboBox cmbEspecialidadEnfermero;
-        public Guna.UI2.WinForms.Guna2GradientButton btnRegistrarEnfermero;
+        public Guna.UI2.WinForms.Guna2ComboBox cmbTipoDocEnfermero;
+        public Guna.UI2.WinForms.Guna2GradientButton btnModificarEnfermero;
+        private System.Windows.Forms.Label label1;
         public Guna.UI2.WinForms.Guna2DateTimePicker dtFechaNacimientoEnfermero;
         public Guna.UI2.WinForms.Guna2ComboBox cmbBarrioEnfermero;
         public Guna.UI2.WinForms.Guna2TextBox txtNumeroCalleEnfermero;
         public Guna.UI2.WinForms.Guna2TextBox txtCalleEnfermero;
+        private Guna.UI2.WinForms.Guna2GroupBox gbSexoEnfermero;
         public Guna.UI2.WinForms.Guna2RadioButton rdOtroEnfermero;
         public Guna.UI2.WinForms.Guna2RadioButton rdFemeninoEnfermero;
         public Guna.UI2.WinForms.Guna2RadioButton rdMasculinoEnfermero;
         public Guna.UI2.WinForms.Guna2TextBox txtApellidoEnfermero;
         public Guna.UI2.WinForms.Guna2TextBox txtNombreEnfermero;
         public Guna.UI2.WinForms.Guna2TextBox txtMatriculaEnfermero;
-        public Guna.UI2.WinForms.Guna2ComboBox cmbTipoDocEnfermero;
-        public Guna.UI2.WinForms.Guna2TextBox txtTelefonoEnfermero;
-        public Guna.UI2.WinForms.Guna2TextBox txtNumeroDocEnfermero;
-        public Guna.UI2.WinForms.Guna2ComboBox cmbCiudadesEnfermero;
-        private Guna.UI2.WinForms.Guna2Button btnEspecialidad;
+        public System.Windows.Forms.Label lblModificarCuenta;
     }
 }

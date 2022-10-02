@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIMED_V1.Forms_Para_ABM;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,11 @@ namespace SIMED_V1
 {
     public partial class UEnfermeros : UserControl
     {
-        public UEnfermeros()
+        PrincipalForm ventana;
+        public UEnfermeros(PrincipalForm menu)
         {
             InitializeComponent();
+            ventana = menu;
         }
 
         private void UEnfermeros_Load(object sender, EventArgs e)
@@ -22,28 +25,25 @@ namespace SIMED_V1
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void guna2Button4_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void btnConsultaEnfermero_Click(object sender, EventArgs e)
         {
-
+            ConsultaEnfermero consulta = new ConsultaEnfermero();
+            consulta.Show();
+            ventana.Hide();
         }
 
-        private void guna2Button2_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btnAltaEnfermero_Click(object sender, EventArgs e)
         {
+            AltaEnfermeros alta = new AltaEnfermeros();
+            alta.Show();
+            ventana.Hide();  
 
         }
 

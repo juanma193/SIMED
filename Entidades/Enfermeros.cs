@@ -20,7 +20,7 @@ namespace SIMED.Models
         public string Apellido { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public int Telefono { get; set; }
-        public int NumeroDocumento { get; set; }
+        public long NumeroDocumento { get; set; }
         public int IdTipoDocumento { get; set; }
         public int? IdEspecialidad { get; set; }
         public string Calle { get; set; }
