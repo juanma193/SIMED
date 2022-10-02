@@ -128,6 +128,91 @@ namespace SIMED_V1.Bases_de_datos
             return resultado;
         }
 
+
+        public static bool EliminarRangoEtario(string descR)
+        {
+            bool resultado = false;
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                if (ObtenerRangoEtario(descR).Rows.Count != 0)
+                {
+                    string consulta = @"DELETE FROM RANGOS_ETARIOS WHERE descripcionRangoEtario=@desc";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@desc", descR);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = consulta;
+
+                    cn.Open();
+                    cmd.Connection = cn;
+                    cmd.ExecuteNonQuery();
+                    resultado = true;
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                ErroresForm window = new ErroresForm();
+                window.show("Error " + ex);
+                throw;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+        }
+
+        public static bool EliminarRangoEtario(int idR)
+        {
+            bool resultado = false;
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                if (ObtenerRangoEtario(idR).Rows.Count != 0)
+                {
+                    string consulta = @"DELETE FROM RANGOS_ETARIOS WHERE id_rangoEtario=@id";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@id", idR);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = consulta;
+
+                    cn.Open();
+                    cmd.Connection = cn;
+                    cmd.ExecuteNonQuery();
+                    resultado = true;
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+
+                ErroresForm window = new ErroresForm();
+                window.show("Error " + ex);
+                throw;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+            return resultado;
+        }
+
+
+
         public static DataTable ObtenerRangoEtario(RangosEtarios rango)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
