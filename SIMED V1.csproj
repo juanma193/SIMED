@@ -353,6 +353,7 @@
     <Compile Include="Bases de datos\PlanesBD.cs" />
     <Compile Include="Bases de datos\RangoEtarioBD.cs" />
     <Compile Include="Bases de datos\TiposDocBD.cs" />
+    <Compile Include="Bases de datos\TiposViajesBD.cs" />
     <Compile Include="Bases de datos\UsuarioBD.cs" />
     <Compile Include="BD3K3G05_2022DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -430,11 +431,11 @@
     <Compile Include="Forms Para ABM\ABMCRangosEtarios.Designer.cs">
       <DependentUpon>ABMCRangosEtarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Para ABM\AbmTipoPlan.cs">
+    <Compile Include="Forms Para ABM\AbmTipoViaje.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms Para ABM\AbmTipoPlan.Designer.cs">
-      <DependentUpon>AbmTipoPlan.cs</DependentUpon>
+    <Compile Include="Forms Para ABM\AbmTipoViaje.Designer.cs">
+      <DependentUpon>AbmTipoViaje.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\AltaAfiliado.cs">
       <SubType>Form</SubType>
@@ -686,8 +687,8 @@
     <EmbeddedResource Include="Forms Para ABM\ABMCRangosEtarios.resx">
       <DependentUpon>ABMCRangosEtarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms Para ABM\AbmTipoPlan.resx">
-      <DependentUpon>AbmTipoPlan.cs</DependentUpon>
+    <EmbeddedResource Include="Forms Para ABM\AbmTipoViaje.resx">
+      <DependentUpon>AbmTipoViaje.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\AltaAfiliado.resx">
       <DependentUpon>AltaAfiliado.cs</DependentUpon>
