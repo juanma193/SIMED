@@ -348,6 +348,7 @@
     <Compile Include="Bases de datos\AfiliadosBD.cs" />
     <Compile Include="Bases de datos\BarriosBD.cs" />
     <Compile Include="Bases de datos\EmpleadosBD.cs" />
+    <Compile Include="Bases de datos\EnfermeroBD.cs" />
     <Compile Include="Bases de datos\MedicoBD.cs" />
     <Compile Include="Bases de datos\ModelosMarcasBD.cs" />
     <Compile Include="Bases de datos\PlanesBD.cs" />
@@ -533,6 +534,12 @@
     <Compile Include="Forms Para ABM\ConsultaUsuarios.Designer.cs">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para ABM\DatosEnfermero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\DatosEnfermero.Designer.cs">
+      <DependentUpon>DatosEnfermero.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\DatosMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -551,6 +558,12 @@
     </Compile>
     <Compile Include="Forms Para ABM\ModificarEmpleado.Designer.cs">
       <DependentUpon>ModificarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarEnfermero.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ModificarEnfermero.Designer.cs">
+      <DependentUpon>ModificarEnfermero.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\ModificarMedico.cs">
       <SubType>Form</SubType>
@@ -738,6 +751,9 @@
     <EmbeddedResource Include="Forms Para ABM\ConsultaUsuarios.resx">
       <DependentUpon>ConsultaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\DatosEnfermero.resx">
+      <DependentUpon>DatosEnfermero.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\DatosMedico.resx">
       <DependentUpon>DatosMedico.cs</DependentUpon>
     </EmbeddedResource>
@@ -746,6 +762,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ModificarEmpleado.resx">
       <DependentUpon>ModificarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ModificarEnfermero.resx">
+      <DependentUpon>ModificarEnfermero.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ModificarMedico.resx">
       <DependentUpon>ModificarMedico.cs</DependentUpon>
