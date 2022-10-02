@@ -80,6 +80,7 @@
             this.btnTiposViajes.Size = new System.Drawing.Size(196, 74);
             this.btnTiposViajes.TabIndex = 14;
             this.btnTiposViajes.Text = "Tipos de Viajes";
+            this.btnTiposViajes.Click += new System.EventHandler(this.btnTiposViajes_Click);
             // 
             // btnRelacionLaboral
             // 
