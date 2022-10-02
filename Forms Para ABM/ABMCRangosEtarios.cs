@@ -1,6 +1,7 @@
 ﻿using Guna.UI2.WinForms;
 using SIMED.Models;
 using SIMED_V1.Bases_de_datos;
+using SIMED_V1.Forms_Mensajes_Personalizados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +16,9 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class ABMCRangosEtarios : Form
     {
-        PrincipalForm window;
-        public ABMCRangosEtarios(PrincipalForm menu)
+        public ABMCRangosEtarios()
         {
             InitializeComponent();
-            window = menu;
             lblDescripcionRangoEtario.Visible = false;
             btnEliminarRangoEtario.Enabled = false;
             btnModificarRango.Enabled = false;
@@ -28,60 +27,93 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnCrearRangoEtario_Click(object sender, EventArgs e)
         {
-            try
+            SeguroModificar seguro = new SeguroModificar();
+            seguro.btnModificar.Text = "Crear";
+            seguro.lblMensaje.Text = "¿Está seguro de que desea crear un nuevo rango etario?";
+            if(seguro.ShowDialog() == DialogResult.OK)
             {
-                RangosEtarios rango = new RangosEtarios();
-                bool valDesc = true;
-
-                if (txtDescripcionRangoEtario.Text == "")
+                LimpiarCampos();
+                btnModificarRango.Enabled = false;
+                btnEliminarRangoEtario.Enabled = false;
+                try
                 {
-                    valDesc = false;
-                    ErroresForm mensaje = new ErroresForm();
-                    mensaje.show("Ingrese la descripción del rango etario a crear");
-                    txtDescripcionRangoEtario.Focus();
-                    lblDescripcionRangoEtario.Visible = true;
-                }
-                if(txtIdRangoEtario.Text != "")
-                {
-                    ErroresForm mensaje = new ErroresForm();
-                    mensaje.show("No es necesario ingresar id de rango en su creación");
-                }
+                    RangosEtarios rango = new RangosEtarios();
+                    bool valDesc = true;
 
-                if (valDesc)
-                {
-                    rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
-                    bool resultado = RangoEtarioBD.InsertarRangoEtario(rango);
-
-                    if (resultado)
+                    if (txtDescripcionRangoEtario.Text == "")
                     {
-                        CorrectoForm ventana = new CorrectoForm();
-                        ventana.show("Se ha registrado el rango etario con éxito");
-                        LimpiarCampos();
-                        CargarGrillaConsultaRangosEtarios();
-                        lblDescripcionRangoEtario.Visible = false;
+                        valDesc = false;
+                        ErroresForm mensaje = new ErroresForm();
+                        mensaje.show("Ingrese la descripción del rango etario a crear");
+                        txtDescripcionRangoEtario.Focus();
+                        lblDescripcionRangoEtario.Visible = true;
                     }
-                    else
+                    if (txtIdRangoEtario.Text != "")
                     {
-                        ErroresForm ventana = new ErroresForm();
-                        ventana.show("El rango etario ingresado ya existe");
-                        LimpiarCampos();
+                        ErroresForm mensaje = new ErroresForm();
+                        mensaje.show("No es necesario ingresar id de rango en su creación");
                     }
+
+                    if (valDesc)
+                    {
+                        rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
+                        bool resultado = RangoEtarioBD.InsertarRangoEtario(rango);
+
+                        if (resultado)
+                        {
+                            CorrectoForm ventana = new CorrectoForm();
+                            ventana.show("Se ha registrado el rango etario con éxito");
+                            CargarGrillaConsultaRangosEtarios();
+                            lblDescripcionRangoEtario.Visible = false;
+                        }
+                        else
+                        {
+                            ErroresForm ventana = new ErroresForm();
+                            ventana.show("El rango etario ingresado ya existe");
+                        }
+                    }
+
+
                 }
-
-
+                catch (Exception ex)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
             }
-            catch(Exception ex)
-            {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Error " + ex);
-            }
+            
         }
 
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            window.Show();
-            this.Dispose();
+            if (btnModificarRango.Enabled)
+            {
+                RangosEtarios rango = new RangosEtarios();
+                rango.IdRangoEtario = int.Parse(txtIdRangoEtario.Text);
+                rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
+                bool resultado = RangoEtarioBD.ObtenerRangoEtario(rango).Rows.Count != 0;
+                if (resultado)
+                {
+                    this.Dispose();
+                }
+                else
+                {
+                    SeguroModificar seguro = new SeguroModificar();
+                    seguro.btnModificar.Text = "Aceptar";
+                    seguro.lblMensaje.Text = "¿Está seguro que no desea guardar los cambios?";
+                    if (seguro.ShowDialog() == DialogResult.OK)
+                    {
+                        this.Dispose();
+                    }
+                }
+                
+            }
+            else
+            {
+                this.Dispose();
+            }
+
         }
 
 
@@ -109,28 +141,65 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnEliminarRangoEtario_Click(object sender, EventArgs e)
         {
-            DataGridViewRow fila = grdRangosEtarios.CurrentRow;
-            RangosEtarios rango = new RangosEtarios();
-            rango.IdRangoEtario = int.Parse(txtIdRangoEtario.Text.ToString());
-            rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
-
-            bool resultado = RangoEtarioBD.EliminarRangoEtario(rango);
-
-            if (resultado)
+            SeguroEliminar seguro = new SeguroEliminar();
+            seguro.lblMensaje.Text = "¿Está seguro que desea eliminar este registro?";
+            if (seguro.ShowDialog() == DialogResult.OK)
             {
-                CorrectoForm ventana = new CorrectoForm();
-                ventana.show("Se ha eliminado el rango etario con éxito");
-                CargarGrillaConsultaRangosEtarios();
-                btnEliminarRangoEtario.Enabled = false;
                 btnModificarRango.Enabled = false;
+                btnEliminarRangoEtario.Enabled = false;
+                try
+                {
+                    DataGridViewRow fila = grdRangosEtarios.CurrentRow;
+                    RangosEtarios rango = new RangosEtarios();
+                    bool resultado = false;
 
-            }
-            else
-            {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("No existe el rango etario especificado");
-            }
 
+                    if (txtIdRangoEtario.Text != "" && txtDescripcionRangoEtario.Text != "")
+                    {
+                        rango.IdRangoEtario = int.Parse(txtIdRangoEtario.Text.ToString());
+                        rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
+                        resultado = RangoEtarioBD.EliminarRangoEtario(rango);
+
+                    }
+                    else if (txtIdRangoEtario.Text == "" && txtDescripcionRangoEtario.Text != "")
+                    {
+                        string desc = txtDescripcionRangoEtario.Text;
+                        resultado = RangoEtarioBD.EliminarRangoEtario(desc);
+                    }
+                    else if (txtIdRangoEtario.Text != "" && txtDescripcionRangoEtario.Text == "")
+                    {
+                        int id = int.Parse(txtIdRangoEtario.Text.ToString());
+                        resultado = RangoEtarioBD.EliminarRangoEtario(id);
+                    }
+
+
+                    if (resultado)
+                    {
+                        CorrectoForm ventana = new CorrectoForm();
+                        ventana.show("Se ha eliminado el rango etario con éxito");
+                        CargarGrillaConsultaRangosEtarios();
+                        btnEliminarRangoEtario.Enabled = false;
+                        btnModificarRango.Enabled = false;
+
+                    }
+                    else
+                    {
+                        ErroresForm ventana = new ErroresForm();
+                        ventana.show("No existe el rango etario especificado");
+                    }
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
+
+                LimpiarCampos();
+            }
+            
         }
 
 
@@ -151,10 +220,9 @@ namespace SIMED_V1.Forms_Para_ABM
             }
 
             //Segundo caso, buscan por descripción de rango etario
-            else if (txtDescripcionRangoEtario.Text != "")
+            else if (txtDescripcionRangoEtario.Text != "" && txtIdRangoEtario.Text == "")
             {
                 grdRangosEtarios.DataSource = RangoEtarioBD.ObtenerRangoEtario(txtDescripcionRangoEtario.Text);
-                LimpiarCampos();
 
                 chkMostrarTodosRangos.Visible = true;
                 chkMostrarTodosRangos.Checked = false;
@@ -164,13 +232,19 @@ namespace SIMED_V1.Forms_Para_ABM
             else if(txtDescripcionRangoEtario.Text == "" && txtIdRangoEtario.Text != "")
             {
                 grdRangosEtarios.DataSource = RangoEtarioBD.ObtenerRangoEtario(int.Parse(txtIdRangoEtario.Text.ToString()));
-                LimpiarCampos();
 
                 chkMostrarTodosRangos.Visible = true;
                 chkMostrarTodosRangos.Checked = false;
             }
+            else
+            {
+                RangosEtarios rango = new RangosEtarios();
+                rango.IdRangoEtario = int.Parse(txtIdRangoEtario.Text);
+                rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
+                grdRangosEtarios.DataSource = RangoEtarioBD.ObtenerRangoEtario(rango);
+            }
 
-            
+            LimpiarCampos();
         }
 
 
@@ -208,44 +282,128 @@ namespace SIMED_V1.Forms_Para_ABM
             DataGridViewRow fila = grdRangosEtarios.CurrentRow;
             txtIdRangoEtario.Text = fila.Cells[0].Value.ToString();
             txtDescripcionRangoEtario.Text = fila.Cells[1].Value.ToString();
+
         }
 
 
         private void btnModificarRango_Click(object sender, EventArgs e)
         {
-            
-            if(txtDescripcionRangoEtario.Text == "")
+            SeguroModificar seguro = new SeguroModificar();
+            seguro.lblMensaje.Text = "¿Está seguro que desea modificar este registro?";
+            if (seguro.ShowDialog() == DialogResult.OK)
             {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Ingrese un rango etario en la casilla de descripción para modificar el registro seleccionado");
-            }
-            else
-            {
-                DataGridViewRow fila = grdRangosEtarios.CurrentRow;
-                RangosEtarios rango = new RangosEtarios();
-                rango.IdRangoEtario = int.Parse(fila.Cells[0].Value.ToString());
-                rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
-
-                bool resultado = RangoEtarioBD.ModificarRangoEtario(rango);
-
-                if (resultado)
+                btnEliminarRangoEtario.Enabled = false;
+                btnModificarRango.Enabled = false;
+                if (txtDescripcionRangoEtario.Text == "")
                 {
-                    CorrectoForm ventana = new CorrectoForm();
-                    ventana.show("Se ha modificado el rango etario con éxito");
-                    LimpiarCampos();
-                    CargarGrillaConsultaRangosEtarios();
-                    btnEliminarRangoEtario.Enabled = false;
-                    btnModificarRango.Enabled = false;
-                    chkMostrarTodosRangos.Visible = false;
-
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Ingrese un rango etario en la casilla de descripción para modificar el registro seleccionado");
                 }
                 else
                 {
-                    ErroresForm ventana = new ErroresForm();
-                    ventana.show("El rango etario ingresado ya existe");
+                    DataGridViewRow fila = grdRangosEtarios.CurrentRow;
+                    RangosEtarios rango = new RangosEtarios();
+                    rango.IdRangoEtario = int.Parse(fila.Cells[0].Value.ToString());
+                    rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
+
+                    bool resultado = RangoEtarioBD.ModificarRangoEtario(rango);
+
+                    if (resultado)
+                    {
+                        CorrectoForm ventana = new CorrectoForm();
+                        ventana.show("Se ha modificado el rango etario con éxito");
+                        CargarGrillaConsultaRangosEtarios();
+                        btnEliminarRangoEtario.Enabled = false;
+                        btnModificarRango.Enabled = false;
+                        chkMostrarTodosRangos.Visible = false;
+
+                    }
+                    else
+                    {
+                        ErroresForm ventana = new ErroresForm();
+                        ventana.show("El rango etario ingresado ya existe");
+                    }
                 }
+                LimpiarCampos();
             }
-            
+           
+        }
+
+        private void txtDescripcionRangoEtario_TextChanged(object sender, EventArgs e)
+        {
+            if(txtDescripcionRangoEtario.Text != "")
+            {
+                lblDescripcionRangoEtario.Visible = false;
+            }
+            else if(txtDescripcionRangoEtario.Text == "" && txtIdRangoEtario.Text == "")
+            {
+                btnModificarRango.Enabled = false;
+                btnEliminarRangoEtario.Enabled = false;
+            }
+            else if (txtIdRangoEtario.Text == "" || txtDescripcionRangoEtario.Text == "")
+            {
+                btnEliminarRangoEtario.Enabled = false;
+                btnModificarRango.Enabled = false;
+            }
+            else if(txtDescripcionRangoEtario.Text != "" && txtIdRangoEtario.Text != "")
+            {
+                btnEliminarRangoEtario.Enabled = true;
+                btnModificarRango.Enabled = true;
+            }
+
+        }
+
+        private void txtIdRangoEtario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnCerrarApp_Click(object sender, EventArgs e)
+        {
+            if (btnModificarRango.Enabled)
+            {
+                RangosEtarios rango = new RangosEtarios();
+                rango.IdRangoEtario = int.Parse(txtIdRangoEtario.Text);
+                rango.DescripcionRangoEtario = txtDescripcionRangoEtario.Text;
+                bool resultado = RangoEtarioBD.ObtenerRangoEtario(rango).Rows.Count != 0;
+                if (resultado)
+                {
+                    this.Dispose();
+                }
+                else
+                {
+                    SeguroModificar seguro = new SeguroModificar();
+                    seguro.btnModificar.Text = "Aceptar";
+                    seguro.lblMensaje.Text = "¿Está seguro que no desea guardar los cambios?";
+                    if (seguro.ShowDialog() == DialogResult.OK)
+                    {
+                        this.Dispose();
+                    }
+                }
+
+            }
+            else
+            {
+                this.Dispose();
+            }
+
+        }
+
+        private void txtIdRangoEtario_TextChanged(object sender, EventArgs e)
+        {
+            if (txtIdRangoEtario.Text == "" || txtDescripcionRangoEtario.Text == "")
+            {
+                btnEliminarRangoEtario.Enabled = false;
+                btnModificarRango.Enabled = false;
+            }
+            else if(txtDescripcionRangoEtario.Text != "" && txtIdRangoEtario.Text != "")
+            {
+                btnEliminarRangoEtario.Enabled = true;
+                btnModificarRango.Enabled = true;
+            }
         }
     }
 }

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnConsultaEliminarMedico = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnConsultaModificarMedico = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -127,17 +127,17 @@
             // 
             // grdConsultaMedico
             // 
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.grdConsultaMedico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.grdConsultaMedico.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.grdConsultaMedico.AutoGenerateColumns = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdConsultaMedico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdConsultaMedico.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grdConsultaMedico.ColumnHeadersHeight = 15;
             this.grdConsultaMedico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.grdConsultaMedico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -145,19 +145,20 @@
             this.nombreMedico,
             this.apellidoMedico});
             this.grdConsultaMedico.DataSource = this.bD3K3G052022DataSetBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdConsultaMedico.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdConsultaMedico.DefaultCellStyle = dataGridViewCellStyle4;
             this.grdConsultaMedico.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.grdConsultaMedico.Location = new System.Drawing.Point(68, 68);
             this.grdConsultaMedico.MultiSelect = false;
             this.grdConsultaMedico.Name = "grdConsultaMedico";
             this.grdConsultaMedico.ReadOnly = true;
+            this.grdConsultaMedico.RowHeadersVisible = false;
             this.grdConsultaMedico.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.grdConsultaMedico.Size = new System.Drawing.Size(527, 149);
             this.grdConsultaMedico.TabIndex = 8;
@@ -188,8 +189,8 @@
             // matriculaMedico
             // 
             this.matriculaMedico.DataPropertyName = "numeroMatricula";
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.matriculaMedico.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.matriculaMedico.DefaultCellStyle = dataGridViewCellStyle3;
             this.matriculaMedico.HeaderText = "N° de Matrícula";
             this.matriculaMedico.MinimumWidth = 6;
             this.matriculaMedico.Name = "matriculaMedico";
@@ -261,6 +262,7 @@
             this.txtConsultaApellidoMedico.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtConsultaApellidoMedico.Location = new System.Drawing.Point(68, 396);
             this.txtConsultaApellidoMedico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtConsultaApellidoMedico.MaxLength = 30;
             this.txtConsultaApellidoMedico.Name = "txtConsultaApellidoMedico";
             this.txtConsultaApellidoMedico.PasswordChar = '\0';
             this.txtConsultaApellidoMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -288,6 +290,7 @@
             this.txtConsultaNombreMedico.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtConsultaNombreMedico.Location = new System.Drawing.Point(68, 341);
             this.txtConsultaNombreMedico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtConsultaNombreMedico.MaxLength = 30;
             this.txtConsultaNombreMedico.Name = "txtConsultaNombreMedico";
             this.txtConsultaNombreMedico.PasswordChar = '\0';
             this.txtConsultaNombreMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -336,6 +339,7 @@
             this.txtConsultaMatriculaMedico.IconLeftSize = new System.Drawing.Size(30, 20);
             this.txtConsultaMatriculaMedico.Location = new System.Drawing.Point(68, 286);
             this.txtConsultaMatriculaMedico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtConsultaMatriculaMedico.MaxLength = 10;
             this.txtConsultaMatriculaMedico.Name = "txtConsultaMatriculaMedico";
             this.txtConsultaMatriculaMedico.PasswordChar = '\0';
             this.txtConsultaMatriculaMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;

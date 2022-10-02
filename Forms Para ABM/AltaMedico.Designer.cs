@@ -159,6 +159,7 @@
             this.lblDocMed.Size = new System.Drawing.Size(214, 19);
             this.lblDocMed.TabIndex = 60;
             this.lblDocMed.Text = "label1";
+            this.lblDocMed.VisibleChanged += new System.EventHandler(this.lblDocMed_VisibleChanged);
             // 
             // lblNroCalleMed
             // 
@@ -170,6 +171,7 @@
             this.lblNroCalleMed.Size = new System.Drawing.Size(214, 19);
             this.lblNroCalleMed.TabIndex = 60;
             this.lblNroCalleMed.Text = "label1";
+            this.lblNroCalleMed.VisibleChanged += new System.EventHandler(this.lblNroCalleMed_VisibleChanged);
             // 
             // lblCalleMed
             // 
@@ -181,6 +183,7 @@
             this.lblCalleMed.Size = new System.Drawing.Size(214, 19);
             this.lblCalleMed.TabIndex = 60;
             this.lblCalleMed.Text = "label1";
+            this.lblCalleMed.VisibleChanged += new System.EventHandler(this.lblCalleMed_VisibleChanged);
             // 
             // lblApellidoMed
             // 
@@ -192,6 +195,7 @@
             this.lblApellidoMed.Size = new System.Drawing.Size(214, 19);
             this.lblApellidoMed.TabIndex = 60;
             this.lblApellidoMed.Text = "label1";
+            this.lblApellidoMed.VisibleChanged += new System.EventHandler(this.lblApellidoMed_VisibleChanged);
             // 
             // lblNombreMed
             // 
@@ -203,6 +207,7 @@
             this.lblNombreMed.Size = new System.Drawing.Size(214, 19);
             this.lblNombreMed.TabIndex = 60;
             this.lblNombreMed.Text = "label1";
+            this.lblNombreMed.VisibleChanged += new System.EventHandler(this.lblNombreMed_VisibleChanged);
             // 
             // lblMatriculaMed
             // 
@@ -214,6 +219,7 @@
             this.lblMatriculaMed.Size = new System.Drawing.Size(214, 19);
             this.lblMatriculaMed.TabIndex = 60;
             this.lblMatriculaMed.Text = "label1";
+            this.lblMatriculaMed.VisibleChanged += new System.EventHandler(this.lblMatriculaMed_VisibleChanged);
             // 
             // txtNroDocMedico
             // 
@@ -281,6 +287,7 @@
             this.cmbEspecialidadMedico.Name = "cmbEspecialidadMedico";
             this.cmbEspecialidadMedico.Size = new System.Drawing.Size(229, 36);
             this.cmbEspecialidadMedico.TabIndex = 16;
+            this.cmbEspecialidadMedico.SelectedIndexChanged += new System.EventHandler(this.cmbEspecialidadMedico_SelectedIndexChanged);
             // 
             // dtHoraIngresoMedico
             // 
@@ -346,6 +353,7 @@
             this.rdContratoRenov.UncheckedState.BorderThickness = 2;
             this.rdContratoRenov.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdContratoRenov.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdContratoRenov.CheckedChanged += new System.EventHandler(this.rdContratoRenov_CheckedChanged);
             // 
             // rdPlantaPermanente
             // 
@@ -365,6 +373,7 @@
             this.rdPlantaPermanente.UncheckedState.BorderThickness = 2;
             this.rdPlantaPermanente.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdPlantaPermanente.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdPlantaPermanente.CheckedChanged += new System.EventHandler(this.rdPlantaPermanente_CheckedChanged);
             // 
             // rdContratoCircuns
             // 
@@ -384,6 +393,7 @@
             this.rdContratoCircuns.UncheckedState.BorderThickness = 2;
             this.rdContratoCircuns.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdContratoCircuns.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdContratoCircuns.CheckedChanged += new System.EventHandler(this.rdContratoCircuns_CheckedChanged);
             // 
             // label3
             // 
@@ -460,7 +470,8 @@
             this.dtFechaNacMedico.Name = "dtFechaNacMedico";
             this.dtFechaNacMedico.Size = new System.Drawing.Size(255, 35);
             this.dtFechaNacMedico.TabIndex = 15;
-            this.dtFechaNacMedico.Value = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
+            this.dtFechaNacMedico.Value = new System.DateTime(2005, 12, 31, 0, 0, 0, 0);
+            this.dtFechaNacMedico.Click += new System.EventHandler(this.dtFechaNacMedico_Click);
             // 
             // cmbCiudadMedico
             // 
@@ -546,6 +557,7 @@
             this.txtCalleMedico.IconLeft = global::SIMED_V1.Properties.Resources.calle;
             this.txtCalleMedico.Location = new System.Drawing.Point(280, 171);
             this.txtCalleMedico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCalleMedico.MaxLength = 50;
             this.txtCalleMedico.Name = "txtCalleMedico";
             this.txtCalleMedico.PasswordChar = '\0';
             this.txtCalleMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -588,6 +600,7 @@
             this.rdOtroMedico.UncheckedState.BorderThickness = 2;
             this.rdOtroMedico.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdOtroMedico.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdOtroMedico.CheckedChanged += new System.EventHandler(this.rdOtroMedico_CheckedChanged);
             // 
             // rdFemeninoMedico
             // 
@@ -607,6 +620,7 @@
             this.rdFemeninoMedico.UncheckedState.BorderThickness = 2;
             this.rdFemeninoMedico.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdFemeninoMedico.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdFemeninoMedico.CheckedChanged += new System.EventHandler(this.rdFemeninoMedico_CheckedChanged);
             // 
             // rdMasculinoMedico
             // 
@@ -626,6 +640,7 @@
             this.rdMasculinoMedico.UncheckedState.BorderThickness = 2;
             this.rdMasculinoMedico.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdMasculinoMedico.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdMasculinoMedico.CheckedChanged += new System.EventHandler(this.rdMasculinoMedico_CheckedChanged);
             // 
             // txtApellidoMedico
             // 
@@ -645,6 +660,7 @@
             this.txtApellidoMedico.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtApellidoMedico.Location = new System.Drawing.Point(23, 149);
             this.txtApellidoMedico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApellidoMedico.MaxLength = 30;
             this.txtApellidoMedico.Name = "txtApellidoMedico";
             this.txtApellidoMedico.PasswordChar = '\0';
             this.txtApellidoMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -673,6 +689,7 @@
             this.txtNombreMedico.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtNombreMedico.Location = new System.Drawing.Point(23, 85);
             this.txtNombreMedico.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreMedico.MaxLength = 30;
             this.txtNombreMedico.Name = "txtNombreMedico";
             this.txtNombreMedico.PasswordChar = '\0';
             this.txtNombreMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -717,6 +734,7 @@
             this.chkDomingoMedico.UncheckedState.BorderRadius = 0;
             this.chkDomingoMedico.UncheckedState.BorderThickness = 0;
             this.chkDomingoMedico.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.chkDomingoMedico.CheckedChanged += new System.EventHandler(this.chkDomingoMedico_CheckedChanged);
             // 
             // chkSabadoMedico
             // 
@@ -734,6 +752,7 @@
             this.chkSabadoMedico.UncheckedState.BorderRadius = 0;
             this.chkSabadoMedico.UncheckedState.BorderThickness = 0;
             this.chkSabadoMedico.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.chkSabadoMedico.CheckedChanged += new System.EventHandler(this.chkSabadoMedico_CheckedChanged);
             // 
             // chkViernesMedico
             // 
@@ -751,6 +770,7 @@
             this.chkViernesMedico.UncheckedState.BorderRadius = 0;
             this.chkViernesMedico.UncheckedState.BorderThickness = 0;
             this.chkViernesMedico.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.chkViernesMedico.CheckedChanged += new System.EventHandler(this.chkViernesMedico_CheckedChanged);
             // 
             // chkJuevesMedico
             // 
@@ -768,6 +788,7 @@
             this.chkJuevesMedico.UncheckedState.BorderRadius = 0;
             this.chkJuevesMedico.UncheckedState.BorderThickness = 0;
             this.chkJuevesMedico.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.chkJuevesMedico.CheckedChanged += new System.EventHandler(this.chkJuevesMedico_CheckedChanged);
             // 
             // chkMiercolesMedico
             // 
@@ -785,6 +806,7 @@
             this.chkMiercolesMedico.UncheckedState.BorderRadius = 0;
             this.chkMiercolesMedico.UncheckedState.BorderThickness = 0;
             this.chkMiercolesMedico.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.chkMiercolesMedico.CheckedChanged += new System.EventHandler(this.chkMiercolesMedico_CheckedChanged);
             // 
             // chkMartesMedico
             // 
@@ -802,6 +824,7 @@
             this.chkMartesMedico.UncheckedState.BorderRadius = 0;
             this.chkMartesMedico.UncheckedState.BorderThickness = 0;
             this.chkMartesMedico.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.chkMartesMedico.CheckedChanged += new System.EventHandler(this.chkMartesMedico_CheckedChanged);
             // 
             // chkLunesMedico
             // 
@@ -819,6 +842,7 @@
             this.chkLunesMedico.UncheckedState.BorderRadius = 0;
             this.chkLunesMedico.UncheckedState.BorderThickness = 0;
             this.chkLunesMedico.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.chkLunesMedico.CheckedChanged += new System.EventHandler(this.chkLunesMedico_CheckedChanged);
             // 
             // txtMatriculaMedico
             // 
@@ -883,6 +907,7 @@
             // btnCerrarApp
             // 
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarApp.CustomClick = true;
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
             this.btnCerrarApp.Location = new System.Drawing.Point(1089, 9);
@@ -890,6 +915,7 @@
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
             this.btnCerrarApp.TabIndex = 27;
+            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
             // btnMinimizar
             // 

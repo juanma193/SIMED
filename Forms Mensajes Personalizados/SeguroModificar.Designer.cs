@@ -54,9 +54,10 @@
             // 
             this.lblMensaje.AutoSize = true;
             this.lblMensaje.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.Location = new System.Drawing.Point(173, 87);
+            this.lblMensaje.Location = new System.Drawing.Point(131, 85);
+            this.lblMensaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(465, 28);
+            this.lblMensaje.Size = new System.Drawing.Size(372, 21);
             this.lblMensaje.TabIndex = 4;
             this.lblMensaje.Text = "¿Está seguro de que desea modificar estos datos?";
             // 
@@ -64,9 +65,10 @@
             // 
             this.picWarning.Image = global::SIMED_V1.Properties.Resources.icons8_warning_48;
             this.picWarning.ImageRotate = 0F;
-            this.picWarning.Location = new System.Drawing.Point(69, 63);
+            this.picWarning.Location = new System.Drawing.Point(52, 51);
+            this.picWarning.Margin = new System.Windows.Forms.Padding(2);
             this.picWarning.Name = "picWarning";
-            this.picWarning.Size = new System.Drawing.Size(75, 79);
+            this.picWarning.Size = new System.Drawing.Size(56, 64);
             this.picWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picWarning.TabIndex = 8;
             this.picWarning.TabStop = false;
@@ -75,7 +77,7 @@
             // 
             this.btnModificar.Animated = true;
             this.btnModificar.AutoRoundedCorners = true;
-            this.btnModificar.BorderRadius = 30;
+            this.btnModificar.BorderRadius = 24;
             this.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -85,9 +87,10 @@
             this.btnModificar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(69, 220);
+            this.btnModificar.Location = new System.Drawing.Point(52, 179);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(264, 63);
+            this.btnModificar.Size = new System.Drawing.Size(198, 51);
             this.btnModificar.TabIndex = 6;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -97,9 +100,10 @@
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(776, 12);
+            this.btnCerrarApp.Location = new System.Drawing.Point(498, 10);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarApp.Name = "btnCerrarApp";
-            this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
+            this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
             this.btnCerrarApp.TabIndex = 7;
             // 
             // btnMinimizar
@@ -108,16 +112,17 @@
             this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(725, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(460, 10);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
+            this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
             this.btnMinimizar.TabIndex = 5;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Animated = true;
             this.btnCancelar.AutoRoundedCorners = true;
-            this.btnCancelar.BorderRadius = 30;
+            this.btnCancelar.BorderRadius = 24;
             this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -127,18 +132,19 @@
             this.btnCancelar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(482, 220);
+            this.btnCancelar.Location = new System.Drawing.Point(264, 179);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(264, 63);
+            this.btnCancelar.Size = new System.Drawing.Size(198, 51);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // SeguroModificar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(833, 345);
+            this.ClientSize = new System.Drawing.Size(541, 280);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.picWarning);
@@ -146,6 +152,7 @@
             this.Controls.Add(this.btnCerrarApp);
             this.Controls.Add(this.btnMinimizar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SeguroModificar";
             this.Text = "SeguroModificar";
             this.TopMost = true;
@@ -160,11 +167,11 @@
 
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
-        private Guna.UI2.WinForms.Guna2GradientButton btnCancelar;
         private Guna.UI2.WinForms.Guna2PictureBox picWarning;
         private Guna.UI2.WinForms.Guna2ControlBox btnCerrarApp;
         private Guna.UI2.WinForms.Guna2ControlBox btnMinimizar;
         public System.Windows.Forms.Label lblMensaje;
+        public Guna.UI2.WinForms.Guna2GradientButton btnCancelar;
         public Guna.UI2.WinForms.Guna2GradientButton btnModificar;
     }
 }

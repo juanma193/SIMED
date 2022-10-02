@@ -52,8 +52,7 @@ namespace SIMED_V1
             //uMedicos1.BringToFront();
             this.pnContenido.Controls.Remove(ContActivo);
 
-            PrincipalForm menu = this;
-            ContActivo = new UMedicos(menu);
+            ContActivo = new UMedicos();
             ContActivo.Dock = DockStyle.Fill;
             this.pnContenido.Controls.Add(ContActivo);
             

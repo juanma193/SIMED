@@ -1,4 +1,5 @@
 ﻿using SIMED_V1.Bases_de_datos;
+using SIMED_V1.Forms_Mensajes_Personalizados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,29 +29,36 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnEliminarMedicoDato_Click(object sender, EventArgs e)
         {
-            bool resultado1 = MedicoBD.EliminarMedicosDiasLaborales(int.Parse(txtMatriculaMedicoDato.PlaceholderText));
-            if(resultado1)
-            {
-                bool resultado = MedicoBD.EliminarMedico(int.Parse(txtMatriculaMedicoDato.PlaceholderText));
-                if (resultado)
-                {
-                    CorrectoForm ventana = new CorrectoForm();
-                    ventana.show("Se ha eliminado correctamente el médico de matrícula " + txtMatriculaMedicoDato.PlaceholderText);
-                    this.Dispose();
-                    window.CargarGrillaConsultaMedico();
+            SeguroEliminar seguro = new SeguroEliminar();
+            seguro.lblMensaje.Text = "¿Está seguro que desea eliminar el médico seleccionado?";
 
+            if (seguro.ShowDialog() == DialogResult.OK) 
+            {
+                bool resultado1 = MedicoBD.EliminarMedicosDiasLaborales(int.Parse(txtMatriculaMedicoDato.PlaceholderText));
+                if (resultado1)
+                {
+                    bool resultado = MedicoBD.EliminarMedico(int.Parse(txtMatriculaMedicoDato.PlaceholderText));
+                    if (resultado)
+                    {
+                        CorrectoForm ventana = new CorrectoForm();
+                        ventana.show("Se ha eliminado correctamente el médico de matrícula " + txtMatriculaMedicoDato.PlaceholderText);
+                        this.Dispose();
+                        window.CargarGrillaConsultaMedico();
+
+                    }
+                    else
+                    {
+                        ErroresForm ventana = new ErroresForm();
+                        ventana.show("Se ha producido un error al eliminar el médico");
+                    }
                 }
                 else
                 {
                     ErroresForm ventana = new ErroresForm();
-                    ventana.show("Se ha producido un error al eliminar el médico");
+                    ventana.show("Se ha producido un error al borrar los días laborales. No existen días laborales asociados al médico.");
                 }
             }
-            else
-            {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Se ha producido un error. No existen días laborales asociados al médico.");
-            }
+            
             
         }
 

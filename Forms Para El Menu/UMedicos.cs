@@ -13,31 +13,26 @@ namespace SIMED_V1
 {
     public partial class UMedicos : UserControl
     {
-        PrincipalForm window;
 
-        public UMedicos(PrincipalForm menu)
+
+        public UMedicos()
         {
             InitializeComponent();
-            window = menu;
+
         }
 
         private void btnDarAltaMedico_Click(object sender, EventArgs e)
         {
             AltaMedico ventana = new AltaMedico();
             ventana.Show();
-            window.Hide();
         }
 
         private void btnConsultarDatosMedico_Click(object sender, EventArgs e)
         {
             ConsultaMedico ventana = new ConsultaMedico();
             ventana.Show();
-            window.Hide();
-        }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
 
         }
+
     }
 }
