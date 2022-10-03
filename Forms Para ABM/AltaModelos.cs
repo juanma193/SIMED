@@ -87,7 +87,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 Modelos m = ObtenerDatosModelo();
                 try
                 {
-                    bool rdo = ModelosMarcasBD.ModeloYaExiste(m);
+                    bool rdo = ModelosMarcasRLBD.ModeloYaExiste(m);
                     if(rdo)
                     {
                         ErroresForm ventana = new ErroresForm();
@@ -95,7 +95,7 @@ namespace SIMED_V1.Forms_Para_ABM
                     }
                     else
                     {
-                        bool resultado = ModelosMarcasBD.AgregarModeloABD(m);
+                        bool resultado = ModelosMarcasRLBD.AgregarModeloABD(m);
                         if (resultado)
                         {
                             CorrectoForm cf = new CorrectoForm();
@@ -133,7 +133,7 @@ namespace SIMED_V1.Forms_Para_ABM
         {
             try
             {
-                cmbMarcaModelo.DataSource = ModelosMarcasBD.ObtenerMarcas();
+                cmbMarcaModelo.DataSource = ModelosMarcasRLBD.ObtenerMarcas();
                 cmbMarcaModelo.DisplayMember = "nombre_marca";
                 cmbMarcaModelo.ValueMember = "id_marca";
                 cmbMarcaModelo.SelectedIndex = -1;
@@ -164,6 +164,13 @@ namespace SIMED_V1.Forms_Para_ABM
         {
             UModelosMarcas ventana = new UModelosMarcas();
             ventana.Show();
+        }
+
+        private void btnVolver_Click_1(object sender, EventArgs e)
+        {
+            UModelosMarcas nue = new UModelosMarcas();
+            nue.Show();
+            this.Dispose();
         }
     }
  }

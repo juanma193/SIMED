@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SIMED_V1.Forms_Para_ABM;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace SIMED_V1
 
         private void btnDarDeAltaUnaAmbulancia_Click(object sender, EventArgs e)
         {
-
+            AltaAmbulancias ventana = new AltaAmbulancias();
+            ventana.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -34,7 +36,8 @@ namespace SIMED_V1
 
         private void guna2Button3_Click(object sender, EventArgs e)
         {
-
+            ConsultarAmbulancias ventana = new ConsultarAmbulancias();
+            ventana.Show();
         }
 
         private void guna2Button2_Click(object sender, EventArgs e)

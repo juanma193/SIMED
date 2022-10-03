@@ -346,12 +346,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bases de datos\AfiliadosBD.cs" />
+    <Compile Include="Bases de datos\AmbulanciasBD.cs" />
     <Compile Include="Bases de datos\BarriosBD.cs" />
     <Compile Include="Bases de datos\EmpleadosBD.cs" />
     <Compile Include="Bases de datos\EnfermeroBD.cs" />
     <Compile Include="Bases de datos\EspecialidadBD.cs" />
     <Compile Include="Bases de datos\MedicoBD.cs" />
     <Compile Include="Bases de datos\ModelosMarcasBD.cs" />
+    <Compile Include="Bases de datos\ModelosMarcasRLBD.cs" />
     <Compile Include="Bases de datos\PlanesBD.cs" />
     <Compile Include="Bases de datos\RangoEtarioBD.cs" />
     <Compile Include="Bases de datos\TiposDocBD.cs" />
@@ -463,6 +465,12 @@
     <Compile Include="Forms Para ABM\AltaEnfermeros.Designer.cs">
       <DependentUpon>AltaEnfermeros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para ABM\AltaMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\AltaMarcas.Designer.cs">
+      <DependentUpon>AltaMarcas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\AltaMedico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -481,6 +489,12 @@
     <Compile Include="Forms Para ABM\AltaPlanes.Designer.cs">
       <DependentUpon>AltaPlanes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para ABM\AltaRelacionLaboral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\AltaRelacionLaboral.Designer.cs">
+      <DependentUpon>AltaRelacionLaboral.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\AltaViaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -495,6 +509,12 @@
     </Compile>
     <Compile Include="Forms Para ABM\ConsultaMedico.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaMarcas.Designer.cs">
+      <DependentUpon>ConsultaMarcas.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\ConsultaModelos.cs">
       <SubType>Form</SubType>
@@ -528,6 +548,11 @@
     </Compile>
     <Compile Include="Forms Para ABM\ConsultarUsuarioNoAdmin.Designer.cs">
       <DependentUpon>ConsultarUsuarioNoAdmin.cs</DependentUpon>
+    <Compile Include="Forms Para ABM\ConsultaRelacionLaboral.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ConsultaRelacionLaboral.Designer.cs">
+      <DependentUpon>ConsultaRelacionLaboral.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\ConsultarViaje.cs">
       <SubType>Form</SubType>
@@ -601,6 +626,12 @@
     </Compile>
     <Compile Include="Forms Para El Menu\UPlanes.Designer.cs">
       <DependentUpon>UPlanes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para El Menu\URelacionesLaborales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para El Menu\URelacionesLaborales.Designer.cs">
+      <DependentUpon>URelacionesLaborales.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para Login\EnviarCodigoFormcs.cs">
       <SubType>Form</SubType>
@@ -722,6 +753,9 @@
     <EmbeddedResource Include="Forms Para ABM\AltaEnfermeros.resx">
       <DependentUpon>AltaEnfermeros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\AltaMarcas.resx">
+      <DependentUpon>AltaMarcas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\AltaMedico.resx">
       <DependentUpon>AltaMedico.cs</DependentUpon>
     </EmbeddedResource>
@@ -731,6 +765,9 @@
     <EmbeddedResource Include="Forms Para ABM\AltaPlanes.resx">
       <DependentUpon>AltaPlanes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\AltaRelacionLaboral.resx">
+      <DependentUpon>AltaRelacionLaboral.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\AltaViaje.resx">
       <DependentUpon>AltaViaje.cs</DependentUpon>
     </EmbeddedResource>
@@ -739,6 +776,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultaMedico.resx">
       <DependentUpon>ConsultaMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ConsultaMarcas.resx">
+      <DependentUpon>ConsultaMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultaModelos.resx">
       <DependentUpon>ConsultaModelos.cs</DependentUpon>
@@ -754,6 +794,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultarUsuarioNoAdmin.resx">
       <DependentUpon>ConsultarUsuarioNoAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ConsultaRelacionLaboral.resx">
+      <DependentUpon>ConsultaRelacionLaboral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ConsultarViaje.resx">
       <DependentUpon>ConsultarViaje.cs</DependentUpon>
@@ -790,6 +833,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UPlanes.resx">
       <DependentUpon>UPlanes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para El Menu\URelacionesLaborales.resx">
+      <DependentUpon>URelacionesLaborales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para Login\EnviarCodigoFormcs.resx">
       <DependentUpon>EnviarCodigoFormcs.cs</DependentUpon>

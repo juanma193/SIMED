@@ -77,7 +77,7 @@
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(182, 58);
-            this.btnConsultar.TabIndex = 13;
+            this.btnConsultar.TabIndex = 2;
             this.btnConsultar.Text = "Consultar datos ";
             this.btnConsultar.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
@@ -98,7 +98,7 @@
             this.btnDarDeAltaAmbulancia.Margin = new System.Windows.Forms.Padding(2);
             this.btnDarDeAltaAmbulancia.Name = "btnDarDeAltaAmbulancia";
             this.btnDarDeAltaAmbulancia.Size = new System.Drawing.Size(182, 58);
-            this.btnDarDeAltaAmbulancia.TabIndex = 11;
+            this.btnDarDeAltaAmbulancia.TabIndex = 1;
             this.btnDarDeAltaAmbulancia.Text = "Dar de alta una ambulancia";
             this.btnDarDeAltaAmbulancia.Click += new System.EventHandler(this.btnDarDeAltaUnaAmbulancia_Click);
             // 
