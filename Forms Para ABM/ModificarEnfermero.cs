@@ -1,5 +1,6 @@
 ﻿using SIMED.Models;
 using SIMED_V1.Bases_de_datos;
+using SIMED_V1.Forms_Mensajes_Personalizados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -90,48 +91,52 @@ namespace SIMED_V1.Forms_Para_ABM
 
                 if (valNroMatE && valNomE && valFechaE && valTelE && valDocE && valCalleE && valEspE && valSexoE)
                 {
-                    enfermero.NumeroMatricula = int.Parse(txtMatriculaEnfermero.Text);
-                    enfermero.Nombre = txtNombreEnfermero.Text;
-                    enfermero.Apellido = txtApellidoEnfermero.Text;
-                    //DateTime fechaNacEnfermero = DateTime.Parse(dtFechaNacimientoEnfermero.Text);
-                    enfermero.FechaNacimiento = dtFechaNacimientoEnfermero.Value;
-                    //CORREGIR MENSAJE DE ERROR CUANDO SE PONEN LETRAS EN LUGAR DE NUMEROS (TEL, NRO DOC, NRO CALLE)
-                    enfermero.Telefono = int.Parse(txtTelefonoEnfermero.Text);
-                    enfermero.NumeroDocumento = long.Parse(txtNumeroDocEnfermero.Text);
-                    enfermero.Calle = txtCalleEnfermero.Text;
-                    enfermero.NroCalle = int.Parse(txtNumeroCalleEnfermero.Text);
+                    SeguroModificar seguro = new SeguroModificar();
+                    seguro.lblMensaje.Text = "¿Está seguro que desea guardar los cambios?";
+                    if (seguro.ShowDialog() == DialogResult.OK)
+                    {
+                        enfermero.NumeroMatricula = int.Parse(txtMatriculaEnfermero.Text);
+                        enfermero.Nombre = txtNombreEnfermero.Text;
+                        enfermero.Apellido = txtApellidoEnfermero.Text;
+                        //DateTime fechaNacEnfermero = DateTime.Parse(dtFechaNacimientoEnfermero.Text);
+                        enfermero.FechaNacimiento = dtFechaNacimientoEnfermero.Value;
+                        //CORREGIR MENSAJE DE ERROR CUANDO SE PONEN LETRAS EN LUGAR DE NUMEROS (TEL, NRO DOC, NRO CALLE)
+                        enfermero.Telefono = int.Parse(txtTelefonoEnfermero.Text);
+                        enfermero.NumeroDocumento = long.Parse(txtNumeroDocEnfermero.Text);
+                        enfermero.Calle = txtCalleEnfermero.Text;
+                        enfermero.NroCalle = int.Parse(txtNumeroCalleEnfermero.Text);
 
-                    enfermero.IdBarrio = (int)cmbBarrioEnfermero.SelectedValue;
-                    enfermero.IdTipoDocumento = (int)cmbTipoDocEnfermero.SelectedValue;
-                    enfermero.IdEspecialidad = (int)cmbEspecialidadEnfermero.SelectedValue;
+                        enfermero.IdBarrio = (int)cmbBarrioEnfermero.SelectedValue;
+                        enfermero.IdTipoDocumento = (int)cmbTipoDocEnfermero.SelectedValue;
+                        enfermero.IdEspecialidad = (int)cmbEspecialidadEnfermero.SelectedValue;
 
-                    if (rdFemeninoEnfermero.Checked)
-                    {
-                        enfermero.IdSexo = 1;
-                    }
-                    if (rdMasculinoEnfermero.Checked)
-                    {
-                        enfermero.IdSexo = 2;
-                    }
-                    if (rdOtroEnfermero.Checked)
-                    {
-                        enfermero.IdSexo = 3;
-                    }
+                        if (rdFemeninoEnfermero.Checked)
+                        {
+                            enfermero.IdSexo = 1;
+                        }
+                        if (rdMasculinoEnfermero.Checked)
+                        {
+                            enfermero.IdSexo = 2;
+                        }
+                        if (rdOtroEnfermero.Checked)
+                        {
+                            enfermero.IdSexo = 3;
+                        }
 
-                    bool resultado = EnfermeroBD.ModificarEnfermero(enfermero);
+                        bool resultado = EnfermeroBD.ModificarEnfermero(enfermero);
 
-                    if (resultado)
-                    {
-                        CorrectoForm window = new CorrectoForm();
-                        window.show("Se ha modificado el enfermero con éxito.");
-                    }
-                    else
-                    {
-                        ErroresForm window = new ErroresForm();
-                        window.show("No se ha podido modificar el enfermero.");
+                        if (resultado)
+                        {
+                            CorrectoForm window = new CorrectoForm();
+                            window.show("Se ha modificado el enfermero con éxito.");
+                        }
+                        else
+                        {
+                            ErroresForm window = new ErroresForm();
+                            window.show("No se ha podido modificar el enfermero.");
+                        }
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -139,11 +144,17 @@ namespace SIMED_V1.Forms_Para_ABM
                 window.show("Error" + " " + ex);
             }
         }
+
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            windowConsulta.Show();
-
+            SeguroModificar seguro = new SeguroModificar();
+            seguro.btnModificar.Text = "Aceptar";
+            seguro.lblMensaje.Text = "¿Está seguro que desea descartar los cambios?";
+            if (seguro.ShowDialog() == DialogResult.OK)
+            {
+                windowConsulta.Show();
+                this.Dispose();
+            }
         }
 
         private void CargarComboTiposDoc()
@@ -373,8 +384,14 @@ namespace SIMED_V1.Forms_Para_ABM
         }
         private void btnCerrarApp_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            windowConsulta.Show();
+            SeguroModificar seguro = new SeguroModificar();
+            seguro.btnModificar.Text = "Aceptar";
+            seguro.lblMensaje.Text = "¿Está seguro que desea descartar los cambios?";
+            if (seguro.ShowDialog() == DialogResult.OK)
+            {
+                windowConsulta.Show();
+                this.Dispose();
+            }
 
         }
     }

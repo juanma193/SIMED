@@ -84,6 +84,7 @@
             // btnCerrarApp
             // 
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrarApp.CustomClick = true;
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
             this.btnCerrarApp.Location = new System.Drawing.Point(1091, 11);
@@ -161,7 +162,7 @@
             this.cmbCiudadesEnfermero.Margin = new System.Windows.Forms.Padding(4);
             this.cmbCiudadesEnfermero.Name = "cmbCiudadesEnfermero";
             this.cmbCiudadesEnfermero.Size = new System.Drawing.Size(305, 36);
-            this.cmbCiudadesEnfermero.TabIndex = 54;
+            this.cmbCiudadesEnfermero.TabIndex = 13;
             this.cmbCiudadesEnfermero.TextChanged += new System.EventHandler(this.cmbCiudadesEnfermero_SelectedIndexChanged);
             // 
             // lblCiudadEnfermero
@@ -331,6 +332,7 @@
             this.txtTelefonoEnfermero.IconLeft = global::SIMED_V1.Properties.Resources.phone_3;
             this.txtTelefonoEnfermero.Location = new System.Drawing.Point(34, 233);
             this.txtTelefonoEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTelefonoEnfermero.MaxLength = 10;
             this.txtTelefonoEnfermero.Name = "txtTelefonoEnfermero";
             this.txtTelefonoEnfermero.PasswordChar = '\0';
             this.txtTelefonoEnfermero.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -358,7 +360,7 @@
             this.cmbEspecialidadEnfermero.Margin = new System.Windows.Forms.Padding(4);
             this.cmbEspecialidadEnfermero.Name = "cmbEspecialidadEnfermero";
             this.cmbEspecialidadEnfermero.Size = new System.Drawing.Size(305, 36);
-            this.cmbEspecialidadEnfermero.TabIndex = 14;
+            this.cmbEspecialidadEnfermero.TabIndex = 15;
             // 
             // cmbTipoDocEnfermero
             // 
@@ -398,7 +400,7 @@
             this.btnModificarEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificarEnfermero.Name = "btnModificarEnfermero";
             this.btnModificarEnfermero.Size = new System.Drawing.Size(305, 44);
-            this.btnModificarEnfermero.TabIndex = 15;
+            this.btnModificarEnfermero.TabIndex = 16;
             this.btnModificarEnfermero.Text = "Modificar enfermero";
             this.btnModificarEnfermero.Click += new System.EventHandler(this.btnModificarEnfermero_Click);
             // 
@@ -448,7 +450,7 @@
             this.cmbBarrioEnfermero.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBarrioEnfermero.Name = "cmbBarrioEnfermero";
             this.cmbBarrioEnfermero.Size = new System.Drawing.Size(305, 36);
-            this.cmbBarrioEnfermero.TabIndex = 13;
+            this.cmbBarrioEnfermero.TabIndex = 14;
             // 
             // txtNumeroCalleEnfermero
             // 
@@ -468,6 +470,7 @@
             this.txtNumeroCalleEnfermero.IconLeft = global::SIMED_V1.Properties.Resources.calle;
             this.txtNumeroCalleEnfermero.Location = new System.Drawing.Point(719, 82);
             this.txtNumeroCalleEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNumeroCalleEnfermero.MaxLength = 5;
             this.txtNumeroCalleEnfermero.Name = "txtNumeroCalleEnfermero";
             this.txtNumeroCalleEnfermero.PasswordChar = '\0';
             this.txtNumeroCalleEnfermero.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -659,6 +662,7 @@
             this.txtMatriculaEnfermero.IconLeftSize = new System.Drawing.Size(30, 20);
             this.txtMatriculaEnfermero.Location = new System.Drawing.Point(34, 26);
             this.txtMatriculaEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMatriculaEnfermero.MaxLength = 10;
             this.txtMatriculaEnfermero.Name = "txtMatriculaEnfermero";
             this.txtMatriculaEnfermero.PasswordChar = '\0';
             this.txtMatriculaEnfermero.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -711,6 +715,7 @@
             this.Controls.Add(this.lblModificarCuenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModificarEnfermero";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificarEnfermero";
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();

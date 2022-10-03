@@ -324,7 +324,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 46);
-            this.btnVolver.TabIndex = 49;
+            this.btnVolver.TabIndex = 7;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // txtConsultaApellidoEnfermero

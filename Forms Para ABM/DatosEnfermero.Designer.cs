@@ -33,38 +33,38 @@
             this.btnCerrarApp = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.lblNumCalleEnfermero = new System.Windows.Forms.Label();
+            this.lblCalleEnfermero = new System.Windows.Forms.Label();
             this.lblNumeroDocEnfermero = new System.Windows.Forms.Label();
             this.lblTelefonoEnfermero = new System.Windows.Forms.Label();
             this.lblApellidoEnfermero = new System.Windows.Forms.Label();
             this.lblNombreEnfermero = new System.Windows.Forms.Label();
             this.lblMatriculaEnfermero = new System.Windows.Forms.Label();
             this.btnEliminarEnfermeroDato = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.lblCiudadEnfermero = new System.Windows.Forms.Label();
-            this.lblTipoDocumentoEnfermero = new System.Windows.Forms.Label();
-            this.lblEspecialidadEnfermero = new System.Windows.Forms.Label();
-            this.lblBarrioEnfermero = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtFechaNacimientoEnfermeroDato = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            this.gbSexoEnfermero = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.rdOtroEnfermeroDato = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rdFemeninoEnfermeroDato = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rdMasculinoEnfermeroDato = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.lblDatosEnfermero = new System.Windows.Forms.Label();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.lblCalleEnfermero = new System.Windows.Forms.Label();
-            this.lblNumCalleEnfermero = new System.Windows.Forms.Label();
-            this.btnVolverDatosEnfermero = new Guna.UI2.WinForms.Guna2Button();
             this.txtEspecialidadEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCiudadEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtBarrioEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTipoDocEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblCiudadEnfermero = new System.Windows.Forms.Label();
+            this.lblTipoDocumentoEnfermero = new System.Windows.Forms.Label();
+            this.lblEspecialidadEnfermero = new System.Windows.Forms.Label();
+            this.lblBarrioEnfermero = new System.Windows.Forms.Label();
             this.txtNumeroDocEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTelefonoEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtFechaNacimientoEnfermeroDato = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.txtNumeroCalleEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCalleEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
+            this.gbSexoEnfermero = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rdOtroEnfermeroDato = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rdFemeninoEnfermeroDato = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rdMasculinoEnfermeroDato = new Guna.UI2.WinForms.Guna2RadioButton();
             this.txtApellidoEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtNombreEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMatriculaEnfermeroDato = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lblDatosEnfermero = new System.Windows.Forms.Label();
+            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.btnVolverDatosEnfermero = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.gbSexoEnfermero.SuspendLayout();
             this.SuspendLayout();
@@ -137,6 +137,28 @@
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(1085, 483);
             this.guna2ShadowPanel1.TabIndex = 29;
+            // 
+            // lblNumCalleEnfermero
+            // 
+            this.lblNumCalleEnfermero.AutoSize = true;
+            this.lblNumCalleEnfermero.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumCalleEnfermero.Location = new System.Drawing.Point(727, 103);
+            this.lblNumCalleEnfermero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNumCalleEnfermero.Name = "lblNumCalleEnfermero";
+            this.lblNumCalleEnfermero.Size = new System.Drawing.Size(136, 23);
+            this.lblNumCalleEnfermero.TabIndex = 65;
+            this.lblNumCalleEnfermero.Text = "Número de calle";
+            // 
+            // lblCalleEnfermero
+            // 
+            this.lblCalleEnfermero.AutoSize = true;
+            this.lblCalleEnfermero.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalleEnfermero.Location = new System.Drawing.Point(727, 35);
+            this.lblCalleEnfermero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCalleEnfermero.Name = "lblCalleEnfermero";
+            this.lblCalleEnfermero.Size = new System.Drawing.Size(47, 23);
+            this.lblCalleEnfermero.TabIndex = 64;
+            this.lblCalleEnfermero.Text = "Calle";
             // 
             // lblNumeroDocEnfermero
             // 
@@ -212,10 +234,102 @@
             this.btnEliminarEnfermeroDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarEnfermeroDato.Name = "btnEliminarEnfermeroDato";
             this.btnEliminarEnfermeroDato.Size = new System.Drawing.Size(312, 44);
-            this.btnEliminarEnfermeroDato.TabIndex = 58;
+            this.btnEliminarEnfermeroDato.TabIndex = 16;
             this.btnEliminarEnfermeroDato.Text = "Eliminar enfermero";
             this.btnEliminarEnfermeroDato.Visible = false;
             this.btnEliminarEnfermeroDato.Click += new System.EventHandler(this.btnEliminarEnfermeroDato_Click);
+            // 
+            // txtEspecialidadEnfermeroDato
+            // 
+            this.txtEspecialidadEnfermeroDato.BorderRadius = 16;
+            this.txtEspecialidadEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEspecialidadEnfermeroDato.DefaultText = "";
+            this.txtEspecialidadEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtEspecialidadEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtEspecialidadEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEspecialidadEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtEspecialidadEnfermeroDato.Enabled = false;
+            this.txtEspecialidadEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtEspecialidadEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEspecialidadEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtEspecialidadEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtEspecialidadEnfermeroDato.IconLeftSize = new System.Drawing.Size(30, 40);
+            this.txtEspecialidadEnfermeroDato.Location = new System.Drawing.Point(725, 329);
+            this.txtEspecialidadEnfermeroDato.Name = "txtEspecialidadEnfermeroDato";
+            this.txtEspecialidadEnfermeroDato.PasswordChar = '\0';
+            this.txtEspecialidadEnfermeroDato.PlaceholderText = "";
+            this.txtEspecialidadEnfermeroDato.SelectedText = "";
+            this.txtEspecialidadEnfermeroDato.Size = new System.Drawing.Size(299, 36);
+            this.txtEspecialidadEnfermeroDato.TabIndex = 15;
+            // 
+            // txtCiudadEnfermeroDato
+            // 
+            this.txtCiudadEnfermeroDato.BorderRadius = 16;
+            this.txtCiudadEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCiudadEnfermeroDato.DefaultText = "";
+            this.txtCiudadEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCiudadEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCiudadEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCiudadEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCiudadEnfermeroDato.Enabled = false;
+            this.txtCiudadEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtCiudadEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCiudadEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtCiudadEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCiudadEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.calle;
+            this.txtCiudadEnfermeroDato.Location = new System.Drawing.Point(725, 267);
+            this.txtCiudadEnfermeroDato.Name = "txtCiudadEnfermeroDato";
+            this.txtCiudadEnfermeroDato.PasswordChar = '\0';
+            this.txtCiudadEnfermeroDato.PlaceholderText = "";
+            this.txtCiudadEnfermeroDato.SelectedText = "";
+            this.txtCiudadEnfermeroDato.Size = new System.Drawing.Size(299, 36);
+            this.txtCiudadEnfermeroDato.TabIndex = 14;
+            // 
+            // txtBarrioEnfermeroDato
+            // 
+            this.txtBarrioEnfermeroDato.BorderRadius = 16;
+            this.txtBarrioEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBarrioEnfermeroDato.DefaultText = "";
+            this.txtBarrioEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtBarrioEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtBarrioEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBarrioEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtBarrioEnfermeroDato.Enabled = false;
+            this.txtBarrioEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtBarrioEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBarrioEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtBarrioEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtBarrioEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.calle;
+            this.txtBarrioEnfermeroDato.Location = new System.Drawing.Point(725, 202);
+            this.txtBarrioEnfermeroDato.Name = "txtBarrioEnfermeroDato";
+            this.txtBarrioEnfermeroDato.PasswordChar = '\0';
+            this.txtBarrioEnfermeroDato.PlaceholderText = "";
+            this.txtBarrioEnfermeroDato.SelectedText = "";
+            this.txtBarrioEnfermeroDato.Size = new System.Drawing.Size(299, 36);
+            this.txtBarrioEnfermeroDato.TabIndex = 13;
+            // 
+            // txtTipoDocEnfermeroDato
+            // 
+            this.txtTipoDocEnfermeroDato.BorderRadius = 16;
+            this.txtTipoDocEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTipoDocEnfermeroDato.DefaultText = "";
+            this.txtTipoDocEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTipoDocEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTipoDocEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTipoDocEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTipoDocEnfermeroDato.Enabled = false;
+            this.txtTipoDocEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtTipoDocEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTipoDocEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTipoDocEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTipoDocEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
+            this.txtTipoDocEnfermeroDato.Location = new System.Drawing.Point(368, 274);
+            this.txtTipoDocEnfermeroDato.Name = "txtTipoDocEnfermeroDato";
+            this.txtTipoDocEnfermeroDato.PasswordChar = '\0';
+            this.txtTipoDocEnfermeroDato.PlaceholderText = "";
+            this.txtTipoDocEnfermeroDato.SelectedText = "";
+            this.txtTipoDocEnfermeroDato.Size = new System.Drawing.Size(299, 36);
+            this.txtTipoDocEnfermeroDato.TabIndex = 9;
             // 
             // lblCiudadEnfermero
             // 
@@ -261,6 +375,60 @@
             this.lblBarrioEnfermero.TabIndex = 40;
             this.lblBarrioEnfermero.Text = "Barrio";
             // 
+            // txtNumeroDocEnfermeroDato
+            // 
+            this.txtNumeroDocEnfermeroDato.Animated = true;
+            this.txtNumeroDocEnfermeroDato.AutoRoundedCorners = true;
+            this.txtNumeroDocEnfermeroDato.BorderRadius = 21;
+            this.txtNumeroDocEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNumeroDocEnfermeroDato.DefaultText = "";
+            this.txtNumeroDocEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNumeroDocEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNumeroDocEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNumeroDocEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNumeroDocEnfermeroDato.Enabled = false;
+            this.txtNumeroDocEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtNumeroDocEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNumeroDocEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.txtNumeroDocEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNumeroDocEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
+            this.txtNumeroDocEnfermeroDato.Location = new System.Drawing.Point(368, 351);
+            this.txtNumeroDocEnfermeroDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNumeroDocEnfermeroDato.Name = "txtNumeroDocEnfermeroDato";
+            this.txtNumeroDocEnfermeroDato.PasswordChar = '\0';
+            this.txtNumeroDocEnfermeroDato.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtNumeroDocEnfermeroDato.PlaceholderText = "Número de documento";
+            this.txtNumeroDocEnfermeroDato.SelectedText = "";
+            this.txtNumeroDocEnfermeroDato.Size = new System.Drawing.Size(305, 44);
+            this.txtNumeroDocEnfermeroDato.TabIndex = 10;
+            // 
+            // txtTelefonoEnfermeroDato
+            // 
+            this.txtTelefonoEnfermeroDato.Animated = true;
+            this.txtTelefonoEnfermeroDato.AutoRoundedCorners = true;
+            this.txtTelefonoEnfermeroDato.BorderRadius = 21;
+            this.txtTelefonoEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTelefonoEnfermeroDato.DefaultText = "";
+            this.txtTelefonoEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTelefonoEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTelefonoEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTelefonoEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTelefonoEnfermeroDato.Enabled = false;
+            this.txtTelefonoEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtTelefonoEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTelefonoEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.txtTelefonoEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTelefonoEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.phone_3;
+            this.txtTelefonoEnfermeroDato.Location = new System.Drawing.Point(34, 306);
+            this.txtTelefonoEnfermeroDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTelefonoEnfermeroDato.Name = "txtTelefonoEnfermeroDato";
+            this.txtTelefonoEnfermeroDato.PasswordChar = '\0';
+            this.txtTelefonoEnfermeroDato.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtTelefonoEnfermeroDato.PlaceholderText = "Número de teléfono";
+            this.txtTelefonoEnfermeroDato.SelectedText = "";
+            this.txtTelefonoEnfermeroDato.Size = new System.Drawing.Size(305, 44);
+            this.txtTelefonoEnfermeroDato.TabIndex = 4;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -290,6 +458,60 @@
             this.dtFechaNacimientoEnfermeroDato.Size = new System.Drawing.Size(305, 44);
             this.dtFechaNacimientoEnfermeroDato.TabIndex = 5;
             this.dtFechaNacimientoEnfermeroDato.Value = new System.DateTime(2022, 9, 14, 14, 58, 49, 546);
+            // 
+            // txtNumeroCalleEnfermeroDato
+            // 
+            this.txtNumeroCalleEnfermeroDato.Animated = true;
+            this.txtNumeroCalleEnfermeroDato.AutoRoundedCorners = true;
+            this.txtNumeroCalleEnfermeroDato.BorderRadius = 16;
+            this.txtNumeroCalleEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNumeroCalleEnfermeroDato.DefaultText = "";
+            this.txtNumeroCalleEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNumeroCalleEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNumeroCalleEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNumeroCalleEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNumeroCalleEnfermeroDato.Enabled = false;
+            this.txtNumeroCalleEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtNumeroCalleEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNumeroCalleEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.txtNumeroCalleEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNumeroCalleEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.calle;
+            this.txtNumeroCalleEnfermeroDato.Location = new System.Drawing.Point(725, 128);
+            this.txtNumeroCalleEnfermeroDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNumeroCalleEnfermeroDato.Name = "txtNumeroCalleEnfermeroDato";
+            this.txtNumeroCalleEnfermeroDato.PasswordChar = '\0';
+            this.txtNumeroCalleEnfermeroDato.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtNumeroCalleEnfermeroDato.PlaceholderText = "Número de calle";
+            this.txtNumeroCalleEnfermeroDato.SelectedText = "";
+            this.txtNumeroCalleEnfermeroDato.Size = new System.Drawing.Size(305, 35);
+            this.txtNumeroCalleEnfermeroDato.TabIndex = 12;
+            // 
+            // txtCalleEnfermeroDato
+            // 
+            this.txtCalleEnfermeroDato.Animated = true;
+            this.txtCalleEnfermeroDato.AutoRoundedCorners = true;
+            this.txtCalleEnfermeroDato.BorderRadius = 16;
+            this.txtCalleEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCalleEnfermeroDato.DefaultText = "";
+            this.txtCalleEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtCalleEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtCalleEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCalleEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtCalleEnfermeroDato.Enabled = false;
+            this.txtCalleEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtCalleEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCalleEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.txtCalleEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtCalleEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.calle;
+            this.txtCalleEnfermeroDato.Location = new System.Drawing.Point(725, 61);
+            this.txtCalleEnfermeroDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCalleEnfermeroDato.Name = "txtCalleEnfermeroDato";
+            this.txtCalleEnfermeroDato.PasswordChar = '\0';
+            this.txtCalleEnfermeroDato.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtCalleEnfermeroDato.PlaceholderText = "Calle";
+            this.txtCalleEnfermeroDato.SelectedText = "";
+            this.txtCalleEnfermeroDato.Size = new System.Drawing.Size(305, 35);
+            this.txtCalleEnfermeroDato.TabIndex = 11;
             // 
             // gbSexoEnfermero
             // 
@@ -369,258 +591,6 @@
             this.rdMasculinoEnfermeroDato.UncheckedState.BorderThickness = 2;
             this.rdMasculinoEnfermeroDato.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdMasculinoEnfermeroDato.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // lblDatosEnfermero
-            // 
-            this.lblDatosEnfermero.AutoSize = true;
-            this.lblDatosEnfermero.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosEnfermero.Location = new System.Drawing.Point(41, 30);
-            this.lblDatosEnfermero.Name = "lblDatosEnfermero";
-            this.lblDatosEnfermero.Size = new System.Drawing.Size(254, 41);
-            this.lblDatosEnfermero.TabIndex = 28;
-            this.lblDatosEnfermero.Text = "Datos enfermero";
-            // 
-            // lblCalleEnfermero
-            // 
-            this.lblCalleEnfermero.AutoSize = true;
-            this.lblCalleEnfermero.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCalleEnfermero.Location = new System.Drawing.Point(727, 35);
-            this.lblCalleEnfermero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblCalleEnfermero.Name = "lblCalleEnfermero";
-            this.lblCalleEnfermero.Size = new System.Drawing.Size(47, 23);
-            this.lblCalleEnfermero.TabIndex = 64;
-            this.lblCalleEnfermero.Text = "Calle";
-            // 
-            // lblNumCalleEnfermero
-            // 
-            this.lblNumCalleEnfermero.AutoSize = true;
-            this.lblNumCalleEnfermero.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumCalleEnfermero.Location = new System.Drawing.Point(727, 103);
-            this.lblNumCalleEnfermero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNumCalleEnfermero.Name = "lblNumCalleEnfermero";
-            this.lblNumCalleEnfermero.Size = new System.Drawing.Size(136, 23);
-            this.lblNumCalleEnfermero.TabIndex = 65;
-            this.lblNumCalleEnfermero.Text = "Número de calle";
-            // 
-            // btnVolverDatosEnfermero
-            // 
-            this.btnVolverDatosEnfermero.Animated = true;
-            this.btnVolverDatosEnfermero.AutoRoundedCorners = true;
-            this.btnVolverDatosEnfermero.BorderRadius = 22;
-            this.btnVolverDatosEnfermero.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnVolverDatosEnfermero.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnVolverDatosEnfermero.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnVolverDatosEnfermero.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnVolverDatosEnfermero.FillColor = System.Drawing.Color.Transparent;
-            this.btnVolverDatosEnfermero.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnVolverDatosEnfermero.ForeColor = System.Drawing.Color.White;
-            this.btnVolverDatosEnfermero.Image = global::SIMED_V1.Properties.Resources.left_arrow;
-            this.btnVolverDatosEnfermero.Location = new System.Drawing.Point(48, 558);
-            this.btnVolverDatosEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnVolverDatosEnfermero.Name = "btnVolverDatosEnfermero";
-            this.btnVolverDatosEnfermero.Size = new System.Drawing.Size(84, 46);
-            this.btnVolverDatosEnfermero.TabIndex = 32;
-            this.btnVolverDatosEnfermero.Click += new System.EventHandler(this.btnVolverDatosEnfermero_Click);
-            // 
-            // txtEspecialidadEnfermeroDato
-            // 
-            this.txtEspecialidadEnfermeroDato.BorderRadius = 16;
-            this.txtEspecialidadEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtEspecialidadEnfermeroDato.DefaultText = "";
-            this.txtEspecialidadEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtEspecialidadEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtEspecialidadEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEspecialidadEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtEspecialidadEnfermeroDato.Enabled = false;
-            this.txtEspecialidadEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtEspecialidadEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEspecialidadEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtEspecialidadEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtEspecialidadEnfermeroDato.IconLeftSize = new System.Drawing.Size(30, 40);
-            this.txtEspecialidadEnfermeroDato.Location = new System.Drawing.Point(725, 329);
-            this.txtEspecialidadEnfermeroDato.Name = "txtEspecialidadEnfermeroDato";
-            this.txtEspecialidadEnfermeroDato.PasswordChar = '\0';
-            this.txtEspecialidadEnfermeroDato.PlaceholderText = "";
-            this.txtEspecialidadEnfermeroDato.SelectedText = "";
-            this.txtEspecialidadEnfermeroDato.Size = new System.Drawing.Size(299, 36);
-            this.txtEspecialidadEnfermeroDato.TabIndex = 57;
-            // 
-            // txtCiudadEnfermeroDato
-            // 
-            this.txtCiudadEnfermeroDato.BorderRadius = 16;
-            this.txtCiudadEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCiudadEnfermeroDato.DefaultText = "";
-            this.txtCiudadEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCiudadEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCiudadEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCiudadEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCiudadEnfermeroDato.Enabled = false;
-            this.txtCiudadEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtCiudadEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCiudadEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtCiudadEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCiudadEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.calle;
-            this.txtCiudadEnfermeroDato.Location = new System.Drawing.Point(725, 267);
-            this.txtCiudadEnfermeroDato.Name = "txtCiudadEnfermeroDato";
-            this.txtCiudadEnfermeroDato.PasswordChar = '\0';
-            this.txtCiudadEnfermeroDato.PlaceholderText = "";
-            this.txtCiudadEnfermeroDato.SelectedText = "";
-            this.txtCiudadEnfermeroDato.Size = new System.Drawing.Size(299, 36);
-            this.txtCiudadEnfermeroDato.TabIndex = 56;
-            // 
-            // txtBarrioEnfermeroDato
-            // 
-            this.txtBarrioEnfermeroDato.BorderRadius = 16;
-            this.txtBarrioEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtBarrioEnfermeroDato.DefaultText = "";
-            this.txtBarrioEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtBarrioEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtBarrioEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBarrioEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtBarrioEnfermeroDato.Enabled = false;
-            this.txtBarrioEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtBarrioEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBarrioEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtBarrioEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtBarrioEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.calle;
-            this.txtBarrioEnfermeroDato.Location = new System.Drawing.Point(725, 202);
-            this.txtBarrioEnfermeroDato.Name = "txtBarrioEnfermeroDato";
-            this.txtBarrioEnfermeroDato.PasswordChar = '\0';
-            this.txtBarrioEnfermeroDato.PlaceholderText = "";
-            this.txtBarrioEnfermeroDato.SelectedText = "";
-            this.txtBarrioEnfermeroDato.Size = new System.Drawing.Size(299, 36);
-            this.txtBarrioEnfermeroDato.TabIndex = 55;
-            // 
-            // txtTipoDocEnfermeroDato
-            // 
-            this.txtTipoDocEnfermeroDato.BorderRadius = 16;
-            this.txtTipoDocEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTipoDocEnfermeroDato.DefaultText = "";
-            this.txtTipoDocEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTipoDocEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTipoDocEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTipoDocEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTipoDocEnfermeroDato.Enabled = false;
-            this.txtTipoDocEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtTipoDocEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTipoDocEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtTipoDocEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTipoDocEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
-            this.txtTipoDocEnfermeroDato.Location = new System.Drawing.Point(368, 274);
-            this.txtTipoDocEnfermeroDato.Name = "txtTipoDocEnfermeroDato";
-            this.txtTipoDocEnfermeroDato.PasswordChar = '\0';
-            this.txtTipoDocEnfermeroDato.PlaceholderText = "";
-            this.txtTipoDocEnfermeroDato.SelectedText = "";
-            this.txtTipoDocEnfermeroDato.Size = new System.Drawing.Size(299, 36);
-            this.txtTipoDocEnfermeroDato.TabIndex = 54;
-            // 
-            // txtNumeroDocEnfermeroDato
-            // 
-            this.txtNumeroDocEnfermeroDato.Animated = true;
-            this.txtNumeroDocEnfermeroDato.AutoRoundedCorners = true;
-            this.txtNumeroDocEnfermeroDato.BorderRadius = 21;
-            this.txtNumeroDocEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNumeroDocEnfermeroDato.DefaultText = "";
-            this.txtNumeroDocEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNumeroDocEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNumeroDocEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNumeroDocEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNumeroDocEnfermeroDato.Enabled = false;
-            this.txtNumeroDocEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtNumeroDocEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumeroDocEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
-            this.txtNumeroDocEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumeroDocEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
-            this.txtNumeroDocEnfermeroDato.Location = new System.Drawing.Point(368, 351);
-            this.txtNumeroDocEnfermeroDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNumeroDocEnfermeroDato.Name = "txtNumeroDocEnfermeroDato";
-            this.txtNumeroDocEnfermeroDato.PasswordChar = '\0';
-            this.txtNumeroDocEnfermeroDato.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtNumeroDocEnfermeroDato.PlaceholderText = "Número de documento";
-            this.txtNumeroDocEnfermeroDato.SelectedText = "";
-            this.txtNumeroDocEnfermeroDato.Size = new System.Drawing.Size(305, 44);
-            this.txtNumeroDocEnfermeroDato.TabIndex = 10;
-            // 
-            // txtTelefonoEnfermeroDato
-            // 
-            this.txtTelefonoEnfermeroDato.Animated = true;
-            this.txtTelefonoEnfermeroDato.AutoRoundedCorners = true;
-            this.txtTelefonoEnfermeroDato.BorderRadius = 21;
-            this.txtTelefonoEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtTelefonoEnfermeroDato.DefaultText = "";
-            this.txtTelefonoEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtTelefonoEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtTelefonoEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTelefonoEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtTelefonoEnfermeroDato.Enabled = false;
-            this.txtTelefonoEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtTelefonoEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTelefonoEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
-            this.txtTelefonoEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTelefonoEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.phone_3;
-            this.txtTelefonoEnfermeroDato.Location = new System.Drawing.Point(34, 306);
-            this.txtTelefonoEnfermeroDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtTelefonoEnfermeroDato.Name = "txtTelefonoEnfermeroDato";
-            this.txtTelefonoEnfermeroDato.PasswordChar = '\0';
-            this.txtTelefonoEnfermeroDato.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtTelefonoEnfermeroDato.PlaceholderText = "Número de teléfono";
-            this.txtTelefonoEnfermeroDato.SelectedText = "";
-            this.txtTelefonoEnfermeroDato.Size = new System.Drawing.Size(305, 44);
-            this.txtTelefonoEnfermeroDato.TabIndex = 4;
-            // 
-            // txtNumeroCalleEnfermeroDato
-            // 
-            this.txtNumeroCalleEnfermeroDato.Animated = true;
-            this.txtNumeroCalleEnfermeroDato.AutoRoundedCorners = true;
-            this.txtNumeroCalleEnfermeroDato.BorderRadius = 16;
-            this.txtNumeroCalleEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNumeroCalleEnfermeroDato.DefaultText = "";
-            this.txtNumeroCalleEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNumeroCalleEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNumeroCalleEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNumeroCalleEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNumeroCalleEnfermeroDato.Enabled = false;
-            this.txtNumeroCalleEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtNumeroCalleEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumeroCalleEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
-            this.txtNumeroCalleEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNumeroCalleEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.calle;
-            this.txtNumeroCalleEnfermeroDato.Location = new System.Drawing.Point(725, 128);
-            this.txtNumeroCalleEnfermeroDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNumeroCalleEnfermeroDato.Name = "txtNumeroCalleEnfermeroDato";
-            this.txtNumeroCalleEnfermeroDato.PasswordChar = '\0';
-            this.txtNumeroCalleEnfermeroDato.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtNumeroCalleEnfermeroDato.PlaceholderText = "Número de calle";
-            this.txtNumeroCalleEnfermeroDato.SelectedText = "";
-            this.txtNumeroCalleEnfermeroDato.Size = new System.Drawing.Size(305, 35);
-            this.txtNumeroCalleEnfermeroDato.TabIndex = 12;
-            // 
-            // txtCalleEnfermeroDato
-            // 
-            this.txtCalleEnfermeroDato.Animated = true;
-            this.txtCalleEnfermeroDato.AutoRoundedCorners = true;
-            this.txtCalleEnfermeroDato.BorderRadius = 16;
-            this.txtCalleEnfermeroDato.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtCalleEnfermeroDato.DefaultText = "";
-            this.txtCalleEnfermeroDato.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtCalleEnfermeroDato.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtCalleEnfermeroDato.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCalleEnfermeroDato.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtCalleEnfermeroDato.Enabled = false;
-            this.txtCalleEnfermeroDato.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtCalleEnfermeroDato.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCalleEnfermeroDato.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
-            this.txtCalleEnfermeroDato.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtCalleEnfermeroDato.IconLeft = global::SIMED_V1.Properties.Resources.calle;
-            this.txtCalleEnfermeroDato.Location = new System.Drawing.Point(725, 61);
-            this.txtCalleEnfermeroDato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCalleEnfermeroDato.Name = "txtCalleEnfermeroDato";
-            this.txtCalleEnfermeroDato.PasswordChar = '\0';
-            this.txtCalleEnfermeroDato.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtCalleEnfermeroDato.PlaceholderText = "Calle";
-            this.txtCalleEnfermeroDato.SelectedText = "";
-            this.txtCalleEnfermeroDato.Size = new System.Drawing.Size(305, 35);
-            this.txtCalleEnfermeroDato.TabIndex = 11;
             // 
             // txtApellidoEnfermeroDato
             // 
@@ -704,6 +674,36 @@
             this.txtMatriculaEnfermeroDato.Size = new System.Drawing.Size(305, 44);
             this.txtMatriculaEnfermeroDato.TabIndex = 1;
             // 
+            // lblDatosEnfermero
+            // 
+            this.lblDatosEnfermero.AutoSize = true;
+            this.lblDatosEnfermero.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatosEnfermero.Location = new System.Drawing.Point(41, 30);
+            this.lblDatosEnfermero.Name = "lblDatosEnfermero";
+            this.lblDatosEnfermero.Size = new System.Drawing.Size(254, 41);
+            this.lblDatosEnfermero.TabIndex = 28;
+            this.lblDatosEnfermero.Text = "Datos enfermero";
+            // 
+            // btnVolverDatosEnfermero
+            // 
+            this.btnVolverDatosEnfermero.Animated = true;
+            this.btnVolverDatosEnfermero.AutoRoundedCorners = true;
+            this.btnVolverDatosEnfermero.BorderRadius = 22;
+            this.btnVolverDatosEnfermero.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVolverDatosEnfermero.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnVolverDatosEnfermero.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnVolverDatosEnfermero.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnVolverDatosEnfermero.FillColor = System.Drawing.Color.Transparent;
+            this.btnVolverDatosEnfermero.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVolverDatosEnfermero.ForeColor = System.Drawing.Color.White;
+            this.btnVolverDatosEnfermero.Image = global::SIMED_V1.Properties.Resources.left_arrow;
+            this.btnVolverDatosEnfermero.Location = new System.Drawing.Point(48, 558);
+            this.btnVolverDatosEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVolverDatosEnfermero.Name = "btnVolverDatosEnfermero";
+            this.btnVolverDatosEnfermero.Size = new System.Drawing.Size(84, 46);
+            this.btnVolverDatosEnfermero.TabIndex = 32;
+            this.btnVolverDatosEnfermero.Click += new System.EventHandler(this.btnVolverDatosEnfermero_Click);
+            // 
             // DatosEnfermero
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -716,6 +716,7 @@
             this.Controls.Add(this.lblDatosEnfermero);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "DatosEnfermero";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DatosEnfermero";
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();

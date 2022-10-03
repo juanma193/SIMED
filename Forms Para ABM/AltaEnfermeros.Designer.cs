@@ -159,6 +159,7 @@
             this.lblCalleEnfermero.TabIndex = 52;
             this.lblCalleEnfermero.Text = "label1";
             this.lblCalleEnfermero.Visible = false;
+            this.lblCalleEnfermero.VisibleChanged += new System.EventHandler(this.lblCalleEnfermero_VisibleChanged);
             // 
             // lblNumeroCalleEnfermero
             // 
@@ -170,6 +171,7 @@
             this.lblNumeroCalleEnfermero.TabIndex = 49;
             this.lblNumeroCalleEnfermero.Text = "label1";
             this.lblNumeroCalleEnfermero.Visible = false;
+            this.lblNumeroCalleEnfermero.VisibleChanged += new System.EventHandler(this.lblNumeroCalleEnfermero_VisibleChanged);
             // 
             // lblNumeroDocEnfermero
             // 
@@ -181,6 +183,7 @@
             this.lblNumeroDocEnfermero.TabIndex = 47;
             this.lblNumeroDocEnfermero.Text = "label1";
             this.lblNumeroDocEnfermero.Visible = false;
+            this.lblNumeroDocEnfermero.VisibleChanged += new System.EventHandler(this.lblNumeroDocEnfermero_VisibleChanged);
             // 
             // lblTelefonoEnfermero
             // 
@@ -193,6 +196,7 @@
             this.lblTelefonoEnfermero.Text = "label1";
             this.lblTelefonoEnfermero.Visible = false;
             this.lblTelefonoEnfermero.TextChanged += new System.EventHandler(this.txtTelefonoEnfermero_TextChanged);
+            this.lblTelefonoEnfermero.VisibleChanged += new System.EventHandler(this.lblTelefonoEnfermero_VisibleChanged);
             // 
             // lblApellidoEnfermero
             // 
@@ -204,6 +208,7 @@
             this.lblApellidoEnfermero.TabIndex = 45;
             this.lblApellidoEnfermero.Text = "label1";
             this.lblApellidoEnfermero.Visible = false;
+            this.lblApellidoEnfermero.VisibleChanged += new System.EventHandler(this.lblApellidoEnfermero_VisibleChanged);
             // 
             // lblNombreEnfermero
             // 
@@ -215,6 +220,7 @@
             this.lblNombreEnfermero.TabIndex = 44;
             this.lblNombreEnfermero.Text = "label1";
             this.lblNombreEnfermero.Visible = false;
+            this.lblNombreEnfermero.VisibleChanged += new System.EventHandler(this.lblNombreEnfermero_VisibleChanged);
             // 
             // lblMatriculaEnfermero
             // 
@@ -226,6 +232,7 @@
             this.lblMatriculaEnfermero.TabIndex = 43;
             this.lblMatriculaEnfermero.Text = "label1";
             this.lblMatriculaEnfermero.Visible = false;
+            this.lblMatriculaEnfermero.VisibleChanged += new System.EventHandler(this.lblMatriculaEnfermero_VisibleChanged);
             // 
             // lblTipoDocumentoEnfermero
             // 
@@ -306,6 +313,7 @@
             this.txtTelefonoEnfermero.IconLeft = global::SIMED_V1.Properties.Resources.phone_3;
             this.txtTelefonoEnfermero.Location = new System.Drawing.Point(34, 233);
             this.txtTelefonoEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTelefonoEnfermero.MaxLength = 10;
             this.txtTelefonoEnfermero.Name = "txtTelefonoEnfermero";
             this.txtTelefonoEnfermero.PasswordChar = '\0';
             this.txtTelefonoEnfermero.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -334,6 +342,7 @@
             this.cmbEspecialidadEnfermero.Name = "cmbEspecialidadEnfermero";
             this.cmbEspecialidadEnfermero.Size = new System.Drawing.Size(305, 36);
             this.cmbEspecialidadEnfermero.TabIndex = 14;
+            this.cmbEspecialidadEnfermero.SelectedIndexChanged += new System.EventHandler(this.cmbEspecialidadEnfermero_SelectedIndexChanged);
             // 
             // cmbTipoDocEnfermero
             // 
@@ -405,6 +414,7 @@
             this.dtFechaNacimientoEnfermero.Size = new System.Drawing.Size(305, 44);
             this.dtFechaNacimientoEnfermero.TabIndex = 5;
             this.dtFechaNacimientoEnfermero.Value = new System.DateTime(2005, 12, 31, 0, 0, 0, 0);
+            this.dtFechaNacimientoEnfermero.Click += new System.EventHandler(this.dtFechaNacimientoEnfermero_Click);
             // 
             // cmbBarrioEnfermero
             // 
@@ -443,6 +453,7 @@
             this.txtNumeroCalleEnfermero.IconLeft = global::SIMED_V1.Properties.Resources.calle;
             this.txtNumeroCalleEnfermero.Location = new System.Drawing.Point(719, 82);
             this.txtNumeroCalleEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNumeroCalleEnfermero.MaxLength = 5;
             this.txtNumeroCalleEnfermero.Name = "txtNumeroCalleEnfermero";
             this.txtNumeroCalleEnfermero.PasswordChar = '\0';
             this.txtNumeroCalleEnfermero.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -516,6 +527,7 @@
             this.rdOtroEnfermero.UncheckedState.BorderThickness = 2;
             this.rdOtroEnfermero.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdOtroEnfermero.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdOtroEnfermero.CheckedChanged += new System.EventHandler(this.rdOtroEnfermero_CheckedChanged);
             // 
             // rdFemeninoEnfermero
             // 
@@ -536,6 +548,7 @@
             this.rdFemeninoEnfermero.UncheckedState.BorderThickness = 2;
             this.rdFemeninoEnfermero.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdFemeninoEnfermero.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdFemeninoEnfermero.CheckedChanged += new System.EventHandler(this.rdFemeninoEnfermero_CheckedChanged);
             // 
             // rdMasculinoEnfermero
             // 
@@ -556,6 +569,7 @@
             this.rdMasculinoEnfermero.UncheckedState.BorderThickness = 2;
             this.rdMasculinoEnfermero.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rdMasculinoEnfermero.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rdMasculinoEnfermero.CheckedChanged += new System.EventHandler(this.rdMasculinoEnfermero_CheckedChanged);
             // 
             // txtApellidoEnfermero
             // 
@@ -634,6 +648,7 @@
             this.txtMatriculaEnfermero.IconLeftSize = new System.Drawing.Size(30, 20);
             this.txtMatriculaEnfermero.Location = new System.Drawing.Point(34, 26);
             this.txtMatriculaEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMatriculaEnfermero.MaxLength = 10;
             this.txtMatriculaEnfermero.Name = "txtMatriculaEnfermero";
             this.txtMatriculaEnfermero.PasswordChar = '\0';
             this.txtMatriculaEnfermero.PlaceholderForeColor = System.Drawing.Color.DimGray;
