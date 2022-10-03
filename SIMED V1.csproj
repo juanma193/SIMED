@@ -997,6 +997,10 @@
     <Content Include="archivos\sonidoPS2.wav" />
     <None Include="Resources\4918887_document_edit_file_format_name_icon.png" />
     <None Include="Resources\4918887_document_edit_file_format_name_icon%281%29.png" />
+    <None Include="Resources\9004786_chart_graph_statistics_bar_icon1.png" />
+    <None Include="Resources\169845_numbers_appicns_icon1.png" />
+    <None Include="Resources\9299395_positive_deal_status_icon1.png" />
+    <None Include="Resources\1054957_tools_screwdriver_wrench_icon1.png" />
     <Content Include="Resources\afiliados 2.png" />
     <Content Include="Resources\afiliados.png" />
     <Content Include="Resources\ambulance.png" />

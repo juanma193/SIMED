@@ -28,15 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblFuncionalidades = new System.Windows.Forms.Label();
+            this.lblSeleccionFuncionalidades = new System.Windows.Forms.Label();
             this.btnModelos = new Guna.UI2.WinForms.Guna2Button();
             this.btnTiposViajes = new Guna.UI2.WinForms.Guna2Button();
             this.btnRelacionLaboral = new Guna.UI2.WinForms.Guna2Button();
             this.btnTurnosRotativos = new Guna.UI2.WinForms.Guna2Button();
             this.btnEspecialidades = new Guna.UI2.WinForms.Guna2Button();
             this.btnRangosEtarios = new Guna.UI2.WinForms.Guna2Button();
-            this.lblFuncionalidades = new System.Windows.Forms.Label();
-            this.lblSeleccionFuncionalidades = new System.Windows.Forms.Label();
             this.SuspendLayout();
+            // 
+            // lblFuncionalidades
+            // 
+            this.lblFuncionalidades.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblFuncionalidades.AutoSize = true;
+            this.lblFuncionalidades.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFuncionalidades.Location = new System.Drawing.Point(84, 24);
+            this.lblFuncionalidades.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblFuncionalidades.Name = "lblFuncionalidades";
+            this.lblFuncionalidades.Size = new System.Drawing.Size(513, 51);
+            this.lblFuncionalidades.TabIndex = 16;
+            this.lblFuncionalidades.Text = "ABMC COMPLEMENTARIOS";
+            // 
+            // lblSeleccionFuncionalidades
+            // 
+            this.lblSeleccionFuncionalidades.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblSeleccionFuncionalidades.AutoSize = true;
+            this.lblSeleccionFuncionalidades.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSeleccionFuncionalidades.Location = new System.Drawing.Point(125, 102);
+            this.lblSeleccionFuncionalidades.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSeleccionFuncionalidades.Name = "lblSeleccionFuncionalidades";
+            this.lblSeleccionFuncionalidades.Size = new System.Drawing.Size(427, 30);
+            this.lblSeleccionFuncionalidades.TabIndex = 17;
+            this.lblSeleccionFuncionalidades.Text = "Seleccione una de las siguientes opciones";
             // 
             // btnModelos
             // 
@@ -49,10 +73,12 @@
             this.btnModelos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnModelos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnModelos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
-            this.btnModelos.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnModelos.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnModelos.ForeColor = System.Drawing.Color.White;
-            this.btnModelos.ImageOffset = new System.Drawing.Point(20, 0);
-            this.btnModelos.Location = new System.Drawing.Point(301, 388);
+            this.btnModelos.Image = global::SIMED_V1.Properties.Resources._1054957_tools_screwdriver_wrench_icon;
+            this.btnModelos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnModelos.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnModelos.Location = new System.Drawing.Point(412, 398);
             this.btnModelos.Margin = new System.Windows.Forms.Padding(2);
             this.btnModelos.Name = "btnModelos";
             this.btnModelos.Size = new System.Drawing.Size(196, 74);
@@ -71,10 +97,10 @@
             this.btnTiposViajes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTiposViajes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTiposViajes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
-            this.btnTiposViajes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnTiposViajes.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnTiposViajes.ForeColor = System.Drawing.Color.White;
             this.btnTiposViajes.Image = global::SIMED_V1.Properties.Resources._1061162_care_health_journey_medicine_pill_icon;
-            this.btnTiposViajes.Location = new System.Drawing.Point(101, 388);
+            this.btnTiposViajes.Location = new System.Drawing.Point(71, 398);
             this.btnTiposViajes.Margin = new System.Windows.Forms.Padding(2);
             this.btnTiposViajes.Name = "btnTiposViajes";
             this.btnTiposViajes.Size = new System.Drawing.Size(196, 74);
@@ -93,9 +119,12 @@
             this.btnRelacionLaboral.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnRelacionLaboral.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnRelacionLaboral.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
-            this.btnRelacionLaboral.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRelacionLaboral.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnRelacionLaboral.ForeColor = System.Drawing.Color.White;
-            this.btnRelacionLaboral.Location = new System.Drawing.Point(301, 266);
+            this.btnRelacionLaboral.Image = global::SIMED_V1.Properties.Resources._9299395_positive_deal_status_icon;
+            this.btnRelacionLaboral.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnRelacionLaboral.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnRelacionLaboral.Location = new System.Drawing.Point(412, 280);
             this.btnRelacionLaboral.Margin = new System.Windows.Forms.Padding(2);
             this.btnRelacionLaboral.Name = "btnRelacionLaboral";
             this.btnRelacionLaboral.Size = new System.Drawing.Size(196, 74);
@@ -114,10 +143,10 @@
             this.btnTurnosRotativos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnTurnosRotativos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnTurnosRotativos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
-            this.btnTurnosRotativos.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnTurnosRotativos.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnTurnosRotativos.ForeColor = System.Drawing.Color.White;
             this.btnTurnosRotativos.Image = global::SIMED_V1.Properties.Resources._897245_clock_manage_schedule_time_icon;
-            this.btnTurnosRotativos.Location = new System.Drawing.Point(101, 266);
+            this.btnTurnosRotativos.Location = new System.Drawing.Point(71, 280);
             this.btnTurnosRotativos.Margin = new System.Windows.Forms.Padding(2);
             this.btnTurnosRotativos.Name = "btnTurnosRotativos";
             this.btnTurnosRotativos.Size = new System.Drawing.Size(196, 74);
@@ -135,10 +164,10 @@
             this.btnEspecialidades.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnEspecialidades.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnEspecialidades.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
-            this.btnEspecialidades.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEspecialidades.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnEspecialidades.ForeColor = System.Drawing.Color.White;
             this.btnEspecialidades.Image = global::SIMED_V1.Properties.Resources._5964800_drugs_healthcare_medical_medicine_prescription_icon;
-            this.btnEspecialidades.Location = new System.Drawing.Point(100, 145);
+            this.btnEspecialidades.Location = new System.Drawing.Point(71, 164);
             this.btnEspecialidades.Margin = new System.Windows.Forms.Padding(2);
             this.btnEspecialidades.Name = "btnEspecialidades";
             this.btnEspecialidades.Size = new System.Drawing.Size(196, 74);
@@ -157,39 +186,16 @@
             this.btnRangosEtarios.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnRangosEtarios.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnRangosEtarios.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
-            this.btnRangosEtarios.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRangosEtarios.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnRangosEtarios.ForeColor = System.Drawing.Color.White;
-            this.btnRangosEtarios.Location = new System.Drawing.Point(301, 145);
+            this.btnRangosEtarios.Image = global::SIMED_V1.Properties.Resources._169845_numbers_appicns_icon;
+            this.btnRangosEtarios.Location = new System.Drawing.Point(412, 164);
             this.btnRangosEtarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnRangosEtarios.Name = "btnRangosEtarios";
             this.btnRangosEtarios.Size = new System.Drawing.Size(196, 74);
             this.btnRangosEtarios.TabIndex = 14;
             this.btnRangosEtarios.Text = "Rangos Etarios";
             this.btnRangosEtarios.Click += new System.EventHandler(this.btnRangosEtarios_Click);
-            // 
-            // lblFuncionalidades
-            // 
-            this.lblFuncionalidades.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblFuncionalidades.AutoSize = true;
-            this.lblFuncionalidades.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFuncionalidades.Location = new System.Drawing.Point(79, 43);
-            this.lblFuncionalidades.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblFuncionalidades.Name = "lblFuncionalidades";
-            this.lblFuncionalidades.Size = new System.Drawing.Size(438, 45);
-            this.lblFuncionalidades.TabIndex = 16;
-            this.lblFuncionalidades.Text = "ABMC COMPLEMENTARIOS";
-            // 
-            // lblSeleccionFuncionalidades
-            // 
-            this.lblSeleccionFuncionalidades.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblSeleccionFuncionalidades.AutoSize = true;
-            this.lblSeleccionFuncionalidades.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeleccionFuncionalidades.Location = new System.Drawing.Point(141, 103);
-            this.lblSeleccionFuncionalidades.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblSeleccionFuncionalidades.Name = "lblSeleccionFuncionalidades";
-            this.lblSeleccionFuncionalidades.Size = new System.Drawing.Size(314, 21);
-            this.lblSeleccionFuncionalidades.TabIndex = 17;
-            this.lblSeleccionFuncionalidades.Text = "Seleccione una de las siguientes opciones";
             // 
             // UFuncionalidades
             // 
@@ -206,7 +212,7 @@
             this.Controls.Add(this.btnRangosEtarios);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UFuncionalidades";
-            this.Size = new System.Drawing.Size(597, 499);
+            this.Size = new System.Drawing.Size(679, 518);
             this.ResumeLayout(false);
             this.PerformLayout();
 

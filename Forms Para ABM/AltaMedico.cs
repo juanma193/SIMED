@@ -16,7 +16,8 @@ namespace SIMED_V1.Forms_Para_ABM
     public partial class AltaMedico : Form
     {
         bool cambios = false;
-        public AltaMedico()
+        int idPerfil;
+        public AltaMedico(int idPerf)
         {
             InitializeComponent();
             CargarComboTiposDoc();
@@ -31,6 +32,7 @@ namespace SIMED_V1.Forms_Para_ABM
             lblNroCalleMed.Visible = false;
             lblDocMed.Visible = false;
             cambios = false;
+            idPerfil = idPerf;
 
         }
 
@@ -240,8 +242,12 @@ namespace SIMED_V1.Forms_Para_ABM
             }
             catch (Exception ex)
             {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Error " + ex);
+                if(idPerfil == 1)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
+                
             }
 
 
@@ -277,9 +283,16 @@ namespace SIMED_V1.Forms_Para_ABM
                 cmbTipoDocumentoMedico.SelectedIndex = -1;
             }
             catch (Exception ex)
-            {            
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Error " + ex);
+            {
+                if(idPerfil == 1)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
+                else
+                {
+                    throw;
+                }
             }
         }
 
@@ -294,8 +307,16 @@ namespace SIMED_V1.Forms_Para_ABM
             }
             catch (Exception ex)
             {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Error " + ex);
+                if(idPerfil == 1)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
+                else
+                {
+                    throw;
+                }
+                
             }
         }
 
@@ -310,8 +331,16 @@ namespace SIMED_V1.Forms_Para_ABM
             }
             catch (Exception ex)
             {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Error " + ex);
+                if(idPerfil == 1)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
+                else
+                {
+                    throw;
+                }
+                
             }
         }
 
@@ -327,8 +356,16 @@ namespace SIMED_V1.Forms_Para_ABM
             }
             catch (Exception ex)
             {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Error " + ex);
+                if(idPerfil == 1)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
+                else
+                {
+                    throw;
+                }
+                
             }
         }
 
@@ -513,6 +550,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 txtNroDocMedico.MaxLength = 9;
 
             }
+
             cambios = true;
             if(cmbTipoDocumentoMedico.SelectedIndex == -1)
             {
@@ -525,6 +563,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
             CargarComboBarrios(cmbCiudadMedico.SelectedIndex);
             cmbBarriosMedico.Enabled = true;
+
             cambios = true;
             if (cmbCiudadMedico.SelectedIndex == -1)
             {

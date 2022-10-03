@@ -57,6 +57,7 @@ namespace SIMED_V1.Bases_de_datos
             {
                 ErroresForm ventana = new ErroresForm();
                 ventana.show("Error " + ex);
+                throw;
             }
             finally
             {

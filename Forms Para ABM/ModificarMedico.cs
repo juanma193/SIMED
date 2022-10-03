@@ -17,8 +17,9 @@ namespace SIMED_V1.Forms_Para_ABM
     public partial class ModificarMedico : Form
     {
         ConsultaMedico window;
+        int idPerfil;
 
-        public ModificarMedico(ConsultaMedico windowCons)
+        public ModificarMedico(ConsultaMedico windowCons, int idPerf)
         {
             InitializeComponent();
             CargarComboTiposDoc();
@@ -33,6 +34,7 @@ namespace SIMED_V1.Forms_Para_ABM
             lblNroCalleMed.Visible = false;
             lblDocMed.Visible = false;
             window = windowCons;
+            idPerfil = idPerf;
         }
 
         private void btnModificarMedico_Click(object sender, EventArgs e)
@@ -283,8 +285,16 @@ namespace SIMED_V1.Forms_Para_ABM
                 }
                 catch (Exception ex)
                 {
-                    ErroresForm window = new ErroresForm();
-                    window.show("Error" + " " + ex);
+                    if(idPerfil == 1)
+                    {
+                        ErroresForm window = new ErroresForm();
+                        window.show("Error " + ex);
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                    
                 }
             
             
@@ -315,8 +325,16 @@ namespace SIMED_V1.Forms_Para_ABM
             }
             catch (Exception ex)
             {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Error" + " " + ex);
+                if(idPerfil == 1)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
+                else
+                {
+                    throw;
+                }
+                
             }
         }
 
@@ -331,8 +349,15 @@ namespace SIMED_V1.Forms_Para_ABM
             }
             catch (Exception ex)
             {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Error" + " " + ex);
+                if(idPerfil == 1)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
+                else
+                {
+                    throw;
+                }
             }
         }
 
@@ -347,8 +372,16 @@ namespace SIMED_V1.Forms_Para_ABM
             }
             catch (Exception ex)
             {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Error" + " " + ex);
+                if(idPerfil == 1)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
+                else
+                {
+                    throw;
+                }
+                
             }
         }
 
@@ -363,8 +396,15 @@ namespace SIMED_V1.Forms_Para_ABM
             }
             catch (Exception ex)
             {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Error" + " " + ex);
+                if(idPerfil == 1)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Error " + ex);
+                }
+                else
+                {
+                    throw;
+                }
             }
         }
 
