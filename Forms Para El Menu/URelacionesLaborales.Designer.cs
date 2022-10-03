@@ -111,7 +111,7 @@
             this.btnConsultaRL.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultaRL.Name = "btnConsultaRL";
             this.btnConsultaRL.Size = new System.Drawing.Size(159, 48);
-            this.btnConsultaRL.TabIndex = 14;
+            this.btnConsultaRL.TabIndex = 2;
             this.btnConsultaRL.Text = "Consulta de RL";
             this.btnConsultaRL.Click += new System.EventHandler(this.btnConsultaRL_Click);
             // 
@@ -132,7 +132,7 @@
             this.btnAltaRL.Margin = new System.Windows.Forms.Padding(2);
             this.btnAltaRL.Name = "btnAltaRL";
             this.btnAltaRL.Size = new System.Drawing.Size(159, 48);
-            this.btnAltaRL.TabIndex = 12;
+            this.btnAltaRL.TabIndex = 1;
             this.btnAltaRL.Text = "Alta de RL";
             this.btnAltaRL.Click += new System.EventHandler(this.btnAltaRL_Click);
             // 

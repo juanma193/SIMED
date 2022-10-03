@@ -136,7 +136,7 @@
             this.txtRL.PlaceholderText = "Nombre de relación laboral";
             this.txtRL.SelectedText = "";
             this.txtRL.Size = new System.Drawing.Size(187, 29);
-            this.txtRL.TabIndex = 5;
+            this.txtRL.TabIndex = 1;
             this.txtRL.TextChanged += new System.EventHandler(this.txtRL_TextChanged);
             this.txtRL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRL_KeyPress);
             // 
@@ -169,7 +169,7 @@
             this.btnAltaModelo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAltaModelo.Name = "btnAltaModelo";
             this.btnAltaModelo.Size = new System.Drawing.Size(187, 37);
-            this.btnAltaModelo.TabIndex = 38;
+            this.btnAltaModelo.TabIndex = 2;
             this.btnAltaModelo.Text = "Crear RL";
             this.btnAltaModelo.Click += new System.EventHandler(this.btnAltaModelo_Click);
             // 
@@ -190,7 +190,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(38, 23);
-            this.btnVolver.TabIndex = 77;
+            this.btnVolver.TabIndex = 3;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // AltaRelacionLaboral

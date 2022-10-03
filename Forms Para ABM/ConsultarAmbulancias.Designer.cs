@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gdr_ambulancias = new Guna.UI2.WinForms.Guna2DataGridView();
             this.patenteAm = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.modeloAm = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,30 +62,30 @@
             // 
             this.gdr_ambulancias.AllowUserToAddRows = false;
             this.gdr_ambulancias.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.gdr_ambulancias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdr_ambulancias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gdr_ambulancias.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdr_ambulancias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdr_ambulancias.ColumnHeadersHeight = 15;
             this.gdr_ambulancias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gdr_ambulancias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.patenteAm,
             this.modeloAm,
             this.categoriaAm});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdr_ambulancias.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdr_ambulancias.DefaultCellStyle = dataGridViewCellStyle3;
             this.gdr_ambulancias.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdr_ambulancias.Location = new System.Drawing.Point(67, 80);
             this.gdr_ambulancias.Name = "gdr_ambulancias";
@@ -187,7 +187,7 @@
             this.btn_buscar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(526, 32);
-            this.btn_buscar.TabIndex = 43;
+            this.btn_buscar.TabIndex = 5;
             this.btn_buscar.Text = "Buscar por patente";
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
@@ -209,7 +209,7 @@
             this.btn_eliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(234, 36);
-            this.btn_eliminar.TabIndex = 41;
+            this.btn_eliminar.TabIndex = 7;
             this.btn_eliminar.Text = "Eliminar ambulancia";
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
@@ -231,7 +231,7 @@
             this.btn_modificar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_modificar.Name = "btn_modificar";
             this.btn_modificar.Size = new System.Drawing.Size(235, 36);
-            this.btn_modificar.TabIndex = 40;
+            this.btn_modificar.TabIndex = 6;
             this.btn_modificar.Text = "Actualizar datos ";
             this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
@@ -251,7 +251,7 @@
             this.cmbModelo.Location = new System.Drawing.Point(68, 307);
             this.cmbModelo.Name = "cmbModelo";
             this.cmbModelo.Size = new System.Drawing.Size(526, 36);
-            this.cmbModelo.TabIndex = 59;
+            this.cmbModelo.TabIndex = 2;
             // 
             // rbAltaComplejidad
             // 
@@ -265,7 +265,7 @@
             this.rbAltaComplejidad.Location = new System.Drawing.Point(7, 46);
             this.rbAltaComplejidad.Name = "rbAltaComplejidad";
             this.rbAltaComplejidad.Size = new System.Drawing.Size(117, 19);
-            this.rbAltaComplejidad.TabIndex = 60;
+            this.rbAltaComplejidad.TabIndex = 3;
             this.rbAltaComplejidad.Text = "Alta Complejidad";
             this.rbAltaComplejidad.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rbAltaComplejidad.UncheckedState.BorderThickness = 2;
@@ -285,7 +285,7 @@
             this.rbBajaComplejidad.Location = new System.Drawing.Point(7, 67);
             this.rbBajaComplejidad.Name = "rbBajaComplejidad";
             this.rbBajaComplejidad.Size = new System.Drawing.Size(118, 19);
-            this.rbBajaComplejidad.TabIndex = 61;
+            this.rbBajaComplejidad.TabIndex = 4;
             this.rbBajaComplejidad.Text = "Baja Complejidad";
             this.rbBajaComplejidad.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rbBajaComplejidad.UncheckedState.BorderThickness = 2;
@@ -357,7 +357,7 @@
             this.txt_patente.PlaceholderText = "Patente";
             this.txt_patente.SelectedText = "";
             this.txt_patente.Size = new System.Drawing.Size(527, 36);
-            this.txt_patente.TabIndex = 3;
+            this.txt_patente.TabIndex = 1;
             this.txt_patente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_patente_KeyPress);
             // 
             // guna2ControlBox2
@@ -411,7 +411,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(43, 27);
-            this.btnVolver.TabIndex = 86;
+            this.btnVolver.TabIndex = 8;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ConsultarAmbulancias

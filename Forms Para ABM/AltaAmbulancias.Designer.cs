@@ -75,7 +75,7 @@
             this.cmb_modelo.Location = new System.Drawing.Point(23, 78);
             this.cmb_modelo.Name = "cmb_modelo";
             this.cmb_modelo.Size = new System.Drawing.Size(229, 36);
-            this.cmb_modelo.TabIndex = 3;
+            this.cmb_modelo.TabIndex = 2;
             // 
             // guna2RadioButton_altacom
             // 
@@ -89,7 +89,7 @@
             this.guna2RadioButton_altacom.Location = new System.Drawing.Point(13, 53);
             this.guna2RadioButton_altacom.Name = "guna2RadioButton_altacom";
             this.guna2RadioButton_altacom.Size = new System.Drawing.Size(111, 17);
-            this.guna2RadioButton_altacom.TabIndex = 4;
+            this.guna2RadioButton_altacom.TabIndex = 3;
             this.guna2RadioButton_altacom.Text = "Alta complejidad";
             this.guna2RadioButton_altacom.UncheckedState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2RadioButton_altacom.UncheckedState.BorderThickness = 2;
@@ -108,7 +108,7 @@
             this.guna2RadioButton_bajacom.Location = new System.Drawing.Point(13, 76);
             this.guna2RadioButton_bajacom.Name = "guna2RadioButton_bajacom";
             this.guna2RadioButton_bajacom.Size = new System.Drawing.Size(112, 17);
-            this.guna2RadioButton_bajacom.TabIndex = 5;
+            this.guna2RadioButton_bajacom.TabIndex = 4;
             this.guna2RadioButton_bajacom.Text = "Baja complejidad";
             this.guna2RadioButton_bajacom.UncheckedState.BorderColor = System.Drawing.Color.DarkGray;
             this.guna2RadioButton_bajacom.UncheckedState.BorderThickness = 2;
@@ -182,7 +182,7 @@
             this.txt_patente.PlaceholderText = "Patente";
             this.txt_patente.SelectedText = "";
             this.txt_patente.Size = new System.Drawing.Size(229, 29);
-            this.txt_patente.TabIndex = 2;
+            this.txt_patente.TabIndex = 1;
             this.txt_patente.TextChanged += new System.EventHandler(this.txt_patente_TextChanged);
             this.txt_patente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_patente_KeyPress_1);
             // 
@@ -204,7 +204,7 @@
             this.btnCrearAmbulancia.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearAmbulancia.Name = "btnCrearAmbulancia";
             this.btnCrearAmbulancia.Size = new System.Drawing.Size(187, 37);
-            this.btnCrearAmbulancia.TabIndex = 8;
+            this.btnCrearAmbulancia.TabIndex = 5;
             this.btnCrearAmbulancia.Text = "Crear Ambulancia";
             this.btnCrearAmbulancia.Click += new System.EventHandler(this.btnCrearAmbulancia_Click_1);
             // 
@@ -269,7 +269,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(38, 23);
-            this.btnVolver.TabIndex = 85;
+            this.btnVolver.TabIndex = 6;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // AltaAmbulancias

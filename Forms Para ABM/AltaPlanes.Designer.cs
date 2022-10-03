@@ -84,7 +84,7 @@
             this.cmbRangoEtario.Location = new System.Drawing.Point(23, 190);
             this.cmbRangoEtario.Name = "cmbRangoEtario";
             this.cmbRangoEtario.Size = new System.Drawing.Size(256, 36);
-            this.cmbRangoEtario.TabIndex = 44;
+            this.cmbRangoEtario.TabIndex = 4;
             // 
             // lbl6
             // 
@@ -133,7 +133,7 @@
             this.txtNombrePlan.PlaceholderText = "Nombre del plan";
             this.txtNombrePlan.SelectedText = "";
             this.txtNombrePlan.Size = new System.Drawing.Size(256, 29);
-            this.txtNombrePlan.TabIndex = 23;
+            this.txtNombrePlan.TabIndex = 1;
             this.txtNombrePlan.TextChanged += new System.EventHandler(this.guna2TextBox2_TextChanged);
             this.txtNombrePlan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombrePlan_KeyPress);
             // 
@@ -162,7 +162,7 @@
             this.txtPrecio.PlaceholderText = "Precio";
             this.txtPrecio.SelectedText = "";
             this.txtPrecio.Size = new System.Drawing.Size(256, 29);
-            this.txtPrecio.TabIndex = 22;
+            this.txtPrecio.TabIndex = 5;
             this.txtPrecio.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
@@ -190,7 +190,7 @@
             this.rbPlanPremium.Location = new System.Drawing.Point(20, 81);
             this.rbPlanPremium.Name = "rbPlanPremium";
             this.rbPlanPremium.Size = new System.Drawing.Size(69, 17);
-            this.rbPlanPremium.TabIndex = 6;
+            this.rbPlanPremium.TabIndex = 3;
             this.rbPlanPremium.Text = "Premium";
             this.rbPlanPremium.UncheckedState.BorderColor = System.Drawing.Color.DarkGray;
             this.rbPlanPremium.UncheckedState.BorderThickness = 2;
@@ -210,7 +210,7 @@
             this.rbPlanBasico.Location = new System.Drawing.Point(20, 58);
             this.rbPlanBasico.Name = "rbPlanBasico";
             this.rbPlanBasico.Size = new System.Drawing.Size(57, 17);
-            this.rbPlanBasico.TabIndex = 5;
+            this.rbPlanBasico.TabIndex = 2;
             this.rbPlanBasico.Text = "Básico";
             this.rbPlanBasico.UncheckedState.BorderColor = System.Drawing.Color.DarkGray;
             this.rbPlanBasico.UncheckedState.BorderThickness = 2;
@@ -247,7 +247,7 @@
             this.btnCrearAmbulancia.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearAmbulancia.Name = "btnCrearAmbulancia";
             this.btnCrearAmbulancia.Size = new System.Drawing.Size(187, 37);
-            this.btnCrearAmbulancia.TabIndex = 22;
+            this.btnCrearAmbulancia.TabIndex = 6;
             this.btnCrearAmbulancia.Text = "Crear Plan";
             this.btnCrearAmbulancia.Click += new System.EventHandler(this.btnCrearAmbulancia_Click);
             // 
@@ -312,7 +312,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(43, 27);
-            this.btnVolver.TabIndex = 87;
+            this.btnVolver.TabIndex = 7;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // AltaPlanes

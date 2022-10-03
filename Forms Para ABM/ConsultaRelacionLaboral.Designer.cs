@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -149,7 +149,7 @@
             this.btnBuscarRL.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarRL.Name = "btnBuscarRL";
             this.btnBuscarRL.Size = new System.Drawing.Size(187, 37);
-            this.btnBuscarRL.TabIndex = 80;
+            this.btnBuscarRL.TabIndex = 2;
             this.btnBuscarRL.Text = "Buscar RL";
             this.btnBuscarRL.Click += new System.EventHandler(this.btnBuscarRL_Click);
             // 
@@ -171,7 +171,7 @@
             this.btnEliminarRL.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarRL.Name = "btnEliminarRL";
             this.btnEliminarRL.Size = new System.Drawing.Size(187, 37);
-            this.btnEliminarRL.TabIndex = 81;
+            this.btnEliminarRL.TabIndex = 4;
             this.btnEliminarRL.Text = "Eliminar RL";
             this.btnEliminarRL.Click += new System.EventHandler(this.btnEliminarRL_Click);
             // 
@@ -202,7 +202,7 @@
             this.txtDescRL.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtDescRL.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescRL.IconLeft = global::SIMED_V1.Properties.Resources._4918887_document_edit_file_format_name_icon_1_;
-            this.txtDescRL.Location = new System.Drawing.Point(13, 14);
+            this.txtDescRL.Location = new System.Drawing.Point(13, 18);
             this.txtDescRL.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescRL.MaxLength = 30;
             this.txtDescRL.Name = "txtDescRL";
@@ -211,7 +211,7 @@
             this.txtDescRL.PlaceholderText = "Nombre";
             this.txtDescRL.SelectedText = "";
             this.txtDescRL.Size = new System.Drawing.Size(187, 29);
-            this.txtDescRL.TabIndex = 57;
+            this.txtDescRL.TabIndex = 1;
             this.txtDescRL.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescRL_KeyPress);
             // 
             // btnActualizarRL
@@ -232,7 +232,7 @@
             this.btnActualizarRL.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizarRL.Name = "btnActualizarRL";
             this.btnActualizarRL.Size = new System.Drawing.Size(187, 37);
-            this.btnActualizarRL.TabIndex = 78;
+            this.btnActualizarRL.TabIndex = 3;
             this.btnActualizarRL.Text = "Actualizar RL";
             this.btnActualizarRL.Click += new System.EventHandler(this.btnActualizarRL_Click);
             // 
@@ -240,28 +240,28 @@
             // 
             this.gdrRL.AllowUserToAddRows = false;
             this.gdrRL.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.gdrRL.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdrRL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gdrRL.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdrRL.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdrRL.ColumnHeadersHeight = 20;
             this.gdrRL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gdrRL.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.descRL});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdrRL.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdrRL.DefaultCellStyle = dataGridViewCellStyle3;
             this.gdrRL.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdrRL.Location = new System.Drawing.Point(239, 44);
             this.gdrRL.Name = "gdrRL";
@@ -317,7 +317,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(38, 23);
-            this.btnVolver.TabIndex = 84;
+            this.btnVolver.TabIndex = 5;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ConsultaRelacionLaboral

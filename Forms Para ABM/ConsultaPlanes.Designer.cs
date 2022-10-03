@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCerrarApp = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnBuscar = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -106,7 +106,7 @@
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(257, 32);
-            this.btnBuscar.TabIndex = 51;
+            this.btnBuscar.TabIndex = 6;
             this.btnBuscar.Text = "Buscar por nombre";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
@@ -135,7 +135,7 @@
             this.txtNombre.PlaceholderText = "Nombre del plan";
             this.txtNombre.SelectedText = "";
             this.txtNombre.Size = new System.Drawing.Size(256, 36);
-            this.txtNombre.TabIndex = 49;
+            this.txtNombre.TabIndex = 1;
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // btnEliminar
@@ -156,7 +156,7 @@
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(138, 36);
-            this.btnEliminar.TabIndex = 47;
+            this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -178,7 +178,7 @@
             this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(115, 36);
-            this.btnActualizar.TabIndex = 46;
+            this.btnActualizar.TabIndex = 7;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
@@ -197,16 +197,16 @@
             // 
             this.gdrPlanes.AllowUserToAddRows = false;
             this.gdrPlanes.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.gdrPlanes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdrPlanes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gdrPlanes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdrPlanes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gdrPlanes.ColumnHeadersHeight = 30;
             this.gdrPlanes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gdrPlanes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -218,14 +218,14 @@
             this.cantVisitasDom,
             this.cantTras,
             this.precio});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdrPlanes.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdrPlanes.DefaultCellStyle = dataGridViewCellStyle3;
             this.gdrPlanes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdrPlanes.Location = new System.Drawing.Point(300, 39);
             this.gdrPlanes.Name = "gdrPlanes";
@@ -338,7 +338,7 @@
             this.cmbRangoEtario.Location = new System.Drawing.Point(13, 184);
             this.cmbRangoEtario.Name = "cmbRangoEtario";
             this.cmbRangoEtario.Size = new System.Drawing.Size(256, 36);
-            this.cmbRangoEtario.TabIndex = 60;
+            this.cmbRangoEtario.TabIndex = 4;
             // 
             // txtPrecio
             // 
@@ -365,7 +365,7 @@
             this.txtPrecio.PlaceholderText = "Precio";
             this.txtPrecio.SelectedText = "";
             this.txtPrecio.Size = new System.Drawing.Size(257, 29);
-            this.txtPrecio.TabIndex = 55;
+            this.txtPrecio.TabIndex = 5;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // guna2GroupBox1
@@ -393,7 +393,7 @@
             this.rbPlanPremium.Location = new System.Drawing.Point(20, 81);
             this.rbPlanPremium.Name = "rbPlanPremium";
             this.rbPlanPremium.Size = new System.Drawing.Size(69, 17);
-            this.rbPlanPremium.TabIndex = 6;
+            this.rbPlanPremium.TabIndex = 3;
             this.rbPlanPremium.Text = "Premium";
             this.rbPlanPremium.UncheckedState.BorderColor = System.Drawing.Color.DarkGray;
             this.rbPlanPremium.UncheckedState.BorderThickness = 2;
@@ -414,7 +414,7 @@
             this.rbPlanBasico.Location = new System.Drawing.Point(20, 58);
             this.rbPlanBasico.Name = "rbPlanBasico";
             this.rbPlanBasico.Size = new System.Drawing.Size(57, 17);
-            this.rbPlanBasico.TabIndex = 5;
+            this.rbPlanBasico.TabIndex = 2;
             this.rbPlanBasico.Text = "Básico";
             this.rbPlanBasico.UncheckedState.BorderColor = System.Drawing.Color.DarkGray;
             this.rbPlanBasico.UncheckedState.BorderThickness = 2;
@@ -489,7 +489,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(43, 27);
-            this.btnVolver.TabIndex = 88;
+            this.btnVolver.TabIndex = 9;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ConsultaPlanes

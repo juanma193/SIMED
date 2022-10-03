@@ -130,7 +130,7 @@
             this.btnConsultaModelo.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultaModelo.Name = "btnConsultaModelo";
             this.btnConsultaModelo.Size = new System.Drawing.Size(159, 48);
-            this.btnConsultaModelo.TabIndex = 14;
+            this.btnConsultaModelo.TabIndex = 2;
             this.btnConsultaModelo.Text = "Consulta de modelos";
             this.btnConsultaModelo.Click += new System.EventHandler(this.btnConsultaModelo_Click);
             // 
@@ -151,7 +151,7 @@
             this.btnAltaModelo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAltaModelo.Name = "btnAltaModelo";
             this.btnAltaModelo.Size = new System.Drawing.Size(159, 48);
-            this.btnAltaModelo.TabIndex = 12;
+            this.btnAltaModelo.TabIndex = 1;
             this.btnAltaModelo.Text = "Alta de modelo";
             this.btnAltaModelo.Click += new System.EventHandler(this.btnAltaModelo_Click);
             // 
@@ -185,7 +185,7 @@
             this.btnConsultaMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultaMarca.Name = "btnConsultaMarca";
             this.btnConsultaMarca.Size = new System.Drawing.Size(159, 48);
-            this.btnConsultaMarca.TabIndex = 38;
+            this.btnConsultaMarca.TabIndex = 4;
             this.btnConsultaMarca.Text = "Consulta de marcas";
             this.btnConsultaMarca.Click += new System.EventHandler(this.btnConsultaMarca_Click);
             // 
@@ -206,7 +206,7 @@
             this.btnAltaMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btnAltaMarca.Name = "btnAltaMarca";
             this.btnAltaMarca.Size = new System.Drawing.Size(159, 48);
-            this.btnAltaMarca.TabIndex = 36;
+            this.btnAltaMarca.TabIndex = 3;
             this.btnAltaMarca.Text = "Alta de marca";
             this.btnAltaMarca.Click += new System.EventHandler(this.btnAltaMarca_Click);
             // 

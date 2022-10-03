@@ -112,7 +112,7 @@
             this.txtNombreMarca.PlaceholderText = "Nombre de marca";
             this.txtNombreMarca.SelectedText = "";
             this.txtNombreMarca.Size = new System.Drawing.Size(187, 29);
-            this.txtNombreMarca.TabIndex = 6;
+            this.txtNombreMarca.TabIndex = 1;
             this.txtNombreMarca.TextChanged += new System.EventHandler(this.txtNombreMarca_TextChanged);
             this.txtNombreMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreMarca_KeyPress);
             // 
@@ -156,7 +156,7 @@
             this.btnAltaMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btnAltaMarca.Name = "btnAltaMarca";
             this.btnAltaMarca.Size = new System.Drawing.Size(187, 37);
-            this.btnAltaMarca.TabIndex = 40;
+            this.btnAltaMarca.TabIndex = 2;
             this.btnAltaMarca.Text = "Crear Marca";
             this.btnAltaMarca.Click += new System.EventHandler(this.btnAltaMarca_Click);
             // 
@@ -191,7 +191,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(43, 29);
-            this.btnVolver.TabIndex = 66;
+            this.btnVolver.TabIndex = 3;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // AltaMarcas

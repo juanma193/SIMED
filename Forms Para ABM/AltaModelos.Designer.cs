@@ -103,7 +103,7 @@
             this.cmbMarcaModelo.Location = new System.Drawing.Point(18, 141);
             this.cmbMarcaModelo.Name = "cmbMarcaModelo";
             this.cmbMarcaModelo.Size = new System.Drawing.Size(187, 36);
-            this.cmbMarcaModelo.TabIndex = 33;
+            this.cmbMarcaModelo.TabIndex = 2;
             // 
             // lblAltaDeModelos
             // 
@@ -167,7 +167,7 @@
             this.txtNombreModelo.PlaceholderText = "Nombre de modelo";
             this.txtNombreModelo.SelectedText = "";
             this.txtNombreModelo.Size = new System.Drawing.Size(187, 29);
-            this.txtNombreModelo.TabIndex = 5;
+            this.txtNombreModelo.TabIndex = 1;
             this.txtNombreModelo.TextChanged += new System.EventHandler(this.guna2TextBox1_TextChanged);
             this.txtNombreModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreModelo_KeyPress);
             // 
@@ -189,7 +189,7 @@
             this.btnAltaModelo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAltaModelo.Name = "btnAltaModelo";
             this.btnAltaModelo.Size = new System.Drawing.Size(187, 37);
-            this.btnAltaModelo.TabIndex = 37;
+            this.btnAltaModelo.TabIndex = 3;
             this.btnAltaModelo.Text = "Crear Modelo";
             this.btnAltaModelo.Click += new System.EventHandler(this.btnCrearCuenta_Click);
             // 
@@ -210,7 +210,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(63, 37);
-            this.btnVolver.TabIndex = 38;
+            this.btnVolver.TabIndex = 4;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click_1);
             // 
             // AltaModelos

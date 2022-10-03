@@ -80,7 +80,7 @@
             this.btnEliminarMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarMarca.Name = "btnEliminarMarca";
             this.btnEliminarMarca.Size = new System.Drawing.Size(187, 37);
-            this.btnEliminarMarca.TabIndex = 73;
+            this.btnEliminarMarca.TabIndex = 4;
             this.btnEliminarMarca.Text = "Eliminar Marca";
             this.btnEliminarMarca.Click += new System.EventHandler(this.btnEliminarMarca_Click);
             // 
@@ -113,7 +113,7 @@
             this.btnBuscarMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarMarca.Name = "btnBuscarMarca";
             this.btnBuscarMarca.Size = new System.Drawing.Size(187, 37);
-            this.btnBuscarMarca.TabIndex = 72;
+            this.btnBuscarMarca.TabIndex = 2;
             this.btnBuscarMarca.Text = "Buscar Marca";
             this.btnBuscarMarca.Click += new System.EventHandler(this.btnBuscarMarca_Click);
             // 
@@ -145,7 +145,7 @@
             this.txtNombreMarca.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtNombreMarca.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreMarca.IconLeft = global::SIMED_V1.Properties.Resources._4918887_document_edit_file_format_name_icon_1_;
-            this.txtNombreMarca.Location = new System.Drawing.Point(13, 14);
+            this.txtNombreMarca.Location = new System.Drawing.Point(13, 17);
             this.txtNombreMarca.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreMarca.Name = "txtNombreMarca";
             this.txtNombreMarca.PasswordChar = '\0';
@@ -153,7 +153,7 @@
             this.txtNombreMarca.PlaceholderText = "Nombre de marca";
             this.txtNombreMarca.SelectedText = "";
             this.txtNombreMarca.Size = new System.Drawing.Size(187, 29);
-            this.txtNombreMarca.TabIndex = 57;
+            this.txtNombreMarca.TabIndex = 1;
             this.txtNombreMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreMarca_KeyPress);
             // 
             // btnActualizarMarca
@@ -174,7 +174,7 @@
             this.btnActualizarMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizarMarca.Name = "btnActualizarMarca";
             this.btnActualizarMarca.Size = new System.Drawing.Size(187, 37);
-            this.btnActualizarMarca.TabIndex = 70;
+            this.btnActualizarMarca.TabIndex = 3;
             this.btnActualizarMarca.Text = "Actualizar Marca";
             this.btnActualizarMarca.Click += new System.EventHandler(this.btnActualizarMarca_Click);
             // 
@@ -317,7 +317,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(38, 23);
-            this.btnVolver.TabIndex = 76;
+            this.btnVolver.TabIndex = 5;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ConsultaMarcas
