@@ -40,6 +40,7 @@
             this.lblNombreModelo = new System.Windows.Forms.Label();
             this.txtNombreModelo = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAltaModelo = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.btnVolver = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,6 +160,7 @@
             this.txtNombreModelo.IconLeft = global::SIMED_V1.Properties.Resources._4918887_document_edit_file_format_name_icon_1_;
             this.txtNombreModelo.Location = new System.Drawing.Point(18, 70);
             this.txtNombreModelo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreModelo.MaxLength = 30;
             this.txtNombreModelo.Name = "txtNombreModelo";
             this.txtNombreModelo.PasswordChar = '\0';
             this.txtNombreModelo.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -191,11 +193,32 @@
             this.btnAltaModelo.Text = "Crear Modelo";
             this.btnAltaModelo.Click += new System.EventHandler(this.btnCrearCuenta_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Animated = true;
+            this.btnVolver.AutoRoundedCorners = true;
+            this.btnVolver.BorderRadius = 17;
+            this.btnVolver.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVolver.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnVolver.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnVolver.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnVolver.FillColor = System.Drawing.Color.Transparent;
+            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Image = global::SIMED_V1.Properties.Resources.left_arrow;
+            this.btnVolver.Location = new System.Drawing.Point(-1, 296);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(63, 37);
+            this.btnVolver.TabIndex = 38;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click_1);
+            // 
             // AltaModelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(387, 332);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAltaModelo);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.guna2ControlBox3);
@@ -203,6 +226,7 @@
             this.Controls.Add(this.guna2ControlBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AltaModelos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaModelo";
             this.Load += new System.EventHandler(this.AltaModelo_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);
@@ -224,5 +248,6 @@
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2GradientButton btnAltaModelo;
         private System.Windows.Forms.Label lblNombreModelo;
+        private Guna.UI2.WinForms.Guna2Button btnVolver;
     }
 }

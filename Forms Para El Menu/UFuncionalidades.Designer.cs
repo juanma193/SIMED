@@ -100,6 +100,7 @@
             this.btnRelacionLaboral.Size = new System.Drawing.Size(196, 74);
             this.btnRelacionLaboral.TabIndex = 14;
             this.btnRelacionLaboral.Text = "Relaciones Laborales";
+            this.btnRelacionLaboral.Click += new System.EventHandler(this.btnRelacionLaboral_Click);
             // 
             // btnTurnosRotativos
             // 

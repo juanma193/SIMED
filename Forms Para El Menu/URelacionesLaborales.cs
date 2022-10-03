@@ -11,23 +11,25 @@ using System.Windows.Forms;
 
 namespace SIMED_V1.Forms_Para_El_Menu
 {
-    public partial class UPlanes : UserControl
+    public partial class URelacionesLaborales : Form
     {
-        public UPlanes()
+        public URelacionesLaborales()
         {
             InitializeComponent();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void btnAltaRL_Click(object sender, EventArgs e)
         {
-            AltaPlanes ventana = new AltaPlanes();
+            AltaRelacionLaboral ventana = new AltaRelacionLaboral();
             ventana.Show();
+            this.Dispose();
         }
 
-        private void guna2Button3_Click(object sender, EventArgs e)
+        private void btnConsultaRL_Click(object sender, EventArgs e)
         {
-            ConsultaPlanes ventana = new ConsultaPlanes();
+            ConsultaRelacionLaboral ventana = new ConsultaRelacionLaboral();
             ventana.Show();
+            this.Dispose();
         }
     }
 }

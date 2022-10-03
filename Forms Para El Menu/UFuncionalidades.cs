@@ -23,5 +23,11 @@ namespace SIMED_V1.Forms_Para_El_Menu
             UModelosMarcas ventana = new UModelosMarcas();
             ventana.Show();
         }
+
+        private void btnRelacionLaboral_Click(object sender, EventArgs e)
+        {
+            URelacionesLaborales ventana = new URelacionesLaborales();
+            ventana.Show();
+        }
     }
 }

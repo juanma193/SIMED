@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -40,16 +40,16 @@
             this.nombreModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnActualizarModelo = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.txtNombreModelo = new Guna.UI2.WinForms.Guna2TextBox();
             this.cmbMarcaModelo = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblNroIdModelo = new System.Windows.Forms.Label();
             this.lblIdModelo = new System.Windows.Forms.Label();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.txtNombreModelo = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnBuscarModelo = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnEliminarModelo = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.lblConsultarModelos = new System.Windows.Forms.Label();
-            this.lblNombreModelo = new System.Windows.Forms.Label();
+            this.btnVolver = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.gdrModelos)).BeginInit();
             this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -90,29 +90,29 @@
             // 
             this.gdrModelos.AllowUserToAddRows = false;
             this.gdrModelos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            this.gdrModelos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gdrModelos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gdrModelos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gdrModelos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gdrModelos.ColumnHeadersHeight = 20;
             this.gdrModelos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gdrModelos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreModelo,
             this.marcaModelo});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gdrModelos.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gdrModelos.DefaultCellStyle = dataGridViewCellStyle6;
             this.gdrModelos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gdrModelos.Location = new System.Drawing.Point(243, 35);
             this.gdrModelos.Name = "gdrModelos";
@@ -180,34 +180,6 @@
             this.btnActualizarModelo.Text = "Actualizar Modelo";
             this.btnActualizarModelo.Click += new System.EventHandler(this.btnActualizarModelo_Click);
             // 
-            // txtNombreModelo
-            // 
-            this.txtNombreModelo.Animated = true;
-            this.txtNombreModelo.AutoRoundedCorners = true;
-            this.txtNombreModelo.BorderRadius = 13;
-            this.txtNombreModelo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNombreModelo.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtNombreModelo.DefaultText = "";
-            this.txtNombreModelo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtNombreModelo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtNombreModelo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNombreModelo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtNombreModelo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.txtNombreModelo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreModelo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
-            this.txtNombreModelo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtNombreModelo.IconLeft = global::SIMED_V1.Properties.Resources._4918887_document_edit_file_format_name_icon_1_;
-            this.txtNombreModelo.Location = new System.Drawing.Point(13, 18);
-            this.txtNombreModelo.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombreModelo.Name = "txtNombreModelo";
-            this.txtNombreModelo.PasswordChar = '\0';
-            this.txtNombreModelo.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtNombreModelo.PlaceholderText = "Nombre de modelo";
-            this.txtNombreModelo.SelectedText = "";
-            this.txtNombreModelo.Size = new System.Drawing.Size(187, 29);
-            this.txtNombreModelo.TabIndex = 57;
-            this.txtNombreModelo.TextChanged += new System.EventHandler(this.txtNombreModelo_TextChanged);
-            // 
             // cmbMarcaModelo
             // 
             this.cmbMarcaModelo.AutoRoundedCorners = true;
@@ -254,7 +226,6 @@
             // guna2ShadowPanel1
             // 
             this.guna2ShadowPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ShadowPanel1.Controls.Add(this.lblNombreModelo);
             this.guna2ShadowPanel1.Controls.Add(this.cmbMarcaModelo);
             this.guna2ShadowPanel1.Controls.Add(this.txtNombreModelo);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
@@ -263,6 +234,34 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
             this.guna2ShadowPanel1.Size = new System.Drawing.Size(214, 123);
             this.guna2ShadowPanel1.TabIndex = 62;
+            // 
+            // txtNombreModelo
+            // 
+            this.txtNombreModelo.Animated = true;
+            this.txtNombreModelo.AutoRoundedCorners = true;
+            this.txtNombreModelo.BorderRadius = 13;
+            this.txtNombreModelo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNombreModelo.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtNombreModelo.DefaultText = "";
+            this.txtNombreModelo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtNombreModelo.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtNombreModelo.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreModelo.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtNombreModelo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
+            this.txtNombreModelo.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreModelo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
+            this.txtNombreModelo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtNombreModelo.IconLeft = global::SIMED_V1.Properties.Resources._4918887_document_edit_file_format_name_icon_1_;
+            this.txtNombreModelo.Location = new System.Drawing.Point(13, 18);
+            this.txtNombreModelo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreModelo.Name = "txtNombreModelo";
+            this.txtNombreModelo.PasswordChar = '\0';
+            this.txtNombreModelo.PlaceholderForeColor = System.Drawing.Color.DimGray;
+            this.txtNombreModelo.PlaceholderText = "Nombre de modelo";
+            this.txtNombreModelo.SelectedText = "";
+            this.txtNombreModelo.Size = new System.Drawing.Size(187, 29);
+            this.txtNombreModelo.TabIndex = 57;
+            this.txtNombreModelo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreModelo_KeyPress);
             // 
             // btnBuscarModelo
             // 
@@ -330,22 +329,32 @@
             this.lblConsultarModelos.TabIndex = 55;
             this.lblConsultarModelos.Text = "Consultar modelos";
             // 
-            // lblNombreModelo
+            // btnVolver
             // 
-            this.lblNombreModelo.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreModelo.ForeColor = System.Drawing.Color.Red;
-            this.lblNombreModelo.Location = new System.Drawing.Point(17, 47);
-            this.lblNombreModelo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNombreModelo.Name = "lblNombreModelo";
-            this.lblNombreModelo.Size = new System.Drawing.Size(183, 19);
-            this.lblNombreModelo.TabIndex = 65;
-            this.lblNombreModelo.Text = "label1";
+            this.btnVolver.Animated = true;
+            this.btnVolver.AutoRoundedCorners = true;
+            this.btnVolver.BorderRadius = 10;
+            this.btnVolver.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnVolver.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnVolver.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnVolver.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnVolver.FillColor = System.Drawing.Color.Transparent;
+            this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Image = global::SIMED_V1.Properties.Resources.left_arrow;
+            this.btnVolver.Location = new System.Drawing.Point(-4, 287);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(39, 22);
+            this.btnVolver.TabIndex = 65;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ConsultaModelos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(481, 313);
+            this.ClientSize = new System.Drawing.Size(481, 309);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEliminarModelo);
             this.Controls.Add(this.lblConsultarModelos);
             this.Controls.Add(this.btnBuscarModelo);
@@ -359,6 +368,7 @@
             this.Controls.Add(this.guna2ControlBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ConsultaModelos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultaModelos";
             this.Load += new System.EventHandler(this.ConsultaModelos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gdrModelos)).EndInit();
@@ -387,6 +397,6 @@
         private Guna.UI2.WinForms.Guna2GradientButton btnBuscarModelo;
         private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
-        private System.Windows.Forms.Label lblNombreModelo;
+        private Guna.UI2.WinForms.Guna2Button btnVolver;
     }
 }

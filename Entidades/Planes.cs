@@ -17,7 +17,11 @@ namespace SIMED.Models
         public int IdPlan { get; set; }
         public string NombrePlan { get; set; }
         public int IdTipoPlan { get; set; }
-        public double Precio { get; set; }
+        public int CantAsistencias { get; set; }
+        public int CantAsistenciasAm { get; set; }
+        public int CantVisitasDomiciliarias { get; set; }
+        public int CantTraslados { get; set; }
+        public float Precio { get; set; }
         public int IdRangoEtario { get; set; }
 
         public virtual RangosEtarios IdRangoEtarioNavigation { get; set; }

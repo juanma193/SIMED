@@ -187,6 +187,7 @@
             this.btnConsultaMarca.Size = new System.Drawing.Size(159, 48);
             this.btnConsultaMarca.TabIndex = 38;
             this.btnConsultaMarca.Text = "Consulta de marcas";
+            this.btnConsultaMarca.Click += new System.EventHandler(this.btnConsultaMarca_Click);
             // 
             // btnAltaMarca
             // 
@@ -207,6 +208,7 @@
             this.btnAltaMarca.Size = new System.Drawing.Size(159, 48);
             this.btnAltaMarca.TabIndex = 36;
             this.btnAltaMarca.Text = "Alta de marca";
+            this.btnAltaMarca.Click += new System.EventHandler(this.btnAltaMarca_Click);
             // 
             // lblMarcas
             // 
@@ -231,6 +233,7 @@
             this.Controls.Add(this.guna2ControlBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UModelosMarcas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UModelosMarcas";
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
