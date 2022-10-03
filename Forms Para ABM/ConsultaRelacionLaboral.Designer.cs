@@ -201,7 +201,6 @@
             this.txtDescRL.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescRL.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtDescRL.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDescRL.IconLeft = global::SIMED_V1.Properties.Resources._4918887_document_edit_file_format_name_icon_1_;
             this.txtDescRL.Location = new System.Drawing.Point(13, 18);
             this.txtDescRL.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescRL.MaxLength = 30;
