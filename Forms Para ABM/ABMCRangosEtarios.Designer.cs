@@ -355,7 +355,6 @@
             this.chkMostrarTodosRangos.UncheckedState.BorderThickness = 0;
             this.chkMostrarTodosRangos.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.chkMostrarTodosRangos.Visible = false;
-            this.chkMostrarTodosRangos.CheckedChanged += new System.EventHandler(this.chkMostrarTodosRangos_CheckedChanged);
             // 
             // btnVolver
             // 

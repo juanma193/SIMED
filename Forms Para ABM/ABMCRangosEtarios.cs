@@ -32,7 +32,7 @@ namespace SIMED_V1.Forms_Para_ABM
             seguro.lblMensaje.Text = "¿Está seguro de que desea crear un nuevo rango etario?";
             if(seguro.ShowDialog() == DialogResult.OK)
             {
-                LimpiarCampos();
+
                 btnModificarRango.Enabled = false;
                 btnEliminarRangoEtario.Enabled = false;
                 try
@@ -65,6 +65,7 @@ namespace SIMED_V1.Forms_Para_ABM
                             ventana.show("Se ha registrado el rango etario con éxito");
                             CargarGrillaConsultaRangosEtarios();
                             lblDescripcionRangoEtario.Visible = false;
+                            LimpiarCampos();
                         }
                         else
                         {
@@ -215,7 +216,6 @@ namespace SIMED_V1.Forms_Para_ABM
             if (txtDescripcionRangoEtario.Text == "" && txtIdRangoEtario.Text == "")
             {
                 CargarGrillaConsultaRangosEtarios();
-                chkMostrarTodosRangos.Visible = false;
                 lblDescripcionRangoEtario.Visible = false;
             }
 
@@ -224,8 +224,6 @@ namespace SIMED_V1.Forms_Para_ABM
             {
                 grdRangosEtarios.DataSource = RangoEtarioBD.ObtenerRangoEtario(txtDescripcionRangoEtario.Text);
 
-                chkMostrarTodosRangos.Visible = true;
-                chkMostrarTodosRangos.Checked = false;
             }
 
             //Tercer caso, seleccionan un rango de la grilla, borran la descripción que aparece y buscan solo por id
@@ -233,8 +231,7 @@ namespace SIMED_V1.Forms_Para_ABM
             {
                 grdRangosEtarios.DataSource = RangoEtarioBD.ObtenerRangoEtario(int.Parse(txtIdRangoEtario.Text.ToString()));
 
-                chkMostrarTodosRangos.Visible = true;
-                chkMostrarTodosRangos.Checked = false;
+
             }
             else
             {
@@ -261,18 +258,6 @@ namespace SIMED_V1.Forms_Para_ABM
             CargarGrillaConsultaRangosEtarios();
         }
 
-
-        private void chkMostrarTodosRangos_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkMostrarTodosRangos.Checked)
-            {
-                CargarGrillaConsultaRangosEtarios();
-                chkMostrarTodosRangos.Visible = false;
-            }
-            btnEliminarRangoEtario.Enabled = false;
-            btnModificarRango.Enabled = false;
-            LimpiarCampos();
-        }
 
 
         private void grdRangosEtarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -315,7 +300,6 @@ namespace SIMED_V1.Forms_Para_ABM
                         CargarGrillaConsultaRangosEtarios();
                         btnEliminarRangoEtario.Enabled = false;
                         btnModificarRango.Enabled = false;
-                        chkMostrarTodosRangos.Visible = false;
 
                     }
                     else

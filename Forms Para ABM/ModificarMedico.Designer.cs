@@ -945,6 +945,7 @@
             this.Controls.Add(this.btnVolver);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModificarMedico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificarMedico";
             this.Load += new System.EventHandler(this.ModificarMedico_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);

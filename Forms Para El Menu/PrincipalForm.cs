@@ -52,7 +52,7 @@ namespace SIMED_V1
             //uMedicos1.BringToFront();
             this.pnContenido.Controls.Remove(ContActivo);
 
-            ContActivo = new UMedicos();
+            ContActivo = new UMedicos(usuario);
             ContActivo.Dock = DockStyle.Fill;
             this.pnContenido.Controls.Add(ContActivo);
             

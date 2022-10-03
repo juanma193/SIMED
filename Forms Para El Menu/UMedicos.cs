@@ -1,4 +1,5 @@
-﻿using SIMED_V1.Forms_Para_ABM;
+﻿using SIMED.Models;
+using SIMED_V1.Forms_Para_ABM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,23 +14,26 @@ namespace SIMED_V1
 {
     public partial class UMedicos : UserControl
     {
+        int idPerfil;
 
-
-        public UMedicos()
+        public UMedicos(Usuarios usuario)
         {
             InitializeComponent();
+            idPerfil = usuario.IdUsuario;
+
 
         }
 
         private void btnDarAltaMedico_Click(object sender, EventArgs e)
         {
-            AltaMedico ventana = new AltaMedico();
+            AltaMedico ventana = new AltaMedico(idPerfil);
             ventana.Show();
+
         }
 
         private void btnConsultarDatosMedico_Click(object sender, EventArgs e)
         {
-            ConsultaMedico ventana = new ConsultaMedico();
+            ConsultaMedico ventana = new ConsultaMedico(idPerfil);
             ventana.Show();
 
         }
