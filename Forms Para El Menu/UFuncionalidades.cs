@@ -39,6 +39,7 @@ namespace SIMED_V1.Forms_Para_El_Menu
         private void btnEspecialidades_Click(object sender, EventArgs e)
         {
             ABMCEspecialidades ventana = new ABMCEspecialidades();
+        }
         private void btnRelacionLaboral_Click(object sender, EventArgs e)
         {
             URelacionesLaborales ventana = new URelacionesLaborales();

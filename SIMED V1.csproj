@@ -352,7 +352,6 @@
     <Compile Include="Bases de datos\EnfermeroBD.cs" />
     <Compile Include="Bases de datos\EspecialidadBD.cs" />
     <Compile Include="Bases de datos\MedicoBD.cs" />
-    <Compile Include="Bases de datos\ModelosMarcasBD.cs" />
     <Compile Include="Bases de datos\ModelosMarcasRLBD.cs" />
     <Compile Include="Bases de datos\PlanesBD.cs" />
     <Compile Include="Bases de datos\RangoEtarioBD.cs" />
@@ -548,6 +547,7 @@
     </Compile>
     <Compile Include="Forms Para ABM\ConsultarUsuarioNoAdmin.Designer.cs">
       <DependentUpon>ConsultarUsuarioNoAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\ConsultaRelacionLaboral.cs">
       <SubType>Form</SubType>
     </Compile>
