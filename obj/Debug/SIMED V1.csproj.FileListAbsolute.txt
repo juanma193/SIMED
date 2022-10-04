@@ -179,7 +179,6 @@ C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED V1.csproj.SuggestedBindingRedirec
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Mensajes_Personalizados.Cerrar_Sesion.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.CorrectoForm.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Mensajes_Personalizados.MultiplesErrores.resources
-C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AbmTipoPlan.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaAfiliado.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaAmbulancias.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaEnfermeros.resources
@@ -187,7 +186,6 @@ C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaMedico.reso
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaPlanes.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaViaje.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaEnfermero.resources
-C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaMédico.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaPlanes.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultarAfiliado.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultarAmbulancias.resources
@@ -223,3 +221,14 @@ C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ModificarEmplea
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultarUsuarioNoAdmin.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Mensajes_Personalizados.SeguroModificar.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Mensajes_Personalizados.SeguroEliminar.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ABMCEspecialidades.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ABMCRangosEtarios.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AbmTipoViaje.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaModelos.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaMedico.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaModelos.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.DatosEnfermero.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.DatosMedico.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ModificarEnfermero.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ModificarMedico.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.UModelosMarcas.resources
