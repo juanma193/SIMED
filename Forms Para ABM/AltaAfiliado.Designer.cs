@@ -85,7 +85,7 @@
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
             this.btnCerrarApp.Location = new System.Drawing.Point(1139, 11);
-            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
             this.btnCerrarApp.TabIndex = 12;
@@ -98,7 +98,7 @@
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
             this.btnMinimizar.Location = new System.Drawing.Point(1100, 11);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
             this.btnMinimizar.TabIndex = 13;
@@ -118,10 +118,10 @@
             this.btnCrearAmbulancia.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnCrearAmbulancia.ForeColor = System.Drawing.Color.White;
             this.btnCrearAmbulancia.Location = new System.Drawing.Point(747, 336);
-            this.btnCrearAmbulancia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCrearAmbulancia.Margin = new System.Windows.Forms.Padding(2);
             this.btnCrearAmbulancia.Name = "btnCrearAmbulancia";
             this.btnCrearAmbulancia.Size = new System.Drawing.Size(192, 37);
-            this.btnCrearAmbulancia.TabIndex = 16;
+            this.btnCrearAmbulancia.TabIndex = 10;
             this.btnCrearAmbulancia.Text = "Crear Afiliado";
             this.btnCrearAmbulancia.Click += new System.EventHandler(this.btnCrearAfiliado_Click);
             // 
@@ -360,7 +360,7 @@
             this.cmbCiudad.Location = new System.Drawing.Point(742, 155);
             this.cmbCiudad.Name = "cmbCiudad";
             this.cmbCiudad.Size = new System.Drawing.Size(192, 36);
-            this.cmbCiudad.TabIndex = 33;
+            this.cmbCiudad.TabIndex = 8;
             this.cmbCiudad.SelectedIndexChanged += new System.EventHandler(this.cmbCiudad_SelectedIndexChanged);
             this.cmbCiudad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbCiudad_KeyPress);
             // 
@@ -380,7 +380,7 @@
             this.cmbPlanes.Location = new System.Drawing.Point(410, 228);
             this.cmbPlanes.Name = "cmbPlanes";
             this.cmbPlanes.Size = new System.Drawing.Size(276, 36);
-            this.cmbPlanes.TabIndex = 32;
+            this.cmbPlanes.TabIndex = 5;
             this.cmbPlanes.SelectedIndexChanged += new System.EventHandler(this.cmbPlanes_SelectedIndexChanged);
             // 
             // cmbBarrios
@@ -399,7 +399,7 @@
             this.cmbBarrios.Location = new System.Drawing.Point(742, 228);
             this.cmbBarrios.Name = "cmbBarrios";
             this.cmbBarrios.Size = new System.Drawing.Size(192, 36);
-            this.cmbBarrios.TabIndex = 31;
+            this.cmbBarrios.TabIndex = 9;
             this.cmbBarrios.SelectedIndexChanged += new System.EventHandler(this.cmbBarrios_SelectedIndexChanged);
             // 
             // label2
@@ -429,14 +429,14 @@
             this.txtNroCalle.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNroCalle.IconLeft = global::SIMED_V1.Properties.Resources.calle;
             this.txtNroCalle.Location = new System.Drawing.Point(747, 89);
-            this.txtNroCalle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNroCalle.Margin = new System.Windows.Forms.Padding(2);
             this.txtNroCalle.Name = "txtNroCalle";
             this.txtNroCalle.PasswordChar = '\0';
             this.txtNroCalle.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtNroCalle.PlaceholderText = "Número de calle";
             this.txtNroCalle.SelectedText = "";
             this.txtNroCalle.Size = new System.Drawing.Size(187, 29);
-            this.txtNroCalle.TabIndex = 27;
+            this.txtNroCalle.TabIndex = 7;
             this.txtNroCalle.TextChanged += new System.EventHandler(this.txtNroCalle_TextChanged_1);
             this.txtNroCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroCalle_KeyPress);
             // 
@@ -457,14 +457,14 @@
             this.txtCalle.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCalle.IconLeft = global::SIMED_V1.Properties.Resources.calle;
             this.txtCalle.Location = new System.Drawing.Point(747, 21);
-            this.txtCalle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCalle.Margin = new System.Windows.Forms.Padding(2);
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.PasswordChar = '\0';
             this.txtCalle.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtCalle.PlaceholderText = "Calle";
             this.txtCalle.SelectedText = "";
             this.txtCalle.Size = new System.Drawing.Size(187, 29);
-            this.txtCalle.TabIndex = 26;
+            this.txtCalle.TabIndex = 6;
             this.txtCalle.TextChanged += new System.EventHandler(this.txtCalle_TextChanged);
             this.txtCalle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalle_KeyPress);
             // 
@@ -495,14 +495,14 @@
             this.txtNroTel.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNroTel.IconLeft = global::SIMED_V1.Properties.Resources.phone_3;
             this.txtNroTel.Location = new System.Drawing.Point(409, 21);
-            this.txtNroTel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNroTel.Margin = new System.Windows.Forms.Padding(2);
             this.txtNroTel.Name = "txtNroTel";
             this.txtNroTel.PasswordChar = '\0';
             this.txtNroTel.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtNroTel.PlaceholderText = "Número de teléfono";
             this.txtNroTel.SelectedText = "";
             this.txtNroTel.Size = new System.Drawing.Size(276, 29);
-            this.txtNroTel.TabIndex = 23;
+            this.txtNroTel.TabIndex = 2;
             this.txtNroTel.TextChanged += new System.EventHandler(this.txtNroTel_TextChanged);
             this.txtNroTel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroTel_KeyPress);
             // 
@@ -523,14 +523,14 @@
             this.txtNroDoc.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNroDoc.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
             this.txtNroDoc.Location = new System.Drawing.Point(410, 155);
-            this.txtNroDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNroDoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.PasswordChar = '\0';
             this.txtNroDoc.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtNroDoc.PlaceholderText = "Número de documento";
             this.txtNroDoc.SelectedText = "";
             this.txtNroDoc.Size = new System.Drawing.Size(276, 29);
-            this.txtNroDoc.TabIndex = 22;
+            this.txtNroDoc.TabIndex = 4;
             this.txtNroDoc.TextChanged += new System.EventHandler(this.txtNroDoc_TextChanged);
             this.txtNroDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDoc_KeyPress);
             // 
@@ -551,14 +551,14 @@
             this.txtApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtApellido.Location = new System.Drawing.Point(23, 89);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.PasswordChar = '\0';
             this.txtApellido.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtApellido.PlaceholderText = "Apellido";
             this.txtApellido.SelectedText = "";
             this.txtApellido.Size = new System.Drawing.Size(276, 29);
-            this.txtApellido.TabIndex = 21;
+            this.txtApellido.TabIndex = 1;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
@@ -653,14 +653,14 @@
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtNombre.Location = new System.Drawing.Point(23, 21);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtNombre.PlaceholderText = "Nombre";
             this.txtNombre.SelectedText = "";
             this.txtNombre.Size = new System.Drawing.Size(276, 29);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 0;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -708,10 +708,11 @@
             this.guna2Button1.ForeColor = System.Drawing.Color.White;
             this.guna2Button1.Image = global::SIMED_V1.Properties.Resources.left_arrow;
             this.guna2Button1.Location = new System.Drawing.Point(50, 516);
-            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Button1.Name = "guna2Button1";
             this.guna2Button1.Size = new System.Drawing.Size(63, 37);
             this.guna2Button1.TabIndex = 24;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // guna2DragControl1
             // 

@@ -477,16 +477,30 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtNroDoc_TextChanged(object sender, EventArgs e)
         {
-            cambios = true;
-            if (txtNroDoc.Text == "")
+            if (txtNroDoc.Text.Equals(""))
             {
                 lblNumeroDoc.Visible = true;
-                lblNumeroDoc.Text = "Numero de documento obligatorio";
+                lblNumeroDoc.Text = "N° de doc. de afiliado obligatorio";
+            }
+            else if (cmbTipoDocumento.SelectedIndex == 1 && txtNroDoc.Text.Length < 8)
+            {
+                lblNumeroDoc.Visible = true;
+                lblNumeroDoc.Text = "N° de documento inválido";
+            }
+            else if (cmbTipoDocumento.SelectedIndex == 2 && txtNroDoc.Text.Length < 11)
+            {
+                lblNumeroDoc.Visible = true;
+                lblNumeroDoc.Text = "N° de CUIL inválido";
+            }
+            else if (cmbTipoDocumento.SelectedIndex == 3 && txtNroDoc.Text.Length < 9)
+            {
+                lblNumeroDoc.Visible = true;
+                lblNumeroDoc.Text = "N° de Pasaporte inválido";
             }
             else
             {
                 lblNumeroDoc.Visible = false;
-
+                cambios = true;
             }
         }
 
@@ -588,6 +602,11 @@ namespace SIMED_V1.Forms_Para_ABM
                 this.Dispose();
                 
             }
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

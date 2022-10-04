@@ -55,24 +55,22 @@ namespace SIMED_V1.Forms_Para_ABM
 
             if (indice >= 0)
             {
-                SeguroModificar window = new SeguroModificar();
-                if (window.ShowDialog() == DialogResult.OK)
-                {
-                    DataGridViewRow filaSeleccionada = gbAfiliados.Rows[indice];
-                    int documento = int.Parse(filaSeleccionada.Cells["Documento"].Value.ToString());
-                    Afiliados afil = AfiliadosBD.obtenerAfiliado(documento);
-                    ConsultarAfiliado consu = this;
-                    ModificarAfiliado ventana = new ModificarAfiliado(afil, consu);
-                    ventana.Show();
-                    this.Hide();
-                }
+
+                DataGridViewRow filaSeleccionada = gbAfiliados.Rows[indice];
+                int documento = int.Parse(filaSeleccionada.Cells["Documento"].Value.ToString());
+                Afiliados afil = AfiliadosBD.obtenerAfiliado(documento);
+                ConsultarAfiliado consu = this;
+                ModificarAfiliado ventana = new ModificarAfiliado(afil, consu);
+                ventana.Show();
+                this.Hide();
+
             }
             else
             {
                 ErroresForm mensaje = new ErroresForm();
                 mensaje.show("Seleccione un afiliado");
             }
-            
+
 
 
 
@@ -137,6 +135,10 @@ namespace SIMED_V1.Forms_Para_ABM
                     }
                     CorrectoForm msj = new CorrectoForm();
                     msj.show("Afiliado eliminado exitosamente");
+                    txtNroAfiliado.Text = "";
+                    txtNombre.Text = "";
+                    txtApellido.Text = "";
+                    todoVacio();
                 }
             }
             else

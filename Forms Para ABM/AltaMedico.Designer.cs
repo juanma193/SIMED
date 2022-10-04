@@ -103,7 +103,7 @@
             this.btnRegistrarMedico.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarMedico.Name = "btnRegistrarMedico";
             this.btnRegistrarMedico.Size = new System.Drawing.Size(235, 36);
-            this.btnRegistrarMedico.TabIndex = 26;
+            this.btnRegistrarMedico.TabIndex = 16;
             this.btnRegistrarMedico.Text = "Registrar médico";
             this.btnRegistrarMedico.Click += new System.EventHandler(this.btnRegistrarMedico_Click);
             // 
@@ -246,7 +246,7 @@
             this.txtNroDocMedico.PlaceholderText = "Número de documento";
             this.txtNroDocMedico.SelectedText = "";
             this.txtNroDocMedico.Size = new System.Drawing.Size(255, 36);
-            this.txtNroDocMedico.TabIndex = 10;
+            this.txtNroDocMedico.TabIndex = 12;
             this.txtNroDocMedico.TextChanged += new System.EventHandler(this.txtNroDocMedico_TextChanged);
             this.txtNroDocMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroDocMedico_KeyPress);
             // 
@@ -267,7 +267,7 @@
             this.dtHoraEgresoMedico.Name = "dtHoraEgresoMedico";
             this.dtHoraEgresoMedico.ShowUpDown = true;
             this.dtHoraEgresoMedico.Size = new System.Drawing.Size(113, 35);
-            this.dtHoraEgresoMedico.TabIndex = 25;
+            this.dtHoraEgresoMedico.TabIndex = 15;
             this.dtHoraEgresoMedico.Value = new System.DateTime(2022, 9, 14, 0, 0, 0, 0);
             // 
             // cmbEspecialidadMedico
@@ -286,7 +286,7 @@
             this.cmbEspecialidadMedico.Location = new System.Drawing.Point(280, 317);
             this.cmbEspecialidadMedico.Name = "cmbEspecialidadMedico";
             this.cmbEspecialidadMedico.Size = new System.Drawing.Size(229, 36);
-            this.cmbEspecialidadMedico.TabIndex = 16;
+            this.cmbEspecialidadMedico.TabIndex = 8;
             this.cmbEspecialidadMedico.SelectedIndexChanged += new System.EventHandler(this.cmbEspecialidadMedico_SelectedIndexChanged);
             // 
             // dtHoraIngresoMedico
@@ -306,7 +306,7 @@
             this.dtHoraIngresoMedico.Name = "dtHoraIngresoMedico";
             this.dtHoraIngresoMedico.ShowUpDown = true;
             this.dtHoraIngresoMedico.Size = new System.Drawing.Size(113, 35);
-            this.dtHoraIngresoMedico.TabIndex = 24;
+            this.dtHoraIngresoMedico.TabIndex = 14;
             this.dtHoraIngresoMedico.Value = new System.DateTime(2022, 9, 14, 0, 0, 0, 0);
             // 
             // label2
@@ -332,7 +332,7 @@
             this.guna2GroupBox3.Location = new System.Drawing.Point(540, 21);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(255, 131);
-            this.guna2GroupBox3.TabIndex = 55;
+            this.guna2GroupBox3.TabIndex = 9;
             this.guna2GroupBox3.Text = "Relación laboral";
             // 
             // rdContratoRenov
@@ -469,7 +469,7 @@
             this.dtFechaNacMedico.MinDate = new System.DateTime(1959, 1, 1, 0, 0, 0, 0);
             this.dtFechaNacMedico.Name = "dtFechaNacMedico";
             this.dtFechaNacMedico.Size = new System.Drawing.Size(255, 35);
-            this.dtFechaNacMedico.TabIndex = 15;
+            this.dtFechaNacMedico.TabIndex = 10;
             this.dtFechaNacMedico.Value = new System.DateTime(2005, 12, 31, 0, 0, 0, 0);
             this.dtFechaNacMedico.Click += new System.EventHandler(this.dtFechaNacMedico_Click);
             // 
@@ -489,7 +489,7 @@
             this.cmbCiudadMedico.Location = new System.Drawing.Point(280, 39);
             this.cmbCiudadMedico.Name = "cmbCiudadMedico";
             this.cmbCiudadMedico.Size = new System.Drawing.Size(229, 36);
-            this.cmbCiudadMedico.TabIndex = 30;
+            this.cmbCiudadMedico.TabIndex = 4;
             this.cmbCiudadMedico.SelectedIndexChanged += new System.EventHandler(this.cmbCiudadMedico_SelectedIndexChanged);
             // 
             // cmbBarriosMedico
@@ -508,7 +508,7 @@
             this.cmbBarriosMedico.Location = new System.Drawing.Point(280, 112);
             this.cmbBarriosMedico.Name = "cmbBarriosMedico";
             this.cmbBarriosMedico.Size = new System.Drawing.Size(229, 36);
-            this.cmbBarriosMedico.TabIndex = 30;
+            this.cmbBarriosMedico.TabIndex = 5;
             // 
             // txtNroCalleMedico
             // 
@@ -535,7 +535,7 @@
             this.txtNroCalleMedico.PlaceholderText = "Número de calle";
             this.txtNroCalleMedico.SelectedText = "";
             this.txtNroCalleMedico.Size = new System.Drawing.Size(229, 35);
-            this.txtNroCalleMedico.TabIndex = 8;
+            this.txtNroCalleMedico.TabIndex = 7;
             this.txtNroCalleMedico.TextChanged += new System.EventHandler(this.txtNroCalleMedico_TextChanged);
             this.txtNroCalleMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroCalleMedico_KeyPress);
             // 
@@ -564,7 +564,7 @@
             this.txtCalleMedico.PlaceholderText = "Calle";
             this.txtCalleMedico.SelectedText = "";
             this.txtCalleMedico.Size = new System.Drawing.Size(229, 35);
-            this.txtCalleMedico.TabIndex = 7;
+            this.txtCalleMedico.TabIndex = 6;
             this.txtCalleMedico.TextChanged += new System.EventHandler(this.txtCalleMedico_TextChanged);
             this.txtCalleMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCalleMedico_KeyPress);
             // 
@@ -579,7 +579,7 @@
             this.grpSexoMedico.Location = new System.Drawing.Point(23, 218);
             this.grpSexoMedico.Name = "grpSexoMedico";
             this.grpSexoMedico.Size = new System.Drawing.Size(229, 135);
-            this.grpSexoMedico.TabIndex = 51;
+            this.grpSexoMedico.TabIndex = 3;
             this.grpSexoMedico.Text = "Sexo";
             // 
             // rdOtroMedico
@@ -667,7 +667,7 @@
             this.txtApellidoMedico.PlaceholderText = "Apellido";
             this.txtApellidoMedico.SelectedText = "";
             this.txtApellidoMedico.Size = new System.Drawing.Size(229, 35);
-            this.txtApellidoMedico.TabIndex = 3;
+            this.txtApellidoMedico.TabIndex = 2;
             this.txtApellidoMedico.TextChanged += new System.EventHandler(this.txtApellidoMedico_TextChanged);
             this.txtApellidoMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidoMedico_KeyPress);
             // 
@@ -696,7 +696,7 @@
             this.txtNombreMedico.PlaceholderText = "Nombre";
             this.txtNombreMedico.SelectedText = "";
             this.txtNombreMedico.Size = new System.Drawing.Size(229, 35);
-            this.txtNombreMedico.TabIndex = 2;
+            this.txtNombreMedico.TabIndex = 1;
             this.txtNombreMedico.TextChanged += new System.EventHandler(this.txtNombreMedico_TextChanged);
             this.txtNombreMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreMedico_KeyPress);
             // 
@@ -715,7 +715,7 @@
             this.grpDiasLabMedico.Location = new System.Drawing.Point(819, 21);
             this.grpDiasLabMedico.Name = "grpDiasLabMedico";
             this.grpDiasLabMedico.Size = new System.Drawing.Size(229, 223);
-            this.grpDiasLabMedico.TabIndex = 57;
+            this.grpDiasLabMedico.TabIndex = 13;
             this.grpDiasLabMedico.Text = "Días laborales";
             // 
             // chkDomingoMedico
@@ -870,7 +870,7 @@
             this.txtMatriculaMedico.PlaceholderText = "Número de matrícula";
             this.txtMatriculaMedico.SelectedText = "";
             this.txtMatriculaMedico.Size = new System.Drawing.Size(229, 35);
-            this.txtMatriculaMedico.TabIndex = 1;
+            this.txtMatriculaMedico.TabIndex = 0;
             this.txtMatriculaMedico.TextChanged += new System.EventHandler(this.txtMatriculaMedico_TextChanged);
             this.txtMatriculaMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatriculaMedico_KeyPress);
             // 
@@ -890,7 +890,7 @@
             this.cmbTipoDocumentoMedico.Location = new System.Drawing.Point(540, 263);
             this.cmbTipoDocumentoMedico.Name = "cmbTipoDocumentoMedico";
             this.cmbTipoDocumentoMedico.Size = new System.Drawing.Size(255, 36);
-            this.cmbTipoDocumentoMedico.TabIndex = 9;
+            this.cmbTipoDocumentoMedico.TabIndex = 11;
             this.cmbTipoDocumentoMedico.SelectedIndexChanged += new System.EventHandler(this.cmbTipoDocumentoMedico_SelectedIndexChanged);
             // 
             // lblCrearCuenta

@@ -97,7 +97,8 @@ namespace SIMED_V1.Bases_de_datos
 
             try
             {
-                resultado = db.Planes.Where(i => i.IdPlan > 0).ToList();
+                var resultado2 = db.Planes.Where(i => i.IdPlan > 0).ToList();
+                resultado = resultado2;
             }
             catch (Exception ex)
             {
