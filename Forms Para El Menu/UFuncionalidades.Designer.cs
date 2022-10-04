@@ -33,7 +33,6 @@
             this.btnModelos = new Guna.UI2.WinForms.Guna2Button();
             this.btnTiposViajes = new Guna.UI2.WinForms.Guna2Button();
             this.btnRelacionLaboral = new Guna.UI2.WinForms.Guna2Button();
-            this.btnTurnosRotativos = new Guna.UI2.WinForms.Guna2Button();
             this.btnEspecialidades = new Guna.UI2.WinForms.Guna2Button();
             this.btnRangosEtarios = new Guna.UI2.WinForms.Guna2Button();
             this.SuspendLayout();
@@ -78,7 +77,7 @@
             this.btnModelos.Image = global::SIMED_V1.Properties.Resources._1054957_tools_screwdriver_wrench_icon;
             this.btnModelos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnModelos.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnModelos.Location = new System.Drawing.Point(412, 398);
+            this.btnModelos.Location = new System.Drawing.Point(238, 383);
             this.btnModelos.Margin = new System.Windows.Forms.Padding(2);
             this.btnModelos.Name = "btnModelos";
             this.btnModelos.Size = new System.Drawing.Size(196, 74);
@@ -100,7 +99,7 @@
             this.btnTiposViajes.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.btnTiposViajes.ForeColor = System.Drawing.Color.White;
             this.btnTiposViajes.Image = global::SIMED_V1.Properties.Resources._1061162_care_health_journey_medicine_pill_icon;
-            this.btnTiposViajes.Location = new System.Drawing.Point(71, 398);
+            this.btnTiposViajes.Location = new System.Drawing.Point(71, 280);
             this.btnTiposViajes.Margin = new System.Windows.Forms.Padding(2);
             this.btnTiposViajes.Name = "btnTiposViajes";
             this.btnTiposViajes.Size = new System.Drawing.Size(196, 74);
@@ -131,27 +130,6 @@
             this.btnRelacionLaboral.TabIndex = 14;
             this.btnRelacionLaboral.Text = "Relaciones Laborales";
             this.btnRelacionLaboral.Click += new System.EventHandler(this.btnRelacionLaboral_Click);
-            // 
-            // btnTurnosRotativos
-            // 
-            this.btnTurnosRotativos.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnTurnosRotativos.Animated = true;
-            this.btnTurnosRotativos.AutoRoundedCorners = true;
-            this.btnTurnosRotativos.BorderRadius = 36;
-            this.btnTurnosRotativos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnTurnosRotativos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnTurnosRotativos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnTurnosRotativos.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnTurnosRotativos.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
-            this.btnTurnosRotativos.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.btnTurnosRotativos.ForeColor = System.Drawing.Color.White;
-            this.btnTurnosRotativos.Image = global::SIMED_V1.Properties.Resources._897245_clock_manage_schedule_time_icon;
-            this.btnTurnosRotativos.Location = new System.Drawing.Point(71, 280);
-            this.btnTurnosRotativos.Margin = new System.Windows.Forms.Padding(2);
-            this.btnTurnosRotativos.Name = "btnTurnosRotativos";
-            this.btnTurnosRotativos.Size = new System.Drawing.Size(196, 74);
-            this.btnTurnosRotativos.TabIndex = 14;
-            this.btnTurnosRotativos.Text = "Turnos Rotativos";
             // 
             // btnEspecialidades
             // 
@@ -207,7 +185,6 @@
             this.Controls.Add(this.btnModelos);
             this.Controls.Add(this.btnTiposViajes);
             this.Controls.Add(this.btnRelacionLaboral);
-            this.Controls.Add(this.btnTurnosRotativos);
             this.Controls.Add(this.btnEspecialidades);
             this.Controls.Add(this.btnRangosEtarios);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -222,7 +199,6 @@
 
         private Guna.UI2.WinForms.Guna2Button btnRangosEtarios;
         private Guna.UI2.WinForms.Guna2Button btnEspecialidades;
-        private Guna.UI2.WinForms.Guna2Button btnTurnosRotativos;
         private Guna.UI2.WinForms.Guna2Button btnRelacionLaboral;
         private Guna.UI2.WinForms.Guna2Button btnTiposViajes;
         private Guna.UI2.WinForms.Guna2Button btnModelos;

@@ -1,4 +1,5 @@
-﻿using SIMED_V1.Forms_Para_ABM;
+﻿using SIMED_V1.Forms_Mensajes_Personalizados;
+using SIMED_V1.Forms_Para_ABM;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -29,6 +30,11 @@ namespace SIMED_V1.Forms_Para_El_Menu
         {
             ConsultaRelacionLaboral ventana = new ConsultaRelacionLaboral();
             ventana.Show();
+            this.Dispose();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
             this.Dispose();
         }
     }

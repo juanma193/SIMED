@@ -28,7 +28,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void todoVacio()
         {
-            if (txtNombre.Text == "" && txtApellido.Text == "" && txtNroAfiliado.Text== "")
+            if (txtNombre.Text == "" && txtApellido.Text == "" && txtNroAfiliado.Text == "")
             {
                 cargarTodo();
             }
@@ -39,7 +39,7 @@ namespace SIMED_V1.Forms_Para_ABM
         private void cargarTodo()
         {
             gbAfiliados.Rows.Clear();
-            
+
             var afiliados = AfiliadosBD.getAfiliadosInicio();
 
 
@@ -52,35 +52,37 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnModAfiliado_Click(object sender, EventArgs e)
         {
-            SeguroModificar window = new SeguroModificar();
-            if (window.ShowDialog() == DialogResult.OK)
+
+            if (indice >= 0)
             {
-                if (indice >= 0)
+                SeguroModificar window = new SeguroModificar();
+                if (window.ShowDialog() == DialogResult.OK)
                 {
                     DataGridViewRow filaSeleccionada = gbAfiliados.Rows[indice];
                     int documento = int.Parse(filaSeleccionada.Cells["Documento"].Value.ToString());
                     Afiliados afil = AfiliadosBD.obtenerAfiliado(documento);
                     ConsultarAfiliado consu = this;
-                    ModificarAfiliado ventana = new ModificarAfiliado(afil,consu);
+                    ModificarAfiliado ventana = new ModificarAfiliado(afil, consu);
                     ventana.Show();
                     this.Hide();
                 }
-                else
-                {
-                    ErroresForm mensaje = new ErroresForm();
-                    mensaje.show("Seleccione un usuario");
-                }
+            }
+            else
+            {
+                ErroresForm mensaje = new ErroresForm();
+                mensaje.show("Seleccione un afiliado");
             }
             
-            
-            
+
+
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             gbAfiliados.Rows.Clear();
             var nroAfiliado = 0;
-            if(txtNroAfiliado.Text != "" && txtNroAfiliado.Text != null)
+            if (txtNroAfiliado.Text != "" && txtNroAfiliado.Text != null)
             {
                 nroAfiliado = int.Parse(txtNroAfiliado.Text);
             }
@@ -116,19 +118,26 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnElimAfiliado_Click(object sender, EventArgs e)
         {
+
             if (indice >= 0)
             {
-                DataGridViewRow filaSeleccionada = gbAfiliados.Rows[indice];
-                int documento = int.Parse(filaSeleccionada.Cells["Documento"].Value.ToString());
-                bool resultado = AfiliadosBD.eliminarAfiliado(documento);
+                SeguroEliminar seguro = new SeguroEliminar();
+                seguro.lblMensaje.Text = "¿Está seguro que desea eliminar el afiliado seleccionado?";
 
-                if (!resultado)
+                if (seguro.ShowDialog() == DialogResult.OK)
                 {
-                    ErroresForm mensaje = new ErroresForm();
-                    mensaje.show("Error al eliminar el afiliado");
+                    DataGridViewRow filaSeleccionada = gbAfiliados.Rows[indice];
+                    int documento = int.Parse(filaSeleccionada.Cells["Documento"].Value.ToString());
+                    bool resultado = AfiliadosBD.eliminarAfiliado(documento);
+
+                    if (!resultado)
+                    {
+                        ErroresForm mensaje = new ErroresForm();
+                        mensaje.show("Error al eliminar el afiliado");
+                    }
+                    CorrectoForm msj = new CorrectoForm();
+                    msj.show("Afiliado eliminado exitosamente");
                 }
-                CorrectoForm msj = new CorrectoForm();
-                msj.show("Afiliado eliminado exitosamente");
             }
             else
             {
@@ -168,7 +177,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         }
 
-      
+
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {

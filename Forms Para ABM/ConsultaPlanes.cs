@@ -235,8 +235,8 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            var ConfirmResult = MessageBox.Show("Desea eliminar", "Confirmar borrado", MessageBoxButtons.YesNo);
-            if (ConfirmResult == DialogResult.Yes)
+            SeguroModificar window = new SeguroModificar();
+            if (window.ShowDialog() == DialogResult.OK)
             {
 
                 try

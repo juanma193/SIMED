@@ -52,5 +52,10 @@ namespace SIMED_V1.Forms_Para_El_Menu
             ventana.Show();
             this.Dispose();
         }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

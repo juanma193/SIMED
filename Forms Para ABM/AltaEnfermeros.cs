@@ -108,7 +108,7 @@ namespace SIMED_V1.Forms_Para_ABM
                         //DateTime fechaNacEnfermero = DateTime.Parse(dtFechaNacimientoEnfermero.Text);
                         enfermero.FechaNacimiento = dtFechaNacimientoEnfermero.Value;
                         //CORREGIR MENSAJE DE ERROR CUANDO SE PONEN LETRAS EN LUGAR DE NUMEROS (TEL, NRO DOC, NRO CALLE)
-                        enfermero.Telefono = int.Parse(txtTelefonoEnfermero.Text);
+                        enfermero.Telefono = long.Parse(txtTelefonoEnfermero.Text);
                         enfermero.NumeroDocumento = long.Parse(txtNumeroDocEnfermero.Text);
                         enfermero.Calle = txtCalleEnfermero.Text;
                         enfermero.NroCalle = int.Parse(txtNumeroCalleEnfermero.Text);

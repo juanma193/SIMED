@@ -40,7 +40,7 @@ namespace SIMED_V1.Forms_Para_ABM
         private void btnModificarMedico_Click(object sender, EventArgs e)
         {
 
-                txtModificarMatriculaMedico.Enabled = false;
+                
                 try
                 {
                     Medicos medico = new Medicos();

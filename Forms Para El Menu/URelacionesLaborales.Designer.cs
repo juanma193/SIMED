@@ -38,6 +38,7 @@
             this.btnConsultaRL = new Guna.UI2.WinForms.Guna2Button();
             this.btnAltaRL = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +58,7 @@
             this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(326, 0);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(434, 0);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox3.TabIndex = 9;
@@ -68,7 +69,7 @@
             this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(367, 0);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(475, 0);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox2.TabIndex = 8;
@@ -78,7 +79,7 @@
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(409, 0);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(517, 0);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 7;
@@ -87,7 +88,7 @@
             // 
             this.lblRL.AutoSize = true;
             this.lblRL.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRL.Location = new System.Drawing.Point(108, 15);
+            this.lblRL.Location = new System.Drawing.Point(135, 15);
             this.lblRL.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRL.Name = "lblRL";
             this.lblRL.Size = new System.Drawing.Size(251, 32);
@@ -107,7 +108,7 @@
             this.btnConsultaRL.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnConsultaRL.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnConsultaRL.ForeColor = System.Drawing.Color.White;
-            this.btnConsultaRL.Location = new System.Drawing.Point(222, 49);
+            this.btnConsultaRL.Location = new System.Drawing.Point(265, 89);
             this.btnConsultaRL.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultaRL.Name = "btnConsultaRL";
             this.btnConsultaRL.Size = new System.Drawing.Size(159, 48);
@@ -128,7 +129,7 @@
             this.btnAltaRL.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnAltaRL.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnAltaRL.ForeColor = System.Drawing.Color.White;
-            this.btnAltaRL.Location = new System.Drawing.Point(20, 49);
+            this.btnAltaRL.Location = new System.Drawing.Point(63, 89);
             this.btnAltaRL.Margin = new System.Windows.Forms.Padding(2);
             this.btnAltaRL.Name = "btnAltaRL";
             this.btnAltaRL.Size = new System.Drawing.Size(159, 48);
@@ -146,20 +147,42 @@
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(12, 35);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(418, 113);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(505, 192);
             this.guna2ShadowPanel1.TabIndex = 10;
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.AutoRoundedCorners = true;
+            this.guna2Button1.BorderRadius = 17;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = global::SIMED_V1.Properties.Resources.left_arrow;
+            this.guna2Button1.Location = new System.Drawing.Point(12, 232);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(63, 37);
+            this.guna2Button1.TabIndex = 25;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // URelacionesLaborales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 182);
+            this.ClientSize = new System.Drawing.Size(557, 269);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2ControlBox3);
             this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "URelacionesLaborales";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "URelacionesLaborales";
             this.guna2ShadowPanel1.ResumeLayout(false);
             this.guna2ShadowPanel1.PerformLayout();
@@ -178,5 +201,6 @@
         private System.Windows.Forms.Label lblRL;
         private Guna.UI2.WinForms.Guna2Button btnConsultaRL;
         private Guna.UI2.WinForms.Guna2Button btnAltaRL;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

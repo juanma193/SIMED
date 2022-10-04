@@ -264,8 +264,10 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            var ConfirmResult = MessageBox.Show("Desea eliminar", "Confirmar borrado", MessageBoxButtons.YesNo);
-            if (ConfirmResult == DialogResult.Yes)
+            SeguroEliminar seguro = new SeguroEliminar();
+            seguro.lblMensaje.Text = "¿Está seguro que desea eliminar la ambulancia seleccionada?";
+
+            if (seguro.ShowDialog() == DialogResult.OK)
             {
 
                 try

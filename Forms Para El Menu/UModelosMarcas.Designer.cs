@@ -42,6 +42,7 @@
             this.btnConsultaMarca = new Guna.UI2.WinForms.Guna2Button();
             this.btnAltaMarca = new Guna.UI2.WinForms.Guna2Button();
             this.lblMarcas = new System.Windows.Forms.Label();
+            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2ShadowPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +63,7 @@
             this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(350, -1);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(425, -1);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox3.TabIndex = 5;
@@ -73,7 +74,7 @@
             this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(391, -1);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(466, -1);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox2.TabIndex = 4;
@@ -83,7 +84,7 @@
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(433, -1);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(508, -1);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(45, 29);
             this.guna2ControlBox1.TabIndex = 3;
@@ -99,14 +100,14 @@
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(33, 34);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(418, 113);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(475, 145);
             this.guna2ShadowPanel1.TabIndex = 6;
             // 
             // lblModelos
             // 
             this.lblModelos.AutoSize = true;
             this.lblModelos.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblModelos.Location = new System.Drawing.Point(152, 15);
+            this.lblModelos.Location = new System.Drawing.Point(173, 12);
             this.lblModelos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblModelos.Name = "lblModelos";
             this.lblModelos.Size = new System.Drawing.Size(113, 32);
@@ -126,7 +127,7 @@
             this.btnConsultaModelo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnConsultaModelo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnConsultaModelo.ForeColor = System.Drawing.Color.White;
-            this.btnConsultaModelo.Location = new System.Drawing.Point(222, 49);
+            this.btnConsultaModelo.Location = new System.Drawing.Point(250, 65);
             this.btnConsultaModelo.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultaModelo.Name = "btnConsultaModelo";
             this.btnConsultaModelo.Size = new System.Drawing.Size(159, 48);
@@ -147,7 +148,7 @@
             this.btnAltaModelo.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnAltaModelo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnAltaModelo.ForeColor = System.Drawing.Color.White;
-            this.btnAltaModelo.Location = new System.Drawing.Point(20, 49);
+            this.btnAltaModelo.Location = new System.Drawing.Point(48, 65);
             this.btnAltaModelo.Margin = new System.Windows.Forms.Padding(2);
             this.btnAltaModelo.Name = "btnAltaModelo";
             this.btnAltaModelo.Size = new System.Drawing.Size(159, 48);
@@ -162,10 +163,10 @@
             this.guna2ShadowPanel2.Controls.Add(this.btnAltaMarca);
             this.guna2ShadowPanel2.Controls.Add(this.lblMarcas);
             this.guna2ShadowPanel2.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel2.Location = new System.Drawing.Point(33, 164);
+            this.guna2ShadowPanel2.Location = new System.Drawing.Point(33, 206);
             this.guna2ShadowPanel2.Name = "guna2ShadowPanel2";
             this.guna2ShadowPanel2.ShadowColor = System.Drawing.Color.Black;
-            this.guna2ShadowPanel2.Size = new System.Drawing.Size(418, 121);
+            this.guna2ShadowPanel2.Size = new System.Drawing.Size(475, 147);
             this.guna2ShadowPanel2.TabIndex = 7;
             // 
             // btnConsultaMarca
@@ -181,7 +182,7 @@
             this.btnConsultaMarca.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnConsultaMarca.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnConsultaMarca.ForeColor = System.Drawing.Color.White;
-            this.btnConsultaMarca.Location = new System.Drawing.Point(222, 49);
+            this.btnConsultaMarca.Location = new System.Drawing.Point(250, 62);
             this.btnConsultaMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultaMarca.Name = "btnConsultaMarca";
             this.btnConsultaMarca.Size = new System.Drawing.Size(159, 48);
@@ -202,7 +203,7 @@
             this.btnAltaMarca.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
             this.btnAltaMarca.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.btnAltaMarca.ForeColor = System.Drawing.Color.White;
-            this.btnAltaMarca.Location = new System.Drawing.Point(20, 49);
+            this.btnAltaMarca.Location = new System.Drawing.Point(48, 62);
             this.btnAltaMarca.Margin = new System.Windows.Forms.Padding(2);
             this.btnAltaMarca.Name = "btnAltaMarca";
             this.btnAltaMarca.Size = new System.Drawing.Size(159, 48);
@@ -214,18 +215,39 @@
             // 
             this.lblMarcas.AutoSize = true;
             this.lblMarcas.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMarcas.Location = new System.Drawing.Point(152, 15);
+            this.lblMarcas.Location = new System.Drawing.Point(173, 15);
             this.lblMarcas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMarcas.Name = "lblMarcas";
             this.lblMarcas.Size = new System.Drawing.Size(96, 32);
             this.lblMarcas.TabIndex = 36;
             this.lblMarcas.Text = "Marcas";
             // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.AutoRoundedCorners = true;
+            this.guna2Button1.BorderRadius = 17;
+            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.guna2Button1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2Button1.ForeColor = System.Drawing.Color.White;
+            this.guna2Button1.Image = global::SIMED_V1.Properties.Resources.left_arrow;
+            this.guna2Button1.Location = new System.Drawing.Point(11, 367);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.Size = new System.Drawing.Size(63, 37);
+            this.guna2Button1.TabIndex = 25;
+            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
+            // 
             // UModelosMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(475, 312);
+            this.ClientSize = new System.Drawing.Size(550, 405);
+            this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.guna2ShadowPanel2);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.guna2ControlBox3);
@@ -258,5 +280,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAltaMarca;
         private System.Windows.Forms.Label lblMarcas;
         private System.Windows.Forms.Label lblModelos;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

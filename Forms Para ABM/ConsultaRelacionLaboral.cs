@@ -1,5 +1,6 @@
 ﻿using SIMED.Models;
 using SIMED_V1.Bases_de_datos;
+using SIMED_V1.Forms_Mensajes_Personalizados;
 using SIMED_V1.Forms_Para_El_Menu;
 using System;
 using System.Collections.Generic;
@@ -145,8 +146,8 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnEliminarRL_Click(object sender, EventArgs e)
         {
-            var ConfirmResult = MessageBox.Show("Desea eliminar", "Confirmar borrado", MessageBoxButtons.YesNo);
-            if (ConfirmResult == DialogResult.Yes)
+            SeguroModificar window = new SeguroModificar();
+            if (window.ShowDialog() == DialogResult.OK)
             {
 
                 try
