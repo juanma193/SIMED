@@ -247,9 +247,21 @@ namespace SIMED_V1.Bases_de_datos
                 return string.Empty;
             }
             s = s.ToLower();
-        char[] a = s.ToCharArray();
-            a[0] = char.ToUpper(a[0]);
-
+            s = s.Trim();
+            char[] a = s.ToCharArray();
+            int i = 0;
+            bool primero = true;
+            foreach (Char car in a)
+            {
+                if (primero && car != ' ')
+                {
+                    a[i] = char.ToUpper(car);
+                    primero = false;
+                }
+                if (car == ' ')
+                    primero = true;
+                i++;
+            }
             return new string(a);
         }
 

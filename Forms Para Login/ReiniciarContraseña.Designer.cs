@@ -152,6 +152,7 @@
             this.txtContraseña.Size = new System.Drawing.Size(303, 48);
             this.txtContraseña.TabIndex = 1;
             this.txtContraseña.UseSystemPasswordChar = true;
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // txtRepetirContraseña
             // 
@@ -178,6 +179,7 @@
             this.txtRepetirContraseña.Size = new System.Drawing.Size(303, 48);
             this.txtRepetirContraseña.TabIndex = 2;
             this.txtRepetirContraseña.UseSystemPasswordChar = true;
+            this.txtRepetirContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRepetirContraseña_KeyPress);
             // 
             // guna2ShadowForm1
             // 

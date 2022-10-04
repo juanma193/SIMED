@@ -317,7 +317,6 @@
             this.txtNroDoc.PasswordChar = '\0';
             this.txtNroDoc.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtNroDoc.PlaceholderText = "Número de documento";
-            this.txtNroDoc.ReadOnly = true;
             this.txtNroDoc.SelectedText = "";
             this.txtNroDoc.Size = new System.Drawing.Size(368, 36);
             this.txtNroDoc.TabIndex = 36;

@@ -21,7 +21,7 @@ namespace SIMED.Models
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public int IdSexo { get; set; }
-        public int NumeroDocumento { get; set; }
+        public long NumeroDocumento { get; set; }
         public int IdTipoDocumento { get; set; }
         public int IdBarrio { get; set; }
         public string NumeroTelefono { get; set; }

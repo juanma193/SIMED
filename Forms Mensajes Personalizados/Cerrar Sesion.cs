@@ -26,10 +26,19 @@ namespace SIMED_V1.Forms_Mensajes_Personalizados
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            inicioprincipal.Dispose();
-            this.Dispose();
-            LoginUsuarios ventana = new LoginUsuarios();
-            ventana.Show();
+            // inicioprincipal.Dispose();
+
+
+            FormCollection fc = Application.OpenForms;
+
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                if (Application.OpenForms[i].Name != "Login")
+                    Application.OpenForms[i].Close();
+            }
+            
+
+
             //Definir si me voy al login o se finaliza el programa.
         }
     }

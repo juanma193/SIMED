@@ -785,5 +785,26 @@ namespace SIMED_V1.Forms_Para_ABM
            
             
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            if (cambios)
+            {
+
+                SeguroModificar ventana = new SeguroModificar();
+                ventana.lblMensaje.Text = "¿Está seguro de que desea perder todos los cambios?";
+                ventana.btnModificar.Text = "Salir";
+                if (ventana.ShowDialog() == DialogResult.OK)
+                {
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                this.Dispose();
+            }
+
+
+        }
     }
 }

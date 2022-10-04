@@ -580,6 +580,7 @@
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 46);
             this.btnVolver.TabIndex = 66;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ConsultarUsuarioNoAdmin
             // 

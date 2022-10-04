@@ -119,12 +119,12 @@ namespace SIMED_V1
 
         private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
-
+            txtCodigo.MaxLength = 5;
         }
 
         private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }

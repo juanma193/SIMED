@@ -682,17 +682,50 @@ namespace SIMED_V1
 
         private void txtEdad_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
-                if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                {
-                    e.Handled = true;
-                }
-            
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
         }
 
         private void grpSexo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtEdad_KeyUp(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar)) e.Handled = false;
+            else
+            {
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if (e.KeyChar == '-' || e.KeyChar == '.') e.Handled = false;
+                    else if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
+            }
+        }
+
+        private void txtRepetirContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetterOrDigit(e.KeyChar)) e.Handled = false;
+            else
+            {
+                if (e.KeyChar == '\b') e.Handled = false; //Tecla de borrado
+                else
+                {
+                    if (e.KeyChar == '-' || e.KeyChar == '.') e.Handled = false;
+                    else if (char.IsSeparator(e.KeyChar)) e.Handled = true;
+                }
+            }
         }
     }
     }
