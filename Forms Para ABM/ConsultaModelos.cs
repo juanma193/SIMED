@@ -16,7 +16,6 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class ConsultaModelos : Form
     {
-        private static bool bandera = false;
         public ConsultaModelos()
         {
             InitializeComponent();
@@ -31,15 +30,13 @@ namespace SIMED_V1.Forms_Para_ABM
             btnEliminarModelo.Enabled = false;
             lblNroIdModelo.Enabled = false;
             lblIdModelo.Visible = false;
-            lblNombreModelo.Visible = false;
-
         }
 
         private void CargarGrilla()
         {
             try
             {
-                gdrModelos.DataSource = ModelosMarcasBD.ObtenerListadoModelos();
+                gdrModelos.DataSource = ModelosMarcasRLBD.ObtenerListadoModelos();
             }
             catch (Exception)
             {
@@ -52,7 +49,7 @@ namespace SIMED_V1.Forms_Para_ABM
         {
             try
             {
-                gdrModelos.DataSource = ModelosMarcasBD.ObtenerListadoModelos(nombreModelo);
+                gdrModelos.DataSource = ModelosMarcasRLBD.ObtenerListadoModelos(nombreModelo);
             }
             catch (Exception)
             {
@@ -65,7 +62,7 @@ namespace SIMED_V1.Forms_Para_ABM
         {
             try
             {
-                gdrModelos.DataSource = ModelosMarcasBD.ObtenerListadoModelos(idMarca);
+                gdrModelos.DataSource = ModelosMarcasRLBD.ObtenerListadoModelos(idMarca);
             }
             catch (Exception)
             {
@@ -78,7 +75,7 @@ namespace SIMED_V1.Forms_Para_ABM
         {
             try
             {
-                gdrModelos.DataSource = ModelosMarcasBD.ObtenerListadoModelos(nombreModelo, idMarca);
+                gdrModelos.DataSource = ModelosMarcasRLBD.ObtenerListadoModelos(nombreModelo, idMarca);
             }
             catch (Exception)
             {
@@ -94,8 +91,7 @@ namespace SIMED_V1.Forms_Para_ABM
             int indice = e.RowIndex;
             DataGridViewRow fila = gdrModelos.Rows[indice];
             string nombreModelo = fila.Cells["nombreModelo"].Value.ToString();
-            Modelos m = ModelosMarcasBD.ObtenerModelo(nombreModelo);
-            lblIdModelo.Text = m.IdModelo.ToString();
+            Modelos m = ModelosMarcasRLBD.ObtenerModelo(nombreModelo);
             lblIdModelo.Visible = true;
             lblNroIdModelo.Enabled = true;
             LimpiarCampos();
@@ -142,7 +138,7 @@ namespace SIMED_V1.Forms_Para_ABM
             if (r)
             {
                 Modelos m = ObtenerDatosModelo();
-                bool resultado = ModelosMarcasBD.ActualizarModelo(m);
+                bool resultado = ModelosMarcasRLBD.ActualizarModelo(m);
                 if (resultado)
                 {
                     CorrectoForm cf = new CorrectoForm();
@@ -165,21 +161,20 @@ namespace SIMED_V1.Forms_Para_ABM
             CargarComboMarcas();
             txtNombreModelo.Text = m.NombreModelo;
             cmbMarcaModelo.SelectedValue = m.IdMarca;
+            lblIdModelo.Text = m.IdModelo.ToString();
         }
 
         private void LimpiarCampos()
         {
-            bandera = true;
             txtNombreModelo.Text = "";
             cmbMarcaModelo.SelectedIndex = -1;
-            bandera = false;
         }
 
         private void CargarComboMarcas()
         {
             try
             {
-                cmbMarcaModelo.DataSource = ModelosMarcasBD.ObtenerMarcas();
+                cmbMarcaModelo.DataSource = ModelosMarcasRLBD.ObtenerMarcas();
                 cmbMarcaModelo.DisplayMember = "nombre_marca";
                 cmbMarcaModelo.ValueMember = "id_marca";
                 cmbMarcaModelo.SelectedIndex = -1;
@@ -228,24 +223,26 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnEliminarModelo_Click(object sender, EventArgs e)
         {
-            var ConfirmResult = MessageBox.Show("Desea eliminar", "Confirmar borrado", MessageBoxButtons.YesNo);
-            if (ConfirmResult == DialogResult.Yes)
+            SeguroModificar window = new SeguroModificar();
+            if (window.ShowDialog() == DialogResult.OK)
             {
-                
+
                 try
                 {
                     Modelos m = ObtenerDatosModelo();
-                    bool resultado = ModelosMarcasBD.EliminarModelo(m);
+                    bool resultado = ModelosMarcasRLBD.EliminarModelo(m);
                     if (resultado)
                     {
                         LimpiarCampos();
                         CargarGrilla();
+                        CorrectoForm cor = new CorrectoForm();
+                        cor.show("Modelo eliminado con éxito");
                     }
                 }
-                catch (Exception)
+                catch (System.Data.SqlClient.SqlException)
                 {
                     ErroresForm ventana = new ErroresForm();
-                    ventana.show("Error al eliminar persona");
+                    ventana.show("No puede eliminar un modelo relacionado con alguna ambulancia\nPorfavor elimine las ambulancias asociadas primero");
                 }
             }
         }
@@ -259,18 +256,22 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void txtNombreModelo_TextChanged(object sender, EventArgs e)
         {
-            if(!bandera)
+
+        }
+
+        private void txtNombreModelo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetterOrDigit(e.KeyChar) && (Keys)e.KeyChar != Keys.Back && (e.KeyChar != '.'))
             {
-                if (txtNombreModelo.Text.Equals(""))
-                {
-                    lblNombreModelo.Visible = true;
-                    lblNombreModelo.Text = "Nombre de modelo obligatorio";
-                }
-                else
-                {
-                    lblNombreModelo.Visible = false;
-                }
+                e.Handled = true;
             }
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            UModelosMarcas nue = new UModelosMarcas();
+            nue.Show();
+            this.Dispose();
         }
     }
 }

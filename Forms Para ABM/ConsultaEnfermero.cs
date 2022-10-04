@@ -23,9 +23,7 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            var usu = new Usuarios();
-            PrincipalForm ventana = new PrincipalForm(usu);
-            ventana.Show();
+            principalForm.Show();
             this.Dispose();
         }
         private void txtConsultaMatriculaEnfermero_KeyPress(object sender, KeyPressEventArgs e)

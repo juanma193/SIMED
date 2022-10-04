@@ -360,17 +360,21 @@ namespace SIMED_V1.Bases_de_datos
 
                 SqlCommand cmd = new SqlCommand();
 
-                string consulta = "UPDATE ESPECIALIDADES SET descripcionEspecialidad=@descEsp WHERE id_especialidad=@idEsp";
-                cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@idEsp", especialidad.IdEspecialidad);
-                cmd.Parameters.AddWithValue("@descEsp", especialidad.DescripcionEspecialidad);
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = consulta;
+                if (ObtenerEspecialidades(especialidad.DescripcionEspecialidad).Rows.Count == 0)
+                {
+                    string consulta = "UPDATE ESPECIALIDADES SET descripcionEspecialidad=@descEsp WHERE id_especialidad=@idEsp";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@idEsp", especialidad.IdEspecialidad);
+                    cmd.Parameters.AddWithValue("@descEsp", especialidad.DescripcionEspecialidad);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = consulta;
 
-                cn.Open();
-                cmd.Connection = cn;
-                cmd.ExecuteNonQuery();
-                resultado = true;
+                    cn.Open();
+                    cmd.Connection = cn;
+                    cmd.ExecuteNonQuery();
+                    resultado = true;
+                }
+  
             }
             catch (Exception ex)
             {

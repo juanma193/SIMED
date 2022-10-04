@@ -108,6 +108,9 @@ namespace SIMED_V1.Forms_Para_ABM
         private void gbAfiliados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             indice = e.RowIndex;
+            DataGridViewRow fila = gbViajes.Rows[indice];
+            string descripcionViaje = fila.Cells["tiposViajes"].Value.ToString();
+            txtDescripcion.Text = descripcionViaje;
         }
 
         private void btnElimAfiliado_Click(object sender, EventArgs e)

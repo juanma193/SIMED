@@ -68,9 +68,10 @@
             // 
             this.lblNombreUsu.AutoSize = true;
             this.lblNombreUsu.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreUsu.Location = new System.Drawing.Point(36, 75);
+            this.lblNombreUsu.Location = new System.Drawing.Point(27, 61);
+            this.lblNombreUsu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreUsu.Name = "lblNombreUsu";
-            this.lblNombreUsu.Size = new System.Drawing.Size(241, 35);
+            this.lblNombreUsu.Size = new System.Drawing.Size(194, 28);
             this.lblNombreUsu.TabIndex = 0;
             this.lblNombreUsu.Text = "Nombre de usuario:";
             // 
@@ -78,9 +79,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 142);
+            this.label2.Location = new System.Drawing.Point(27, 115);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 35);
+            this.label2.Size = new System.Drawing.Size(184, 28);
             this.label2.TabIndex = 2;
             this.label2.Text = "Correo electrónico:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -89,9 +91,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(368, 33);
+            this.label1.Location = new System.Drawing.Point(276, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(406, 57);
+            this.label1.Size = new System.Drawing.Size(326, 46);
             this.label1.TabIndex = 6;
             this.label1.Text = "Datos de mi cuenta";
             // 
@@ -123,12 +126,13 @@
             this.guna2ShadowPanel1.Controls.Add(this.lblNombreUsu);
             this.guna2ShadowPanel1.Controls.Add(this.label2);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
-            this.guna2ShadowPanel1.Location = new System.Drawing.Point(39, 123);
+            this.guna2ShadowPanel1.Location = new System.Drawing.Point(29, 100);
+            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.guna2ShadowPanel1.ShadowDepth = 80;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(1094, 633);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(820, 514);
             this.guna2ShadowPanel1.TabIndex = 8;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
@@ -140,9 +144,10 @@
             this.chkUsuarios.CheckedState.BorderThickness = 0;
             this.chkUsuarios.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkUsuarios.Font = new System.Drawing.Font("Segoe UI Semilight", 13.8F);
-            this.chkUsuarios.Location = new System.Drawing.Point(326, 569);
+            this.chkUsuarios.Location = new System.Drawing.Point(244, 462);
+            this.chkUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkUsuarios.Name = "chkUsuarios";
-            this.chkUsuarios.Size = new System.Drawing.Size(268, 35);
+            this.chkUsuarios.Size = new System.Drawing.Size(223, 29);
             this.chkUsuarios.TabIndex = 75;
             this.chkUsuarios.Text = "Editar datos del usuario";
             this.chkUsuarios.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -155,9 +160,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(35, 233);
+            this.label4.Location = new System.Drawing.Point(26, 189);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(253, 41);
+            this.label4.Size = new System.Drawing.Size(200, 32);
             this.label4.TabIndex = 74;
             this.label4.Text = "Datos personales";
             // 
@@ -165,9 +171,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 15);
+            this.label3.Location = new System.Drawing.Point(26, 12);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(258, 41);
+            this.label3.Size = new System.Drawing.Size(204, 32);
             this.label3.TabIndex = 66;
             this.label3.Text = "Datos del usuario";
             // 
@@ -175,9 +182,10 @@
             // 
             this.guna2Separator1.FillColor = System.Drawing.Color.Black;
             this.guna2Separator1.FillThickness = 2;
-            this.guna2Separator1.Location = new System.Drawing.Point(0, 193);
+            this.guna2Separator1.Location = new System.Drawing.Point(0, 157);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(1088, 37);
+            this.guna2Separator1.Size = new System.Drawing.Size(816, 30);
             this.guna2Separator1.TabIndex = 73;
             this.guna2Separator1.Click += new System.EventHandler(this.guna2Separator1_Click);
             // 
@@ -185,9 +193,10 @@
             // 
             this.guna2Separator2.FillColor = System.Drawing.Color.Black;
             this.guna2Separator2.FillThickness = 2;
-            this.guna2Separator2.Location = new System.Drawing.Point(3, 541);
+            this.guna2Separator2.Location = new System.Drawing.Point(2, 440);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Separator2.Name = "guna2Separator2";
-            this.guna2Separator2.Size = new System.Drawing.Size(1088, 37);
+            this.guna2Separator2.Size = new System.Drawing.Size(816, 30);
             this.guna2Separator2.TabIndex = 63;
             // 
             // chkEmpleado
@@ -198,9 +207,10 @@
             this.chkEmpleado.CheckedState.BorderThickness = 0;
             this.chkEmpleado.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkEmpleado.Font = new System.Drawing.Font("Segoe UI Semilight", 13.8F);
-            this.chkEmpleado.Location = new System.Drawing.Point(19, 569);
+            this.chkEmpleado.Location = new System.Drawing.Point(14, 462);
+            this.chkEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chkEmpleado.Name = "chkEmpleado";
-            this.chkEmpleado.Size = new System.Drawing.Size(265, 35);
+            this.chkEmpleado.Size = new System.Drawing.Size(222, 29);
             this.chkEmpleado.TabIndex = 72;
             this.chkEmpleado.Text = "Editar datos personales";
             this.chkEmpleado.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -213,9 +223,10 @@
             // 
             this.lblErrorEdad.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorEdad.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorEdad.Location = new System.Drawing.Point(699, 506);
+            this.lblErrorEdad.Location = new System.Drawing.Point(524, 411);
+            this.lblErrorEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorEdad.Name = "lblErrorEdad";
-            this.lblErrorEdad.Size = new System.Drawing.Size(381, 23);
+            this.lblErrorEdad.Size = new System.Drawing.Size(286, 19);
             this.lblErrorEdad.TabIndex = 71;
             this.lblErrorEdad.Text = "label1";
             this.lblErrorEdad.Click += new System.EventHandler(this.lblErrorEdad_Click);
@@ -224,9 +235,10 @@
             // 
             this.lblErrorSexo.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorSexo.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorSexo.Location = new System.Drawing.Point(699, 437);
+            this.lblErrorSexo.Location = new System.Drawing.Point(524, 355);
+            this.lblErrorSexo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorSexo.Name = "lblErrorSexo";
-            this.lblErrorSexo.Size = new System.Drawing.Size(362, 23);
+            this.lblErrorSexo.Size = new System.Drawing.Size(272, 19);
             this.lblErrorSexo.TabIndex = 70;
             this.lblErrorSexo.Text = "label1";
             this.lblErrorSexo.Click += new System.EventHandler(this.lblErrorSexo_Click);
@@ -235,9 +247,10 @@
             // 
             this.lblErrorApellido.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorApellido.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorApellido.Location = new System.Drawing.Point(699, 365);
+            this.lblErrorApellido.Location = new System.Drawing.Point(524, 297);
+            this.lblErrorApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorApellido.Name = "lblErrorApellido";
-            this.lblErrorApellido.Size = new System.Drawing.Size(362, 23);
+            this.lblErrorApellido.Size = new System.Drawing.Size(272, 19);
             this.lblErrorApellido.TabIndex = 69;
             this.lblErrorApellido.Text = "label1";
             this.lblErrorApellido.Click += new System.EventHandler(this.lblErrorApellido_Click);
@@ -246,9 +259,10 @@
             // 
             this.lblErrorNombre.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorNombre.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorNombre.Location = new System.Drawing.Point(699, 298);
+            this.lblErrorNombre.Location = new System.Drawing.Point(524, 242);
+            this.lblErrorNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblErrorNombre.Name = "lblErrorNombre";
-            this.lblErrorNombre.Size = new System.Drawing.Size(362, 23);
+            this.lblErrorNombre.Size = new System.Drawing.Size(272, 19);
             this.lblErrorNombre.TabIndex = 68;
             this.lblErrorNombre.Text = "label1";
             this.lblErrorNombre.Click += new System.EventHandler(this.lblErrorNombre_Click);
@@ -257,9 +271,10 @@
             // 
             this.lblMail.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMail.ForeColor = System.Drawing.Color.Red;
-            this.lblMail.Location = new System.Drawing.Point(699, 142);
+            this.lblMail.Location = new System.Drawing.Point(524, 115);
+            this.lblMail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMail.Name = "lblMail";
-            this.lblMail.Size = new System.Drawing.Size(362, 23);
+            this.lblMail.Size = new System.Drawing.Size(272, 19);
             this.lblMail.TabIndex = 67;
             this.lblMail.Text = "label1";
             this.lblMail.Click += new System.EventHandler(this.lblMail_Click);
@@ -268,9 +283,10 @@
             // 
             this.lblNombreUsuario.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombreUsuario.ForeColor = System.Drawing.Color.Red;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(699, 75);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(524, 61);
+            this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(362, 23);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(272, 19);
             this.lblNombreUsuario.TabIndex = 65;
             this.lblNombreUsuario.Text = "label1";
             // 
@@ -278,7 +294,7 @@
             // 
             this.txtEdad.Animated = true;
             this.txtEdad.AutoRoundedCorners = true;
-            this.txtEdad.BorderRadius = 21;
+            this.txtEdad.BorderRadius = 17;
             this.txtEdad.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtEdad.DefaultText = "Edad";
             this.txtEdad.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -290,14 +306,14 @@
             this.txtEdad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtEdad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEdad.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtEdad.Location = new System.Drawing.Point(311, 492);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEdad.Location = new System.Drawing.Point(233, 400);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.PasswordChar = '\0';
             this.txtEdad.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtEdad.PlaceholderText = "Nombre de usuario";
             this.txtEdad.SelectedText = "";
-            this.txtEdad.Size = new System.Drawing.Size(382, 44);
+            this.txtEdad.Size = new System.Drawing.Size(286, 36);
             this.txtEdad.TabIndex = 64;
             this.txtEdad.TextChanged += new System.EventHandler(this.txtEdad_TextChanged);
             this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
@@ -306,7 +322,7 @@
             // 
             this.txtSexo.Animated = true;
             this.txtSexo.AutoRoundedCorners = true;
-            this.txtSexo.BorderRadius = 21;
+            this.txtSexo.BorderRadius = 17;
             this.txtSexo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSexo.DefaultText = "Sexo";
             this.txtSexo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -318,14 +334,14 @@
             this.txtSexo.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtSexo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSexo.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtSexo.Location = new System.Drawing.Point(311, 425);
-            this.txtSexo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSexo.Location = new System.Drawing.Point(233, 345);
+            this.txtSexo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.PasswordChar = '\0';
             this.txtSexo.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtSexo.PlaceholderText = "Nombre de usuario";
             this.txtSexo.SelectedText = "";
-            this.txtSexo.Size = new System.Drawing.Size(382, 44);
+            this.txtSexo.Size = new System.Drawing.Size(286, 36);
             this.txtSexo.TabIndex = 63;
             this.txtSexo.TextChanged += new System.EventHandler(this.txtSexo_TextChanged);
             this.txtSexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSexo_KeyPress);
@@ -334,7 +350,7 @@
             // 
             this.txtApellido.Animated = true;
             this.txtApellido.AutoRoundedCorners = true;
-            this.txtApellido.BorderRadius = 21;
+            this.txtApellido.BorderRadius = 17;
             this.txtApellido.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellido.DefaultText = "";
             this.txtApellido.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -346,14 +362,14 @@
             this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtApellido.Location = new System.Drawing.Point(311, 356);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtApellido.Location = new System.Drawing.Point(233, 289);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.PasswordChar = '\0';
             this.txtApellido.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtApellido.PlaceholderText = "Apellido";
             this.txtApellido.SelectedText = "";
-            this.txtApellido.Size = new System.Drawing.Size(382, 44);
+            this.txtApellido.Size = new System.Drawing.Size(286, 36);
             this.txtApellido.TabIndex = 62;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
@@ -362,7 +378,7 @@
             // 
             this.txtNombre.Animated = true;
             this.txtNombre.AutoRoundedCorners = true;
-            this.txtNombre.BorderRadius = 21;
+            this.txtNombre.BorderRadius = 17;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
             this.txtNombre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -374,14 +390,14 @@
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtNombre.Location = new System.Drawing.Point(311, 289);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Location = new System.Drawing.Point(233, 235);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtNombre.PlaceholderText = "Nombre ";
             this.txtNombre.SelectedText = "";
-            this.txtNombre.Size = new System.Drawing.Size(382, 44);
+            this.txtNombre.Size = new System.Drawing.Size(286, 36);
             this.txtNombre.TabIndex = 61;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -390,7 +406,7 @@
             // 
             this.txtNombreUsu.Animated = true;
             this.txtNombreUsu.AutoRoundedCorners = true;
-            this.txtNombreUsu.BorderRadius = 21;
+            this.txtNombreUsu.BorderRadius = 17;
             this.txtNombreUsu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombreUsu.DefaultText = "";
             this.txtNombreUsu.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -402,14 +418,14 @@
             this.txtNombreUsu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtNombreUsu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreUsu.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtNombreUsu.Location = new System.Drawing.Point(311, 66);
-            this.txtNombreUsu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombreUsu.Location = new System.Drawing.Point(233, 54);
+            this.txtNombreUsu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombreUsu.Name = "txtNombreUsu";
             this.txtNombreUsu.PasswordChar = '\0';
             this.txtNombreUsu.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtNombreUsu.PlaceholderText = "Nombre de usuario";
             this.txtNombreUsu.SelectedText = "";
-            this.txtNombreUsu.Size = new System.Drawing.Size(382, 44);
+            this.txtNombreUsu.Size = new System.Drawing.Size(286, 36);
             this.txtNombreUsu.TabIndex = 59;
             this.txtNombreUsu.TextChanged += new System.EventHandler(this.txtNombreUsu_TextChanged);
             this.txtNombreUsu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreUsu_KeyPress);
@@ -418,7 +434,7 @@
             // 
             this.txtCorreo.Animated = true;
             this.txtCorreo.AutoRoundedCorners = true;
-            this.txtCorreo.BorderRadius = 21;
+            this.txtCorreo.BorderRadius = 17;
             this.txtCorreo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtCorreo.DefaultText = "";
             this.txtCorreo.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -431,14 +447,14 @@
             this.txtCorreo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCorreo.IconLeft = global::SIMED_V1.Properties.Resources.icono_mail;
             this.txtCorreo.IconLeftSize = new System.Drawing.Size(30, 20);
-            this.txtCorreo.Location = new System.Drawing.Point(311, 133);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCorreo.Location = new System.Drawing.Point(233, 108);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.PasswordChar = '\0';
             this.txtCorreo.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtCorreo.PlaceholderText = "Correo electrónico";
             this.txtCorreo.SelectedText = "";
-            this.txtCorreo.Size = new System.Drawing.Size(382, 44);
+            this.txtCorreo.Size = new System.Drawing.Size(286, 36);
             this.txtCorreo.TabIndex = 58;
             this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
@@ -447,9 +463,10 @@
             // 
             this.lblEdad.AutoSize = true;
             this.lblEdad.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdad.Location = new System.Drawing.Point(36, 492);
+            this.lblEdad.Location = new System.Drawing.Point(27, 400);
+            this.lblEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(77, 35);
+            this.lblEdad.Size = new System.Drawing.Size(61, 28);
             this.lblEdad.TabIndex = 6;
             this.lblEdad.Text = "Edad:";
             this.lblEdad.Click += new System.EventHandler(this.lblEdad_Click);
@@ -458,9 +475,10 @@
             // 
             this.lblSexo.AutoSize = true;
             this.lblSexo.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(39, 425);
+            this.lblSexo.Location = new System.Drawing.Point(29, 345);
+            this.lblSexo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(76, 35);
+            this.lblSexo.Size = new System.Drawing.Size(61, 28);
             this.lblSexo.TabIndex = 5;
             this.lblSexo.Text = "Sexo:";
             this.lblSexo.Click += new System.EventHandler(this.lblSexo_Click);
@@ -469,9 +487,10 @@
             // 
             this.lblApellido.AutoSize = true;
             this.lblApellido.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(39, 365);
+            this.lblApellido.Location = new System.Drawing.Point(29, 297);
+            this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(117, 35);
+            this.lblApellido.Size = new System.Drawing.Size(92, 28);
             this.lblApellido.TabIndex = 4;
             this.lblApellido.Text = "Apellido:";
             this.lblApellido.Click += new System.EventHandler(this.lblApellido_Click);
@@ -480,9 +499,10 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Segoe UI Semibold", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(36, 298);
+            this.lblNombre.Location = new System.Drawing.Point(27, 242);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(114, 35);
+            this.lblNombre.Size = new System.Drawing.Size(92, 28);
             this.lblNombre.TabIndex = 3;
             this.lblNombre.Text = "Nombre:";
             this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
@@ -491,7 +511,7 @@
             // 
             this.btnModificarEmpleado.Animated = true;
             this.btnModificarEmpleado.AutoRoundedCorners = true;
-            this.btnModificarEmpleado.BorderRadius = 21;
+            this.btnModificarEmpleado.BorderRadius = 17;
             this.btnModificarEmpleado.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnModificarEmpleado.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnModificarEmpleado.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -501,10 +521,10 @@
             this.btnModificarEmpleado.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnModificarEmpleado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnModificarEmpleado.ForeColor = System.Drawing.Color.White;
-            this.btnModificarEmpleado.Location = new System.Drawing.Point(129, 782);
-            this.btnModificarEmpleado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificarEmpleado.Location = new System.Drawing.Point(97, 635);
+            this.btnModificarEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModificarEmpleado.Name = "btnModificarEmpleado";
-            this.btnModificarEmpleado.Size = new System.Drawing.Size(463, 44);
+            this.btnModificarEmpleado.Size = new System.Drawing.Size(347, 36);
             this.btnModificarEmpleado.TabIndex = 61;
             this.btnModificarEmpleado.Text = "Modificar datos ";
             this.btnModificarEmpleado.Click += new System.EventHandler(this.btnModificarEmpleado_Click);
@@ -513,7 +533,7 @@
             // 
             this.btnEliminarCuenta.Animated = true;
             this.btnEliminarCuenta.AutoRoundedCorners = true;
-            this.btnEliminarCuenta.BorderRadius = 21;
+            this.btnEliminarCuenta.BorderRadius = 17;
             this.btnEliminarCuenta.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEliminarCuenta.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEliminarCuenta.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -523,10 +543,10 @@
             this.btnEliminarCuenta.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnEliminarCuenta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnEliminarCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarCuenta.Location = new System.Drawing.Point(626, 782);
-            this.btnEliminarCuenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminarCuenta.Location = new System.Drawing.Point(470, 635);
+            this.btnEliminarCuenta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarCuenta.Name = "btnEliminarCuenta";
-            this.btnEliminarCuenta.Size = new System.Drawing.Size(463, 44);
+            this.btnEliminarCuenta.Size = new System.Drawing.Size(347, 36);
             this.btnEliminarCuenta.TabIndex = 62;
             this.btnEliminarCuenta.Text = "Eliminar Cuenta";
             this.btnEliminarCuenta.Click += new System.EventHandler(this.btnEliminarCuenta_Click);
@@ -537,10 +557,10 @@
             this.btnCerrarApp.CustomClick = true;
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(1126, 11);
-            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCerrarApp.Location = new System.Drawing.Point(877, 9);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrarApp.Name = "btnCerrarApp";
-            this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
+            this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
             this.btnCerrarApp.TabIndex = 64;
             this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
@@ -550,10 +570,10 @@
             this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(1074, 11);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(839, 9);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
+            this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
             this.btnMinimizar.TabIndex = 65;
             // 
             // guna2DragControl1
@@ -566,7 +586,7 @@
             // 
             this.btnVolver.Animated = true;
             this.btnVolver.AutoRoundedCorners = true;
-            this.btnVolver.BorderRadius = 22;
+            this.btnVolver.BorderRadius = 17;
             this.btnVolver.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnVolver.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnVolver.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -575,18 +595,18 @@
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
             this.btnVolver.Image = global::SIMED_V1.Properties.Resources.left_arrow;
-            this.btnVolver.Location = new System.Drawing.Point(39, 782);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVolver.Location = new System.Drawing.Point(29, 635);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(84, 46);
+            this.btnVolver.Size = new System.Drawing.Size(63, 37);
             this.btnVolver.TabIndex = 66;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ConsultarUsuarioNoAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1178, 870);
+            this.ClientSize = new System.Drawing.Size(917, 685);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnCerrarApp);
             this.Controls.Add(this.btnMinimizar);
@@ -595,6 +615,7 @@
             this.Controls.Add(this.btnModificarEmpleado);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "ConsultarUsuarioNoAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultarUsuarioNoAdmin";

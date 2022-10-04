@@ -680,7 +680,7 @@ namespace SIMED.Models
 
                 entity.ToTable("PLANES");
 
-                entity.Property(e => e.IdPlan).HasColumnName("id_plan").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdPlan).HasColumnName("id_plan");
 
                 entity.Property(e => e.IdRangoEtario).HasColumnName("id_rangoEtario");
 
@@ -706,8 +706,7 @@ namespace SIMED.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_planes_id_tipoPlan");
             });
-
-            modelBuilder.Entity<RangosEtarios>(entity =>
+                modelBuilder.Entity<RangosEtarios>(entity =>
             {
                 entity.HasKey(e => e.IdRangoEtario)
                     .HasName("pk_rangosEtarios");

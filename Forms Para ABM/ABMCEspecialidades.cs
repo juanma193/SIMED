@@ -1,5 +1,6 @@
 ﻿using SIMED.Models;
 using SIMED_V1.Bases_de_datos;
+using SIMED_V1.Forms_Mensajes_Personalizados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,10 +16,12 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class ABMCEspecialidades : Form
     {
+
         public ABMCEspecialidades()
         {
             InitializeComponent();
             lblDescripcionEspecialidad.Visible = false;
+
         }
 
         private void btnCrearEspecialidad_Click(object sender, EventArgs e)
@@ -86,42 +89,48 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnBuscarEspecialidad_Click(object sender, EventArgs e)
         {
-
-            btnEliminarEspecialidad.Enabled = false;
-            btnModificarEspecialidad.Enabled = false;
-            lblDescripcionEspecialidad.Visible = false;
-            // Si busca sin ingresar nada, se refresca la grilla mostrando todas las especialidades.
-            if (txtDescripcionEspecialidad.Text == "" && txtIdEspecialidad.Text == "")
+            SeguroEliminar seguro = new SeguroEliminar();
+            seguro.lblMensaje.Text = "¿Está seguro que desea eliminar este registro?";
+            if (seguro.ShowDialog() == DialogResult.OK) 
             {
-                CargarGrillaEspecialidades();
-                chkEspecialidades.Visible = false;
+                btnEliminarEspecialidad.Enabled = false;
+                btnModificarEspecialidad.Enabled = false;
                 lblDescripcionEspecialidad.Visible = false;
-            }
-            else
-            {
-                //Busca sólo por descripción
-                if (txtIdEspecialidad.Text == "" && txtDescripcionEspecialidad.Text != "")
+                // Si busca sin ingresar nada, se refresca la grilla mostrando todas las especialidades.
+                if (txtDescripcionEspecialidad.Text == "" && txtIdEspecialidad.Text == "")
                 {
-                    grdEspecialidades.DataSource = EspecialidadBD.ObtenerEspecialidades(txtDescripcionEspecialidad.Text);
+                    CargarGrillaEspecialidades();
+                    chkEspecialidades.Visible = false;
+                    lblDescripcionEspecialidad.Visible = false;
                 }
-                // Busca sólo por id
-                else if (txtIdEspecialidad.Text != "" && txtDescripcionEspecialidad.Text == "")
+                else
                 {
-                    grdEspecialidades.DataSource = EspecialidadBD.ObtenerEspecialidades(int.Parse(txtIdEspecialidad.Text));
+                    //Busca sólo por descripción
+                    if (txtIdEspecialidad.Text == "" && txtDescripcionEspecialidad.Text != "")
+                    {
+                        grdEspecialidades.DataSource = EspecialidadBD.ObtenerEspecialidades(txtDescripcionEspecialidad.Text);
+                    }
+                    // Busca sólo por id
+                    else if (txtIdEspecialidad.Text != "" && txtDescripcionEspecialidad.Text == "")
+                    {
+                        grdEspecialidades.DataSource = EspecialidadBD.ObtenerEspecialidades(int.Parse(txtIdEspecialidad.Text));
+                    }
+                    // Busca por id y descripción
+                    else
+                    {
+                        Especialidades esp = new Especialidades();
+                        esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
+                        esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
+                        grdEspecialidades.DataSource = EspecialidadBD.ObtenerEspecialidades(esp);
+                    }
+                    chkEspecialidades.Visible = true;
+                    chkEspecialidades.Checked = false;
                 }
-                // Busca por id y descripción
-                else 
-                {
-                    Especialidades esp = new Especialidades();
-                    esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
-                    esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
-                    grdEspecialidades.DataSource = EspecialidadBD.ObtenerEspecialidades(esp);
-                }
-                chkEspecialidades.Visible = true;
-                chkEspecialidades.Checked = false;
+
+                LimpiarCampos();
+
             }
 
-            LimpiarCampos();
         }
 
         
@@ -157,45 +166,73 @@ namespace SIMED_V1.Forms_Para_ABM
         }
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            var usu = new Usuarios();
-            PrincipalForm ventana = new PrincipalForm(usu);
-            ventana.Show();
-            this.Dispose();
-            
+            if (btnModificarEspecialidad.Enabled)
+            {
+                Especialidades esp = new Especialidades();
+                esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
+                esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
+                bool resultado = EspecialidadBD.ObtenerEspecialidades(esp).Rows.Count != 0;
+                if (resultado)
+                {
+                    this.Dispose();
+                }
+                else
+                {
+                    SeguroModificar seguro = new SeguroModificar();
+                    seguro.btnModificar.Text = "Aceptar";
+                    seguro.lblMensaje.Text = "¿Está seguro que no desea guardar los cambios?";
+                    if (seguro.ShowDialog() == DialogResult.OK)
+                    {
+                        this.Dispose();
+                    }
+                }
+
+            }
+            else
+            {
+                this.Dispose();
+            }
+
+
         }
 
         private void btnModificarEspecialidad_Click(object sender, EventArgs e)
         {
-            btnModificarEspecialidad.Enabled = false;
-            btnEliminarEspecialidad.Enabled = false;
-            DataGridViewRow fila = grdEspecialidades.CurrentRow;
-            Especialidades esp = new Especialidades();
-            esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
-
-            if (txtDescripcionEspecialidad.Text == "")
+            SeguroModificar seguro = new SeguroModificar();
+            seguro.lblMensaje.Text = "¿Está seguro que desea modificar este registro?";
+            if (seguro.ShowDialog() == DialogResult.OK) 
             {
-                ErroresForm ventana = new ErroresForm();
-                ventana.show("Descripción de especialidad obligatoria.");
-                LimpiarCampos();
-            }
-            else
-            {
+                btnModificarEspecialidad.Enabled = false;
+                btnEliminarEspecialidad.Enabled = false;
+                DataGridViewRow fila = grdEspecialidades.CurrentRow;
+                Especialidades esp = new Especialidades();
                 esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
-                esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
-                bool res = EspecialidadBD.ModificarEspecialidad(esp);
-                if (res)
+
+                if (txtDescripcionEspecialidad.Text == "")
                 {
-                    CorrectoForm ventana = new CorrectoForm();
-                    ventana.show("Se modificó la especialidad.");
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Descripción de especialidad obligatoria.");
                     LimpiarCampos();
-                    CargarGrillaEspecialidades();
                 }
                 else
                 {
-                    ErroresForm ventana = new ErroresForm();
-                    ventana.show("No se pudo modificar la especialidad.");
-                    LimpiarCampos();
+                    esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
+                    esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
+                    bool res = EspecialidadBD.ModificarEspecialidad(esp);
+                    if (res)
+                    {
+                        CorrectoForm ventana = new CorrectoForm();
+                        ventana.show("Se modificó la especialidad.");
+                        LimpiarCampos();
+                        CargarGrillaEspecialidades();
+                    }
+                    else
+                    {
+                        ErroresForm ventana = new ErroresForm();
+                        ventana.show("La especialidad ya existe.");
+                    }
                 }
+                LimpiarCampos();
             }            
         }
 
@@ -266,11 +303,51 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnCerrarApp_Click(object sender, EventArgs e)
         {
-            // Hace lo mismo que volver
-            var usu = new Usuarios();
-            PrincipalForm ventana = new PrincipalForm(usu);
-            ventana.Show();
-            this.Dispose();
+            if (btnModificarEspecialidad.Enabled)
+            {
+                Especialidades esp = new Especialidades();
+                esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
+                esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
+                bool resultado = EspecialidadBD.ObtenerEspecialidades(esp).Rows.Count != 0;
+                if (resultado)
+                {
+                    this.Dispose();
+                }
+                else
+                {
+                    SeguroModificar seguro = new SeguroModificar();
+                    seguro.btnModificar.Text = "Aceptar";
+                    seguro.lblMensaje.Text = "¿Está seguro que no desea guardar los cambios?";
+                    if (seguro.ShowDialog() == DialogResult.OK)
+                    {
+                        this.Dispose();
+                    }
+                }
+
+            }
+            else
+            {
+                this.Dispose();
+            }
+        }
+
+
+        private void txtIdEspecialidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar que la tecla presionada no sea CTRL u otra tecla no numerica
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtDescripcionEspecialidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verificar que la tecla presionada no sea CTRL u otra tecla numerica
+            if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
     

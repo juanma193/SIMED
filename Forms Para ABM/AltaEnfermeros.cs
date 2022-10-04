@@ -1,5 +1,6 @@
 ﻿using SIMED.Models;
 using SIMED_V1.Bases_de_datos;
+using SIMED_V1.Forms_Mensajes_Personalizados;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,8 +15,9 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class AltaEnfermeros : Form
     {
-        PrincipalForm principalForm;
-        public AltaEnfermeros(PrincipalForm ventanaPrincipal)
+        
+        bool cambios = false;
+        public AltaEnfermeros()
         {
             InitializeComponent();
             CargarComboTiposDoc();
@@ -23,7 +25,7 @@ namespace SIMED_V1.Forms_Para_ABM
             CargarComboCiudades();
             CargarComboBarrios();
             cmbBarrioEnfermero.Enabled = false;
-            principalForm = ventanaPrincipal;
+            cambios = false;
         }
 
 
@@ -95,51 +97,62 @@ namespace SIMED_V1.Forms_Para_ABM
 
                 if (valNroMatE && valNomE && valFechaE && valTelE && valDocE && valCalleE && valSexoE && valEspE)
                 {
-                    enfermero.NumeroMatricula = int.Parse(txtMatriculaEnfermero.Text);
-                    enfermero.Nombre = txtNombreEnfermero.Text;
-                    enfermero.Apellido = txtApellidoEnfermero.Text;
-                    //DateTime fechaNacEnfermero = DateTime.Parse(dtFechaNacimientoEnfermero.Text);
-                    enfermero.FechaNacimiento = dtFechaNacimientoEnfermero.Value;
-                    //CORREGIR MENSAJE DE ERROR CUANDO SE PONEN LETRAS EN LUGAR DE NUMEROS (TEL, NRO DOC, NRO CALLE)
-                    enfermero.Telefono = int.Parse(txtTelefonoEnfermero.Text);
-                    enfermero.NumeroDocumento = long.Parse(txtNumeroDocEnfermero.Text);
-                    enfermero.Calle = txtCalleEnfermero.Text;
-                    enfermero.NroCalle = int.Parse(txtNumeroCalleEnfermero.Text);
-
-                    enfermero.IdBarrio = (int)cmbBarrioEnfermero.SelectedValue;
-                    enfermero.IdTipoDocumento = (int)cmbTipoDocEnfermero.SelectedValue;
-                    enfermero.IdEspecialidad = (int)cmbEspecialidadEnfermero.SelectedValue;
-
-                    if (rdFemeninoEnfermero.Checked)
+                    SeguroModificar seguro = new SeguroModificar();
+                    seguro.btnModificar.Text = "Registrar";
+                    seguro.lblMensaje.Text = "¿Está seguro que desea registrar el médico?";
+                    if (seguro.ShowDialog() == DialogResult.OK)
                     {
-                        enfermero.IdSexo = 1;
+                        enfermero.NumeroMatricula = int.Parse(txtMatriculaEnfermero.Text);
+                        enfermero.Nombre = txtNombreEnfermero.Text;
+                        enfermero.Apellido = txtApellidoEnfermero.Text;
+                        //DateTime fechaNacEnfermero = DateTime.Parse(dtFechaNacimientoEnfermero.Text);
+                        enfermero.FechaNacimiento = dtFechaNacimientoEnfermero.Value;
+                        //CORREGIR MENSAJE DE ERROR CUANDO SE PONEN LETRAS EN LUGAR DE NUMEROS (TEL, NRO DOC, NRO CALLE)
+                        enfermero.Telefono = long.Parse(txtTelefonoEnfermero.Text);
+                        enfermero.NumeroDocumento = long.Parse(txtNumeroDocEnfermero.Text);
+                        enfermero.Calle = txtCalleEnfermero.Text;
+                        enfermero.NroCalle = int.Parse(txtNumeroCalleEnfermero.Text);
+
+                        enfermero.IdBarrio = (int)cmbBarrioEnfermero.SelectedValue;
+                        enfermero.IdTipoDocumento = (int)cmbTipoDocEnfermero.SelectedValue;
+                        enfermero.IdEspecialidad = (int)cmbEspecialidadEnfermero.SelectedValue;
+
+                        if (rdFemeninoEnfermero.Checked)
+                        {
+                            enfermero.IdSexo = 1;
+                        }
+                        if (rdMasculinoEnfermero.Checked)
+                        {
+                            enfermero.IdSexo = 2;
+                        }
+                        if (rdOtroEnfermero.Checked)
+                        {
+                            enfermero.IdSexo = 3;
+                        }
+
+                        //bool resultado = EnfermeroBD.InsertarEnfermero(nroMatEnfermero, nomEnfermero, apeEnfermo, fechaNacEnfermero, telEnfermero, numDocEnfermero, tipoDocEnfermero, especialidadEnfermero, calle, numCalleEnfermero, barrioEnfermero, sexoEnfermero);
+
+                        bool resultado = EnfermeroBD.InsertarEnfermero(enfermero);
+
+                        if (resultado)
+                        {
+                            CorrectoForm ventana = new CorrectoForm();
+                            ventana.show("Se ha registrado el enfermero con éxito.");
+                            this.Dispose();
+                        }
+                        else
+                        {
+                            ErroresForm ventana = new ErroresForm();
+                            ventana.show("No se ha podido registrar el enfermero.");
+                        }
+
+
                     }
-                    if (rdMasculinoEnfermero.Checked)
+                    else 
                     {
-                        enfermero.IdSexo = 2;
-                    }
-                    if (rdOtroEnfermero.Checked)
-                    {
-                        enfermero.IdSexo = 3;
-                    }
-
-                    //bool resultado = EnfermeroBD.InsertarEnfermero(nroMatEnfermero, nomEnfermero, apeEnfermo, fechaNacEnfermero, telEnfermero, numDocEnfermero, tipoDocEnfermero, especialidadEnfermero, calle, numCalleEnfermero, barrioEnfermero, sexoEnfermero);
-
-                    bool resultado = EnfermeroBD.InsertarEnfermero(enfermero);
-
-                    if (resultado)
-                    {
-                        CorrectoForm ventana = new CorrectoForm();
-                        ventana.show("Se ha registrado el enfermero con éxito.");
-                        this.Dispose();
-                    }
-                    else
-                    {
-                        ErroresForm ventana = new ErroresForm();
-                        ventana.show("No se ha podido registrar el enfermero.");
+                        cambios = true;
                     }
                 }
-
             }
             catch (Exception ex)
             {
@@ -150,11 +163,20 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
-            Usuarios usu = new Usuarios();
-            PrincipalForm ventana = new PrincipalForm(usu);
-            ventana.Show();
-            this.Dispose();
-
+            if (cambios)
+            {
+                SeguroModificar seguro = new SeguroModificar();
+                seguro.btnModificar.Text = "Aceptar";
+                seguro.lblMensaje.Text = "¿Está seguro que desea descartar los cambios?";
+                if (seguro.ShowDialog() == DialogResult.OK)
+                {
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                this.Dispose();
+            }
         }
 
         private void CargarComboTiposDoc()
@@ -215,6 +237,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 cmbBarrioEnfermero.ValueMember = "id_barrio";
                 cmbBarrioEnfermero.DataSource = EnfermeroBD.ObtenerBarrios(cmbCiudadesEnfermero.SelectedIndex + 1);
                 cmbBarrioEnfermero.SelectedIndex = -1;
+                cambios = true;
                 //string ciudad = EnfermeroBD.ObtenerCiudad(1);
                 //txtCiudadEnfermero.PlaceholderText = ciudad;
 
@@ -233,7 +256,11 @@ namespace SIMED_V1.Forms_Para_ABM
                 lblMatriculaEnfermero.Visible = true;
                 lblMatriculaEnfermero.Text = "Número de matricula obligatorio";
             }
-            else { lblMatriculaEnfermero.Visible = false; }
+            else 
+            {
+                lblMatriculaEnfermero.Visible = false;
+                cambios = true;
+            }
         }
         private void txtNombreEnfermero_TextChanged(object sender, EventArgs e)
         {
@@ -242,7 +269,11 @@ namespace SIMED_V1.Forms_Para_ABM
                 lblNombreEnfermero.Visible = true;
                 lblNombreEnfermero.Text = "Nombre de enfermero obligatorio";
             }
-            else { lblNombreEnfermero.Visible = false; }
+            else 
+            {
+                lblNombreEnfermero.Visible = false;
+                cambios = true;
+            }
         }
         private void txtApellidoEnfermero_TextChanged(object sender, EventArgs e)
         {
@@ -251,7 +282,11 @@ namespace SIMED_V1.Forms_Para_ABM
                 lblApellidoEnfermero.Visible = true;
                 lblApellidoEnfermero.Text = "Apellido de enfermero obligatorio";
             }
-            else { lblApellidoEnfermero.Visible = false; }
+            else 
+            { 
+                lblApellidoEnfermero.Visible = false;
+                cambios = true;
+            }
         }
         private void txtTelefonoEnfermero_TextChanged(object sender, EventArgs e)
         {
@@ -260,7 +295,11 @@ namespace SIMED_V1.Forms_Para_ABM
                 lblTelefonoEnfermero.Visible = true;
                 lblTelefonoEnfermero.Text = "Teléfono de enfermero obligatorio";
             }
-            else { lblTelefonoEnfermero.Visible = false; }
+            else 
+            {
+                lblTelefonoEnfermero.Visible = false;
+                cambios = true;
+            }
         }
         private void txtNumeroDocEnfermero_TextChanged(object sender, EventArgs e)
         {
@@ -269,7 +308,26 @@ namespace SIMED_V1.Forms_Para_ABM
                 lblNumeroDocEnfermero.Visible = true;
                 lblNumeroDocEnfermero.Text = "N° de doc. de enfermero obligatorio";
             }
-            else { lblNumeroDocEnfermero.Visible = false; }
+            else if (cmbTipoDocEnfermero.SelectedIndex == 0 && txtNumeroDocEnfermero.Text.Length < 8)
+            {
+                lblNumeroDocEnfermero.Visible = true;
+                lblNumeroDocEnfermero.Text = "N° de documento inválido";
+            }
+            else if (cmbTipoDocEnfermero.SelectedIndex == 1 && txtNumeroDocEnfermero.Text.Length < 11)
+            {
+                lblNumeroDocEnfermero.Visible = true;
+                lblNumeroDocEnfermero.Text = "N° de CUIL inválido";
+            }
+            else if (cmbTipoDocEnfermero.SelectedIndex == 2 && txtNumeroDocEnfermero.Text.Length < 9)
+            {
+                lblNumeroDocEnfermero.Visible = true;
+                lblNumeroDocEnfermero.Text = "N° de Pasaporte inválido";
+            }
+            else
+            {
+                lblNumeroDocEnfermero.Visible = false;
+                cambios = true;
+            }
         }
         private void txtCalleEnfermero_TextChanged(object sender, EventArgs e)
         {
@@ -278,7 +336,11 @@ namespace SIMED_V1.Forms_Para_ABM
                 lblCalleEnfermero.Visible = true;
                 lblCalleEnfermero.Text = "Calle de enfermero obligatorio";
             }
-            else { lblCalleEnfermero.Visible = false; }
+            else 
+            {
+                lblCalleEnfermero.Visible = false; 
+                cambios = true;
+            }
         }
         private void txtNumeroCalleEnfermero_TextChanged(object sender, EventArgs e)
         {
@@ -287,7 +349,11 @@ namespace SIMED_V1.Forms_Para_ABM
                 lblNumeroCalleEnfermero.Visible = true;
                 lblNumeroCalleEnfermero.Text = "N° de calle de enfermero obligatorio";
             }
-            else { lblNumeroCalleEnfermero.Visible = false; }
+            else
+            {
+                lblNumeroCalleEnfermero.Visible = false;
+                cambios = true;
+            }
         }
 
         private void txtMatriculaEnfermero_KeyPress(object sender, KeyPressEventArgs e)
@@ -364,6 +430,11 @@ namespace SIMED_V1.Forms_Para_ABM
         {
             CargarComboBarrios();
             cmbBarrioEnfermero.Enabled = true;
+            cambios = true;
+            if (cmbCiudadesEnfermero.SelectedIndex == -1)
+            {
+                cambios = false;
+            }
         }
         private void cmbTipoDocEnfermero_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -381,15 +452,118 @@ namespace SIMED_V1.Forms_Para_ABM
                 txtNumeroDocEnfermero.MaxLength = 9;
 
             }
+            cambios = true;
+            if (cmbTipoDocEnfermero.SelectedIndex == -1)
+            {
+                cambios = false;
+            }
         }
 
         private void btnCerrarApp_Click(object sender, EventArgs e)
         {
-            // Hace lo mismo que el volver
+            if (cambios)
+            {
+                SeguroModificar seguro = new SeguroModificar();
+                seguro.btnModificar.Text = "Aceptar";
+                seguro.lblMensaje.Text = "¿Está seguro que desea descartar los cambios?";
+                if (seguro.ShowDialog() == DialogResult.OK)
+                {
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                this.Dispose();
+            }
 
-            principalForm.Show();
-            this.Dispose();
         }
+
+        private void lblMatriculaEnfermero_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtMatriculaEnfermero.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblNombreEnfermero_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtNombreEnfermero.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblApellidoEnfermero_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtApellidoEnfermero.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblTelefonoEnfermero_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtTelefonoEnfermero.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblCalleEnfermero_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtCalleEnfermero.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblNumeroCalleEnfermero_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtNumeroCalleEnfermero.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void lblNumeroDocEnfermero_VisibleChanged(object sender, EventArgs e)
+        {
+            if (txtNumeroDocEnfermero.Text != "")
+            {
+                cambios = true;
+            }
+        }
+
+        private void cmbEspecialidadEnfermero_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+            if (cmbEspecialidadEnfermero.SelectedIndex == -1)
+            {
+                cambios = false;
+            }
+        }
+
+        private void dtFechaNacimientoEnfermero_Click(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void rdFemeninoEnfermero_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void rdMasculinoEnfermero_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+        private void rdOtroEnfermero_CheckedChanged(object sender, EventArgs e)
+        {
+            cambios = true;
+        }
+
+
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {

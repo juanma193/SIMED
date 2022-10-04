@@ -14,9 +14,11 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class ConsultaMedico : Form
     {
-        public ConsultaMedico()
+        int idPerfil;
+        public ConsultaMedico(int idPerf)
         {
             InitializeComponent();
+            idPerfil = idPerf;
         }
 
         private void btnVolverConsulta_Click(object sender, EventArgs e)
@@ -110,7 +112,7 @@ namespace SIMED_V1.Forms_Para_ABM
         private void grdConsultaMedico_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             ConsultaMedico cons = this;
-            DatosMedico ventana = new DatosMedico(cons);
+            DatosMedico ventana = new DatosMedico(cons, idPerfil);
 
             //Es necesario poner la prop. Modifiers de los txt del form en Public!
             ventana.txtMatriculaMedicoDato.PlaceholderText = grdConsultaMedico.Rows[e.RowIndex].Cells[0].Value.ToString();
@@ -164,7 +166,7 @@ namespace SIMED_V1.Forms_Para_ABM
         private void btnConsultaEliminarMedico_Click(object sender, EventArgs e)
         {
             ConsultaMedico cons = this;
-            DatosMedico ventana = new DatosMedico(cons);
+            DatosMedico ventana = new DatosMedico(cons, idPerfil);
             ventana.lblDatosMedico.Text = "Eliminar enfermero";
             ventana.btnEliminarMedicoDato.Visible = true;
             ventana.btnEliminarMedicoDato.Enabled = true;
@@ -227,7 +229,7 @@ namespace SIMED_V1.Forms_Para_ABM
         private void btnConsultaModificarMedico_Click(object sender, EventArgs e)
         {
             ConsultaMedico cons = this;
-            ModificarMedico ventana = new ModificarMedico(cons);
+            ModificarMedico ventana = new ModificarMedico(cons, idPerfil);
 
             //Es necesario poner la prop. Modifiers de los txt del form en Public!
             DataGridViewRow fila = grdConsultaMedico.CurrentRow;

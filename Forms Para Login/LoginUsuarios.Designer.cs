@@ -102,7 +102,7 @@
             this.btnInciarSesion.Name = "btnInciarSesion";
             this.btnInciarSesion.Size = new System.Drawing.Size(285, 46);
             this.btnInciarSesion.TabIndex = 5;
-            this.btnInciarSesion.Text = "Iniciar Sesion";
+            this.btnInciarSesion.Text = "Iniciar Sesión";
             this.btnInciarSesion.Click += new System.EventHandler(this.btnInciarSesion_Click);
             // 
             // lblInicioSesion
@@ -110,11 +110,11 @@
             this.lblInicioSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInicioSesion.Font = new System.Drawing.Font("Segoe UI Semibold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInicioSesion.ForeColor = System.Drawing.Color.Black;
-            this.lblInicioSesion.Location = new System.Drawing.Point(83, 47);
+            this.lblInicioSesion.Location = new System.Drawing.Point(106, 47);
             this.lblInicioSesion.Name = "lblInicioSesion";
-            this.lblInicioSesion.Size = new System.Drawing.Size(207, 47);
+            this.lblInicioSesion.Size = new System.Drawing.Size(158, 47);
             this.lblInicioSesion.TabIndex = 0;
-            this.lblInicioSesion.Text = "Iniciar Sesion";
+            this.lblInicioSesion.Text = "Iniciar Sesión";
             this.lblInicioSesion.Click += new System.EventHandler(this.lblInicioSesion_Click);
             // 
             // guna2AnimateWindow1
@@ -173,7 +173,7 @@
             this.btnOlvideDatos.Name = "btnOlvideDatos";
             this.btnOlvideDatos.Size = new System.Drawing.Size(200, 46);
             this.btnOlvideDatos.TabIndex = 6;
-            this.btnOlvideDatos.Text = "Olvide mis datos";
+            this.btnOlvideDatos.Text = "Olvidé mi contraseña";
             this.btnOlvideDatos.Click += new System.EventHandler(this.btnOlvideDatos_Click);
             // 
             // btnCrearCuenta

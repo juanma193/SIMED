@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.lblEspecialidades = new System.Windows.Forms.Label();
             this.guna2ContextMenuStrip1 = new Guna.UI2.WinForms.Guna2ContextMenuStrip();
@@ -102,7 +102,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(84, 46);
-            this.btnVolver.TabIndex = 27;
+            this.btnVolver.TabIndex = 8;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnCrearEspecialidad
@@ -119,11 +119,11 @@
             this.btnCrearEspecialidad.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnCrearEspecialidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnCrearEspecialidad.ForeColor = System.Drawing.Color.White;
-            this.btnCrearEspecialidad.Location = new System.Drawing.Point(131, 392);
+            this.btnCrearEspecialidad.Location = new System.Drawing.Point(126, 392);
             this.btnCrearEspecialidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCrearEspecialidad.Name = "btnCrearEspecialidad";
             this.btnCrearEspecialidad.Size = new System.Drawing.Size(305, 41);
-            this.btnCrearEspecialidad.TabIndex = 26;
+            this.btnCrearEspecialidad.TabIndex = 4;
             this.btnCrearEspecialidad.Text = "Crear Especialidad";
             this.btnCrearEspecialidad.Click += new System.EventHandler(this.btnCrearEspecialidad_Click);
             // 
@@ -147,7 +147,7 @@
             // 
             this.lblDescripcionEspecialidad.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcionEspecialidad.ForeColor = System.Drawing.Color.Red;
-            this.lblDescripcionEspecialidad.Location = new System.Drawing.Point(54, 96);
+            this.lblDescripcionEspecialidad.Location = new System.Drawing.Point(54, 154);
             this.lblDescripcionEspecialidad.Name = "lblDescripcionEspecialidad";
             this.lblDescripcionEspecialidad.Size = new System.Drawing.Size(285, 23);
             this.lblDescripcionEspecialidad.TabIndex = 45;
@@ -171,7 +171,7 @@
             this.txtDescripcionEspecialidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtDescripcionEspecialidad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDescripcionEspecialidad.IconLeftSize = new System.Drawing.Size(40, 30);
-            this.txtDescripcionEspecialidad.Location = new System.Drawing.Point(49, 55);
+            this.txtDescripcionEspecialidad.Location = new System.Drawing.Point(44, 115);
             this.txtDescripcionEspecialidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcionEspecialidad.MaxLength = 30;
             this.txtDescripcionEspecialidad.Name = "txtDescripcionEspecialidad";
@@ -180,8 +180,9 @@
             this.txtDescripcionEspecialidad.PlaceholderText = "Descripción";
             this.txtDescripcionEspecialidad.SelectedText = "";
             this.txtDescripcionEspecialidad.Size = new System.Drawing.Size(305, 36);
-            this.txtDescripcionEspecialidad.TabIndex = 21;
+            this.txtDescripcionEspecialidad.TabIndex = 2;
             this.txtDescripcionEspecialidad.TextChanged += new System.EventHandler(this.txtDescripcionEspecialidad_TextChanged);
+            this.txtDescripcionEspecialidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcionEspecialidad_KeyPress);
             // 
             // txtIdEspecialidad
             // 
@@ -199,7 +200,7 @@
             this.txtIdEspecialidad.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtIdEspecialidad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtIdEspecialidad.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
-            this.txtIdEspecialidad.Location = new System.Drawing.Point(49, 131);
+            this.txtIdEspecialidad.Location = new System.Drawing.Point(44, 44);
             this.txtIdEspecialidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdEspecialidad.Name = "txtIdEspecialidad";
             this.txtIdEspecialidad.PasswordChar = '\0';
@@ -207,35 +208,36 @@
             this.txtIdEspecialidad.PlaceholderText = "Id. Especialidad";
             this.txtIdEspecialidad.SelectedText = "";
             this.txtIdEspecialidad.Size = new System.Drawing.Size(305, 36);
-            this.txtIdEspecialidad.TabIndex = 2;
+            this.txtIdEspecialidad.TabIndex = 1;
+            this.txtIdEspecialidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdEspecialidad_KeyPress);
             // 
             // grdEspecialidades
             // 
             this.grdEspecialidades.AllowUserToAddRows = false;
             this.grdEspecialidades.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.grdEspecialidades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdEspecialidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.grdEspecialidades.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdEspecialidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grdEspecialidades.ColumnHeadersHeight = 34;
             this.grdEspecialidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.grdEspecialidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.descripcion});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdEspecialidades.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdEspecialidades.DefaultCellStyle = dataGridViewCellStyle3;
             this.grdEspecialidades.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.grdEspecialidades.Location = new System.Drawing.Point(539, 83);
             this.grdEspecialidades.Name = "grdEspecialidades";
@@ -307,7 +309,7 @@
             this.btnModificarEspecialidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModificarEspecialidad.Name = "btnModificarEspecialidad";
             this.btnModificarEspecialidad.Size = new System.Drawing.Size(305, 41);
-            this.btnModificarEspecialidad.TabIndex = 29;
+            this.btnModificarEspecialidad.TabIndex = 5;
             this.btnModificarEspecialidad.Text = "Modificar Especialidad";
             this.btnModificarEspecialidad.Click += new System.EventHandler(this.btnModificarEspecialidad_Click);
             // 
@@ -323,7 +325,7 @@
             this.chkEspecialidades.Location = new System.Drawing.Point(548, 300);
             this.chkEspecialidades.Name = "chkEspecialidades";
             this.chkEspecialidades.Size = new System.Drawing.Size(111, 20);
-            this.chkEspecialidades.TabIndex = 55;
+            this.chkEspecialidades.TabIndex = 7;
             this.chkEspecialidades.Text = "Mostrar todos";
             this.chkEspecialidades.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.chkEspecialidades.UncheckedState.BorderRadius = 0;
@@ -346,11 +348,11 @@
             this.btnBuscarEspecialidad.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnBuscarEspecialidad.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscarEspecialidad.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarEspecialidad.Location = new System.Drawing.Point(131, 338);
+            this.btnBuscarEspecialidad.Location = new System.Drawing.Point(126, 338);
             this.btnBuscarEspecialidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarEspecialidad.Name = "btnBuscarEspecialidad";
             this.btnBuscarEspecialidad.Size = new System.Drawing.Size(305, 41);
-            this.btnBuscarEspecialidad.TabIndex = 56;
+            this.btnBuscarEspecialidad.TabIndex = 3;
             this.btnBuscarEspecialidad.Text = "Buscar ";
             this.btnBuscarEspecialidad.Click += new System.EventHandler(this.btnBuscarEspecialidad_Click);
             // 
@@ -373,7 +375,7 @@
             this.btnEliminarEspecialidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarEspecialidad.Name = "btnEliminarEspecialidad";
             this.btnEliminarEspecialidad.Size = new System.Drawing.Size(305, 41);
-            this.btnEliminarEspecialidad.TabIndex = 57;
+            this.btnEliminarEspecialidad.TabIndex = 6;
             this.btnEliminarEspecialidad.Text = "Eliminar Especialidad";
             this.btnEliminarEspecialidad.Click += new System.EventHandler(this.btnEliminarEspecialidad_Click);
             // 
@@ -419,6 +421,7 @@
             this.Controls.Add(this.lblEspecialidades);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ABMCEspecialidades";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABMCEspecialidades";
             this.Load += new System.EventHandler(this.ABMCEspecialidades_Load);
             this.guna2ShadowPanel1.ResumeLayout(false);

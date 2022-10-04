@@ -38,5 +38,24 @@ namespace SIMED_V1.Forms_Para_El_Menu
             ventana.Show();
             this.Dispose();
         }
+
+        private void btnAltaMarca_Click(object sender, EventArgs e)
+        {
+            AltaMarcas ventana = new AltaMarcas();
+            ventana.Show();
+            this.Dispose();
+        }
+
+        private void btnConsultaMarca_Click(object sender, EventArgs e)
+        {
+            ConsultaMarcas ventana = new ConsultaMarcas();
+            ventana.Show();
+            this.Dispose();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

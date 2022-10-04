@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCrearCuenta = new System.Windows.Forms.Label();
             this.gbViajes = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiposViajes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBuscar = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnElimViaje = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnModViaje = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -45,8 +47,6 @@
             this.btnVolver = new Guna.UI2.WinForms.Guna2Button();
             this.txtDescripcion = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnAñadir = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiposViajes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gbViajes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,29 +73,29 @@
             // 
             // gbViajes
             // 
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
-            this.gbViajes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gbViajes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gbViajes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gbViajes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gbViajes.ColumnHeadersHeight = 20;
             this.gbViajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gbViajes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.tiposViajes});
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gbViajes.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gbViajes.DefaultCellStyle = dataGridViewCellStyle3;
             this.gbViajes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gbViajes.Location = new System.Drawing.Point(58, 78);
             this.gbViajes.Name = "gbViajes";
@@ -125,6 +125,20 @@
             this.gbViajes.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gbViajes.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.gbViajes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gbAfiliados_CellClick);
+            // 
+            // Id
+            // 
+            this.Id.FillWeight = 20.30457F;
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // tiposViajes
+            // 
+            this.tiposViajes.FillWeight = 179.6954F;
+            this.tiposViajes.HeaderText = "Tipos de viajes";
+            this.tiposViajes.Name = "tiposViajes";
+            this.tiposViajes.ReadOnly = true;
             // 
             // btnBuscar
             // 
@@ -167,7 +181,7 @@
             this.btnElimViaje.Name = "btnElimViaje";
             this.btnElimViaje.Size = new System.Drawing.Size(234, 36);
             this.btnElimViaje.TabIndex = 41;
-            this.btnElimViaje.Text = "Eliminar afiliado";
+            this.btnElimViaje.Text = "Eliminar tipo de viaje";
             this.btnElimViaje.Click += new System.EventHandler(this.btnElimAfiliado_Click);
             // 
             // btnModViaje
@@ -295,20 +309,6 @@
             this.btnAñadir.TabIndex = 46;
             this.btnAñadir.Text = "Añadir viaje";
             this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
-            // 
-            // Id
-            // 
-            this.Id.FillWeight = 20.30457F;
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            // 
-            // tiposViajes
-            // 
-            this.tiposViajes.FillWeight = 179.6954F;
-            this.tiposViajes.HeaderText = "Tipos de viajes";
-            this.tiposViajes.Name = "tiposViajes";
-            this.tiposViajes.ReadOnly = true;
             // 
             // AbmTipoViaje
             // 

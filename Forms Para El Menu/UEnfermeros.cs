@@ -33,6 +33,7 @@ namespace SIMED_V1
 
         private void btnConsultaEnfermero_Click(object sender, EventArgs e)
         {
+            
             ConsultaEnfermero consulta = new ConsultaEnfermero(ventana);
             consulta.Show();
             //ventana.Hide();
@@ -41,7 +42,7 @@ namespace SIMED_V1
 
         private void btnAltaEnfermero_Click(object sender, EventArgs e)
         {
-            AltaEnfermeros alta = new AltaEnfermeros(ventana);
+            AltaEnfermeros alta = new AltaEnfermeros();
             alta.Show();
             //ventana.Hide();  
 
