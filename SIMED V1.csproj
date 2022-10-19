@@ -358,6 +358,7 @@
     <Compile Include="Bases de datos\TiposDocBD.cs" />
     <Compile Include="Bases de datos\TiposViajesBD.cs" />
     <Compile Include="Bases de datos\UsuarioBD.cs" />
+    <Compile Include="Bases de datos\ViajesBD.cs" />
     <Compile Include="BD3K3G05_2022DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -603,6 +604,12 @@
     <Compile Include="Forms Para ABM\ModificarMedico.Designer.cs">
       <DependentUpon>ModificarMedico.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para ABM\ViajesNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ViajesNuevo.Designer.cs">
+      <DependentUpon>ViajesNuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para El Menu\UAfiliados.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -821,6 +828,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ModificarMedico.resx">
       <DependentUpon>ModificarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ViajesNuevo.resx">
+      <DependentUpon>ViajesNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UAfiliados.resx">
       <DependentUpon>UAfiliados.cs</DependentUpon>
