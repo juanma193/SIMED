@@ -519,31 +519,31 @@ namespace SIMED.Models
                     .WithMany(p => p.Medicos)
                     .HasForeignKey(d => d.IdBarrio)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_medicos_barrios");
+                    .HasConstraintName("FK_MEDICOS_BARRIOS");
 
                 entity.HasOne(d => d.IdEspecialidadNavigation)
                     .WithMany(p => p.Medicos)
                     .HasForeignKey(d => d.IdEspecialidad)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_medicos_especialidad");
+                    .HasConstraintName("FK_MEDICOS_ESPECIALIDADES");
 
                 entity.HasOne(d => d.IdRelacionLaboralNavigation)
                     .WithMany(p => p.Medicos)
                     .HasForeignKey(d => d.IdRelacionLaboral)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_medicos_relacionLaboral");
+                    .HasConstraintName("FK_MEDICOS_REL_LABORAL");
 
                 entity.HasOne(d => d.IdSexoNavigation)
                     .WithMany(p => p.Medicos)
                     .HasForeignKey(d => d.IdSexo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_medicos_sexos");
+                    .HasConstraintName("FK_MEDICOS_SEXOS");
 
                 entity.HasOne(d => d.IdTipoDocumentoNavigation)
                     .WithMany(p => p.Medicos)
                     .HasForeignKey(d => d.IdTipoDocumento)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_medicos_tipoDocumento");
+                    .HasConstraintName("FK_MEDICOS_TIPOS_DOC");
             });
 
             modelBuilder.Entity<MedicosxDiasLaborales>(entity =>
@@ -564,10 +564,10 @@ namespace SIMED.Models
                     .HasConstraintName("fk_dia_diasLaborales");
 
                 entity.HasOne(d => d.NumeroMatriculaNavigation)
-                    .WithMany(p => p.MedicosxDiasLaborales)
-                    .HasForeignKey(d => d.NumeroMatricula)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_matricula_diasLaborales");
+                                    .WithMany(p => p.MedicosxDiasLaborales)
+                                    .HasForeignKey(d => d.NumeroMatricula)
+                                    .OnDelete(DeleteBehavior.ClientSetNull)
+                                    .HasConstraintName("FK_DIAS_LAB_MEDICOS");
             });
 
             modelBuilder.Entity<Medicosxviajes>(entity =>
@@ -591,7 +591,7 @@ namespace SIMED.Models
                     .WithMany(p => p.Medicosxviajes)
                     .HasForeignKey(d => d.NumeroMatriculaMedico)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_medicosxviajes_medicos");
+                    .HasConstraintName("FK_MEDICOS_MEDICOSXVIAJES");
 
                 entity.HasOne(d => d.Viajes)
                     .WithMany(p => p.Medicosxviajes)

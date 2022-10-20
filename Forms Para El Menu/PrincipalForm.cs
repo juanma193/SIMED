@@ -1,5 +1,6 @@
 ﻿using SIMED.Models;
 using SIMED_V1.Forms_Mensajes_Personalizados;
+using SIMED_V1.Forms_Para_ABM;
 using SIMED_V1.Forms_Para_El_Menu;
 using System;
 using System.Collections.Generic;
@@ -166,6 +167,12 @@ namespace SIMED_V1
             ContActivo = new UFuncionalidades();
             ContActivo.Dock = DockStyle.Fill;
             this.pnContenido.Controls.Add(ContActivo);
+        }
+
+        private void btnViajes_Click(object sender, EventArgs e)
+        {
+            ViajesNuevo ventana = new ViajesNuevo();
+            ventana.Show();
         }
     }
 }

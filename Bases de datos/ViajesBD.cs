@@ -25,7 +25,7 @@ namespace SIMED_V1.Bases_de_datos
 
                 SqlCommand cmd = new SqlCommand();
                 string consulta = @"INSERT INTO VIAJES (fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje,
-                                  @ horaLlegada, cantCombustiblePrevio, cantCombustiblePost, kilometrosRealizados ) VALUES(@fechaV,
+                                  horaLlegada, cantCombustiblePrevio, cantCombustiblePost, kilometrosRealizados ) VALUES(@fechaV,
                                   @idMovilV, @horaSal, @turno, @tipo, @horaLleg, @cbPrevio, @cbPost, @kilometros)";
 
 
@@ -52,14 +52,13 @@ namespace SIMED_V1.Bases_de_datos
                 foreach (var matEnf in listaEnf)
                 {
                     
-                    string consultaEnfXViaje = @"INSERT INTO ENFERMEROSXVIAJES (numeroMatriculaEnfermero, fecha, horaSalida, id_movil) VALUES(@matE, @fechaV,
+                    string consultaEnfXViaje = @"INSERT INTO ENFERMEROSXVIAJES (numeroMatriculaEnfermero, fecha, hora_salida, id_movil) VALUES(@matE, @fechaV,
                                                 @horaSal, @idMovilV)";
+                    cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@matE", matEnf);
                     cmd.Parameters.AddWithValue("@fechaV", fecha);
                     cmd.Parameters.AddWithValue("@idMovilV", idMovil);
                     cmd.Parameters.AddWithValue("@horaSal", horaSalida);
-
-                    cmd.Parameters.Clear();
 
                     cmd.CommandText = consultaEnfXViaje;
                     cmd.ExecuteNonQuery();
@@ -68,14 +67,15 @@ namespace SIMED_V1.Bases_de_datos
                 foreach (var matMed in listaMed)
                 {
 
-                    string consultaMedxViaje = @"INSERT INTO MEDICOSXVIAJES (numeroMatriculaMedico, fecha, horaSalida, id_movil) VALUES(@matM, @fechaV,
+                    string consultaMedxViaje = @"INSERT INTO MEDICOSXVIAJES (numeroMatriculaMedico, fecha, hora_salida, id_movil) VALUES(@matM, @fechaV,
                                                 @horaSal, @idMovilV)";
+                    cmd.Parameters.Clear();
                     cmd.Parameters.AddWithValue("@matM", matMed);
                     cmd.Parameters.AddWithValue("@fechaV", fecha);
                     cmd.Parameters.AddWithValue("@idMovilV", idMovil);
                     cmd.Parameters.AddWithValue("@horaSal", horaSalida);
 
-                    cmd.Parameters.Clear();
+                    
 
                     cmd.CommandText = consultaMedxViaje;
                     cmd.ExecuteNonQuery();

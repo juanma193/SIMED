@@ -108,7 +108,7 @@
             this.btnVolver.ForeColor = System.Drawing.Color.White;
             this.btnVolver.Image = global::SIMED_V1.Properties.Resources.left_arrow;
             this.btnVolver.Location = new System.Drawing.Point(9, 717);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(63, 37);
             this.btnVolver.TabIndex = 54;
@@ -118,8 +118,8 @@
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(860, 11);
-            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarApp.Location = new System.Drawing.Point(848, 11);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
             this.btnCerrarApp.TabIndex = 53;
@@ -130,8 +130,8 @@
             this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(823, 11);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(811, 11);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
             this.btnMinimizar.TabIndex = 52;
@@ -161,7 +161,7 @@
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.guna2ShadowPanel1.ShadowDepth = 80;
             this.guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.ForwardDiagonal;
-            this.guna2ShadowPanel1.Size = new System.Drawing.Size(832, 647);
+            this.guna2ShadowPanel1.Size = new System.Drawing.Size(828, 647);
             this.guna2ShadowPanel1.TabIndex = 51;
             this.guna2ShadowPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2ShadowPanel1_Paint);
             // 
@@ -176,7 +176,7 @@
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox3.Location = new System.Drawing.Point(48, 401);
-            this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GroupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.Size = new System.Drawing.Size(726, 179);
             this.guna2GroupBox3.TabIndex = 63;
@@ -200,7 +200,7 @@
             this.txtMatriculaMedico.IconLeft = global::SIMED_V1.Properties.Resources.numbers;
             this.txtMatriculaMedico.IconLeftSize = new System.Drawing.Size(30, 20);
             this.txtMatriculaMedico.Location = new System.Drawing.Point(29, 48);
-            this.txtMatriculaMedico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMatriculaMedico.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatriculaMedico.MaxLength = 10;
             this.txtMatriculaMedico.Name = "txtMatriculaMedico";
             this.txtMatriculaMedico.PasswordChar = '\0';
@@ -209,6 +209,7 @@
             this.txtMatriculaMedico.SelectedText = "";
             this.txtMatriculaMedico.Size = new System.Drawing.Size(184, 29);
             this.txtMatriculaMedico.TabIndex = 57;
+            this.txtMatriculaMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatriculaMedico_KeyPress);
             // 
             // grdMedicos
             // 
@@ -308,10 +309,10 @@
             this.btnBuscarMedico.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnBuscarMedico.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscarMedico.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarMedico.Location = new System.Drawing.Point(229, 48);
-            this.btnBuscarMedico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarMedico.Location = new System.Drawing.Point(220, 101);
+            this.btnBuscarMedico.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarMedico.Name = "btnBuscarMedico";
-            this.btnBuscarMedico.Size = new System.Drawing.Size(86, 29);
+            this.btnBuscarMedico.Size = new System.Drawing.Size(94, 29);
             this.btnBuscarMedico.TabIndex = 54;
             this.btnBuscarMedico.Text = "Buscar";
             this.btnBuscarMedico.Click += new System.EventHandler(this.btnBuscarMedico_Click);
@@ -334,7 +335,7 @@
             this.txtNombreMedico.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreMedico.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtNombreMedico.Location = new System.Drawing.Point(29, 102);
-            this.txtNombreMedico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreMedico.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreMedico.MaxLength = 30;
             this.txtNombreMedico.Name = "txtNombreMedico";
             this.txtNombreMedico.PasswordChar = '\0';
@@ -362,7 +363,7 @@
             this.txtApellidoMedico.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellidoMedico.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtApellidoMedico.Location = new System.Drawing.Point(29, 134);
-            this.txtApellidoMedico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellidoMedico.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellidoMedico.MaxLength = 30;
             this.txtApellidoMedico.Name = "txtApellidoMedico";
             this.txtApellidoMedico.PasswordChar = '\0';
@@ -382,12 +383,13 @@
             this.btnAgregarMedico.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregarMedico.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregarMedico.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAgregarMedico.Enabled = false;
             this.btnAgregarMedico.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(103)))), ((int)(((byte)(198)))));
             this.btnAgregarMedico.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnAgregarMedico.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnAgregarMedico.ForeColor = System.Drawing.Color.White;
             this.btnAgregarMedico.Location = new System.Drawing.Point(220, 134);
-            this.btnAgregarMedico.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarMedico.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarMedico.Name = "btnAgregarMedico";
             this.btnAgregarMedico.Size = new System.Drawing.Size(94, 29);
             this.btnAgregarMedico.TabIndex = 58;
@@ -449,7 +451,7 @@
             this.txtKilometros.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtKilometros.IconLeft = global::SIMED_V1.Properties.Resources.numeros;
             this.txtKilometros.Location = new System.Drawing.Point(301, 80);
-            this.txtKilometros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtKilometros.Margin = new System.Windows.Forms.Padding(2);
             this.txtKilometros.Name = "txtKilometros";
             this.txtKilometros.PasswordChar = '\0';
             this.txtKilometros.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -457,6 +459,7 @@
             this.txtKilometros.SelectedText = "";
             this.txtKilometros.Size = new System.Drawing.Size(247, 29);
             this.txtKilometros.TabIndex = 38;
+            this.txtKilometros.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKilometros_KeyPress);
             // 
             // dtHoraLlegada
             // 
@@ -472,6 +475,7 @@
             this.dtHoraLlegada.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtHoraLlegada.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtHoraLlegada.Name = "dtHoraLlegada";
+            this.dtHoraLlegada.ShowUpDown = true;
             this.dtHoraLlegada.Size = new System.Drawing.Size(113, 29);
             this.dtHoraLlegada.TabIndex = 37;
             this.dtHoraLlegada.Value = new System.DateTime(2022, 9, 14, 0, 0, 0, 0);
@@ -490,6 +494,7 @@
             this.dtHoraSalida.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtHoraSalida.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtHoraSalida.Name = "dtHoraSalida";
+            this.dtHoraSalida.ShowUpDown = true;
             this.dtHoraSalida.Size = new System.Drawing.Size(113, 29);
             this.dtHoraSalida.TabIndex = 34;
             this.dtHoraSalida.Value = new System.DateTime(2022, 9, 14, 0, 0, 0, 0);
@@ -508,8 +513,8 @@
             this.btnRegistrarViaje.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnRegistrarViaje.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnRegistrarViaje.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrarViaje.Location = new System.Drawing.Point(632, 592);
-            this.btnRegistrarViaje.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRegistrarViaje.Location = new System.Drawing.Point(605, 595);
+            this.btnRegistrarViaje.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegistrarViaje.Name = "btnRegistrarViaje";
             this.btnRegistrarViaje.Size = new System.Drawing.Size(192, 36);
             this.btnRegistrarViaje.TabIndex = 22;
@@ -589,7 +594,7 @@
             this.txtCombustiblePost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCombustiblePost.IconLeft = global::SIMED_V1.Properties.Resources.calle;
             this.txtCombustiblePost.Location = new System.Drawing.Point(301, 159);
-            this.txtCombustiblePost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCombustiblePost.Margin = new System.Windows.Forms.Padding(2);
             this.txtCombustiblePost.Name = "txtCombustiblePost";
             this.txtCombustiblePost.PasswordChar = '\0';
             this.txtCombustiblePost.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -597,6 +602,7 @@
             this.txtCombustiblePost.SelectedText = "";
             this.txtCombustiblePost.Size = new System.Drawing.Size(247, 29);
             this.txtCombustiblePost.TabIndex = 29;
+            this.txtCombustiblePost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCombustiblePost_KeyPress);
             // 
             // txtCombustiblePrevio
             // 
@@ -615,7 +621,7 @@
             this.txtCombustiblePrevio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtCombustiblePrevio.IconLeft = global::SIMED_V1.Properties.Resources.calle;
             this.txtCombustiblePrevio.Location = new System.Drawing.Point(301, 127);
-            this.txtCombustiblePrevio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCombustiblePrevio.Margin = new System.Windows.Forms.Padding(2);
             this.txtCombustiblePrevio.Name = "txtCombustiblePrevio";
             this.txtCombustiblePrevio.PasswordChar = '\0';
             this.txtCombustiblePrevio.PlaceholderForeColor = System.Drawing.Color.DimGray;
@@ -623,6 +629,7 @@
             this.txtCombustiblePrevio.SelectedText = "";
             this.txtCombustiblePrevio.Size = new System.Drawing.Size(247, 29);
             this.txtCombustiblePrevio.TabIndex = 28;
+            this.txtCombustiblePrevio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCombustiblePrevio_KeyPress);
             // 
             // guna2GroupBox2
             // 
@@ -634,7 +641,7 @@
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.guna2GroupBox2.Location = new System.Drawing.Point(568, 50);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
-            this.guna2GroupBox2.Size = new System.Drawing.Size(229, 122);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(220, 106);
             this.guna2GroupBox2.TabIndex = 21;
             this.guna2GroupBox2.Text = "Turno rotativo";
             // 
@@ -647,7 +654,7 @@
             this.rdNoche.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rdNoche.CheckedState.InnerOffset = -4;
             this.rdNoche.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.rdNoche.Location = new System.Drawing.Point(14, 87);
+            this.rdNoche.Location = new System.Drawing.Point(148, 64);
             this.rdNoche.Name = "rdNoche";
             this.rdNoche.Size = new System.Drawing.Size(58, 17);
             this.rdNoche.TabIndex = 6;
@@ -666,7 +673,7 @@
             this.rdMañana.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rdMañana.CheckedState.InnerOffset = -4;
             this.rdMañana.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.rdMañana.Location = new System.Drawing.Point(14, 41);
+            this.rdMañana.Location = new System.Drawing.Point(16, 64);
             this.rdMañana.Name = "rdMañana";
             this.rdMañana.Size = new System.Drawing.Size(67, 17);
             this.rdMañana.TabIndex = 4;
@@ -685,7 +692,7 @@
             this.rdTarde.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rdTarde.CheckedState.InnerOffset = -4;
             this.rdTarde.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.rdTarde.Location = new System.Drawing.Point(14, 64);
+            this.rdTarde.Location = new System.Drawing.Point(89, 64);
             this.rdTarde.Name = "rdTarde";
             this.rdTarde.Size = new System.Drawing.Size(53, 17);
             this.rdTarde.TabIndex = 5;
@@ -706,7 +713,7 @@
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox1.Location = new System.Drawing.Point(48, 207);
-            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2GroupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(726, 179);
             this.guna2GroupBox1.TabIndex = 62;
@@ -730,7 +737,7 @@
             this.txtMatriculaEnfermero.IconLeft = global::SIMED_V1.Properties.Resources.numbers;
             this.txtMatriculaEnfermero.IconLeftSize = new System.Drawing.Size(30, 20);
             this.txtMatriculaEnfermero.Location = new System.Drawing.Point(29, 50);
-            this.txtMatriculaEnfermero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMatriculaEnfermero.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatriculaEnfermero.MaxLength = 10;
             this.txtMatriculaEnfermero.Name = "txtMatriculaEnfermero";
             this.txtMatriculaEnfermero.PasswordChar = '\0';
@@ -739,6 +746,7 @@
             this.txtMatriculaEnfermero.SelectedText = "";
             this.txtMatriculaEnfermero.Size = new System.Drawing.Size(184, 29);
             this.txtMatriculaEnfermero.TabIndex = 50;
+            this.txtMatriculaEnfermero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatriculaEnfermero_KeyPress);
             // 
             // btnBuscarEnfermero
             // 
@@ -754,10 +762,10 @@
             this.btnBuscarEnfermero.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnBuscarEnfermero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscarEnfermero.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarEnfermero.Location = new System.Drawing.Point(229, 50);
-            this.btnBuscarEnfermero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarEnfermero.Location = new System.Drawing.Point(220, 96);
+            this.btnBuscarEnfermero.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarEnfermero.Name = "btnBuscarEnfermero";
-            this.btnBuscarEnfermero.Size = new System.Drawing.Size(86, 29);
+            this.btnBuscarEnfermero.Size = new System.Drawing.Size(94, 29);
             this.btnBuscarEnfermero.TabIndex = 42;
             this.btnBuscarEnfermero.Text = "Buscar";
             this.btnBuscarEnfermero.Click += new System.EventHandler(this.btnBuscarEnfermero_Click);
@@ -780,7 +788,7 @@
             this.txtNombreEnfermero.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreEnfermero.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtNombreEnfermero.Location = new System.Drawing.Point(29, 96);
-            this.txtNombreEnfermero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreEnfermero.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreEnfermero.MaxLength = 30;
             this.txtNombreEnfermero.Name = "txtNombreEnfermero";
             this.txtNombreEnfermero.PasswordChar = '\0';
@@ -800,12 +808,13 @@
             this.btnAgregarEnfermero.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregarEnfermero.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnAgregarEnfermero.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAgregarEnfermero.Enabled = false;
             this.btnAgregarEnfermero.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(103)))), ((int)(((byte)(198)))));
             this.btnAgregarEnfermero.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnAgregarEnfermero.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnAgregarEnfermero.ForeColor = System.Drawing.Color.White;
             this.btnAgregarEnfermero.Location = new System.Drawing.Point(220, 132);
-            this.btnAgregarEnfermero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarEnfermero.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarEnfermero.Name = "btnAgregarEnfermero";
             this.btnAgregarEnfermero.Size = new System.Drawing.Size(94, 29);
             this.btnAgregarEnfermero.TabIndex = 52;
@@ -830,7 +839,7 @@
             this.txtApellidoEnfermero.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellidoEnfermero.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtApellidoEnfermero.Location = new System.Drawing.Point(28, 132);
-            this.txtApellidoEnfermero.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellidoEnfermero.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellidoEnfermero.MaxLength = 30;
             this.txtApellidoEnfermero.Name = "txtApellidoEnfermero";
             this.txtApellidoEnfermero.PasswordChar = '\0';
@@ -939,14 +948,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(905, 760);
+            this.ClientSize = new System.Drawing.Size(893, 760);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnCerrarApp);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.guna2ShadowPanel1);
             this.Controls.Add(this.lblCrearCuenta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ViajesNuevo";
             this.Text = "ViajesNuevo";
             this.guna2ShadowPanel1.ResumeLayout(false);

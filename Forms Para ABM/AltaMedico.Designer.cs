@@ -307,6 +307,7 @@
             this.dtHoraIngresoMedico.ShowUpDown = true;
             this.dtHoraIngresoMedico.Size = new System.Drawing.Size(113, 35);
             this.dtHoraIngresoMedico.TabIndex = 14;
+            this.dtHoraIngresoMedico.UseWaitCursor = true;
             this.dtHoraIngresoMedico.Value = new System.DateTime(2022, 9, 14, 0, 0, 0, 0);
             // 
             // label2
