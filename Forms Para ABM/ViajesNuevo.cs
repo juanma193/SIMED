@@ -201,11 +201,11 @@ namespace SIMED_V1.Forms_Para_ABM
             if (enfer && kmtot && comrest)
             {
                 List<int> listaMedicos = new List<int>();
-                for (int i = 0; i < grdEnfermeros.Rows.Count - 1; i++)
+                for (int i = 0; i < grdMedicos.Rows.Count - 1; i++)
                 {
                     //if (grdMedicos.Rows[i].Cells[0].Value != null)
                     //{
-                    listaMedicos.Add(int.Parse(grdEnfermeros.Rows[i].Cells[0].Value.ToString()));
+                    listaMedicos.Add(int.Parse(grdMedicos.Rows[i].Cells[0].Value.ToString()));
                     //}
                 }
 
@@ -319,6 +319,16 @@ namespace SIMED_V1.Forms_Para_ABM
             {
                 e.Handled = true;
             }
+        }
+
+        private void cmbMoviles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViajesNuevo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

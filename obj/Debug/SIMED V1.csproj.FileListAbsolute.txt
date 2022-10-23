@@ -232,3 +232,10 @@ C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.DatosMedico.res
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ModificarEnfermero.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ModificarMedico.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.UModelosMarcas.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaMarcas.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaRelacionLaboral.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaMarcas.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaRelacionLaboral.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ViajesNuevo.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.URelacionesLaborales.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.UViajes.resources

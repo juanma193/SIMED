@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.btnMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -82,6 +82,7 @@
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
             this.btnMinimizar.TabIndex = 62;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnBuscarUsuario
             // 
@@ -125,7 +126,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(312, 44);
             this.btnEliminar.TabIndex = 60;
             this.btnEliminar.Text = "Eliminar ";
-            this.btnEliminar.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.btnElminar_Click);
             // 
             // btnModificarEmpleado
             // 
@@ -159,6 +160,7 @@
             this.label1.Size = new System.Drawing.Size(177, 23);
             this.label1.TabIndex = 56;
             this.label1.Text = "Búsqueda por usuario";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblConsultarEnfermero
             // 
@@ -169,6 +171,7 @@
             this.lblConsultarEnfermero.Size = new System.Drawing.Size(278, 41);
             this.lblConsultarEnfermero.TabIndex = 54;
             this.lblConsultarEnfermero.Text = "Consultar usuarios";
+            this.lblConsultarEnfermero.Click += new System.EventHandler(this.lblConsultarEnfermero_Click);
             // 
             // btnCerrarApp
             // 
@@ -180,6 +183,7 @@
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
             this.btnCerrarApp.TabIndex = 63;
+            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
             // label2
             // 
@@ -191,6 +195,7 @@
             this.label2.Size = new System.Drawing.Size(197, 23);
             this.label2.TabIndex = 64;
             this.label2.Text = "Búsqueda por empleado";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnBuscarEmpleado
             // 
@@ -216,18 +221,18 @@
             // 
             // gbUsuarios
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.gbUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.gbUsuarios.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.gbUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.gbUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gbUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gbUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.gbUsuarios.ColumnHeadersHeight = 20;
             this.gbUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gbUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -239,14 +244,14 @@
             this.IdUsuario,
             this.NombreUsuario,
             this.Email});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gbUsuarios.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gbUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             this.gbUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.gbUsuarios.Location = new System.Drawing.Point(13, 79);
             this.gbUsuarios.Margin = new System.Windows.Forms.Padding(4);
@@ -278,6 +283,7 @@
             this.gbUsuarios.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gbUsuarios.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.gbUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gbUsuarios_CellClick_1);
+            this.gbUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gbUsuarios_CellContentClick);
             // 
             // Legajo
             // 

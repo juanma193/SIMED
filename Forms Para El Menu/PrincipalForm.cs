@@ -171,8 +171,11 @@ namespace SIMED_V1
 
         private void btnViajes_Click(object sender, EventArgs e)
         {
-            ViajesNuevo ventana = new ViajesNuevo();
-            ventana.Show();
+            this.pnContenido.Controls.Remove(ContActivo);
+
+            ContActivo = new UViajes();
+            ContActivo.Dock = DockStyle.Fill;
+            this.pnContenido.Controls.Add(ContActivo);
         }
     }
 }

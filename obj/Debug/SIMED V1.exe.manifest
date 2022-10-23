@@ -162,14 +162,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="11658736">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="11822576">
       <assemblyIdentity name="SIMED V1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JaBdwX7ZbISxdbb3tsd0/MdmOXO9WNp5/vvcnCmMORw=</dsig:DigestValue>
+        <dsig:DigestValue>utlobEvUO6gp+G5HC3/2oKzQ90QSZhjSzIinnNXgnfM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -605,13 +605,13 @@
       <dsig:DigestValue>E+wKiiytURsGlbwWOl7DKmRvEgrZELLda3jOTokl+70=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SIMED V1.exe.config" size="6740">
+  <file name="SIMED V1.exe.config" size="4810">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>UVBR6sWPtHtZM11e0wt9KS7RqqMqEsJ250ljsuDw08Y=</dsig:DigestValue>
+      <dsig:DigestValue>bRhkmtis85JpMnO+xXJhKjY6R3TyV/MqHpM2sZNAbUk=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

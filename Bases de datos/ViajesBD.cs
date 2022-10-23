@@ -165,5 +165,246 @@ namespace SIMED_V1.Bases_de_datos
             }
         }
 
+        public static List<Viajes> getViajes(DateTime fecha)
+        {
+            var resultado = new List<Viajes>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var viajes = db.Viajes.Where(a => a.Fecha == fecha);
+                resultado = viajes.ToList();
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
+        }
+        public static List<Viajes> getViajesXPatente(Ambulancias movil)
+        {
+            var resultado = new List<Viajes>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var viajes = db.Viajes.Where(a => a.IdMovil == movil.IdMovil);
+                resultado = viajes.ToList();
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
+        }
+
+
+
+        public static string obtenerPatente(int idmovil)
+        {
+            var resultado = new Ambulancias();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                resultado = db.Ambulancias.First(a => a.IdMovil == idmovil);
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado.Patente;
+        }
+
+        public static Ambulancias obtenerMovil(int id)
+        {
+            var resultado = new Ambulancias();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                resultado = db.Ambulancias.First(a => a.IdMovil == id);
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
+        }
+
+
+        public static int obtenerMatriculaMedico(DateTime fecha)
+        {
+            var resultado = new Medicosxviajes();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                resultado = db.Medicosxviajes.First(a => a.Fecha == fecha);
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado.NumeroMatriculaMedico;
+        }
+
+        public static int obtenerMatriculaEnfermero(DateTime fecha)
+        {
+            var resultado = new Enfermerosxviajes();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                resultado = db.Enfermerosxviajes.First(a => a.Fecha == fecha);
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado.NumeroMatriculaEnfermero;
+        }
+
+
+        public static List<DateTime> getFechasxMedico(int matricula)
+        {
+            var fechas = new List<DateTime>();
+            var travels = new List<Medicosxviajes>();
+            var db = new BD3K3G05_2022Context();
+            
+            try
+            {
+                var viajes = db.Medicosxviajes.Where(a => a.NumeroMatriculaMedico == matricula );
+                travels = viajes.ToList();
+            }
+            catch (Exception ex)
+            {
+                travels = null;
+            }
+
+            foreach (var travel in travels)
+            {
+                fechas.Add(travel.Fecha);
+            }
+
+            return fechas;
+        }
+
+        public static List<DateTime> getFechasxEnfermero(int matricula)
+        {
+            var fechas = new List<DateTime>();
+            var travels = new List<Enfermerosxviajes>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var viajes = db.Enfermerosxviajes.Where(a => a.NumeroMatriculaEnfermero == matricula);
+                travels = viajes.ToList();
+            }
+            catch (Exception ex)
+            {
+                travels = null;
+            }
+
+            foreach (var travel in travels)
+            {
+                fechas.Add(travel.Fecha);
+            }
+
+            return fechas;
+        }
+
+        public static List<DateTime> getFechasxMedicoxEnfermero(int matriculaEnfermero, int matriculaMedico)
+        {
+            var fechas = new List<DateTime>();
+            var travelsMedicos = new List<Medicosxviajes>();
+            var travelsEnfermeros = new List<Enfermerosxviajes>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var viajesMedicos = db.Medicosxviajes.Where(a => a.NumeroMatriculaMedico == matriculaMedico);
+                travelsMedicos = viajesMedicos.ToList();
+
+                var viajesEnfermeros = db.Enfermerosxviajes.Where(a => a.NumeroMatriculaEnfermero == matriculaEnfermero);
+                travelsEnfermeros = viajesEnfermeros.ToList();
+            }
+            catch (Exception ex)
+            {
+                travelsMedicos = null;
+                travelsEnfermeros = null;
+            }
+
+            foreach (var travel in travelsMedicos)
+            {
+                fechas.Add(travel.Fecha);
+            }
+
+            foreach (var travel in travelsEnfermeros)
+            {
+                fechas.Add(travel.Fecha);
+            }
+
+            
+
+            return fechas;
+        }
+
+        public static List<Viajes> getViajesXFechas(List<DateTime> fechas)
+        {
+            var resultado = new List<Viajes>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                foreach (var fecha in fechas)
+                {
+                    var viajes = db.Viajes.Where(a => a.Fecha == fecha);
+                    resultado = viajes.ToList();
+
+                }
+
+                
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
+        }
+
+
+        public static List<Viajes> getViajesXPatenteXFecha(DateTime fecha,Ambulancias movil)
+        {
+            var resultado = new List<Viajes>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+               
+             var viajes = db.Viajes.Where(a => a.Fecha == fecha && a.IdMovil == movil.IdMovil);
+             resultado = viajes.ToList();
+
+                
+
+
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
+        }
+
+
+
     }
 }
