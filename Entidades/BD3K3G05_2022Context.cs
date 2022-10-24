@@ -52,7 +52,7 @@ namespace SIMED.Models
         public virtual DbSet<TurnosRotativos> TurnosRotativos { get; set; }
         public virtual DbSet<TurnosRotativosxEnfermeros> TurnosRotativosxEnfermeros { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
-        public virtual DbSet<Viajes> Viajes { get; set; }
+        public virtual DbSet<Viajes> ViajesxEnfermeros { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

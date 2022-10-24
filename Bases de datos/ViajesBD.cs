@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SIMED_V1.Bases_de_datos
 {
@@ -164,6 +165,34 @@ namespace SIMED_V1.Bases_de_datos
                 cn.Close();
             }
         }
+        public static List<Viajes> CargarViajes()
+        {
+            var resultado = new List<Viajes>();
+            var db = new BD3K3G05_2022Context();
+
+
+
+            try
+            {
+                
+
+                var viajes = db.ViajesxEnfermeros;
+                resultado = viajes.ToList();
+                
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+
+
+
+
+            return resultado;
+
+
+        }
 
         public static List<Viajes> getViajes(DateTime fecha)
         {
@@ -172,7 +201,7 @@ namespace SIMED_V1.Bases_de_datos
 
             try
             {
-                var viajes = db.Viajes.Where(a => a.Fecha == fecha);
+                var viajes = db.ViajesxEnfermeros.Where(a => a.Fecha == fecha);
                 resultado = viajes.ToList();
             }
             catch (Exception ex)
@@ -189,7 +218,7 @@ namespace SIMED_V1.Bases_de_datos
 
             try
             {
-                var viajes = db.Viajes.Where(a => a.IdMovil == movil.IdMovil);
+                var viajes = db.ViajesxEnfermeros.Where(a => a.IdMovil == movil.IdMovil);
                 resultado = viajes.ToList();
             }
             catch (Exception ex)
@@ -251,8 +280,38 @@ namespace SIMED_V1.Bases_de_datos
                 resultado = null;
             }
 
-            return resultado.NumeroMatriculaMedico;
+            if (resultado == null)
+            {
+                return -1;
+            }
+            else { return resultado.NumeroMatriculaMedico; }
+
+            
         }
+
+        public static int obtenerMatriculaMedicoNoRepetido(DateTime fecha,int matricula)
+        {
+            var resultado = new Medicosxviajes();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                resultado = db.Medicosxviajes.First(a => a.Fecha == fecha && a.NumeroMatriculaMedico == matricula);
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            if (resultado == null)
+            {
+                return -1;
+            }
+            else { return resultado.NumeroMatriculaMedico; }
+
+
+        }
+
 
         public static int obtenerMatriculaEnfermero(DateTime fecha)
         {
@@ -270,6 +329,22 @@ namespace SIMED_V1.Bases_de_datos
 
             return resultado.NumeroMatriculaEnfermero;
         }
+        public static int obtenerMatriculaEnfermeroNoRepetido(DateTime fecha, int matricula)
+        {
+            var resultado = new Enfermerosxviajes();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                resultado = db.Enfermerosxviajes.First(a => a.Fecha == fecha && a.NumeroMatriculaEnfermero == matricula);
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado.NumeroMatriculaEnfermero;
+        }
 
 
         public static List<DateTime> getFechasxMedico(int matricula)
@@ -277,10 +352,10 @@ namespace SIMED_V1.Bases_de_datos
             var fechas = new List<DateTime>();
             var travels = new List<Medicosxviajes>();
             var db = new BD3K3G05_2022Context();
-            
+
             try
             {
-                var viajes = db.Medicosxviajes.Where(a => a.NumeroMatriculaMedico == matricula );
+                var viajes = db.Medicosxviajes.Where(a => a.NumeroMatriculaMedico == matricula);
                 travels = viajes.ToList();
             }
             catch (Exception ex)
@@ -288,10 +363,18 @@ namespace SIMED_V1.Bases_de_datos
                 travels = null;
             }
 
+
+
             foreach (var travel in travels)
             {
+
                 fechas.Add(travel.Fecha);
+                
             }
+         
+            
+  
+
 
             return fechas;
         }
@@ -314,10 +397,27 @@ namespace SIMED_V1.Bases_de_datos
 
             foreach (var travel in travels)
             {
-                fechas.Add(travel.Fecha);
-            }
+                String hora = travel.HoraSalida.Hours.ToString();
+                if (hora.Length == 1)
+                    hora = "0" + hora;
+                String minutos = travel.HoraSalida.Minutes.ToString();
+                if (minutos.Length == 1)
+                    minutos += "0";
 
-            return fechas;
+                var fechayHora = travel.Fecha.ToString("yyyy-MM-dd") + " " + hora + ":" + minutos;
+
+
+
+                DateTime myDate = DateTime.ParseExact(fechayHora, "yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+
+                fechas.Add(myDate);
+            }
+            HashSet<DateTime> hashWithoutDuplicates = new HashSet<DateTime>(fechas);
+            List<DateTime> listWithoutDuplicates = hashWithoutDuplicates.ToList();
+
+
+
+            return listWithoutDuplicates;
         }
 
         public static List<DateTime> getFechasxMedicoxEnfermero(int matriculaEnfermero, int matriculaMedico)
@@ -341,19 +441,56 @@ namespace SIMED_V1.Bases_de_datos
                 travelsEnfermeros = null;
             }
 
+            HashSet<DateTime> hashWithoutDuplicates = new HashSet<DateTime>();
+
             foreach (var travel in travelsMedicos)
             {
-                fechas.Add(travel.Fecha);
+
+                String hora = travel.HoraSalida.Hours.ToString();
+                if (hora.Length == 1)
+                    hora = "0" + hora;
+                String minutos = travel.HoraSalida.Minutes.ToString();
+                if (minutos.Length == 1)
+                    minutos += "0";
+
+                var fechayHora = travel.Fecha.ToString("yyyy-MM-dd") + " " + hora + ":" + minutos;
+
+               
+
+                DateTime myDate = DateTime.ParseExact(fechayHora, "yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+
+                hashWithoutDuplicates.Add(myDate);
             }
 
             foreach (var travel in travelsEnfermeros)
             {
-                fechas.Add(travel.Fecha);
+                String hora = travel.HoraSalida.Hours.ToString();
+                if (hora.Length == 1)
+                    hora = "0" + hora;
+                String minutos = travel.HoraSalida.Minutes.ToString();
+                if (minutos.Length == 1)
+                    minutos += "0";
+
+                var fechayHora = travel.Fecha.ToString("yyyy-MM-dd") + " " + hora + ":" + minutos;
+
+
+
+                DateTime myDate = DateTime.ParseExact(fechayHora, "yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+
+                if (hashWithoutDuplicates.Contains(myDate))
+                {
+                    fechas.Add(myDate);
+                }
+
+               
             }
 
-            
+            HashSet<DateTime> hashWithoutDuplicatesfinal = new HashSet<DateTime>(fechas);
+            List<DateTime> listWithoutDuplicates = hashWithoutDuplicatesfinal.ToList();
 
-            return fechas;
+
+
+            return listWithoutDuplicates;
         }
 
         public static List<Viajes> getViajesXFechas(List<DateTime> fechas)
@@ -361,24 +498,115 @@ namespace SIMED_V1.Bases_de_datos
             var resultado = new List<Viajes>();
             var db = new BD3K3G05_2022Context();
 
+
+
             try
             {
                 foreach (var fecha in fechas)
                 {
-                    var viajes = db.Viajes.Where(a => a.Fecha == fecha);
-                    resultado = viajes.ToList();
+                    var viajes = db.ViajesxEnfermeros.First(a => a.Fecha == fecha);
+
+                   
+                        resultado.Add(viajes);
+                    
+
 
                 }
 
-                
+
             }
             catch (Exception ex)
             {
                 resultado = null;
             }
 
+
+
+            
+
             return resultado;
+
+
         }
+
+        public static List<Viajes> getViajesXFechasCheckBox(List<DateTime> fechas, DateTime date)
+        {
+            var resultado = new List<Viajes>();
+            var db = new BD3K3G05_2022Context();
+
+
+
+            try
+            {
+                foreach (var fecha in fechas)
+                {
+
+                    var viajes = db.ViajesxEnfermeros.First(a => a.Fecha == fecha);
+
+                    if (viajes.Fecha == date)
+                    {
+                        resultado.Add(viajes);
+                    }
+
+
+                    
+
+
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+
+
+
+
+            return resultado;
+
+
+        }
+
+        public static List<Viajes> getViajesXFechasUsandoMedico(List<DateTime> fechas)
+        {
+            var resultado = new List<Viajes>();
+            var db = new BD3K3G05_2022Context();
+
+
+
+            try
+            {
+                foreach (var fecha in fechas)
+                {
+                    var viajes = db.ViajesxEnfermeros.First(a => a.Fecha == fecha);
+
+
+
+                    resultado.Add(viajes);
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+
+           
+
+
+            return resultado;
+
+
+        }
+
+
 
 
         public static List<Viajes> getViajesXPatenteXFecha(DateTime fecha,Ambulancias movil)
@@ -389,7 +617,7 @@ namespace SIMED_V1.Bases_de_datos
             try
             {
                
-             var viajes = db.Viajes.Where(a => a.Fecha == fecha && a.IdMovil == movil.IdMovil);
+             var viajes = db.ViajesxEnfermeros.Where(a => a.Fecha == fecha && a.IdMovil == movil.IdMovil);
              resultado = viajes.ToList();
 
                 
@@ -404,7 +632,395 @@ namespace SIMED_V1.Bases_de_datos
             return resultado;
         }
 
+        public static List<int> getEnfermerosCompleto( string nombre, string apellido)
+        {
+            var resultado = new List<int>();
+            var nurses = new List<Enfermeros>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var enfermeros = db.Enfermeros.Where(a => (a.Apellido.Contains(apellido) && apellido.Length > 0) || (a.Nombre.Contains(nombre)) && nombre.Length > 0);
+                nurses = enfermeros.ToList();
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            foreach (var nurse in nurses) {
+
+                resultado.Add(nurse.NumeroMatricula);
+
+            }
+
+            return resultado;
+        }
+
+        public static List<int> getEnfermerosSoloNombre(string nombre)
+        {
+            var resultado = new List<int>();
+            var nurses = new List<Enfermeros>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var enfermeros = db.Enfermeros.Where(a => (a.Nombre.Contains(nombre)) && nombre.Length > 0);
+                nurses = enfermeros.ToList();
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            foreach (var nurse in nurses)
+            {
+
+                resultado.Add(nurse.NumeroMatricula);
+
+            }
+
+            return resultado;
+        }
+
+        public static List<int> getEnfermerosSoloApellido(string apellido)
+        {
+            var resultado = new List<int>();
+            var nurses = new List<Enfermeros>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var enfermeros = db.Enfermeros.Where(a => (a.Apellido.Contains(apellido)) && apellido.Length > 0);
+                nurses = enfermeros.ToList();
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            foreach (var nurse in nurses)
+            {
+
+                resultado.Add(nurse.NumeroMatricula);
+
+            }
+
+            return resultado;
+        }
+
+        public static List<int> getMedicosCompleto(string nombre, string apellido)
+        {
+
+            var resultado = new List<int>();
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "";
+                //Búsqueda por nombre y apellido
+                if (nombre != "" && apellido != "")
+                {
+                    consulta = @"SELECT numeroMatricula FROM MEDICOS WHERE nombre LIKE @nomMedico AND apellido LIKE @apeMedico";
+                }
 
 
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nomMedico", nombre);
+                cmd.Parameters.AddWithValue("@apeMedico", apellido);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                foreach (DataRow row in tabla.Rows)
+                {
+                    resultado.Add(int.Parse(row["numeroMatricula"].ToString()));
+                }
+
+            }
+
+            catch (Exception ex) { }
+
+            finally
+            {
+                cn.Close();
+            }
+
+            return resultado;
+
+        }
+
+        public static List<int> getMedicosCompletoSoloNombre(string nombre)
+        {
+
+            var resultado = new List<int>();
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "";
+                //Búsqueda por nombre y apellido
+                if (nombre != "")
+                {
+                    consulta = @"SELECT numeroMatricula FROM MEDICOS WHERE nombre LIKE @nomMedico";
+                }
+
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@nomMedico", nombre);
+                
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                foreach (DataRow row in tabla.Rows)
+                {
+                    resultado.Add(int.Parse(row["numeroMatricula"].ToString()));
+                }
+
+            }
+
+            catch (Exception ex) { }
+
+            finally
+            {
+                cn.Close();
+            }
+
+            return resultado;
+
+        }
+
+        public static List<int> getMedicosCompletoSoloApellido(string apellido)
+        {
+
+            var resultado = new List<int>();
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = "";
+                //Búsqueda por nombre y apellido
+                if (apellido != "")
+                {
+                    consulta = @"SELECT numeroMatricula FROM MEDICOS WHERE apellido LIKE @apeMedico";
+                }
+
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@apeMedico", apellido);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                foreach (DataRow row in tabla.Rows)
+                {
+                    resultado.Add(int.Parse(row["numeroMatricula"].ToString()));
+                }
+
+            }
+
+            catch (Exception ex) { }
+
+            finally
+            {
+                cn.Close();
+            }
+
+            return resultado;
+
+        }
+
+
+
+
+        public static List<DateTime> getFechasViajesXMatriculasEnfermeros(List<int> matriculas)
+        {
+            var resultado = new List<DateTime>();
+
+            var travels = new List<Enfermerosxviajes>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                foreach (var matricula in matriculas)
+                {
+                    var viajes = db.Enfermerosxviajes.Where(a => a.NumeroMatriculaEnfermero == matricula);
+                    travels = viajes.ToList();
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            foreach (var viaje in travels) {
+
+                resultado.Add(viaje.Fecha);
+            }
+
+
+            return resultado;
+        }
+
+
+        public static List<DateTime> getFechasViajesXMatriculasEnfermerosYMedicos(List<int> matriculasMedicos, List<int> matriculasEnfermeros)
+        {
+            var resultado = new List<DateTime>();
+
+            var travelsEnfermeros = new List<Enfermerosxviajes>();
+            var travelsMedicos = new List<Medicosxviajes>();
+            var db = new BD3K3G05_2022Context();
+            HashSet<DateTime> hashWithoutDuplicates = new HashSet<DateTime>();
+            var fechas = new List<DateTime>();
+
+            try
+            {
+                foreach (var matricula in matriculasEnfermeros)
+                {
+                    var viajes = db.Enfermerosxviajes.Where(a => a.NumeroMatriculaEnfermero == matricula);
+                    travelsEnfermeros = viajes.ToList();
+
+
+                }
+
+                foreach (var matricula in matriculasMedicos)
+                {
+                    var viajes = db.Medicosxviajes.Where(a => a.NumeroMatriculaMedico == matricula);
+                    travelsMedicos = viajes.ToList();
+
+
+                }
+
+
+
+                foreach (var travel in travelsMedicos)
+                {
+
+                    String hora = travel.HoraSalida.Hours.ToString();
+                    if (hora.Length == 1)
+                        hora = "0" + hora;
+                    String minutos = travel.HoraSalida.Minutes.ToString();
+                    if (minutos.Length == 1)
+                        minutos += "0";
+
+                    var fechayHora = travel.Fecha.ToString("yyyy-MM-dd") + " " + hora + ":" + minutos;
+
+
+
+                    DateTime myDate = DateTime.ParseExact(fechayHora, "yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+
+                    hashWithoutDuplicates.Add(myDate);
+                }
+
+                foreach (var travel in travelsEnfermeros)
+                {
+                    String hora = travel.HoraSalida.Hours.ToString();
+                    if (hora.Length == 1)
+                        hora = "0" + hora;
+                    String minutos = travel.HoraSalida.Minutes.ToString();
+                    if (minutos.Length == 1)
+                        minutos += "0";
+
+                    var fechayHora = travel.Fecha.ToString("yyyy-MM-dd") + " " + hora + ":" + minutos;
+
+
+
+                    DateTime myDate = DateTime.ParseExact(fechayHora, "yyyy-MM-dd HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+
+                    if (hashWithoutDuplicates.Contains(myDate))
+                    {
+                        fechas.Add(myDate);
+                    }
+
+
+                }
+
+            }
+
+            catch (Exception ex) { 
+            
+            
+            
+            }
+            
+
+                HashSet<DateTime> hashWithoutDuplicatesfinal = new HashSet<DateTime>(fechas);
+                List<DateTime> listWithoutDuplicates = hashWithoutDuplicatesfinal.ToList();
+
+
+
+                return listWithoutDuplicates;
+            
+
+        }
+
+
+        public static List<DateTime> getFechasViajesXMatriculasMedicos(List<int> matriculas)
+        {
+            var resultado = new List<DateTime>();
+
+            var travels = new List<Medicosxviajes>();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                foreach (var matricula in matriculas)
+                {
+                    var viajes = db.Medicosxviajes.Where(a => a.NumeroMatriculaMedico == matricula);
+                    travels = viajes.ToList();
+
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            foreach (var viaje in travels)
+            {
+
+                resultado.Add(viaje.Fecha);
+            }
+
+
+            return resultado;
+        }
     }
 }
