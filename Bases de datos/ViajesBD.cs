@@ -313,21 +313,72 @@ namespace SIMED_V1.Bases_de_datos
         }
 
 
-        public static int obtenerMatriculaEnfermero(DateTime fecha)
+        
+
+
+        public static List<Enfermerosxviajes> obtenerViajesDeLosEnfermeros(DateTime fecha, TimeSpan hora)
         {
-            var resultado = new Enfermerosxviajes();
+            var resultado = new List<Enfermerosxviajes>();
+            
             var db = new BD3K3G05_2022Context();
 
             try
             {
-                resultado = db.Enfermerosxviajes.First(a => a.Fecha == fecha);
+                var viajes = db.Enfermerosxviajes.Where(a => a.Fecha == fecha && a.HoraSalida == hora);
+                resultado = viajes.ToList();
             }
             catch (Exception ex)
             {
                 resultado = null;
             }
 
-            return resultado.NumeroMatriculaEnfermero;
+            return resultado;
+        }
+
+
+        public static List<Medicosxviajes> obtenerViajesDeLosMedicos(DateTime fecha, TimeSpan hora)
+        {
+            var resultado = new List<Medicosxviajes>();
+
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var viajes = db.Medicosxviajes.Where(a => a.Fecha == fecha && a.HoraSalida == hora);
+                resultado = viajes.ToList();
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
+        }
+
+        public static List<Enfermeros> obtenerEnfermeros(List<Enfermerosxviajes> listas)
+        {
+            var resultado = new List<Enfermeros>();
+
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                foreach (var lista in listas) {
+
+                    var viajes = db.Enfermeros.First(a => a.NumeroMatricula == lista.NumeroMatriculaEnfermero);
+                    resultado.Add(viajes);
+
+                }
+
+
+                
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
         }
         public static int obtenerMatriculaEnfermeroNoRepetido(DateTime fecha, int matricula)
         {
@@ -418,6 +469,22 @@ namespace SIMED_V1.Bases_de_datos
 
 
             return listWithoutDuplicates;
+        }
+
+        public static int obtenerMatriculaEnfermero(DateTime fecha)
+        {
+            var resultado = new Enfermerosxviajes();
+            var db = new BD3K3G05_2022Context();
+            try
+            {
+                resultado = db.Enfermerosxviajes.First(a => a.Fecha == fecha);
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado.NumeroMatriculaEnfermero;
         }
 
         public static List<DateTime> getFechasxMedicoxEnfermero(int matriculaEnfermero, int matriculaMedico)
@@ -657,6 +724,8 @@ namespace SIMED_V1.Bases_de_datos
             return resultado;
         }
 
+       
+
         public static List<int> getEnfermerosSoloNombre(string nombre)
         {
             var resultado = new List<int>();
@@ -759,6 +828,79 @@ namespace SIMED_V1.Bases_de_datos
             return resultado;
 
         }
+        public static List<Medicos> obtenerMedicos(List<Medicosxviajes> lista)
+        {
+
+            var resultado = new List<Medicos>();
+
+
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                foreach (var medico in lista)
+                {
+                    Medicos medic = new Medicos();
+                    SqlCommand cmd = new SqlCommand();
+                    string consulta = "";
+                    //Búsqueda por nombre y apellido
+                    if (medico.NumeroMatriculaMedico.ToString() != "")
+                    {
+                        consulta = @"SELECT * FROM MEDICOS WHERE numeroMatricula LIKE @matricula";
+                    }
+
+
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@matricula", medico.NumeroMatriculaMedico);
+
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = consulta;
+
+                    cn.Open();
+                    cmd.Connection = cn;
+
+                    DataTable tabla = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(tabla);
+
+                    foreach (DataRow row in tabla.Rows)
+                    {
+
+                        medic.NumeroMatricula = int.Parse(row[0].ToString());
+                        medic.NumDocumento = long.Parse(row[1].ToString());
+                        medic.IdTipoDocumento = int.Parse(row[2].ToString());
+                        medic.Apellido = row[3].ToString();
+                        medic.IdSexo = int.Parse(row[4].ToString());
+                        medic.Nombre = row[5].ToString();
+                        medic.IdBarrio = int.Parse(row[6].ToString());
+                        medic.FechaNacimiento = DateTime.Parse(row[7].ToString());
+                        medic.IdRelacionLaboral = int.Parse(row[8].ToString());
+                        medic.HorarioIngreso = TimeSpan.Parse(row[9].ToString());
+                        medic.HorarioEgreso = TimeSpan.Parse(row[10].ToString());
+                        medic.IdEspecialidad = int.Parse(row[11].ToString());
+                        medic.Calle = row[12].ToString();
+                        medic.NroCalle = int.Parse(row[13].ToString());
+                    }
+                    resultado.Add(medic);
+                }
+                }
+
+            catch (Exception ex) { }
+
+            finally
+            {
+                cn.Close();
+            }
+
+            return resultado;
+
+        }
+               
+
+        
+
 
         public static List<int> getMedicosCompletoSoloNombre(string nombre)
         {
@@ -1022,5 +1164,34 @@ namespace SIMED_V1.Bases_de_datos
 
             return resultado;
         }
+
+
+        public static Viajes getViajesParaModificar(DateTime fecha, TimeSpan hora)
+        {
+            Viajes resultado; 
+            var db = new BD3K3G05_2022Context();
+
+
+            try
+            {
+                
+               var viajes = db.ViajesxEnfermeros.First(a => a.Fecha == fecha && a.HoraSalida == hora);
+
+
+                resultado = viajes;
+                
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
+
+
+        }
+
+      
+
     }
 }

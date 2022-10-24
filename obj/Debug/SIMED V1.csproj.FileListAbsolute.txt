@@ -239,3 +239,4 @@ C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaRelacio
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ViajesNuevo.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.URelacionesLaborales.resources
 C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.UViajes.resources
+C:\Users\Nicolas\Desktop\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.Modificar_Viaje.resources

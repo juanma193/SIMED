@@ -1679,9 +1679,23 @@ namespace SIMED_V1.Forms_Para_ABM
                 {
                     if (indice >= 0)
                     {
-                        // Insertar Codigo para abrir un nuevo form de modificacion pasandole los datos necesarios
-                    }
-                    else
+                    DataGridViewRow filaSeleccionada = gbViajes.Rows[indice];
+                    DateTime fecha = (DateTime)filaSeleccionada.Cells[0].Value;
+                    
+                   
+                    DataGridViewRow filaSeleccionada2 = gbViajes.Rows[indice];
+                    TimeSpan hora = (TimeSpan)filaSeleccionada2.Cells[1].Value;
+
+                    Viajes viaje = ViajesBD.getViajesParaModificar(fecha, hora);
+
+                    Modificar_Viaje ventana = new Modificar_Viaje(viaje);
+
+                    ventana.Show();
+                    
+
+
+                }
+                else
                     {
                         ErroresForm mensaje = new ErroresForm();
                         mensaje.show("Seleccione un viaje");
@@ -1708,7 +1722,12 @@ namespace SIMED_V1.Forms_Para_ABM
                     }
                 }
             }
+
+        private void ConsultarViaje_Load(object sender, EventArgs e)
+        {
+
         }
+    }
     }
     
 
