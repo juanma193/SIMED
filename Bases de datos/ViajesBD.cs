@@ -884,6 +884,7 @@ namespace SIMED_V1.Bases_de_datos
                         medic.NroCalle = int.Parse(row[13].ToString());
                     }
                     resultado.Add(medic);
+                    cn.Close();
                 }
                 }
 
@@ -897,9 +898,9 @@ namespace SIMED_V1.Bases_de_datos
             return resultado;
 
         }
-               
 
-        
+
+       
 
 
         public static List<int> getMedicosCompletoSoloNombre(string nombre)

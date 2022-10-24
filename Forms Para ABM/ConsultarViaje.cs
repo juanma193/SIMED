@@ -1690,8 +1690,12 @@ namespace SIMED_V1.Forms_Para_ABM
 
                     Modificar_Viaje ventana = new Modificar_Viaje(viaje);
 
-                    ventana.Show();
                     
+
+                    ventana.Show();
+
+                    ventana.setearTurno(viaje);
+
 
 
                 }

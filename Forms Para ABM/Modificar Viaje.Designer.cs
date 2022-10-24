@@ -67,9 +67,6 @@
             this.txtCombustiblePost = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtCombustiblePrevio = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.rdNoche = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rdMañana = new Guna.UI2.WinForms.Guna2RadioButton();
-            this.rdTarde = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.txtMatriculaEnfermero = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnBuscarEnfermero = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -81,6 +78,9 @@
             this.nombreMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblCrearCuenta = new System.Windows.Forms.Label();
+            this.rdMañanaModificar = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rdTardeModificar = new Guna.UI2.WinForms.Guna2RadioButton();
+            this.rdNocheModificar = new Guna.UI2.WinForms.Guna2RadioButton();
             this.guna2ShadowPanel1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMedicos)).BeginInit();
@@ -641,9 +641,9 @@
             // 
             // guna2GroupBox2
             // 
-            this.guna2GroupBox2.Controls.Add(this.rdNoche);
-            this.guna2GroupBox2.Controls.Add(this.rdMañana);
-            this.guna2GroupBox2.Controls.Add(this.rdTarde);
+            this.guna2GroupBox2.Controls.Add(this.rdNocheModificar);
+            this.guna2GroupBox2.Controls.Add(this.rdTardeModificar);
+            this.guna2GroupBox2.Controls.Add(this.rdMañanaModificar);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -653,66 +653,6 @@
             this.guna2GroupBox2.Size = new System.Drawing.Size(293, 130);
             this.guna2GroupBox2.TabIndex = 21;
             this.guna2GroupBox2.Text = "Turno rotativo";
-            // 
-            // rdNoche
-            // 
-            this.rdNoche.AutoSize = true;
-            this.rdNoche.CheckedState.BorderColor = System.Drawing.Color.DimGray;
-            this.rdNoche.CheckedState.BorderThickness = 0;
-            this.rdNoche.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
-            this.rdNoche.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdNoche.CheckedState.InnerOffset = -4;
-            this.rdNoche.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.rdNoche.Location = new System.Drawing.Point(197, 79);
-            this.rdNoche.Margin = new System.Windows.Forms.Padding(4);
-            this.rdNoche.Name = "rdNoche";
-            this.rdNoche.Size = new System.Drawing.Size(69, 23);
-            this.rdNoche.TabIndex = 6;
-            this.rdNoche.Text = "Noche";
-            this.rdNoche.UncheckedState.BorderColor = System.Drawing.Color.DarkGray;
-            this.rdNoche.UncheckedState.BorderThickness = 2;
-            this.rdNoche.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdNoche.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rdMañana
-            // 
-            this.rdMañana.AutoSize = true;
-            this.rdMañana.CheckedState.BorderColor = System.Drawing.Color.DimGray;
-            this.rdMañana.CheckedState.BorderThickness = 0;
-            this.rdMañana.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
-            this.rdMañana.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdMañana.CheckedState.InnerOffset = -4;
-            this.rdMañana.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.rdMañana.Location = new System.Drawing.Point(21, 79);
-            this.rdMañana.Margin = new System.Windows.Forms.Padding(4);
-            this.rdMañana.Name = "rdMañana";
-            this.rdMañana.Size = new System.Drawing.Size(80, 23);
-            this.rdMañana.TabIndex = 4;
-            this.rdMañana.Text = "Mañana";
-            this.rdMañana.UncheckedState.BorderColor = System.Drawing.Color.DarkGray;
-            this.rdMañana.UncheckedState.BorderThickness = 2;
-            this.rdMañana.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdMañana.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            // 
-            // rdTarde
-            // 
-            this.rdTarde.AutoSize = true;
-            this.rdTarde.CheckedState.BorderColor = System.Drawing.Color.DimGray;
-            this.rdTarde.CheckedState.BorderThickness = 0;
-            this.rdTarde.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
-            this.rdTarde.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rdTarde.CheckedState.InnerOffset = -4;
-            this.rdTarde.Font = new System.Drawing.Font("Segoe UI", 8.25F);
-            this.rdTarde.Location = new System.Drawing.Point(119, 79);
-            this.rdTarde.Margin = new System.Windows.Forms.Padding(4);
-            this.rdTarde.Name = "rdTarde";
-            this.rdTarde.Size = new System.Drawing.Size(62, 23);
-            this.rdTarde.TabIndex = 5;
-            this.rdTarde.Text = "Tarde";
-            this.rdTarde.UncheckedState.BorderColor = System.Drawing.Color.DarkGray;
-            this.rdTarde.UncheckedState.BorderThickness = 2;
-            this.rdTarde.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rdTarde.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             // 
             // guna2GroupBox1
             // 
@@ -953,6 +893,60 @@
             this.lblCrearCuenta.TabIndex = 55;
             this.lblCrearCuenta.Text = "Crear viaje";
             // 
+            // rdMañanaModificar
+            // 
+            this.rdMañanaModificar.AutoSize = true;
+            this.rdMañanaModificar.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
+            this.rdMañanaModificar.CheckedState.BorderThickness = 0;
+            this.rdMañanaModificar.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
+            this.rdMañanaModificar.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdMañanaModificar.CheckedState.InnerOffset = -4;
+            this.rdMañanaModificar.Location = new System.Drawing.Point(12, 64);
+            this.rdMañanaModificar.Name = "rdMañanaModificar";
+            this.rdMañanaModificar.Size = new System.Drawing.Size(83, 24);
+            this.rdMañanaModificar.TabIndex = 0;
+            this.rdMañanaModificar.Text = "Mañana";
+            this.rdMañanaModificar.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdMañanaModificar.UncheckedState.BorderThickness = 2;
+            this.rdMañanaModificar.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdMañanaModificar.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // rdTardeModificar
+            // 
+            this.rdTardeModificar.AutoSize = true;
+            this.rdTardeModificar.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
+            this.rdTardeModificar.CheckedState.BorderThickness = 0;
+            this.rdTardeModificar.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
+            this.rdTardeModificar.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdTardeModificar.CheckedState.InnerOffset = -4;
+            this.rdTardeModificar.Location = new System.Drawing.Point(115, 64);
+            this.rdTardeModificar.Name = "rdTardeModificar";
+            this.rdTardeModificar.Size = new System.Drawing.Size(66, 24);
+            this.rdTardeModificar.TabIndex = 1;
+            this.rdTardeModificar.Text = "Tarde";
+            this.rdTardeModificar.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdTardeModificar.UncheckedState.BorderThickness = 2;
+            this.rdTardeModificar.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdTardeModificar.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
+            // rdNocheModificar
+            // 
+            this.rdNocheModificar.AutoSize = true;
+            this.rdNocheModificar.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
+            this.rdNocheModificar.CheckedState.BorderThickness = 0;
+            this.rdNocheModificar.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
+            this.rdNocheModificar.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rdNocheModificar.CheckedState.InnerOffset = -4;
+            this.rdNocheModificar.Location = new System.Drawing.Point(200, 64);
+            this.rdNocheModificar.Name = "rdNocheModificar";
+            this.rdNocheModificar.Size = new System.Drawing.Size(73, 24);
+            this.rdNocheModificar.TabIndex = 2;
+            this.rdNocheModificar.Text = "Noche";
+            this.rdNocheModificar.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rdNocheModificar.UncheckedState.BorderThickness = 2;
+            this.rdNocheModificar.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rdNocheModificar.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            // 
             // Modificar_Viaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1012,9 +1006,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtCombustiblePost;
         private Guna.UI2.WinForms.Guna2TextBox txtCombustiblePrevio;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private Guna.UI2.WinForms.Guna2RadioButton rdNoche;
-        private Guna.UI2.WinForms.Guna2RadioButton rdMañana;
-        private Guna.UI2.WinForms.Guna2RadioButton rdTarde;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         public Guna.UI2.WinForms.Guna2TextBox txtMatriculaEnfermero;
         private Guna.UI2.WinForms.Guna2GradientButton btnBuscarEnfermero;
@@ -1026,5 +1017,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreMedico;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoMedico;
         private System.Windows.Forms.Label lblCrearCuenta;
+        private Guna.UI2.WinForms.Guna2RadioButton rdNocheModificar;
+        private Guna.UI2.WinForms.Guna2RadioButton rdTardeModificar;
+        private Guna.UI2.WinForms.Guna2RadioButton rdMañanaModificar;
     }
 }

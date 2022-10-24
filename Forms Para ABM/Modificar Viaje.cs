@@ -14,53 +14,14 @@ namespace SIMED_V1.Forms_Para_ABM
 {
     public partial class Modificar_Viaje : Form
     {
-        public Modificar_Viaje(Viajes viaje)
+        Viajes viaje;
+        public Modificar_Viaje(Viajes travel)
         {
             InitializeComponent();
-            CargarComboMoviles();
-            CargarComboTiposViaje();
-
-
-            dtFechaViaje.Value = viaje.Fecha;
-            dtHoraSalida.Value = DateTime.Parse(ConvertirTimeSpanAFecha(viaje.HoraSalida,viaje.Fecha));
-            dtHoraLlegada.Value = DateTime.Parse(ConvertirTimeSpanAFecha(viaje.HoraLlegada, viaje.Fecha));
-            cmbMoviles.SelectedValue = (viaje.IdMovil);
-            txtKilometros.Text = viaje.KilometrosRealizados.ToString();
-            txtCombustiblePrevio.Text = viaje.CantCombustiblePrevio.ToString();
-            txtCombustiblePost.Text = viaje.CantCombustiblePost.ToString();
-            cmbTiposViaje.SelectedValue = viaje.IdTipoViaje;
-
-            if (viaje.IdTurnoRotativo == 0)
-            {
-                rdMañana.Checked = true;
-            }
-            else if (viaje.IdTurnoRotativo == 1)
-            {
-                rdTarde.Checked = true;
-            }
-            else if (viaje.IdTurnoRotativo == 2)
-            {
-                rdNoche.Checked = true;
-            }
-
-            List<Enfermerosxviajes> listaEnfermeros = ViajesBD.obtenerViajesDeLosEnfermeros(viaje.Fecha, viaje.HoraSalida);
-
-            List<Enfermeros> nurses = ViajesBD.obtenerEnfermeros(listaEnfermeros);
-
-            foreach (var nurse in nurses)
-            {
-                AgregarEnfermeros(nurse);
-            }
-
-            List<Medicosxviajes> listaMedicos = ViajesBD.obtenerViajesDeLosMedicos(viaje.Fecha, viaje.HoraSalida);
-
-            List<Medicos> medicos = ViajesBD.obtenerMedicos(listaMedicos);
-
-            foreach (var medico in medicos)
-            {
-                AgregarMedicos(medico);
-            }
+            viaje = travel;
         }
+
+
 
         private DataGridViewRow AgregarEnfermeros(Enfermeros nurse)
         {
@@ -157,10 +118,62 @@ namespace SIMED_V1.Forms_Para_ABM
             }
         }
 
+        public void setearTurno(Viajes viaje)
+        {
+            if (viaje.IdTurnoRotativo == 0)
+            {
+                rdMañanaModificar.Checked = true;
+               
+            }
+            else if (viaje.IdTurnoRotativo == 1)
+            {
+              
+                rdTardeModificar.Checked = true;
+                
+            }
+            else if (viaje.IdTurnoRotativo == 2)
+            {
+                
+                rdNocheModificar.Checked = true;
+            }
+
+        }
 
         private void Modificar_Viaje_Load(object sender, EventArgs e)
         {
+            
+            CargarComboMoviles();
+            CargarComboTiposViaje();
 
+
+            dtFechaViaje.Value = viaje.Fecha;
+            dtHoraSalida.Value = DateTime.Parse(ConvertirTimeSpanAFecha(viaje.HoraSalida, viaje.Fecha));
+            dtHoraLlegada.Value = DateTime.Parse(ConvertirTimeSpanAFecha(viaje.HoraLlegada, viaje.Fecha));
+            cmbMoviles.SelectedValue = (viaje.IdMovil);
+            txtKilometros.Text = viaje.KilometrosRealizados.ToString();
+            txtCombustiblePrevio.Text = viaje.CantCombustiblePrevio.ToString();
+            txtCombustiblePost.Text = viaje.CantCombustiblePost.ToString();
+            cmbTiposViaje.SelectedValue = viaje.IdTipoViaje;
+
+           
+
+            List<Enfermerosxviajes> listaEnfermeros = ViajesBD.obtenerViajesDeLosEnfermeros(viaje.Fecha, viaje.HoraSalida);
+
+            List<Enfermeros> nurses = ViajesBD.obtenerEnfermeros(listaEnfermeros);
+
+            foreach (var nurse in nurses)
+            {
+                AgregarEnfermeros(nurse);
+            }
+
+            List<Medicosxviajes> listaMedicos = ViajesBD.obtenerViajesDeLosMedicos(viaje.Fecha, viaje.HoraSalida);
+
+            List<Medicos> medicos = ViajesBD.obtenerMedicos(listaMedicos);
+
+            foreach (var medico in medicos)
+            {
+                AgregarMedicos(medico);
+            }
         }
     }
 }
