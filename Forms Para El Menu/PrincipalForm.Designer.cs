@@ -36,6 +36,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new Guna.UI2.WinForms.Guna2Button();
             this.btnOtrasFuncionalidades = new Guna.UI2.WinForms.Guna2Button();
+            this.btnViajes = new Guna.UI2.WinForms.Guna2Button();
             this.btnPlanes = new Guna.UI2.WinForms.Guna2Button();
             this.btnAfiliados = new Guna.UI2.WinForms.Guna2Button();
             this.btnUsuarios = new Guna.UI2.WinForms.Guna2Button();
@@ -60,7 +61,7 @@
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(768, 24);
+            this.guna2Panel1.Size = new System.Drawing.Size(959, 24);
             this.guna2Panel1.TabIndex = 0;
             this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
@@ -70,7 +71,7 @@
             this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox2.IconColor = System.Drawing.Color.Black;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(697, -2);
+            this.guna2ControlBox2.Location = new System.Drawing.Point(888, -2);
             this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ControlBox2.Name = "guna2ControlBox2";
             this.guna2ControlBox2.Size = new System.Drawing.Size(34, 26);
@@ -81,7 +82,7 @@
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2ControlBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(175)))), ((int)(((byte)(208)))));
             this.guna2ControlBox1.IconColor = System.Drawing.Color.White;
-            this.guna2ControlBox1.Location = new System.Drawing.Point(735, 0);
+            this.guna2ControlBox1.Location = new System.Drawing.Point(926, 0);
             this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ControlBox1.Name = "guna2ControlBox1";
             this.guna2ControlBox1.Size = new System.Drawing.Size(34, 26);
@@ -98,7 +99,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 24);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(250, 620);
+            this.panelMenu.Size = new System.Drawing.Size(250, 764);
             this.panelMenu.TabIndex = 1;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.txtMedicos_Paint);
             // 
@@ -109,6 +110,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(175)))), ((int)(((byte)(208)))));
             this.panel1.Controls.Add(this.btnCerrarSesion);
             this.panel1.Controls.Add(this.btnOtrasFuncionalidades);
+            this.panel1.Controls.Add(this.btnViajes);
             this.panel1.Controls.Add(this.btnPlanes);
             this.panel1.Controls.Add(this.btnAfiliados);
             this.panel1.Controls.Add(this.btnUsuarios);
@@ -117,7 +119,7 @@
             this.panel1.Controls.Add(this.btnAmbulancias);
             this.panel1.Location = new System.Drawing.Point(0, 103);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(246, 514);
+            this.panel1.Size = new System.Drawing.Size(246, 658);
             this.panel1.TabIndex = 10;
             // 
             // btnCerrarSesion
@@ -134,11 +136,11 @@
             this.btnCerrarSesion.Image = global::SIMED_V1.Properties.Resources.cerrar_sesion;
             this.btnCerrarSesion.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCerrarSesion.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 504);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 576);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(246, 72);
-            this.btnCerrarSesion.TabIndex = 10;
+            this.btnCerrarSesion.TabIndex = 15;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click_1);
@@ -157,14 +159,37 @@
             this.btnOtrasFuncionalidades.Image = global::SIMED_V1.Properties.Resources._299068_add_sign_icon;
             this.btnOtrasFuncionalidades.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnOtrasFuncionalidades.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnOtrasFuncionalidades.Location = new System.Drawing.Point(0, 432);
+            this.btnOtrasFuncionalidades.Location = new System.Drawing.Point(0, 504);
             this.btnOtrasFuncionalidades.Margin = new System.Windows.Forms.Padding(2);
             this.btnOtrasFuncionalidades.Name = "btnOtrasFuncionalidades";
             this.btnOtrasFuncionalidades.Size = new System.Drawing.Size(246, 72);
-            this.btnOtrasFuncionalidades.TabIndex = 11;
+            this.btnOtrasFuncionalidades.TabIndex = 14;
             this.btnOtrasFuncionalidades.Text = "Otras funcionalidades";
             this.btnOtrasFuncionalidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnOtrasFuncionalidades.Click += new System.EventHandler(this.btnOtrasFuncionalidades_Click);
+            // 
+            // btnViajes
+            // 
+            this.btnViajes.Animated = true;
+            this.btnViajes.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViajes.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViajes.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViajes.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViajes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnViajes.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(175)))), ((int)(((byte)(208)))));
+            this.btnViajes.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViajes.ForeColor = System.Drawing.Color.White;
+            this.btnViajes.Image = global::SIMED_V1.Properties.Resources._1061162_care_health_journey_medicine_pill_icon;
+            this.btnViajes.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnViajes.ImageSize = new System.Drawing.Size(40, 40);
+            this.btnViajes.Location = new System.Drawing.Point(0, 432);
+            this.btnViajes.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViajes.Name = "btnViajes";
+            this.btnViajes.Size = new System.Drawing.Size(246, 72);
+            this.btnViajes.TabIndex = 12;
+            this.btnViajes.Text = "Viajes";
+            this.btnViajes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnViajes.Click += new System.EventHandler(this.btnViajes_Click);
             // 
             // btnPlanes
             // 
@@ -339,7 +364,7 @@
             this.pnContenido.Location = new System.Drawing.Point(250, 24);
             this.pnContenido.Margin = new System.Windows.Forms.Padding(2);
             this.pnContenido.Name = "pnContenido";
-            this.pnContenido.Size = new System.Drawing.Size(518, 620);
+            this.pnContenido.Size = new System.Drawing.Size(709, 764);
             this.pnContenido.TabIndex = 2;
             this.pnContenido.Paint += new System.Windows.Forms.PaintEventHandler(this.pnContenido_Paint);
             // 
@@ -348,7 +373,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(768, 644);
+            this.ClientSize = new System.Drawing.Size(959, 788);
             this.Controls.Add(this.pnContenido);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.guna2Panel1);
@@ -386,5 +411,6 @@
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button btnCerrarSesion;
         private Guna.UI2.WinForms.Guna2Button btnOtrasFuncionalidades;
+        private Guna.UI2.WinForms.Guna2Button btnViajes;
     }
 }

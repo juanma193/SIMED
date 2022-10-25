@@ -599,7 +599,7 @@
             this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(63, 37);
-            this.btnVolver.TabIndex = 2;
+            this.btnVolver.TabIndex = 66;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ConsultarUsuarioNoAdmin

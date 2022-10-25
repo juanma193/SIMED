@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 // Code scaffolded by EF Core assumes nullable reference types (NRTs) are not used or disabled.
 // If you have enabled NRTs for your project, then un-comment the following line:
@@ -30,5 +31,7 @@ namespace SIMED.Models
         public virtual TurnosRotativos IdTurnoRotativoNavigation { get; set; }
         public virtual ICollection<Enfermerosxviajes> Enfermerosxviajes { get; set; }
         public virtual ICollection<Medicosxviajes> Medicosxviajes { get; set; }
+
+        
     }
 }

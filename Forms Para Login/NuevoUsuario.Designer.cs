@@ -262,6 +262,7 @@
             this.txtEdad.TabIndex = 13;
             this.txtEdad.TextChanged += new System.EventHandler(this.txtEdad_TextChanged);
             this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
+            this.txtEdad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtEdad_KeyUp);
             // 
             // txtApellido
             // 
@@ -445,6 +446,7 @@
             this.txtRepetirContraseña.TabIndex = 3;
             this.txtRepetirContraseña.UseSystemPasswordChar = true;
             this.txtRepetirContraseña.TextChanged += new System.EventHandler(this.txtRepetirContraseña_TextChanged);
+            this.txtRepetirContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRepetirContraseña_KeyPress);
             // 
             // txtContraseña
             // 
@@ -473,6 +475,7 @@
             this.txtContraseña.TabIndex = 2;
             this.txtContraseña.UseSystemPasswordChar = true;
             this.txtContraseña.TextChanged += new System.EventHandler(this.txtContraseña_TextChanged);
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // btnCrearCuenta
             // 

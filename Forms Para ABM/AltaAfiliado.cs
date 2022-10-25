@@ -62,8 +62,8 @@ namespace SIMED_V1.Forms_Para_ABM
 
             if (!flag)
             {
-                afiliado.Apellido = txtApellido.Text;
-                afiliado.Nombre = txtNombre.Text;
+                afiliado.Apellido = EmpleadosBD.UpperCaseFirstChar(txtApellido.Text);
+                afiliado.Nombre = EmpleadosBD.UpperCaseFirstChar(txtNombre.Text);
                 afiliado.Calle = txtCalle.Text;
                 afiliado.NroCalle = Convert.ToInt32(txtNroCalle.Text);
                 afiliado.NumeroDocumento = long.Parse(txtNroDoc.Text);
@@ -177,7 +177,7 @@ namespace SIMED_V1.Forms_Para_ABM
                 lblCiudad.Text = "Debe seleccionar una ciudad";
             }
 
-            if (cmbTipoDocumento.SelectedIndex == 0)
+            if (cmbTipoDocumento.SelectedItem == "Tipo de documento")
             {
                 flag = true;
                 lblTipoDoc.Visible = true;
@@ -507,6 +507,20 @@ namespace SIMED_V1.Forms_Para_ABM
         private void cmbTipoDocumento_SelectedIndexChanged(object sender, EventArgs e)
         {
             cambios = true;
+            if (cmbTipoDocumento.SelectedItem == "Tipo de documento")
+            {
+                lblTipoDoc.Visible = true;
+                lblTipoDoc.Text = "Debe seleccionar un tipo de documento";
+
+            }
+            if (!(txtNroDoc.Text == ""))
+            {
+                txtNroDoc.Text = "";
+            }
+            else
+            {
+                lblTipoDoc.Visible = false;
+            }
             if (cmbTipoDocumento.SelectedIndex == 1)
             {
                 txtNroDoc.MaxLength = 8;
@@ -528,6 +542,16 @@ namespace SIMED_V1.Forms_Para_ABM
         {
             cambios =true;
             FiltroBarrio();
+            if (cmbCiudad.SelectedItem == "Ciudad")
+            {
+                lblCiudad.Visible = true;
+                lblCiudad.Text = "Debe seleccionar una ciudad";
+
+            }
+            else
+            {
+                lblCiudad.Visible = false;
+            }
         }
 
         private void txtNroCalle_TextChanged_1(object sender, EventArgs e)
@@ -570,6 +594,18 @@ namespace SIMED_V1.Forms_Para_ABM
         private void cmbPlanes_SelectedIndexChanged(object sender, EventArgs e)
         {
             cambios = true;
+
+            if (cmbPlanes.SelectedItem == "Plan")
+            {
+                lblPlan.Visible = true;
+                lblPlan.Text = "Debe seleccionar un plan";
+
+            }
+            else
+            {
+                lblPlan.Visible = false;
+            }
+
         }
 
         private void cmbCiudad_KeyPress(object sender, KeyPressEventArgs e)
@@ -580,6 +616,16 @@ namespace SIMED_V1.Forms_Para_ABM
         private void cmbBarrios_SelectedIndexChanged(object sender, EventArgs e)
         {
             cambios = true;
+            if (cmbBarrios.SelectedItem == "Barrio")
+            {
+                lblBarrio.Visible = true;
+                lblBarrio.Text = "Debe seleccionar un barrio";
+
+            }
+            else
+            {
+                lblBarrio.Visible = false;
+            }
         }
 
         private void btnCerrarApp_Click(object sender, EventArgs e)
@@ -604,9 +650,41 @@ namespace SIMED_V1.Forms_Para_ABM
             }
         }
 
+        private void guna2ControlBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            if (cambios)
+            {
+
+                SeguroModificar ventana = new SeguroModificar();
+                ventana.lblMensaje.Text = "¿Está seguro de que desea perder todos los cambios?";
+                ventana.btnModificar.Text = "Salir";
+                if (ventana.ShowDialog() == DialogResult.OK)
+                {
+                    this.Dispose();
+
+
+                }
+            }
+            else
+            {
+                this.Dispose();
+
+            }
+        }
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void cmbBarrios_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
         }
     }
 }

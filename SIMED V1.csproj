@@ -358,6 +358,7 @@
     <Compile Include="Bases de datos\TiposDocBD.cs" />
     <Compile Include="Bases de datos\TiposViajesBD.cs" />
     <Compile Include="Bases de datos\UsuarioBD.cs" />
+    <Compile Include="Bases de datos\ViajesBD.cs" />
     <Compile Include="BD3K3G05_2022DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -579,6 +580,12 @@
       <DependentUpon>DatosMedico.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para ABM\Errores.cs" />
+    <Compile Include="Forms Para ABM\Modificar Viaje.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\Modificar Viaje.Designer.cs">
+      <DependentUpon>Modificar Viaje.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para ABM\ModificarAfiliado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -602,6 +609,12 @@
     </Compile>
     <Compile Include="Forms Para ABM\ModificarMedico.Designer.cs">
       <DependentUpon>ModificarMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para ABM\ViajesNuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms Para ABM\ViajesNuevo.Designer.cs">
+      <DependentUpon>ViajesNuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para El Menu\UAfiliados.cs">
       <SubType>UserControl</SubType>
@@ -632,6 +645,12 @@
     </Compile>
     <Compile Include="Forms Para El Menu\URelacionesLaborales.Designer.cs">
       <DependentUpon>URelacionesLaborales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para El Menu\UViajes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms Para El Menu\UViajes.Designer.cs">
+      <DependentUpon>UViajes.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms Para Login\EnviarCodigoFormcs.cs">
       <SubType>Form</SubType>
@@ -810,6 +829,9 @@
     <EmbeddedResource Include="Forms Para ABM\DatosMedico.resx">
       <DependentUpon>DatosMedico.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\Modificar Viaje.resx">
+      <DependentUpon>Modificar Viaje.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ModificarAfiliado.resx">
       <DependentUpon>ModificarAfiliado.cs</DependentUpon>
     </EmbeddedResource>
@@ -821,6 +843,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para ABM\ModificarMedico.resx">
       <DependentUpon>ModificarMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para ABM\ViajesNuevo.resx">
+      <DependentUpon>ViajesNuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\UAfiliados.resx">
       <DependentUpon>UAfiliados.cs</DependentUpon>
@@ -836,6 +861,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para El Menu\URelacionesLaborales.resx">
       <DependentUpon>URelacionesLaborales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para El Menu\UViajes.resx">
+      <DependentUpon>UViajes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms Para Login\EnviarCodigoFormcs.resx">
       <DependentUpon>EnviarCodigoFormcs.cs</DependentUpon>

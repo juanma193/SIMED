@@ -326,7 +326,7 @@ namespace SIMED_V1.Forms_Para_ABM
             }
             }
 
-        private void guna2GradientButton1_Click(object sender, EventArgs e)
+        private void btnElminar_Click(object sender, EventArgs e)
         {
            SeguroEliminar window = new SeguroEliminar();
            
@@ -436,5 +436,35 @@ namespace SIMED_V1.Forms_Para_ABM
             if (char.IsSeparator(e.KeyChar)) e.Handled = true;
         
     }
+
+        private void lblConsultarEnfermero_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarApp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

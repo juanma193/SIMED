@@ -82,6 +82,7 @@
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
             this.btnMinimizar.TabIndex = 62;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnBuscarUsuario
             // 
@@ -125,7 +126,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(234, 36);
             this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar ";
-            this.btnEliminar.Click += new System.EventHandler(this.guna2GradientButton1_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.btnElminar_Click);
             // 
             // btnModificarEmpleado
             // 
@@ -158,6 +159,7 @@
             this.label1.Size = new System.Drawing.Size(144, 19);
             this.label1.TabIndex = 56;
             this.label1.Text = "Búsqueda por usuario";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblConsultarEnfermero
             // 
@@ -169,6 +171,7 @@
             this.lblConsultarEnfermero.Size = new System.Drawing.Size(228, 32);
             this.lblConsultarEnfermero.TabIndex = 54;
             this.lblConsultarEnfermero.Text = "Consultar usuarios";
+            this.lblConsultarEnfermero.Click += new System.EventHandler(this.lblConsultarEnfermero_Click);
             // 
             // btnCerrarApp
             // 
@@ -180,6 +183,7 @@
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
             this.btnCerrarApp.TabIndex = 63;
+            this.btnCerrarApp.Click += new System.EventHandler(this.btnCerrarApp_Click);
             // 
             // label2
             // 
@@ -190,6 +194,7 @@
             this.label2.Size = new System.Drawing.Size(159, 19);
             this.label2.TabIndex = 64;
             this.label2.Text = "Búsqueda por empleado";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // btnBuscarEmpleado
             // 
@@ -276,6 +281,7 @@
             this.gbUsuarios.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.gbUsuarios.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.gbUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gbUsuarios_CellClick_1);
+            this.gbUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gbUsuarios_CellContentClick);
             // 
             // Legajo
             // 

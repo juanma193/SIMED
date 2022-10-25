@@ -616,5 +616,21 @@ namespace SIMED_V1.Bases_de_datos
                 cn.Close();
             }
         }
+        public static Medicos getMedicoCompleto2(int nroMedico)
+        {
+            var resultado = new Medicos();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                resultado = db.Medicos.First(a => a.NumeroMatricula == nroMedico);
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+            return resultado;
+        }
     }
 }
