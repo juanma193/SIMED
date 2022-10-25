@@ -86,16 +86,24 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void gdrModelos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnActualizarModelo.Enabled = true;
-            btnEliminarModelo.Enabled = true;
             int indice = e.RowIndex;
-            DataGridViewRow fila = gdrModelos.Rows[indice];
-            string nombreModelo = fila.Cells["nombreModelo"].Value.ToString();
-            Modelos m = ModelosMarcasRLBD.ObtenerModelo(nombreModelo);
-            lblIdModelo.Visible = true;
-            lblNroIdModelo.Enabled = true;
-            LimpiarCampos();
-            CargarCampos(m);
+            if (indice.Equals(-1))
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Seleccione una celda válida");
+            }
+            else
+            {
+                btnActualizarModelo.Enabled = true;
+                btnEliminarModelo.Enabled = true;
+                DataGridViewRow fila = gdrModelos.Rows[indice];
+                string nombreModelo = fila.Cells["nombreModelo"].Value.ToString();
+                Modelos m = ModelosMarcasRLBD.ObtenerModelo(nombreModelo);
+                lblIdModelo.Visible = true;
+                lblNroIdModelo.Enabled = true;
+                LimpiarCampos();
+                CargarCampos(m);
+            }
         }
 
         private bool ValidarCampos()

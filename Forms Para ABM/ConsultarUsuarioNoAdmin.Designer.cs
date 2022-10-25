@@ -127,7 +127,7 @@
             this.guna2ShadowPanel1.Controls.Add(this.label2);
             this.guna2ShadowPanel1.FillColor = System.Drawing.Color.White;
             this.guna2ShadowPanel1.Location = new System.Drawing.Point(29, 100);
-            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2ShadowPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ShadowPanel1.Name = "guna2ShadowPanel1";
             this.guna2ShadowPanel1.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.guna2ShadowPanel1.ShadowDepth = 80;
@@ -145,10 +145,10 @@
             this.chkUsuarios.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkUsuarios.Font = new System.Drawing.Font("Segoe UI Semilight", 13.8F);
             this.chkUsuarios.Location = new System.Drawing.Point(244, 462);
-            this.chkUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.chkUsuarios.Name = "chkUsuarios";
             this.chkUsuarios.Size = new System.Drawing.Size(223, 29);
-            this.chkUsuarios.TabIndex = 75;
+            this.chkUsuarios.TabIndex = 7;
             this.chkUsuarios.Text = "Editar datos del usuario";
             this.chkUsuarios.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.chkUsuarios.UncheckedState.BorderRadius = 0;
@@ -183,7 +183,7 @@
             this.guna2Separator1.FillColor = System.Drawing.Color.Black;
             this.guna2Separator1.FillThickness = 2;
             this.guna2Separator1.Location = new System.Drawing.Point(0, 157);
-            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator1.Name = "guna2Separator1";
             this.guna2Separator1.Size = new System.Drawing.Size(816, 30);
             this.guna2Separator1.TabIndex = 73;
@@ -194,7 +194,7 @@
             this.guna2Separator2.FillColor = System.Drawing.Color.Black;
             this.guna2Separator2.FillThickness = 2;
             this.guna2Separator2.Location = new System.Drawing.Point(2, 440);
-            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.guna2Separator2.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator2.Name = "guna2Separator2";
             this.guna2Separator2.Size = new System.Drawing.Size(816, 30);
             this.guna2Separator2.TabIndex = 63;
@@ -208,10 +208,10 @@
             this.chkEmpleado.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkEmpleado.Font = new System.Drawing.Font("Segoe UI Semilight", 13.8F);
             this.chkEmpleado.Location = new System.Drawing.Point(14, 462);
-            this.chkEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.chkEmpleado.Name = "chkEmpleado";
             this.chkEmpleado.Size = new System.Drawing.Size(222, 29);
-            this.chkEmpleado.TabIndex = 72;
+            this.chkEmpleado.TabIndex = 6;
             this.chkEmpleado.Text = "Editar datos personales";
             this.chkEmpleado.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.chkEmpleado.UncheckedState.BorderRadius = 0;
@@ -307,14 +307,14 @@
             this.txtEdad.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEdad.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtEdad.Location = new System.Drawing.Point(233, 400);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.PasswordChar = '\0';
             this.txtEdad.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtEdad.PlaceholderText = "Nombre de usuario";
             this.txtEdad.SelectedText = "";
             this.txtEdad.Size = new System.Drawing.Size(286, 36);
-            this.txtEdad.TabIndex = 64;
+            this.txtEdad.TabIndex = 5;
             this.txtEdad.TextChanged += new System.EventHandler(this.txtEdad_TextChanged);
             this.txtEdad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEdad_KeyPress);
             // 
@@ -335,14 +335,14 @@
             this.txtSexo.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSexo.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtSexo.Location = new System.Drawing.Point(233, 345);
-            this.txtSexo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSexo.Margin = new System.Windows.Forms.Padding(2);
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.PasswordChar = '\0';
             this.txtSexo.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtSexo.PlaceholderText = "Nombre de usuario";
             this.txtSexo.SelectedText = "";
             this.txtSexo.Size = new System.Drawing.Size(286, 36);
-            this.txtSexo.TabIndex = 63;
+            this.txtSexo.TabIndex = 4;
             this.txtSexo.TextChanged += new System.EventHandler(this.txtSexo_TextChanged);
             this.txtSexo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSexo_KeyPress);
             // 
@@ -363,14 +363,14 @@
             this.txtApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtApellido.Location = new System.Drawing.Point(233, 289);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.PasswordChar = '\0';
             this.txtApellido.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtApellido.PlaceholderText = "Apellido";
             this.txtApellido.SelectedText = "";
             this.txtApellido.Size = new System.Drawing.Size(286, 36);
-            this.txtApellido.TabIndex = 62;
+            this.txtApellido.TabIndex = 3;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
@@ -391,14 +391,14 @@
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtNombre.Location = new System.Drawing.Point(233, 235);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtNombre.PlaceholderText = "Nombre ";
             this.txtNombre.SelectedText = "";
             this.txtNombre.Size = new System.Drawing.Size(286, 36);
-            this.txtNombre.TabIndex = 61;
+            this.txtNombre.TabIndex = 2;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
@@ -419,14 +419,14 @@
             this.txtNombreUsu.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombreUsu.IconLeft = global::SIMED_V1.Properties.Resources.user;
             this.txtNombreUsu.Location = new System.Drawing.Point(233, 54);
-            this.txtNombreUsu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreUsu.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreUsu.Name = "txtNombreUsu";
             this.txtNombreUsu.PasswordChar = '\0';
             this.txtNombreUsu.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtNombreUsu.PlaceholderText = "Nombre de usuario";
             this.txtNombreUsu.SelectedText = "";
             this.txtNombreUsu.Size = new System.Drawing.Size(286, 36);
-            this.txtNombreUsu.TabIndex = 59;
+            this.txtNombreUsu.TabIndex = 0;
             this.txtNombreUsu.TextChanged += new System.EventHandler(this.txtNombreUsu_TextChanged);
             this.txtNombreUsu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombreUsu_KeyPress);
             // 
@@ -448,14 +448,14 @@
             this.txtCorreo.IconLeft = global::SIMED_V1.Properties.Resources.icono_mail;
             this.txtCorreo.IconLeftSize = new System.Drawing.Size(30, 20);
             this.txtCorreo.Location = new System.Drawing.Point(233, 108);
-            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.PasswordChar = '\0';
             this.txtCorreo.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtCorreo.PlaceholderText = "Correo electrónico";
             this.txtCorreo.SelectedText = "";
             this.txtCorreo.Size = new System.Drawing.Size(286, 36);
-            this.txtCorreo.TabIndex = 58;
+            this.txtCorreo.TabIndex = 1;
             this.txtCorreo.TextChanged += new System.EventHandler(this.txtCorreo_TextChanged);
             this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
@@ -522,10 +522,10 @@
             this.btnModificarEmpleado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnModificarEmpleado.ForeColor = System.Drawing.Color.White;
             this.btnModificarEmpleado.Location = new System.Drawing.Point(97, 635);
-            this.btnModificarEmpleado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificarEmpleado.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificarEmpleado.Name = "btnModificarEmpleado";
             this.btnModificarEmpleado.Size = new System.Drawing.Size(347, 36);
-            this.btnModificarEmpleado.TabIndex = 61;
+            this.btnModificarEmpleado.TabIndex = 0;
             this.btnModificarEmpleado.Text = "Modificar datos ";
             this.btnModificarEmpleado.Click += new System.EventHandler(this.btnModificarEmpleado_Click);
             // 
@@ -544,10 +544,10 @@
             this.btnEliminarCuenta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnEliminarCuenta.ForeColor = System.Drawing.Color.White;
             this.btnEliminarCuenta.Location = new System.Drawing.Point(470, 635);
-            this.btnEliminarCuenta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarCuenta.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarCuenta.Name = "btnEliminarCuenta";
             this.btnEliminarCuenta.Size = new System.Drawing.Size(347, 36);
-            this.btnEliminarCuenta.TabIndex = 62;
+            this.btnEliminarCuenta.TabIndex = 1;
             this.btnEliminarCuenta.Text = "Eliminar Cuenta";
             this.btnEliminarCuenta.Click += new System.EventHandler(this.btnEliminarCuenta_Click);
             // 
@@ -558,7 +558,7 @@
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
             this.btnCerrarApp.Location = new System.Drawing.Point(877, 9);
-            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarApp.Name = "btnCerrarApp";
             this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
             this.btnCerrarApp.TabIndex = 64;
@@ -571,7 +571,7 @@
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
             this.btnMinimizar.Location = new System.Drawing.Point(839, 9);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
             this.btnMinimizar.TabIndex = 65;
@@ -596,10 +596,11 @@
             this.btnVolver.ForeColor = System.Drawing.Color.White;
             this.btnVolver.Image = global::SIMED_V1.Properties.Resources.left_arrow;
             this.btnVolver.Location = new System.Drawing.Point(29, 635);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(63, 37);
-            this.btnVolver.TabIndex = 66;
+            this.btnVolver.TabIndex = 2;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ConsultarUsuarioNoAdmin
             // 
@@ -614,7 +615,7 @@
             this.Controls.Add(this.btnModificarEmpleado);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ConsultarUsuarioNoAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultarUsuarioNoAdmin";

@@ -262,12 +262,20 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void grdRangosEtarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnEliminarRangoEtario.Enabled = true;
-            btnModificarRango.Enabled = true;
-            DataGridViewRow fila = grdRangosEtarios.CurrentRow;
-            txtIdRangoEtario.Text = fila.Cells[0].Value.ToString();
-            txtDescripcionRangoEtario.Text = fila.Cells[1].Value.ToString();
-
+            int indice = e.RowIndex;
+            if (indice.Equals(-1))
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Seleccione una celda válida");
+            }
+            else
+            {
+                btnEliminarRangoEtario.Enabled = true;
+                btnModificarRango.Enabled = true;
+                DataGridViewRow fila = grdRangosEtarios.CurrentRow;
+                txtIdRangoEtario.Text = fila.Cells[0].Value.ToString();
+                txtDescripcionRangoEtario.Text = fila.Cells[1].Value.ToString();
+            }
         }
 
 

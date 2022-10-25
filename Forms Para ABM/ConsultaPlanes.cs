@@ -119,16 +119,24 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void gdrPlanes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnActualizar.Enabled = true;
-            btnEliminar.Enabled = true;
             int indice = e.RowIndex;
-            DataGridViewRow fila = gdrPlanes.Rows[indice];
-            string nombreModelo = fila.Cells["nombrePlan"].Value.ToString();
-            Planes p = PlanesBD.ObtenerPlan(nombreModelo);
-            lblIdPlan.Visible = true;
-            lblNroIdPlan.Enabled = true;
-            LimpiarCampos();
-            CargarCampos(p);
+            if (indice.Equals(-1))
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Seleccione una celda válida");
+            }
+            else
+            {
+                btnActualizar.Enabled = true;
+                btnEliminar.Enabled = true;
+                DataGridViewRow fila = gdrPlanes.Rows[indice];
+                string nombreModelo = fila.Cells["nombrePlan"].Value.ToString();
+                Planes p = PlanesBD.ObtenerPlan(nombreModelo);
+                lblIdPlan.Visible = true;
+                lblNroIdPlan.Enabled = true;
+                LimpiarCampos();
+                CargarCampos(p);
+            }
         }
 
         private void CargarCampos(Planes p)

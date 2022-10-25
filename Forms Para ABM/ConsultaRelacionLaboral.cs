@@ -105,17 +105,25 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void gdrRL_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnActualizarRL.Enabled = true;
-            btnEliminarRL.Enabled = true;
             int indice = e.RowIndex;
-            DataGridViewRow fila = gdrRL.Rows[indice];
-            string descRL = fila.Cells["descRL"].Value.ToString();
-            RelacionesLaborales rl = ModelosMarcasRLBD.ObtenerRL(descRL);
-            lblIdRL.Text = rl.IdRelacionLaboral.ToString();
-            lblIdRL.Visible = true;
-            lblNroIdRL.Enabled = true;
-            LimpiarCampos();
-            CargarCampos(rl);
+            if (indice.Equals(-1))
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Seleccione una celda válida");
+            }
+            else
+            {
+                btnActualizarRL.Enabled = true;
+                btnEliminarRL.Enabled = true;
+                DataGridViewRow fila = gdrRL.Rows[indice];
+                string descRL = fila.Cells["descRL"].Value.ToString();
+                RelacionesLaborales rl = ModelosMarcasRLBD.ObtenerRL(descRL);
+                lblIdRL.Text = rl.IdRelacionLaboral.ToString();
+                lblIdRL.Visible = true;
+                lblNroIdRL.Enabled = true;
+                LimpiarCampos();
+                CargarCampos(rl);
+            }
         }
 
         private void btnActualizarRL_Click(object sender, EventArgs e)

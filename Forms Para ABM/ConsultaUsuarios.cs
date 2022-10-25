@@ -318,8 +318,13 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void gbUsuarios_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            indice = e.RowIndex;
-        }
+            int indice = e.RowIndex;
+            if (indice.Equals(-1))
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Seleccione una celda válida");
+            }
+            }
 
         private void guna2GradientButton1_Click(object sender, EventArgs e)
         {

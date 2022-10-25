@@ -47,9 +47,10 @@
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(634, 5);
+            this.btnCerrarApp.Location = new System.Drawing.Point(476, 4);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrarApp.Name = "btnCerrarApp";
-            this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
+            this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
             this.btnCerrarApp.TabIndex = 1;
             // 
             // btnMinimizar
@@ -58,27 +59,30 @@
             this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(583, 5);
+            this.btnMinimizar.Location = new System.Drawing.Point(437, 4);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
+            this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
             this.btnMinimizar.TabIndex = 0;
             // 
             // lblMensaje
             // 
             this.lblMensaje.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje.Location = new System.Drawing.Point(167, 83);
+            this.lblMensaje.Location = new System.Drawing.Point(123, 68);
+            this.lblMensaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(421, 52);
+            this.lblMensaje.Size = new System.Drawing.Size(316, 42);
             this.lblMensaje.TabIndex = 0;
-            this.lblMensaje.Text = "¿Está seguro de que desea cerrar su sesión?";
+            this.lblMensaje.Text = "¿Está seguro de que desea cerrar su sesión y salir del programa?";
             // 
             // picWarning
             // 
             this.picWarning.Image = global::SIMED_V1.Properties.Resources.icons8_warning_48;
             this.picWarning.ImageRotate = 0F;
-            this.picWarning.Location = new System.Drawing.Point(36, 56);
+            this.picWarning.Location = new System.Drawing.Point(27, 46);
+            this.picWarning.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.picWarning.Name = "picWarning";
-            this.picWarning.Size = new System.Drawing.Size(75, 79);
+            this.picWarning.Size = new System.Drawing.Size(56, 64);
             this.picWarning.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picWarning.TabIndex = 7;
             this.picWarning.TabStop = false;
@@ -89,15 +93,16 @@
             this.guna2Panel1.Controls.Add(this.btnMinimizar);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(691, 30);
+            this.guna2Panel1.Size = new System.Drawing.Size(518, 24);
             this.guna2Panel1.TabIndex = 3;
             // 
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Animated = true;
             this.btnCerrarSesion.AutoRoundedCorners = true;
-            this.btnCerrarSesion.BorderRadius = 20;
+            this.btnCerrarSesion.BorderRadius = 16;
             this.btnCerrarSesion.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCerrarSesion.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCerrarSesion.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -107,9 +112,10 @@
             this.btnCerrarSesion.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(142, 173);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(106, 141);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(195, 43);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(146, 35);
             this.btnCerrarSesion.TabIndex = 1;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
@@ -118,7 +124,7 @@
             // 
             this.btnCancelar.Animated = true;
             this.btnCancelar.AutoRoundedCorners = true;
-            this.btnCancelar.BorderRadius = 20;
+            this.btnCancelar.BorderRadius = 16;
             this.btnCancelar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnCancelar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -128,9 +134,10 @@
             this.btnCancelar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold);
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(374, 173);
+            this.btnCancelar.Location = new System.Drawing.Point(280, 141);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(195, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(146, 35);
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -147,15 +154,16 @@
             // 
             // Cerrar_Sesion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 273);
+            this.ClientSize = new System.Drawing.Size(518, 222);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblMensaje);
             this.Controls.Add(this.picWarning);
             this.Controls.Add(this.guna2Panel1);
             this.Controls.Add(this.btnCerrarSesion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Cerrar_Sesion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CerrarSesion";

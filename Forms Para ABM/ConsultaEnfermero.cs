@@ -125,9 +125,17 @@ namespace SIMED_V1.Forms_Para_ABM
         
         private void gdrConsultaEnfermero_CellClick(Object sender, DataGridViewCellEventArgs e) 
         {
-            btnEliminarEnfermero.Enabled = true;
-            btnModificarEnfermero.Enabled = true;
-            
+            int indice = e.RowIndex;
+            if (indice.Equals(-1))
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Seleccione una celda válida");
+            }
+            else
+            {
+                btnEliminarEnfermero.Enabled = true;
+                btnModificarEnfermero.Enabled = true;
+            }
         }
 
         private void btnEliminarEnfermero_Click(object sender, EventArgs e)

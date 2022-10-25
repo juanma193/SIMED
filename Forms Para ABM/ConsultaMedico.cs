@@ -222,8 +222,17 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void grdConsultaMedico_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnConsultaEliminarMedico.Enabled = true;
-            btnConsultaModificarMedico.Enabled = true;
+            int indice = e.RowIndex;
+            if (indice.Equals(-1))
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Seleccione una celda válida");
+            }
+            else
+            {
+                btnConsultaEliminarMedico.Enabled = true;
+                btnConsultaModificarMedico.Enabled = true;
+            }
         }
 
         private void btnConsultaModificarMedico_Click(object sender, EventArgs e)

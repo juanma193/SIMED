@@ -53,16 +53,26 @@ namespace SIMED_V1.Forms_Para_ABM
                     bool valDoc = true;
                     bool valDiasLab = true;
                     bool valHorarios = true;
+                    bool existe = false;
 
-                    if (txtMatriculaMedico.Text == "")
-                    {
-                        valMatricula = false;
-                        ErroresForm mensaje = new ErroresForm();
-                        mensaje.show("Ingrese el número de matrícula del médico");
-                        txtMatriculaMedico.Focus();
-                    }
+                if (txtMatriculaMedico.Text == "")
+                {
+                    valMatricula = false;
+                    ErroresForm mensaje = new ErroresForm();
+                    mensaje.show("Ingrese el número de matrícula del médico");
+                    txtMatriculaMedico.Focus();
+                }
 
-                    else if (txtApellidoMedico.Text == "" || txtNombreMedico.Text == "")
+                existe = MedicoBD.ObtenerMedicoCompleto(int.Parse(txtMatriculaMedico.Text)).Rows.Count != 0;
+                if (existe)
+                {
+                    ErroresForm ventana = new ErroresForm();
+                    ventana.show("Ya esta registrado ese número de matricula");
+                }
+                else
+                {
+
+                    if (txtApellidoMedico.Text == "" || txtNombreMedico.Text == "")
                     {
                         valNombre = false;
                         ErroresForm mensaje = new ErroresForm();
@@ -120,124 +130,124 @@ namespace SIMED_V1.Forms_Para_ABM
 
 
 
-                if (valMatricula && valNombre && valSexo && valDireccion && valEspec && valRelLab && valFechaNac && valDoc && valDiasLab && valHorarios)
-                {
-                    SeguroModificar seguro = new SeguroModificar();
-                    seguro.btnModificar.Text = "Registrar";
-                    seguro.lblMensaje.Text = "¿Está seguro que desea registrar el médico?";
-                    if (seguro.ShowDialog() == DialogResult.OK)
+                    if (valMatricula && valNombre && valSexo && valDireccion && valEspec && valRelLab && valFechaNac && valDoc && valDiasLab && valHorarios)
                     {
-                        medico.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
-                        medico.Nombre = txtNombreMedico.Text;
-                        medico.Apellido = txtApellidoMedico.Text;
-                        medico.FechaNacimiento = dtFechaNacMedico.Value;
-                        medico.Calle = txtCalleMedico.Text;
-                        medico.NroCalle = int.Parse(txtNroCalleMedico.Text);
-                        medico.IdBarrio = (int)cmbBarriosMedico.SelectedValue;
-                        medico.IdEspecialidad = (int)cmbEspecialidadMedico.SelectedValue;
-                        medico.IdTipoDocumento = (int)cmbTipoDocumentoMedico.SelectedValue;
-                        medico.NumDocumento = long.Parse(txtNroDocMedico.Text);
-                        medico.HorarioIngreso = dtHoraIngresoMedico.Value.TimeOfDay;
-                        medico.HorarioEgreso = dtHoraEgresoMedico.Value.TimeOfDay;
-
-
-                        if (rdFemeninoMedico.Checked)
+                        SeguroModificar seguro = new SeguroModificar();
+                        seguro.btnModificar.Text = "Registrar";
+                        seguro.lblMensaje.Text = "¿Está seguro que desea registrar el médico?";
+                        if (seguro.ShowDialog() == DialogResult.OK)
                         {
-                            medico.IdSexo = 1;
-                        }
-                        if (rdMasculinoMedico.Checked)
-                        {
-                            medico.IdSexo = 2;
-                        }
-                        if (rdOtroMedico.Checked)
-                        {
-                            medico.IdSexo = 3;
-                        }
+                            medico.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
+                            medico.Nombre = txtNombreMedico.Text;
+                            medico.Apellido = txtApellidoMedico.Text;
+                            medico.FechaNacimiento = dtFechaNacMedico.Value;
+                            medico.Calle = txtCalleMedico.Text;
+                            medico.NroCalle = int.Parse(txtNroCalleMedico.Text);
+                            medico.IdBarrio = (int)cmbBarriosMedico.SelectedValue;
+                            medico.IdEspecialidad = (int)cmbEspecialidadMedico.SelectedValue;
+                            medico.IdTipoDocumento = (int)cmbTipoDocumentoMedico.SelectedValue;
+                            medico.NumDocumento = long.Parse(txtNroDocMedico.Text);
+                            medico.HorarioIngreso = dtHoraIngresoMedico.Value.TimeOfDay;
+                            medico.HorarioEgreso = dtHoraEgresoMedico.Value.TimeOfDay;
 
 
-
-                        if (rdPlantaPermanente.Checked)
-                        {
-                            medico.IdRelacionLaboral = 1;
-                        }
-                        if (rdContratoCircuns.Checked)
-                        {
-                            medico.IdRelacionLaboral = 2;
-                        }
-                        if (rdContratoRenov.Checked)
-                        {
-                            medico.IdRelacionLaboral = 3;
-                        }
-
-
-                        bool resultado = MedicoBD.InsertarMedico(medico);
-
-                        if (resultado)
-                        {
-
-                            if (chkLunesMedico.Checked)
+                            if (rdFemeninoMedico.Checked)
                             {
-                                diasLaborales.IdDiaLaboral = 1;
-                                diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
-                                MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
+                                medico.IdSexo = 1;
                             }
-                            if (chkMartesMedico.Checked)
+                            if (rdMasculinoMedico.Checked)
                             {
-                                diasLaborales.IdDiaLaboral = 2;
-                                diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
-                                MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
+                                medico.IdSexo = 2;
                             }
-                            if (chkMiercolesMedico.Checked)
+                            if (rdOtroMedico.Checked)
                             {
-                                diasLaborales.IdDiaLaboral = 3;
-                                diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
-                                MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
-                            }
-                            if (chkJuevesMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 4;
-                                diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
-                                MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
-                            }
-                            if (chkViernesMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 5;
-                                diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
-                                MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
-                            }
-                            if (chkSabadoMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 6;
-                                diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
-                                MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
-                            }
-                            if (chkDomingoMedico.Checked)
-                            {
-                                diasLaborales.IdDiaLaboral = 7;
-                                diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
-                                MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
+                                medico.IdSexo = 3;
                             }
 
 
-                            CorrectoForm ventana = new CorrectoForm();
-                            ventana.show("Se ha registrado el médico con éxito");
-                            this.Dispose();
+
+                            if (rdPlantaPermanente.Checked)
+                            {
+                                medico.IdRelacionLaboral = 1;
+                            }
+                            if (rdContratoCircuns.Checked)
+                            {
+                                medico.IdRelacionLaboral = 2;
+                            }
+                            if (rdContratoRenov.Checked)
+                            {
+                                medico.IdRelacionLaboral = 3;
+                            }
+
+
+                            bool resultado = MedicoBD.InsertarMedico(medico);
+
+                            if (resultado)
+                            {
+
+                                if (chkLunesMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 1;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
+                                    MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
+                                }
+                                if (chkMartesMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 2;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
+                                    MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
+                                }
+                                if (chkMiercolesMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 3;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
+                                    MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
+                                }
+                                if (chkJuevesMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 4;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
+                                    MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
+                                }
+                                if (chkViernesMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 5;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
+                                    MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
+                                }
+                                if (chkSabadoMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 6;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
+                                    MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
+                                }
+                                if (chkDomingoMedico.Checked)
+                                {
+                                    diasLaborales.IdDiaLaboral = 7;
+                                    diasLaborales.NumeroMatricula = int.Parse(txtMatriculaMedico.Text);
+                                    MedicoBD.InsertarMedicosDiasLaborales(diasLaborales);
+                                }
+
+
+                                CorrectoForm ventana = new CorrectoForm();
+                                ventana.show("Se ha registrado el médico con éxito");
+                                this.Dispose();
+
+                            }
+                            else
+                            {
+                                ErroresForm ventana = new ErroresForm();
+                                ventana.show("No se ha podido registrar el médico");
+                            }
+
 
                         }
                         else
                         {
-                            ErroresForm ventana = new ErroresForm();
-                            ventana.show("No se ha podido registrar el médico");
+                            cambios = true;
                         }
-
-
-                    }
-                    else
-                    {
-                        cambios = true;
                     }
                 }
-
 
             }
             catch (Exception ex)

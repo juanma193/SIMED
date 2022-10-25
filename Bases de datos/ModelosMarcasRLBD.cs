@@ -918,10 +918,19 @@ namespace SIMED_V1.Bases_de_datos
                 cmd.ExecuteNonQuery();
                 resultado = true;
             }
-            catch (System.Data.SqlClient.SqlException)
+            catch (SqlException ex)
             {
 
-                throw;
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("No puede eliminar una relación laboral relacionada con algún médico \nPorfavor elimine los médicos asociados primero");
+            }
+
+            catch (Exception ex)
+            {
+
+                ErroresForm window = new ErroresForm();
+                window.show("Error" + " " + ex);
+
             }
             finally
             {

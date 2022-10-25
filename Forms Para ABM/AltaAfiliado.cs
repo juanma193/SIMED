@@ -66,8 +66,8 @@ namespace SIMED_V1.Forms_Para_ABM
                 afiliado.Nombre = txtNombre.Text;
                 afiliado.Calle = txtCalle.Text;
                 afiliado.NroCalle = Convert.ToInt32(txtNroCalle.Text);
-                afiliado.NumeroDocumento = int.Parse(txtNroDoc.Text);
-                afiliado.NumeroTelefono = txtNroTel.Text;
+                afiliado.NumeroDocumento = long.Parse(txtNroDoc.Text);
+                afiliado.NumeroTelefono = long.Parse(txtNroTel.Text);
                 int id = AfiliadosBD.ObtenerBarrioXDescripcion(cmbBarrios.SelectedItem.ToString());
                 
                 afiliado.IdBarrio = id;

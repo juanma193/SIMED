@@ -250,16 +250,24 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void gdr_ambulancias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_modificar.Enabled = true;
-            btn_eliminar.Enabled = true;
             int indice = e.RowIndex;
-            DataGridViewRow fila = gdr_ambulancias.Rows[indice];
-            string patente = fila.Cells["patenteAm"].Value.ToString();
-            Ambulancias a = AmbulanciasBD.ObtenerAmbulancia(patente);
-            lblNroIdMovil.Enabled = true;
-            lblIdMovil.Visible = true;
-            LimpiarCampos();
-            CargarCampos(a);
+            if (indice.Equals(-1))
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Seleccione una celda válida");
+            }
+            else
+            {
+                btn_modificar.Enabled = true;
+                btn_eliminar.Enabled = true;
+                DataGridViewRow fila = gdr_ambulancias.Rows[indice];
+                string patente = fila.Cells["patenteAm"].Value.ToString();
+                Ambulancias a = AmbulanciasBD.ObtenerAmbulancia(patente);
+                lblNroIdMovil.Enabled = true;
+                lblIdMovil.Visible = true;
+                LimpiarCampos();
+                CargarCampos(a);
+            }
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)

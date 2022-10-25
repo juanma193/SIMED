@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.lblCrearCuenta = new System.Windows.Forms.Label();
             this.gbAfiliados = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -57,10 +57,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(72, 305);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(54, 248);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(172, 23);
+            this.label1.Size = new System.Drawing.Size(141, 19);
             this.label1.TabIndex = 24;
             this.label1.Text = "Búsqueda de Afiliado";
             // 
@@ -68,46 +67,46 @@
             // 
             this.lblCrearCuenta.AutoSize = true;
             this.lblCrearCuenta.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCrearCuenta.Location = new System.Drawing.Point(69, 36);
+            this.lblCrearCuenta.Location = new System.Drawing.Point(52, 29);
+            this.lblCrearCuenta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCrearCuenta.Name = "lblCrearCuenta";
-            this.lblCrearCuenta.Size = new System.Drawing.Size(269, 41);
+            this.lblCrearCuenta.Size = new System.Drawing.Size(217, 32);
             this.lblCrearCuenta.TabIndex = 22;
             this.lblCrearCuenta.Text = "Consultar afiliado";
             // 
             // gbAfiliados
             // 
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.gbAfiliados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.gbAfiliados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.gbAfiliados.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gbAfiliados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.gbAfiliados.ColumnHeadersHeight = 20;
             this.gbAfiliados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.gbAfiliados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Documento,
             this.Apellido,
             this.Nombre});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gbAfiliados.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gbAfiliados.DefaultCellStyle = dataGridViewCellStyle6;
             this.gbAfiliados.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.gbAfiliados.Location = new System.Drawing.Point(77, 96);
-            this.gbAfiliados.Margin = new System.Windows.Forms.Padding(4);
+            this.gbAfiliados.Location = new System.Drawing.Point(58, 78);
             this.gbAfiliados.Name = "gbAfiliados";
             this.gbAfiliados.ReadOnly = true;
             this.gbAfiliados.RowHeadersVisible = false;
             this.gbAfiliados.RowHeadersWidth = 51;
-            this.gbAfiliados.Size = new System.Drawing.Size(703, 183);
+            this.gbAfiliados.Size = new System.Drawing.Size(527, 149);
             this.gbAfiliados.TabIndex = 21;
             this.gbAfiliados.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.gbAfiliados.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -158,7 +157,7 @@
             // 
             this.btnBuscar.Animated = true;
             this.btnBuscar.AutoRoundedCorners = true;
-            this.btnBuscar.BorderRadius = 18;
+            this.btnBuscar.BorderRadius = 15;
             this.btnBuscar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBuscar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBuscar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -168,10 +167,10 @@
             this.btnBuscar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(77, 548);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscar.Location = new System.Drawing.Point(58, 445);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(701, 39);
+            this.btnBuscar.Size = new System.Drawing.Size(526, 32);
             this.btnBuscar.TabIndex = 43;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
@@ -180,7 +179,7 @@
             // 
             this.btnElimAfiliado.Animated = true;
             this.btnElimAfiliado.AutoRoundedCorners = true;
-            this.btnElimAfiliado.BorderRadius = 21;
+            this.btnElimAfiliado.BorderRadius = 17;
             this.btnElimAfiliado.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnElimAfiliado.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnElimAfiliado.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -190,10 +189,10 @@
             this.btnElimAfiliado.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnElimAfiliado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnElimAfiliado.ForeColor = System.Drawing.Color.White;
-            this.btnElimAfiliado.Location = new System.Drawing.Point(467, 604);
-            this.btnElimAfiliado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnElimAfiliado.Location = new System.Drawing.Point(350, 491);
+            this.btnElimAfiliado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnElimAfiliado.Name = "btnElimAfiliado";
-            this.btnElimAfiliado.Size = new System.Drawing.Size(312, 44);
+            this.btnElimAfiliado.Size = new System.Drawing.Size(234, 36);
             this.btnElimAfiliado.TabIndex = 41;
             this.btnElimAfiliado.Text = "Eliminar afiliado";
             this.btnElimAfiliado.Click += new System.EventHandler(this.btnElimAfiliado_Click);
@@ -202,7 +201,7 @@
             // 
             this.btnModAfiliado.Animated = true;
             this.btnModAfiliado.AutoRoundedCorners = true;
-            this.btnModAfiliado.BorderRadius = 21;
+            this.btnModAfiliado.BorderRadius = 17;
             this.btnModAfiliado.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnModAfiliado.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnModAfiliado.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -212,10 +211,10 @@
             this.btnModAfiliado.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnModAfiliado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnModAfiliado.ForeColor = System.Drawing.Color.White;
-            this.btnModAfiliado.Location = new System.Drawing.Point(76, 604);
-            this.btnModAfiliado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModAfiliado.Location = new System.Drawing.Point(57, 491);
+            this.btnModAfiliado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModAfiliado.Name = "btnModAfiliado";
-            this.btnModAfiliado.Size = new System.Drawing.Size(313, 44);
+            this.btnModAfiliado.Size = new System.Drawing.Size(235, 36);
             this.btnModAfiliado.TabIndex = 40;
             this.btnModAfiliado.Text = "Modificar datos ";
             this.btnModAfiliado.Click += new System.EventHandler(this.btnModAfiliado_Click);
@@ -225,10 +224,10 @@
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(828, 14);
-            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCerrarApp.Location = new System.Drawing.Point(621, 11);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCerrarApp.Name = "btnCerrarApp";
-            this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
+            this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
             this.btnCerrarApp.TabIndex = 44;
             // 
             // btnMinimizar
@@ -237,10 +236,10 @@
             this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(776, 14);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(582, 11);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
+            this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
             this.btnMinimizar.TabIndex = 45;
             // 
             // guna2AnimateWindow1
@@ -257,7 +256,7 @@
             // 
             this.btnVolver.Animated = true;
             this.btnVolver.AutoRoundedCorners = true;
-            this.btnVolver.BorderRadius = 22;
+            this.btnVolver.BorderRadius = 17;
             this.btnVolver.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnVolver.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnVolver.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -266,17 +265,17 @@
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
             this.btnVolver.Image = global::SIMED_V1.Properties.Resources.left_arrow;
-            this.btnVolver.Location = new System.Drawing.Point(76, 667);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVolver.Location = new System.Drawing.Point(57, 542);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(84, 46);
+            this.btnVolver.Size = new System.Drawing.Size(63, 37);
             this.btnVolver.TabIndex = 42;
             // 
             // txtApellido
             // 
             this.txtApellido.Animated = true;
             this.txtApellido.AutoRoundedCorners = true;
-            this.txtApellido.BorderRadius = 21;
+            this.txtApellido.BorderRadius = 17;
             this.txtApellido.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtApellido.DefaultText = "";
             this.txtApellido.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -288,14 +287,14 @@
             this.txtApellido.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtApellido.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtApellido.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtApellido.Location = new System.Drawing.Point(77, 478);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtApellido.Location = new System.Drawing.Point(58, 388);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.PasswordChar = '\0';
             this.txtApellido.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtApellido.PlaceholderText = "Apellido de afiliado";
             this.txtApellido.SelectedText = "";
-            this.txtApellido.Size = new System.Drawing.Size(703, 44);
+            this.txtApellido.Size = new System.Drawing.Size(527, 36);
             this.txtApellido.TabIndex = 29;
             this.txtApellido.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
             this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
@@ -304,7 +303,7 @@
             // 
             this.txtNombre.Animated = true;
             this.txtNombre.AutoRoundedCorners = true;
-            this.txtNombre.BorderRadius = 21;
+            this.txtNombre.BorderRadius = 17;
             this.txtNombre.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNombre.DefaultText = "";
             this.txtNombre.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -316,14 +315,14 @@
             this.txtNombre.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtNombre.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNombre.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtNombre.Location = new System.Drawing.Point(77, 410);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNombre.Location = new System.Drawing.Point(58, 333);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.PasswordChar = '\0';
             this.txtNombre.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtNombre.PlaceholderText = "Nombre de afiliado";
             this.txtNombre.SelectedText = "";
-            this.txtNombre.Size = new System.Drawing.Size(703, 44);
+            this.txtNombre.Size = new System.Drawing.Size(527, 36);
             this.txtNombre.TabIndex = 28;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
@@ -332,7 +331,7 @@
             // 
             this.txtNroAfiliado.Animated = true;
             this.txtNroAfiliado.AutoRoundedCorners = true;
-            this.txtNroAfiliado.BorderRadius = 21;
+            this.txtNroAfiliado.BorderRadius = 17;
             this.txtNroAfiliado.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtNroAfiliado.DefaultText = "";
             this.txtNroAfiliado.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -345,14 +344,14 @@
             this.txtNroAfiliado.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNroAfiliado.IconLeft = global::SIMED_V1.Properties.Resources.numbers;
             this.txtNroAfiliado.IconLeftSize = new System.Drawing.Size(30, 20);
-            this.txtNroAfiliado.Location = new System.Drawing.Point(77, 347);
-            this.txtNroAfiliado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtNroAfiliado.Location = new System.Drawing.Point(58, 282);
+            this.txtNroAfiliado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNroAfiliado.Name = "txtNroAfiliado";
             this.txtNroAfiliado.PasswordChar = '\0';
             this.txtNroAfiliado.PlaceholderForeColor = System.Drawing.Color.DimGray;
-            this.txtNroAfiliado.PlaceholderText = "Número de afiliado";
+            this.txtNroAfiliado.PlaceholderText = "Número de documento";
             this.txtNroAfiliado.SelectedText = "";
-            this.txtNroAfiliado.Size = new System.Drawing.Size(703, 44);
+            this.txtNroAfiliado.Size = new System.Drawing.Size(527, 36);
             this.txtNroAfiliado.TabIndex = 23;
             this.txtNroAfiliado.TextChanged += new System.EventHandler(this.txtNroAfiliado_TextChanged);
             this.txtNroAfiliado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNroAfiliado_KeyPress);
@@ -361,7 +360,7 @@
             // 
             this.btnLimpiar.Animated = true;
             this.btnLimpiar.AutoRoundedCorners = true;
-            this.btnLimpiar.BorderRadius = 14;
+            this.btnLimpiar.BorderRadius = 12;
             this.btnLimpiar.DefaultAutoSize = true;
             this.btnLimpiar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLimpiar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
@@ -370,18 +369,19 @@
             this.btnLimpiar.FillColor = System.Drawing.Color.Transparent;
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI Semilight", 9F);
             this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiar.Location = new System.Drawing.Point(519, 297);
+            this.btnLimpiar.Location = new System.Drawing.Point(389, 241);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(244, 31);
+            this.btnLimpiar.Size = new System.Drawing.Size(201, 27);
             this.btnLimpiar.TabIndex = 51;
             this.btnLimpiar.Text = "Limpiar campos y mostrar todos";
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // ConsultarAfiliado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(885, 735);
+            this.ClientSize = new System.Drawing.Size(664, 597);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnCerrarApp);
             this.Controls.Add(this.btnMinimizar);
@@ -396,8 +396,8 @@
             this.Controls.Add(this.lblCrearCuenta);
             this.Controls.Add(this.gbAfiliados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ConsultarAfiliado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultarAfiliado";
             this.Load += new System.EventHandler(this.ConsultarAfiliado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gbAfiliados)).EndInit();

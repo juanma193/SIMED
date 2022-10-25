@@ -97,5 +97,22 @@ namespace SIMED_V1.Bases_de_datos
 
             return resultado;
         }
+        public static TiposViaje getTipoViajeByDesc(string desc)
+        {
+            var resultado = new TiposViaje();
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var tipoViaje = db.TiposViaje.First(a => a.DescripcionTipoViaje == desc);
+                resultado = tipoViaje;
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            return resultado;
+        }
     }
 }

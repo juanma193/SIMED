@@ -127,17 +127,25 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void gdrMarcas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnActualizarMarca.Enabled = true;
-            btnEliminarMarca.Enabled = true;
             int indice = e.RowIndex;
-            DataGridViewRow fila = gdrMarcas.Rows[indice];
-            string nombreMarca = fila.Cells["nombreMarca"].Value.ToString();
-            Marcas m = ModelosMarcasRLBD.ObtenerMarca(nombreMarca);
-            lblIdMarca.Text = m.IdMarca.ToString();
-            lblIdMarca.Visible = true;
-            lblNroIdMarca.Enabled = true;
-            LimpiarCampos();
-            CargarCampos(m);
+            if (indice.Equals(-1))
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Seleccione una celda válida");
+            }
+            else
+            {
+                btnActualizarMarca.Enabled = true;
+                btnEliminarMarca.Enabled = true;
+                DataGridViewRow fila = gdrMarcas.Rows[indice];
+                string nombreMarca = fila.Cells["nombreMarca"].Value.ToString();
+                Marcas m = ModelosMarcasRLBD.ObtenerMarca(nombreMarca);
+                lblIdMarca.Text = m.IdMarca.ToString();
+                lblIdMarca.Visible = true;
+                lblNroIdMarca.Enabled = true;
+                LimpiarCampos();
+                CargarCampos(m);
+            }
         }
 
         private void guna2ControlBox1_Click(object sender, EventArgs e)

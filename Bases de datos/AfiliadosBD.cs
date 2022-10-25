@@ -63,7 +63,7 @@ namespace SIMED_V1.Bases_de_datos
 
             try
             {
-                var afiliados = db.Afiliados;
+                var afiliados = db.Afiliados.Where(a => a.NumeroAfiliado > 0);
                
                 resultado = afiliados.ToList(); 
                 

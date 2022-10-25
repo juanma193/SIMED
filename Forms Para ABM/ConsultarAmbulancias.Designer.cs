@@ -50,7 +50,6 @@
             this.lblIdMovil = new System.Windows.Forms.Label();
             this.lblNroIdMovil = new System.Windows.Forms.Label();
             this.txt_patente = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.guna2ControlBox3 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnVolver = new Guna.UI2.WinForms.Guna2Button();
@@ -360,17 +359,6 @@
             this.txt_patente.TabIndex = 1;
             this.txt_patente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_patente_KeyPress);
             // 
-            // guna2ControlBox2
-            // 
-            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MaximizeBox;
-            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2ControlBox2.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox2.Location = new System.Drawing.Point(627, -6);
-            this.guna2ControlBox2.Name = "guna2ControlBox2";
-            this.guna2ControlBox2.Size = new System.Drawing.Size(45, 29);
-            this.guna2ControlBox2.TabIndex = 67;
-            // 
             // guna2ControlBox1
             // 
             this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -388,7 +376,7 @@
             this.guna2ControlBox3.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.guna2ControlBox3.FillColor = System.Drawing.Color.Transparent;
             this.guna2ControlBox3.IconColor = System.Drawing.Color.DimGray;
-            this.guna2ControlBox3.Location = new System.Drawing.Point(602, -1);
+            this.guna2ControlBox3.Location = new System.Drawing.Point(634, -1);
             this.guna2ControlBox3.Margin = new System.Windows.Forms.Padding(2);
             this.guna2ControlBox3.Name = "guna2ControlBox3";
             this.guna2ControlBox3.Size = new System.Drawing.Size(34, 18);
@@ -420,7 +408,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(693, 570);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.guna2ControlBox1);
             this.Controls.Add(this.guna2ControlBox3);
             this.Controls.Add(this.lblIdMovil);
@@ -467,7 +454,6 @@
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private System.Windows.Forms.Label lblIdMovil;
         private System.Windows.Forms.Label lblNroIdMovil;
-        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox3;
         private Guna.UI2.WinForms.Guna2Button btnVolver;

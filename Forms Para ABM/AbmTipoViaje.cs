@@ -84,10 +84,21 @@ namespace SIMED_V1.Forms_Para_ABM
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             gbViajes.Rows.Clear();
-            var afiliados = TiposViajesBD.getTiposViaje();
-            foreach (var afiliado in afiliados)
+            if (txtDescripcion.Text == "")
             {
-                AgregarViaje(afiliado);
+                var afiliados = TiposViajesBD.getTiposViaje();
+                foreach (var afiliado in afiliados)
+                {
+                    AgregarViaje(afiliado);
+                }
+            }
+            else
+            {
+                var tipoViaje = TiposViajesBD.getTipoViajeByDesc(txtDescripcion.Text);
+                if(tipoViaje.DescripcionTipoViaje != null)
+                { 
+                    AgregarViaje(tipoViaje);
+                }
             }
         }
         private void AgregarViaje(TiposViaje viaje)
@@ -107,10 +118,18 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void gbAfiliados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            indice = e.RowIndex;
-            DataGridViewRow fila = gbViajes.Rows[indice];
-            string descripcionViaje = fila.Cells["tiposViajes"].Value.ToString();
-            txtDescripcion.Text = descripcionViaje;
+            int indice = e.RowIndex;
+            if (indice.Equals(-1))
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Seleccione una celda válida");
+            }
+            else
+            {
+                DataGridViewRow fila = gbViajes.Rows[indice];
+                string descripcionViaje = fila.Cells["tiposViajes"].Value.ToString();
+                txtDescripcion.Text = descripcionViaje;
+            }
         }
 
         private void btnElimAfiliado_Click(object sender, EventArgs e)
