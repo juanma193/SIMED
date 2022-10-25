@@ -339,114 +339,123 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnModificarViaje_Click(object sender, EventArgs e)
         {
-            SeguroModificar window = new SeguroModificar();
-
-
-            if (window.ShowDialog() == DialogResult.OK)
+            try 
             {
-                var enfer = false;
-                var kmtot = false;
-                var comrest = false;
+                SeguroModificar window = new SeguroModificar();
 
-                List<int> listaEnfermeros = new List<int>();
-                for (int i = 0; i < grdEnfermeros.Rows.Count - 1; i++)
-                {
-                    //if (grdEnfermeros.Rows[i].Cells[0].Value != null) 
-                    //{
-                    listaEnfermeros.Add(int.Parse(grdEnfermeros.Rows[i].Cells[0].Value.ToString()));
-                    //}
 
-                }
-                if (listaEnfermeros.Count > 0)
+                if (window.ShowDialog() == DialogResult.OK)
                 {
-                    enfer = true;
-                }
-                if (int.Parse(txtKilometros.Text) > 0)
-                {
-                    kmtot = true;
-                }
-                if (int.Parse(txtCombustiblePrevio.Text) - int.Parse(txtCombustiblePost.Text) >= 0)
-                {
-                    comrest = true;
-                }
+                    var enfer = false;
+                    var kmtot = false;
+                    var comrest = false;
 
-                if (enfer && kmtot && comrest)
-                {
-                    List<int> listaMedicos = new List<int>();
-                    for (int i = 0; i < grdMedicos.Rows.Count - 1; i++)
+                    List<int> listaEnfermeros = new List<int>();
+                    for (int i = 0; i < grdEnfermeros.Rows.Count - 1; i++)
                     {
-                        //if (grdMedicos.Rows[i].Cells[0].Value != null)
+                        //if (grdEnfermeros.Rows[i].Cells[0].Value != null) 
                         //{
-                        listaMedicos.Add(int.Parse(grdMedicos.Rows[i].Cells[0].Value.ToString()));
+                        listaEnfermeros.Add(int.Parse(grdEnfermeros.Rows[i].Cells[0].Value.ToString()));
                         //}
+
+                    }
+                    if (listaEnfermeros.Count > 0)
+                    {
+                        enfer = true;
+                    }
+                    if (int.Parse(txtKilometros.Text) > 0)
+                    {
+                        kmtot = true;
+                    }
+                    if (int.Parse(txtCombustiblePrevio.Text) - int.Parse(txtCombustiblePost.Text) >= 0)
+                    {
+                        comrest = true;
                     }
 
-                    int turno = -1;
-                    if (rdMañanaModificar.Checked)
+                    if (enfer && kmtot && comrest)
                     {
-                        turno = 0;
-                    }
-                    if (rdTardeModificar.Checked)
-                    {
-                        turno = 1;
-                    }
-                    if (rdNocheModificar.Checked)
-                    {
-                        turno = 2;
-                    }
+                        List<int> listaMedicos = new List<int>();
+                        for (int i = 0; i < grdMedicos.Rows.Count - 1; i++)
+                        {
+                            //if (grdMedicos.Rows[i].Cells[0].Value != null)
+                            //{
+                            listaMedicos.Add(int.Parse(grdMedicos.Rows[i].Cells[0].Value.ToString()));
+                            //}
+                        }
+
+                        int turno = -1;
+                        if (rdMañanaModificar.Checked)
+                        {
+                            turno = 0;
+                        }
+                        if (rdTardeModificar.Checked)
+                        {
+                            turno = 1;
+                        }
+                        if (rdNocheModificar.Checked)
+                        {
+                            turno = 2;
+                        }
 
 
 
-                    bool resultado = ViajesBD.ModificarViaje(dtFechaViaje.Value,
-                                                            (int)cmbMoviles.SelectedValue,
-                                                            dtHoraSalida.Value.TimeOfDay,
-                                                            dtHoraLlegada.Value.TimeOfDay,
-                                                            listaEnfermeros,
-                                                            listaMedicos,
-                                                            turno,
-                                                            (int)cmbTiposViaje.SelectedValue,
-                                                            float.Parse(txtCombustiblePrevio.Text),
-                                                            float.Parse(txtCombustiblePost.Text),
-                                                            float.Parse(txtKilometros.Text));
-                    if (resultado)
-                    {
-                        CorrectoForm windows = new CorrectoForm();
-                        windows.show("Viaje modificado con éxito...");
-                        this.Close();
-                        ventanaConsV.CargarTodos();
-                        
+                        bool resultado = ViajesBD.ModificarViaje(dtFechaViaje.Value,
+                                                                (int)cmbMoviles.SelectedValue,
+                                                                dtHoraSalida.Value.TimeOfDay,
+                                                                dtHoraLlegada.Value.TimeOfDay,
+                                                                listaEnfermeros,
+                                                                listaMedicos,
+                                                                turno,
+                                                                (int)cmbTiposViaje.SelectedValue,
+                                                                float.Parse(txtCombustiblePrevio.Text),
+                                                                float.Parse(txtCombustiblePost.Text),
+                                                                float.Parse(txtKilometros.Text));
+                        if (resultado)
+                        {
+                            CorrectoForm windows = new CorrectoForm();
+                            windows.show("Viaje modificado con éxito...");
+                            this.Close();
+                            ventanaConsV.CargarTodos();
+
+                        }
+                        else
+                        {
+                            ErroresForm windows = new ErroresForm();
+                            windows.show("Error al modificar el viaje...");
+                        }
                     }
                     else
                     {
-                        ErroresForm windows = new ErroresForm();
-                        windows.show("Error al modificar el viaje...");
+                        var error = "No se pudo modificar el viaje";
+                        var detalles = "";
+
+                        if (!enfer)
+                        {
+                            detalles = detalles + "Necesita agregar al menos un enfermero\n";
+                        }
+
+                        if (!kmtot)
+                        {
+                            detalles = detalles + "Los kilometros totales tienen que ser mayores a 0 \n";
+                        }
+
+                        if (!comrest)
+                        {
+                            detalles = detalles + "El combustible restante tiene que ser mayor a 0 \n";
+                        }
+
+                        MultiplesErrores windows = new MultiplesErrores(error, detalles);
+                        windows.Show();
+
                     }
-                }
-                else
-                {
-                    var error = "No se pudo modificar el viaje";
-                    var detalles = "";
-
-                    if (!enfer)
-                    {
-                        detalles = detalles + "Necesita agregar al menos un enfermero\n";
-                    }
-
-                    if (!kmtot)
-                    {
-                        detalles = detalles + "Los kilometros totales tienen que ser mayores a 0 \n";
-                    }
-
-                    if (!comrest)
-                    {
-                        detalles = detalles + "El combustible restante tiene que ser mayor a 0 \n";
-                    }
-
-                    MultiplesErrores windows = new MultiplesErrores(error, detalles);
-                    windows.Show();
-
                 }
             }
+            catch (Exception ex)
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Se ha producido un error, no se ha podido modificar el viaje");
+            }
+            
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

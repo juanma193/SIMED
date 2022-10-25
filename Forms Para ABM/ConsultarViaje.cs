@@ -68,16 +68,25 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnBuscarViaje_Click(object sender, EventArgs e)
         {
-            gbViajes.Rows.Clear();
+            try {
+                gbViajes.Rows.Clear();
 
-            var resultado = new List<Viajes>();
-            DataGridViewRow fila = new DataGridViewRow();
+                var resultado = new List<Viajes>();
+                DataGridViewRow fila = new DataGridViewRow();
 
-            var viajes = ViajesBD.getViajes(dtFechaViaje.Value);
+                var viajes = ViajesBD.getViajes(dtFechaViaje.Value);
 
-            foreach (var viaje in viajes)
+                foreach (var viaje in viajes)
+                {
+                    AgregarViajeConTuplas(viaje);
+                }
+
+                LimpiarCampos();
+            }
+            catch(Exception ex)
             {
-                AgregarViajeConTuplas(viaje);
+                ErroresForm mensaje = new ErroresForm();
+                mensaje.show("Se ha producido un error");
             }
         }
 
@@ -482,1179 +491,1232 @@ namespace SIMED_V1.Forms_Para_ABM
 
         private void btnBuscarPorPatente_Click(object sender, EventArgs e)
         {
-            gbViajes.Rows.Clear();
-
-            if (!(chkIncluirFechas.Checked))
+            if (cmbMoviles.SelectedIndex == -1)
             {
-                Ambulancias movil = ViajesBD.obtenerMovil((int)cmbMoviles.SelectedValue);
-
-                var resultado = new List<Viajes>();
-                DataGridViewRow fila = new DataGridViewRow();
-
-                var viajes = ViajesBD.getViajesXPatente(movil);
-
-                foreach (var viaje in viajes)
-                {
-                    AgregarViajeConTuplas(viaje);
-                }
+                ErroresForm vent = new ErroresForm();
+                vent.show("Seleccione un móvil a buscar");
             }
             else
             {
-                Ambulancias movil = ViajesBD.obtenerMovil((int)cmbMoviles.SelectedValue);
-
-
-
-                var resultado = new List<Viajes>();
-                DataGridViewRow fila = new DataGridViewRow();
-
-                var viajes = ViajesBD.getViajesXPatenteXFecha(dtFechaViaje.Value, movil);
-
-                foreach (var viaje in viajes)
+                try
                 {
-                    AgregarViaje(viaje);
+                    gbViajes.Rows.Clear();
+
+                    if (!(chkIncluirFechas.Checked))
+                    {
+                        Ambulancias movil = ViajesBD.obtenerMovil((int)cmbMoviles.SelectedValue);
+
+                        var resultado = new List<Viajes>();
+                        DataGridViewRow fila = new DataGridViewRow();
+
+                        var viajes = ViajesBD.getViajesXPatente(movil);
+
+                        foreach (var viaje in viajes)
+                        {
+                            AgregarViajeConTuplas(viaje);
+                        }
+                    }
+                    else
+                    {
+                        Ambulancias movil = ViajesBD.obtenerMovil((int)cmbMoviles.SelectedValue);
+
+
+
+                        var resultado = new List<Viajes>();
+                        DataGridViewRow fila = new DataGridViewRow();
+
+                        var viajes = ViajesBD.getViajesXPatenteXFecha(dtFechaViaje.Value, movil);
+
+                        foreach (var viaje in viajes)
+                        {
+                            AgregarViaje(viaje);
+                        }
+
+
+                    }
+
+                    LimpiarCampos();
                 }
-
-
+                catch (Exception ex)
+                {
+                    ErroresForm vent = new ErroresForm();
+                    vent.show("Se ha producido un error");
+                }
             }
-
-
+            
+            
         }
 
 
         private void btnBuscarPorDatosPersonales_Click(object sender, EventArgs e)
         {
-            gbViajes.Rows.Clear();
-
-            var resultado = new List<Viajes>();
-            DataGridViewRow fila = new DataGridViewRow();
-
-            if (!(chkIncluirFechas.Checked))
+            if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
             {
-
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var enfermero in enfermeros)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                            if (enfermero == matricula)
-                            {
-                                AgregarViajeEnfermeroNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-
-
-
-                    }
-
-
-                }
-
-                if (txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "" && txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "")
-                {
-                    var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var medico in medicos)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            if (medico == matricula)
-                            {
-                                AgregarViajeMedicoNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-
-
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var enfermero in enfermeros)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                            if (enfermero == matricula)
-                            {
-                                AgregarViajeEnfermeroNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
-                {
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var enfermero in enfermeros)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                            if (enfermero == matricula)
-                            {
-                                AgregarViajeEnfermeroNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-
-                    }
-
-                }
-
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var medico in medicos)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            if (medico == matricula)
-                            {
-                                AgregarViajeMedicoNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-
-
-                    }
-
-
-
-                }
-
-
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var medico in medicos)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            if (medico == matricula)
-                            {
-                                AgregarViajeMedicoNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-
-
-                    }
-
-
-
-                }
-
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-                }
-
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-                }
-
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-
-
-                }
-
-
+                ErroresForm v = new ErroresForm();
+                v.show("Ingrese un nombre o apellido a buscar");
             }
-
             else
             {
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
+                try
                 {
-                    var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
+                    gbViajes.Rows.Clear();
 
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
+                    var resultado = new List<Viajes>();
+                    DataGridViewRow fila = new DataGridViewRow();
 
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var enfermero in enfermeros)
+                    if (!(chkIncluirFechas.Checked))
                     {
 
-                        foreach (var viaje in viajes)
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
                         {
+                            var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
 
-                            int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
 
-                            if (enfermero == matricula)
-                            {
-                                AgregarViajeEnfermeroNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-
-
-
-                    }
-
-
-                }
-
-                if (txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "" && txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "")
-                {
-                    var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var medico in medicos)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            if (medico == matricula)
-                            {
-                                AgregarViajeMedicoNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-
-
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var enfermero in enfermeros)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                            if (enfermero == matricula)
-                            {
-                                AgregarViajeEnfermeroNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
-                {
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var enfermero in enfermeros)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                            if (enfermero == matricula)
-                            {
-                                AgregarViajeEnfermeroNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-
-                    }
-
-                }
-
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var medico in medicos)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            if (medico == matricula)
-                            {
-                                AgregarViajeMedicoNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-
-
-                    }
-
-
-
-                }
-
-
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var medico in medicos)
-                    {
-
-                        foreach (var viaje in viajes)
-                        {
-
-                            int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            if (medico == matricula)
-                            {
-                                AgregarViajeMedicoNoRepetido(viaje, matricula);
-                            }
-
-
-                        }
-
-
-                    }
-
-
-
-                }
-
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
 
                             foreach (var enfermero in enfermeros)
                             {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
 
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                foreach (var viaje in viajes)
                                 {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+
+                                    int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                    if (enfermero == matricula)
+                                    {
+                                        AgregarViajeEnfermeroNoRepetido(viaje, matricula);
+                                    }
+
+
+                                }
+
+
+
+                            }
+
+
+                        }
+
+                        if (txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "" && txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var medico in medicos)
+                            {
+
+                                foreach (var viaje in viajes)
+                                {
+
+                                    int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    if (medico == matricula)
+                                    {
+                                        AgregarViajeMedicoNoRepetido(viaje, matricula);
+                                    }
+
+
+                                }
+
+
+                            }
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var enfermero in enfermeros)
+                            {
+
+                                foreach (var viaje in viajes)
+                                {
+
+                                    int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                    if (enfermero == matricula)
+                                    {
+                                        AgregarViajeEnfermeroNoRepetido(viaje, matricula);
+                                    }
+
+
                                 }
                             }
 
                         }
 
-                    }
-
-                }
-
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
                         {
 
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+                            var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
 
                             foreach (var enfermero in enfermeros)
                             {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
 
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                foreach (var viaje in viajes)
                                 {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+
+                                    int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                    if (enfermero == matricula)
+                                    {
+                                        AgregarViajeEnfermeroNoRepetido(viaje, matricula);
+                                    }
+
+
+                                }
+
+                            }
+
+                        }
+
+
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var medico in medicos)
+                            {
+
+                                foreach (var viaje in viajes)
+                                {
+
+                                    int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    if (medico == matricula)
+                                    {
+                                        AgregarViajeMedicoNoRepetido(viaje, matricula);
+                                    }
+
+
+                                }
+
+
+                            }
+
+
+
+                        }
+
+
+
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var medico in medicos)
+                            {
+
+                                foreach (var viaje in viajes)
+                                {
+
+                                    int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    if (medico == matricula)
+                                    {
+                                        AgregarViajeMedicoNoRepetido(viaje, matricula);
+                                    }
+
+
+                                }
+
+
+                            }
+
+
+
+                        }
+
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+
+
+                        }
+
+
+                    }
+
+                    else
+                    {
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var enfermero in enfermeros)
+                            {
+
+                                foreach (var viaje in viajes)
+                                {
+
+                                    int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                    if (enfermero == matricula)
+                                    {
+                                        AgregarViajeEnfermeroNoRepetido(viaje, matricula);
+                                    }
+
+
+                                }
+
+
+
+                            }
+
+
+                        }
+
+                        if (txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "" && txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var medico in medicos)
+                            {
+
+                                foreach (var viaje in viajes)
+                                {
+
+                                    int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    if (medico == matricula)
+                                    {
+                                        AgregarViajeMedicoNoRepetido(viaje, matricula);
+                                    }
+
+
+                                }
+
+
+                            }
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var enfermero in enfermeros)
+                            {
+
+                                foreach (var viaje in viajes)
+                                {
+
+                                    int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                    if (enfermero == matricula)
+                                    {
+                                        AgregarViajeEnfermeroNoRepetido(viaje, matricula);
+                                    }
+
+
                                 }
                             }
 
                         }
 
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text == "")
                         {
 
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+                            var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermeros(enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
 
                             foreach (var enfermero in enfermeros)
                             {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
 
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                foreach (var viaje in viajes)
                                 {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+
+                                    int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                    if (enfermero == matricula)
+                                    {
+                                        AgregarViajeEnfermeroNoRepetido(viaje, matricula);
+                                    }
+
+
                                 }
+
                             }
+
+                        }
+
+
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var medico in medicos)
+                            {
+
+                                foreach (var viaje in viajes)
+                                {
+
+                                    int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    if (medico == matricula)
+                                    {
+                                        AgregarViajeMedicoNoRepetido(viaje, matricula);
+                                    }
+
+
+                                }
+
+
+                            }
+
+
+
+                        }
+
+
+
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasMedicos(medicos);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var medico in medicos)
+                            {
+
+                                foreach (var viaje in viajes)
+                                {
+
+                                    int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    if (medico == matricula)
+                                    {
+                                        AgregarViajeMedicoNoRepetido(viaje, matricula);
+                                    }
+
+
+                                }
+
+
+                            }
+
+
+
+                        }
+
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+
+
+                        }
+
+                        if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
+                        {
+                            var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
+
+                            var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
+
+                            var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var viaje in viajes)
+                            {
+                                foreach (var medico in medicos)
+                                {
+
+                                    int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
+
+                                    foreach (var enfermero in enfermeros)
+                                    {
+                                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
+
+                                        if (matriculaMedico == medico && matriculaEnfermero == enfermero)
+                                        {
+                                            AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
+                                        }
+                                    }
+
+                                }
+
+                            }
+
+
 
                         }
 
                     }
 
-                }
 
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
+                    LimpiarCampos();
+                }
+                catch(Exception ex)
                 {
-                    var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
+                    ErroresForm v = new ErroresForm();
+                    v.show("Se ha producido un error");
                 }
-
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text == "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloNombre(txtConsultaNombreMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text == "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompletoSoloApellido(txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text == "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloApellido(txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text == "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosSoloNombre(txtConsultaNombreEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-
-
-                }
-
-                if (txtConsultaNombreEnfermero.Text != "" && txtConsultaApellidoEnfermero.Text != "" && txtConsultaNombreMedico.Text != "" && txtConsultaApellidoMedico.Text != "")
-                {
-                    var medicos = ViajesBD.getMedicosCompleto(txtConsultaNombreMedico.Text, txtConsultaApellidoMedico.Text);
-
-                    var enfermeros = ViajesBD.getEnfermerosCompleto(txtConsultaNombreEnfermero.Text, txtConsultaApellidoEnfermero.Text);
-
-                    var fechas = ViajesBD.getFechasViajesXMatriculasEnfermerosYMedicos(medicos, enfermeros);
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var viaje in viajes)
-                    {
-                        foreach (var medico in medicos)
-                        {
-
-                            int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, medico);
-
-                            foreach (var enfermero in enfermeros)
-                            {
-                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, enfermero);
-
-                                if (matriculaMedico == medico && matriculaEnfermero == enfermero)
-                                {
-                                    AgregarViajeEquipoNoRepetido(viaje, matriculaMedico, matriculaEnfermero);
-                                }
-                            }
-
-                        }
-
-                    }
-
-
-
-                }
-
             }
-
-
-
+                
         }
 
         private void btnBuscarPorMatricula_Click(object sender, EventArgs e)
         {
-            gbViajes.Rows.Clear();
-
-            var resultado = new List<Viajes>();
-            DataGridViewRow fila = new DataGridViewRow();
-
-            if (!(chkIncluirFechas.Checked))
+            if(txtMatriculaEnfermero.Text == "" && txtMatriculaMedico.Text == "")
             {
-                if (txtMatriculaEnfermero.Text != "" && txtMatriculaMedico.Text == "")
-                {
-
-                    var fechas = ViajesBD.getFechasxEnfermero(int.Parse(txtMatriculaEnfermero.Text));
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-
-                    foreach (var viaje in viajes)
-                    {
-                        int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, int.Parse(txtMatriculaEnfermero.Text));
-
-                        if (matricula == int.Parse(txtMatriculaEnfermero.Text))
-                        {
-                            AgregarViajeEnfermeroNoRepetido(viaje, int.Parse(txtMatriculaEnfermero.Text));
-                        }
-                    }
-                }
-
-                if (txtMatriculaMedico.Text != "" && txtMatriculaEnfermero.Text == "")
-                {
-
-                    var fechas = ViajesBD.getFechasxMedico(int.Parse(txtMatriculaMedico.Text));
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-
-                    foreach (var viaje in viajes)
-                    {
-                        int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, int.Parse(txtMatriculaMedico.Text));
-
-                        if (matricula == int.Parse(txtMatriculaMedico.Text))
-                        {
-                            AgregarViajeMedicoNoRepetido(viaje, int.Parse(txtMatriculaMedico.Text));
-                        }
-                    }
-
-                }
-
-
-                if (txtMatriculaMedico.Text != "" && txtMatriculaEnfermero.Text != "")
-                {
-                    var fechas = ViajesBD.getFechasxMedicoxEnfermero(int.Parse(txtMatriculaEnfermero.Text), int.Parse(txtMatriculaMedico.Text));
-
-                    var viajes = ViajesBD.getViajesXFechas(fechas);
-
-                    foreach (var viaje in viajes)
-                    {
-                        int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, int.Parse(txtMatriculaMedico.Text));
-                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, int.Parse(txtMatriculaEnfermero.Text));
-
-                        if (matriculaMedico == int.Parse(txtMatriculaMedico.Text) && matriculaEnfermero == int.Parse(txtMatriculaEnfermero.Text))
-                        {
-                            AgregarViajeEquipoNoRepetido(viaje, int.Parse(txtMatriculaMedico.Text), int.Parse(txtMatriculaEnfermero.Text));
-                        }
-                    }
-
-                }
-
-
+                ErroresForm vent = new ErroresForm();
+                vent.show("Ingrese una matrícula a buscar");
             }
-
-
             else
             {
-
-                if (txtMatriculaEnfermero.Text != "" && txtMatriculaMedico.Text == "")
+                try
                 {
+                    gbViajes.Rows.Clear();
 
-                    var fechas = ViajesBD.getFechasxEnfermero(int.Parse(txtMatriculaEnfermero.Text));
+                    var resultado = new List<Viajes>();
+                    DataGridViewRow fila = new DataGridViewRow();
 
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-
-                    foreach (var viaje in viajes)
+                    if (!(chkIncluirFechas.Checked))
                     {
-                        int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, int.Parse(txtMatriculaEnfermero.Text));
-
-                        if (matricula == int.Parse(txtMatriculaEnfermero.Text))
+                        if (txtMatriculaEnfermero.Text != "" && txtMatriculaMedico.Text == "")
                         {
-                            AgregarViajeEnfermeroNoRepetido(viaje, int.Parse(txtMatriculaEnfermero.Text));
-                        }
-                    }
-                }
 
-                if (txtMatriculaMedico.Text != "" && txtMatriculaEnfermero.Text == "")
+                            var fechas = ViajesBD.getFechasxEnfermero(int.Parse(txtMatriculaEnfermero.Text));
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+
+                            foreach (var viaje in viajes)
+                            {
+                                int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, int.Parse(txtMatriculaEnfermero.Text));
+
+                                if (matricula == int.Parse(txtMatriculaEnfermero.Text))
+                                {
+                                    AgregarViajeEnfermeroNoRepetido(viaje, int.Parse(txtMatriculaEnfermero.Text));
+                                }
+                            }
+                        }
+
+                        if (txtMatriculaMedico.Text != "" && txtMatriculaEnfermero.Text == "")
+                        {
+
+                            var fechas = ViajesBD.getFechasxMedico(int.Parse(txtMatriculaMedico.Text));
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+
+                            foreach (var viaje in viajes)
+                            {
+                                int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, int.Parse(txtMatriculaMedico.Text));
+
+                                if (matricula == int.Parse(txtMatriculaMedico.Text))
+                                {
+                                    AgregarViajeMedicoNoRepetido(viaje, int.Parse(txtMatriculaMedico.Text));
+                                }
+                            }
+
+                        }
+
+
+                        if (txtMatriculaMedico.Text != "" && txtMatriculaEnfermero.Text != "")
+                        {
+                            var fechas = ViajesBD.getFechasxMedicoxEnfermero(int.Parse(txtMatriculaEnfermero.Text), int.Parse(txtMatriculaMedico.Text));
+
+                            var viajes = ViajesBD.getViajesXFechas(fechas);
+
+                            foreach (var viaje in viajes)
+                            {
+                                int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, int.Parse(txtMatriculaMedico.Text));
+                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, int.Parse(txtMatriculaEnfermero.Text));
+
+                                if (matriculaMedico == int.Parse(txtMatriculaMedico.Text) && matriculaEnfermero == int.Parse(txtMatriculaEnfermero.Text))
+                                {
+                                    AgregarViajeEquipoNoRepetido(viaje, int.Parse(txtMatriculaMedico.Text), int.Parse(txtMatriculaEnfermero.Text));
+                                }
+                            }
+
+                        }
+
+
+                    }
+
+
+                    else
+                    {
+
+                        if (txtMatriculaEnfermero.Text != "" && txtMatriculaMedico.Text == "")
+                        {
+
+                            var fechas = ViajesBD.getFechasxEnfermero(int.Parse(txtMatriculaEnfermero.Text));
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+
+                            foreach (var viaje in viajes)
+                            {
+                                int matricula = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, int.Parse(txtMatriculaEnfermero.Text));
+
+                                if (matricula == int.Parse(txtMatriculaEnfermero.Text))
+                                {
+                                    AgregarViajeEnfermeroNoRepetido(viaje, int.Parse(txtMatriculaEnfermero.Text));
+                                }
+                            }
+                        }
+
+                        if (txtMatriculaMedico.Text != "" && txtMatriculaEnfermero.Text == "")
+                        {
+
+                            var fechas = ViajesBD.getFechasxMedico(int.Parse(txtMatriculaMedico.Text));
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+
+                            foreach (var viaje in viajes)
+                            {
+                                int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, int.Parse(txtMatriculaMedico.Text));
+
+                                if (matricula == int.Parse(txtMatriculaMedico.Text))
+                                {
+                                    AgregarViajeMedicoNoRepetido(viaje, int.Parse(txtMatriculaMedico.Text));
+                                }
+                            }
+
+                        }
+
+
+                        if (txtMatriculaMedico.Text != "" && txtMatriculaEnfermero.Text != "")
+                        {
+                            var fechas = ViajesBD.getFechasxMedicoxEnfermero(int.Parse(txtMatriculaEnfermero.Text), int.Parse(txtMatriculaMedico.Text));
+
+                            var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
+
+                            foreach (var viaje in viajes)
+                            {
+                                int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, int.Parse(txtMatriculaMedico.Text));
+                                int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, int.Parse(txtMatriculaEnfermero.Text));
+
+                                if (matriculaMedico == int.Parse(txtMatriculaMedico.Text) && matriculaEnfermero == int.Parse(txtMatriculaEnfermero.Text))
+                                {
+                                    AgregarViajeEquipoNoRepetido(viaje, int.Parse(txtMatriculaMedico.Text), int.Parse(txtMatriculaEnfermero.Text));
+                                }
+                            }
+
+                        }
+
+
+
+                    }
+
+                    LimpiarCampos();
+                }
+                catch(Exception ex)
                 {
-
-                    var fechas = ViajesBD.getFechasxMedico(int.Parse(txtMatriculaMedico.Text));
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-
-                    foreach (var viaje in viajes)
-                    {
-                        int matricula = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, int.Parse(txtMatriculaMedico.Text));
-
-                        if (matricula == int.Parse(txtMatriculaMedico.Text))
-                        {
-                            AgregarViajeMedicoNoRepetido(viaje, int.Parse(txtMatriculaMedico.Text));
-                        }
-                    }
-
+                    ErroresForm ven = new ErroresForm();
+                    ven.show("Se ha producido un error");
                 }
-
-
-                if (txtMatriculaMedico.Text != "" && txtMatriculaEnfermero.Text != "")
-                {
-                    var fechas = ViajesBD.getFechasxMedicoxEnfermero(int.Parse(txtMatriculaEnfermero.Text), int.Parse(txtMatriculaMedico.Text));
-
-                    var viajes = ViajesBD.getViajesXFechasCheckBox(fechas, dtFechaViaje.Value);
-
-                    foreach (var viaje in viajes)
-                    {
-                        int matriculaMedico = ViajesBD.obtenerMatriculaMedicoNoRepetido(viaje.Fecha, int.Parse(txtMatriculaMedico.Text));
-                        int matriculaEnfermero = ViajesBD.obtenerMatriculaEnfermeroNoRepetido(viaje.Fecha, int.Parse(txtMatriculaEnfermero.Text));
-
-                        if (matriculaMedico == int.Parse(txtMatriculaMedico.Text) && matriculaEnfermero == int.Parse(txtMatriculaEnfermero.Text))
-                        {
-                            AgregarViajeEquipoNoRepetido(viaje, int.Parse(txtMatriculaMedico.Text), int.Parse(txtMatriculaEnfermero.Text));
-                        }
-                    }
-
-                }
-
-
-
+                
             }
-
-
+            
         }
 
         private void btnLimpiarGrilla_Click(object sender, EventArgs e)
@@ -1712,24 +1774,47 @@ namespace SIMED_V1.Forms_Para_ABM
 
             
         }
-            private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
             {
-                SeguroModificar window = new SeguroModificar();
-
-
-                if (window.ShowDialog() == DialogResult.OK)
+               
+                if (gbViajes.SelectedRows.Count == 1)
                 {
-                    if (indice >= 0)
-                    {
-                        // Insertar Codigo para abrir un nuevo form de modificacion pasandole los datos necesarios
-                    }
-                    else
-                    {
-                        ErroresForm mensaje = new ErroresForm();
-                        mensaje.show("Seleccione un viaje");
-                    }
+
+                    DataGridViewRow filaSeleccionada = gbViajes.Rows[indice];
+                    DateTime fecha = (DateTime)filaSeleccionada.Cells[0].Value;
+
+
+                    DataGridViewRow filaSeleccionada2 = gbViajes.Rows[indice];
+                    TimeSpan hora = (TimeSpan)filaSeleccionada2.Cells[1].Value;
+
+                    Viajes viaje = ViajesBD.getViajesParaModificar(fecha, hora);
+
+                    EliminarViaje ventana = new EliminarViaje(viaje, this);
+
+
+
+                    ventana.Show();
+
+                    ventana.setearTurno(viaje);
+
+
+
+
                 }
-            }
+                else if (gbViajes.SelectedRows.Count > 1)
+                {
+                    ErroresForm mensaje = new ErroresForm();
+                    mensaje.show("Seleccione un solo viaje");
+
+                }
+                else if (gbViajes.SelectedRows.Count == 0)
+                {
+                    ErroresForm mensaje = new ErroresForm();
+                    mensaje.show("Seleccione un viaje");
+                }
+
+            
+        }
 
             private void ConsultarViaje_Load(object sender, EventArgs e)
             {
@@ -1918,6 +2003,17 @@ namespace SIMED_V1.Forms_Para_ABM
         {
             principio.Show();
             this.Dispose();
+        }
+
+        private void LimpiarCampos()
+        {
+            cmbMoviles.SelectedIndex = -1;
+            txtMatriculaEnfermero.Text = "";
+            txtMatriculaMedico.Text = "";
+            txtConsultaApellidoEnfermero.Text = "";
+            txtConsultaApellidoMedico.Text = "";
+            txtConsultaNombreEnfermero.Text = "";
+            txtConsultaNombreMedico.Text = "";
         }
     }
     }

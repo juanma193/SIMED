@@ -344,6 +344,64 @@ namespace SIMED_V1.Bases_de_datos
             catch (Exception ex)
             {
                 objTransaccion.Rollback();
+                return false;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
+        public static bool EliminarViaje(DateTime fecha, int idMovil, TimeSpan horaSalida, List<int> listaEnf,
+                                  List<int> listaMed)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlTransaction objTransaccion = null;
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+
+            try
+            {
+
+                bool res = BorrarEnfermerosXViajesModif(fecha, idMovil, horaSalida);
+                bool res2 = BorrarMedicosXViajesModif(fecha, idMovil, horaSalida);
+
+                if (res && res2)
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    string consulta = @"DELETE FROM VIAJES WHERE fecha=@fechaV AND id_movil=@idMovilV AND hora_salida=@horaSal";
+
+
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@fechaV", fecha);
+                    cmd.Parameters.AddWithValue("@idMovilV", idMovil);
+                    cmd.Parameters.AddWithValue("@horaSal", horaSalida);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = consulta;
+
+
+                    cn.Open();
+                    objTransaccion = cn.BeginTransaction("EliminacionDeViaje");
+                    cmd.Transaction = objTransaccion;
+                    cmd.Connection = cn;
+                    cmd.ExecuteNonQuery();
+
+                    objTransaccion.Commit();
+                    return true;
+                }
+                else
+                {
+                    objTransaccion.Rollback();
+                    return false;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                objTransaccion.Rollback();
                 MessageBox.Show(ex.Message);
                 return false;
             }

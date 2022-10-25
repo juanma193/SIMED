@@ -143,6 +143,7 @@
             this.btnCerrarSesion.TabIndex = 15;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click_1);
             // 
             // btnOtrasFuncionalidades
             // 
@@ -165,6 +166,7 @@
             this.btnOtrasFuncionalidades.TabIndex = 14;
             this.btnOtrasFuncionalidades.Text = "Otras funcionalidades";
             this.btnOtrasFuncionalidades.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnOtrasFuncionalidades.Click += new System.EventHandler(this.btnOtrasFuncionalidades_Click);
             // 
             // btnViajes
             // 
