@@ -173,7 +173,7 @@ namespace SIMED_V1
         {
             this.pnContenido.Controls.Remove(ContActivo);
 
-            ContActivo = new UViajes();
+            ContActivo = new UViajes(this);
             ContActivo.Dock = DockStyle.Fill;
             this.pnContenido.Controls.Add(ContActivo);
         }

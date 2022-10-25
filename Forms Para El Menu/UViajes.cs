@@ -13,9 +13,11 @@ namespace SIMED_V1.Forms_Para_El_Menu
 {
     public partial class UViajes : UserControl
     {
-        public UViajes()
+        PrincipalForm princ;
+        public UViajes(PrincipalForm principal)
         {
             InitializeComponent();
+            princ = principal;
         }
 
         private void btnRegistrarViaje_Click(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace SIMED_V1.Forms_Para_El_Menu
 
         private void btnConsultarViaje_Click(object sender, EventArgs e)
         {
-            ConsultarViaje window = new ConsultarViaje();
+            ConsultarViaje window = new ConsultarViaje(princ);
             window.ShowDialog();
         }
     }

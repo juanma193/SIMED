@@ -70,6 +70,9 @@
             this.btnBuscarPorMatricula = new Guna.UI2.WinForms.Guna2GradientButton();
             this.label3 = new System.Windows.Forms.Label();
             this.btnLimpiarGrilla = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.guna2ControlBox2 = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.btnCargarGrilla = new Guna.UI2.WinForms.Guna2GradientButton();
             ((System.ComponentModel.ISupportInitialize)(this.gbViajes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +80,7 @@
             // 
             this.btnBuscarViaje.Animated = true;
             this.btnBuscarViaje.AutoRoundedCorners = true;
-            this.btnBuscarViaje.BorderRadius = 18;
+            this.btnBuscarViaje.BorderRadius = 15;
             this.btnBuscarViaje.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBuscarViaje.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBuscarViaje.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -87,10 +90,10 @@
             this.btnBuscarViaje.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnBuscarViaje.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscarViaje.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarViaje.Location = new System.Drawing.Point(52, 398);
-            this.btnBuscarViaje.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarViaje.Location = new System.Drawing.Point(39, 323);
+            this.btnBuscarViaje.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarViaje.Name = "btnBuscarViaje";
-            this.btnBuscarViaje.Size = new System.Drawing.Size(370, 39);
+            this.btnBuscarViaje.Size = new System.Drawing.Size(278, 32);
             this.btnBuscarViaje.TabIndex = 60;
             this.btnBuscarViaje.Text = "Buscar";
             this.btnBuscarViaje.Click += new System.EventHandler(this.btnBuscarViaje_Click);
@@ -99,7 +102,7 @@
             // 
             this.btnEliminar.Animated = true;
             this.btnEliminar.AutoRoundedCorners = true;
-            this.btnEliminar.BorderRadius = 21;
+            this.btnEliminar.BorderRadius = 17;
             this.btnEliminar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnEliminar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnEliminar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -109,10 +112,10 @@
             this.btnEliminar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(760, 773);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnEliminar.Location = new System.Drawing.Point(570, 628);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(643, 44);
+            this.btnEliminar.Size = new System.Drawing.Size(482, 36);
             this.btnEliminar.TabIndex = 58;
             this.btnEliminar.Text = "Eliminar viaje";
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -121,7 +124,7 @@
             // 
             this.btnModificar.Animated = true;
             this.btnModificar.AutoRoundedCorners = true;
-            this.btnModificar.BorderRadius = 21;
+            this.btnModificar.BorderRadius = 17;
             this.btnModificar.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnModificar.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -131,10 +134,10 @@
             this.btnModificar.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnModificar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(80, 773);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModificar.Location = new System.Drawing.Point(60, 628);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(636, 44);
+            this.btnModificar.Size = new System.Drawing.Size(477, 36);
             this.btnModificar.TabIndex = 57;
             this.btnModificar.Text = "Modificar datos ";
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -143,10 +146,9 @@
             // 
             this.lblBusqueda.AutoSize = true;
             this.lblBusqueda.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBusqueda.Location = new System.Drawing.Point(47, 266);
-            this.lblBusqueda.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBusqueda.Location = new System.Drawing.Point(35, 216);
             this.lblBusqueda.Name = "lblBusqueda";
-            this.lblBusqueda.Size = new System.Drawing.Size(267, 23);
+            this.lblBusqueda.Size = new System.Drawing.Size(218, 19);
             this.lblBusqueda.TabIndex = 54;
             this.lblBusqueda.Text = "Búsqueda solo por fecha del viaje";
             // 
@@ -154,9 +156,10 @@
             // 
             this.lblConsultarViaje.AutoSize = true;
             this.lblConsultarViaje.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblConsultarViaje.Location = new System.Drawing.Point(47, 22);
+            this.lblConsultarViaje.Location = new System.Drawing.Point(35, 18);
+            this.lblConsultarViaje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblConsultarViaje.Name = "lblConsultarViaje";
-            this.lblConsultarViaje.Size = new System.Drawing.Size(227, 41);
+            this.lblConsultarViaje.Size = new System.Drawing.Size(184, 32);
             this.lblConsultarViaje.TabIndex = 52;
             this.lblConsultarViaje.Text = "Consultar viaje";
             // 
@@ -164,10 +167,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(48, 303);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(36, 246);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 23);
+            this.label2.Size = new System.Drawing.Size(71, 17);
             this.label2.TabIndex = 62;
             this.label2.Text = "Fecha viaje";
             // 
@@ -175,17 +177,16 @@
             // 
             this.dtFechaViaje.Animated = true;
             this.dtFechaViaje.AutoRoundedCorners = true;
-            this.dtFechaViaje.BorderRadius = 17;
+            this.dtFechaViaje.BorderRadius = 13;
             this.dtFechaViaje.Checked = true;
             this.dtFechaViaje.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
             this.dtFechaViaje.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtFechaViaje.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtFechaViaje.Location = new System.Drawing.Point(52, 338);
-            this.dtFechaViaje.Margin = new System.Windows.Forms.Padding(4);
-            this.dtFechaViaje.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.dtFechaViaje.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.dtFechaViaje.Location = new System.Drawing.Point(39, 275);
+            this.dtFechaViaje.MaxDate = new System.DateTime(2022, 12, 31, 0, 0, 0, 0);
+            this.dtFechaViaje.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.dtFechaViaje.Name = "dtFechaViaje";
-            this.dtFechaViaje.Size = new System.Drawing.Size(370, 36);
+            this.dtFechaViaje.Size = new System.Drawing.Size(278, 29);
             this.dtFechaViaje.TabIndex = 61;
             this.dtFechaViaje.Value = new System.DateTime(2022, 9, 14, 0, 0, 0, 0);
             this.dtFechaViaje.ValueChanged += new System.EventHandler(this.dtFechaViaje_ValueChanged);
@@ -203,10 +204,9 @@
             this.cmbMoviles.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.cmbMoviles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
             this.cmbMoviles.ItemHeight = 30;
-            this.cmbMoviles.Location = new System.Drawing.Point(493, 338);
-            this.cmbMoviles.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbMoviles.Location = new System.Drawing.Point(370, 275);
             this.cmbMoviles.Name = "cmbMoviles";
-            this.cmbMoviles.Size = new System.Drawing.Size(346, 36);
+            this.cmbMoviles.Size = new System.Drawing.Size(260, 36);
             this.cmbMoviles.TabIndex = 63;
             this.cmbMoviles.SelectedIndexChanged += new System.EventHandler(this.cmbMoviles_SelectedIndexChanged);
             // 
@@ -215,10 +215,10 @@
             this.btnCerrarApp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrarApp.FillColor = System.Drawing.Color.Transparent;
             this.btnCerrarApp.IconColor = System.Drawing.Color.DimGray;
-            this.btnCerrarApp.Location = new System.Drawing.Point(1472, 14);
-            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCerrarApp.Location = new System.Drawing.Point(1229, 11);
+            this.btnCerrarApp.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarApp.Name = "btnCerrarApp";
-            this.btnCerrarApp.Size = new System.Drawing.Size(45, 22);
+            this.btnCerrarApp.Size = new System.Drawing.Size(34, 18);
             this.btnCerrarApp.TabIndex = 66;
             // 
             // btnMinimizar
@@ -227,10 +227,10 @@
             this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.DimGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(1420, 14);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(1190, 11);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 22);
+            this.btnMinimizar.Size = new System.Drawing.Size(34, 18);
             this.btnMinimizar.TabIndex = 67;
             // 
             // guna2AnimateWindow1
@@ -276,13 +276,12 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.gbViajes.DefaultCellStyle = dataGridViewCellStyle3;
             this.gbViajes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(229)))), ((int)(((byte)(229)))));
-            this.gbViajes.Location = new System.Drawing.Point(40, 67);
-            this.gbViajes.Margin = new System.Windows.Forms.Padding(4);
+            this.gbViajes.Location = new System.Drawing.Point(30, 54);
             this.gbViajes.Name = "gbViajes";
             this.gbViajes.ReadOnly = true;
             this.gbViajes.RowHeadersVisible = false;
             this.gbViajes.RowHeadersWidth = 51;
-            this.gbViajes.Size = new System.Drawing.Size(1466, 132);
+            this.gbViajes.Size = new System.Drawing.Size(1100, 107);
             this.gbViajes.TabIndex = 68;
             this.gbViajes.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.gbViajes.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -361,10 +360,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(918, 303);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(688, 246);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(87, 23);
+            this.label1.Size = new System.Drawing.Size(66, 17);
             this.label1.TabIndex = 69;
             this.label1.Text = "Enfermero";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -373,10 +371,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1179, 303);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(884, 246);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 23);
+            this.label4.Size = new System.Drawing.Size(49, 17);
             this.label4.TabIndex = 71;
             this.label4.Text = "Médico";
             // 
@@ -384,10 +381,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(489, 303);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(367, 246);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 23);
+            this.label5.Size = new System.Drawing.Size(85, 17);
             this.label5.TabIndex = 73;
             this.label5.Text = "Patente móvil";
             // 
@@ -395,10 +391,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(489, 266);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(367, 216);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(216, 23);
+            this.label6.Size = new System.Drawing.Size(175, 19);
             this.label6.TabIndex = 74;
             this.label6.Text = "Búsqueda solo por patente";
             // 
@@ -406,10 +401,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(899, 266);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(674, 216);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(235, 23);
+            this.label7.Size = new System.Drawing.Size(193, 19);
             this.label7.TabIndex = 76;
             this.label7.Text = "Búsqueda solo por matrículas";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -418,7 +412,7 @@
             // 
             this.btnBuscarPorPatente.Animated = true;
             this.btnBuscarPorPatente.AutoRoundedCorners = true;
-            this.btnBuscarPorPatente.BorderRadius = 18;
+            this.btnBuscarPorPatente.BorderRadius = 15;
             this.btnBuscarPorPatente.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBuscarPorPatente.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBuscarPorPatente.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -428,10 +422,10 @@
             this.btnBuscarPorPatente.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnBuscarPorPatente.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscarPorPatente.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarPorPatente.Location = new System.Drawing.Point(493, 398);
-            this.btnBuscarPorPatente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarPorPatente.Location = new System.Drawing.Point(370, 323);
+            this.btnBuscarPorPatente.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarPorPatente.Name = "btnBuscarPorPatente";
-            this.btnBuscarPorPatente.Size = new System.Drawing.Size(346, 39);
+            this.btnBuscarPorPatente.Size = new System.Drawing.Size(260, 32);
             this.btnBuscarPorPatente.TabIndex = 80;
             this.btnBuscarPorPatente.Text = "Buscar";
             this.btnBuscarPorPatente.Click += new System.EventHandler(this.btnBuscarPorPatente_Click);
@@ -440,7 +434,7 @@
             // 
             this.btnBuscarPorDatos.Animated = true;
             this.btnBuscarPorDatos.AutoRoundedCorners = true;
-            this.btnBuscarPorDatos.BorderRadius = 18;
+            this.btnBuscarPorDatos.BorderRadius = 15;
             this.btnBuscarPorDatos.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBuscarPorDatos.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBuscarPorDatos.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -450,10 +444,10 @@
             this.btnBuscarPorDatos.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnBuscarPorDatos.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscarPorDatos.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarPorDatos.Location = new System.Drawing.Point(162, 697);
-            this.btnBuscarPorDatos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarPorDatos.Location = new System.Drawing.Point(122, 566);
+            this.btnBuscarPorDatos.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarPorDatos.Name = "btnBuscarPorDatos";
-            this.btnBuscarPorDatos.Size = new System.Drawing.Size(1112, 39);
+            this.btnBuscarPorDatos.Size = new System.Drawing.Size(834, 32);
             this.btnBuscarPorDatos.TabIndex = 81;
             this.btnBuscarPorDatos.Text = "Buscar";
             this.btnBuscarPorDatos.Click += new System.EventHandler(this.btnBuscarPorDatosPersonales_Click);
@@ -466,10 +460,10 @@
             this.chkIncluirFechas.CheckedState.BorderThickness = 0;
             this.chkIncluirFechas.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.chkIncluirFechas.Font = new System.Drawing.Font("Segoe UI Semilight", 10F);
-            this.chkIncluirFechas.Location = new System.Drawing.Point(56, 470);
-            this.chkIncluirFechas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.chkIncluirFechas.Location = new System.Drawing.Point(42, 382);
+            this.chkIncluirFechas.Margin = new System.Windows.Forms.Padding(2);
             this.chkIncluirFechas.Name = "chkIncluirFechas";
-            this.chkIncluirFechas.Size = new System.Drawing.Size(366, 27);
+            this.chkIncluirFechas.Size = new System.Drawing.Size(299, 23);
             this.chkIncluirFechas.TabIndex = 82;
             this.chkIncluirFechas.Text = "Deseo incluir la fecha en las otras búsquedas";
             this.chkIncluirFechas.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
@@ -481,7 +475,7 @@
             // 
             this.txtMatriculaEnfermero.Animated = true;
             this.txtMatriculaEnfermero.AutoRoundedCorners = true;
-            this.txtMatriculaEnfermero.BorderRadius = 17;
+            this.txtMatriculaEnfermero.BorderRadius = 13;
             this.txtMatriculaEnfermero.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMatriculaEnfermero.DefaultText = "";
             this.txtMatriculaEnfermero.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -494,23 +488,24 @@
             this.txtMatriculaEnfermero.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMatriculaEnfermero.IconLeft = global::SIMED_V1.Properties.Resources.numbers;
             this.txtMatriculaEnfermero.IconLeftSize = new System.Drawing.Size(30, 20);
-            this.txtMatriculaEnfermero.Location = new System.Drawing.Point(911, 338);
-            this.txtMatriculaEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMatriculaEnfermero.Location = new System.Drawing.Point(683, 275);
+            this.txtMatriculaEnfermero.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatriculaEnfermero.MaxLength = 10;
             this.txtMatriculaEnfermero.Name = "txtMatriculaEnfermero";
             this.txtMatriculaEnfermero.PasswordChar = '\0';
             this.txtMatriculaEnfermero.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtMatriculaEnfermero.PlaceholderText = "Número de matrícula";
             this.txtMatriculaEnfermero.SelectedText = "";
-            this.txtMatriculaEnfermero.Size = new System.Drawing.Size(247, 36);
+            this.txtMatriculaEnfermero.Size = new System.Drawing.Size(185, 29);
             this.txtMatriculaEnfermero.TabIndex = 72;
             this.txtMatriculaEnfermero.TextChanged += new System.EventHandler(this.txtMatriculaMedico_TextChanged);
+            this.txtMatriculaEnfermero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatriculaEnfermero_KeyPress);
             // 
             // txtMatriculaMedico
             // 
             this.txtMatriculaMedico.Animated = true;
             this.txtMatriculaMedico.AutoRoundedCorners = true;
-            this.txtMatriculaMedico.BorderRadius = 17;
+            this.txtMatriculaMedico.BorderRadius = 13;
             this.txtMatriculaMedico.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMatriculaMedico.DefaultText = "";
             this.txtMatriculaMedico.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -523,22 +518,23 @@
             this.txtMatriculaMedico.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMatriculaMedico.IconLeft = global::SIMED_V1.Properties.Resources.numbers;
             this.txtMatriculaMedico.IconLeftSize = new System.Drawing.Size(30, 20);
-            this.txtMatriculaMedico.Location = new System.Drawing.Point(1183, 338);
-            this.txtMatriculaMedico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMatriculaMedico.Location = new System.Drawing.Point(887, 275);
+            this.txtMatriculaMedico.Margin = new System.Windows.Forms.Padding(2);
             this.txtMatriculaMedico.MaxLength = 10;
             this.txtMatriculaMedico.Name = "txtMatriculaMedico";
             this.txtMatriculaMedico.PasswordChar = '\0';
             this.txtMatriculaMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtMatriculaMedico.PlaceholderText = "Número de matrícula";
             this.txtMatriculaMedico.SelectedText = "";
-            this.txtMatriculaMedico.Size = new System.Drawing.Size(253, 36);
+            this.txtMatriculaMedico.Size = new System.Drawing.Size(190, 29);
             this.txtMatriculaMedico.TabIndex = 70;
+            this.txtMatriculaMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatriculaMedico_KeyPress);
             // 
             // btnVolver
             // 
             this.btnVolver.Animated = true;
             this.btnVolver.AutoRoundedCorners = true;
-            this.btnVolver.BorderRadius = 22;
+            this.btnVolver.BorderRadius = 17;
             this.btnVolver.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnVolver.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnVolver.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -547,17 +543,18 @@
             this.btnVolver.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
             this.btnVolver.Image = global::SIMED_V1.Properties.Resources.left_arrow;
-            this.btnVolver.Location = new System.Drawing.Point(43, 820);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnVolver.Location = new System.Drawing.Point(32, 666);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(2);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(84, 46);
+            this.btnVolver.Size = new System.Drawing.Size(63, 37);
             this.btnVolver.TabIndex = 59;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // txtConsultaApellidoEnfermero
             // 
             this.txtConsultaApellidoEnfermero.Animated = true;
             this.txtConsultaApellidoEnfermero.AutoRoundedCorners = true;
-            this.txtConsultaApellidoEnfermero.BorderRadius = 17;
+            this.txtConsultaApellidoEnfermero.BorderRadius = 14;
             this.txtConsultaApellidoEnfermero.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConsultaApellidoEnfermero.DefaultText = "";
             this.txtConsultaApellidoEnfermero.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -569,21 +566,22 @@
             this.txtConsultaApellidoEnfermero.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtConsultaApellidoEnfermero.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtConsultaApellidoEnfermero.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtConsultaApellidoEnfermero.Location = new System.Drawing.Point(169, 631);
-            this.txtConsultaApellidoEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConsultaApellidoEnfermero.Location = new System.Drawing.Point(127, 513);
+            this.txtConsultaApellidoEnfermero.Margin = new System.Windows.Forms.Padding(2);
             this.txtConsultaApellidoEnfermero.Name = "txtConsultaApellidoEnfermero";
             this.txtConsultaApellidoEnfermero.PasswordChar = '\0';
             this.txtConsultaApellidoEnfermero.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtConsultaApellidoEnfermero.PlaceholderText = "Apellido del enfermero";
             this.txtConsultaApellidoEnfermero.SelectedText = "";
-            this.txtConsultaApellidoEnfermero.Size = new System.Drawing.Size(525, 37);
+            this.txtConsultaApellidoEnfermero.Size = new System.Drawing.Size(394, 30);
             this.txtConsultaApellidoEnfermero.TabIndex = 84;
+            this.txtConsultaApellidoEnfermero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsultaApellidoEnfermero_KeyPress);
             // 
             // txtConsultaNombreEnfermero
             // 
             this.txtConsultaNombreEnfermero.Animated = true;
             this.txtConsultaNombreEnfermero.AutoRoundedCorners = true;
-            this.txtConsultaNombreEnfermero.BorderRadius = 18;
+            this.txtConsultaNombreEnfermero.BorderRadius = 14;
             this.txtConsultaNombreEnfermero.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConsultaNombreEnfermero.DefaultText = "";
             this.txtConsultaNombreEnfermero.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -595,21 +593,22 @@
             this.txtConsultaNombreEnfermero.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtConsultaNombreEnfermero.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtConsultaNombreEnfermero.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtConsultaNombreEnfermero.Location = new System.Drawing.Point(168, 566);
-            this.txtConsultaNombreEnfermero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConsultaNombreEnfermero.Location = new System.Drawing.Point(126, 460);
+            this.txtConsultaNombreEnfermero.Margin = new System.Windows.Forms.Padding(2);
             this.txtConsultaNombreEnfermero.Name = "txtConsultaNombreEnfermero";
             this.txtConsultaNombreEnfermero.PasswordChar = '\0';
             this.txtConsultaNombreEnfermero.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtConsultaNombreEnfermero.PlaceholderText = "Nombre del enfermero";
             this.txtConsultaNombreEnfermero.SelectedText = "";
-            this.txtConsultaNombreEnfermero.Size = new System.Drawing.Size(526, 38);
+            this.txtConsultaNombreEnfermero.Size = new System.Drawing.Size(394, 31);
             this.txtConsultaNombreEnfermero.TabIndex = 83;
+            this.txtConsultaNombreEnfermero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsultaNombreEnfermero_KeyPress);
             // 
             // txtConsultaApellidoMedico
             // 
             this.txtConsultaApellidoMedico.Animated = true;
             this.txtConsultaApellidoMedico.AutoRoundedCorners = true;
-            this.txtConsultaApellidoMedico.BorderRadius = 18;
+            this.txtConsultaApellidoMedico.BorderRadius = 14;
             this.txtConsultaApellidoMedico.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConsultaApellidoMedico.DefaultText = "";
             this.txtConsultaApellidoMedico.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -621,22 +620,23 @@
             this.txtConsultaApellidoMedico.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtConsultaApellidoMedico.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtConsultaApellidoMedico.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtConsultaApellidoMedico.Location = new System.Drawing.Point(732, 630);
-            this.txtConsultaApellidoMedico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConsultaApellidoMedico.Location = new System.Drawing.Point(549, 512);
+            this.txtConsultaApellidoMedico.Margin = new System.Windows.Forms.Padding(2);
             this.txtConsultaApellidoMedico.MaxLength = 30;
             this.txtConsultaApellidoMedico.Name = "txtConsultaApellidoMedico";
             this.txtConsultaApellidoMedico.PasswordChar = '\0';
             this.txtConsultaApellidoMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtConsultaApellidoMedico.PlaceholderText = "Apellido del médico";
             this.txtConsultaApellidoMedico.SelectedText = "";
-            this.txtConsultaApellidoMedico.Size = new System.Drawing.Size(535, 38);
+            this.txtConsultaApellidoMedico.Size = new System.Drawing.Size(401, 31);
             this.txtConsultaApellidoMedico.TabIndex = 86;
+            this.txtConsultaApellidoMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsultaApellidoMedico_KeyPress);
             // 
             // txtConsultaNombreMedico
             // 
             this.txtConsultaNombreMedico.Animated = true;
             this.txtConsultaNombreMedico.AutoRoundedCorners = true;
-            this.txtConsultaNombreMedico.BorderRadius = 18;
+            this.txtConsultaNombreMedico.BorderRadius = 14;
             this.txtConsultaNombreMedico.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtConsultaNombreMedico.DefaultText = "";
             this.txtConsultaNombreMedico.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -648,22 +648,23 @@
             this.txtConsultaNombreMedico.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic);
             this.txtConsultaNombreMedico.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtConsultaNombreMedico.IconLeft = global::SIMED_V1.Properties.Resources.user;
-            this.txtConsultaNombreMedico.Location = new System.Drawing.Point(732, 566);
-            this.txtConsultaNombreMedico.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtConsultaNombreMedico.Location = new System.Drawing.Point(549, 460);
+            this.txtConsultaNombreMedico.Margin = new System.Windows.Forms.Padding(2);
             this.txtConsultaNombreMedico.MaxLength = 30;
             this.txtConsultaNombreMedico.Name = "txtConsultaNombreMedico";
             this.txtConsultaNombreMedico.PasswordChar = '\0';
             this.txtConsultaNombreMedico.PlaceholderForeColor = System.Drawing.Color.DimGray;
             this.txtConsultaNombreMedico.PlaceholderText = "Nombre del médico";
             this.txtConsultaNombreMedico.SelectedText = "";
-            this.txtConsultaNombreMedico.Size = new System.Drawing.Size(535, 38);
+            this.txtConsultaNombreMedico.Size = new System.Drawing.Size(401, 31);
             this.txtConsultaNombreMedico.TabIndex = 85;
+            this.txtConsultaNombreMedico.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtConsultaNombreMedico_KeyPress);
             // 
             // btnBuscarPorMatricula
             // 
             this.btnBuscarPorMatricula.Animated = true;
             this.btnBuscarPorMatricula.AutoRoundedCorners = true;
-            this.btnBuscarPorMatricula.BorderRadius = 18;
+            this.btnBuscarPorMatricula.BorderRadius = 15;
             this.btnBuscarPorMatricula.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnBuscarPorMatricula.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnBuscarPorMatricula.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -673,10 +674,10 @@
             this.btnBuscarPorMatricula.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(95)))), ((int)(((byte)(178)))), ((int)(((byte)(210)))));
             this.btnBuscarPorMatricula.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnBuscarPorMatricula.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarPorMatricula.Location = new System.Drawing.Point(903, 398);
-            this.btnBuscarPorMatricula.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBuscarPorMatricula.Location = new System.Drawing.Point(677, 323);
+            this.btnBuscarPorMatricula.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarPorMatricula.Name = "btnBuscarPorMatricula";
-            this.btnBuscarPorMatricula.Size = new System.Drawing.Size(533, 39);
+            this.btnBuscarPorMatricula.Size = new System.Drawing.Size(400, 32);
             this.btnBuscarPorMatricula.TabIndex = 87;
             this.btnBuscarPorMatricula.Text = "Buscar";
             this.btnBuscarPorMatricula.Click += new System.EventHandler(this.btnBuscarPorMatricula_Click);
@@ -685,10 +686,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(583, 522);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(437, 424);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(285, 23);
+            this.label3.Size = new System.Drawing.Size(232, 19);
             this.label3.TabIndex = 88;
             this.label3.Text = "Búsqueda solo por datos personales";
             // 
@@ -696,7 +696,7 @@
             // 
             this.btnLimpiarGrilla.Animated = true;
             this.btnLimpiarGrilla.AutoRoundedCorners = true;
-            this.btnLimpiarGrilla.BorderRadius = 18;
+            this.btnLimpiarGrilla.BorderRadius = 15;
             this.btnLimpiarGrilla.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
             this.btnLimpiarGrilla.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.btnLimpiarGrilla.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
@@ -706,19 +706,67 @@
             this.btnLimpiarGrilla.FillColor2 = System.Drawing.Color.Transparent;
             this.btnLimpiarGrilla.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnLimpiarGrilla.ForeColor = System.Drawing.Color.DimGray;
-            this.btnLimpiarGrilla.Location = new System.Drawing.Point(644, 205);
-            this.btnLimpiarGrilla.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnLimpiarGrilla.Location = new System.Drawing.Point(419, 166);
+            this.btnLimpiarGrilla.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarGrilla.Name = "btnLimpiarGrilla";
-            this.btnLimpiarGrilla.Size = new System.Drawing.Size(224, 39);
+            this.btnLimpiarGrilla.Size = new System.Drawing.Size(168, 32);
             this.btnLimpiarGrilla.TabIndex = 89;
             this.btnLimpiarGrilla.Text = "Limpiar Grilla";
             this.btnLimpiarGrilla.Click += new System.EventHandler(this.btnLimpiarGrilla_Click);
             // 
+            // guna2ControlBox1
+            // 
+            this.guna2ControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox1.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox1.IconColor = System.Drawing.Color.DimGray;
+            this.guna2ControlBox1.Location = new System.Drawing.Point(1117, 11);
+            this.guna2ControlBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2ControlBox1.Name = "guna2ControlBox1";
+            this.guna2ControlBox1.Size = new System.Drawing.Size(34, 18);
+            this.guna2ControlBox1.TabIndex = 91;
+            // 
+            // guna2ControlBox2
+            // 
+            this.guna2ControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
+            this.guna2ControlBox2.FillColor = System.Drawing.Color.Transparent;
+            this.guna2ControlBox2.IconColor = System.Drawing.Color.DimGray;
+            this.guna2ControlBox2.Location = new System.Drawing.Point(1080, 11);
+            this.guna2ControlBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.guna2ControlBox2.Name = "guna2ControlBox2";
+            this.guna2ControlBox2.Size = new System.Drawing.Size(34, 18);
+            this.guna2ControlBox2.TabIndex = 90;
+            // 
+            // btnCargarGrilla
+            // 
+            this.btnCargarGrilla.Animated = true;
+            this.btnCargarGrilla.AutoRoundedCorners = true;
+            this.btnCargarGrilla.BorderRadius = 15;
+            this.btnCargarGrilla.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCargarGrilla.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCargarGrilla.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCargarGrilla.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCargarGrilla.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCargarGrilla.FillColor = System.Drawing.Color.Transparent;
+            this.btnCargarGrilla.FillColor2 = System.Drawing.Color.Transparent;
+            this.btnCargarGrilla.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCargarGrilla.ForeColor = System.Drawing.Color.DimGray;
+            this.btnCargarGrilla.Location = new System.Drawing.Point(628, 166);
+            this.btnCargarGrilla.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCargarGrilla.Name = "btnCargarGrilla";
+            this.btnCargarGrilla.Size = new System.Drawing.Size(168, 32);
+            this.btnCargarGrilla.TabIndex = 92;
+            this.btnCargarGrilla.Text = "Cargar Grilla";
+            this.btnCargarGrilla.Click += new System.EventHandler(this.btnCargarGrilla_Click);
+            // 
             // ConsultarViaje
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1547, 1028);
+            this.ClientSize = new System.Drawing.Size(1165, 712);
+            this.Controls.Add(this.btnCargarGrilla);
+            this.Controls.Add(this.guna2ControlBox1);
+            this.Controls.Add(this.guna2ControlBox2);
             this.Controls.Add(this.btnLimpiarGrilla);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnBuscarPorMatricula);
@@ -749,8 +797,7 @@
             this.Controls.Add(this.lblBusqueda);
             this.Controls.Add(this.lblConsultarViaje);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MinimumSize = new System.Drawing.Size(1374, 1028);
+            this.MinimumSize = new System.Drawing.Size(1023, 583);
             this.Name = "ConsultarViaje";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultarViaje";
@@ -801,5 +848,8 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2GradientButton btnBuscarPorMatricula;
         private Guna.UI2.WinForms.Guna2GradientButton btnLimpiarGrilla;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
+        private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox2;
+        private Guna.UI2.WinForms.Guna2GradientButton btnCargarGrilla;
     }
 }

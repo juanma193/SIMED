@@ -99,6 +99,262 @@ namespace SIMED_V1.Bases_de_datos
         }
 
 
+
+        public static List<int> obtenerMatriculaMedicoTupla(DateTime fecha, TimeSpan hora)
+        {
+            List<int> resultado = new List<int>();
+            List<Medicosxviajes> viajes;
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var travels = db.Medicosxviajes.Where(a => a.Fecha == fecha && a.HoraSalida == hora);
+                viajes = travels.ToList();
+
+                foreach (var viaje in viajes)
+                {
+                    resultado.Add(viaje.NumeroMatriculaMedico);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+
+
+            if (resultado.Count == 0)
+            {
+                resultado.Add(-1);
+                return resultado;
+            }
+
+
+            else { return resultado; }
+
+
+        }
+
+        public static List<int> obtenerMatriculaEnfermeroTupla(DateTime fecha, TimeSpan hora)
+        {
+            List<int> resultado = new List<int>();
+            List<Enfermerosxviajes> viajes;
+            var db = new BD3K3G05_2022Context();
+
+            try
+            {
+                var travels = db.Enfermerosxviajes.Where(a => a.Fecha == fecha && a.HoraSalida == hora);
+                viajes = travels.ToList();
+
+                foreach (var viaje in viajes)
+                {
+                    resultado.Add(viaje.NumeroMatriculaEnfermero);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resultado = null;
+            }
+
+
+
+            if (resultado.Count == 0)
+            {
+                resultado.Add(-1);
+                return resultado;
+            }
+
+
+            else { return resultado; }
+
+
+        }
+
+
+        public static bool BorrarEnfermerosXViajesModif(DateTime fecha, int idMovil, TimeSpan horaSalida)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                string consulta = @"DELETE FROM ENFERMEROSXVIAJES WHERE fecha=@fechaV AND id_movil=@idMovilV AND hora_salida=@horaSal";
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@fechaV", fecha);
+                cmd.Parameters.AddWithValue("@idMovilV", idMovil);
+                cmd.Parameters.AddWithValue("@horaSal", horaSalida);
+                
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+
+                
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+
+        }
+
+        public static bool BorrarMedicosXViajesModif(DateTime fecha, int idMovil, TimeSpan horaSalida)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                string consulta = @"DELETE FROM MEDICOSXVIAJES WHERE fecha=@fechaV AND id_movil=@idMovilV AND hora_salida=@horaSal";
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@fechaV", fecha);
+                cmd.Parameters.AddWithValue("@idMovilV", idMovil);
+                cmd.Parameters.AddWithValue("@horaSal", horaSalida);
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+
+        }
+
+
+        public static bool ModificarViaje(DateTime fecha, int idMovil, TimeSpan horaSalida, TimeSpan horaLlegada, List<int> listaEnf,
+                                  List<int> listaMed, int turnoRot, int tipoViaje, float combPrevio, float combPost, float km)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlTransaction objTransaccion = null;
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                string consulta = @"UPDATE VIAJES SET id_turnoRotativo=@turno, id_tipoViaje=@tipo, horaLlegada=@horaLleg, 
+                                    cantCombustiblePrevio=@cbPrevio, cantCombustiblePost=@cbPost, kilometrosRealizados=@kilometros 
+                                    WHERE (fecha=@fechaV AND id_movil=@idMovilV AND hora_salida=@horaSal)";
+
+
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@fechaV", fecha);
+                cmd.Parameters.AddWithValue("@idMovilV", idMovil);
+                cmd.Parameters.AddWithValue("@horaSal", horaSalida);
+                cmd.Parameters.AddWithValue("@turno", turnoRot);
+                cmd.Parameters.AddWithValue("@tipo", tipoViaje);
+                cmd.Parameters.AddWithValue("@horaLleg", horaLlegada);
+                cmd.Parameters.AddWithValue("@cbPrevio", combPrevio);
+                cmd.Parameters.AddWithValue("cbPost", combPost);
+                cmd.Parameters.AddWithValue("@kilometros", km);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+
+                cn.Open();
+                objTransaccion = cn.BeginTransaction("ModificacionDeViaje");
+                cmd.Transaction = objTransaccion;
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+
+                bool res = BorrarEnfermerosXViajesModif(fecha, idMovil, horaSalida);
+                bool res2 = BorrarMedicosXViajesModif(fecha, idMovil, horaSalida);
+
+                if(res && res2)
+                {
+                    foreach (var matEnf in listaEnf)
+                    {
+
+                        string consultaEnfXViaje = @"INSERT INTO ENFERMEROSXVIAJES (numeroMatriculaEnfermero, fecha, hora_salida, id_movil) VALUES(@matE, @fechaV,
+                                                @horaSal, @idMovilV)";
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@matE", matEnf);
+                        cmd.Parameters.AddWithValue("@fechaV", fecha);
+                        cmd.Parameters.AddWithValue("@idMovilV", idMovil);
+                        cmd.Parameters.AddWithValue("@horaSal", horaSalida);
+
+                        cmd.CommandText = consultaEnfXViaje;
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    foreach (var matMed in listaMed)
+                    {
+
+                        string consultaMedxViaje = @"INSERT INTO MEDICOSXVIAJES (numeroMatriculaMedico, fecha, hora_salida, id_movil) VALUES(@matM, @fechaV,
+                                                @horaSal, @idMovilV)";
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@matM", matMed);
+                        cmd.Parameters.AddWithValue("@fechaV", fecha);
+                        cmd.Parameters.AddWithValue("@idMovilV", idMovil);
+                        cmd.Parameters.AddWithValue("@horaSal", horaSalida);
+
+
+
+                        cmd.CommandText = consultaMedxViaje;
+                        cmd.ExecuteNonQuery();
+                    }
+
+                    objTransaccion.Commit();
+                    return true;
+                }
+                else 
+                {
+                    objTransaccion.Rollback();
+                    return false; 
+                }
+                
+
+            }
+            catch (Exception ex)
+            {
+                objTransaccion.Rollback();
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
         public static DataTable ObtenerMoviles()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
