@@ -189,13 +189,20 @@ namespace SIMED_V1.Forms_Para_ABM
             {
                 enfer = true;
             }
-            if (int.Parse(txtKilometros.Text) > 0)
+            if(txtKilometros.Text != "")
             {
-                kmtot = true;
+                if (int.Parse(txtKilometros.Text) > 0)
+                {
+                    kmtot = true;
+                }
             }
-            if (int.Parse(txtCombustiblePrevio.Text)- int.Parse(txtCombustiblePost.Text) >= 0)
+
+            if (txtCombustiblePrevio.Text != "" && txtCombustiblePost.Text != "")
             {
-                comrest = true;
+                if (int.Parse(txtCombustiblePrevio.Text) - int.Parse(txtCombustiblePost.Text) >= 0)
+                {
+                    comrest = true;
+                }
             }
 
             if (enfer && kmtot && comrest)

@@ -756,7 +756,7 @@
             this.btnCargarGrilla.Name = "btnCargarGrilla";
             this.btnCargarGrilla.Size = new System.Drawing.Size(168, 32);
             this.btnCargarGrilla.TabIndex = 92;
-            this.btnCargarGrilla.Text = "Cargar Grilla";
+            this.btnCargarGrilla.Text = "Mostrar todos";
             this.btnCargarGrilla.Click += new System.EventHandler(this.btnCargarGrilla_Click);
             // 
             // ConsultarViaje

@@ -705,7 +705,7 @@ namespace SIMED_V1.Bases_de_datos
             }
             catch (Exception ex)
             {
-                resultado = null;
+                resultado.NumeroMatriculaEnfermero = 0;
             }
 
             return resultado.NumeroMatriculaEnfermero;
@@ -1021,7 +1021,7 @@ namespace SIMED_V1.Bases_de_datos
 
             try
             {
-                var enfermeros = db.Enfermeros.Where(a => (a.Apellido.Contains(apellido) && apellido.Length > 0) || (a.Nombre.Contains(nombre)) && nombre.Length > 0);
+                var enfermeros = db.Enfermeros.Where(a => (a.Apellido.Contains(apellido) && apellido.Length > 0) && (a.Nombre.Contains(nombre)) && nombre.Length > 0);
                 nurses = enfermeros.ToList();
             }
             catch (Exception ex)
