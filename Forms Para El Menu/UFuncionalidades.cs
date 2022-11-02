@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SIMED_V1.Forms_Para_Reportes;
 
 namespace SIMED_V1.Forms_Para_El_Menu
 {
@@ -44,6 +45,12 @@ namespace SIMED_V1.Forms_Para_El_Menu
         private void btnRelacionLaboral_Click(object sender, EventArgs e)
         {
             URelacionesLaborales ventana = new URelacionesLaborales();
+            ventana.Show();
+        }
+
+        private void btnReportesEst_Click(object sender, EventArgs e)
+        {
+            PrincipalRepEst ventana = new PrincipalRepEst();
             ventana.Show();
         }
     }

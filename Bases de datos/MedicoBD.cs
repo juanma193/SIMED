@@ -632,5 +632,6 @@ namespace SIMED_V1.Bases_de_datos
 
             return resultado;
         }
+
     }
 }

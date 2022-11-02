@@ -113,6 +113,16 @@ namespace SIMED_V1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _8646591751555590630_512 {
+            get {
+                object obj = ResourceManager.GetObject("8646591751555590630-512", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _897245_clock_manage_schedule_time_icon {
             get {
                 object obj = ResourceManager.GetObject("897245_clock_manage_schedule_time_icon", resourceCulture);
@@ -296,6 +306,26 @@ namespace SIMED_V1.Properties {
         internal static System.Drawing.Bitmap enfemeros {
             get {
                 object obj = ResourceManager.GetObject("enfemeros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_coin_statistics_icon_2147_thumb {
+            get {
+                object obj = ResourceManager.GetObject("free-coin-statistics-icon-2147-thumb", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap free_coin_statistics_icon_2147_thumb1 {
+            get {
+                object obj = ResourceManager.GetObject("free-coin-statistics-icon-2147-thumb1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

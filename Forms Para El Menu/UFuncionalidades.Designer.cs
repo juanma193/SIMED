@@ -30,6 +30,7 @@
         {
             this.lblFuncionalidades = new System.Windows.Forms.Label();
             this.lblSeleccionFuncionalidades = new System.Windows.Forms.Label();
+            this.btnReportesEst = new Guna.UI2.WinForms.Guna2Button();
             this.btnModelos = new Guna.UI2.WinForms.Guna2Button();
             this.btnTiposViajes = new Guna.UI2.WinForms.Guna2Button();
             this.btnRelacionLaboral = new Guna.UI2.WinForms.Guna2Button();
@@ -61,6 +62,30 @@
             this.lblSeleccionFuncionalidades.TabIndex = 17;
             this.lblSeleccionFuncionalidades.Text = "Seleccione una de las siguientes opciones";
             // 
+            // btnReportesEst
+            // 
+            this.btnReportesEst.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnReportesEst.Animated = true;
+            this.btnReportesEst.AutoRoundedCorners = true;
+            this.btnReportesEst.BorderRadius = 36;
+            this.btnReportesEst.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportesEst.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnReportesEst.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnReportesEst.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnReportesEst.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(88)))), ((int)(((byte)(191)))));
+            this.btnReportesEst.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.btnReportesEst.ForeColor = System.Drawing.Color.White;
+            this.btnReportesEst.Image = global::SIMED_V1.Properties.Resources.free_coin_statistics_icon_2147_thumb1;
+            this.btnReportesEst.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnReportesEst.ImageOffset = new System.Drawing.Point(10, 0);
+            this.btnReportesEst.Location = new System.Drawing.Point(412, 381);
+            this.btnReportesEst.Margin = new System.Windows.Forms.Padding(2);
+            this.btnReportesEst.Name = "btnReportesEst";
+            this.btnReportesEst.Size = new System.Drawing.Size(196, 74);
+            this.btnReportesEst.TabIndex = 14;
+            this.btnReportesEst.Text = "Reportes y estadísticas";
+            this.btnReportesEst.Click += new System.EventHandler(this.btnReportesEst_Click);
+            // 
             // btnModelos
             // 
             this.btnModelos.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -77,7 +102,7 @@
             this.btnModelos.Image = global::SIMED_V1.Properties.Resources._1054957_tools_screwdriver_wrench_icon;
             this.btnModelos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnModelos.ImageOffset = new System.Drawing.Point(10, 0);
-            this.btnModelos.Location = new System.Drawing.Point(238, 383);
+            this.btnModelos.Location = new System.Drawing.Point(71, 381);
             this.btnModelos.Margin = new System.Windows.Forms.Padding(2);
             this.btnModelos.Name = "btnModelos";
             this.btnModelos.Size = new System.Drawing.Size(196, 74);
@@ -182,6 +207,7 @@
             this.AutoSize = true;
             this.Controls.Add(this.lblSeleccionFuncionalidades);
             this.Controls.Add(this.lblFuncionalidades);
+            this.Controls.Add(this.btnReportesEst);
             this.Controls.Add(this.btnModelos);
             this.Controls.Add(this.btnTiposViajes);
             this.Controls.Add(this.btnRelacionLaboral);
@@ -204,5 +230,6 @@
         private Guna.UI2.WinForms.Guna2Button btnModelos;
         private System.Windows.Forms.Label lblFuncionalidades;
         private System.Windows.Forms.Label lblSeleccionFuncionalidades;
+        private Guna.UI2.WinForms.Guna2Button btnReportesEst;
     }
 }

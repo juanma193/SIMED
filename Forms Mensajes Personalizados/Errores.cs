@@ -21,7 +21,7 @@ namespace SIMED_V1
             //player.SoundLocation = "C:\\Facultad\\Tercer Año\\PAV 1\\practicas\\archivos para proyecto\\sonidoPayaso.wav";
             //player.Play();
             this.Show();
-            player.Play("C:\\Program Files (x86)\\SIMED\\archivos\\sonidoPayaso.wav");
+            //player.Play("C:\\Program Files (x86)\\SIMED\\archivos\\sonidoPayaso.wav");
             this.SetStyle(ControlStyles.ResizeRedraw, true);
             
 

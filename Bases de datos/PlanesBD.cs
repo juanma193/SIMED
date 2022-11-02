@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SIMED_V1.Bases_de_datos
 {
@@ -326,5 +327,47 @@ namespace SIMED_V1.Bases_de_datos
             return resultado;
         }
 
+        public static double ObtenerIngresosNuevos(DateTime fechaFin, DateTime fechaInicio)
+        {
+            DataTable t = AfiliadosBD.ObtenerAfiliadosNuevos(fechaFin, fechaInicio);
+            double res = 0;
+            foreach(DataRow row in t.Rows)
+            {
+                int idPlan = int.Parse(row[8].ToString());
+                string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+                SqlConnection cn = new SqlConnection(cadenaConexion);
+                try
+                {
+
+                    SqlCommand cmd = new SqlCommand();
+                    string consulta = @"SELECT P.precio FROM PLANES P WHERE P.id_plan = @id";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@id", idPlan);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = consulta;
+
+                    cn.Open();
+                    cmd.Connection = cn;
+                    res +=(double)cmd.ExecuteScalar();
+                                     
+
+                }
+                catch (Exception ex)
+                {
+
+                    ErroresForm window = new ErroresForm();
+                    window.show("Error " + ex);
+                    throw;
+                }
+
+                finally
+                {
+                    cn.Close();
+                }
+            }
+
+            return res;
+            
+        }
     }
 }
