@@ -25,5 +25,6 @@ namespace SIMED_V1.Forms_Para_Reportes
             ContActivo.Dock = DockStyle.Fill;
             this.pnContenido.Controls.Add(ContActivo);
         }
+
     }
 }
