@@ -179,6 +179,93 @@ namespace SIMED_V1.Bases_de_datos
             }
         }
 
+        public static List<int> ObtenerIngresosPorPlan(DateTime fechaFin, DateTime fechaInicio)
+        {
+
+            DataTable t = AfiliadosBD.ObtenerAfiliadosNuevos(fechaFin, fechaInicio);
+            double res = 0;
+            List<int> ventas = new List<int>();
+            ventas.Add(0);
+            ventas.Add(0);
+            ventas.Add(0);
+            ventas.Add(0);
+            foreach (DataRow row in t.Rows)
+            {
+                int idPlan = int.Parse(row[8].ToString());
+
+                var resultado = new List<Planes>();
+                var db = new BD3K3G05_2022Context();
+
+                try
+                {
+                    var plan = db.Planes.First(a => a.IdPlan ==idPlan);
+
+                    if (plan.IdPlan == 1)
+                    {
+                        ventas[0] += 1;
+                    }
+                    else if (plan.IdPlan == 4) 
+                    {
+                        ventas[1] += 1;
+
+                    }
+                    else if (plan.IdPlan == 5)
+                    {
+                        ventas[2] += 1;
+
+                    }
+                    else if (plan.IdPlan ==11)
+                    {
+                        ventas[3] += 1;
+
+                    }
+
+
+
+                }
+                catch (Exception ex)
+                {
+                    resultado = null;
+                }
+
+                
+
+            }
+            return ventas;
+
+        }
+
+        public static List<String> ObtenerPlanes(List <int> ventas)
+        {
+            List<String> lista = new List<String>();
+            var db = new BD3K3G05_2022Context();
+
+            if (ventas[0] >0)
+            {
+                var plan = db.Planes.First(a => a.IdPlan == 1);
+                lista.Add(plan.NombrePlan);
+            }
+            if (ventas[1] > 0)
+            {
+                var plan = db.Planes.First(a => a.IdPlan == 4);
+                lista.Add(plan.NombrePlan);
+            }
+            if (ventas[2] > 0)
+            {
+                var plan = db.Planes.First(a => a.IdPlan == 5);
+                lista.Add(plan.NombrePlan);
+            }
+            if (ventas[3] > 0)
+            {
+                var plan = db.Planes.First(a => a.IdPlan == 11);
+                lista.Add(plan.NombrePlan);
+            }
+
+            return lista;
+
+
+        }
+
         public static DataTable ObtenerListadoPlanes(string nombrePlan)
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];

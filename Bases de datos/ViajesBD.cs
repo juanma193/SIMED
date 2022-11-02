@@ -98,7 +98,30 @@ namespace SIMED_V1.Bases_de_datos
             }
         }
 
+        public static int obtenerViajesEntreFechas(DateTime fecha)
+        {
+            int resultado =0;
+            List<Enfermerosxviajes> viajes;
+            var db = new BD3K3G05_2022Context();
 
+            try
+            {
+                var travels = db.Enfermerosxviajes.Where(a => a.Fecha == fecha );
+                viajes = travels.ToList();
+
+                foreach (var viaje in viajes)
+                {
+                    resultado += 1;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                resultado = 0;
+            }
+
+            return resultado;
+        }
 
         public static List<int> obtenerMatriculaMedicoTupla(DateTime fecha, TimeSpan hora)
         {

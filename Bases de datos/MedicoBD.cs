@@ -100,6 +100,44 @@ namespace SIMED_V1.Bases_de_datos
             }
         }
 
+        internal static object ObtenerMedicosTotales()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                string consulta = @"SELECT * FROM MEDICOS";
+                cmd.Parameters.Clear();
+
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla.Rows.Count;
+
+            }
+            catch (Exception ex)
+            {
+
+                ErroresForm window = new ErroresForm();
+                window.show("Error" + " " + ex);
+                throw;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+        }
+
         public static DataTable ObtenerEspecialidades()
         {
             string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
