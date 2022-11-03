@@ -716,19 +716,27 @@
     <Compile Include="Forms Para Reportes\PrincipalRepEst.Designer.cs">
       <DependentUpon>PrincipalRepEst.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Para Reportes\ReporteMedico.cs" />
+    <Compile Include="Forms Para Reportes\ReporteMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms Para Reportes\ReporteMedico.Designer.cs">
       <DependentUpon>ReporteMedico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Para Reportes\UAfiliadoRep.cs" />
+    <Compile Include="Forms Para Reportes\UAfiliadoRep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms Para Reportes\UAfiliadoRep.Designer.cs">
       <DependentUpon>UAfiliadoRep.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Para Reportes\UAmbulanciaRep.cs" />
+    <Compile Include="Forms Para Reportes\UAmbulanciaRep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms Para Reportes\UAmbulanciaRep.Designer.cs">
       <DependentUpon>UAmbulanciaRep.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Para Reportes\UEnfermeroRep.cs" />
+    <Compile Include="Forms Para Reportes\UEnfermeroRep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms Para Reportes\UEnfermeroRep.Designer.cs">
       <DependentUpon>UEnfermeroRep.cs</DependentUpon>
     </Compile>
@@ -738,11 +746,15 @@
     <Compile Include="Forms Para Reportes\UGeneral.Designer.cs">
       <DependentUpon>UGeneral.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Para Reportes\UMedicoRep.cs" />
+    <Compile Include="Forms Para Reportes\UMedicoRep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms Para Reportes\UMedicoRep.Designer.cs">
       <DependentUpon>UMedicoRep.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms Para Reportes\UViajeRep.cs" />
+    <Compile Include="Forms Para Reportes\UViajeRep.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Forms Para Reportes\UViajeRep.Designer.cs">
       <DependentUpon>UViajeRep.cs</DependentUpon>
     </Compile>
