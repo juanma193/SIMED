@@ -716,11 +716,35 @@
     <Compile Include="Forms Para Reportes\PrincipalRepEst.Designer.cs">
       <DependentUpon>PrincipalRepEst.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms Para Reportes\ReporteMedico.cs" />
+    <Compile Include="Forms Para Reportes\ReporteMedico.Designer.cs">
+      <DependentUpon>ReporteMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para Reportes\UAfiliadoRep.cs" />
+    <Compile Include="Forms Para Reportes\UAfiliadoRep.Designer.cs">
+      <DependentUpon>UAfiliadoRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para Reportes\UAmbulanciaRep.cs" />
+    <Compile Include="Forms Para Reportes\UAmbulanciaRep.Designer.cs">
+      <DependentUpon>UAmbulanciaRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para Reportes\UEnfermeroRep.cs" />
+    <Compile Include="Forms Para Reportes\UEnfermeroRep.Designer.cs">
+      <DependentUpon>UEnfermeroRep.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms Para Reportes\UGeneral.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Forms Para Reportes\UGeneral.Designer.cs">
       <DependentUpon>UGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para Reportes\UMedicoRep.cs" />
+    <Compile Include="Forms Para Reportes\UMedicoRep.Designer.cs">
+      <DependentUpon>UMedicoRep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms Para Reportes\UViajeRep.cs" />
+    <Compile Include="Forms Para Reportes\UViajeRep.Designer.cs">
+      <DependentUpon>UViajeRep.cs</DependentUpon>
     </Compile>
     <Compile Include="MusicPlayer.cs" />
     <Compile Include="Program.cs" />
@@ -926,8 +950,27 @@
     <EmbeddedResource Include="Forms Para Reportes\PrincipalRepEst.resx">
       <DependentUpon>PrincipalRepEst.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para Reportes\ReporteMedico.rdlc" />
+    <EmbeddedResource Include="Forms Para Reportes\ReporteMedico.resx">
+      <DependentUpon>ReporteMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para Reportes\UAfiliadoRep.resx">
+      <DependentUpon>UAfiliadoRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para Reportes\UAmbulanciaRep.resx">
+      <DependentUpon>UAmbulanciaRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para Reportes\UEnfermeroRep.resx">
+      <DependentUpon>UEnfermeroRep.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms Para Reportes\UGeneral.resx">
       <DependentUpon>UGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para Reportes\UMedicoRep.resx">
+      <DependentUpon>UMedicoRep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms Para Reportes\UViajeRep.resx">
+      <DependentUpon>UViajeRep.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
