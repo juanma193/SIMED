@@ -1272,18 +1272,18 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="BD3K3G05_2022DataSet1">
+    <DataSource Name="BD3K3G05_2022DataSet">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>67acc59c-2307-406f-b7e7-2457df9f7bb9</rd:DataSourceID>
+      <rd:DataSourceID>05a799b3-c691-49bd-9269-dce0bbd9a366</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
     <DataSet Name="DatosMedicos">
       <Query>
-        <DataSourceName>BD3K3G05_2022DataSet1</DataSourceName>
+        <DataSourceName>BD3K3G05_2022DataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
@@ -1293,7 +1293,7 @@
         </Field>
         <Field Name="numDocumento">
           <DataField>numDocumento</DataField>
-          <rd:TypeName>System.Int64</rd:TypeName>
+          <rd:TypeName>System.Double</rd:TypeName>
         </Field>
         <Field Name="id_tipoDocumento">
           <DataField>id_tipoDocumento</DataField>
@@ -1345,8 +1345,8 @@
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>BD3K3G05_2022DataSet1</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\barri\OneDrive\Documentos\GitHub\SIMED\BD3K3G05_2022DataSet1.xsd</rd:SchemaPath>
+        <rd:DataSetName>BD3K3G05_2022DataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\barri\OneDrive\Documentos\GitHub\SIMED\BD3K3G05_2022DataSet.xsd</rd:SchemaPath>
         <rd:TableName>MEDICOS</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

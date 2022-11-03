@@ -23,20 +23,29 @@ namespace SIMED_V1.Forms_Para_Reportes
         {
             // TODO: esta línea de código carga datos en la tabla 'bD3K3G05_2022DataSet.MEDICOS' Puede moverla o quitarla según sea necesario.
             this.mEDICOSTableAdapter.Fill(this.bD3K3G05_2022DataSet.MEDICOS);
+            // TODO: esta línea de código carga datos en la tabla 'bD3K3G05_2022DataSet.MEDICOS' Puede moverla o quitarla según sea necesario.
+            //this.mEDICOSTableAdapter.Fill(this.bD3K3G05_2022DataSet.MEDICOS);
 
-            this.reportViewerMedico.RefreshReport();
+
+            //this.reportViewerMedico.RefreshReport();
         }
 
         private void reportViewer1_Load(object sender, EventArgs e)
         {
+            
+
             DataTable tabla = new DataTable();
             tabla = MedicoBD.ObtenerMedicoCompletoReporte();
 
             ReportDataSource ds = new ReportDataSource("DatosMedicos", tabla);
 
-            reportViewerMedico.LocalReport.DataSources.Clear();
+            //reportViewerMedico.ProcessingMode = ProcessingMode.Remote;
+
+
             reportViewerMedico.LocalReport.DataSources.Add(ds);
             reportViewerMedico.LocalReport.Refresh();
+            
+            reportViewerMedico.RefreshReport();
         }
     }
 }

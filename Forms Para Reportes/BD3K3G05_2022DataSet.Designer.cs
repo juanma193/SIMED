@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace SIMED_V1 {
+namespace SIMED_V1.Forms_Para_Reportes {
     
     
     /// <summary>
@@ -87,6 +87,8 @@ namespace SIMED_V1 {
         private USUARIOSDataTable tableUSUARIOS;
         
         private VIAJESDataTable tableVIAJES;
+        
+        private DatosMedicosDataTable tableDatosMedicos;
         
         private global::System.Data.DataRelation relationfk_afiliado_barrio;
         
@@ -289,6 +291,9 @@ namespace SIMED_V1 {
                 }
                 if ((ds.Tables["VIAJES"] != null)) {
                     base.Tables.Add(new VIAJESDataTable(ds.Tables["VIAJES"]));
+                }
+                if ((ds.Tables["DatosMedicos"] != null)) {
+                    base.Tables.Add(new DatosMedicosDataTable(ds.Tables["DatosMedicos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -630,6 +635,16 @@ namespace SIMED_V1 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public DatosMedicosDataTable DatosMedicos {
+            get {
+                return this.tableDatosMedicos;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -790,6 +805,9 @@ namespace SIMED_V1 {
                 }
                 if ((ds.Tables["VIAJES"] != null)) {
                     base.Tables.Add(new VIAJESDataTable(ds.Tables["VIAJES"]));
+                }
+                if ((ds.Tables["DatosMedicos"] != null)) {
+                    base.Tables.Add(new DatosMedicosDataTable(ds.Tables["DatosMedicos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -1016,6 +1034,12 @@ namespace SIMED_V1 {
                     this.tableVIAJES.InitVars();
                 }
             }
+            this.tableDatosMedicos = ((DatosMedicosDataTable)(base.Tables["DatosMedicos"]));
+            if ((initTable == true)) {
+                if ((this.tableDatosMedicos != null)) {
+                    this.tableDatosMedicos.InitVars();
+                }
+            }
             this.relationfk_afiliado_barrio = this.Relations["fk_afiliado_barrio"];
             this.relationfk_afiliado_plan = this.Relations["fk_afiliado_plan"];
             this.relationfk_afiliado_sexo = this.Relations["fk_afiliado_sexo"];
@@ -1129,6 +1153,8 @@ namespace SIMED_V1 {
             base.Tables.Add(this.tableUSUARIOS);
             this.tableVIAJES = new VIAJESDataTable();
             base.Tables.Add(this.tableVIAJES);
+            this.tableDatosMedicos = new DatosMedicosDataTable();
+            base.Tables.Add(this.tableDatosMedicos);
             this.relationfk_afiliado_barrio = new global::System.Data.DataRelation("fk_afiliado_barrio", new global::System.Data.DataColumn[] {
                         this.tableBARRIOS.id_barrioColumn}, new global::System.Data.DataColumn[] {
                         this.tableAFILIADOS.id_barrioColumn}, false);
@@ -1489,6 +1515,12 @@ namespace SIMED_V1 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeDatosMedicos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1637,6 +1669,9 @@ namespace SIMED_V1 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void VIAJESRowChangeEventHandler(object sender, VIAJESRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void DatosMedicosRowChangeEventHandler(object sender, DatosMedicosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -11735,6 +11770,435 @@ namespace SIMED_V1 {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class DatosMedicosDataTable : global::System.Data.TypedTableBase<DatosMedicosRow> {
+            
+            private global::System.Data.DataColumn columnnumeroMatricula;
+            
+            private global::System.Data.DataColumn columnnumDocumento;
+            
+            private global::System.Data.DataColumn columnid_tipoDocumento;
+            
+            private global::System.Data.DataColumn columnapellido;
+            
+            private global::System.Data.DataColumn columnid_sexo;
+            
+            private global::System.Data.DataColumn columnnombre;
+            
+            private global::System.Data.DataColumn columnid_barrio;
+            
+            private global::System.Data.DataColumn columnfechaNacimiento;
+            
+            private global::System.Data.DataColumn columnid_relacionLaboral;
+            
+            private global::System.Data.DataColumn columnhorarioIngreso;
+            
+            private global::System.Data.DataColumn columnhorarioEgreso;
+            
+            private global::System.Data.DataColumn columnid_especialidad;
+            
+            private global::System.Data.DataColumn columncalle;
+            
+            private global::System.Data.DataColumn columnnroCalle;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DatosMedicosDataTable() {
+                this.TableName = "DatosMedicos";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal DatosMedicosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected DatosMedicosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn numeroMatriculaColumn {
+                get {
+                    return this.columnnumeroMatricula;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn numDocumentoColumn {
+                get {
+                    return this.columnnumDocumento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn id_tipoDocumentoColumn {
+                get {
+                    return this.columnid_tipoDocumento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn apellidoColumn {
+                get {
+                    return this.columnapellido;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn id_sexoColumn {
+                get {
+                    return this.columnid_sexo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn nombreColumn {
+                get {
+                    return this.columnnombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn id_barrioColumn {
+                get {
+                    return this.columnid_barrio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn fechaNacimientoColumn {
+                get {
+                    return this.columnfechaNacimiento;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn id_relacionLaboralColumn {
+                get {
+                    return this.columnid_relacionLaboral;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn horarioIngresoColumn {
+                get {
+                    return this.columnhorarioIngreso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn horarioEgresoColumn {
+                get {
+                    return this.columnhorarioEgreso;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn id_especialidadColumn {
+                get {
+                    return this.columnid_especialidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn calleColumn {
+                get {
+                    return this.columncalle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn nroCalleColumn {
+                get {
+                    return this.columnnroCalle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DatosMedicosRow this[int index] {
+                get {
+                    return ((DatosMedicosRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DatosMedicosRowChangeEventHandler DatosMedicosRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DatosMedicosRowChangeEventHandler DatosMedicosRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DatosMedicosRowChangeEventHandler DatosMedicosRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event DatosMedicosRowChangeEventHandler DatosMedicosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddDatosMedicosRow(DatosMedicosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DatosMedicosRow AddDatosMedicosRow(string numeroMatricula, string numDocumento, string id_tipoDocumento, string apellido, string id_sexo, string nombre, string id_barrio, string fechaNacimiento, string id_relacionLaboral, string horarioIngreso, string horarioEgreso, string id_especialidad, string calle, string nroCalle) {
+                DatosMedicosRow rowDatosMedicosRow = ((DatosMedicosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        numeroMatricula,
+                        numDocumento,
+                        id_tipoDocumento,
+                        apellido,
+                        id_sexo,
+                        nombre,
+                        id_barrio,
+                        fechaNacimiento,
+                        id_relacionLaboral,
+                        horarioIngreso,
+                        horarioEgreso,
+                        id_especialidad,
+                        calle,
+                        nroCalle};
+                rowDatosMedicosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowDatosMedicosRow);
+                return rowDatosMedicosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                DatosMedicosDataTable cln = ((DatosMedicosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new DatosMedicosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnnumeroMatricula = base.Columns["numeroMatricula"];
+                this.columnnumDocumento = base.Columns["numDocumento"];
+                this.columnid_tipoDocumento = base.Columns["id_tipoDocumento"];
+                this.columnapellido = base.Columns["apellido"];
+                this.columnid_sexo = base.Columns["id_sexo"];
+                this.columnnombre = base.Columns["nombre"];
+                this.columnid_barrio = base.Columns["id_barrio"];
+                this.columnfechaNacimiento = base.Columns["fechaNacimiento"];
+                this.columnid_relacionLaboral = base.Columns["id_relacionLaboral"];
+                this.columnhorarioIngreso = base.Columns["horarioIngreso"];
+                this.columnhorarioEgreso = base.Columns["horarioEgreso"];
+                this.columnid_especialidad = base.Columns["id_especialidad"];
+                this.columncalle = base.Columns["calle"];
+                this.columnnroCalle = base.Columns["nroCalle"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnnumeroMatricula = new global::System.Data.DataColumn("numeroMatricula", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumeroMatricula);
+                this.columnnumDocumento = new global::System.Data.DataColumn("numDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumDocumento);
+                this.columnid_tipoDocumento = new global::System.Data.DataColumn("id_tipoDocumento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_tipoDocumento);
+                this.columnapellido = new global::System.Data.DataColumn("apellido", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnapellido);
+                this.columnid_sexo = new global::System.Data.DataColumn("id_sexo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_sexo);
+                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre);
+                this.columnid_barrio = new global::System.Data.DataColumn("id_barrio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_barrio);
+                this.columnfechaNacimiento = new global::System.Data.DataColumn("fechaNacimiento", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfechaNacimiento);
+                this.columnid_relacionLaboral = new global::System.Data.DataColumn("id_relacionLaboral", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_relacionLaboral);
+                this.columnhorarioIngreso = new global::System.Data.DataColumn("horarioIngreso", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhorarioIngreso);
+                this.columnhorarioEgreso = new global::System.Data.DataColumn("horarioEgreso", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnhorarioEgreso);
+                this.columnid_especialidad = new global::System.Data.DataColumn("id_especialidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_especialidad);
+                this.columncalle = new global::System.Data.DataColumn("calle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncalle);
+                this.columnnroCalle = new global::System.Data.DataColumn("nroCalle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnroCalle);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DatosMedicosRow NewDatosMedicosRow() {
+                return ((DatosMedicosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new DatosMedicosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(DatosMedicosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.DatosMedicosRowChanged != null)) {
+                    this.DatosMedicosRowChanged(this, new DatosMedicosRowChangeEvent(((DatosMedicosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.DatosMedicosRowChanging != null)) {
+                    this.DatosMedicosRowChanging(this, new DatosMedicosRowChangeEvent(((DatosMedicosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.DatosMedicosRowDeleted != null)) {
+                    this.DatosMedicosRowDeleted(this, new DatosMedicosRowChangeEvent(((DatosMedicosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.DatosMedicosRowDeleting != null)) {
+                    this.DatosMedicosRowDeleting(this, new DatosMedicosRowChangeEvent(((DatosMedicosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveDatosMedicosRow(DatosMedicosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                BD3K3G05_2022DataSet ds = new BD3K3G05_2022DataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "DatosMedicosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AFILIADOSRow : global::System.Data.DataRow {
@@ -14728,6 +15192,414 @@ namespace SIMED_V1 {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class DatosMedicosRow : global::System.Data.DataRow {
+            
+            private DatosMedicosDataTable tableDatosMedicos;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal DatosMedicosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableDatosMedicos = ((DatosMedicosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string numeroMatricula {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.numeroMatriculaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numeroMatricula\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.numeroMatriculaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string numDocumento {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.numDocumentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numDocumento\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.numDocumentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string id_tipoDocumento {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.id_tipoDocumentoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_tipoDocumento\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.id_tipoDocumentoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string apellido {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.apellidoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'apellido\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.apellidoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string id_sexo {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.id_sexoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_sexo\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.id_sexoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string nombre {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.nombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.nombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string id_barrio {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.id_barrioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_barrio\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.id_barrioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string fechaNacimiento {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.fechaNacimientoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fechaNacimiento\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.fechaNacimientoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string id_relacionLaboral {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.id_relacionLaboralColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_relacionLaboral\' de la tabla \'DatosMedicos\' es DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.id_relacionLaboralColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string horarioIngreso {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.horarioIngresoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'horarioIngreso\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.horarioIngresoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string horarioEgreso {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.horarioEgresoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'horarioEgreso\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.horarioEgresoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string id_especialidad {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.id_especialidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_especialidad\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.id_especialidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string calle {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.calleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'calle\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.calleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string nroCalle {
+                get {
+                    try {
+                        return ((string)(this[this.tableDatosMedicos.nroCalleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nroCalle\' de la tabla \'DatosMedicos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDatosMedicos.nroCalleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsnumeroMatriculaNull() {
+                return this.IsNull(this.tableDatosMedicos.numeroMatriculaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetnumeroMatriculaNull() {
+                this[this.tableDatosMedicos.numeroMatriculaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsnumDocumentoNull() {
+                return this.IsNull(this.tableDatosMedicos.numDocumentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetnumDocumentoNull() {
+                this[this.tableDatosMedicos.numDocumentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isid_tipoDocumentoNull() {
+                return this.IsNull(this.tableDatosMedicos.id_tipoDocumentoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setid_tipoDocumentoNull() {
+                this[this.tableDatosMedicos.id_tipoDocumentoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsapellidoNull() {
+                return this.IsNull(this.tableDatosMedicos.apellidoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetapellidoNull() {
+                this[this.tableDatosMedicos.apellidoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isid_sexoNull() {
+                return this.IsNull(this.tableDatosMedicos.id_sexoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setid_sexoNull() {
+                this[this.tableDatosMedicos.id_sexoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsnombreNull() {
+                return this.IsNull(this.tableDatosMedicos.nombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetnombreNull() {
+                this[this.tableDatosMedicos.nombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isid_barrioNull() {
+                return this.IsNull(this.tableDatosMedicos.id_barrioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setid_barrioNull() {
+                this[this.tableDatosMedicos.id_barrioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsfechaNacimientoNull() {
+                return this.IsNull(this.tableDatosMedicos.fechaNacimientoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetfechaNacimientoNull() {
+                this[this.tableDatosMedicos.fechaNacimientoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isid_relacionLaboralNull() {
+                return this.IsNull(this.tableDatosMedicos.id_relacionLaboralColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setid_relacionLaboralNull() {
+                this[this.tableDatosMedicos.id_relacionLaboralColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IshorarioIngresoNull() {
+                return this.IsNull(this.tableDatosMedicos.horarioIngresoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SethorarioIngresoNull() {
+                this[this.tableDatosMedicos.horarioIngresoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IshorarioEgresoNull() {
+                return this.IsNull(this.tableDatosMedicos.horarioEgresoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SethorarioEgresoNull() {
+                this[this.tableDatosMedicos.horarioEgresoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Isid_especialidadNull() {
+                return this.IsNull(this.tableDatosMedicos.id_especialidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void Setid_especialidadNull() {
+                this[this.tableDatosMedicos.id_especialidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IscalleNull() {
+                return this.IsNull(this.tableDatosMedicos.calleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetcalleNull() {
+                this[this.tableDatosMedicos.calleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsnroCalleNull() {
+                return this.IsNull(this.tableDatosMedicos.nroCalleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetnroCalleNull() {
+                this[this.tableDatosMedicos.nroCalleColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -15814,9 +16686,43 @@ namespace SIMED_V1 {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class DatosMedicosRowChangeEvent : global::System.EventArgs {
+            
+            private DatosMedicosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DatosMedicosRowChangeEvent(DatosMedicosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public DatosMedicosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
-namespace SIMED_V1.BD3K3G05_2022DataSetTableAdapters {
+namespace SIMED_V1.Forms_Para_Reportes.BD3K3G05_2022DataSetTableAdapters {
     
     
     /// <summary>
@@ -27919,15 +28825,6 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mODELOSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MODELOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._mODELOSTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._cATEGORIASTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.CATEGORIAS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -27955,12 +28852,30 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._mODELOSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MODELOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._mODELOSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._rANGOS_ETARIOSTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.RANGOS_ETARIOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._rANGOS_ETARIOSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tIPOS_DOCUMENTOSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TIPOS_DOCUMENTOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tIPOS_DOCUMENTOSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28000,15 +28915,6 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tIPOS_DOCUMENTOSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TIPOS_DOCUMENTOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tIPOS_DOCUMENTOSTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._eSPECIALIDADESTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.ESPECIALIDADES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -28045,6 +28951,15 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._aFILIADOSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AFILIADOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aFILIADOSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._oBRAS_SOCIALESTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.OBRAS_SOCIALES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -28054,12 +28969,12 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._aFILIADOSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AFILIADOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._mOTIVOS_DE_BAJATableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.MOTIVOS_DE_BAJA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._aFILIADOSTableAdapter.Update(updatedRows));
+                    result = (result + this._mOTIVOS_DE_BAJATableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28090,30 +29005,12 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._mOTIVOS_DE_BAJATableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.MOTIVOS_DE_BAJA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._mOTIVOS_DE_BAJATableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._vIAJESTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.VIAJES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._vIAJESTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._uSUARIOSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.USUARIOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._uSUARIOSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28198,6 +29095,15 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._uSUARIOSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.USUARIOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._uSUARIOSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -28213,14 +29119,6 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._mARCASTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._mODELOSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MODELOS.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._mODELOSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28248,11 +29146,27 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._mODELOSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MODELOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._mODELOSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._rANGOS_ETARIOSTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.RANGOS_ETARIOS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._rANGOS_ETARIOSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tIPOS_DOCUMENTOSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TIPOS_DOCUMENTOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tIPOS_DOCUMENTOSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28288,14 +29202,6 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tIPOS_DOCUMENTOSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TIPOS_DOCUMENTOS.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tIPOS_DOCUMENTOSTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._eSPECIALIDADESTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.ESPECIALIDADES.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -28328,6 +29234,14 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._aFILIADOSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AFILIADOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aFILIADOSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._oBRAS_SOCIALESTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.OBRAS_SOCIALES.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -28336,11 +29250,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._aFILIADOSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AFILIADOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._mOTIVOS_DE_BAJATableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.MOTIVOS_DE_BAJA.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._aFILIADOSTableAdapter.Update(addedRows));
+                    result = (result + this._mOTIVOS_DE_BAJATableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28368,27 +29282,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._mOTIVOS_DE_BAJATableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.MOTIVOS_DE_BAJA.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._mOTIVOS_DE_BAJATableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._vIAJESTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.VIAJES.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._vIAJESTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._uSUARIOSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.USUARIOS.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._uSUARIOSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28464,6 +29362,14 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._uSUARIOSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.USUARIOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._uSUARIOSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -28474,6 +29380,14 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private int UpdateDeletedRows(BD3K3G05_2022DataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._uSUARIOSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.USUARIOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._uSUARIOSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._tURNOS_ROTATIVOSxENFERMEROSTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TURNOS_ROTATIVOSxENFERMEROS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -28546,27 +29460,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._uSUARIOSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.USUARIOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._uSUARIOSTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._vIAJESTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.VIAJES.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._vIAJESTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._mOTIVOS_DE_BAJATableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MOTIVOS_DE_BAJA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._mOTIVOS_DE_BAJATableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28594,11 +29492,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._aFILIADOSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AFILIADOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._mOTIVOS_DE_BAJATableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MOTIVOS_DE_BAJA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._aFILIADOSTableAdapter.Update(deletedRows));
+                    result = (result + this._mOTIVOS_DE_BAJATableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28607,6 +29505,14 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._oBRAS_SOCIALESTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._aFILIADOSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AFILIADOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aFILIADOSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28642,14 +29548,6 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tIPOS_DOCUMENTOSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TIPOS_DOCUMENTOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._tIPOS_DOCUMENTOSTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tIPOS_VIAJETableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TIPOS_VIAJE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -28682,11 +29580,27 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._tIPOS_DOCUMENTOSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TIPOS_DOCUMENTOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._tIPOS_DOCUMENTOSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._rANGOS_ETARIOSTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.RANGOS_ETARIOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._rANGOS_ETARIOSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._mODELOSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.MODELOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._mODELOSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28711,14 +29625,6 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._cATEGORIASTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._mODELOSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.MODELOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._mODELOSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }

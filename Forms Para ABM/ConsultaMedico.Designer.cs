@@ -42,7 +42,7 @@
             this.nombreMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoMedico = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bD3K3G052022DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bD3K3G05_2022DataSet = new SIMED_V1.BD3K3G05_2022DataSet();
+            this.bD3K3G05_2022DataSet = new SIMED_V1.Forms_Para_Reportes.BD3K3G05_2022DataSet();
             this.btnBuscarMedico = new Guna.UI2.WinForms.Guna2GradientButton();
             this.txtConsultaApellidoMedico = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtConsultaNombreMedico = new Guna.UI2.WinForms.Guna2TextBox();
@@ -454,7 +454,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreMedico;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoMedico;
         private System.Windows.Forms.BindingSource bD3K3G052022DataSetBindingSource;
-        private BD3K3G05_2022DataSet bD3K3G05_2022DataSet;
+        private Forms_Para_Reportes.BD3K3G05_2022DataSet bD3K3G05_2022DataSet;
         public Guna.UI2.WinForms.Guna2DataGridView grdConsultaMedico;
     }
 }
