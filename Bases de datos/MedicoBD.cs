@@ -317,6 +317,44 @@ namespace SIMED_V1.Bases_de_datos
             }
         }
 
+        public static DataTable ObtenerMedicoCompletoReporte()
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                string consulta = @"SELECT numeroMatricula, numDocumento, id_tipoDocumento, apellido, id_sexo, nombre, id_barrio
+                                fechaNacimiento, id_relacionLaboral, horarioIngreso, horarioEgreso, id_especialidad,
+                                calle, nroCalle FROM MEDICOS";
+
+                cmd.Parameters.Clear();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.ExecuteNonQuery();
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                return tabla;
+            }
+            catch (Exception ex)
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Error " + ex);
+                throw;
+            }
+            finally
+            {
+                cn.Close();
+            }
+        }
+
 
         public static DataTable ObtenerMedicos(int matriculaM, string nombreM, string apellidoM)
         {

@@ -456,5 +456,62 @@ namespace SIMED_V1.Bases_de_datos
             return res;
             
         }
+
+
+        public static float ObtenerPorcentajeIngresosNuevos(DateTime fechaFin, DateTime fechaInicio, double ingNuevos)
+        {
+            //Obtiene los afiliados viejos en realidad
+            DataTable t = AfiliadosBD.ObtenerAfiliadosNuevos(fechaFin, fechaInicio);
+            double res = 0;
+            float resu = 0;
+            foreach (DataRow row in t.Rows)
+            {
+                int idPlan = int.Parse(row[8].ToString());
+                string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+                SqlConnection cn = new SqlConnection(cadenaConexion);
+                try
+                {
+
+                    SqlCommand cmd = new SqlCommand();
+                    string consulta = @"SELECT P.precio FROM PLANES P WHERE P.id_plan = @id";
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddWithValue("@id", idPlan);
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = consulta;
+
+                    cn.Open();
+                    cmd.Connection = cn;
+                    res += (double)cmd.ExecuteScalar();
+                   
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    ErroresForm window = new ErroresForm();
+                    window.show("Error " + ex);
+                    throw;
+                }
+
+                finally
+                {
+                    cn.Close();
+                }
+            }
+
+            if(res > 0)
+            {
+                resu = (float)(((res + ingNuevos) / res) - 1) * 100;
+                float fc = (float)Math.Round(resu * 100f) / 100f;
+                return fc;
+            }
+            else
+            {
+                return resu;
+            }
+            return resu;
+
+        }
     }
 }

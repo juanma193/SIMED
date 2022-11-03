@@ -58,10 +58,10 @@
             // pnContenido
             // 
             this.pnContenido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnContenido.Location = new System.Drawing.Point(295, 30);
-            this.pnContenido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pnContenido.Location = new System.Drawing.Point(221, 24);
+            this.pnContenido.Margin = new System.Windows.Forms.Padding(2);
             this.pnContenido.Name = "pnContenido";
-            this.pnContenido.Size = new System.Drawing.Size(1172, 940);
+            this.pnContenido.Size = new System.Drawing.Size(1165, 616);
             this.pnContenido.TabIndex = 5;
             // 
             // btn
@@ -79,10 +79,10 @@
             this.btn.Image = global::SIMED_V1.Properties.Resources.enfemeros;
             this.btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btn.ImageSize = new System.Drawing.Size(50, 50);
-            this.btn.Location = new System.Drawing.Point(0, 89);
-            this.btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn.Location = new System.Drawing.Point(0, 72);
+            this.btn.Margin = new System.Windows.Forms.Padding(2);
             this.btn.Name = "btn";
-            this.btn.Size = new System.Drawing.Size(305, 89);
+            this.btn.Size = new System.Drawing.Size(229, 72);
             this.btn.TabIndex = 6;
             this.btn.Text = " Enfermeros";
             this.btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -103,9 +103,9 @@
             this.btnGeneral.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnGeneral.ImageSize = new System.Drawing.Size(50, 50);
             this.btnGeneral.Location = new System.Drawing.Point(0, 0);
-            this.btnGeneral.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGeneral.Margin = new System.Windows.Forms.Padding(2);
             this.btnGeneral.Name = "btnGeneral";
-            this.btnGeneral.Size = new System.Drawing.Size(305, 89);
+            this.btnGeneral.Size = new System.Drawing.Size(229, 72);
             this.btnGeneral.TabIndex = 5;
             this.btnGeneral.Text = "General";
             this.btnGeneral.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -117,10 +117,10 @@
             this.picSimed.FillColor = System.Drawing.Color.Transparent;
             this.picSimed.Image = global::SIMED_V1.Properties.Resources.logo_simed_3;
             this.picSimed.ImageRotate = 0F;
-            this.picSimed.Location = new System.Drawing.Point(-25, -17);
-            this.picSimed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.picSimed.Location = new System.Drawing.Point(-19, -14);
+            this.picSimed.Margin = new System.Windows.Forms.Padding(2);
             this.picSimed.Name = "picSimed";
-            this.picSimed.Size = new System.Drawing.Size(331, 154);
+            this.picSimed.Size = new System.Drawing.Size(248, 125);
             this.picSimed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picSimed.TabIndex = 3;
             this.picSimed.TabStop = false;
@@ -141,10 +141,10 @@
             this.btnViajes.Image = global::SIMED_V1.Properties.Resources._1061162_care_health_journey_medicine_pill_icon;
             this.btnViajes.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnViajes.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnViajes.Location = new System.Drawing.Point(0, 356);
-            this.btnViajes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnViajes.Location = new System.Drawing.Point(0, 288);
+            this.btnViajes.Margin = new System.Windows.Forms.Padding(2);
             this.btnViajes.Name = "btnViajes";
-            this.btnViajes.Size = new System.Drawing.Size(305, 89);
+            this.btnViajes.Size = new System.Drawing.Size(229, 72);
             this.btnViajes.TabIndex = 12;
             this.btnViajes.Text = "Viajes";
             this.btnViajes.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -164,10 +164,10 @@
             this.btnAfiliados.Image = global::SIMED_V1.Properties.Resources.afiliados_21;
             this.btnAfiliados.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnAfiliados.ImageSize = new System.Drawing.Size(40, 40);
-            this.btnAfiliados.Location = new System.Drawing.Point(0, 267);
-            this.btnAfiliados.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAfiliados.Location = new System.Drawing.Point(0, 216);
+            this.btnAfiliados.Margin = new System.Windows.Forms.Padding(2);
             this.btnAfiliados.Name = "btnAfiliados";
-            this.btnAfiliados.Size = new System.Drawing.Size(305, 89);
+            this.btnAfiliados.Size = new System.Drawing.Size(229, 72);
             this.btnAfiliados.TabIndex = 9;
             this.btnAfiliados.Text = "Afiliados";
             this.btnAfiliados.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -187,13 +187,14 @@
             this.btnMedicos.Image = global::SIMED_V1.Properties.Resources.doctor_sin_fondo;
             this.btnMedicos.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnMedicos.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnMedicos.Location = new System.Drawing.Point(0, 178);
-            this.btnMedicos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMedicos.Location = new System.Drawing.Point(0, 144);
+            this.btnMedicos.Margin = new System.Windows.Forms.Padding(2);
             this.btnMedicos.Name = "btnMedicos";
-            this.btnMedicos.Size = new System.Drawing.Size(305, 89);
+            this.btnMedicos.Size = new System.Drawing.Size(229, 72);
             this.btnMedicos.TabIndex = 2;
             this.btnMedicos.Text = "Médicos";
             this.btnMedicos.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnMedicos.Click += new System.EventHandler(this.btnMedicos_Click);
             // 
             // panelMenu
             // 
@@ -202,10 +203,10 @@
             this.panelMenu.Controls.Add(this.picSimed);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
-            this.panelMenu.Location = new System.Drawing.Point(0, 30);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panelMenu.Location = new System.Drawing.Point(0, 24);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(2);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(295, 940);
+            this.panelMenu.Size = new System.Drawing.Size(221, 616);
             this.panelMenu.TabIndex = 4;
             // 
             // panel1
@@ -218,18 +219,17 @@
             this.panel1.Controls.Add(this.btnMedicos);
             this.panel1.Controls.Add(this.btn);
             this.panel1.Controls.Add(this.btnGeneral);
-            this.panel1.Location = new System.Drawing.Point(0, 128);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Location = new System.Drawing.Point(0, 104);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(305, 809);
+            this.panel1.Size = new System.Drawing.Size(229, 509);
             this.panel1.TabIndex = 10;
             // 
             // guna2Separator1
             // 
-            this.guna2Separator1.Location = new System.Drawing.Point(-3, 110);
-            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Separator1.Location = new System.Drawing.Point(-2, 89);
+            this.guna2Separator1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(336, 12);
+            this.guna2Separator1.Size = new System.Drawing.Size(252, 10);
             this.guna2Separator1.TabIndex = 4;
             // 
             // guna2Panel1
@@ -238,9 +238,9 @@
             this.guna2Panel1.Controls.Add(this.btnCerrar);
             this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1467, 30);
+            this.guna2Panel1.Size = new System.Drawing.Size(1386, 24);
             this.guna2Panel1.TabIndex = 3;
             // 
             // btnMinimizar
@@ -249,10 +249,10 @@
             this.btnMinimizar.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox;
             this.btnMinimizar.FillColor = System.Drawing.Color.Transparent;
             this.btnMinimizar.IconColor = System.Drawing.Color.Black;
-            this.btnMinimizar.Location = new System.Drawing.Point(1372, -2);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(1315, -2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 32);
+            this.btnMinimizar.Size = new System.Drawing.Size(34, 26);
             this.btnMinimizar.TabIndex = 3;
             // 
             // btnCerrar
@@ -260,22 +260,21 @@
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(83)))), ((int)(((byte)(255)))));
             this.btnCerrar.IconColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(1423, 0);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(1353, 0);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(45, 32);
+            this.btnCerrar.Size = new System.Drawing.Size(34, 26);
             this.btnCerrar.TabIndex = 2;
             // 
             // PrincipalRepEst
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1467, 970);
+            this.ClientSize = new System.Drawing.Size(1386, 640);
             this.Controls.Add(this.pnContenido);
             this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.guna2Panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "PrincipalRepEst";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrincipalRepEst";

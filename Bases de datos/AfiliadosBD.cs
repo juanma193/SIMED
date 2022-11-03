@@ -294,5 +294,57 @@ namespace SIMED_V1.Bases_de_datos
             }
 
         }
+
+        public static float ObtenerPorcentajeAfiliadosNuevos(DateTime fechaInicio, DateTime fechaFin, int cantNuevos)
+        {
+            string cadenaConexion = System.Configuration.ConfigurationManager.AppSettings["CadenaBD"];
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+
+                SqlCommand cmd = new SqlCommand();
+                string consulta = @"SELECT * FROM AFILIADOS A WHERE A.fechaInscripcion BETWEEN @fechaI AND @fechaF";
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@fechaF", fechaFin);
+                cmd.Parameters.AddWithValue("@fechaI", fechaInicio);
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = consulta;
+
+                cn.Open();
+                cmd.Connection = cn;
+
+                DataTable tabla = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(tabla);
+
+                float cantViejos = (float)tabla.Rows.Count;
+                if(cantViejos > 0)
+                {
+                    float res = (((cantViejos + cantNuevos) / cantViejos) - 1) * 100;
+                    float fc = (float)Math.Round(res * 100f) / 100f;
+                    return fc;
+                }
+                else
+                {
+                    return 0;
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                ErroresForm window = new ErroresForm();
+                window.show("Error " + ex);
+                throw;
+            }
+
+            finally
+            {
+                cn.Close();
+            }
+        }
+
+
+
     }
 }

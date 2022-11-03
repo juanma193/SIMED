@@ -26,5 +26,12 @@ namespace SIMED_V1.Forms_Para_Reportes
             this.pnContenido.Controls.Add(ContActivo);
         }
 
+        private void btnMedicos_Click(object sender, EventArgs e)
+        {
+            this.pnContenido.Controls.Remove(ContActivo);
+            ContActivo = new UMedicoRep();
+            ContActivo.Dock = DockStyle.Fill;
+            this.pnContenido.Controls.Add(ContActivo);
+        }
     }
 }

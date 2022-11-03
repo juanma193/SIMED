@@ -17,11 +17,12 @@ namespace SIMED_V1.Forms_Para_Reportes
 
     {
         Guna2Button actual;
-      
+
         public UGeneral()
         {
             InitializeComponent();
-          
+
+
 
         }
         int imageNumber = 1;
@@ -37,13 +38,30 @@ namespace SIMED_V1.Forms_Para_Reportes
             dtFechaInicio.Enabled = false;
             btnOk.Visible = false;
 
+
             actual = btnSieteDias;
 
             DataTable t = AfiliadosBD.ObtenerAfiliadosNuevos(dtFechaFin.Value, dtFechaInicio.Value);
             lblAfiliadosNuevos.Text = t.Rows.Count.ToString();
             lblIngNuevos.Text = "$" + PlanesBD.ObtenerIngresosNuevos(dtFechaFin.Value, dtFechaInicio.Value).ToString();
-
-            ViajesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
+            float af = AfiliadosBD.ObtenerPorcentajeAfiliadosNuevos(DateTime.Parse("1/1/2000"), dtFechaInicio.Value.AddDays(-1), int.Parse(lblAfiliadosNuevos.Text));
+            if(af> 0)
+            {
+                lblAfNuevosPorc.Text = "+" + af.ToString() + "%";
+            }
+            else
+            {
+                lblAfNuevosPorc.Text = af.ToString() + "%";
+            }
+            float ing = PlanesBD.ObtenerPorcentajeIngresosNuevos(dtFechaInicio.Value.AddDays(-1), DateTime.Parse("1/1/2000"), PlanesBD.ObtenerIngresosNuevos(dtFechaFin.Value, dtFechaInicio.Value));
+            if(ing> 0)
+            {
+                lblIngresosPorc.Text = "+" + ing.ToString() + "%";
+            }
+            else
+            {
+                lblIngresosPorc.Text = ing.ToString() + "%";
+            }
 
         }
 
@@ -57,8 +75,7 @@ namespace SIMED_V1.Forms_Para_Reportes
             dtFechaFin.Enabled = true;
             dtFechaInicio.Enabled = true;
             btnOk.Visible = true;
-
-          
+            btnOk.Enabled = true;
 
             actual = btnPersonalizado;
 
@@ -82,9 +99,24 @@ namespace SIMED_V1.Forms_Para_Reportes
             DataTable t = AfiliadosBD.ObtenerAfiliadosNuevos(dtFechaFin.Value, dtFechaInicio.Value);
             lblAfiliadosNuevos.Text = t.Rows.Count.ToString();
             lblIngNuevos.Text = "$" + PlanesBD.ObtenerIngresosNuevos(dtFechaFin.Value, dtFechaInicio.Value).ToString();
-
-            ViajesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
-            PlanesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
+            float af = AfiliadosBD.ObtenerPorcentajeAfiliadosNuevos(DateTime.Parse("1/1/2000"), dtFechaInicio.Value.AddDays(-1), int.Parse(lblAfiliadosNuevos.Text));
+            if (af > 0)
+            {
+                lblAfNuevosPorc.Text = "+" + af.ToString() + "%";
+            }
+            else
+            {
+                lblAfNuevosPorc.Text = af.ToString() + "%";
+            }
+            float ing = PlanesBD.ObtenerPorcentajeIngresosNuevos(dtFechaInicio.Value.AddDays(-1), DateTime.Parse("1/1/2000"), PlanesBD.ObtenerIngresosNuevos(dtFechaFin.Value, dtFechaInicio.Value));
+            if (ing > 0)
+            {
+                lblIngresosPorc.Text = "+" + ing.ToString() + "%";
+            }
+            else
+            {
+                lblIngresosPorc.Text = ing.ToString() + "%";
+            }
 
 
         }
@@ -105,10 +137,25 @@ namespace SIMED_V1.Forms_Para_Reportes
             DataTable t = AfiliadosBD.ObtenerAfiliadosNuevos(dtFechaFin.Value, dtFechaInicio.Value);
             lblAfiliadosNuevos.Text = t.Rows.Count.ToString();
             lblIngNuevos.Text = "$" + PlanesBD.ObtenerIngresosNuevos(dtFechaFin.Value, dtFechaInicio.Value).ToString();
-
+            float af = AfiliadosBD.ObtenerPorcentajeAfiliadosNuevos(DateTime.Parse("1/1/2000"), dtFechaInicio.Value.AddDays(-1), int.Parse(lblAfiliadosNuevos.Text));
+            if (af > 0)
+            {
+                lblAfNuevosPorc.Text = "+" + af.ToString() + "%";
+            }
+            else
+            {
+                lblAfNuevosPorc.Text = af.ToString() + "%";
+            }
+            float ing = PlanesBD.ObtenerPorcentajeIngresosNuevos(dtFechaInicio.Value.AddDays(-1), DateTime.Parse("1/1/2000"), PlanesBD.ObtenerIngresosNuevos(dtFechaFin.Value, dtFechaInicio.Value));
+            if (ing > 0)
+            {
+                lblIngresosPorc.Text = "+" + ing.ToString() + "%";
+            }
+            else
+            {
+                lblIngresosPorc.Text = ing.ToString() + "%";
+            }
             actual = btnEsteMes;
-            ViajesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
-            PlanesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
 
 
 
@@ -155,7 +202,7 @@ namespace SIMED_V1.Forms_Para_Reportes
 
         private void PlanesGrafico(DateTime fechaInicio, DateTime fechaFin) {
 
-            List<int> ventas = PlanesBD.ObtenerIngresosPorPlan(dtFechaFin.Value, dtFechaInicio.Value);
+            List<int> ventas = PlanesBD.ObtenerIngresosPorPlan(fechaFin, fechaInicio);
 
 
             List<String> planes = PlanesBD.ObtenerPlanes(ventas);
@@ -182,16 +229,42 @@ namespace SIMED_V1.Forms_Para_Reportes
                 ventana.show("Periodo demasiado extenso, pruebe uno más reducido");
                 ventana.Show();
             }
+            else if(dtFechaFin.Value > DateTime.Now)
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Error, no puede seleccionar una fecha posterior a la actual");
+                ventana.Show();
+            }
+            else if(dtFechaFin.Value < dtFechaInicio.Value)
+            {
+                ErroresForm ventana = new ErroresForm();
+                ventana.show("Error, periodo inválido");
+                ventana.Show();
+            }
             else {
 
                 DataTable t = AfiliadosBD.ObtenerAfiliadosNuevos(dtFechaFin.Value, dtFechaInicio.Value);
                 lblAfiliadosNuevos.Text = t.Rows.Count.ToString();
                 lblIngNuevos.Text = "$" + PlanesBD.ObtenerIngresosNuevos(dtFechaFin.Value, dtFechaInicio.Value).ToString();
-
-                ViajesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
-                PlanesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
-
-                btnOk.Visible = false;
+                float af = AfiliadosBD.ObtenerPorcentajeAfiliadosNuevos(DateTime.Parse("1/1/2000"), dtFechaInicio.Value.AddDays(-1), int.Parse(lblAfiliadosNuevos.Text));
+                if (af > 0)
+                {
+                    lblAfNuevosPorc.Text = "+" + af.ToString() + "%";
+                }
+                else
+                {
+                    lblAfNuevosPorc.Text = af.ToString() + "%";
+                }
+                float ing = PlanesBD.ObtenerPorcentajeIngresosNuevos(dtFechaInicio.Value.AddDays(-1), DateTime.Parse("1/1/2000"), PlanesBD.ObtenerIngresosNuevos(dtFechaFin.Value, dtFechaInicio.Value));
+                if (ing > 0)
+                {
+                    lblIngresosPorc.Text = "+" + ing.ToString() + "%";
+                }
+                else
+                {
+                    lblIngresosPorc.Text = ing.ToString() + "%";
+                }
+                
 
 
             }
@@ -202,22 +275,44 @@ namespace SIMED_V1.Forms_Para_Reportes
 
         private void UGeneral_Load(object sender, EventArgs e)
         {
+            btnOk.Visible = false;
+            dtFechaFin.Value = DateTime.Now;
+            dtFechaInicio.Value = DateTime.Now.AddDays(-7);
+            lblFechaInicio.Text = dtFechaInicio.Text;
+            lblFechaFin.Text = dtFechaFin.Text;
             DataTable t = AfiliadosBD.ObtenerAfiliadosNuevos(dtFechaFin.Value, dtFechaInicio.Value);
             lblAfiliadosNuevos.Text = t.Rows.Count.ToString();
             lblIngNuevos.Text = "$" + PlanesBD.ObtenerIngresosNuevos(dtFechaFin.Value, dtFechaInicio.Value).ToString();
 
 
-           
+
             lblAmbTotales.Text = AmbulanciasBD.ObtenerAmbulanciasTotales().ToString();
             lblMedTotales.Text = MedicoBD.ObtenerMedicosTotales().ToString();
             lblEnfTotales.Text = EnfermeroBD.ObtenerEnfermerosTotales().ToString();
             lblUsuTotales.Text = UsuarioBD.ObtenerUsuariosTotales().ToString();
+            float af = AfiliadosBD.ObtenerPorcentajeAfiliadosNuevos(DateTime.Parse("1/1/2000"), dtFechaInicio.Value.AddDays(-1), int.Parse(lblAfiliadosNuevos.Text));
+            if (af > 0)
+            {
+                lblAfNuevosPorc.Text = "+" + af.ToString() + "%";
+            }
+            else
+            {
+                lblAfNuevosPorc.Text = af.ToString() + "%";
+            }
+            float ing = PlanesBD.ObtenerPorcentajeIngresosNuevos(dtFechaInicio.Value.AddDays(-1), DateTime.Parse("1/1/2000"), PlanesBD.ObtenerIngresosNuevos(dtFechaFin.Value, dtFechaInicio.Value));
+            if (ing > 0)
+            {
+                lblIngresosPorc.Text = "+" + ing.ToString() + "%";
+            }
+            else
+            {
+                lblIngresosPorc.Text = ing.ToString() + "%";
+            }
+            picSlider.ImageLocation = string.Format(@"C:\Users\Nicolas\Desktop\SIMED\Resources\" + 1 + ".jpg");
 
-            
-                picSlider.ImageLocation = string.Format(@"C:\Users\Nicolas\Desktop\SIMED\Resources\" + 1 + ".jpg");
-                
-            
-            
+            ViajesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
+            PlanesGrafico(DateTime.Parse("1/1/2000"), DateTime.Now.AddDays(-1));
+
         }
 
         private void lblFechaInicio_Click(object sender, EventArgs e)
@@ -266,7 +361,7 @@ namespace SIMED_V1.Forms_Para_Reportes
         private void dtFechaInicio_ValueChanged(object sender, EventArgs e)
         {
 
-            lblFechaIncio.Text = EmpleadosBD.UpperCaseFirstChar(dtFechaInicio.Text);
+            lblFechaInicio.Text = EmpleadosBD.UpperCaseFirstChar(dtFechaInicio.Text);
 
         }
         private void CargarSiguienteImagen()
