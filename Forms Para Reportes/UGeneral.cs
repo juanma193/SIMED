@@ -62,6 +62,7 @@ namespace SIMED_V1.Forms_Para_Reportes
             {
                 lblIngresosPorc.Text = ing.ToString() + "%";
             }
+            ViajesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
 
         }
 
@@ -117,6 +118,7 @@ namespace SIMED_V1.Forms_Para_Reportes
             {
                 lblIngresosPorc.Text = ing.ToString() + "%";
             }
+            ViajesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
 
 
         }
@@ -156,7 +158,7 @@ namespace SIMED_V1.Forms_Para_Reportes
                 lblIngresosPorc.Text = ing.ToString() + "%";
             }
             actual = btnEsteMes;
-
+            ViajesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
 
 
         }
@@ -264,8 +266,8 @@ namespace SIMED_V1.Forms_Para_Reportes
                 {
                     lblIngresosPorc.Text = ing.ToString() + "%";
                 }
-                
 
+                ViajesGrafico(dtFechaInicio.Value, dtFechaFin.Value);
 
             }
 

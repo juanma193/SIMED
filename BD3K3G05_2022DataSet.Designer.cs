@@ -118,8 +118,6 @@ namespace SIMED_V1 {
         
         private global::System.Data.DataRelation relationfk_medicos_barrios;
         
-        private global::System.Data.DataRelation relationfk_medicos_diaLaboral;
-        
         private global::System.Data.DataRelation relationfk_medicos_especialidad;
         
         private global::System.Data.DataRelation relationfk_medicos_relacionLaboral;
@@ -1033,7 +1031,6 @@ namespace SIMED_V1 {
             this.relationfk_enfermerosxviajes_viajes = this.Relations["fk_enfermerosxviajes_viajes"];
             this.relationfk_facturas_afiliados = this.Relations["fk_facturas_afiliados"];
             this.relationfk_medicos_barrios = this.Relations["fk_medicos_barrios"];
-            this.relationfk_medicos_diaLaboral = this.Relations["fk_medicos_diaLaboral"];
             this.relationfk_medicos_especialidad = this.Relations["fk_medicos_especialidad"];
             this.relationfk_medicos_relacionLaboral = this.Relations["fk_medicos_relacionLaboral"];
             this.relationfk_medicos_sexos = this.Relations["fk_medicos_sexos"];
@@ -1196,10 +1193,6 @@ namespace SIMED_V1 {
                         this.tableBARRIOS.id_barrioColumn}, new global::System.Data.DataColumn[] {
                         this.tableMEDICOS.id_barrioColumn}, false);
             this.Relations.Add(this.relationfk_medicos_barrios);
-            this.relationfk_medicos_diaLaboral = new global::System.Data.DataRelation("fk_medicos_diaLaboral", new global::System.Data.DataColumn[] {
-                        this.tableDIAS_LABORALES.id_diaLaboralColumn}, new global::System.Data.DataColumn[] {
-                        this.tableMEDICOS.id_diaLaboralColumn}, false);
-            this.Relations.Add(this.relationfk_medicos_diaLaboral);
             this.relationfk_medicos_especialidad = new global::System.Data.DataRelation("fk_medicos_especialidad", new global::System.Data.DataColumn[] {
                         this.tableESPECIALIDADES.id_especialidadColumn}, new global::System.Data.DataColumn[] {
                         this.tableMEDICOS.id_especialidadColumn}, false);
@@ -1852,7 +1845,7 @@ namespace SIMED_V1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public AFILIADOSRow AddAFILIADOSRow(int numeroAfiliado, string nombre, string apellido, SEXOSRow parentSEXOSRowByfk_afiliado_sexo, int numero_documento, TIPOS_DOCUMENTOSRow parentTIPOS_DOCUMENTOSRowByfk_afiliado_tipoDocumento, BARRIOSRow parentBARRIOSRowByfk_afiliado_barrio, int numeroTelefono, PLANESRow parentPLANESRowByfk_afiliado_plan, System.DateTime fechaNacimiento, string calle, int nroCalle, System.DateTime fechaInscripcion) {
+            public AFILIADOSRow AddAFILIADOSRow(int numeroAfiliado, string nombre, string apellido, SEXOSRow parentSEXOSRowByfk_afiliado_sexo, double numero_documento, TIPOS_DOCUMENTOSRow parentTIPOS_DOCUMENTOSRowByfk_afiliado_tipoDocumento, BARRIOSRow parentBARRIOSRowByfk_afiliado_barrio, int numeroTelefono, PLANESRow parentPLANESRowByfk_afiliado_plan, System.DateTime fechaNacimiento, string calle, int nroCalle, System.DateTime fechaInscripcion) {
                 AFILIADOSRow rowAFILIADOSRow = ((AFILIADOSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         numeroAfiliado,
@@ -1935,7 +1928,7 @@ namespace SIMED_V1 {
                 base.Columns.Add(this.columnapellido);
                 this.columnid_sexo = new global::System.Data.DataColumn("id_sexo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_sexo);
-                this.columnnumero_documento = new global::System.Data.DataColumn("numero_documento", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnnumero_documento = new global::System.Data.DataColumn("numero_documento", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumero_documento);
                 this.columnid_tipoDocumento = new global::System.Data.DataColumn("id_tipoDocumento", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_tipoDocumento);
@@ -4033,7 +4026,7 @@ namespace SIMED_V1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ENFERMEROSRow AddENFERMEROSRow(int numeroMatricula, string nombre, string apellido, System.DateTime fechaNacimiento, int telefono, int numeroDocumento, TIPOS_DOCUMENTOSRow parentTIPOS_DOCUMENTOSRowByfk_enfermeros_tipoDocumento, int id_especialidad, string calle, int nroCalle, BARRIOSRow parentBARRIOSRowByfk_enfermeros_barrios) {
+            public ENFERMEROSRow AddENFERMEROSRow(int numeroMatricula, string nombre, string apellido, System.DateTime fechaNacimiento, int telefono, double numeroDocumento, TIPOS_DOCUMENTOSRow parentTIPOS_DOCUMENTOSRowByfk_enfermeros_tipoDocumento, int id_especialidad, string calle, int nroCalle, BARRIOSRow parentBARRIOSRowByfk_enfermeros_barrios) {
                 ENFERMEROSRow rowENFERMEROSRow = ((ENFERMEROSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         numeroMatricula,
@@ -4108,7 +4101,7 @@ namespace SIMED_V1 {
                 base.Columns.Add(this.columnfechaNacimiento);
                 this.columntelefono = new global::System.Data.DataColumn("telefono", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntelefono);
-                this.columnnumeroDocumento = new global::System.Data.DataColumn("numeroDocumento", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnnumeroDocumento = new global::System.Data.DataColumn("numeroDocumento", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumeroDocumento);
                 this.columnid_tipoDocumento = new global::System.Data.DataColumn("id_tipoDocumento", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_tipoDocumento);
@@ -5479,8 +5472,6 @@ namespace SIMED_V1 {
             
             private global::System.Data.DataColumn columnnumeroMatricula;
             
-            private global::System.Data.DataColumn columnid_diaLaboral;
-            
             private global::System.Data.DataColumn columnnumDocumento;
             
             private global::System.Data.DataColumn columnid_tipoDocumento;
@@ -5545,14 +5536,6 @@ namespace SIMED_V1 {
             public global::System.Data.DataColumn numeroMatriculaColumn {
                 get {
                     return this.columnnumeroMatricula;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn id_diaLaboralColumn {
-                get {
-                    return this.columnid_diaLaboral;
                 }
             }
             
@@ -5697,11 +5680,10 @@ namespace SIMED_V1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MEDICOSRow AddMEDICOSRow(int numeroMatricula, DIAS_LABORALESRow parentDIAS_LABORALESRowByfk_medicos_diaLaboral, int numDocumento, TIPOS_DOCUMENTOSRow parentTIPOS_DOCUMENTOSRowByfk_medicos_tipoDocumento, string apellido, SEXOSRow parentSEXOSRowByfk_medicos_sexos, string nombre, BARRIOSRow parentBARRIOSRowByfk_medicos_barrios, System.DateTime fechaNacimiento, RELACIONES_LABORALESRow parentRELACIONES_LABORALESRowByfk_medicos_relacionLaboral, System.TimeSpan horarioIngreso, System.TimeSpan horarioEgreso, ESPECIALIDADESRow parentESPECIALIDADESRowByfk_medicos_especialidad, string calle, int nroCalle) {
+            public MEDICOSRow AddMEDICOSRow(int numeroMatricula, double numDocumento, TIPOS_DOCUMENTOSRow parentTIPOS_DOCUMENTOSRowByfk_medicos_tipoDocumento, string apellido, SEXOSRow parentSEXOSRowByfk_medicos_sexos, string nombre, BARRIOSRow parentBARRIOSRowByfk_medicos_barrios, System.DateTime fechaNacimiento, RELACIONES_LABORALESRow parentRELACIONES_LABORALESRowByfk_medicos_relacionLaboral, System.TimeSpan horarioIngreso, System.TimeSpan horarioEgreso, ESPECIALIDADESRow parentESPECIALIDADESRowByfk_medicos_especialidad, string calle, int nroCalle) {
                 MEDICOSRow rowMEDICOSRow = ((MEDICOSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         numeroMatricula,
-                        null,
                         numDocumento,
                         null,
                         apellido,
@@ -5715,23 +5697,20 @@ namespace SIMED_V1 {
                         null,
                         calle,
                         nroCalle};
-                if ((parentDIAS_LABORALESRowByfk_medicos_diaLaboral != null)) {
-                    columnValuesArray[1] = parentDIAS_LABORALESRowByfk_medicos_diaLaboral[0];
-                }
                 if ((parentTIPOS_DOCUMENTOSRowByfk_medicos_tipoDocumento != null)) {
-                    columnValuesArray[3] = parentTIPOS_DOCUMENTOSRowByfk_medicos_tipoDocumento[0];
+                    columnValuesArray[2] = parentTIPOS_DOCUMENTOSRowByfk_medicos_tipoDocumento[0];
                 }
                 if ((parentSEXOSRowByfk_medicos_sexos != null)) {
-                    columnValuesArray[5] = parentSEXOSRowByfk_medicos_sexos[0];
+                    columnValuesArray[4] = parentSEXOSRowByfk_medicos_sexos[0];
                 }
                 if ((parentBARRIOSRowByfk_medicos_barrios != null)) {
-                    columnValuesArray[7] = parentBARRIOSRowByfk_medicos_barrios[0];
+                    columnValuesArray[6] = parentBARRIOSRowByfk_medicos_barrios[0];
                 }
                 if ((parentRELACIONES_LABORALESRowByfk_medicos_relacionLaboral != null)) {
-                    columnValuesArray[9] = parentRELACIONES_LABORALESRowByfk_medicos_relacionLaboral[0];
+                    columnValuesArray[8] = parentRELACIONES_LABORALESRowByfk_medicos_relacionLaboral[0];
                 }
                 if ((parentESPECIALIDADESRowByfk_medicos_especialidad != null)) {
-                    columnValuesArray[12] = parentESPECIALIDADESRowByfk_medicos_especialidad[0];
+                    columnValuesArray[11] = parentESPECIALIDADESRowByfk_medicos_especialidad[0];
                 }
                 rowMEDICOSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMEDICOSRow);
@@ -5763,7 +5742,6 @@ namespace SIMED_V1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             internal void InitVars() {
                 this.columnnumeroMatricula = base.Columns["numeroMatricula"];
-                this.columnid_diaLaboral = base.Columns["id_diaLaboral"];
                 this.columnnumDocumento = base.Columns["numDocumento"];
                 this.columnid_tipoDocumento = base.Columns["id_tipoDocumento"];
                 this.columnapellido = base.Columns["apellido"];
@@ -5784,9 +5762,7 @@ namespace SIMED_V1 {
             private void InitClass() {
                 this.columnnumeroMatricula = new global::System.Data.DataColumn("numeroMatricula", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumeroMatricula);
-                this.columnid_diaLaboral = new global::System.Data.DataColumn("id_diaLaboral", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_diaLaboral);
-                this.columnnumDocumento = new global::System.Data.DataColumn("numDocumento", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnnumDocumento = new global::System.Data.DataColumn("numDocumento", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnumDocumento);
                 this.columnid_tipoDocumento = new global::System.Data.DataColumn("id_tipoDocumento", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_tipoDocumento);
@@ -5816,7 +5792,6 @@ namespace SIMED_V1 {
                                 this.columnnumeroMatricula}, true));
                 this.columnnumeroMatricula.AllowDBNull = false;
                 this.columnnumeroMatricula.Unique = true;
-                this.columnid_diaLaboral.AllowDBNull = false;
                 this.columnnumDocumento.AllowDBNull = false;
                 this.columnid_tipoDocumento.AllowDBNull = false;
                 this.columnapellido.AllowDBNull = false;
@@ -11819,9 +11794,9 @@ namespace SIMED_V1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int numero_documento {
+            public double numero_documento {
                 get {
-                    return ((int)(this[this.tableAFILIADOS.numero_documentoColumn]));
+                    return ((double)(this[this.tableAFILIADOS.numero_documentoColumn]));
                 }
                 set {
                     this[this.tableAFILIADOS.numero_documentoColumn] = value;
@@ -12448,17 +12423,6 @@ namespace SIMED_V1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public MEDICOSRow[] GetMEDICOSRows() {
-                if ((this.Table.ChildRelations["fk_medicos_diaLaboral"] == null)) {
-                    return new MEDICOSRow[0];
-                }
-                else {
-                    return ((MEDICOSRow[])(base.GetChildRows(this.Table.ChildRelations["fk_medicos_diaLaboral"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public MEDICOSxDIAS_LABORALESRow[] GetMEDICOSxDIAS_LABORALESRows() {
                 if ((this.Table.ChildRelations["fk_dia_diasLaborales"] == null)) {
                     return new MEDICOSxDIAS_LABORALESRow[0];
@@ -12540,9 +12504,9 @@ namespace SIMED_V1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int numeroDocumento {
+            public double numeroDocumento {
                 get {
-                    return ((int)(this[this.tableENFERMEROS.numeroDocumentoColumn]));
+                    return ((double)(this[this.tableENFERMEROS.numeroDocumentoColumn]));
                 }
                 set {
                     this[this.tableENFERMEROS.numeroDocumentoColumn] = value;
@@ -12984,20 +12948,9 @@ namespace SIMED_V1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int id_diaLaboral {
+            public double numDocumento {
                 get {
-                    return ((int)(this[this.tableMEDICOS.id_diaLaboralColumn]));
-                }
-                set {
-                    this[this.tableMEDICOS.id_diaLaboralColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public int numDocumento {
-                get {
-                    return ((int)(this[this.tableMEDICOS.numDocumentoColumn]));
+                    return ((double)(this[this.tableMEDICOS.numDocumentoColumn]));
                 }
                 set {
                     this[this.tableMEDICOS.numDocumentoColumn] = value;
@@ -13144,17 +13097,6 @@ namespace SIMED_V1 {
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["fk_medicos_barrios"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public DIAS_LABORALESRow DIAS_LABORALESRow {
-                get {
-                    return ((DIAS_LABORALESRow)(this.GetParentRow(this.Table.ParentRelations["fk_medicos_diaLaboral"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["fk_medicos_diaLaboral"]);
                 }
             }
             
@@ -20280,7 +20222,6 @@ SELECT id_factura, numeroAfiliado, fechaFactura, numCBU, importe, fechaVencimien
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "MEDICOS";
             tableMapping.ColumnMappings.Add("numeroMatricula", "numeroMatricula");
-            tableMapping.ColumnMappings.Add("id_diaLaboral", "id_diaLaboral");
             tableMapping.ColumnMappings.Add("numDocumento", "numDocumento");
             tableMapping.ColumnMappings.Add("id_tipoDocumento", "id_tipoDocumento");
             tableMapping.ColumnMappings.Add("apellido", "apellido");
@@ -20297,11 +20238,10 @@ SELECT id_factura, numeroAfiliado, fechaFactura, numCBU, importe, fechaVencimien
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[MEDICOS] WHERE (([numeroMatricula] = @Original_numeroMatricula) AND ([id_diaLaboral] = @Original_id_diaLaboral) AND ([numDocumento] = @Original_numDocumento) AND ([id_tipoDocumento] = @Original_id_tipoDocumento) AND ([apellido] = @Original_apellido) AND ([id_sexo] = @Original_id_sexo) AND ([nombre] = @Original_nombre) AND ([id_barrio] = @Original_id_barrio) AND ([fechaNacimiento] = @Original_fechaNacimiento) AND ([id_relacionLaboral] = @Original_id_relacionLaboral) AND ([horarioIngreso] = @Original_horarioIngreso) AND ([horarioEgreso] = @Original_horarioEgreso) AND ([id_especialidad] = @Original_id_especialidad) AND ([calle] = @Original_calle) AND ([nroCalle] = @Original_nroCalle))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [MEDICOS] WHERE (([numeroMatricula] = @Original_numeroMatricula) AND ([numDocumento] = @Original_numDocumento) AND ([id_tipoDocumento] = @Original_id_tipoDocumento) AND ([apellido] = @Original_apellido) AND ([id_sexo] = @Original_id_sexo) AND ([nombre] = @Original_nombre) AND ([id_barrio] = @Original_id_barrio) AND ([fechaNacimiento] = @Original_fechaNacimiento) AND ([id_relacionLaboral] = @Original_id_relacionLaboral) AND ([horarioIngreso] = @Original_horarioIngreso) AND ([horarioEgreso] = @Original_horarioEgreso) AND ([id_especialidad] = @Original_id_especialidad) AND ([calle] = @Original_calle) AND ([nroCalle] = @Original_nroCalle))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numeroMatricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroMatricula", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_diaLaboral", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_diaLaboral", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numDocumento", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_tipoDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_tipoDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellido", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_sexo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -20316,12 +20256,11 @@ SELECT id_factura, numeroAfiliado, fechaFactura, numCBU, importe, fechaVencimien
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nroCalle", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nroCalle", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[MEDICOS] ([numeroMatricula], [id_diaLaboral], [numDocumento], [id_tipoDocumento], [apellido], [id_sexo], [nombre], [id_barrio], [fechaNacimiento], [id_relacionLaboral], [horarioIngreso], [horarioEgreso], [id_especialidad], [calle], [nroCalle]) VALUES (@numeroMatricula, @id_diaLaboral, @numDocumento, @id_tipoDocumento, @apellido, @id_sexo, @nombre, @id_barrio, @fechaNacimiento, @id_relacionLaboral, @horarioIngreso, @horarioEgreso, @id_especialidad, @calle, @nroCalle);
-SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido, id_sexo, nombre, id_barrio, fechaNacimiento, id_relacionLaboral, horarioIngreso, horarioEgreso, id_especialidad, calle, nroCalle FROM MEDICOS WHERE (numeroMatricula = @numeroMatricula)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [MEDICOS] ([numeroMatricula], [numDocumento], [id_tipoDocumento], [apellido], [id_sexo], [nombre], [id_barrio], [fechaNacimiento], [id_relacionLaboral], [horarioIngreso], [horarioEgreso], [id_especialidad], [calle], [nroCalle]) VALUES (@numeroMatricula, @numDocumento, @id_tipoDocumento, @apellido, @id_sexo, @nombre, @id_barrio, @fechaNacimiento, @id_relacionLaboral, @horarioIngreso, @horarioEgreso, @id_especialidad, @calle, @nroCalle);
+SELECT numeroMatricula, numDocumento, id_tipoDocumento, apellido, id_sexo, nombre, id_barrio, fechaNacimiento, id_relacionLaboral, horarioIngreso, horarioEgreso, id_especialidad, calle, nroCalle FROM MEDICOS WHERE (numeroMatricula = @numeroMatricula)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroMatricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroMatricula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_diaLaboral", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_diaLaboral", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numDocumento", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_tipoDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_tipoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20336,12 +20275,11 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nroCalle", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nroCalle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[MEDICOS] SET [numeroMatricula] = @numeroMatricula, [id_diaLaboral] = @id_diaLaboral, [numDocumento] = @numDocumento, [id_tipoDocumento] = @id_tipoDocumento, [apellido] = @apellido, [id_sexo] = @id_sexo, [nombre] = @nombre, [id_barrio] = @id_barrio, [fechaNacimiento] = @fechaNacimiento, [id_relacionLaboral] = @id_relacionLaboral, [horarioIngreso] = @horarioIngreso, [horarioEgreso] = @horarioEgreso, [id_especialidad] = @id_especialidad, [calle] = @calle, [nroCalle] = @nroCalle WHERE (([numeroMatricula] = @Original_numeroMatricula) AND ([id_diaLaboral] = @Original_id_diaLaboral) AND ([numDocumento] = @Original_numDocumento) AND ([id_tipoDocumento] = @Original_id_tipoDocumento) AND ([apellido] = @Original_apellido) AND ([id_sexo] = @Original_id_sexo) AND ([nombre] = @Original_nombre) AND ([id_barrio] = @Original_id_barrio) AND ([fechaNacimiento] = @Original_fechaNacimiento) AND ([id_relacionLaboral] = @Original_id_relacionLaboral) AND ([horarioIngreso] = @Original_horarioIngreso) AND ([horarioEgreso] = @Original_horarioEgreso) AND ([id_especialidad] = @Original_id_especialidad) AND ([calle] = @Original_calle) AND ([nroCalle] = @Original_nroCalle));
-SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido, id_sexo, nombre, id_barrio, fechaNacimiento, id_relacionLaboral, horarioIngreso, horarioEgreso, id_especialidad, calle, nroCalle FROM MEDICOS WHERE (numeroMatricula = @numeroMatricula)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [MEDICOS] SET [numeroMatricula] = @numeroMatricula, [numDocumento] = @numDocumento, [id_tipoDocumento] = @id_tipoDocumento, [apellido] = @apellido, [id_sexo] = @id_sexo, [nombre] = @nombre, [id_barrio] = @id_barrio, [fechaNacimiento] = @fechaNacimiento, [id_relacionLaboral] = @id_relacionLaboral, [horarioIngreso] = @horarioIngreso, [horarioEgreso] = @horarioEgreso, [id_especialidad] = @id_especialidad, [calle] = @calle, [nroCalle] = @nroCalle WHERE (([numeroMatricula] = @Original_numeroMatricula) AND ([numDocumento] = @Original_numDocumento) AND ([id_tipoDocumento] = @Original_id_tipoDocumento) AND ([apellido] = @Original_apellido) AND ([id_sexo] = @Original_id_sexo) AND ([nombre] = @Original_nombre) AND ([id_barrio] = @Original_id_barrio) AND ([fechaNacimiento] = @Original_fechaNacimiento) AND ([id_relacionLaboral] = @Original_id_relacionLaboral) AND ([horarioIngreso] = @Original_horarioIngreso) AND ([horarioEgreso] = @Original_horarioEgreso) AND ([id_especialidad] = @Original_id_especialidad) AND ([calle] = @Original_calle) AND ([nroCalle] = @Original_nroCalle));
+SELECT numeroMatricula, numDocumento, id_tipoDocumento, apellido, id_sexo, nombre, id_barrio, fechaNacimiento, id_relacionLaboral, horarioIngreso, horarioEgreso, id_especialidad, calle, nroCalle FROM MEDICOS WHERE (numeroMatricula = @numeroMatricula)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numeroMatricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroMatricula", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_diaLaboral", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_diaLaboral", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numDocumento", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_tipoDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_tipoDocumento", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellido", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_sexo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -20355,8 +20293,7 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@calle", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "calle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nroCalle", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nroCalle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numeroMatricula", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numeroMatricula", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_diaLaboral", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_diaLaboral", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numDocumento", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_tipoDocumento", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_tipoDocumento", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_apellido", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "apellido", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_sexo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_sexo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -20384,9 +20321,9 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido, " +
-                "id_sexo, nombre, id_barrio, fechaNacimiento, id_relacionLaboral, horarioIngreso," +
-                " horarioEgreso, id_especialidad, calle, nroCalle FROM dbo.MEDICOS";
+            this._commandCollection[0].CommandText = "SELECT numeroMatricula, numDocumento, id_tipoDocumento, apellido, id_sexo, nombre" +
+                ", id_barrio, fechaNacimiento, id_relacionLaboral, horarioIngreso, horarioEgreso," +
+                " id_especialidad, calle, nroCalle FROM MEDICOS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -20447,37 +20384,36 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_numeroMatricula, int Original_id_diaLaboral, int Original_numDocumento, int Original_id_tipoDocumento, string Original_apellido, int Original_id_sexo, string Original_nombre, int Original_id_barrio, System.DateTime Original_fechaNacimiento, int Original_id_relacionLaboral, System.TimeSpan Original_horarioIngreso, System.TimeSpan Original_horarioEgreso, int Original_id_especialidad, string Original_calle, int Original_nroCalle) {
+        public virtual int Delete(int Original_numeroMatricula, long Original_numDocumento, int Original_id_tipoDocumento, string Original_apellido, int Original_id_sexo, string Original_nombre, int Original_id_barrio, System.DateTime Original_fechaNacimiento, int Original_id_relacionLaboral, System.TimeSpan Original_horarioIngreso, System.TimeSpan Original_horarioEgreso, int Original_id_especialidad, string Original_calle, int Original_nroCalle) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_numeroMatricula));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_id_diaLaboral));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_numDocumento));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_id_tipoDocumento));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((long)(Original_numDocumento));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_id_tipoDocumento));
             if ((Original_apellido == null)) {
                 throw new global::System.ArgumentNullException("Original_apellido");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_apellido));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_apellido));
             }
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_id_sexo));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_id_sexo));
             if ((Original_nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_nombre");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_nombre));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_nombre));
             }
-            this.Adapter.DeleteCommand.Parameters[7].Value = ((int)(Original_id_barrio));
-            this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_fechaNacimiento));
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_id_relacionLaboral));
-            this.Adapter.DeleteCommand.Parameters[10].Value = ((System.TimeSpan)(Original_horarioIngreso));
-            this.Adapter.DeleteCommand.Parameters[11].Value = ((System.TimeSpan)(Original_horarioEgreso));
-            this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_id_especialidad));
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((int)(Original_id_barrio));
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_fechaNacimiento));
+            this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_id_relacionLaboral));
+            this.Adapter.DeleteCommand.Parameters[9].Value = ((System.TimeSpan)(Original_horarioIngreso));
+            this.Adapter.DeleteCommand.Parameters[10].Value = ((System.TimeSpan)(Original_horarioEgreso));
+            this.Adapter.DeleteCommand.Parameters[11].Value = ((int)(Original_id_especialidad));
             if ((Original_calle == null)) {
                 throw new global::System.ArgumentNullException("Original_calle");
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[13].Value = ((string)(Original_calle));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((string)(Original_calle));
             }
-            this.Adapter.DeleteCommand.Parameters[14].Value = ((int)(Original_nroCalle));
+            this.Adapter.DeleteCommand.Parameters[13].Value = ((int)(Original_nroCalle));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20498,37 +20434,36 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int numeroMatricula, int id_diaLaboral, int numDocumento, int id_tipoDocumento, string apellido, int id_sexo, string nombre, int id_barrio, System.DateTime fechaNacimiento, int id_relacionLaboral, System.TimeSpan horarioIngreso, System.TimeSpan horarioEgreso, int id_especialidad, string calle, int nroCalle) {
+        public virtual int Insert(int numeroMatricula, long numDocumento, int id_tipoDocumento, string apellido, int id_sexo, string nombre, int id_barrio, System.DateTime fechaNacimiento, int id_relacionLaboral, System.TimeSpan horarioIngreso, System.TimeSpan horarioEgreso, int id_especialidad, string calle, int nroCalle) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(numeroMatricula));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(id_diaLaboral));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(numDocumento));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(id_tipoDocumento));
+            this.Adapter.InsertCommand.Parameters[1].Value = ((long)(numDocumento));
+            this.Adapter.InsertCommand.Parameters[2].Value = ((int)(id_tipoDocumento));
             if ((apellido == null)) {
                 throw new global::System.ArgumentNullException("apellido");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(apellido));
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(apellido));
             }
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(id_sexo));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(id_sexo));
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(nombre));
+                this.Adapter.InsertCommand.Parameters[5].Value = ((string)(nombre));
             }
-            this.Adapter.InsertCommand.Parameters[7].Value = ((int)(id_barrio));
-            this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(fechaNacimiento));
-            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(id_relacionLaboral));
-            this.Adapter.InsertCommand.Parameters[10].Value = ((System.TimeSpan)(horarioIngreso));
-            this.Adapter.InsertCommand.Parameters[11].Value = ((System.TimeSpan)(horarioEgreso));
-            this.Adapter.InsertCommand.Parameters[12].Value = ((int)(id_especialidad));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(id_barrio));
+            this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(fechaNacimiento));
+            this.Adapter.InsertCommand.Parameters[8].Value = ((int)(id_relacionLaboral));
+            this.Adapter.InsertCommand.Parameters[9].Value = ((System.TimeSpan)(horarioIngreso));
+            this.Adapter.InsertCommand.Parameters[10].Value = ((System.TimeSpan)(horarioEgreso));
+            this.Adapter.InsertCommand.Parameters[11].Value = ((int)(id_especialidad));
             if ((calle == null)) {
                 throw new global::System.ArgumentNullException("calle");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(calle));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(calle));
             }
-            this.Adapter.InsertCommand.Parameters[14].Value = ((int)(nroCalle));
+            this.Adapter.InsertCommand.Parameters[13].Value = ((int)(nroCalle));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20551,8 +20486,7 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     int numeroMatricula, 
-                    int id_diaLaboral, 
-                    int numDocumento, 
+                    long numDocumento, 
                     int id_tipoDocumento, 
                     string apellido, 
                     int id_sexo, 
@@ -20566,8 +20500,7 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
                     string calle, 
                     int nroCalle, 
                     int Original_numeroMatricula, 
-                    int Original_id_diaLaboral, 
-                    int Original_numDocumento, 
+                    long Original_numDocumento, 
                     int Original_id_tipoDocumento, 
                     string Original_apellido, 
                     int Original_id_sexo, 
@@ -20581,65 +20514,63 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
                     string Original_calle, 
                     int Original_nroCalle) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(numeroMatricula));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(id_diaLaboral));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(numDocumento));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(id_tipoDocumento));
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((long)(numDocumento));
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(id_tipoDocumento));
             if ((apellido == null)) {
                 throw new global::System.ArgumentNullException("apellido");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(apellido));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(apellido));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(id_sexo));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(id_sexo));
             if ((nombre == null)) {
                 throw new global::System.ArgumentNullException("nombre");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(nombre));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(nombre));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(id_barrio));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(fechaNacimiento));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(id_relacionLaboral));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.TimeSpan)(horarioIngreso));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.TimeSpan)(horarioEgreso));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(id_especialidad));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(id_barrio));
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(fechaNacimiento));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(id_relacionLaboral));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((System.TimeSpan)(horarioIngreso));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.TimeSpan)(horarioEgreso));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(id_especialidad));
             if ((calle == null)) {
                 throw new global::System.ArgumentNullException("calle");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(calle));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(calle));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(nroCalle));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_numeroMatricula));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_id_diaLaboral));
-            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_numDocumento));
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_id_tipoDocumento));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(nroCalle));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_numeroMatricula));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((long)(Original_numDocumento));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_id_tipoDocumento));
             if ((Original_apellido == null)) {
                 throw new global::System.ArgumentNullException("Original_apellido");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_apellido));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_apellido));
             }
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_id_sexo));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_id_sexo));
             if ((Original_nombre == null)) {
                 throw new global::System.ArgumentNullException("Original_nombre");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_nombre));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_nombre));
             }
-            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_id_barrio));
-            this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_fechaNacimiento));
-            this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(Original_id_relacionLaboral));
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((System.TimeSpan)(Original_horarioIngreso));
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((System.TimeSpan)(Original_horarioEgreso));
-            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_id_especialidad));
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_id_barrio));
+            this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_fechaNacimiento));
+            this.Adapter.UpdateCommand.Parameters[22].Value = ((int)(Original_id_relacionLaboral));
+            this.Adapter.UpdateCommand.Parameters[23].Value = ((System.TimeSpan)(Original_horarioIngreso));
+            this.Adapter.UpdateCommand.Parameters[24].Value = ((System.TimeSpan)(Original_horarioEgreso));
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(Original_id_especialidad));
             if ((Original_calle == null)) {
                 throw new global::System.ArgumentNullException("Original_calle");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_calle));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_calle));
             }
-            this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(Original_nroCalle));
+            this.Adapter.UpdateCommand.Parameters[27].Value = ((int)(Original_nroCalle));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20661,8 +20592,7 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int id_diaLaboral, 
-                    int numDocumento, 
+                    long numDocumento, 
                     int id_tipoDocumento, 
                     string apellido, 
                     int id_sexo, 
@@ -20676,8 +20606,7 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
                     string calle, 
                     int nroCalle, 
                     int Original_numeroMatricula, 
-                    int Original_id_diaLaboral, 
-                    int Original_numDocumento, 
+                    long Original_numDocumento, 
                     int Original_id_tipoDocumento, 
                     string Original_apellido, 
                     int Original_id_sexo, 
@@ -20690,7 +20619,7 @@ SELECT numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido,
                     int Original_id_especialidad, 
                     string Original_calle, 
                     int Original_nroCalle) {
-            return this.Update(Original_numeroMatricula, id_diaLaboral, numDocumento, id_tipoDocumento, apellido, id_sexo, nombre, id_barrio, fechaNacimiento, id_relacionLaboral, horarioIngreso, horarioEgreso, id_especialidad, calle, nroCalle, Original_numeroMatricula, Original_id_diaLaboral, Original_numDocumento, Original_id_tipoDocumento, Original_apellido, Original_id_sexo, Original_nombre, Original_id_barrio, Original_fechaNacimiento, Original_id_relacionLaboral, Original_horarioIngreso, Original_horarioEgreso, Original_id_especialidad, Original_calle, Original_nroCalle);
+            return this.Update(Original_numeroMatricula, numDocumento, id_tipoDocumento, apellido, id_sexo, nombre, id_barrio, fechaNacimiento, id_relacionLaboral, horarioIngreso, horarioEgreso, id_especialidad, calle, nroCalle, Original_numeroMatricula, Original_numDocumento, Original_id_tipoDocumento, Original_apellido, Original_id_sexo, Original_nombre, Original_id_barrio, Original_fechaNacimiento, Original_id_relacionLaboral, Original_horarioIngreso, Original_horarioEgreso, Original_id_especialidad, Original_calle, Original_nroCalle);
         }
     }
     
@@ -27999,12 +27928,12 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._rANGOS_ETARIOSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.RANGOS_ETARIOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cATEGORIASTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.CATEGORIAS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._rANGOS_ETARIOSTableAdapter.Update(updatedRows));
+                    result = (result + this._cATEGORIASTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28026,12 +27955,30 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cATEGORIASTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.CATEGORIAS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._rANGOS_ETARIOSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.RANGOS_ETARIOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cATEGORIASTableAdapter.Update(updatedRows));
+                    result = (result + this._rANGOS_ETARIOSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._aMBULANCIASTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.AMBULANCIAS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._aMBULANCIASTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tURNOS_ROTATIVOSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TURNOS_ROTATIVOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tURNOS_ROTATIVOSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28044,39 +27991,12 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._dIAS_LABORALESTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.DIAS_LABORALES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._dIAS_LABORALESTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._tIPOS_VIAJETableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.TIPOS_VIAJE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._tIPOS_VIAJETableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._pLANESTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PLANES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._pLANESTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._eSPECIALIDADESTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ESPECIALIDADES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._eSPECIALIDADESTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28089,12 +28009,12 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tURNOS_ROTATIVOSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TURNOS_ROTATIVOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._eSPECIALIDADESTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ESPECIALIDADES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._tURNOS_ROTATIVOSTableAdapter.Update(updatedRows));
+                    result = (result + this._eSPECIALIDADESTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28116,12 +28036,12 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._aMBULANCIASTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AMBULANCIAS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._pLANESTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.PLANES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._aMBULANCIASTableAdapter.Update(updatedRows));
+                    result = (result + this._pLANESTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28158,6 +28078,15 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._eNFERMEROSTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._dIAS_LABORALESTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.DIAS_LABORALES.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._dIAS_LABORALESTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28206,21 +28135,21 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._tARIFASxSERVICIOSTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.TARIFASxSERVICIOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._tARIFASxSERVICIOSTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._fACTURASTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.FACTURAS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._fACTURASTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._tARIFASxSERVICIOSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TARIFASxSERVICIOS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._tARIFASxSERVICIOSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -28295,11 +28224,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._rANGOS_ETARIOSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.RANGOS_ETARIOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cATEGORIASTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.CATEGORIAS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._rANGOS_ETARIOSTableAdapter.Update(addedRows));
+                    result = (result + this._cATEGORIASTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28319,11 +28248,27 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cATEGORIASTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.CATEGORIAS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._rANGOS_ETARIOSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.RANGOS_ETARIOS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cATEGORIASTableAdapter.Update(addedRows));
+                    result = (result + this._rANGOS_ETARIOSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._aMBULANCIASTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.AMBULANCIAS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._aMBULANCIASTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tURNOS_ROTATIVOSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TURNOS_ROTATIVOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tURNOS_ROTATIVOSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28335,35 +28280,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._dIAS_LABORALESTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.DIAS_LABORALES.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._dIAS_LABORALESTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._tIPOS_VIAJETableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.TIPOS_VIAJE.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._tIPOS_VIAJETableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._pLANESTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PLANES.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._pLANESTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._eSPECIALIDADESTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ESPECIALIDADES.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._eSPECIALIDADESTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28375,11 +28296,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tURNOS_ROTATIVOSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TURNOS_ROTATIVOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._eSPECIALIDADESTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ESPECIALIDADES.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._tURNOS_ROTATIVOSTableAdapter.Update(addedRows));
+                    result = (result + this._eSPECIALIDADESTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28399,11 +28320,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._aMBULANCIASTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AMBULANCIAS.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._pLANESTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.PLANES.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._aMBULANCIASTableAdapter.Update(addedRows));
+                    result = (result + this._pLANESTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28436,6 +28357,14 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._eNFERMEROSTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._dIAS_LABORALESTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.DIAS_LABORALES.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._dIAS_LABORALESTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28479,19 +28408,19 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._tARIFASxSERVICIOSTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.TARIFASxSERVICIOS.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._tARIFASxSERVICIOSTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._fACTURASTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.FACTURAS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._fACTURASTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._tARIFASxSERVICIOSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TARIFASxSERVICIOS.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._tARIFASxSERVICIOSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -28585,19 +28514,19 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._fACTURASTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.FACTURAS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._fACTURASTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tARIFASxSERVICIOSTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TARIFASxSERVICIOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tARIFASxSERVICIOSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._fACTURASTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.FACTURAS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._fACTURASTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28641,6 +28570,14 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._dIAS_LABORALESTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.DIAS_LABORALES.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._dIAS_LABORALESTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._eNFERMEROSTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.ENFERMEROS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -28673,11 +28610,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._aMBULANCIASTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AMBULANCIAS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._pLANESTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.PLANES.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._aMBULANCIASTableAdapter.Update(deletedRows));
+                    result = (result + this._pLANESTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28697,11 +28634,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._tURNOS_ROTATIVOSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.TURNOS_ROTATIVOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._eSPECIALIDADESTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ESPECIALIDADES.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._tURNOS_ROTATIVOSTableAdapter.Update(deletedRows));
+                    result = (result + this._eSPECIALIDADESTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28713,35 +28650,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._eSPECIALIDADESTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ESPECIALIDADES.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._eSPECIALIDADESTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._pLANESTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PLANES.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._pLANESTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._tIPOS_VIAJETableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TIPOS_VIAJE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._tIPOS_VIAJETableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._dIAS_LABORALESTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.DIAS_LABORALES.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._dIAS_LABORALESTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28753,11 +28666,27 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cATEGORIASTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.CATEGORIAS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tURNOS_ROTATIVOSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TURNOS_ROTATIVOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cATEGORIASTableAdapter.Update(deletedRows));
+                    result = (result + this._tURNOS_ROTATIVOSTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._aMBULANCIASTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.AMBULANCIAS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aMBULANCIASTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._rANGOS_ETARIOSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.RANGOS_ETARIOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._rANGOS_ETARIOSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -28777,11 +28706,11 @@ SELECT fecha, id_movil, hora_salida, id_turnoRotativo, id_tipoViaje, horaLlegada
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._rANGOS_ETARIOSTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.RANGOS_ETARIOS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cATEGORIASTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.CATEGORIAS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._rANGOS_ETARIOSTableAdapter.Update(deletedRows));
+                    result = (result + this._cATEGORIASTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
