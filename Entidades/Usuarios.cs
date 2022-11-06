@@ -5,7 +5,7 @@ using System.Collections.Generic;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace SIMED.Models
+namespace SIMED_V1.Entidades
 {
     public partial class Usuarios
     {
@@ -18,7 +18,5 @@ namespace SIMED.Models
 
         public virtual Perfiles IdPerfilNavigation { get; set; }
         public virtual Empleados LegajoEmpleadoNavigation { get; set; }
-
-        
     }
 }

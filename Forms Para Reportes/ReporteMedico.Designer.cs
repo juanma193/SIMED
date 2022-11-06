@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.mEDICOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bD3K3G05_2022DataSet = new SIMED_V1.Forms_Para_Reportes.BD3K3G05_2022DataSet();
             this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnMinimizar = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -43,11 +42,9 @@
             this.cmbFiltro = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.btnFiltrarEspecialidad = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.mEDICOSTableAdapter = new SIMED_V1.Forms_Para_Reportes.BD3K3G05_2022DataSetTableAdapters.MEDICOSTableAdapter();
             this.bD3K3G052022DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.reportViewerMedico = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.mEDICOSBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD3K3G05_2022DataSet)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bD3K3G052022DataSetBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -55,12 +52,8 @@
             // mEDICOSBindingSource
             // 
             this.mEDICOSBindingSource.DataMember = "MEDICOS";
-            this.mEDICOSBindingSource.DataSource = this.bD3K3G05_2022DataSet;
             // 
             // bD3K3G05_2022DataSet
-            // 
-            this.bD3K3G05_2022DataSet.DataSetName = "BD3K3G05_2022DataSet";
-            this.bD3K3G05_2022DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // guna2BorderlessForm1
             // 
@@ -236,11 +229,9 @@
             // 
             // mEDICOSTableAdapter
             // 
-            this.mEDICOSTableAdapter.ClearBeforeFill = true;
             // 
             // bD3K3G052022DataSetBindingSource
             // 
-            this.bD3K3G052022DataSetBindingSource.DataSource = this.bD3K3G05_2022DataSet;
             this.bD3K3G052022DataSetBindingSource.Position = 0;
             // 
             // reportViewerMedico
@@ -276,7 +267,6 @@
             this.Text = "ReporteMedico";
             this.Load += new System.EventHandler(this.ReporteMedico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mEDICOSBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD3K3G05_2022DataSet)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bD3K3G052022DataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -297,9 +287,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cmbFiltro;
         private System.Windows.Forms.Label lblFiltro;
         private Guna.UI2.WinForms.Guna2GradientButton btnFiltrarEspecialidad;
-        private BD3K3G05_2022DataSet bD3K3G05_2022DataSet;
         private System.Windows.Forms.BindingSource mEDICOSBindingSource;
-        private BD3K3G05_2022DataSetTableAdapters.MEDICOSTableAdapter mEDICOSTableAdapter;
         private System.Windows.Forms.BindingSource bD3K3G052022DataSetBindingSource;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewerMedico;
     }

@@ -69,7 +69,6 @@ D:\SIMED\obj\Debug\SIMED V1.csproj.SuggestedBindingRedirects.cache
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Mensajes_Personalizados.Cerrar_Sesion.resources
 D:\SIMED\obj\Debug\SIMED_V1.CorrectoForm.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Mensajes_Personalizados.MultiplesErrores.resources
-D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AbmTipoPlan.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaAfiliado.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaAmbulancias.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaEnfermeros.resources
@@ -77,7 +76,6 @@ D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaMedico.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaPlanes.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaViaje.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaEnfermero.resources
-D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaMédico.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaPlanes.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultarAfiliado.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultarAmbulancias.resources
@@ -352,3 +350,37 @@ C:\Program Files (x86)\SIMED\obj\Debug\SIMED V1.application
 C:\Program Files (x86)\SIMED\obj\Debug\SIMED V1.csproj.CopyComplete
 C:\Program Files (x86)\SIMED\obj\Debug\SIMED V1.exe
 C:\Program Files (x86)\SIMED\obj\Debug\SIMED V1.pdb
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Mensajes_Personalizados.SeguroEliminar.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Mensajes_Personalizados.SeguroModificar.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ABMCEspecialidades.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ABMCRangosEtarios.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AbmTipoViaje.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaMarcas.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaModelos.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.AltaRelacionLaboral.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaMedico.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaMarcas.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaModelos.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultarUsuarioNoAdmin.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ConsultaRelacionLaboral.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.DatosEnfermero.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.DatosMedico.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.EliminarViaje.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.Modificar_Viaje.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ModificarEmpleado.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ModificarEnfermero.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ModificarMedico.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_ABM.ViajesNuevo.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.UFuncionalidades.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.UModelosMarcas.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.URelacionesLaborales.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_El_Menu.UViajes.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.PrincipalRepEst.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.ReporteMedico.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.UAfiliadoRep.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.UAmbulanciaRep.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.UEnfermeroRep.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.UGeneral.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.UMedicoRep.resources
+D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.UViajeRep.resources
+D:\SIMED\bin\Debug\EnvDTE.xml

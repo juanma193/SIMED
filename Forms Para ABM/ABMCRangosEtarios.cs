@@ -1,5 +1,5 @@
 ﻿using Guna.UI2.WinForms;
-using SIMED.Models;
+using SIMED_V1.Entidades;
 using SIMED_V1.Bases_de_datos;
 using SIMED_V1.Forms_Mensajes_Personalizados;
 using System;

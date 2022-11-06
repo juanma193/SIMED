@@ -375,11 +375,6 @@
     <Compile Include="Bases de datos\TiposViajesBD.cs" />
     <Compile Include="Bases de datos\UsuarioBD.cs" />
     <Compile Include="Bases de datos\ViajesBD.cs" />
-    <Compile Include="BD3K3G05_2022DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BD3K3G05_2022DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Entidades\Afiliados.cs" />
     <Compile Include="Entidades\Ambulancias.cs" />
     <Compile Include="Entidades\Bajas.cs" />
@@ -1008,17 +1003,6 @@
       <DependentUpon>VerificarMailForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="archivos\y2mate.com - Playstation 2 Startup Noise.mp3.sfk" />
-    <None Include="BD3K3G05_2022DataSet.xsc">
-      <DependentUpon>BD3K3G05_2022DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="BD3K3G05_2022DataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>BD3K3G05_2022DataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="BD3K3G05_2022DataSet.xss">
-      <DependentUpon>BD3K3G05_2022DataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

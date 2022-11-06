@@ -1,5 +1,5 @@
 ﻿using Microsoft.Data.SqlClient;
-using SIMED.Models;
+using SIMED_V1.Entidades;
 using SIMED_V1.Bases_de_datos;
 using SIMED_V1.Forms_Mensajes_Personalizados;
 using SIMED_V1.Forms_Para_El_Menu;

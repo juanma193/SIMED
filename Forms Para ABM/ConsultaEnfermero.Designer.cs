@@ -35,7 +35,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblCrearCuenta = new System.Windows.Forms.Label();
             this.bD3K3G052022DataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bD3K3G05_2022DataSet = new SIMED_V1.Forms_Para_Reportes.BD3K3G05_2022DataSet();
             this.btnBuscarEnfermero = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnEliminarEnfermero = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnModificarEnfermero = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -53,7 +52,6 @@
             this.txtConsultaNombreEnfermero = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtConsultaMatriculaEnfermero = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bD3K3G052022DataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD3K3G05_2022DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsultaEnfermero)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,13 +78,7 @@
             // 
             // bD3K3G052022DataSetBindingSource
             // 
-            this.bD3K3G052022DataSetBindingSource.DataSource = this.bD3K3G05_2022DataSet;
             this.bD3K3G052022DataSetBindingSource.Position = 0;
-            // 
-            // bD3K3G05_2022DataSet
-            // 
-            this.bD3K3G05_2022DataSet.DataSetName = "BD3K3G05_2022DataSet";
-            this.bD3K3G05_2022DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnBuscarEnfermero
             // 
@@ -231,7 +223,6 @@
             this.matriculaEnfermero,
             this.nombreEnfermero,
             this.apellidoEnfermero});
-            this.grdConsultaEnfermero.DataSource = this.bD3K3G05_2022DataSet;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -431,7 +422,6 @@
             this.Text = "ConsultaEnfermero";
             this.Load += new System.EventHandler(this.ConsultaEnfermero_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bD3K3G052022DataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD3K3G05_2022DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdConsultaEnfermero)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -454,7 +444,6 @@
         private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.BindingSource bD3K3G052022DataSetBindingSource;
-        private Forms_Para_Reportes.BD3K3G05_2022DataSet bD3K3G05_2022DataSet;
         private Guna.UI2.WinForms.Guna2CheckBox chkEnfermeros;
         private System.Windows.Forms.DataGridViewTextBoxColumn matriculaEnfermero;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreEnfermero;

@@ -1,4 +1,4 @@
-﻿using SIMED.Models;
+﻿using SIMED_V1.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Data;

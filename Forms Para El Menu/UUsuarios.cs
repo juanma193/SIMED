@@ -1,4 +1,4 @@
-﻿using SIMED.Models;
+﻿using SIMED_V1.Entidades;
 using SIMED_V1.Forms_Para_ABM;
 using System;
 using System.Collections.Generic;

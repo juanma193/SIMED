@@ -22,8 +22,6 @@ namespace SIMED_V1.Forms_Para_Reportes
         private void ReporteMedico_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'bD3K3G05_2022DataSet.MEDICOS' Puede moverla o quitarla según sea necesario.
-            this.mEDICOSTableAdapter.Fill(this.bD3K3G05_2022DataSet.MEDICOS);
-            // TODO: esta línea de código carga datos en la tabla 'bD3K3G05_2022DataSet.MEDICOS' Puede moverla o quitarla según sea necesario.
             //this.mEDICOSTableAdapter.Fill(this.bD3K3G05_2022DataSet.MEDICOS);
 
 

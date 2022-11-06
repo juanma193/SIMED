@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 // If you have enabled NRTs for your project, then un-comment the following line:
 // #nullable disable
 
-namespace SIMED.Models
+namespace SIMED_V1.Entidades
 {
     public partial class BD3K3G05_2022Context : DbContext
     {
@@ -52,7 +52,7 @@ namespace SIMED.Models
         public virtual DbSet<TurnosRotativos> TurnosRotativos { get; set; }
         public virtual DbSet<TurnosRotativosxEnfermeros> TurnosRotativosxEnfermeros { get; set; }
         public virtual DbSet<Usuarios> Usuarios { get; set; }
-        public virtual DbSet<Viajes> ViajesxEnfermeros { get; set; }
+        public virtual DbSet<Viajes> Viajes { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -72,7 +72,7 @@ namespace SIMED.Models
 
                 entity.ToTable("AFILIADOS");
 
-                entity.Property(e => e.NumeroAfiliado).HasColumnName("numeroAfiliado").ValueGeneratedOnAdd();
+                entity.Property(e => e.NumeroAfiliado).HasColumnName("numeroAfiliado");
 
                 entity.Property(e => e.Apellido)
                     .IsRequired()
@@ -112,11 +112,7 @@ namespace SIMED.Models
 
                 entity.Property(e => e.NumeroDocumento).HasColumnName("numero_documento");
 
-                entity.Property(e => e.NumeroTelefono)
-                    .IsRequired()
-                    .HasColumnName("numeroTelefono")
-                    .HasMaxLength(16)
-                    .IsUnicode(false);
+                entity.Property(e => e.NumeroTelefono).HasColumnName("numeroTelefono");
 
                 entity.HasOne(d => d.IdBarrioNavigation)
                     .WithMany(p => p.Afiliados)
@@ -150,7 +146,7 @@ namespace SIMED.Models
 
                 entity.ToTable("AMBULANCIAS");
 
-                entity.Property(e => e.IdMovil).HasColumnName("id_movil").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdMovil).HasColumnName("id_movil");
 
                 entity.Property(e => e.IdCategoria).HasColumnName("id_categoria");
 
@@ -182,7 +178,7 @@ namespace SIMED.Models
 
                 entity.ToTable("BAJAS");
 
-                entity.Property(e => e.NroBaja).HasColumnName("nro_baja").ValueGeneratedOnAdd();
+                entity.Property(e => e.NroBaja).HasColumnName("nro_baja");
 
                 entity.Property(e => e.DeudaPendiente).HasColumnName("deudaPendiente");
 
@@ -214,7 +210,7 @@ namespace SIMED.Models
 
                 entity.ToTable("BARRIOS");
 
-                entity.Property(e => e.IdBarrio).HasColumnName("id_barrio").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdBarrio).HasColumnName("id_barrio");
 
                 entity.Property(e => e.IdCiudad).HasColumnName("id_ciudad");
 
@@ -238,7 +234,7 @@ namespace SIMED.Models
 
                 entity.ToTable("CATEGORIAS");
 
-                entity.Property(e => e.IdCategoria).HasColumnName("id_categoria").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdCategoria).HasColumnName("id_categoria");
 
                 entity.Property(e => e.Descripcion)
                     .IsRequired()
@@ -254,7 +250,7 @@ namespace SIMED.Models
 
                 entity.ToTable("CIUDADES");
 
-                entity.Property(e => e.IdCiudad).HasColumnName("id_ciudad").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdCiudad).HasColumnName("id_ciudad");
 
                 entity.Property(e => e.DescripcionCiudad)
                     .IsRequired()
@@ -270,7 +266,7 @@ namespace SIMED.Models
 
                 entity.ToTable("DIAS_LABORALES");
 
-                entity.Property(e => e.IdDiaLaboral).HasColumnName("id_diaLaboral").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdDiaLaboral).HasColumnName("id_diaLaboral");
 
                 entity.Property(e => e.DescripcionDiaLaboral)
                     .IsRequired()
@@ -285,7 +281,7 @@ namespace SIMED.Models
 
                 entity.ToTable("EMPLEADOS");
 
-                entity.Property(e => e.Legajo).HasColumnName("legajo").ValueGeneratedOnAdd();
+                entity.Property(e => e.Legajo).HasColumnName("legajo");
 
                 entity.Property(e => e.Apellido)
                     .IsRequired()
@@ -303,7 +299,7 @@ namespace SIMED.Models
                     .WithMany(p => p.Empleados)
                     .HasForeignKey(d => d.IdSexo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Empleados_Sexos");
+                    .HasConstraintName("FK_EMPLEADOS_SEXOS");
             });
 
             modelBuilder.Entity<Enfermeros>(entity =>
@@ -313,7 +309,9 @@ namespace SIMED.Models
 
                 entity.ToTable("ENFERMEROS");
 
-                entity.Property(e => e.NumeroMatricula).HasColumnName("numeroMatricula").ValueGeneratedOnAdd();
+                entity.Property(e => e.NumeroMatricula)
+                    .HasColumnName("numeroMatricula")
+                    .ValueGeneratedNever();
 
                 entity.Property(e => e.Apellido)
                     .IsRequired()
@@ -361,7 +359,7 @@ namespace SIMED.Models
                     .WithMany(p => p.Enfermeros)
                     .HasForeignKey(d => d.IdSexo)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_sexo");
+                    .HasConstraintName("fk_enfermeros_sexo");
 
                 entity.HasOne(d => d.IdTipoDocumentoNavigation)
                     .WithMany(p => p.Enfermeros)
@@ -407,7 +405,7 @@ namespace SIMED.Models
 
                 entity.ToTable("ESPECIALIDADES");
 
-                entity.Property(e => e.IdEspecialidad).HasColumnName("id_especialidad").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdEspecialidad).HasColumnName("id_especialidad");
 
                 entity.Property(e => e.DescripcionEspecialidad)
                     .IsRequired()
@@ -423,7 +421,7 @@ namespace SIMED.Models
 
                 entity.ToTable("FACTURAS");
 
-                entity.Property(e => e.IdFactura).HasColumnName("id_factura").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdFactura).HasColumnName("id_factura");
 
                 entity.Property(e => e.FechaFactura)
                     .HasColumnName("fechaFactura")
@@ -457,7 +455,7 @@ namespace SIMED.Models
 
                 entity.ToTable("MARCAS");
 
-                entity.Property(e => e.IdMarca).HasColumnName("id_marca").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdMarca).HasColumnName("id_marca");
 
                 entity.Property(e => e.NombreMarca)
                     .IsRequired()
@@ -468,12 +466,13 @@ namespace SIMED.Models
 
             modelBuilder.Entity<Medicos>(entity =>
             {
-                entity.HasKey(e => e.NumeroMatricula)
-                    .HasName("pk_medicos");
+                entity.HasKey(e => e.NumeroMatricula);
 
                 entity.ToTable("MEDICOS");
 
-                entity.Property(e => e.NumeroMatricula).HasColumnName("numeroMatricula").ValueGeneratedOnAdd();
+                entity.Property(e => e.NumeroMatricula)
+                    .HasColumnName("numeroMatricula")
+                    .ValueGeneratedNever();
 
                 entity.Property(e => e.Apellido)
                     .IsRequired()
@@ -564,10 +563,10 @@ namespace SIMED.Models
                     .HasConstraintName("fk_dia_diasLaborales");
 
                 entity.HasOne(d => d.NumeroMatriculaNavigation)
-                                    .WithMany(p => p.MedicosxDiasLaborales)
-                                    .HasForeignKey(d => d.NumeroMatricula)
-                                    .OnDelete(DeleteBehavior.ClientSetNull)
-                                    .HasConstraintName("FK_DIAS_LAB_MEDICOS");
+                    .WithMany(p => p.MedicosxDiasLaborales)
+                    .HasForeignKey(d => d.NumeroMatricula)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_DIAS_LAB_MEDICOS");
             });
 
             modelBuilder.Entity<Medicosxviajes>(entity =>
@@ -607,7 +606,7 @@ namespace SIMED.Models
 
                 entity.ToTable("MODELOS");
 
-                entity.Property(e => e.IdModelo).HasColumnName("id_modelo").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdModelo).HasColumnName("id_modelo");
 
                 entity.Property(e => e.IdMarca).HasColumnName("id_marca");
 
@@ -631,7 +630,7 @@ namespace SIMED.Models
 
                 entity.ToTable("MOTIVOS_DE_BAJA");
 
-                entity.Property(e => e.IdMotivoBaja).HasColumnName("id_motivoBaja").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdMotivoBaja).HasColumnName("id_motivoBaja");
 
                 entity.Property(e => e.DesrcipcionMotivoBaja)
                     .IsRequired()
@@ -647,7 +646,7 @@ namespace SIMED.Models
 
                 entity.ToTable("OBRAS_SOCIALES");
 
-                entity.Property(e => e.IdObraSocial).HasColumnName("id_ObraSocial").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdObraSocial).HasColumnName("id_ObraSocial");
 
                 entity.Property(e => e.DescripcionObraSocial)
                     .IsRequired()
@@ -706,14 +705,15 @@ namespace SIMED.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_planes_id_tipoPlan");
             });
-                modelBuilder.Entity<RangosEtarios>(entity =>
+
+            modelBuilder.Entity<RangosEtarios>(entity =>
             {
                 entity.HasKey(e => e.IdRangoEtario)
                     .HasName("pk_rangosEtarios");
 
                 entity.ToTable("RANGOS_ETARIOS");
 
-                entity.Property(e => e.IdRangoEtario).HasColumnName("id_rangoEtario").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdRangoEtario).HasColumnName("id_rangoEtario");
 
                 entity.Property(e => e.DescripcionRangoEtario)
                     .IsRequired()
@@ -729,7 +729,7 @@ namespace SIMED.Models
 
                 entity.ToTable("RELACIONES_LABORALES");
 
-                entity.Property(e => e.IdRelacionLaboral).HasColumnName("id_relacionLaboral").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdRelacionLaboral).HasColumnName("id_relacionLaboral");
 
                 entity.Property(e => e.DescripcionRelacionLaboral)
                     .IsRequired()
@@ -779,7 +779,7 @@ namespace SIMED.Models
 
                 entity.ToTable("TIPOS_DOCUMENTOS");
 
-                entity.Property(e => e.IdTipoDocumento).HasColumnName("id_tipoDocumento").ValueGeneratedOnAdd();
+                entity.Property(e => e.IdTipoDocumento).HasColumnName("id_tipoDocumento");
 
                 entity.Property(e => e.DescripcionTipoDocumento)
                     .IsRequired()
@@ -795,9 +795,7 @@ namespace SIMED.Models
 
                 entity.ToTable("TIPOS_PLAN");
 
-                entity.Property(e => e.IdTipoPlan)
-                .HasColumnName("id_tipoPlan")
-                .ValueGeneratedOnAdd();
+                entity.Property(e => e.IdTipoPlan).HasColumnName("id_tipoPlan");
 
                 entity.Property(e => e.CantAsistAmbulanciaDomicilio).HasColumnName("cantAsistAmbulanciaDomicilio");
 
@@ -820,10 +818,6 @@ namespace SIMED.Models
                     .HasName("pk_tiposViaje");
 
                 entity.ToTable("TIPOS_VIAJE");
-
-                entity.Property(e => e.IdTipoViaje)
-                    .HasColumnName("id_tipoViaje")
-                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.IdTipoViaje).HasColumnName("id_tipoViaje");
 
@@ -879,7 +873,7 @@ namespace SIMED.Models
                     .WithMany(p => p.TurnosEnConsultorio)
                     .HasForeignKey(d => d.NumMatriculaMedico)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_turnos_e_c_medicos");
+                    .HasConstraintName("FK_TURNOS_EN_CONSULTORIO_MEDICOS");
 
                 entity.HasOne(d => d.NumeroAfiliadoNavigation)
                     .WithMany(p => p.TurnosEnConsultorio)
@@ -959,7 +953,7 @@ namespace SIMED.Models
 
                 entity.Property(e => e.IdTurnoRotativo)
                     .HasColumnName("id_turnoRotativo")
-                    .ValueGeneratedOnAdd();
+                    .ValueGeneratedNever();
 
                 entity.Property(e => e.DescripcionTurnoRotativo)
                     .IsRequired()
@@ -993,7 +987,7 @@ namespace SIMED.Models
                     .WithMany(p => p.TurnosRotativosxEnfermeros)
                     .HasForeignKey(d => d.NumeroMatriculaEnfermero)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_enfermeroxTurno");
+                    .HasConstraintName("fk_enfermeroxturnorotativos_enfermero");
             });
 
             modelBuilder.Entity<Usuarios>(entity =>
@@ -1001,10 +995,6 @@ namespace SIMED.Models
                 entity.HasKey(e => e.IdUsuario);
 
                 entity.ToTable("USUARIOS");
-
-                entity.Property(e => e.IdUsuario)
-                    .HasColumnName("IdUsuario")
-                    .ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Contraseña)
                     .IsRequired()
