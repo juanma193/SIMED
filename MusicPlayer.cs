@@ -11,7 +11,7 @@ namespace SIMED_V1
     {
         private static MusicPlayer instance;
         private System.Media.SoundPlayer player;
-        /*
+
         private MusicPlayer()
         {
             player = new System.Media.SoundPlayer();
@@ -30,24 +30,20 @@ namespace SIMED_V1
         }
 
         public void Play(string path)
-        {/*
-        try{
+        {
             var p = Path.GetFullPath(path);
-          
-            
-}
-        catch(Exception e){}}
+            player.SoundLocation = p;
+            player.Play();
+        }
         public static void PlayInicio()
         {
-        try{
             var player = new System.Media.SoundPlayer();
             player.SoundLocation = @"archivos\\musica simed.wav";
-            player.Play();}
-        catch(Exception e){}
+            player.Play();
         }
         public void Stop()
         {
             player.Stop();
-        }*/
+        }
     }
 }

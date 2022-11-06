@@ -22,10 +22,5 @@ namespace SIMED_V1.Forms_Para_Reportes
             ReporteMedico rep = new ReporteMedico();
             rep.ShowDialog();
         }
-
-        private void btnGenerarEst_Click(object sender, EventArgs e)
-        {
-           
-        }
     }
 }

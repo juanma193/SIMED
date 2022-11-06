@@ -77,7 +77,6 @@
             this.btnGenerarEst.Size = new System.Drawing.Size(190, 68);
             this.btnGenerarEst.TabIndex = 24;
             this.btnGenerarEst.Text = "Generar estadísticas";
-            this.btnGenerarEst.Click += new System.EventHandler(this.btnGenerarEst_Click);
             // 
             // btnGenerarReportes
             // 
