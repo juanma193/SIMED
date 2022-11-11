@@ -173,23 +173,31 @@ namespace SIMED_V1.Forms_Para_ABM
             if (btnModificarEspecialidad.Enabled)
             {
                 Especialidades esp = new Especialidades();
-                esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
-                esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
-                bool resultado = EspecialidadBD.ObtenerEspecialidades(esp).Rows.Count != 0;
-                if (resultado)
+                if(txtIdEspecialidad.Text != "")
                 {
-                    this.Dispose();
-                }
-                else
-                {
-                    SeguroModificar seguro = new SeguroModificar();
-                    seguro.btnModificar.Text = "Aceptar";
-                    seguro.lblMensaje.Text = "¿Está seguro que no desea guardar los cambios?";
-                    if (seguro.ShowDialog() == DialogResult.OK)
+                    esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
+                    esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
+                    bool resultado = EspecialidadBD.ObtenerEspecialidades(esp).Rows.Count != 0;
+                    if (resultado)
                     {
                         this.Dispose();
                     }
+                    else
+                    {
+                        SeguroModificar seguro = new SeguroModificar();
+                        seguro.btnModificar.Text = "Aceptar";
+                        seguro.lblMensaje.Text = "¿Está seguro que no desea guardar los cambios?";
+                        if (seguro.ShowDialog() == DialogResult.OK)
+                        {
+                            this.Dispose();
+                        }
+                    }
                 }
+                else
+                {
+                    this.Dispose();
+                }
+                
 
             }
             else
@@ -316,23 +324,31 @@ namespace SIMED_V1.Forms_Para_ABM
             if (btnModificarEspecialidad.Enabled)
             {
                 Especialidades esp = new Especialidades();
-                esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
-                esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
-                bool resultado = EspecialidadBD.ObtenerEspecialidades(esp).Rows.Count != 0;
-                if (resultado)
+                if(txtIdEspecialidad.Text != "")
                 {
-                    this.Dispose();
-                }
-                else
-                {
-                    SeguroModificar seguro = new SeguroModificar();
-                    seguro.btnModificar.Text = "Aceptar";
-                    seguro.lblMensaje.Text = "¿Está seguro que no desea guardar los cambios?";
-                    if (seguro.ShowDialog() == DialogResult.OK)
+                    esp.IdEspecialidad = int.Parse(txtIdEspecialidad.Text);
+                    esp.DescripcionEspecialidad = txtDescripcionEspecialidad.Text;
+                    bool resultado = EspecialidadBD.ObtenerEspecialidades(esp).Rows.Count != 0;
+                    if (resultado)
                     {
                         this.Dispose();
                     }
+                    else
+                    {
+                        SeguroModificar seguro = new SeguroModificar();
+                        seguro.btnModificar.Text = "Aceptar";
+                        seguro.lblMensaje.Text = "¿Está seguro que no desea guardar los cambios?";
+                        if (seguro.ShowDialog() == DialogResult.OK)
+                        {
+                            this.Dispose();
+                        }
+                    }
                 }
+                else
+                {
+                    this.Dispose();
+                }
+                
 
             }
             else
