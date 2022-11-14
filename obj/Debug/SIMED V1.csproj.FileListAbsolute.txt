@@ -383,4 +383,3 @@ D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.UEnfermeroRep.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.UGeneral.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.UMedicoRep.resources
 D:\SIMED\obj\Debug\SIMED_V1.Forms_Para_Reportes.UViajeRep.resources
-D:\SIMED\bin\Debug\EnvDTE.xml
