@@ -513,11 +513,8 @@ namespace SIMED_V1.Bases_de_datos
             {
                 
 
-                var viajes = db.Enfermerosxviajes;
-                foreach (var viaje in viajes)
-                {
-                    resultado.Add(viaje.Viajes);
-                }
+               resultado = db.Viajes.ToList();
+                
 
             }
             catch (Exception ex)
@@ -541,11 +538,7 @@ namespace SIMED_V1.Bases_de_datos
 
             try
             {
-                var viajes = db.Enfermerosxviajes.Where(a => a.Fecha == fecha);
-                foreach (var viaje in viajes)
-                {
-                    resultado.Add(viaje.Viajes);
-                }
+                resultado = db.Viajes.Where(a => a.Fecha == fecha).ToList();
             }
             catch (Exception ex)
             {
@@ -561,11 +554,7 @@ namespace SIMED_V1.Bases_de_datos
 
             try
             {
-                var viajes = db.Enfermerosxviajes.Where(a => a.IdMovil == movil.IdMovil);
-                foreach (var viaje in viajes)
-                {
-                    resultado.Add(viaje.Viajes);
-                }
+                resultado = db.Viajes.Where(a => a.IdMovil == movil.IdMovil).ToList();
             }
             catch (Exception ex)
             {
@@ -917,13 +906,7 @@ namespace SIMED_V1.Bases_de_datos
             {
                 foreach (var fecha in fechas)
                 {
-                    var viajes = db.Enfermerosxviajes.First(a => a.Fecha == fecha);
-
-                   
-                        resultado.Add(viajes.Viajes);
-                    
-
-
+                    resultado.Add(db.Viajes.First(a => a.Fecha == fecha));
                 }
 
 
@@ -954,11 +937,11 @@ namespace SIMED_V1.Bases_de_datos
                 foreach (var fecha in fechas)
                 {
 
-                    var viajes = db.Enfermerosxviajes.First(a => a.Fecha == fecha);
+                    var viajes = db.Viajes.First(a => a.Fecha == fecha);
 
                     if (viajes.Fecha == date)
                     {
-                        resultado.Add(viajes.Viajes);
+                        resultado.Add(viajes);
                     }
 
 
@@ -995,11 +978,7 @@ namespace SIMED_V1.Bases_de_datos
             {
                 foreach (var fecha in fechas)
                 {
-                    var viajes = db.Enfermerosxviajes.First(a => a.Fecha == fecha);
-
-
-
-                    resultado.Add(viajes.Viajes);
+                    resultado.Add(db.Viajes.First(a => a.Fecha == fecha));
 
                 }
 
@@ -1030,14 +1009,7 @@ namespace SIMED_V1.Bases_de_datos
             try
             {
                
-             var viajes = db.Enfermerosxviajes.Where(a => a.Fecha == fecha && a.IdMovil == movil.IdMovil);
-            foreach(var viaje in viajes)
-                {
-                    resultado.Add(viaje.Viajes);
-                }
-                
-
-
+             resultado = db.Viajes.Where(a => a.Fecha == fecha && a.IdMovil == movil.IdMovil).ToList();
             }
             catch (Exception ex)
             {
@@ -1524,10 +1496,7 @@ namespace SIMED_V1.Bases_de_datos
             try
             {
                 
-               var viajes = db.Enfermerosxviajes.First(a => a.Fecha == fecha && a.HoraSalida == hora);
-
-
-                resultado = viajes.Viajes;
+               resultado = db.Viajes.First(a => a.Fecha == fecha && a.HoraSalida == hora);
                 
             }
             catch (Exception ex)

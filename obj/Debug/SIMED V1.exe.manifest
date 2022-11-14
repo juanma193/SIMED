@@ -654,14 +654,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="20228080">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SIMED V1.exe" size="20227568">
       <assemblyIdentity name="SIMED V1" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tXGzDpZolDGHH6lf3W8gtLAAWK1sw+NJd3W0lbfs2P4=</dsig:DigestValue>
+        <dsig:DigestValue>6GIzuElkZq6/39RkpqC+VGvtjgc7ozouaMQXPvT9y64=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
